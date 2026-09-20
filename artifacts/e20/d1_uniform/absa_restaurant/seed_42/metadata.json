@@ -1,0 +1,1027 @@
+{
+  "protocol": "E2-training-ablation-v1",
+  "revision": "e20-20260914-r1",
+  "stage": "stageE20_cti_screening",
+  "method": "d1_uniform",
+  "coefficient": 0.0,
+  "task_id": "absa_restaurant",
+  "mode": "nc",
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 9371,
+    "max_tokens": 115,
+    "p50_tokens": 24.0,
+    "p95_tokens": 50.0,
+    "p99_tokens": 63.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "smoke": false,
+  "source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_config_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "absa_restaurant",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    ]
+  },
+  "model": {
+    "role": "e20_cti_student",
+    "backbone": "goibert-b-dapt",
+    "hidden_size": 768,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 48,
+    "num_aspects": 12,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 102988080,
+    "trainable_parameters": 102988080,
+    "arm": "d1_uniform",
+    "mu": 0.0,
+    "added_parameter_count": 0
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:1",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "hyperparameters": {
+    "temperature": 2.0,
+    "alpha": null,
+    "consistency_lambda": 0.1,
+    "teacher_cache": null,
+    "teacher_cache_hash": null
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e20.py",
+    "--worker",
+    "--arm",
+    "d1_uniform",
+    "--task-id",
+    "absa_restaurant",
+    "--device",
+    "cuda:1",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e20/d1_uniform/absa_restaurant/seed_42",
+    "--seed",
+    "42"
+  ],
+  "started_at_unix": 1789358694.022571,
+  "noise_statistics": [
+    {
+      "count": 9371,
+      "changed_count": 3909,
+      "operation_counts": {
+        "none": 4660,
+        "teencode": 1931,
+        "remove_accents": 2278,
+        "internal_char_typo": 502
+      },
+      "change_rate": 0.41713797887098497
+    },
+    {
+      "count": 9371,
+      "changed_count": 3863,
+      "operation_counts": {
+        "none": 4722,
+        "teencode": 1903,
+        "remove_accents": 2295,
+        "internal_char_typo": 451
+      },
+      "change_rate": 0.4122292177995945
+    },
+    {
+      "count": 9371,
+      "changed_count": 3912,
+      "operation_counts": {
+        "teencode": 1878,
+        "remove_accents": 2334,
+        "none": 4706,
+        "internal_char_typo": 453
+      },
+      "change_rate": 0.41745811546259737
+    },
+    {
+      "count": 9371,
+      "changed_count": 3926,
+      "operation_counts": {
+        "none": 4653,
+        "teencode": 1918,
+        "remove_accents": 2337,
+        "internal_char_typo": 463
+      },
+      "change_rate": 0.41895208622345537
+    },
+    {
+      "count": 9371,
+      "changed_count": 3878,
+      "operation_counts": {
+        "internal_char_typo": 457,
+        "remove_accents": 2312,
+        "none": 4729,
+        "teencode": 1873
+      },
+      "change_rate": 0.4138299007576566
+    },
+    {
+      "count": 9371,
+      "changed_count": 3943,
+      "operation_counts": {
+        "none": 4687,
+        "teencode": 1836,
+        "remove_accents": 2361,
+        "internal_char_typo": 487
+      },
+      "change_rate": 0.4207661935759257
+    },
+    {
+      "count": 9371,
+      "changed_count": 3865,
+      "operation_counts": {
+        "none": 4739,
+        "remove_accents": 2311,
+        "teencode": 1873,
+        "internal_char_typo": 448
+      },
+      "change_rate": 0.4124426421940028
+    },
+    {
+      "count": 9371,
+      "changed_count": 3950,
+      "operation_counts": {
+        "none": 4683,
+        "internal_char_typo": 474,
+        "remove_accents": 2351,
+        "teencode": 1863
+      },
+      "change_rate": 0.4215131789563547
+    },
+    {
+      "count": 9371,
+      "changed_count": 3930,
+      "operation_counts": {
+        "internal_char_typo": 468,
+        "remove_accents": 2361,
+        "teencode": 1791,
+        "none": 4751
+      },
+      "change_rate": 0.4193789350122719
+    },
+    {
+      "count": 9371,
+      "changed_count": 3871,
+      "operation_counts": {
+        "teencode": 1926,
+        "none": 4706,
+        "remove_accents": 2305,
+        "internal_char_typo": 434
+      },
+      "change_rate": 0.41308291537722763
+    },
+    {
+      "count": 9371,
+      "changed_count": 3914,
+      "operation_counts": {
+        "teencode": 1863,
+        "none": 4666,
+        "remove_accents": 2396,
+        "internal_char_typo": 446
+      },
+      "change_rate": 0.41767153985700567
+    },
+    {
+      "count": 9371,
+      "changed_count": 3812,
+      "operation_counts": {
+        "internal_char_typo": 479,
+        "teencode": 1887,
+        "none": 4763,
+        "remove_accents": 2242
+      },
+      "change_rate": 0.40678689574218335
+    },
+    {
+      "count": 9371,
+      "changed_count": 3823,
+      "operation_counts": {
+        "teencode": 1885,
+        "none": 4757,
+        "remove_accents": 2275,
+        "internal_char_typo": 454
+      },
+      "change_rate": 0.4079607299114289
+    },
+    {
+      "count": 9371,
+      "changed_count": 3959,
+      "operation_counts": {
+        "teencode": 1856,
+        "none": 4651,
+        "remove_accents": 2437,
+        "internal_char_typo": 427
+      },
+      "change_rate": 0.42247358873119195
+    },
+    {
+      "count": 9371,
+      "changed_count": 3987,
+      "operation_counts": {
+        "remove_accents": 2382,
+        "none": 4622,
+        "teencode": 1877,
+        "internal_char_typo": 490
+      },
+      "change_rate": 0.4254615302529079
+    },
+    {
+      "count": 9371,
+      "changed_count": 3933,
+      "operation_counts": {
+        "teencode": 1875,
+        "none": 4644,
+        "remove_accents": 2389,
+        "internal_char_typo": 463
+      },
+      "change_rate": 0.4196990716038843
+    },
+    {
+      "count": 9371,
+      "changed_count": 3860,
+      "operation_counts": {
+        "none": 4767,
+        "remove_accents": 2356,
+        "teencode": 1837,
+        "internal_char_typo": 411
+      },
+      "change_rate": 0.4119090812079821
+    },
+    {
+      "count": 9371,
+      "changed_count": 3913,
+      "operation_counts": {
+        "remove_accents": 2295,
+        "none": 4675,
+        "teencode": 1875,
+        "internal_char_typo": 526
+      },
+      "change_rate": 0.4175648276598015
+    },
+    {
+      "count": 9371,
+      "changed_count": 3917,
+      "operation_counts": {
+        "none": 4691,
+        "teencode": 1884,
+        "remove_accents": 2323,
+        "internal_char_typo": 473
+      },
+      "change_rate": 0.41799167644861807
+    },
+    {
+      "count": 9371,
+      "changed_count": 3859,
+      "operation_counts": {
+        "none": 4747,
+        "teencode": 1823,
+        "remove_accents": 2382,
+        "internal_char_typo": 419
+      },
+      "change_rate": 0.41180236901077794
+    },
+    {
+      "count": 9371,
+      "changed_count": 3961,
+      "operation_counts": {
+        "teencode": 1909,
+        "remove_accents": 2347,
+        "none": 4636,
+        "internal_char_typo": 479
+      },
+      "change_rate": 0.42268701312560025
+    },
+    {
+      "count": 9371,
+      "changed_count": 3882,
+      "operation_counts": {
+        "none": 4740,
+        "teencode": 1813,
+        "internal_char_typo": 478,
+        "remove_accents": 2340
+      },
+      "change_rate": 0.4142567495464732
+    },
+    {
+      "count": 9371,
+      "changed_count": 3867,
+      "operation_counts": {
+        "remove_accents": 2292,
+        "none": 4764,
+        "teencode": 1835,
+        "internal_char_typo": 480
+      },
+      "change_rate": 0.41265606658841103
+    },
+    {
+      "count": 9371,
+      "changed_count": 3911,
+      "operation_counts": {
+        "remove_accents": 2334,
+        "teencode": 1878,
+        "none": 4676,
+        "internal_char_typo": 483
+      },
+      "change_rate": 0.4173514032653932
+    },
+    {
+      "count": 9371,
+      "changed_count": 3842,
+      "operation_counts": {
+        "teencode": 1910,
+        "none": 4750,
+        "remove_accents": 2256,
+        "internal_char_typo": 455
+      },
+      "change_rate": 0.40998826165830754
+    },
+    {
+      "count": 9371,
+      "changed_count": 3957,
+      "operation_counts": {
+        "none": 4604,
+        "remove_accents": 2383,
+        "teencode": 1927,
+        "internal_char_typo": 457
+      },
+      "change_rate": 0.4222601643367837
+    },
+    {
+      "count": 9371,
+      "changed_count": 3850,
+      "operation_counts": {
+        "remove_accents": 2318,
+        "teencode": 1862,
+        "none": 4744,
+        "internal_char_typo": 447
+      },
+      "change_rate": 0.4108419592359407
+    },
+    {
+      "count": 9371,
+      "changed_count": 3938,
+      "operation_counts": {
+        "none": 4675,
+        "teencode": 1907,
+        "remove_accents": 2300,
+        "internal_char_typo": 489
+      },
+      "change_rate": 0.420232632589905
+    },
+    {
+      "count": 9371,
+      "changed_count": 3930,
+      "operation_counts": {
+        "remove_accents": 2392,
+        "none": 4699,
+        "teencode": 1829,
+        "internal_char_typo": 451
+      },
+      "change_rate": 0.4193789350122719
+    },
+    {
+      "count": 9371,
+      "changed_count": 3885,
+      "operation_counts": {
+        "teencode": 1841,
+        "none": 4725,
+        "remove_accents": 2352,
+        "internal_char_typo": 453
+      },
+      "change_rate": 0.4145768861380856
+    }
+  ],
+  "best_epoch": 29,
+  "best_selection_f1": 0.764373232799246,
+  "best_validation_metrics": {
+    "n": 771,
+    "aspect_count": 12,
+    "aspect_names": [
+      "AMBIENCE#GENERAL",
+      "DRINKS#PRICES",
+      "DRINKS#QUALITY",
+      "DRINKS#STYLE&OPTIONS",
+      "FOOD#PRICES",
+      "FOOD#QUALITY",
+      "FOOD#STYLE&OPTIONS",
+      "LOCATION#GENERAL",
+      "RESTAURANT#GENERAL",
+      "RESTAURANT#MISCELLANEOUS",
+      "RESTAURANT#PRICES",
+      "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8755846585594013,
+    "detection_micro_recall": 0.8888888888888888,
+    "detection_micro_f1": 0.882186616399623,
+    "detection_macro_precision": 0.8657551421937001,
+    "detection_macro_recall": 0.8788861437071049,
+    "detection_macro_f1": 0.87163578050173,
+    "pair_micro_precision": 0.7586529466791394,
+    "pair_micro_recall": 0.7701804368471035,
+    "pair_micro_f1": 0.764373232799246,
+    "pair_macro_precision": 0.7429696411851379,
+    "pair_macro_recall": 0.7551280877297658,
+    "pair_macro_f1": 0.74846964203127,
+    "classification_pair_micro_f1": 0.764373232799246,
+    "classification_pair_macro_f1": 0.74846964203127,
+    "per_aspect": {
+      "AMBIENCE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9213483146067416,
+          "recall": 0.9010989010989011,
+          "f1": 0.9111111111111111
+        },
+        "pair": {
+          "precision": 0.8089887640449438,
+          "recall": 0.7912087912087912,
+          "f1": 0.8
+        },
+        "detection_tp": 82,
+        "gold_present": 91,
+        "predicted_present": 89
+      },
+      "DRINKS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8095238095238095,
+          "recall": 0.8947368421052632,
+          "f1": 0.85
+        },
+        "pair": {
+          "precision": 0.6666666666666666,
+          "recall": 0.7368421052631579,
+          "f1": 0.7
+        },
+        "detection_tp": 17,
+        "gold_present": 19,
+        "predicted_present": 21
+      },
+      "DRINKS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8444444444444444,
+          "recall": 0.9382716049382716,
+          "f1": 0.8888888888888888
+        },
+        "pair": {
+          "precision": 0.7555555555555555,
+          "recall": 0.8395061728395061,
+          "f1": 0.7953216374269005
+        },
+        "detection_tp": 76,
+        "gold_present": 81,
+        "predicted_present": 90
+      },
+      "DRINKS#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.76,
+          "recall": 0.7307692307692307,
+          "f1": 0.7450980392156863
+        },
+        "pair": {
+          "precision": 0.64,
+          "recall": 0.6153846153846154,
+          "f1": 0.6274509803921569
+        },
+        "detection_tp": 38,
+        "gold_present": 52,
+        "predicted_present": 50
+      },
+      "FOOD#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8936170212765957,
+          "recall": 0.9333333333333333,
+          "f1": 0.9130434782608695
+        },
+        "pair": {
+          "precision": 0.7659574468085106,
+          "recall": 0.8,
+          "f1": 0.782608695652174
+        },
+        "detection_tp": 42,
+        "gold_present": 45,
+        "predicted_present": 47
+      },
+      "FOOD#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9090909090909091,
+          "recall": 0.9459459459459459,
+          "f1": 0.9271523178807947
+        },
+        "pair": {
+          "precision": 0.8225108225108225,
+          "recall": 0.8558558558558559,
+          "f1": 0.8388520971302428
+        },
+        "detection_tp": 210,
+        "gold_present": 222,
+        "predicted_present": 231
+      },
+      "FOOD#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8379888268156425,
+          "recall": 0.8571428571428571,
+          "f1": 0.847457627118644
+        },
+        "pair": {
+          "precision": 0.6815642458100558,
+          "recall": 0.6971428571428572,
+          "f1": 0.6892655367231638
+        },
+        "detection_tp": 150,
+        "gold_present": 175,
+        "predicted_present": 179
+      },
+      "LOCATION#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9069767441860465,
+          "recall": 0.9285714285714286,
+          "f1": 0.9176470588235294
+        },
+        "pair": {
+          "precision": 0.7674418604651163,
+          "recall": 0.7857142857142857,
+          "f1": 0.7764705882352941
+        },
+        "detection_tp": 39,
+        "gold_present": 42,
+        "predicted_present": 43
+      },
+      "RESTAURANT#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8163265306122449,
+          "recall": 0.8,
+          "f1": 0.8080808080808081
+        },
+        "pair": {
+          "precision": 0.6530612244897959,
+          "recall": 0.64,
+          "f1": 0.6464646464646465
+        },
+        "detection_tp": 80,
+        "gold_present": 100,
+        "predicted_present": 98
+      },
+      "RESTAURANT#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8166666666666667,
+          "recall": 0.8448275862068966,
+          "f1": 0.8305084745762712
+        },
+        "pair": {
+          "precision": 0.7833333333333333,
+          "recall": 0.8103448275862069,
+          "f1": 0.7966101694915254
+        },
+        "detection_tp": 49,
+        "gold_present": 58,
+        "predicted_present": 60
+      },
+      "RESTAURANT#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9069767441860465,
+          "recall": 0.8297872340425532,
+          "f1": 0.8666666666666667
+        },
+        "pair": {
+          "precision": 0.6976744186046512,
+          "recall": 0.6382978723404256,
+          "f1": 0.6666666666666666
+        },
+        "detection_tp": 39,
+        "gold_present": 47,
+        "predicted_present": 43
+      },
+      "SERVICE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9661016949152542,
+          "recall": 0.9421487603305785,
+          "f1": 0.9539748953974896
+        },
+        "pair": {
+          "precision": 0.8728813559322034,
+          "recall": 0.8512396694214877,
+          "f1": 0.8619246861924686
+        },
+        "detection_tp": 114,
+        "gold_present": 121,
+        "predicted_present": 118
+      }
+    },
+    "task_id": "absa_restaurant",
+    "split": "validation",
+    "selection_f1": 0.764373232799246,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "elapsed_seconds": 1728.68097615242,
+  "peak_gpu_memory_allocated_bytes": 3632174592,
+  "peak_gpu_memory_reserved_bytes": 3972005888,
+  "status": "completed",
+  "checkpoint_sha256": "01b18a1505143abb7518c7e32ab3f1e0e8597859134416e696835103a80d8d3b",
+  "e20_protocol": "E20-cti-screening-v1",
+  "e20_revision": "e20-20260914-r1",
+  "e20_arm": "d1_uniform",
+  "e20_mu": 0.0,
+  "e20_sampling_mode": "uniform",
+  "e20_seed": 42,
+  "e20_encoder_dir": "/home/kiettqa/GoiBERT/models/goibert-b-dapt",
+  "e20_encoder_hashes": {
+    "config.json": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89",
+    "model.safetensors": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f",
+    "pretrain_manifest.json": "e035bf3cf53eaf7558c23129d56732472cf7a79bff66424b03609c41a6798191",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "e20_optimizer_coverage": {
+    "all_trainable": true,
+    "duplicate_parameter_count": 0,
+    "parameter_count": 201,
+    "group_count": 28,
+    "endpoint_scales": {
+      "embeddings": 0.06871947673600004,
+      "block_00": 0.08589934592000005,
+      "block_09": 0.6400000000000001,
+      "head": 1.0
+    }
+  },
+  "e20_composite_coverage": {
+    "task_id": "absa_restaurant",
+    "seed": 42,
+    "sampling": "uniform",
+    "n_train": 7028,
+    "n_eligible_aspects": 12,
+    "eligible_aspects": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "n_composites_target": 2343,
+    "n_composites_built": 2343,
+    "attempts": 2344,
+    "dropped_assert_failures": 1,
+    "n_valid_pairs": 66,
+    "n_rare_pairs_le5": 15,
+    "n_rare_pairs_covered": 15,
+    "distinct_pairs_used": 66,
+    "pair_use_count": {
+      "0-1": 35,
+      "0-2": 29,
+      "0-3": 35,
+      "0-4": 29,
+      "0-5": 34,
+      "0-6": 43,
+      "0-7": 43,
+      "0-8": 46,
+      "0-9": 43,
+      "0-10": 33,
+      "0-11": 37,
+      "1-2": 28,
+      "1-3": 33,
+      "1-4": 27,
+      "1-5": 26,
+      "1-6": 31,
+      "1-7": 34,
+      "1-8": 31,
+      "1-9": 29,
+      "1-10": 42,
+      "1-11": 31,
+      "2-3": 37,
+      "2-4": 30,
+      "2-5": 27,
+      "2-6": 45,
+      "2-7": 38,
+      "2-8": 32,
+      "2-9": 40,
+      "2-10": 33,
+      "2-11": 44,
+      "3-4": 43,
+      "3-5": 42,
+      "3-6": 36,
+      "3-7": 38,
+      "3-8": 36,
+      "3-9": 33,
+      "3-10": 31,
+      "3-11": 36,
+      "4-5": 35,
+      "4-6": 42,
+      "4-7": 41,
+      "4-8": 44,
+      "4-9": 34,
+      "4-10": 40,
+      "4-11": 39,
+      "5-6": 43,
+      "5-7": 32,
+      "5-8": 40,
+      "5-9": 36,
+      "5-10": 46,
+      "5-11": 34,
+      "6-7": 26,
+      "6-8": 31,
+      "6-9": 33,
+      "6-10": 36,
+      "6-11": 33,
+      "7-8": 34,
+      "7-9": 38,
+      "7-10": 31,
+      "7-11": 35,
+      "8-9": 42,
+      "8-10": 31,
+      "8-11": 30,
+      "9-10": 42,
+      "9-11": 25,
+      "10-11": 30
+    }
+  },
+  "e20_inv_loss_summary": {
+    "n_observations": 0,
+    "mean": null,
+    "max": null,
+    "min": null
+  },
+  "e20_source_manifest": {
+    "protocol": "E20-cti-screening-v1",
+    "revision": "e20-20260914-r1",
+    "created_at": "2026-09-14T04:04:51Z",
+    "runner_sha256": "faefc4ef5a986143033ea96fe92f8239c4aee826374aec7d0e895958f51a2012",
+    "source_hashes": {
+      "scripts/run_e20.py": "faefc4ef5a986143033ea96fe92f8239c4aee826374aec7d0e895958f51a2012",
+      "configs/e20/protocol.json": "af475c5b26a3eae6441e730d28c9ddffcee9894629912565e0213a47766647fd",
+      "src/goibert_e2/train.py": "b3c28a9ee2c55ef6f24a1fe9ed2f342e5aea18f533b2e571ece0aae2e06f3ce2",
+      "src/goibert_e2/modeling.py": "b6049133d32f6a8b6f9aa063e47be3b5e1b79aeba1e06e917343079586ab0af4",
+      "src/goibert_e2/losses.py": "ca5ffa013350ba720a1f1a00debc3c2615cc3c25aad5b4726143293bf96491df",
+      "src/goibert_e2/noise.py": "8409775ef99ef5f96a9504f2d91eb5a738c5928ce960567ecaa3e5929a87dd29",
+      "src/goibert_e2/cache.py": "3b8db5cd1797212fe5d9b18f0ca59717594b1f69d76ea0c79bed45b2f862d2e7",
+      "src/goibert_e7/optim.py": "188ef994c5b271804be71ba618881071397e397731320624bd271b236a77d690",
+      "src/goibert/train.py": "ede96aaf63f02b808e5034f58953cfbce9a03438ed71f10f775de314a40bc578",
+      "src/goibert/modeling.py": "c8cf5b69e056cffd81f5606a813cd36779a7ef9f785c0d107faf8d8485585c49",
+      "src/goibert/data.py": "aeff87536a81c039d4240962140463693286c5241ce09630f5ad1b13699efc57"
+    },
+    "encoder": {
+      "path": "/home/kiettqa/GoiBERT/models/goibert-b-dapt",
+      "files": {
+        "config.json": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89",
+        "model.safetensors": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f",
+        "pretrain_manifest.json": "e035bf3cf53eaf7558c23129d56732472cf7a79bff66424b03609c41a6798191",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      }
+    },
+    "frozen_e2_source_hashes": {
+      "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+      "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+      "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+      "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+    },
+    "recipe": {
+      "arms": [
+        "d1_composite",
+        "cti",
+        "d1_uniform"
+      ],
+      "mu_by_arm": {
+        "d1_composite": 0.0,
+        "cti": 0.3,
+        "d1_uniform": 0.0
+      },
+      "sampling_by_arm": {
+        "d1_composite": "rare_pair_weighted",
+        "cti": "rare_pair_weighted",
+        "d1_uniform": "uniform"
+      },
+      "tasks": [
+        "absa_restaurant",
+        "absa_hotel",
+        "visfd"
+      ],
+      "seed": 42,
+      "epochs": 30,
+      "effective_batch_size": 32,
+      "micro_batch_size": 16,
+      "accumulation_steps": 2,
+      "max_length": 256,
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "gamma": 0.8,
+      "num_layers": 12,
+      "weight_decay": 0.01,
+      "task_lrs": {
+        "absa_restaurant": 2e-05,
+        "absa_hotel": 5e-05,
+        "visfd": 5e-05
+      },
+      "nc_lambdas": {
+        "absa_restaurant": 0.1,
+        "absa_hotel": 0.1,
+        "visfd": 0.5
+      },
+      "max_composite_tokens": 48,
+      "rare_pair_threshold": 5
+    }
+  }
+}

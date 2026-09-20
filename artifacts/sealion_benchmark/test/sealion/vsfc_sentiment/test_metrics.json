@@ -1,0 +1,61 @@
+{
+  "model_kind": "sealion",
+  "task_id": "vsfc_sentiment",
+  "metrics": {
+    "n": 3166,
+    "labels": [
+      0,
+      1,
+      2
+    ],
+    "accuracy": 0.9169298799747315,
+    "macro_precision": 0.8287285227879503,
+    "macro_recall": 0.7538124673739058,
+    "macro_f1": 0.7789834588517447,
+    "per_class": {
+      "0": {
+        "support": 1409,
+        "predicted": 1467,
+        "tp": 1346,
+        "fp": 121,
+        "fn": 63,
+        "precision": 0.9175187457396047,
+        "recall": 0.9552874378992193,
+        "f1": 0.9360222531293463
+      },
+      "1": {
+        "support": 167,
+        "predicted": 96,
+        "tp": 61,
+        "fp": 35,
+        "fn": 106,
+        "precision": 0.6354166666666666,
+        "recall": 0.3652694610778443,
+        "f1": 0.46387832699619774
+      },
+      "2": {
+        "support": 1590,
+        "predicted": 1603,
+        "tp": 1496,
+        "fp": 107,
+        "fn": 94,
+        "precision": 0.9332501559575795,
+        "recall": 0.9408805031446541,
+        "f1": 0.93704979642969
+      }
+    },
+    "task_id": "vsfc_sentiment",
+    "split": "test",
+    "selection_f1": 0.7789834588517447,
+    "selection_metric": "fixed_label_macro_f1"
+  },
+  "selected": {
+    "path": "artifacts/sealion_benchmark/runs/vsfc_sentiment/lr_5e-05/seed_42",
+    "learning_rate": 5e-05,
+    "best_epoch": 4,
+    "validation_selection_f1": 0.8226456363166759,
+    "checkpoint_sha256": "2fa722286a4c39e593937175720c732f25f49babfa10784217341ae07abfafb0",
+    "source_hash": "3cb7f95bd2f349a491143f5900f50881b25c23e075cd828a08dc097c45418320",
+    "selection_rule": "max validation selection_f1; tie smaller learning rate then earliest best epoch"
+  }
+}

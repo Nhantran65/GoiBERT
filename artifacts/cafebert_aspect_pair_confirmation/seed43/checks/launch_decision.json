@@ -1,0 +1,9 @@
+{
+  "recorded_at_utc": "2026-09-18T07:18Z (before launch)",
+  "T": {"device": "cuda:2", "reason": "24 GB free next to an idle ray worker (0 % util, 21 GB resident, not stopped); T seed42 peaked at 13.5 GB reserved", "micro_batch_reviews": 32},
+  "A": {"device": "cuda:3", "reason": "45 GB free, no foreign process; A seed42 peaked at 18.7 GB reserved", "micro_batch_pairs": 64, "eval_micro_pairs": 128},
+  "one_run_per_gpu": true,
+  "gpu0_gpu1_not_used": "cuda:0 22 GB free but 62 % util from other users' jobs; cuda:1 9.5 GB free (insufficient)",
+  "eta": "T alone ~45 s/epoch -> ~25 min if cuda:2 stays idle; A alone ~2.0-2.2 min/epoch -> ~65 min",
+  "seed_propagation": "checks/pre_launch.json (expected head-init hashes and per-epoch review-order hashes for seed 43); adapter smoke runs in ../smoke/{T,A} reproduced the expected head-init hashes"
+}

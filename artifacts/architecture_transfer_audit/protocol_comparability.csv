@@ -1,0 +1,19 @@
+comparison,dimension,architecture,value,reference
+E13_vs_E8,backbone,E13,goiturn-s-gd,goiturn-s-gd
+E15_vs_E14,backbone,E15,BamiBERT original,BamiBERT original
+E13_vs_E8,head,E13,CLS dense384 tanh dropout0.1,CLS dense384 tanh dropout0.1
+E15_vs_E14,head,E15,CLS dense768 tanh dropout0.1,CLS dense768 tanh dropout0.1
+E13_vs_E8,dropout,E13,training recipe dropout; eval disabled,training recipe dropout; eval disabled
+E15_vs_E14,dropout,E15,training recipe dropout; eval disabled,training recipe dropout; eval disabled
+E13_vs_E8,optimizer,E13,AdamW + E7 LLRD gamma0.8,AdamW + E7 LLRD gamma0.8
+E15_vs_E14,optimizer,E15,AdamW no LLRD,AdamW no LLRD
+E13_vs_E8,rng_path,E13,seed42; E13 replacement under fork_rng,seed42 fresh E8 student
+E15_vs_E14,rng_path,E15,seed42; E15 replacement under fork_rng,seed42 fresh E14 classifier
+E13_vs_E8,loss,E13,CE + NC,CE + NC
+E15_vs_E14,loss,E15,plain CE,plain CE
+E13_vs_E8,train_batch,E13,effective32; micro32,effective32; micro32
+E15_vs_E14,train_batch,E15,effective32; micro16/32,effective32; micro16/32
+E13_vs_E8,precision_backend,E13,BF16/SDPA,BF16/SDPA
+E15_vs_E14,precision_backend,E15,BF16/SDPA,BF16/SDPA
+E13_vs_E8,measurement_scope,E13,validation; audit fixed micro16,validation training artifact
+E15_vs_E14,measurement_scope,E15,validation; audit fixed micro16,validation training artifact

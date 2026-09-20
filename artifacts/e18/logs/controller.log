@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/kiettqa/GoiBERT/scripts/run_e18.py", line 1376, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/run_e18.py", line 1366, in main
+    result = run_all(devices, dispatch_approved=args.dispatch_approved, arms=args.arms, tasks=args.tasks)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/run_e18.py", line 1296, in run_all
+    vram_gate = _dispatch_vram_gate(device, snapshot_now)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/run_e18.py", line 309, in _dispatch_vram_gate
+    raise RuntimeError(f"E18 per-launch VRAM/utilization gate failed: {gate}")
+RuntimeError: E18 per-launch VRAM/utilization gate failed: {'device': 'cuda:1', 'free_mib': 43103, 'utilization_pct': 19.0, 'profile_peak_reserved_bytes': 2747269120, 'required_free_mib': 6716, 'pass': False}

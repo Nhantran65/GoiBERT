@@ -1,0 +1,3358 @@
+{
+  "schema": "goibert-d2-final-probe-sensitivity-v1",
+  "status": "completed",
+  "protocol": {
+    "steps": 1000,
+    "same_as_d1": true,
+    "selection": "fixed final encoder state only; no post-hoc layer or epoch selection",
+    "device": "cuda:3",
+    "test_opened": false
+  },
+  "tasks": [
+    "vsfc_sentiment",
+    "vsfc_topic",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "models": [
+    "student",
+    "teacher"
+  ],
+  "rows": [
+    {
+      "task": "vsfc_sentiment",
+      "model": "student",
+      "layer_index": 10,
+      "scope": "final_layer_only",
+      "before_selection_f1_1000": 0.7257745343632503,
+      "after_selection_f1_1000": 0.8125844191980534,
+      "delta_selection_f1_1000": 0.08680988483480301,
+      "before_selection_f1_1000_points": 72.57745343632503,
+      "after_selection_f1_1000_points": 81.25844191980534,
+      "delta_selection_f1_1000_points": 8.6809884834803,
+      "before_fit": {
+        "train_ce": 0.1708233654499054,
+        "validation_ce": 0.34559133648872375,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.0986127853393555,
+          "loss_at_step_980": 0.1718716323375702,
+          "final_step_train_ce": 0.17087282240390778,
+          "post_update_train_ce": 0.1708233654499054,
+          "last20_mean_train_ce": 0.17134571820497513,
+          "last20_step_improvement": 0.0009484291076660156,
+          "last20_relative_improvement": 0.00551985915201025,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": false
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 384,
+          "mean_sha256": "90878cd450014b935b2e9ab3e9768e20dd972e4aacc3c8010a7c33e085c624fa",
+          "std_sha256": "a984493f9bf5f22d45abf4e97d9002c596d42e146762742eeeb1e5e313b6c691",
+          "train_mean_abs_mean": 0.29794564843177795,
+          "train_std_min": 0.017219355329871178,
+          "train_std_max": 0.05315630882978439,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 19.595917942265423
+        },
+        "elapsed_seconds": 1.902282476425171,
+        "probe_parameter_count": 1155
+      },
+      "after_fit": {
+        "train_ce": 0.07533463090658188,
+        "validation_ce": 0.22908607125282288,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.0986127853393555,
+          "loss_at_step_980": 0.07589957118034363,
+          "final_step_train_ce": 0.07536129653453827,
+          "post_update_train_ce": 0.07533463090658188,
+          "last20_mean_train_ce": 0.07561619505286217,
+          "last20_step_improvement": 0.0005111470818519592,
+          "last20_relative_improvement": 0.006736926576878294,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": false
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 384,
+          "mean_sha256": "5f6b1bdfa095f1da05288f295cc474af87b01d67dbf21f6b8ebe16161d97a479",
+          "std_sha256": "387a3fd9692f60b0673880cb3d9c23d9bc591de5b347be99805713b593234794",
+          "train_mean_abs_mean": 0.351452112197876,
+          "train_std_min": 0.2707250416278839,
+          "train_std_max": 1.8571425676345825,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 19.595917942265423
+        },
+        "elapsed_seconds": 1.9650204181671143,
+        "probe_parameter_count": 1155
+      },
+      "after_metrics": {
+        "n": 1583,
+        "labels": [
+          0,
+          1,
+          2
+        ],
+        "accuracy": 0.934301958307012,
+        "macro_precision": 0.8258056985791558,
+        "macro_recall": 0.8018385929934091,
+        "macro_f1": 0.8125844191980534,
+        "per_class": {
+          "0": {
+            "support": 705,
+            "predicted": 722,
+            "tp": 680,
+            "fp": 42,
+            "fn": 25,
+            "precision": 0.9418282548476454,
+            "recall": 0.9645390070921985,
+            "f1": 0.9530483531885073
+          },
+          "1": {
+            "support": 73,
+            "predicted": 62,
+            "tp": 36,
+            "fp": 26,
+            "fn": 37,
+            "precision": 0.5806451612903226,
+            "recall": 0.4931506849315068,
+            "f1": 0.5333333333333333
+          },
+          "2": {
+            "support": 805,
+            "predicted": 799,
+            "tp": 763,
+            "fp": 36,
+            "fn": 42,
+            "precision": 0.9549436795994993,
+            "recall": 0.9478260869565217,
+            "f1": 0.9513715710723192
+          }
+        },
+        "task_id": "vsfc_sentiment",
+        "split": "validation",
+        "selection_f1": 0.8125844191980534,
+        "selection_metric": "fixed_label_macro_f1"
+      },
+      "after_cache_hashes": {
+        "train_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/vsfc_sentiment/student/train_cls.npy",
+        "validation_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/vsfc_sentiment/student/validation_cls.npy",
+        "train_sha256": "da92543ae592fe8a520bcfea28f2a84effab8bd81069a3804f806cda6ee580e7",
+        "validation_sha256": "c9be007d47af770e5b1e3da49cd1d5126b00c0f50b4ad14fbad346dc8154cf47",
+        "train_shape": [
+          11,
+          2000,
+          384
+        ],
+        "validation_shape": [
+          11,
+          1583,
+          384
+        ]
+      }
+    },
+    {
+      "task": "vsfc_sentiment",
+      "model": "teacher",
+      "layer_index": 12,
+      "scope": "final_layer_only",
+      "before_selection_f1_1000": 0.6926587338870306,
+      "after_selection_f1_1000": 0.850183710520808,
+      "delta_selection_f1_1000": 0.1575249766337774,
+      "before_selection_f1_1000_points": 69.26587338870306,
+      "after_selection_f1_1000_points": 85.0183710520808,
+      "delta_selection_f1_1000_points": 15.75249766337774,
+      "before_fit": {
+        "train_ce": 0.11599725484848022,
+        "validation_ce": 0.3632310628890991,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.0986127853393555,
+          "loss_at_step_980": 0.11754448711872101,
+          "final_step_train_ce": 0.11607006192207336,
+          "post_update_train_ce": 0.11599725484848022,
+          "last20_mean_train_ce": 0.11676755473017693,
+          "last20_step_improvement": 0.0013998672366142273,
+          "last20_relative_improvement": 0.011916813491248275,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 768,
+          "mean_sha256": "03e578080bc1247f066217d4ff72babe447abff34260a27c85de8cc58c8b206b",
+          "std_sha256": "0bd36c28d7286c981402fd8a3953678a57e33ddbdd50e1e7bdfc9c24c96d2f32",
+          "train_mean_abs_mean": 0.15363484621047974,
+          "train_std_min": 0.010077747516334057,
+          "train_std_max": 0.07124443352222443,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 27.712812921102035
+        },
+        "elapsed_seconds": 1.9686253070831299,
+        "probe_parameter_count": 2307
+      },
+      "after_fit": {
+        "train_ce": 0.007951457053422928,
+        "validation_ce": 0.4559272527694702,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.0986127853393555,
+          "loss_at_step_980": 0.008070540614426136,
+          "final_step_train_ce": 0.007957100868225098,
+          "post_update_train_ce": 0.007951457053422928,
+          "last20_mean_train_ce": 0.008010889496654272,
+          "last20_step_improvement": 0.00010774191468954086,
+          "last20_relative_improvement": 0.01335945629563815,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 768,
+          "mean_sha256": "386762c2339b864b3db110476f85ac40517edb9d795c3cdb991b5048109f3bdc",
+          "std_sha256": "d11ee433ee14b27509cd62a39f0804ca45634ef24043954811396edaac2eb653",
+          "train_mean_abs_mean": 0.17720645666122437,
+          "train_std_min": 0.07872184365987778,
+          "train_std_max": 0.9672898650169373,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 27.712812921102035
+        },
+        "elapsed_seconds": 1.6635515689849854,
+        "probe_parameter_count": 2307
+      },
+      "after_metrics": {
+        "n": 1583,
+        "labels": [
+          0,
+          1,
+          2
+        ],
+        "accuracy": 0.9437776373973468,
+        "macro_precision": 0.8724346558347941,
+        "macro_recall": 0.8327863576504485,
+        "macro_f1": 0.850183710520808,
+        "per_class": {
+          "0": {
+            "support": 705,
+            "predicted": 711,
+            "tp": 677,
+            "fp": 34,
+            "fn": 28,
+            "precision": 0.9521800281293952,
+            "recall": 0.9602836879432625,
+            "f1": 0.9562146892655368
+          },
+          "1": {
+            "support": 73,
+            "predicted": 59,
+            "tp": 42,
+            "fp": 17,
+            "fn": 31,
+            "precision": 0.711864406779661,
+            "recall": 0.5753424657534246,
+            "f1": 0.6363636363636364
+          },
+          "2": {
+            "support": 805,
+            "predicted": 813,
+            "tp": 775,
+            "fp": 38,
+            "fn": 30,
+            "precision": 0.9532595325953259,
+            "recall": 0.9627329192546584,
+            "f1": 0.957972805933251
+          }
+        },
+        "task_id": "vsfc_sentiment",
+        "split": "validation",
+        "selection_f1": 0.850183710520808,
+        "selection_metric": "fixed_label_macro_f1"
+      },
+      "after_cache_hashes": {
+        "train_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/vsfc_sentiment/teacher/train_cls.npy",
+        "validation_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/vsfc_sentiment/teacher/validation_cls.npy",
+        "train_sha256": "49f2a06688642f349b1fde97bdfdecdaeecf28f46e4dee4e5fe56d5e7a846bd9",
+        "validation_sha256": "a367ce45846014de0b1807d68e82ef68ca274e1968598629df7b35054137e61e",
+        "train_shape": [
+          13,
+          2000,
+          768
+        ],
+        "validation_shape": [
+          13,
+          1583,
+          768
+        ]
+      }
+    },
+    {
+      "task": "vsfc_topic",
+      "model": "student",
+      "layer_index": 10,
+      "scope": "final_layer_only",
+      "before_selection_f1_1000": 0.6929321615416069,
+      "after_selection_f1_1000": 0.7873296675076269,
+      "delta_selection_f1_1000": 0.09439750596602003,
+      "before_selection_f1_1000_points": 69.29321615416069,
+      "after_selection_f1_1000_points": 78.73296675076269,
+      "delta_selection_f1_1000_points": 9.439750596602003,
+      "before_fit": {
+        "train_ce": 0.26099053025245667,
+        "validation_ce": 0.46515971422195435,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.2624623775482178,
+          "final_step_train_ce": 0.2610599398612976,
+          "post_update_train_ce": 0.26099053025245667,
+          "last20_mean_train_ce": 0.2617237001657486,
+          "last20_step_improvement": 0.0013316571712493896,
+          "last20_relative_improvement": 0.005075075521889564,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": false
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 384,
+          "mean_sha256": "90878cd450014b935b2e9ab3e9768e20dd972e4aacc3c8010a7c33e085c624fa",
+          "std_sha256": "a984493f9bf5f22d45abf4e97d9002c596d42e146762742eeeb1e5e313b6c691",
+          "train_mean_abs_mean": 0.29794564843177795,
+          "train_std_min": 0.017219355329871178,
+          "train_std_max": 0.05315630882978439,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 19.595917942265423
+        },
+        "elapsed_seconds": 1.991581678390503,
+        "probe_parameter_count": 1540
+      },
+      "after_fit": {
+        "train_ce": 0.12098938971757889,
+        "validation_ce": 0.43705105781555176,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.12189581245183945,
+          "final_step_train_ce": 0.12103213369846344,
+          "post_update_train_ce": 0.12098938971757889,
+          "last20_mean_train_ce": 0.121440839022398,
+          "last20_step_improvement": 0.0008200481534004211,
+          "last20_relative_improvement": 0.006729860236703489,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": false
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 384,
+          "mean_sha256": "d3c6eada8e889bd1756e92aca4aff05866c2b8321630c46b56be88e4ef263236",
+          "std_sha256": "2e2836118ad5f9353160780e203cfc9023d89eef74830f071947f35dc0c607b6",
+          "train_mean_abs_mean": 0.5112764239311218,
+          "train_std_min": 0.2752671539783478,
+          "train_std_max": 1.645751714706421,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 19.595917942265423
+        },
+        "elapsed_seconds": 1.7379920482635498,
+        "probe_parameter_count": 1540
+      },
+      "after_metrics": {
+        "n": 1583,
+        "labels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "accuracy": 0.8818698673404928,
+        "macro_precision": 0.7838065741727362,
+        "macro_recall": 0.7920349737569845,
+        "macro_f1": 0.7873296675076269,
+        "per_class": {
+          "0": {
+            "support": 1151,
+            "predicted": 1140,
+            "tp": 1071,
+            "fp": 69,
+            "fn": 80,
+            "precision": 0.9394736842105263,
+            "recall": 0.9304952215464813,
+            "f1": 0.9349628982976866
+          },
+          "1": {
+            "support": 267,
+            "predicted": 282,
+            "tp": 210,
+            "fp": 72,
+            "fn": 57,
+            "precision": 0.7446808510638298,
+            "recall": 0.7865168539325843,
+            "f1": 0.7650273224043715
+          },
+          "2": {
+            "support": 70,
+            "predicted": 74,
+            "tp": 64,
+            "fp": 10,
+            "fn": 6,
+            "precision": 0.8648648648648649,
+            "recall": 0.9142857142857143,
+            "f1": 0.8888888888888888
+          },
+          "3": {
+            "support": 95,
+            "predicted": 87,
+            "tp": 51,
+            "fp": 36,
+            "fn": 44,
+            "precision": 0.5862068965517241,
+            "recall": 0.5368421052631579,
+            "f1": 0.5604395604395604
+          }
+        },
+        "task_id": "vsfc_topic",
+        "split": "validation",
+        "selection_f1": 0.7873296675076269,
+        "selection_metric": "fixed_label_macro_f1"
+      },
+      "after_cache_hashes": {
+        "train_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/vsfc_topic/student/train_cls.npy",
+        "validation_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/vsfc_topic/student/validation_cls.npy",
+        "train_sha256": "93bfc2cf09468054343a64e4eb54b7256a808196fc565926e8e215bdc4a20335",
+        "validation_sha256": "201ff9f0f381848ff6767a5dc479a1928bf77fe86a6ff3434402068da9c7f307",
+        "train_shape": [
+          11,
+          2000,
+          384
+        ],
+        "validation_shape": [
+          11,
+          1583,
+          384
+        ]
+      }
+    },
+    {
+      "task": "vsfc_topic",
+      "model": "teacher",
+      "layer_index": 12,
+      "scope": "final_layer_only",
+      "before_selection_f1_1000": 0.6631781635785444,
+      "after_selection_f1_1000": 0.7904600754071993,
+      "delta_selection_f1_1000": 0.1272819118286549,
+      "before_selection_f1_1000_points": 66.31781635785444,
+      "after_selection_f1_1000_points": 79.04600754071993,
+      "delta_selection_f1_1000_points": 12.728191182865489,
+      "before_fit": {
+        "train_ce": 0.1947993040084839,
+        "validation_ce": 0.5377575755119324,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.19684667885303497,
+          "final_step_train_ce": 0.19489571452140808,
+          "post_update_train_ce": 0.1947993040084839,
+          "last20_mean_train_ce": 0.19581880569458007,
+          "last20_step_improvement": 0.0018524080514907837,
+          "last20_relative_improvement": 0.009415124410167786,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": false
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 768,
+          "mean_sha256": "03e578080bc1247f066217d4ff72babe447abff34260a27c85de8cc58c8b206b",
+          "std_sha256": "0bd36c28d7286c981402fd8a3953678a57e33ddbdd50e1e7bdfc9c24c96d2f32",
+          "train_mean_abs_mean": 0.15363484621047974,
+          "train_std_min": 0.010077747516334057,
+          "train_std_max": 0.07124443352222443,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 27.712812921102035
+        },
+        "elapsed_seconds": 1.6622507572174072,
+        "probe_parameter_count": 3076
+      },
+      "after_fit": {
+        "train_ce": 0.11116166412830353,
+        "validation_ce": 0.42147478461265564,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.11241362988948822,
+          "final_step_train_ce": 0.11122065782546997,
+          "post_update_train_ce": 0.11116166412830353,
+          "last20_mean_train_ce": 0.11178518868982792,
+          "last20_step_improvement": 0.0011327117681503296,
+          "last20_relative_improvement": 0.010081689336486512,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 768,
+          "mean_sha256": "8f71d6531a3baa952c0c6f0979363046632c866dc4802e541f4c442f8e870f42",
+          "std_sha256": "f2438b2f9582c4275b6272147762a01b250e5ae40585c8adad4e8c68e1c5908f",
+          "train_mean_abs_mean": 0.22274048626422882,
+          "train_std_min": 0.09879510849714279,
+          "train_std_max": 0.7026606798171997,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 27.712812921102035
+        },
+        "elapsed_seconds": 2.086251974105835,
+        "probe_parameter_count": 3076
+      },
+      "after_metrics": {
+        "n": 1583,
+        "labels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "accuracy": 0.8843967150979154,
+        "macro_precision": 0.8024243519628653,
+        "macro_recall": 0.7815510280694953,
+        "macro_f1": 0.7904600754071993,
+        "per_class": {
+          "0": {
+            "support": 1151,
+            "predicted": 1153,
+            "tp": 1079,
+            "fp": 74,
+            "fn": 72,
+            "precision": 0.9358196010407632,
+            "recall": 0.9374456993918332,
+            "f1": 0.9366319444444444
+          },
+          "1": {
+            "support": 267,
+            "predicted": 284,
+            "tp": 211,
+            "fp": 73,
+            "fn": 56,
+            "precision": 0.7429577464788732,
+            "recall": 0.7902621722846442,
+            "f1": 0.7658802177858439
+          },
+          "2": {
+            "support": 70,
+            "predicted": 68,
+            "tp": 64,
+            "fp": 4,
+            "fn": 6,
+            "precision": 0.9411764705882353,
+            "recall": 0.9142857142857143,
+            "f1": 0.927536231884058
+          },
+          "3": {
+            "support": 95,
+            "predicted": 78,
+            "tp": 46,
+            "fp": 32,
+            "fn": 49,
+            "precision": 0.5897435897435898,
+            "recall": 0.4842105263157895,
+            "f1": 0.5317919075144508
+          }
+        },
+        "task_id": "vsfc_topic",
+        "split": "validation",
+        "selection_f1": 0.7904600754071993,
+        "selection_metric": "fixed_label_macro_f1"
+      },
+      "after_cache_hashes": {
+        "train_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/vsfc_topic/teacher/train_cls.npy",
+        "validation_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/vsfc_topic/teacher/validation_cls.npy",
+        "train_sha256": "a29520930a6bec5643fb152ae2b3869b9d2ba6ad9619ac76952652d192c4559e",
+        "validation_sha256": "e815575b730bc5ec3f663f8abb1ea4f976d42ec53a17324458a2a9a508124485",
+        "train_shape": [
+          13,
+          2000,
+          768
+        ],
+        "validation_shape": [
+          13,
+          1583,
+          768
+        ]
+      }
+    },
+    {
+      "task": "visfd",
+      "model": "student",
+      "layer_index": 10,
+      "scope": "final_layer_only",
+      "before_selection_f1_1000": 0.6178656126482214,
+      "after_selection_f1_1000": 0.7856723429242514,
+      "delta_selection_f1_1000": 0.16780673027603,
+      "before_selection_f1_1000_points": 61.78656126482214,
+      "after_selection_f1_1000_points": 78.56723429242514,
+      "delta_selection_f1_1000_points": 16.780673027603,
+      "before_fit": {
+        "train_ce": 0.2685978412628174,
+        "validation_ce": 0.509352445602417,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.323280692100525,
+          "loss_at_step_980": 0.2702566981315613,
+          "final_step_train_ce": 0.26867595314979553,
+          "post_update_train_ce": 0.2685978412628174,
+          "last20_mean_train_ce": 0.2694238156080246,
+          "last20_step_improvement": 0.001500844955444336,
+          "last20_relative_improvement": 0.005555047531726701,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": false
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 384,
+          "mean_sha256": "31ebf1b1e2a52b2b0862d06e07f3981f03e7918e33986a60413fe785caaeb3ea",
+          "std_sha256": "95ad728252ab31b31325fdf7ac6b0fbaecf8113d49abc0a6b5d498c70ed5f399",
+          "train_mean_abs_mean": 0.29645657539367676,
+          "train_std_min": 0.021207300946116447,
+          "train_std_max": 0.0546533577144146,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 19.595917942265423
+        },
+        "elapsed_seconds": 3.506856679916382,
+        "probe_parameter_count": 16170
+      },
+      "after_fit": {
+        "train_ce": 0.013959278352558613,
+        "validation_ce": 0.5826541185379028,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.323280692100525,
+          "loss_at_step_980": 0.014296887442469597,
+          "final_step_train_ce": 0.013975049369037151,
+          "post_update_train_ce": 0.013959278352558613,
+          "last20_mean_train_ce": 0.014126896113157272,
+          "last20_step_improvement": 0.00030544865876436234,
+          "last20_relative_improvement": 0.021389216130257484,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 384,
+          "mean_sha256": "f48ad97d913084ba3c4dc64a01f5d75f7b15967b742c2257a2893f7a3b581aa9",
+          "std_sha256": "418b0ceb363b7a74bb3bb512ee648738270f05128f0f9665d8405db921c2b651",
+          "train_mean_abs_mean": 0.2859366834163666,
+          "train_std_min": 0.5735117197036743,
+          "train_std_max": 1.2093032598495483,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 19.595917942265423
+        },
+        "elapsed_seconds": 5.523669958114624,
+        "probe_parameter_count": 16170
+      },
+      "after_metrics": {
+        "n": 1112,
+        "aspect_count": 11,
+        "aspect_names": [
+          "BATTERY",
+          "CAMERA",
+          "DESIGN",
+          "FEATURES",
+          "GENERAL",
+          "OTHERS",
+          "PERFORMANCE",
+          "PRICE",
+          "SCREEN",
+          "SER&ACC",
+          "STORAGE"
+        ],
+        "pair_scored_aspects": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+        "detection_micro_precision": 0.8416445623342175,
+        "detection_micro_recall": 0.8895430333613681,
+        "detection_micro_f1": 0.8649311707782472,
+        "detection_macro_precision": 0.7925163327910998,
+        "detection_macro_recall": 0.8493483865683354,
+        "detection_macro_f1": 0.8192536106038063,
+        "pair_micro_precision": 0.7654462242562929,
+        "pair_micro_recall": 0.8069963811821471,
+        "pair_micro_f1": 0.7856723429242514,
+        "pair_macro_precision": 0.7179828774863481,
+        "pair_macro_recall": 0.7674760022196981,
+        "pair_macro_f1": 0.7412531841888325,
+        "classification_pair_micro_f1": 0.7856723429242514,
+        "classification_pair_macro_f1": 0.7412531841888325,
+        "per_aspect": {
+          "BATTERY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.9633204633204633,
+              "recall": 0.9900793650793651,
+              "f1": 0.9765166340508806
+            },
+            "pair": {
+              "precision": 0.8262548262548263,
+              "recall": 0.8492063492063492,
+              "f1": 0.837573385518591
+            },
+            "detection_tp": 499,
+            "gold_present": 504,
+            "predicted_present": 518
+          },
+          "CAMERA": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8990825688073395,
+              "recall": 0.9932432432432432,
+              "f1": 0.9438202247191011
+            },
+            "pair": {
+              "precision": 0.7492354740061162,
+              "recall": 0.8277027027027027,
+              "f1": 0.7865168539325843
+            },
+            "detection_tp": 294,
+            "gold_present": 296,
+            "predicted_present": 327
+          },
+          "DESIGN": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8241206030150754,
+              "recall": 0.8770053475935828,
+              "f1": 0.8497409326424871
+            },
+            "pair": {
+              "precision": 0.7437185929648241,
+              "recall": 0.7914438502673797,
+              "f1": 0.7668393782383419
+            },
+            "detection_tp": 164,
+            "gold_present": 187,
+            "predicted_present": 199
+          },
+          "FEATURES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.837378640776699,
+              "recall": 0.905511811023622,
+              "f1": 0.8701134930643127
+            },
+            "pair": {
+              "precision": 0.7548543689320388,
+              "recall": 0.8162729658792651,
+              "f1": 0.7843631778058008
+            },
+            "detection_tp": 345,
+            "gold_present": 381,
+            "predicted_present": 412
+          },
+          "GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8842857142857142,
+              "recall": 0.8984034833091437,
+              "f1": 0.8912886969042476
+            },
+            "pair": {
+              "precision": 0.8414285714285714,
+              "recall": 0.8548621190130624,
+              "f1": 0.8480921526277898
+            },
+            "detection_tp": 619,
+            "gold_present": 689,
+            "predicted_present": 700
+          },
+          "OTHERS": {
+            "pair_scored": false,
+            "detection": {
+              "precision": 0.4927007299270073,
+              "recall": 0.5378486055776892,
+              "f1": 0.5142857142857142
+            },
+            "pair": null,
+            "detection_tp": 135,
+            "gold_present": 251,
+            "predicted_present": 274
+          },
+          "PERFORMANCE": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8828522920203735,
+              "recall": 0.8934707903780069,
+              "f1": 0.888129803586678
+            },
+            "pair": {
+              "precision": 0.765704584040747,
+              "recall": 0.7749140893470791,
+              "f1": 0.7702818104184458
+            },
+            "detection_tp": 520,
+            "gold_present": 582,
+            "predicted_present": 589
+          },
+          "PRICE": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8527397260273972,
+              "recall": 0.9880952380952381,
+              "f1": 0.9154411764705882
+            },
+            "pair": {
+              "precision": 0.6815068493150684,
+              "recall": 0.7896825396825397,
+              "f1": 0.7316176470588235
+            },
+            "detection_tp": 249,
+            "gold_present": 252,
+            "predicted_present": 292
+          },
+          "SCREEN": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7278911564625851,
+              "recall": 0.8842975206611571,
+              "f1": 0.7985074626865671
+            },
+            "pair": {
+              "precision": 0.6258503401360545,
+              "recall": 0.7603305785123967,
+              "f1": 0.6865671641791045
+            },
+            "detection_tp": 107,
+            "gold_present": 121,
+            "predicted_present": 147
+          },
+          "SER&ACC": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7818791946308725,
+              "recall": 0.803448275862069,
+              "f1": 0.7925170068027211
+            },
+            "pair": {
+              "precision": 0.6912751677852349,
+              "recall": 0.7103448275862069,
+              "f1": 0.7006802721088435
+            },
+            "detection_tp": 233,
+            "gold_present": 290,
+            "predicted_present": 298
+          },
+          "STORAGE": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5714285714285714,
+              "recall": 0.5714285714285714,
+              "f1": 0.5714285714285714
+            },
+            "pair": {
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5
+            },
+            "detection_tp": 8,
+            "gold_present": 14,
+            "predicted_present": 14
+          }
+        },
+        "task_id": "visfd",
+        "split": "validation",
+        "selection_f1": 0.7856723429242514,
+        "selection_metric": "end_to_end_pair_micro_f1"
+      },
+      "after_cache_hashes": {
+        "train_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/visfd/student/train_cls.npy",
+        "validation_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/visfd/student/validation_cls.npy",
+        "train_sha256": "6fe4b5c700595c0cea933776936f96ceb5ec4c8094715ee3621d08b9052d7974",
+        "validation_sha256": "ef90138b08a881fa3d245171d95d60bd728a79961a9ed993c3bfdc81791ae1a2",
+        "train_shape": [
+          11,
+          2000,
+          384
+        ],
+        "validation_shape": [
+          11,
+          1112,
+          384
+        ]
+      }
+    },
+    {
+      "task": "visfd",
+      "model": "teacher",
+      "layer_index": 12,
+      "scope": "final_layer_only",
+      "before_selection_f1_1000": 0.603931279987618,
+      "after_selection_f1_1000": 0.8275360209576481,
+      "delta_selection_f1_1000": 0.22360474097003014,
+      "before_selection_f1_1000_points": 60.3931279987618,
+      "after_selection_f1_1000_points": 82.7536020957648,
+      "delta_selection_f1_1000_points": 22.360474097003014,
+      "before_fit": {
+        "train_ce": 0.16642174124717712,
+        "validation_ce": 0.5977287292480469,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.323280692100525,
+          "loss_at_step_980": 0.16846002638339996,
+          "final_step_train_ce": 0.16651758551597595,
+          "post_update_train_ce": 0.16642174124717712,
+          "last20_mean_train_ce": 0.1674361854791641,
+          "last20_step_improvement": 0.001844152808189392,
+          "last20_relative_improvement": 0.010953514893262994,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 768,
+          "mean_sha256": "63c17a530e9fd13e0504381f8a585e8229e6e343d0ca300f9997451f8dafb5ff",
+          "std_sha256": "3181a838c0e3d6483149b064e0c11bb60250e7819d91c40203c7b38df53144bb",
+          "train_mean_abs_mean": 0.15702198445796967,
+          "train_std_min": 0.01787467673420906,
+          "train_std_max": 0.13043782114982605,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 27.712812921102035
+        },
+        "elapsed_seconds": 5.183032512664795,
+        "probe_parameter_count": 32298
+      },
+      "after_fit": {
+        "train_ce": 0.004605025053024292,
+        "validation_ce": 0.6660059094429016,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.323280692100525,
+          "loss_at_step_980": 0.004742213524878025,
+          "final_step_train_ce": 0.0046114008873701096,
+          "post_update_train_ce": 0.004605025053024292,
+          "last20_mean_train_ce": 0.004673009761609137,
+          "last20_step_improvement": 0.00012411829084157944,
+          "last20_relative_improvement": 0.026210070357787295,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 768,
+          "mean_sha256": "8bd150319d7c6a75ca5a2ae740ac749560adb4f200a56c04de26434ff1077559",
+          "std_sha256": "101d8a3f0a54417d89a567de5ab648774cb1649406b042391e6cf2c6807f41c6",
+          "train_mean_abs_mean": 0.14898531138896942,
+          "train_std_min": 0.16867125034332275,
+          "train_std_max": 0.8544219732284546,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 27.712812921102035
+        },
+        "elapsed_seconds": 5.231751441955566,
+        "probe_parameter_count": 32298
+      },
+      "after_metrics": {
+        "n": 1112,
+        "aspect_count": 11,
+        "aspect_names": [
+          "BATTERY",
+          "CAMERA",
+          "DESIGN",
+          "FEATURES",
+          "GENERAL",
+          "OTHERS",
+          "PERFORMANCE",
+          "PRICE",
+          "SCREEN",
+          "SER&ACC",
+          "STORAGE"
+        ],
+        "pair_scored_aspects": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+        "detection_micro_precision": 0.8464698331193838,
+        "detection_micro_recall": 0.9243061396131202,
+        "detection_micro_f1": 0.8836772983114447,
+        "detection_macro_precision": 0.8080903347889258,
+        "detection_macro_recall": 0.9166397209147928,
+        "detection_macro_f1": 0.8567086743831173,
+        "pair_micro_precision": 0.79971870604782,
+        "pair_micro_recall": 0.8573582629674307,
+        "pair_micro_f1": 0.8275360209576481,
+        "pair_macro_precision": 0.7583220044426071,
+        "pair_macro_recall": 0.8505995404184825,
+        "pair_macro_f1": 0.7999641073010801,
+        "classification_pair_micro_f1": 0.8275360209576481,
+        "classification_pair_macro_f1": 0.7999641073010801,
+        "per_aspect": {
+          "BATTERY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.9616858237547893,
+              "recall": 0.996031746031746,
+              "f1": 0.9785575048732943
+            },
+            "pair": {
+              "precision": 0.8793103448275862,
+              "recall": 0.9107142857142857,
+              "f1": 0.8947368421052632
+            },
+            "detection_tp": 502,
+            "gold_present": 504,
+            "predicted_present": 522
+          },
+          "CAMERA": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.9213836477987422,
+              "recall": 0.9898648648648649,
+              "f1": 0.9543973941368078
+            },
+            "pair": {
+              "precision": 0.8081761006289309,
+              "recall": 0.8682432432432432,
+              "f1": 0.8371335504885994
+            },
+            "detection_tp": 293,
+            "gold_present": 296,
+            "predicted_present": 318
+          },
+          "DESIGN": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8018433179723502,
+              "recall": 0.93048128342246,
+              "f1": 0.8613861386138614
+            },
+            "pair": {
+              "precision": 0.7235023041474654,
+              "recall": 0.839572192513369,
+              "f1": 0.7772277227722773
+            },
+            "detection_tp": 174,
+            "gold_present": 187,
+            "predicted_present": 217
+          },
+          "FEATURES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8740740740740741,
+              "recall": 0.9291338582677166,
+              "f1": 0.9007633587786259
+            },
+            "pair": {
+              "precision": 0.7851851851851852,
+              "recall": 0.8346456692913385,
+              "f1": 0.8091603053435115
+            },
+            "detection_tp": 354,
+            "gold_present": 381,
+            "predicted_present": 405
+          },
+          "GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.9011461318051576,
+              "recall": 0.9129172714078374,
+              "f1": 0.9069935111751982
+            },
+            "pair": {
+              "precision": 0.8638968481375359,
+              "recall": 0.8751814223512336,
+              "f1": 0.8695025234318673
+            },
+            "detection_tp": 629,
+            "gold_present": 689,
+            "predicted_present": 698
+          },
+          "OTHERS": {
+            "pair_scored": false,
+            "detection": {
+              "precision": 0.47058823529411764,
+              "recall": 0.6374501992031872,
+              "f1": 0.5414551607445008
+            },
+            "pair": null,
+            "detection_tp": 160,
+            "gold_present": 251,
+            "predicted_present": 340
+          },
+          "PERFORMANCE": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8937908496732027,
+              "recall": 0.9398625429553265,
+              "f1": 0.916247906197655
+            },
+            "pair": {
+              "precision": 0.795751633986928,
+              "recall": 0.8367697594501718,
+              "f1": 0.8157453936348409
+            },
+            "detection_tp": 547,
+            "gold_present": 582,
+            "predicted_present": 612
+          },
+          "PRICE": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8581314878892734,
+              "recall": 0.9841269841269841,
+              "f1": 0.9168207024029574
+            },
+            "pair": {
+              "precision": 0.7024221453287197,
+              "recall": 0.8055555555555556,
+              "f1": 0.7504621072088724
+            },
+            "detection_tp": 248,
+            "gold_present": 252,
+            "predicted_present": 289
+          },
+          "SCREEN": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7302631578947368,
+              "recall": 0.9173553719008265,
+              "f1": 0.8131868131868132
+            },
+            "pair": {
+              "precision": 0.6578947368421053,
+              "recall": 0.8264462809917356,
+              "f1": 0.7326007326007326
+            },
+            "detection_tp": 111,
+            "gold_present": 121,
+            "predicted_present": 152
+          },
+          "SER&ACC": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8260869565217391,
+              "recall": 0.9172413793103448,
+              "f1": 0.869281045751634
+            },
+            "pair": {
+              "precision": 0.7670807453416149,
+              "recall": 0.8517241379310345,
+              "f1": 0.8071895424836601
+            },
+            "detection_tp": 266,
+            "gold_present": 290,
+            "predicted_present": 322
+          },
+          "STORAGE": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.65,
+              "recall": 0.9285714285714286,
+              "f1": 0.7647058823529411
+            },
+            "pair": {
+              "precision": 0.6,
+              "recall": 0.8571428571428571,
+              "f1": 0.7058823529411765
+            },
+            "detection_tp": 13,
+            "gold_present": 14,
+            "predicted_present": 20
+          }
+        },
+        "task_id": "visfd",
+        "split": "validation",
+        "selection_f1": 0.8275360209576481,
+        "selection_metric": "end_to_end_pair_micro_f1"
+      },
+      "after_cache_hashes": {
+        "train_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/visfd/teacher/train_cls.npy",
+        "validation_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/visfd/teacher/validation_cls.npy",
+        "train_sha256": "7997611bb8e6ad674232b9a341e3d2f30e638e8ebb0190aebe2c97df4be8971a",
+        "validation_sha256": "dd29ce3e3f7894b53c716c36c8f7349d03b698c6e924cd128829978db8c991b0",
+        "train_shape": [
+          13,
+          2000,
+          768
+        ],
+        "validation_shape": [
+          13,
+          1112,
+          768
+        ]
+      }
+    },
+    {
+      "task": "absa_restaurant",
+      "model": "student",
+      "layer_index": 10,
+      "scope": "final_layer_only",
+      "before_selection_f1_1000": 0.49684873949579833,
+      "after_selection_f1_1000": 0.66553911205074,
+      "delta_selection_f1_1000": 0.16869037255494168,
+      "before_selection_f1_1000_points": 49.68487394957983,
+      "after_selection_f1_1000_points": 66.553911205074,
+      "delta_selection_f1_1000_points": 16.869037255494167,
+      "before_fit": {
+        "train_ce": 0.09264494478702545,
+        "validation_ce": 0.26915043592453003,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.09394406527280807,
+          "final_step_train_ce": 0.0927058756351471,
+          "post_update_train_ce": 0.09264494478702545,
+          "last20_mean_train_ce": 0.09329089522361755,
+          "last20_step_improvement": 0.0011753961443901062,
+          "last20_relative_improvement": 0.012520027925807253,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 384,
+          "mean_sha256": "f9f17a773dffb5656e0c2056f1085548c1b6f32ca8ee22a208eada75487f8bb7",
+          "std_sha256": "58a347062aad83ee10ced2990829c2b985c40fef3a426d4ab4b2027a1609bc4b",
+          "train_mean_abs_mean": 0.29410696029663086,
+          "train_std_min": 0.021179191768169403,
+          "train_std_max": 0.05865335091948509,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 19.595917942265423
+        },
+        "elapsed_seconds": 4.186291933059692,
+        "probe_parameter_count": 18480
+      },
+      "after_fit": {
+        "train_ce": 0.00929083302617073,
+        "validation_ce": 0.4845578074455261,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.009578542783856392,
+          "final_step_train_ce": 0.009304205887019634,
+          "post_update_train_ce": 0.00929083302617073,
+          "last20_mean_train_ce": 0.009433413483202457,
+          "last20_step_improvement": 0.000260302796959877,
+          "last20_relative_improvement": 0.027215490681281148,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 384,
+          "mean_sha256": "a9f7421a3d53028ebe699744b2b72aff7d8dc0c1780efe442ab87f1d9203cb49",
+          "std_sha256": "7559c012c3e635adf5ef6a4728082ac2172f9923ca572b4d53fd86ed4b2a6ff7",
+          "train_mean_abs_mean": 0.3448966443538666,
+          "train_std_min": 0.5003768801689148,
+          "train_std_max": 1.3366796970367432,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 19.595917942265423
+        },
+        "elapsed_seconds": 7.231044054031372,
+        "probe_parameter_count": 18480
+      },
+      "after_metrics": {
+        "n": 771,
+        "aspect_count": 12,
+        "aspect_names": [
+          "AMBIENCE#GENERAL",
+          "DRINKS#PRICES",
+          "DRINKS#QUALITY",
+          "DRINKS#STYLE&OPTIONS",
+          "FOOD#PRICES",
+          "FOOD#QUALITY",
+          "FOOD#STYLE&OPTIONS",
+          "LOCATION#GENERAL",
+          "RESTAURANT#GENERAL",
+          "RESTAURANT#MISCELLANEOUS",
+          "RESTAURANT#PRICES",
+          "SERVICE#GENERAL"
+        ],
+        "pair_scored_aspects": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+        "detection_micro_precision": 0.7286585365853658,
+        "detection_micro_recall": 0.9078822412155746,
+        "detection_micro_f1": 0.8084566596194503,
+        "detection_macro_precision": 0.7038137589699408,
+        "detection_macro_recall": 0.9014427881909451,
+        "detection_macro_f1": 0.7880749156761429,
+        "pair_micro_precision": 0.5998475609756098,
+        "pair_micro_recall": 0.7473884140550807,
+        "pair_micro_f1": 0.66553911205074,
+        "pair_macro_precision": 0.5797570978772087,
+        "pair_macro_recall": 0.7425695416619895,
+        "pair_macro_f1": 0.6491351057052654,
+        "classification_pair_micro_f1": 0.66553911205074,
+        "classification_pair_macro_f1": 0.6491351057052654,
+        "per_aspect": {
+          "AMBIENCE#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8712871287128713,
+              "recall": 0.967032967032967,
+              "f1": 0.9166666666666666
+            },
+            "pair": {
+              "precision": 0.7128712871287128,
+              "recall": 0.7912087912087912,
+              "f1": 0.75
+            },
+            "detection_tp": 88,
+            "gold_present": 91,
+            "predicted_present": 101
+          },
+          "DRINKS#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6538461538461539,
+              "recall": 0.8947368421052632,
+              "f1": 0.7555555555555555
+            },
+            "pair": {
+              "precision": 0.5384615384615384,
+              "recall": 0.7368421052631579,
+              "f1": 0.6222222222222222
+            },
+            "detection_tp": 17,
+            "gold_present": 19,
+            "predicted_present": 26
+          },
+          "DRINKS#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7,
+              "recall": 0.9506172839506173,
+              "f1": 0.806282722513089
+            },
+            "pair": {
+              "precision": 0.6,
+              "recall": 0.8148148148148148,
+              "f1": 0.6910994764397905
+            },
+            "detection_tp": 77,
+            "gold_present": 81,
+            "predicted_present": 110
+          },
+          "DRINKS#STYLE&OPTIONS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.525,
+              "recall": 0.8076923076923077,
+              "f1": 0.6363636363636364
+            },
+            "pair": {
+              "precision": 0.475,
+              "recall": 0.7307692307692307,
+              "f1": 0.5757575757575758
+            },
+            "detection_tp": 42,
+            "gold_present": 52,
+            "predicted_present": 80
+          },
+          "FOOD#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7142857142857143,
+              "recall": 0.8888888888888888,
+              "f1": 0.7920792079207921
+            },
+            "pair": {
+              "precision": 0.6071428571428571,
+              "recall": 0.7555555555555555,
+              "f1": 0.6732673267326733
+            },
+            "detection_tp": 40,
+            "gold_present": 45,
+            "predicted_present": 56
+          },
+          "FOOD#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8380566801619433,
+              "recall": 0.9324324324324325,
+              "f1": 0.8827292110874201
+            },
+            "pair": {
+              "precision": 0.7206477732793523,
+              "recall": 0.8018018018018018,
+              "f1": 0.7590618336886994
+            },
+            "detection_tp": 207,
+            "gold_present": 222,
+            "predicted_present": 247
+          },
+          "FOOD#STYLE&OPTIONS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7428571428571429,
+              "recall": 0.8914285714285715,
+              "f1": 0.8103896103896104
+            },
+            "pair": {
+              "precision": 0.5666666666666667,
+              "recall": 0.68,
+              "f1": 0.6181818181818182
+            },
+            "detection_tp": 156,
+            "gold_present": 175,
+            "predicted_present": 210
+          },
+          "LOCATION#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7454545454545455,
+              "recall": 0.9761904761904762,
+              "f1": 0.845360824742268
+            },
+            "pair": {
+              "precision": 0.6181818181818182,
+              "recall": 0.8095238095238095,
+              "f1": 0.7010309278350515
+            },
+            "detection_tp": 41,
+            "gold_present": 42,
+            "predicted_present": 55
+          },
+          "RESTAURANT#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5833333333333334,
+              "recall": 0.84,
+              "f1": 0.6885245901639344
+            },
+            "pair": {
+              "precision": 0.4583333333333333,
+              "recall": 0.66,
+              "f1": 0.5409836065573771
+            },
+            "detection_tp": 84,
+            "gold_present": 100,
+            "predicted_present": 144
+          },
+          "RESTAURANT#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5813953488372093,
+              "recall": 0.8620689655172413,
+              "f1": 0.6944444444444444
+            },
+            "pair": {
+              "precision": 0.47674418604651164,
+              "recall": 0.7068965517241379,
+              "f1": 0.5694444444444444
+            },
+            "detection_tp": 50,
+            "gold_present": 58,
+            "predicted_present": 86
+          },
+          "RESTAURANT#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.640625,
+              "recall": 0.8723404255319149,
+              "f1": 0.7387387387387387
+            },
+            "pair": {
+              "precision": 0.46875,
+              "recall": 0.6382978723404256,
+              "f1": 0.5405405405405406
+            },
+            "detection_tp": 41,
+            "gold_present": 47,
+            "predicted_present": 64
+          },
+          "SERVICE#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.849624060150376,
+              "recall": 0.9338842975206612,
+              "f1": 0.889763779527559
+            },
+            "pair": {
+              "precision": 0.7142857142857143,
+              "recall": 0.7851239669421488,
+              "f1": 0.7480314960629921
+            },
+            "detection_tp": 113,
+            "gold_present": 121,
+            "predicted_present": 133
+          }
+        },
+        "task_id": "absa_restaurant",
+        "split": "validation",
+        "selection_f1": 0.66553911205074,
+        "selection_metric": "end_to_end_pair_micro_f1"
+      },
+      "after_cache_hashes": {
+        "train_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/absa_restaurant/student/train_cls.npy",
+        "validation_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/absa_restaurant/student/validation_cls.npy",
+        "train_sha256": "e83bfb7dbad275955525823568ca23fcd08fd1609778d93ad6d047328b06fa9e",
+        "validation_sha256": "06247c5096628ac24d2847924434d32a6764562d9de63648fc4729bfad49d306",
+        "train_shape": [
+          11,
+          2000,
+          384
+        ],
+        "validation_shape": [
+          11,
+          771,
+          384
+        ]
+      }
+    },
+    {
+      "task": "absa_restaurant",
+      "model": "teacher",
+      "layer_index": 12,
+      "scope": "final_layer_only",
+      "before_selection_f1_1000": 0.49435897435897436,
+      "after_selection_f1_1000": 0.7175043327556326,
+      "delta_selection_f1_1000": 0.22314535839665828,
+      "before_selection_f1_1000_points": 49.43589743589744,
+      "after_selection_f1_1000_points": 71.75043327556327,
+      "delta_selection_f1_1000_points": 22.31453583966583,
+      "before_fit": {
+        "train_ce": 0.06627295166254044,
+        "validation_ce": 0.31233325600624084,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.06757219135761261,
+          "final_step_train_ce": 0.06633378565311432,
+          "post_update_train_ce": 0.06627295166254044,
+          "last20_mean_train_ce": 0.06691856272518634,
+          "last20_step_improvement": 0.0011754930019378662,
+          "last20_relative_improvement": 0.017412317615541517,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 768,
+          "mean_sha256": "6bd2463be15eb99cd3ebd3949c25d63c2663802e20456f388bdd0de092f72903",
+          "std_sha256": "9b4f35208753fcb3a28df4a6d7713e49fd4ab4e9077af26f75895502222a3cdc",
+          "train_mean_abs_mean": 0.14890623092651367,
+          "train_std_min": 0.01241952832788229,
+          "train_std_max": 0.11518041044473648,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 27.712812921102035
+        },
+        "elapsed_seconds": 6.422950029373169,
+        "probe_parameter_count": 36912
+      },
+      "after_fit": {
+        "train_ce": 0.006868415977805853,
+        "validation_ce": 0.5534937381744385,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.007081623189151287,
+          "final_step_train_ce": 0.006878321059048176,
+          "post_update_train_ce": 0.006868415977805853,
+          "last20_mean_train_ce": 0.006974054407328368,
+          "last20_step_improvement": 0.0001928946003317833,
+          "last20_relative_improvement": 0.02727884562195594,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 768,
+          "mean_sha256": "88d55c6e1bf4fa35d0853b1c4c1a2aaf3fb770d2d2a67ba412027a880f8fb8d3",
+          "std_sha256": "3255f7109e8c224b09e10b0118adb9a6ecf37c1f1cc8ccdf2fb1f081f1774138",
+          "train_mean_abs_mean": 0.1629437655210495,
+          "train_std_min": 0.17652186751365662,
+          "train_std_max": 1.075026512145996,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 27.712812921102035
+        },
+        "elapsed_seconds": 6.722703218460083,
+        "probe_parameter_count": 36912
+      },
+      "after_metrics": {
+        "n": 771,
+        "aspect_count": 12,
+        "aspect_names": [
+          "AMBIENCE#GENERAL",
+          "DRINKS#PRICES",
+          "DRINKS#QUALITY",
+          "DRINKS#STYLE&OPTIONS",
+          "FOOD#PRICES",
+          "FOOD#QUALITY",
+          "FOOD#STYLE&OPTIONS",
+          "LOCATION#GENERAL",
+          "RESTAURANT#GENERAL",
+          "RESTAURANT#MISCELLANEOUS",
+          "RESTAURANT#PRICES",
+          "SERVICE#GENERAL"
+        ],
+        "pair_scored_aspects": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+        "detection_micro_precision": 0.7768924302788844,
+        "detection_micro_recall": 0.9259259259259259,
+        "detection_micro_f1": 0.8448873483535528,
+        "detection_macro_precision": 0.7478010449583948,
+        "detection_macro_recall": 0.9245447522309025,
+        "detection_macro_f1": 0.8242528135805713,
+        "pair_micro_precision": 0.6597609561752988,
+        "pair_micro_recall": 0.7863247863247863,
+        "pair_micro_f1": 0.7175043327556326,
+        "pair_macro_precision": 0.6362003230053929,
+        "pair_macro_recall": 0.7852597639810903,
+        "pair_macro_f1": 0.7006932969433691,
+        "classification_pair_micro_f1": 0.7175043327556326,
+        "classification_pair_macro_f1": 0.7006932969433691,
+        "per_aspect": {
+          "AMBIENCE#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.875,
+              "recall": 0.9230769230769231,
+              "f1": 0.8983957219251337
+            },
+            "pair": {
+              "precision": 0.7916666666666666,
+              "recall": 0.8351648351648352,
+              "f1": 0.8128342245989305
+            },
+            "detection_tp": 84,
+            "gold_present": 91,
+            "predicted_present": 96
+          },
+          "DRINKS#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6296296296296297,
+              "recall": 0.8947368421052632,
+              "f1": 0.7391304347826086
+            },
+            "pair": {
+              "precision": 0.5555555555555556,
+              "recall": 0.7894736842105263,
+              "f1": 0.6521739130434783
+            },
+            "detection_tp": 17,
+            "gold_present": 19,
+            "predicted_present": 27
+          },
+          "DRINKS#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7920792079207921,
+              "recall": 0.9876543209876543,
+              "f1": 0.8791208791208791
+            },
+            "pair": {
+              "precision": 0.6138613861386139,
+              "recall": 0.7654320987654321,
+              "f1": 0.6813186813186813
+            },
+            "detection_tp": 80,
+            "gold_present": 81,
+            "predicted_present": 101
+          },
+          "DRINKS#STYLE&OPTIONS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5822784810126582,
+              "recall": 0.8846153846153846,
+              "f1": 0.7022900763358778
+            },
+            "pair": {
+              "precision": 0.46835443037974683,
+              "recall": 0.7115384615384616,
+              "f1": 0.5648854961832062
+            },
+            "detection_tp": 46,
+            "gold_present": 52,
+            "predicted_present": 79
+          },
+          "FOOD#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7213114754098361,
+              "recall": 0.9777777777777777,
+              "f1": 0.8301886792452831
+            },
+            "pair": {
+              "precision": 0.6557377049180327,
+              "recall": 0.8888888888888888,
+              "f1": 0.7547169811320755
+            },
+            "detection_tp": 44,
+            "gold_present": 45,
+            "predicted_present": 61
+          },
+          "FOOD#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8688524590163934,
+              "recall": 0.954954954954955,
+              "f1": 0.9098712446351931
+            },
+            "pair": {
+              "precision": 0.7581967213114754,
+              "recall": 0.8333333333333334,
+              "f1": 0.7939914163090128
+            },
+            "detection_tp": 212,
+            "gold_present": 222,
+            "predicted_present": 244
+          },
+          "FOOD#STYLE&OPTIONS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7621359223300971,
+              "recall": 0.8971428571428571,
+              "f1": 0.8241469816272966
+            },
+            "pair": {
+              "precision": 0.6262135922330098,
+              "recall": 0.7371428571428571,
+              "f1": 0.6771653543307087
+            },
+            "detection_tp": 157,
+            "gold_present": 175,
+            "predicted_present": 206
+          },
+          "LOCATION#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7884615384615384,
+              "recall": 0.9761904761904762,
+              "f1": 0.8723404255319149
+            },
+            "pair": {
+              "precision": 0.6923076923076923,
+              "recall": 0.8571428571428571,
+              "f1": 0.7659574468085106
+            },
+            "detection_tp": 41,
+            "gold_present": 42,
+            "predicted_present": 52
+          },
+          "RESTAURANT#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6776859504132231,
+              "recall": 0.82,
+              "f1": 0.7420814479638009
+            },
+            "pair": {
+              "precision": 0.5619834710743802,
+              "recall": 0.68,
+              "f1": 0.6153846153846154
+            },
+            "detection_tp": 82,
+            "gold_present": 100,
+            "predicted_present": 121
+          },
+          "RESTAURANT#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.65,
+              "recall": 0.896551724137931,
+              "f1": 0.7536231884057971
+            },
+            "pair": {
+              "precision": 0.55,
+              "recall": 0.7586206896551724,
+              "f1": 0.6376811594202898
+            },
+            "detection_tp": 52,
+            "gold_present": 58,
+            "predicted_present": 80
+          },
+          "RESTAURANT#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7049180327868853,
+              "recall": 0.9148936170212766,
+              "f1": 0.7962962962962963
+            },
+            "pair": {
+              "precision": 0.5573770491803278,
+              "recall": 0.723404255319149,
+              "f1": 0.6296296296296297
+            },
+            "detection_tp": 43,
+            "gold_present": 47,
+            "predicted_present": 61
+          },
+          "SERVICE#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.9212598425196851,
+              "recall": 0.9669421487603306,
+              "f1": 0.9435483870967742
+            },
+            "pair": {
+              "precision": 0.8031496062992126,
+              "recall": 0.8429752066115702,
+              "f1": 0.8225806451612904
+            },
+            "detection_tp": 117,
+            "gold_present": 121,
+            "predicted_present": 127
+          }
+        },
+        "task_id": "absa_restaurant",
+        "split": "validation",
+        "selection_f1": 0.7175043327556326,
+        "selection_metric": "end_to_end_pair_micro_f1"
+      },
+      "after_cache_hashes": {
+        "train_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/absa_restaurant/teacher/train_cls.npy",
+        "validation_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/absa_restaurant/teacher/validation_cls.npy",
+        "train_sha256": "4526340125f756fa309b8bfa829d4ea917689ee000ca169cceb38e5e0b8f74b6",
+        "validation_sha256": "2306678072be4ec998fa76d780ce78d2a64cdaae0ed703bd970c2e1f4ac02fff",
+        "train_shape": [
+          13,
+          2000,
+          768
+        ],
+        "validation_shape": [
+          13,
+          771,
+          768
+        ]
+      }
+    },
+    {
+      "task": "absa_hotel",
+      "model": "student",
+      "layer_index": 10,
+      "scope": "final_layer_only",
+      "before_selection_f1_1000": 0.6174027109750765,
+      "after_selection_f1_1000": 0.6938923021322733,
+      "delta_selection_f1_1000": 0.07648959115719678,
+      "before_selection_f1_1000_points": 61.74027109750765,
+      "after_selection_f1_1000_points": 69.38923021322732,
+      "delta_selection_f1_1000_points": 7.648959115719678,
+      "before_fit": {
+        "train_ce": 0.04404747113585472,
+        "validation_ce": 0.11068840324878693,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.044847577810287476,
+          "final_step_train_ce": 0.044084835797548294,
+          "post_update_train_ce": 0.04404747113585472,
+          "last20_mean_train_ce": 0.04444467835128307,
+          "last20_step_improvement": 0.0007238946855068207,
+          "last20_relative_improvement": 0.016155215238257397,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 384,
+          "mean_sha256": "021bb43c04f34d3b80c5c97ed6f076a7938a20357e9564db835e6fa8c6dfed63",
+          "std_sha256": "3f78fef1ac648251805c3b73b79c48a6238e0a837c4ac3064be4302cb5639ed0",
+          "train_mean_abs_mean": 0.29445335268974304,
+          "train_std_min": 0.018624205142259598,
+          "train_std_max": 0.04997485876083374,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 19.595917942265423
+        },
+        "elapsed_seconds": 12.03479290008545,
+        "probe_parameter_count": 52360
+      },
+      "after_fit": {
+        "train_ce": 0.014241831377148628,
+        "validation_ce": 0.16839560866355896,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.014683540910482407,
+          "final_step_train_ce": 0.014262347482144833,
+          "post_update_train_ce": 0.014241831377148628,
+          "last20_mean_train_ce": 0.014460669830441475,
+          "last20_step_improvement": 0.00039963051676750183,
+          "last20_relative_improvement": 0.02725624856326667,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 384,
+          "mean_sha256": "73c6abd82dd3a3613ef8dce16bbe17d6fe7208f09ae5817b3090b599517d98a0",
+          "std_sha256": "f2977f7b1fc3bd7d7292606cad8a7a455923c7597e23eeb753dd0c34f73dbef7",
+          "train_mean_abs_mean": 0.39723262190818787,
+          "train_std_min": 0.4753097593784332,
+          "train_std_max": 1.442152738571167,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 19.595917942265423
+        },
+        "elapsed_seconds": 14.331772565841675,
+        "probe_parameter_count": 52360
+      },
+      "after_metrics": {
+        "n": 795,
+        "aspect_count": 34,
+        "aspect_names": [
+          "FACILITIES#CLEANLINESS",
+          "FACILITIES#COMFORT",
+          "FACILITIES#DESIGN&FEATURES",
+          "FACILITIES#GENERAL",
+          "FACILITIES#MISCELLANEOUS",
+          "FACILITIES#PRICES",
+          "FACILITIES#QUALITY",
+          "FOOD&DRINKS#MISCELLANEOUS",
+          "FOOD&DRINKS#PRICES",
+          "FOOD&DRINKS#QUALITY",
+          "FOOD&DRINKS#STYLE&OPTIONS",
+          "HOTEL#CLEANLINESS",
+          "HOTEL#COMFORT",
+          "HOTEL#DESIGN&FEATURES",
+          "HOTEL#GENERAL",
+          "HOTEL#MISCELLANEOUS",
+          "HOTEL#PRICES",
+          "HOTEL#QUALITY",
+          "LOCATION#GENERAL",
+          "ROOMS#CLEANLINESS",
+          "ROOMS#COMFORT",
+          "ROOMS#DESIGN&FEATURES",
+          "ROOMS#GENERAL",
+          "ROOMS#MISCELLANEOUS",
+          "ROOMS#PRICES",
+          "ROOMS#QUALITY",
+          "ROOM_AMENITIES#CLEANLINESS",
+          "ROOM_AMENITIES#COMFORT",
+          "ROOM_AMENITIES#DESIGN&FEATURES",
+          "ROOM_AMENITIES#GENERAL",
+          "ROOM_AMENITIES#MISCELLANEOUS",
+          "ROOM_AMENITIES#PRICES",
+          "ROOM_AMENITIES#QUALITY",
+          "SERVICE#GENERAL"
+        ],
+        "pair_scored_aspects": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+        "detection_micro_precision": 0.7277091906721537,
+        "detection_micro_recall": 0.8105423987776929,
+        "detection_micro_f1": 0.7668955547524394,
+        "detection_macro_precision": 0.5084924319264839,
+        "detection_macro_recall": 0.564706402729236,
+        "detection_macro_f1": 0.5304347980932199,
+        "pair_micro_precision": 0.6584362139917695,
+        "pair_micro_recall": 0.7333842627960275,
+        "pair_micro_f1": 0.6938923021322733,
+        "pair_macro_precision": 0.4620477777124264,
+        "pair_macro_recall": 0.5108094486670769,
+        "pair_macro_f1": 0.4808773610476335,
+        "classification_pair_micro_f1": 0.6938923021322733,
+        "classification_pair_macro_f1": 0.4808773610476335,
+        "per_aspect": {
+          "FACILITIES#CLEANLINESS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.75,
+              "recall": 1.0,
+              "f1": 0.8571428571428571
+            },
+            "pair": {
+              "precision": 0.75,
+              "recall": 1.0,
+              "f1": 0.8571428571428571
+            },
+            "detection_tp": 6,
+            "gold_present": 6,
+            "predicted_present": 8
+          },
+          "FACILITIES#COMFORT": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "pair": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "detection_tp": 0,
+            "gold_present": 3,
+            "predicted_present": 0
+          },
+          "FACILITIES#DESIGN&FEATURES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.375,
+              "recall": 0.42857142857142855,
+              "f1": 0.4
+            },
+            "pair": {
+              "precision": 0.25,
+              "recall": 0.2857142857142857,
+              "f1": 0.26666666666666666
+            },
+            "detection_tp": 3,
+            "gold_present": 7,
+            "predicted_present": 8
+          },
+          "FACILITIES#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5882352941176471,
+              "recall": 0.5555555555555556,
+              "f1": 0.5714285714285714
+            },
+            "pair": {
+              "precision": 0.47058823529411764,
+              "recall": 0.4444444444444444,
+              "f1": 0.45714285714285713
+            },
+            "detection_tp": 10,
+            "gold_present": 18,
+            "predicted_present": 17
+          },
+          "FACILITIES#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.25,
+              "recall": 0.2,
+              "f1": 0.2222222222222222
+            },
+            "pair": {
+              "precision": 0.25,
+              "recall": 0.2,
+              "f1": 0.2222222222222222
+            },
+            "detection_tp": 1,
+            "gold_present": 5,
+            "predicted_present": 4
+          },
+          "FACILITIES#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "pair": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "detection_tp": 0,
+            "gold_present": 2,
+            "predicted_present": 1
+          },
+          "FACILITIES#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6,
+              "recall": 0.6666666666666666,
+              "f1": 0.631578947368421
+            },
+            "pair": {
+              "precision": 0.6,
+              "recall": 0.6666666666666666,
+              "f1": 0.631578947368421
+            },
+            "detection_tp": 6,
+            "gold_present": 9,
+            "predicted_present": 10
+          },
+          "FOOD&DRINKS#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "pair": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "detection_tp": 0,
+            "gold_present": 4,
+            "predicted_present": 2
+          },
+          "FOOD&DRINKS#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6666666666666666,
+              "recall": 0.6666666666666666,
+              "f1": 0.6666666666666666
+            },
+            "pair": {
+              "precision": 0.6666666666666666,
+              "recall": 0.6666666666666666,
+              "f1": 0.6666666666666666
+            },
+            "detection_tp": 2,
+            "gold_present": 3,
+            "predicted_present": 3
+          },
+          "FOOD&DRINKS#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7959183673469388,
+              "recall": 0.9512195121951219,
+              "f1": 0.8666666666666667
+            },
+            "pair": {
+              "precision": 0.7142857142857143,
+              "recall": 0.8536585365853658,
+              "f1": 0.7777777777777778
+            },
+            "detection_tp": 39,
+            "gold_present": 41,
+            "predicted_present": 49
+          },
+          "FOOD&DRINKS#STYLE&OPTIONS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7222222222222222,
+              "recall": 0.8666666666666667,
+              "f1": 0.7878787878787878
+            },
+            "pair": {
+              "precision": 0.6944444444444444,
+              "recall": 0.8333333333333334,
+              "f1": 0.7575757575757576
+            },
+            "detection_tp": 26,
+            "gold_present": 30,
+            "predicted_present": 36
+          },
+          "HOTEL#CLEANLINESS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5882352941176471,
+              "recall": 0.47619047619047616,
+              "f1": 0.5263157894736842
+            },
+            "pair": {
+              "precision": 0.5882352941176471,
+              "recall": 0.47619047619047616,
+              "f1": 0.5263157894736842
+            },
+            "detection_tp": 10,
+            "gold_present": 21,
+            "predicted_present": 17
+          },
+          "HOTEL#COMFORT": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7372881355932204,
+              "recall": 0.8529411764705882,
+              "f1": 0.7909090909090909
+            },
+            "pair": {
+              "precision": 0.7203389830508474,
+              "recall": 0.8333333333333334,
+              "f1": 0.7727272727272727
+            },
+            "detection_tp": 87,
+            "gold_present": 102,
+            "predicted_present": 118
+          },
+          "HOTEL#DESIGN&FEATURES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5853658536585366,
+              "recall": 0.75,
+              "f1": 0.6575342465753424
+            },
+            "pair": {
+              "precision": 0.5365853658536586,
+              "recall": 0.6875,
+              "f1": 0.6027397260273972
+            },
+            "detection_tp": 24,
+            "gold_present": 32,
+            "predicted_present": 41
+          },
+          "HOTEL#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.644927536231884,
+              "recall": 0.6592592592592592,
+              "f1": 0.652014652014652
+            },
+            "pair": {
+              "precision": 0.5217391304347826,
+              "recall": 0.5333333333333333,
+              "f1": 0.5274725274725275
+            },
+            "detection_tp": 89,
+            "gold_present": 135,
+            "predicted_present": 138
+          },
+          "HOTEL#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.4444444444444444,
+              "recall": 0.4,
+              "f1": 0.42105263157894735
+            },
+            "pair": {
+              "precision": 0.3333333333333333,
+              "recall": 0.3,
+              "f1": 0.3157894736842105
+            },
+            "detection_tp": 4,
+            "gold_present": 10,
+            "predicted_present": 9
+          },
+          "HOTEL#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8533333333333334,
+              "recall": 0.9142857142857143,
+              "f1": 0.8827586206896552
+            },
+            "pair": {
+              "precision": 0.8133333333333334,
+              "recall": 0.8714285714285714,
+              "f1": 0.8413793103448276
+            },
+            "detection_tp": 64,
+            "gold_present": 70,
+            "predicted_present": 75
+          },
+          "HOTEL#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6341463414634146,
+              "recall": 0.8125,
+              "f1": 0.7123287671232876
+            },
+            "pair": {
+              "precision": 0.3902439024390244,
+              "recall": 0.5,
+              "f1": 0.4383561643835616
+            },
+            "detection_tp": 26,
+            "gold_present": 32,
+            "predicted_present": 41
+          },
+          "LOCATION#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.9541284403669725,
+              "recall": 0.9811320754716981,
+              "f1": 0.9674418604651163
+            },
+            "pair": {
+              "precision": 0.9174311926605505,
+              "recall": 0.9433962264150944,
+              "f1": 0.9302325581395349
+            },
+            "detection_tp": 104,
+            "gold_present": 106,
+            "predicted_present": 109
+          },
+          "ROOMS#CLEANLINESS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8244274809160306,
+              "recall": 0.9230769230769231,
+              "f1": 0.8709677419354839
+            },
+            "pair": {
+              "precision": 0.7938931297709924,
+              "recall": 0.8888888888888888,
+              "f1": 0.8387096774193549
+            },
+            "detection_tp": 108,
+            "gold_present": 117,
+            "predicted_present": 131
+          },
+          "ROOMS#COMFORT": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.631578947368421,
+              "recall": 0.5581395348837209,
+              "f1": 0.5925925925925926
+            },
+            "pair": {
+              "precision": 0.5526315789473685,
+              "recall": 0.4883720930232558,
+              "f1": 0.5185185185185185
+            },
+            "detection_tp": 24,
+            "gold_present": 43,
+            "predicted_present": 38
+          },
+          "ROOMS#DESIGN&FEATURES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6216216216216216,
+              "recall": 0.8518518518518519,
+              "f1": 0.71875
+            },
+            "pair": {
+              "precision": 0.5540540540540541,
+              "recall": 0.7592592592592593,
+              "f1": 0.640625
+            },
+            "detection_tp": 46,
+            "gold_present": 54,
+            "predicted_present": 74
+          },
+          "ROOMS#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.47368421052631576,
+              "recall": 0.6666666666666666,
+              "f1": 0.5538461538461539
+            },
+            "pair": {
+              "precision": 0.3684210526315789,
+              "recall": 0.5185185185185185,
+              "f1": 0.4307692307692308
+            },
+            "detection_tp": 18,
+            "gold_present": 27,
+            "predicted_present": 38
+          },
+          "ROOMS#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "pair": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "detection_tp": 0,
+            "gold_present": 4,
+            "predicted_present": 1
+          },
+          "ROOMS#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.42857142857142855,
+              "recall": 0.42857142857142855,
+              "f1": 0.42857142857142855
+            },
+            "pair": {
+              "precision": 0.42857142857142855,
+              "recall": 0.42857142857142855,
+              "f1": 0.42857142857142855
+            },
+            "detection_tp": 3,
+            "gold_present": 7,
+            "predicted_present": 7
+          },
+          "ROOMS#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7391304347826086,
+              "recall": 0.7083333333333334,
+              "f1": 0.723404255319149
+            },
+            "pair": {
+              "precision": 0.6956521739130435,
+              "recall": 0.6666666666666666,
+              "f1": 0.6808510638297872
+            },
+            "detection_tp": 17,
+            "gold_present": 24,
+            "predicted_present": 23
+          },
+          "ROOM_AMENITIES#CLEANLINESS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.375,
+              "recall": 0.5,
+              "f1": 0.42857142857142855
+            },
+            "pair": {
+              "precision": 0.375,
+              "recall": 0.5,
+              "f1": 0.42857142857142855
+            },
+            "detection_tp": 3,
+            "gold_present": 6,
+            "predicted_present": 8
+          },
+          "ROOM_AMENITIES#COMFORT": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.3333333333333333,
+              "recall": 0.2,
+              "f1": 0.25
+            },
+            "pair": {
+              "precision": 0.3333333333333333,
+              "recall": 0.2,
+              "f1": 0.25
+            },
+            "detection_tp": 1,
+            "gold_present": 5,
+            "predicted_present": 3
+          },
+          "ROOM_AMENITIES#DESIGN&FEATURES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.2857142857142857,
+              "recall": 0.16666666666666666,
+              "f1": 0.21052631578947367
+            },
+            "pair": {
+              "precision": 0.2857142857142857,
+              "recall": 0.16666666666666666,
+              "f1": 0.21052631578947367
+            },
+            "detection_tp": 2,
+            "gold_present": 12,
+            "predicted_present": 7
+          },
+          "ROOM_AMENITIES#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7578947368421053,
+              "recall": 0.9230769230769231,
+              "f1": 0.8323699421965318
+            },
+            "pair": {
+              "precision": 0.7052631578947368,
+              "recall": 0.8589743589743589,
+              "f1": 0.7745664739884393
+            },
+            "detection_tp": 72,
+            "gold_present": 78,
+            "predicted_present": 95
+          },
+          "ROOM_AMENITIES#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.23333333333333334,
+              "recall": 0.4666666666666667,
+              "f1": 0.3111111111111111
+            },
+            "pair": {
+              "precision": 0.2,
+              "recall": 0.4,
+              "f1": 0.26666666666666666
+            },
+            "detection_tp": 7,
+            "gold_present": 15,
+            "predicted_present": 30
+          },
+          "ROOM_AMENITIES#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "pair": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "detection_tp": 0,
+            "gold_present": 0,
+            "predicted_present": 0
+          },
+          "ROOM_AMENITIES#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5483870967741935,
+              "recall": 0.68,
+              "f1": 0.6071428571428571
+            },
+            "pair": {
+              "precision": 0.45161290322580644,
+              "recall": 0.56,
+              "f1": 0.5
+            },
+            "detection_tp": 17,
+            "gold_present": 25,
+            "predicted_present": 31
+          },
+          "SERVICE#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8461538461538461,
+              "recall": 0.9453125,
+              "f1": 0.8929889298892989
+            },
+            "pair": {
+              "precision": 0.7482517482517482,
+              "recall": 0.8359375,
+              "f1": 0.7896678966789668
+            },
+            "detection_tp": 242,
+            "gold_present": 256,
+            "predicted_present": 286
+          }
+        },
+        "task_id": "absa_hotel",
+        "split": "validation",
+        "selection_f1": 0.6938923021322733,
+        "selection_metric": "end_to_end_pair_micro_f1"
+      },
+      "after_cache_hashes": {
+        "train_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/absa_hotel/student/train_cls.npy",
+        "validation_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/absa_hotel/student/validation_cls.npy",
+        "train_sha256": "aa3051647b708ea504f1b3e7ada7d51275ca819dee8629523bf852a7859452a0",
+        "validation_sha256": "c4ebb563ec26eee2b0e3de4bd97c9e02149e2604333d181ac363f56588e39c88",
+        "train_shape": [
+          11,
+          2000,
+          384
+        ],
+        "validation_shape": [
+          11,
+          795,
+          384
+        ]
+      }
+    },
+    {
+      "task": "absa_hotel",
+      "model": "teacher",
+      "layer_index": 12,
+      "scope": "final_layer_only",
+      "before_selection_f1_1000": 0.5819706498951782,
+      "after_selection_f1_1000": 0.6903553299492385,
+      "delta_selection_f1_1000": 0.10838468005406032,
+      "before_selection_f1_1000_points": 58.19706498951782,
+      "after_selection_f1_1000_points": 69.03553299492386,
+      "delta_selection_f1_1000_points": 10.838468005406032,
+      "before_fit": {
+        "train_ce": 0.03540393337607384,
+        "validation_ce": 0.1272713840007782,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.03620211407542229,
+          "final_step_train_ce": 0.03544118255376816,
+          "post_update_train_ce": 0.03540393337607384,
+          "last20_mean_train_ce": 0.03580006640404463,
+          "last20_step_improvement": 0.0007221512496471405,
+          "last20_relative_improvement": 0.019969155874089792,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 768,
+          "mean_sha256": "176af234f69de8afcce284872a41a73f255f0d0a367528e8be5c422c15bfa449",
+          "std_sha256": "2510c068f8f88f46897a6fa506fbfd7e988b5cd6c11d66db6e6fad06869f291e",
+          "train_mean_abs_mean": 0.14815109968185425,
+          "train_std_min": 0.009577572345733643,
+          "train_std_max": 0.127513125538826,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 27.712812921102035
+        },
+        "elapsed_seconds": 11.48329496383667,
+        "probe_parameter_count": 104584
+      },
+      "after_fit": {
+        "train_ce": 0.01215918455272913,
+        "validation_ce": 0.28965261578559875,
+        "convergence": {
+          "steps": 1000,
+          "initial_train_ce": 1.386293888092041,
+          "loss_at_step_980": 0.012541266158223152,
+          "final_step_train_ce": 0.01217692531645298,
+          "post_update_train_ce": 0.01215918455272913,
+          "last20_mean_train_ce": 0.012348461849614977,
+          "last20_step_improvement": 0.000345681793987751,
+          "last20_relative_improvement": 0.027604618665991575,
+          "last20_start_step": 981,
+          "last20_end_step": 1000,
+          "learning_failed_flag": false,
+          "underconverged_flag": true
+        },
+        "normalization": {
+          "epsilon": 1e-06,
+          "hidden_size": 768,
+          "mean_sha256": "5a7f6c1f08e9ea500fa95ff90905d8e1eac8134a3a72f2161378c2121b9d716e",
+          "std_sha256": "31f025941b6b2ad2603612f0c9b646c872d36576f30025ca11ce2c91e188e9ff",
+          "train_mean_abs_mean": 0.18634755909442902,
+          "train_std_min": 0.140584334731102,
+          "train_std_max": 0.9580907225608826,
+          "divide_by_sqrt_hidden": true,
+          "divide_by_sqrt_hidden_value": 27.712812921102035
+        },
+        "elapsed_seconds": 15.373765468597412,
+        "probe_parameter_count": 104584
+      },
+      "after_metrics": {
+        "n": 795,
+        "aspect_count": 34,
+        "aspect_names": [
+          "FACILITIES#CLEANLINESS",
+          "FACILITIES#COMFORT",
+          "FACILITIES#DESIGN&FEATURES",
+          "FACILITIES#GENERAL",
+          "FACILITIES#MISCELLANEOUS",
+          "FACILITIES#PRICES",
+          "FACILITIES#QUALITY",
+          "FOOD&DRINKS#MISCELLANEOUS",
+          "FOOD&DRINKS#PRICES",
+          "FOOD&DRINKS#QUALITY",
+          "FOOD&DRINKS#STYLE&OPTIONS",
+          "HOTEL#CLEANLINESS",
+          "HOTEL#COMFORT",
+          "HOTEL#DESIGN&FEATURES",
+          "HOTEL#GENERAL",
+          "HOTEL#MISCELLANEOUS",
+          "HOTEL#PRICES",
+          "HOTEL#QUALITY",
+          "LOCATION#GENERAL",
+          "ROOMS#CLEANLINESS",
+          "ROOMS#COMFORT",
+          "ROOMS#DESIGN&FEATURES",
+          "ROOMS#GENERAL",
+          "ROOMS#MISCELLANEOUS",
+          "ROOMS#PRICES",
+          "ROOMS#QUALITY",
+          "ROOM_AMENITIES#CLEANLINESS",
+          "ROOM_AMENITIES#COMFORT",
+          "ROOM_AMENITIES#DESIGN&FEATURES",
+          "ROOM_AMENITIES#GENERAL",
+          "ROOM_AMENITIES#MISCELLANEOUS",
+          "ROOM_AMENITIES#PRICES",
+          "ROOM_AMENITIES#QUALITY",
+          "SERVICE#GENERAL"
+        ],
+        "pair_scored_aspects": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+        "detection_micro_precision": 0.6792223572296476,
+        "detection_micro_recall": 0.854087089381207,
+        "detection_micro_f1": 0.7566835871404399,
+        "detection_macro_precision": 0.5018680749886472,
+        "detection_macro_recall": 0.6950524347592255,
+        "detection_macro_f1": 0.5710559664186149,
+        "pair_micro_precision": 0.6196840826245443,
+        "pair_micro_recall": 0.7792207792207793,
+        "pair_micro_f1": 0.6903553299492385,
+        "pair_macro_precision": 0.43828562903056284,
+        "pair_macro_recall": 0.5931729152799655,
+        "pair_macro_f1": 0.4942077711843808,
+        "classification_pair_micro_f1": 0.6903553299492385,
+        "classification_pair_macro_f1": 0.4942077711843808,
+        "per_aspect": {
+          "FACILITIES#CLEANLINESS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6666666666666666,
+              "recall": 1.0,
+              "f1": 0.8
+            },
+            "pair": {
+              "precision": 0.6666666666666666,
+              "recall": 1.0,
+              "f1": 0.8
+            },
+            "detection_tp": 6,
+            "gold_present": 6,
+            "predicted_present": 9
+          },
+          "FACILITIES#COMFORT": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "pair": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "detection_tp": 0,
+            "gold_present": 3,
+            "predicted_present": 0
+          },
+          "FACILITIES#DESIGN&FEATURES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5,
+              "recall": 0.5714285714285714,
+              "f1": 0.5333333333333333
+            },
+            "pair": {
+              "precision": 0.25,
+              "recall": 0.2857142857142857,
+              "f1": 0.26666666666666666
+            },
+            "detection_tp": 4,
+            "gold_present": 7,
+            "predicted_present": 8
+          },
+          "FACILITIES#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.3939393939393939,
+              "recall": 0.7222222222222222,
+              "f1": 0.5098039215686274
+            },
+            "pair": {
+              "precision": 0.36363636363636365,
+              "recall": 0.6666666666666666,
+              "f1": 0.47058823529411764
+            },
+            "detection_tp": 13,
+            "gold_present": 18,
+            "predicted_present": 33
+          },
+          "FACILITIES#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6666666666666666,
+              "recall": 0.4,
+              "f1": 0.5
+            },
+            "pair": {
+              "precision": 0.6666666666666666,
+              "recall": 0.4,
+              "f1": 0.5
+            },
+            "detection_tp": 2,
+            "gold_present": 5,
+            "predicted_present": 3
+          },
+          "FACILITIES#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "pair": {
+              "precision": 0.25,
+              "recall": 0.5,
+              "f1": 0.3333333333333333
+            },
+            "detection_tp": 2,
+            "gold_present": 2,
+            "predicted_present": 4
+          },
+          "FACILITIES#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.3333333333333333,
+              "recall": 0.7777777777777778,
+              "f1": 0.4666666666666667
+            },
+            "pair": {
+              "precision": 0.2857142857142857,
+              "recall": 0.6666666666666666,
+              "f1": 0.4
+            },
+            "detection_tp": 7,
+            "gold_present": 9,
+            "predicted_present": 21
+          },
+          "FOOD&DRINKS#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.14285714285714285,
+              "recall": 0.25,
+              "f1": 0.18181818181818182
+            },
+            "pair": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "detection_tp": 1,
+            "gold_present": 4,
+            "predicted_present": 7
+          },
+          "FOOD&DRINKS#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.3333333333333333,
+              "recall": 0.6666666666666666,
+              "f1": 0.4444444444444444
+            },
+            "pair": {
+              "precision": 0.16666666666666666,
+              "recall": 0.3333333333333333,
+              "f1": 0.2222222222222222
+            },
+            "detection_tp": 2,
+            "gold_present": 3,
+            "predicted_present": 6
+          },
+          "FOOD&DRINKS#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7592592592592593,
+              "recall": 1.0,
+              "f1": 0.8631578947368421
+            },
+            "pair": {
+              "precision": 0.6666666666666666,
+              "recall": 0.8780487804878049,
+              "f1": 0.7578947368421053
+            },
+            "detection_tp": 41,
+            "gold_present": 41,
+            "predicted_present": 54
+          },
+          "FOOD&DRINKS#STYLE&OPTIONS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.717948717948718,
+              "recall": 0.9333333333333333,
+              "f1": 0.8115942028985508
+            },
+            "pair": {
+              "precision": 0.6923076923076923,
+              "recall": 0.9,
+              "f1": 0.782608695652174
+            },
+            "detection_tp": 28,
+            "gold_present": 30,
+            "predicted_present": 39
+          },
+          "HOTEL#CLEANLINESS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.52,
+              "recall": 0.6190476190476191,
+              "f1": 0.5652173913043478
+            },
+            "pair": {
+              "precision": 0.48,
+              "recall": 0.5714285714285714,
+              "f1": 0.5217391304347826
+            },
+            "detection_tp": 13,
+            "gold_present": 21,
+            "predicted_present": 25
+          },
+          "HOTEL#COMFORT": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6666666666666666,
+              "recall": 0.8823529411764706,
+              "f1": 0.759493670886076
+            },
+            "pair": {
+              "precision": 0.6666666666666666,
+              "recall": 0.8823529411764706,
+              "f1": 0.759493670886076
+            },
+            "detection_tp": 90,
+            "gold_present": 102,
+            "predicted_present": 135
+          },
+          "HOTEL#DESIGN&FEATURES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5869565217391305,
+              "recall": 0.84375,
+              "f1": 0.6923076923076923
+            },
+            "pair": {
+              "precision": 0.5869565217391305,
+              "recall": 0.84375,
+              "f1": 0.6923076923076923
+            },
+            "detection_tp": 27,
+            "gold_present": 32,
+            "predicted_present": 46
+          },
+          "HOTEL#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.7073170731707317,
+              "recall": 0.6444444444444445,
+              "f1": 0.6744186046511628
+            },
+            "pair": {
+              "precision": 0.5934959349593496,
+              "recall": 0.5407407407407407,
+              "f1": 0.5658914728682171
+            },
+            "detection_tp": 87,
+            "gold_present": 135,
+            "predicted_present": 123
+          },
+          "HOTEL#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.23809523809523808,
+              "recall": 0.5,
+              "f1": 0.3225806451612903
+            },
+            "pair": {
+              "precision": 0.14285714285714285,
+              "recall": 0.3,
+              "f1": 0.1935483870967742
+            },
+            "detection_tp": 5,
+            "gold_present": 10,
+            "predicted_present": 21
+          },
+          "HOTEL#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.788235294117647,
+              "recall": 0.9571428571428572,
+              "f1": 0.864516129032258
+            },
+            "pair": {
+              "precision": 0.7411764705882353,
+              "recall": 0.9,
+              "f1": 0.8129032258064516
+            },
+            "detection_tp": 67,
+            "gold_present": 70,
+            "predicted_present": 85
+          },
+          "HOTEL#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5833333333333334,
+              "recall": 0.875,
+              "f1": 0.7
+            },
+            "pair": {
+              "precision": 0.3958333333333333,
+              "recall": 0.59375,
+              "f1": 0.475
+            },
+            "detection_tp": 28,
+            "gold_present": 32,
+            "predicted_present": 48
+          },
+          "LOCATION#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.9719626168224299,
+              "recall": 0.9811320754716981,
+              "f1": 0.9765258215962441
+            },
+            "pair": {
+              "precision": 0.9345794392523364,
+              "recall": 0.9433962264150944,
+              "f1": 0.9389671361502347
+            },
+            "detection_tp": 104,
+            "gold_present": 106,
+            "predicted_present": 107
+          },
+          "ROOMS#CLEANLINESS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8396946564885496,
+              "recall": 0.9401709401709402,
+              "f1": 0.8870967741935484
+            },
+            "pair": {
+              "precision": 0.816793893129771,
+              "recall": 0.9145299145299145,
+              "f1": 0.8629032258064516
+            },
+            "detection_tp": 110,
+            "gold_present": 117,
+            "predicted_present": 131
+          },
+          "ROOMS#COMFORT": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5172413793103449,
+              "recall": 0.6976744186046512,
+              "f1": 0.594059405940594
+            },
+            "pair": {
+              "precision": 0.4482758620689655,
+              "recall": 0.6046511627906976,
+              "f1": 0.5148514851485149
+            },
+            "detection_tp": 30,
+            "gold_present": 43,
+            "predicted_present": 58
+          },
+          "ROOMS#DESIGN&FEATURES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6233766233766234,
+              "recall": 0.8888888888888888,
+              "f1": 0.732824427480916
+            },
+            "pair": {
+              "precision": 0.5454545454545454,
+              "recall": 0.7777777777777778,
+              "f1": 0.6412213740458015
+            },
+            "detection_tp": 48,
+            "gold_present": 54,
+            "predicted_present": 77
+          },
+          "ROOMS#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.4489795918367347,
+              "recall": 0.8148148148148148,
+              "f1": 0.5789473684210527
+            },
+            "pair": {
+              "precision": 0.3469387755102041,
+              "recall": 0.6296296296296297,
+              "f1": 0.4473684210526316
+            },
+            "detection_tp": 22,
+            "gold_present": 27,
+            "predicted_present": 49
+          },
+          "ROOMS#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.18181818181818182,
+              "recall": 0.5,
+              "f1": 0.26666666666666666
+            },
+            "pair": {
+              "precision": 0.18181818181818182,
+              "recall": 0.5,
+              "f1": 0.26666666666666666
+            },
+            "detection_tp": 2,
+            "gold_present": 4,
+            "predicted_present": 11
+          },
+          "ROOMS#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.42857142857142855,
+              "recall": 0.42857142857142855,
+              "f1": 0.42857142857142855
+            },
+            "pair": {
+              "precision": 0.42857142857142855,
+              "recall": 0.42857142857142855,
+              "f1": 0.42857142857142855
+            },
+            "detection_tp": 3,
+            "gold_present": 7,
+            "predicted_present": 7
+          },
+          "ROOMS#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5555555555555556,
+              "recall": 0.8333333333333334,
+              "f1": 0.6666666666666666
+            },
+            "pair": {
+              "precision": 0.5555555555555556,
+              "recall": 0.8333333333333334,
+              "f1": 0.6666666666666666
+            },
+            "detection_tp": 20,
+            "gold_present": 24,
+            "predicted_present": 36
+          },
+          "ROOM_AMENITIES#CLEANLINESS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.4166666666666667,
+              "recall": 0.8333333333333334,
+              "f1": 0.5555555555555556
+            },
+            "pair": {
+              "precision": 0.4166666666666667,
+              "recall": 0.8333333333333334,
+              "f1": 0.5555555555555556
+            },
+            "detection_tp": 5,
+            "gold_present": 6,
+            "predicted_present": 12
+          },
+          "ROOM_AMENITIES#COMFORT": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.4,
+              "recall": 0.4,
+              "f1": 0.4
+            },
+            "pair": {
+              "precision": 0.4,
+              "recall": 0.4,
+              "f1": 0.4
+            },
+            "detection_tp": 2,
+            "gold_present": 5,
+            "predicted_present": 5
+          },
+          "ROOM_AMENITIES#DESIGN&FEATURES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.3125,
+              "recall": 0.4166666666666667,
+              "f1": 0.35714285714285715
+            },
+            "pair": {
+              "precision": 0.25,
+              "recall": 0.3333333333333333,
+              "f1": 0.2857142857142857
+            },
+            "detection_tp": 5,
+            "gold_present": 12,
+            "predicted_present": 16
+          },
+          "ROOM_AMENITIES#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.6981132075471698,
+              "recall": 0.9487179487179487,
+              "f1": 0.8043478260869565
+            },
+            "pair": {
+              "precision": 0.6698113207547169,
+              "recall": 0.9102564102564102,
+              "f1": 0.7717391304347826
+            },
+            "detection_tp": 74,
+            "gold_present": 78,
+            "predicted_present": 106
+          },
+          "ROOM_AMENITIES#MISCELLANEOUS": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.20930232558139536,
+              "recall": 0.6,
+              "f1": 0.3103448275862069
+            },
+            "pair": {
+              "precision": 0.11627906976744186,
+              "recall": 0.3333333333333333,
+              "f1": 0.1724137931034483
+            },
+            "detection_tp": 9,
+            "gold_present": 15,
+            "predicted_present": 43
+          },
+          "ROOM_AMENITIES#PRICES": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "pair": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "detection_tp": 0,
+            "gold_present": 0,
+            "predicted_present": 0
+          },
+          "ROOM_AMENITIES#QUALITY": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.5,
+              "recall": 0.76,
+              "f1": 0.6031746031746031
+            },
+            "pair": {
+              "precision": 0.39473684210526316,
+              "recall": 0.6,
+              "f1": 0.47619047619047616
+            },
+            "detection_tp": 19,
+            "gold_present": 25,
+            "predicted_present": 38
+          },
+          "SERVICE#GENERAL": {
+            "pair_scored": true,
+            "detection": {
+              "precision": 0.8551236749116607,
+              "recall": 0.9453125,
+              "f1": 0.8979591836734694
+            },
+            "pair": {
+              "precision": 0.7809187279151943,
+              "recall": 0.86328125,
+              "f1": 0.8200371057513914
+            },
+            "detection_tp": 242,
+            "gold_present": 256,
+            "predicted_present": 283
+          }
+        },
+        "task_id": "absa_hotel",
+        "split": "validation",
+        "selection_f1": 0.6903553299492385,
+        "selection_metric": "end_to_end_pair_micro_f1"
+      },
+      "after_cache_hashes": {
+        "train_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/absa_hotel/teacher/train_cls.npy",
+        "validation_path": "/home/kiettqa/GoiBERT/artifacts/d2/cache/absa_hotel/teacher/validation_cls.npy",
+        "train_sha256": "1366ec0360d504d5ae736603b650797662710bd2ac207651b706699a65dcc741",
+        "validation_sha256": "921f55c9923ff3e11fabd1f870933ddda55759e15ef52c5a47c58fa8488a0731",
+        "train_shape": [
+          13,
+          2000,
+          768
+        ],
+        "validation_shape": [
+          13,
+          795,
+          768
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 64.72409415245056,
+  "interpretation_guard": "A 1,000-step probe still has convergence diagnostics; a score difference is not a causal capacity estimate."
+}

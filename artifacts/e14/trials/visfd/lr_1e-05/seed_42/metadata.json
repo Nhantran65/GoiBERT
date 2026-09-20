@@ -1,0 +1,504 @@
+{
+  "protocol": "E14-BamiBERT-original-local-baseline-v1",
+  "revision": "e14-20260912-r1",
+  "task_id": "visfd",
+  "seed": 42,
+  "stage": "validation_grid",
+  "learning_rate": 1e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 732,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy",
+  "head": "CLS -> dropout0.1 -> dense768 -> tanh -> dropout0.1 -> logits",
+  "no_noise_consistency": true,
+  "no_knowledge_distillation": true,
+  "no_layerwise_learning_rate_decay": true,
+  "include_test": false,
+  "source_hash": "bba42b8eb93dc2945fd49495bc48490daa5474e855e31b3cb261d96dfc089645",
+  "model_source": "Qualcomm-AI-Research/BamiBERT",
+  "hf_commit": "57bc1340debbe4e348ec549047a763caebe4a977",
+  "checkpoint_source": "models/bamibert-base-original",
+  "model_hashes": {
+    ".cache/huggingface/.gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+    ".cache/huggingface/download/.gitattributes.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/.gitattributes.metadata": "d2a1d8524993b3f3ad41c3ff2030bf07fdcbdd3baba8267f63bb9c10e84da3b0",
+    ".cache/huggingface/download/README.md.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/README.md.metadata": "08cb04c116039d7420532bf6edeed9d69e5545662403b8878ffefce06a7fdb99",
+    ".cache/huggingface/download/config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/config.json.metadata": "0a58347b0976ec3d43a089634cdb262fcf0b2bf9e654ea95bb45e40638a3ee23",
+    ".cache/huggingface/download/model.safetensors.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/model.safetensors.metadata": "3f7e152fa1fc3e78cfcf5d65087ae8a51a851e66c0f31fe955107e44c46e635b",
+    ".cache/huggingface/download/special_tokens_map.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/special_tokens_map.json.metadata": "69d7c4472e1520cf154ed292d5f0508b5716065704280b2dcd219f3226334656",
+    ".cache/huggingface/download/tokenizer.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/tokenizer.json.metadata": "5f1c062456c6cc860c19fd5de4b59327cbed44d256c1889e1e24fa7f73aeef10",
+    ".cache/huggingface/download/tokenizer_config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/tokenizer_config.json.metadata": "294e0df1cea0c77c2997f4289c7314053a67a6fa0dd6fde80beba74a7d7ee078",
+    ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+    "README.md": "6b23dbeffa7ed1e3b4ccf95fb5d6b9eb2f8e8041b334042f54f9c3926c128b61",
+    "config.json": "353049455318fb3fcdc42f4e275211834809143eeb67b5728d4eff556be05d5f",
+    "model.safetensors": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627",
+    "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+    "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+    "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+    "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+    "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+  },
+  "model": {
+    "backbone": "Qualcomm-AI-Research/BamiBERT",
+    "hidden_size": 768,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 42,
+    "num_aspects": 11,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 102983466,
+    "trainable_parameters": 102983466
+  },
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "visfd",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "others"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ]
+    ]
+  },
+  "label_name_overlay": {
+    "vsfc_sentiment": {
+      "0": "negative",
+      "1": "neutral",
+      "2": "positive"
+    },
+    "vsfc_topic": {
+      "0": "lecturer",
+      "1": "training_program",
+      "2": "facility",
+      "3": "others"
+    },
+    "absa": {
+      "0": "absent",
+      "1": "positive",
+      "2": "negative",
+      "3": "neutral"
+    },
+    "visfd_others": {
+      "raw_0": "absent",
+      "raw_4": "present_detection_only",
+      "model_0": "absent",
+      "model_1": "present_detection_only"
+    },
+    "numeric_gold_unchanged": true
+  },
+  "tokenizer_comparison": {
+    "comparison": "see artifacts/e14/preflight.json",
+    "source_is_original_bamibert": true
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "2",
+    "cublas_workspace_config": ":4096:8"
+  },
+  "length_stats": {
+    "train_count": 7786,
+    "max_tokens": 241,
+    "p50_tokens": 39.0,
+    "p95_tokens": 100.0,
+    "p99_tokens": 139.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "started_at": "2026-09-12T07:36:44Z",
+  "started_at_unix": 1789198604.6106868,
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e14.py",
+    "--worker",
+    "--task-id",
+    "visfd",
+    "--learning-rate",
+    "1e-05",
+    "--device",
+    "cuda:0",
+    "--micro-batch-size",
+    "32",
+    "--expected-source-hash",
+    "bba42b8eb93dc2945fd49495bc48490daa5474e855e31b3cb261d96dfc089645"
+  ],
+  "best_epoch": 30,
+  "best_selection_f1": 0.8078549848942598,
+  "best_validation_metrics": {
+    "n": 1112,
+    "aspect_count": 11,
+    "aspect_names": [
+      "BATTERY",
+      "CAMERA",
+      "DESIGN",
+      "FEATURES",
+      "GENERAL",
+      "OTHERS",
+      "PERFORMANCE",
+      "PRICE",
+      "SCREEN",
+      "SER&ACC",
+      "STORAGE"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8888888888888888,
+    "detection_micro_recall": 0.8701990468180544,
+    "detection_micro_f1": 0.879444680549653,
+    "detection_macro_precision": 0.8769897507089875,
+    "detection_macro_recall": 0.7763963530353473,
+    "detection_macro_f1": 0.7886685460757191,
+    "pair_micro_precision": 0.809322033898305,
+    "pair_micro_recall": 0.8063932448733414,
+    "pair_micro_f1": 0.8078549848942598,
+    "pair_macro_precision": 0.8121015107344679,
+    "pair_macro_recall": 0.7151330402343726,
+    "pair_macro_f1": 0.7228671576719335,
+    "classification_pair_micro_f1": 0.8078549848942598,
+    "classification_pair_macro_f1": 0.7228671576719335,
+    "per_aspect": {
+      "BATTERY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9631067961165048,
+          "recall": 0.9841269841269841,
+          "f1": 0.9735034347399412
+        },
+        "pair": {
+          "precision": 0.8388349514563107,
+          "recall": 0.8571428571428571,
+          "f1": 0.8478900883218842
+        },
+        "detection_tp": 496,
+        "gold_present": 504,
+        "predicted_present": 515
+      },
+      "CAMERA": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9258064516129032,
+          "recall": 0.9695945945945946,
+          "f1": 0.9471947194719472
+        },
+        "pair": {
+          "precision": 0.7806451612903226,
+          "recall": 0.8175675675675675,
+          "f1": 0.7986798679867987
+        },
+        "detection_tp": 287,
+        "gold_present": 296,
+        "predicted_present": 310
+      },
+      "DESIGN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8833333333333333,
+          "recall": 0.8502673796791443,
+          "f1": 0.8664850136239782
+        },
+        "pair": {
+          "precision": 0.8277777777777777,
+          "recall": 0.7967914438502673,
+          "f1": 0.8119891008174387
+        },
+        "detection_tp": 159,
+        "gold_present": 187,
+        "predicted_present": 180
+      },
+      "FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9045092838196287,
+          "recall": 0.89501312335958,
+          "f1": 0.899736147757256
+        },
+        "pair": {
+          "precision": 0.8090185676392573,
+          "recall": 0.800524934383202,
+          "f1": 0.8047493403693932
+        },
+        "detection_tp": 341,
+        "gold_present": 381,
+        "predicted_present": 377
+      },
+      "GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.886039886039886,
+          "recall": 0.9027576197387518,
+          "f1": 0.8943206326383897
+        },
+        "pair": {
+          "precision": 0.8447293447293447,
+          "recall": 0.8606676342525399,
+          "f1": 0.8526240115025162
+        },
+        "detection_tp": 622,
+        "gold_present": 689,
+        "predicted_present": 702
+      },
+      "OTHERS": {
+        "pair_scored": false,
+        "detection": {
+          "precision": 0.5691489361702128,
+          "recall": 0.4262948207171315,
+          "f1": 0.4874715261958998
+        },
+        "pair": null,
+        "detection_tp": 107,
+        "gold_present": 251,
+        "predicted_present": 188
+      },
+      "PERFORMANCE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9106529209621993,
+          "recall": 0.9106529209621993,
+          "f1": 0.9106529209621993
+        },
+        "pair": {
+          "precision": 0.8075601374570447,
+          "recall": 0.8075601374570447,
+          "f1": 0.8075601374570447
+        },
+        "detection_tp": 530,
+        "gold_present": 582,
+        "predicted_present": 582
+      },
+      "PRICE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9015151515151515,
+          "recall": 0.9444444444444444,
+          "f1": 0.9224806201550387
+        },
+        "pair": {
+          "precision": 0.7424242424242424,
+          "recall": 0.7777777777777778,
+          "f1": 0.7596899224806202
+        },
+        "detection_tp": 238,
+        "gold_present": 252,
+        "predicted_present": 264
+      },
+      "SCREEN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8099173553719008,
+          "recall": 0.8099173553719008,
+          "f1": 0.8099173553719008
+        },
+        "pair": {
+          "precision": 0.6446280991735537,
+          "recall": 0.6446280991735537,
+          "f1": 0.6446280991735537
+        },
+        "detection_tp": 98,
+        "gold_present": 121,
+        "predicted_present": 121
+      },
+      "SER&ACC": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8928571428571429,
+          "recall": 0.7758620689655172,
+          "f1": 0.8302583025830258
+        },
+        "pair": {
+          "precision": 0.8253968253968254,
+          "recall": 0.7172413793103448,
+          "f1": 0.7675276752767528
+        },
+        "detection_tp": 225,
+        "gold_present": 290,
+        "predicted_present": 252
+      },
+      "STORAGE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.07142857142857142,
+          "f1": 0.13333333333333333
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.07142857142857142,
+          "f1": 0.13333333333333333
+        },
+        "detection_tp": 1,
+        "gold_present": 14,
+        "predicted_present": 1
+      }
+    },
+    "task_id": "visfd",
+    "split": "validation",
+    "selection_f1": 0.8078549848942598,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "elapsed_seconds": 481.0584411621094,
+  "peak_gpu_memory_allocated_bytes": 4746513408,
+  "peak_gpu_memory_reserved_bytes": 7010779136,
+  "status": "completed",
+  "checkpoint_sha256": "ebb2d07df4081168e02032aea316723b2904839aab0ca6933349766a4d1f031a",
+  "checkpoint_roundtrip": {
+    "required_state_keys": [
+      "epoch",
+      "global_step",
+      "model",
+      "optimizer",
+      "rng_state",
+      "scheduler"
+    ],
+    "model_key_count": 201,
+    "head_dense_shape": [
+      768,
+      768
+    ],
+    "epoch": 30,
+    "global_step": 7320
+  }
+}

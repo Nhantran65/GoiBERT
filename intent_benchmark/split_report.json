@@ -1,0 +1,271 @@
+{
+  "split": {
+    "seed": 42,
+    "target_ratio": {
+      "train": 0.7,
+      "dev": 0.15,
+      "test": 0.15
+    },
+    "target_sizes": {
+      "train": 354.9,
+      "dev": 76.05,
+      "test": 76.05
+    },
+    "actual_sizes": {
+      "train": 353,
+      "test": 77,
+      "dev": 77
+    },
+    "actual_class_counts": {
+      "train": {
+        "ADDRESS": 26,
+        "COMPLAINT": 25,
+        "CONFIRMATION": 30,
+        "GRATITUDE": 7,
+        "GREETING": 8,
+        "MENU_QUERY": 101,
+        "OTHER": 148,
+        "PHONE": 8
+      },
+      "dev": {
+        "ADDRESS": 6,
+        "COMPLAINT": 5,
+        "CONFIRMATION": 7,
+        "GRATITUDE": 2,
+        "GREETING": 2,
+        "MENU_QUERY": 22,
+        "OTHER": 31,
+        "PHONE": 2
+      },
+      "test": {
+        "ADDRESS": 6,
+        "COMPLAINT": 5,
+        "CONFIRMATION": 7,
+        "GRATITUDE": 2,
+        "GREETING": 2,
+        "MENU_QUERY": 21,
+        "OTHER": 32,
+        "PHONE": 2
+      }
+    },
+    "class_support": {
+      "train": [
+        "ADDRESS",
+        "COMPLAINT",
+        "CONFIRMATION",
+        "GRATITUDE",
+        "GREETING",
+        "MENU_QUERY",
+        "OTHER",
+        "PHONE"
+      ],
+      "dev": [
+        "ADDRESS",
+        "COMPLAINT",
+        "CONFIRMATION",
+        "GRATITUDE",
+        "GREETING",
+        "MENU_QUERY",
+        "OTHER",
+        "PHONE"
+      ],
+      "test": [
+        "ADDRESS",
+        "COMPLAINT",
+        "CONFIRMATION",
+        "GRATITUDE",
+        "GREETING",
+        "MENU_QUERY",
+        "OTHER",
+        "PHONE"
+      ]
+    },
+    "all_eight_classes_each_split": true,
+    "group_count": 235,
+    "largest_group": 16,
+    "largest_group_cases": [
+      [
+        "pb-v1-0176",
+        "pb-v1-0192",
+        "pb-v1-0226"
+      ]
+    ],
+    "objective": 1.19945664574364
+  },
+  "grouping": {
+    "case_groups": 250,
+    "source_groups": 250,
+    "total_connected_groups": 235,
+    "confirmed_substantive_template_family_count": 9,
+    "confirmed_substantive_template_family_ids": [
+      "template-pho-ngon-hu-hon",
+      "template-banh-mi-hoi-an",
+      "template-com-tam-joi-original",
+      "template-com-tam-nhe",
+      "template-mi-tiem-coffee",
+      "template-rice-tea",
+      "template-english-special-dish",
+      "template-reservation-tonight-2",
+      "template-reservation-2-guests"
+    ],
+    "largest_group": 16,
+    "infeasibility": null,
+    "policy": "case/source groups, exact full-input duplicate families, and root-confirmed substantive template families are indivisible; remaining fuzzy candidates stay audit evidence without grouping"
+  },
+  "audit": {
+    "row_count": 507,
+    "case_count": 250,
+    "source_group_count": 250,
+    "case_disjoint": true,
+    "source_disjoint": true,
+    "full_input_duplicate_cross_split_count": 0,
+    "current_text_overlap_cross_split_count": 10,
+    "current_text_overlap_cross_split_examples": [
+      {
+        "normalized_current_text": "19h, cod",
+        "by_split": {
+          "train": [
+            "pb-v1-0230:t8"
+          ],
+          "dev": [
+            "pb-v1-0225:t6"
+          ]
+        }
+      },
+      {
+        "normalized_current_text": "giao [address_1]",
+        "by_split": {
+          "train": [
+            "pb-v1-0210:t1",
+            "pb-v1-0211:t1",
+            "pb-v1-0212:t1",
+            "pb-v1-0214:t1",
+            "pb-v1-0217:t1",
+            "pb-v1-0218:t1",
+            "pb-v1-0220:t1",
+            "pb-v1-0221:t1",
+            "pb-v1-0224:t1",
+            "pb-v1-0226:t4",
+            "pb-v1-0227:t5",
+            "pb-v1-0229:t5",
+            "pb-v1-0230:t7",
+            "pb-v1-0238:t1",
+            "pb-v1-0245:t1",
+            "pb-v1-0247:t1",
+            "pb-v1-0248:t2",
+            "pb-v1-0249:t1"
+          ],
+          "dev": [
+            "pb-v1-0215:t1",
+            "pb-v1-0216:t1",
+            "pb-v1-0225:t5",
+            "pb-v1-0250:t1"
+          ],
+          "test": [
+            "pb-v1-0213:t1",
+            "pb-v1-0219:t1",
+            "pb-v1-0222:t1",
+            "pb-v1-0246:t1"
+          ]
+        }
+      },
+      {
+        "normalized_current_text": "giao ngay",
+        "by_split": {
+          "train": [
+            "pb-v1-0208:t2"
+          ],
+          "test": [
+            "pb-v1-0213:t2"
+          ]
+        }
+      },
+      {
+        "normalized_current_text": "giao ngay, cod, chốt giúp mình",
+        "by_split": {
+          "train": [
+            "pb-v1-0245:t2"
+          ],
+          "test": [
+            "pb-v1-0203:t3"
+          ]
+        }
+      },
+      {
+        "normalized_current_text": "ok",
+        "by_split": {
+          "train": [
+            "pb-v1-0186:t3",
+            "pb-v1-0192:t3"
+          ],
+          "dev": [
+            "pb-v1-0199:t3"
+          ]
+        }
+      },
+      {
+        "normalized_current_text": "ok chốt",
+        "by_split": {
+          "train": [
+            "pb-v1-0209:t3"
+          ],
+          "test": [
+            "pb-v1-0246:t5"
+          ]
+        }
+      },
+      {
+        "normalized_current_text": "thêm nước ép cam",
+        "by_split": {
+          "train": [
+            "pb-v1-0173:t1",
+            "pb-v1-0230:t3"
+          ],
+          "test": [
+            "pb-v1-0185:t2"
+          ]
+        }
+      },
+      {
+        "normalized_current_text": "tổng mới bao nhiêu",
+        "by_split": {
+          "train": [
+            "pb-v1-0214:t4"
+          ],
+          "test": [
+            "pb-v1-0219:t4"
+          ]
+        }
+      },
+      {
+        "normalized_current_text": "tổng mới nha",
+        "by_split": {
+          "train": [
+            "pb-v1-0221:t4"
+          ],
+          "dev": [
+            "pb-v1-0216:t4"
+          ]
+        }
+      },
+      {
+        "normalized_current_text": "đúng rồi",
+        "by_split": {
+          "train": [
+            "pb-v1-0174:t3"
+          ],
+          "dev": [
+            "pb-v1-0178:t3"
+          ]
+        }
+      }
+    ],
+    "note": "Current-text overlap across splits is intentionally reported and is not treated as proof of no leakage; full-input duplicate families remain grouped."
+  },
+  "duplicate_summary": {
+    "current_text_family_count": 22,
+    "exact_full_input_family_count": 4,
+    "near_duplicate_candidate_count": 52,
+    "confirmed_substantive_near_duplicate_family_count": 9
+  }
+}

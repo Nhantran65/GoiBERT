@@ -1,0 +1,58 @@
+{
+  "protocol": "E15-BamiBERT-original-pair-value-residual-v1",
+  "revision": "e15-20260912-r1",
+  "validation_trials": 10,
+  "seed": 42,
+  "precision": "bf16",
+  "effective_batch_size": 32,
+  "micro_batch_size_by_trial": {
+    "centered/absa_restaurant": 16,
+    "uncentered/vsfc_topic": 16,
+    "all_other_trials": 32
+  },
+  "gradient_accumulation_by_micro16": 2,
+  "trial_runtime_seconds": {
+    "centered/vsfc_sentiment": 732.56,
+    "centered/vsfc_topic": 770.39,
+    "centered/visfd": 579.82,
+    "centered/absa_restaurant": 764.95,
+    "centered/absa_hotel": 506.37,
+    "uncentered/vsfc_sentiment": 738.32,
+    "uncentered/vsfc_topic": 1718.42,
+    "uncentered/visfd": 588.62,
+    "uncentered/absa_restaurant": 486.08,
+    "uncentered/absa_hotel": 500.08
+  },
+  "peak_gpu_memory_allocated_bytes": {
+    "centered/vsfc_sentiment": 4034654208,
+    "centered/vsfc_topic": 4034666496,
+    "centered/visfd": 5377301504,
+    "centered/absa_restaurant": 2802501120,
+    "centered/absa_hotel": 5145795584,
+    "uncentered/vsfc_sentiment": 4035014656,
+    "uncentered/vsfc_topic": 3220018176,
+    "uncentered/visfd": 5379717632,
+    "uncentered/absa_restaurant": 3238624768,
+    "uncentered/absa_hotel": 5149064192
+  },
+  "peak_gpu_memory_reserved_bytes": {
+    "centered/vsfc_sentiment": 4760535040,
+    "centered/vsfc_topic": 4760535040,
+    "centered/visfd": 7241465856,
+    "centered/absa_restaurant": 3049259008,
+    "centered/absa_hotel": 6358564864,
+    "uncentered/vsfc_sentiment": 4645191680,
+    "uncentered/vsfc_topic": 3424649216,
+    "uncentered/visfd": 7113539584,
+    "uncentered/absa_restaurant": 3749707776,
+    "uncentered/absa_hotel": 6354370560
+  },
+  "preflight_profiles": {
+    "cuda:0": {"micro_batch_size": 32, "peak_memory_allocated_bytes": 4783162880, "peak_memory_reserved_bytes": 5205131264},
+    "cuda:1": {"micro_batch_size": 32, "peak_memory_allocated_bytes": 4783162880, "peak_memory_reserved_bytes": 5205131264},
+    "cuda:2": {"micro_batch_size": 32, "peak_memory_allocated_bytes": 4783162880, "peak_memory_reserved_bytes": 5205131264},
+    "cuda:3": {"micro_batch_size": 16, "peak_memory_allocated_bytes": 2762851328, "peak_memory_reserved_bytes": 2965372928}
+  },
+  "test_run": false,
+  "test_reason": "validation gate failed"
+}

@@ -1,0 +1,236 @@
+You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:683.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{
+  "task_id": "visfd",
+  "mode": "kd",
+  "seed": 42,
+  "learning_rate": 0.0001,
+  "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e2/smoke/freeze_kd_visfd_s42_gpu3",
+  "best_epoch": 1,
+  "best_selection_f1": 0.14285714285714285,
+  "validation_metrics": {
+    "n": 24,
+    "aspect_count": 11,
+    "aspect_names": [
+      "BATTERY",
+      "CAMERA",
+      "DESIGN",
+      "FEATURES",
+      "GENERAL",
+      "OTHERS",
+      "PERFORMANCE",
+      "PRICE",
+      "SCREEN",
+      "SER&ACC",
+      "STORAGE"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.28125,
+    "detection_micro_recall": 0.34615384615384615,
+    "detection_micro_f1": 0.3103448275862069,
+    "detection_macro_precision": 0.10227272727272728,
+    "detection_macro_recall": 0.36363636363636365,
+    "detection_macro_f1": 0.151900826446281,
+    "pair_micro_precision": 0.125,
+    "pair_micro_recall": 0.16666666666666666,
+    "pair_micro_f1": 0.14285714285714285,
+    "pair_macro_precision": 0.05,
+    "pair_macro_recall": 0.13333333333333333,
+    "pair_macro_f1": 0.07272727272727272,
+    "classification_pair_micro_f1": 0.14285714285714285,
+    "classification_pair_macro_f1": 0.07272727272727272,
+    "per_aspect": {
+      "BATTERY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.375,
+          "recall": 1.0,
+          "f1": 0.5454545454545454
+        },
+        "pair": {
+          "precision": 0.25,
+          "recall": 0.6666666666666666,
+          "f1": 0.36363636363636365
+        },
+        "detection_tp": 9,
+        "gold_present": 9,
+        "predicted_present": 24
+      },
+      "CAMERA": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.375,
+          "recall": 1.0,
+          "f1": 0.5454545454545454
+        },
+        "pair": {
+          "precision": 0.25,
+          "recall": 0.6666666666666666,
+          "f1": 0.36363636363636365
+        },
+        "detection_tp": 9,
+        "gold_present": 9,
+        "predicted_present": 24
+      },
+      "DESIGN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 3,
+        "predicted_present": 0
+      },
+      "FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "f1": 0.5
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 8,
+        "gold_present": 8,
+        "predicted_present": 24
+      },
+      "GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 17,
+        "predicted_present": 0
+      },
+      "OTHERS": {
+        "pair_scored": false,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": null,
+        "detection_tp": 0,
+        "gold_present": 6,
+        "predicted_present": 0
+      },
+      "PERFORMANCE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 13,
+        "predicted_present": 0
+      },
+      "PRICE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 5,
+        "predicted_present": 0
+      },
+      "SCREEN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.041666666666666664,
+          "recall": 1.0,
+          "f1": 0.08
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 1,
+        "gold_present": 1,
+        "predicted_present": 24
+      },
+      "SER&ACC": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 7,
+        "predicted_present": 0
+      },
+      "STORAGE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 0,
+        "predicted_present": 0
+      }
+    },
+    "task_id": "visfd",
+    "split": "validation",
+    "selection_f1": 0.14285714285714285,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "status": "completed"
+}

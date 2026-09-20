@@ -1,0 +1,38 @@
+{
+  "protocol": "E6-mlm-backbone-supervised-screening-v1",
+  "hypothesis": "Continuing MLM on the available Vietnamese corpus improves the shared student backbone before supervised adaptation.",
+  "source_backbone": "models/goiturn-s-gd",
+  "mlm_backbone": "models/goiturn-s-gd-mlm-e6",
+  "architecture": {
+    "encoder": "GoiTurn-S-GD architecture unchanged",
+    "classification_head": "CLS -> dropout0.1 -> dense384 -> tanh -> dropout0.1 -> logits",
+    "pooling": "first encoder token (CLS)"
+  },
+  "tasks": {
+    "vsfc_sentiment": {"learning_rate": 1e-5},
+    "vsfc_topic": {"learning_rate": 1e-5},
+    "visfd": {"learning_rate": 1e-4},
+    "absa_restaurant": {"learning_rate": 1e-4},
+    "absa_hotel": {"learning_rate": 1e-4}
+  },
+  "training": {
+    "seed": 42,
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32,
+    "loss": "E1 cross_entropy",
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "max_length_policy": "E1 train-only audit",
+    "include_test": false
+  },
+  "selection": {
+    "validation_only": true,
+    "multi_seed": false,
+    "test": false,
+    "kd": false,
+    "noise_consistency": false,
+    "architecture_expansion": false
+  }
+}
+

@@ -1,0 +1,32 @@
+{"event": "detached_controller_launch", "time": "2026-09-10T10:15:32.910707+00:00", "command": ["/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python", "/home/kiettqa/GoiBERT/scripts/run_e8_confirmation.py", "--controller"]}
+Traceback (most recent call last):
+  File "/home/kiettqa/GoiBERT/scripts/run_e8_confirmation.py", line 1040, in main
+    return _controller()
+           ^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/run_e8_confirmation.py", line 387, in _controller
+    preflight = _static_preflight()
+                ^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/run_e8_confirmation.py", line 223, in _static_preflight
+    raise RuntimeError(f"Confirmation static preflight failed: {checks}")
+RuntimeError: Confirmation static preflight failed: {'frozen_e8_source_hash': True, 'frozen_e1_dependency': True, 'frozen_e2_code': True, 'frozen_e2_config': True, 'tasks_locked': True, 'seeds_locked': True, 'recipe_locked': {'epochs': 30, 'effective_batch_size': 32, 'micro_batch_size': 32, 'max_length': 256, 'gamma': 0.8, 'attention_implementation': 'sdpa', 'precision': 'bf16'}, 'no_seed42_confirmation_dirs': False}
+{"event": "detached_controller_launch", "time": "2026-09-10T10:16:21.299379+00:00", "command": ["/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python", "/home/kiettqa/GoiBERT/scripts/run_e8_confirmation.py", "--controller"]}
+{"event": "launch", "key": "visfd__seed43", "pid": 333760, "device": "cuda:2"}
+{"event": "launch", "key": "absa_restaurant__seed43", "pid": 333761, "device": "cuda:1"}
+{"event": "launch", "key": "visfd__seed44", "pid": 333762, "device": "cuda:3"}
+{"event": "finish", "key": "absa_restaurant__seed43", "returncode": 0}
+{"event": "launch", "key": "absa_restaurant__seed44", "pid": 401344, "device": "cuda:1"}
+{"event": "finish", "key": "visfd__seed43", "returncode": 0}
+{"event": "finish", "key": "visfd__seed44", "returncode": 0}
+{"event": "finish", "key": "absa_restaurant__seed44", "returncode": 0}
+Traceback (most recent call last):
+  File "/home/kiettqa/GoiBERT/scripts/run_e8_confirmation.py", line 1043, in main
+    return _controller()
+           ^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/run_e8_confirmation.py", line 497, in _controller
+    run_tests()
+  File "/home/kiettqa/GoiBERT/scripts/run_e8_confirmation.py", line 998, in run_tests
+    results.append(_evaluate_one(row, manifest_sha256, devices[0]))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/run_e8_confirmation.py", line 717, in _evaluate_one
+    raise RuntimeError(f"Model specification changed: {task_id}, seed {seed}")
+RuntimeError: Model specification changed: visfd, seed 43

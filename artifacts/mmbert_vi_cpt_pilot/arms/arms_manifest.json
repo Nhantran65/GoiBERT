@@ -1,0 +1,279 @@
+{
+ "created_at": "2026-09-19T11:39:54Z",
+ "available_tokens": {
+  "wiki": 91363372,
+  "general": 1588719574,
+  "register": 367401674,
+  "bin8": 626247593,
+  "lowbin": 677372404
+ },
+ "arms": {
+  "P_web": {
+   "arm": "P_web",
+   "created_at": "2026-09-19T11:39:45Z",
+   "steps": 3815,
+   "global_batch": 128,
+   "seq_len": 512,
+   "tokens_non_pad": 250019840,
+   "budget_error_vs_250M": 19840,
+   "budget_error_batches": 0.302734375,
+   "targets": {
+    "general": 0.95,
+    "wiki": 0.05
+   },
+   "sequence_counts_by_group": {
+    "general": 463904,
+    "wiki": 24416
+   },
+   "group_stats": {
+    "general": {
+     "documents": 127247,
+     "doc_tokens": 237391602,
+     "sequences_emitted": 463904,
+     "tail_tokens_dropped": 0,
+     "sequences": 463904,
+     "tokens": 237518848,
+     "target_fraction": 0.95,
+     "available_tokens": 1588719574
+    },
+    "wiki": {
+     "documents": 17278,
+     "doc_tokens": 12483715,
+     "sequences_emitted": 24416,
+     "tail_tokens_dropped": 0,
+     "sequences": 24416,
+     "tokens": 12500992,
+     "target_fraction": 0.05,
+     "available_tokens": 91363372
+    }
+   },
+   "achieved_fractions": {
+    "general": 0.95,
+    "wiki": 0.05
+   },
+   "group_config": {
+    "general": "HPLT bins 9-10 non-register",
+    "register": "HPLT bins 7-10 max(OP,re)>=0.5 or ID>=0.5",
+    "bin8": "HPLT bin 8 non-register",
+    "wiki": "wikimedia/wikipedia 20231101.vi (CC BY-SA 4.0)"
+   },
+   "order": "single shuffle seed 42",
+   "tokens_hash": "e05253ffe6bc3a208f98a24dcc1538ae07bec4e714901e75fad12732eac7179b",
+   "order_hash": "f4bfd6bff8556857b95d5c0a88b098d417de87b206b573c0b3cf69a46503d838",
+   "batch_hashes_step0_3": [
+    "f9e43ac10ec889222854648ae2e994b70e2c6db08043b943b0935288c026ec6f",
+    "1c94af5526b924f8bb20c70c759eaa9208715a104e686c97151d475770883674",
+    "d6a75e777c93c9accdb54706194c7097f23f0e487a7b54bdedd6e9fdc6b0fbe4",
+    "be821b00408816200e462127657c708cd432cd959cf189ca269c807457cb59da"
+   ],
+   "multiset_hash": null,
+   "source_hash": "e0c04960bfb21e003ad230fbf4297cb156c22ce2f1c2cb463d45971dbd2aa711"
+  },
+  "P_mix": {
+   "arm": "P_mix",
+   "created_at": "2026-09-19T11:39:49Z",
+   "steps": 3815,
+   "global_batch": 128,
+   "seq_len": 512,
+   "tokens_non_pad": 250019840,
+   "budget_error_vs_250M": 19840,
+   "budget_error_batches": 0.302734375,
+   "targets": {
+    "general": 0.65,
+    "register": 0.2,
+    "bin8": 0.1,
+    "wiki": 0.05
+   },
+   "sequence_counts_by_group": {
+    "general": 317408,
+    "register": 97664,
+    "bin8": 48832,
+    "wiki": 24416
+   },
+   "group_stats": {
+    "general": {
+     "documents": 87048,
+     "doc_tokens": 162425849,
+     "sequences_emitted": 317408,
+     "tail_tokens_dropped": 0,
+     "sequences": 317408,
+     "tokens": 162512896,
+     "target_fraction": 0.65,
+     "available_tokens": 1588719574
+    },
+    "register": {
+     "documents": 32918,
+     "doc_tokens": 49971051,
+     "sequences_emitted": 97664,
+     "tail_tokens_dropped": 0,
+     "sequences": 97664,
+     "tokens": 50003968,
+     "target_fraction": 0.2,
+     "available_tokens": 367401674
+    },
+    "bin8": {
+     "documents": 37311,
+     "doc_tokens": 24964674,
+     "sequences_emitted": 48832,
+     "tail_tokens_dropped": 0,
+     "sequences": 48832,
+     "tokens": 25001984,
+     "target_fraction": 0.1,
+     "available_tokens": 626247593
+    },
+    "wiki": {
+     "documents": 17278,
+     "doc_tokens": 12483715,
+     "sequences_emitted": 24416,
+     "tail_tokens_dropped": 0,
+     "sequences": 24416,
+     "tokens": 12500992,
+     "target_fraction": 0.05,
+     "available_tokens": 91363372
+    }
+   },
+   "achieved_fractions": {
+    "general": 0.65,
+    "register": 0.2,
+    "bin8": 0.1,
+    "wiki": 0.05
+   },
+   "group_config": {
+    "general": "HPLT bins 9-10 non-register",
+    "register": "HPLT bins 7-10 max(OP,re)>=0.5 or ID>=0.5",
+    "bin8": "HPLT bin 8 non-register",
+    "wiki": "wikimedia/wikipedia 20231101.vi (CC BY-SA 4.0)"
+   },
+   "order": "single shuffle seed 42",
+   "tokens_hash": "5e6427fc54acadc7fd18e70c8f24d84b020715fd3184f53c8a5c607455fb5bbe",
+   "order_hash": "a404b6cc24b274a943e3e3634df3c63fab7b7f8ba1e2046deb08e2b769d344ab",
+   "batch_hashes_step0_3": [
+    "254e463dfe087ad86c436bf331c33bf6f82f0898d1cbc0048f27095b6a0a915c",
+    "e237003665252dbb51201bc3e9227c29c5f04a20b5ac718a163a641d456eb09f",
+    "d1e367944906dc34a762f87cb8a683029990335d38388d1d8b99b459f22cb9a6",
+    "924edbf78b14867b1189d4d77db18c1cea63a7a367378c9c65307b6c3f5cb57e"
+   ],
+   "multiset_hash": "2724a0607797cdfd87c25b4fb04bd87d3482dc281763d52fd9cbd1aa8883b0d5",
+   "source_hash": "e0c04960bfb21e003ad230fbf4297cb156c22ce2f1c2cb463d45971dbd2aa711"
+  },
+  "C_mix": {
+   "arm": "C_mix",
+   "created_at": "2026-09-19T11:39:53Z",
+   "steps": 3815,
+   "global_batch": 128,
+   "seq_len": 512,
+   "tokens_non_pad": 250019840,
+   "budget_error_vs_250M": 19840,
+   "budget_error_batches": 0.302734375,
+   "targets": {
+    "general": 0.65,
+    "register": 0.2,
+    "bin8": 0.1,
+    "wiki": 0.05
+   },
+   "sequence_counts_by_group": {
+    "general": 317408,
+    "register": 97664,
+    "bin8": 48832,
+    "wiki": 24416
+   },
+   "group_stats": {
+    "general": {
+     "documents": 87048,
+     "doc_tokens": 162425849,
+     "sequences_emitted": 317408,
+     "tail_tokens_dropped": 0,
+     "sequences": 317408,
+     "tokens": 162512896,
+     "target_fraction": 0.65,
+     "available_tokens": 1588719574
+    },
+    "register": {
+     "documents": 32918,
+     "doc_tokens": 49971051,
+     "sequences_emitted": 97664,
+     "tail_tokens_dropped": 0,
+     "sequences": 97664,
+     "tokens": 50003968,
+     "target_fraction": 0.2,
+     "available_tokens": 367401674
+    },
+    "bin8": {
+     "documents": 37311,
+     "doc_tokens": 24964674,
+     "sequences_emitted": 48832,
+     "tail_tokens_dropped": 0,
+     "sequences": 48832,
+     "tokens": 25001984,
+     "target_fraction": 0.1,
+     "available_tokens": 626247593
+    },
+    "wiki": {
+     "documents": 17278,
+     "doc_tokens": 12483715,
+     "sequences_emitted": 24416,
+     "tail_tokens_dropped": 0,
+     "sequences": 24416,
+     "tokens": 12500992,
+     "target_fraction": 0.05,
+     "available_tokens": 91363372
+    }
+   },
+   "achieved_fractions": {
+    "general": 0.65,
+    "register": 0.2,
+    "bin8": 0.1,
+    "wiki": 0.05
+   },
+   "group_config": {
+    "general": "HPLT bins 9-10 non-register",
+    "register": "HPLT bins 7-10 max(OP,re)>=0.5 or ID>=0.5",
+    "bin8": "HPLT bin 8 non-register",
+    "wiki": "wikimedia/wikipedia 20231101.vi (CC BY-SA 4.0)"
+   },
+   "order": {
+    "stage1": {
+     "batches": 1526,
+     "composition_sequences": {
+      "general": 181376,
+      "wiki": 13952
+     }
+    },
+    "stage2": {
+     "batches": 1145,
+     "composition_sequences": {
+      "register": 9805,
+      "general": 77459,
+      "bin8": 48832,
+      "wiki": 10464
+     }
+    },
+    "stage3": {
+     "batches": 1144,
+     "composition_sequences": {
+      "register": 87859,
+      "general": 58573
+     }
+    }
+   },
+   "tokens_hash": "bd760da8c53abee9fbe4f4831085a66f5e98e25d97f401218288294570e658c0",
+   "order_hash": "cbc277a122c452779523257880501d1816ded2e9e701edb81d87a01229ffd249",
+   "batch_hashes_step0_3": [
+    "c7bde232f3f7f98ec87fd804004245c0a30ed5e0371dcba1b62ead9ba905eceb",
+    "b9f73a2de50857e3f1292c4a39cd3df14349ce73f9a27f22684c10854e0200c3",
+    "0d75e4499ad4ea6b5eedd2562379919b400c26357f795edf89944fddd9181269",
+    "578040e714d876317e45a4aa590aff4842b324acd74794dfc16c73af5af913d4"
+   ],
+   "multiset_hash": "2724a0607797cdfd87c25b4fb04bd87d3482dc281763d52fd9cbd1aa8883b0d5",
+   "source_hash": "e0c04960bfb21e003ad230fbf4297cb156c22ce2f1c2cb463d45971dbd2aa711"
+  }
+ },
+ "budget": {
+  "token_budget": 250000000,
+  "steps": 3815,
+  "scheduled_tokens": 250019840
+ },
+ "deviation_note": "C_mix stage 2 holds the remainder (~6.7 % register): the register share is fixed at 20 % overall by P_mix",
+ "source_hash": "e0c04960bfb21e003ad230fbf4297cb156c22ce2f1c2cb463d45971dbd2aa711",
+ "elapsed_s": 125.5
+}

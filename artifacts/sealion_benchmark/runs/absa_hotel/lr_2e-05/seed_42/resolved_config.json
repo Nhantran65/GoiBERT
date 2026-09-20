@@ -1,0 +1,473 @@
+{
+  "protocol": "SEA-LION-ModernBERT-300M-five-task-v1",
+  "model_kind": "sealion",
+  "task_id": "absa_hotel",
+  "seed": 42,
+  "stage": "validation_only",
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 675,
+  "total_steps": 6750,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy (absent class 0 included)",
+  "head": "first token -> dropout0.1 -> dense768 -> tanh -> dropout0.1 -> task logits",
+  "pooling": "first-token/BOS",
+  "selection": "validation task-specific selection_f1, best epoch",
+  "include_test": false,
+  "smoke": null,
+  "source_hash": "6979f3966bea74a8d8f4a465561245bab4d35859f2adbe21a402c65a6ad2c4a5",
+  "model": {
+    "backbone": "aisingapore/SEA-LION-ModernBERT-300M",
+    "local_path": "models/sea-lion-modernbert-300m",
+    "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+    "encoder_class": "ModernBertModel",
+    "model_type": "modernbert",
+    "hidden_size": 768,
+    "num_hidden_layers": 22,
+    "num_attention_heads": 12,
+    "intermediate_size": 1152,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "pooling": "first-token/BOS",
+    "native_classifier_pooling": "mean",
+    "num_labels": 136,
+    "num_aspects": 34,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 312353416,
+    "trainable_parameters": 312353416,
+    "encoder_weight_file_sha256": "8197fa020536cb907299ff9fc6e1a1a436808f5606dba3dc6c56f7e4899dfdac"
+  },
+  "tokenizer": {
+    "source": "models/sea-lion-modernbert-300m",
+    "hf_repo": "aisingapore/SEA-LION-ModernBERT-300M",
+    "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+    "files": {
+      "special_tokens_map.json": "230075193082c0422c032bfc511aa304c3057f2fd87612e871d6522fd85a1651",
+      "tokenizer.json": "31de34af3072a06a88f10047733aa7a53db467bf66bfc1ef4d469a537e6e448d",
+      "tokenizer_config.json": "cda328a6066edd668bdc88cd8ab8e736198ab73cbb84001cc722620d1d2272b1"
+    },
+    "tokenizer_class": "PreTrainedTokenizerFast",
+    "vocab_size": 262144,
+    "special_tokens": {
+      "bos_token_id": 2,
+      "eos_token_id": 1,
+      "cls_token_id": 2,
+      "sep_token_id": 1,
+      "pad_token_id": 0,
+      "mask_token_id": 4
+    },
+    "first_token_head": "input_ids[:,0] = <bos> (token ID 2); ModernBERT native classifier_pooling=mean is not used",
+    "token_type_ids": "not emitted and not passed to ModernBERT"
+  },
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv": "38298d4d8e77a27d7b66ecb9756414ff0303724224502ac3ffdd9a7d24f0491e",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv": "21ec6bc4811dc44b977ce4510f8abef0290dd5d13fdd75feeb693ae408629ba7"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "absa_hotel",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    ]
+  },
+  "train_count": 7180,
+  "validation_count": 795,
+  "num_aspects": 34,
+  "aspect_class_counts": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "0",
+    "cublas_workspace_config": ":4096:8",
+    "hostname": "server-ai-new-02.vntt.lan"
+  },
+  "gpu_snapshot_at_start": {
+    "0": {
+      "free_mib": 39553,
+      "used_mib": 5906,
+      "util_pct": 0
+    },
+    "1": {
+      "free_mib": 36255,
+      "used_mib": 9203,
+      "util_pct": 50
+    },
+    "2": {
+      "free_mib": 27938,
+      "used_mib": 17521,
+      "util_pct": 91
+    },
+    "3": {
+      "free_mib": 27938,
+      "used_mib": 17521,
+      "util_pct": 100
+    }
+  },
+  "length_stats": {
+    "train_count": 7180,
+    "max_tokens": 241,
+    "p50_tokens": 20.0,
+    "p95_tokens": 47.04999999999927,
+    "p99_tokens": 69.21000000000004,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "started_at": "2026-09-17T15:34:00Z",
+  "started_at_unix": 1789659235.5816736,
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/sealion_benchmark/controller.py",
+    "--model-kind",
+    "sealion",
+    "--task",
+    "absa_hotel",
+    "--learning-rate",
+    "2e-05",
+    "--device",
+    "cuda:0",
+    "--micro-batch",
+    "32"
+  ],
+  "pid": 3849212
+}

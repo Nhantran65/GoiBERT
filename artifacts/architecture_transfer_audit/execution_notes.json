@@ -1,0 +1,67 @@
+{
+  "protocol": "architecture-transfer-audit-e13-e15-v1",
+  "status": "completed",
+  "completed_jobs": 20,
+  "expected_jobs": 20,
+  "mode_passes": {
+    "native": 20,
+    "branch_off": 20,
+    "fp32_fusion": 20
+  },
+  "telemetry": {
+    "rows_per_task_prefix": 128,
+    "query_padding_masked": true,
+    "native_tensor_snapshot": true
+  },
+  "gradient_probe": {
+    "objective": "cross_entropy",
+    "split": "train",
+    "batch_size": 16,
+    "shuffle": false,
+    "dropout": "eval_off",
+    "device": "cpu",
+    "precision": "fp32",
+    "optimizer_step": false,
+    "historical_gradient_claim": false
+  },
+  "validation": {
+    "split": "validation",
+    "include_test": false,
+    "micro_batch_size": 16,
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "ids_gold_alignment_checked": 20,
+    "native_vs_saved_best_metric_delta_checked": 20
+  },
+  "checkpoints": {
+    "sha_before_after_equal": 20,
+    "frozen_source_mutated": false
+  },
+  "label_handling": {
+    "absa_raw_integer_labels": {
+      "0": "absent",
+      "1": "positive",
+      "2": "negative",
+      "3": "neutral"
+    },
+    "absa_source_loader_note": "source file integer codes are preserved verbatim in gold; names are the requested audit overlay",
+    "visfd_others": {
+      "raw_0": "absent",
+      "raw_4": "present_detection_only",
+      "model_0": "absent",
+      "model_1": "present_detection_only"
+    },
+    "numeric_gold_unchanged": true
+  },
+  "workers": {
+    "controller_max_workers": 4,
+    "devices": [
+      "cuda:0",
+      "cuda:1",
+      "cuda:2",
+      "cuda:3"
+    ]
+  },
+  "failures": [],
+  "interpretation": "measurement/provenance only; scientific conclusions are intentionally deferred to root agent"
+}

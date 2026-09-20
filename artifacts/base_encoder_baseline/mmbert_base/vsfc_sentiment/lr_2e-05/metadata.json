@@ -1,0 +1,206 @@
+{
+  "protocol": "base-encoder-baseline-v1",
+  "model": "mmbert_base",
+  "model_manifest": {
+    "key": "mmbert_base",
+    "repo": "jhu-clsp/mmBERT-base",
+    "commit": "c5955035435e2bf121cde7f3c8863ef52ff35d82",
+    "family": "modernbert",
+    "snapshot": "/home/kiettqa/.cache/huggingface/hub/models--jhu-clsp--mmBERT-base/snapshots/c5955035435e2bf121cde7f3c8863ef52ff35d82",
+    "files": {
+      "config.json": "47b40fd2e1df8299426dd5f4bb18c28f028cfafcb51b73645f83e596d187eb37",
+      "pytorch_model.bin": "8ea64ec1ea4eb8fca0fc14b69a2ae571de6bfbc25fd214bb932dd4aba6a3a04e",
+      "special_tokens_map.json": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+      "tokenizer.json": "197d4cc5406ee12cc50c8b5511f2393cc32d9db321545979ce041c1199178356",
+      "tokenizer_config.json": "1d2f82c1341a79748e00efe82e67690f99d00b3c2a894f2b23128fd9d3519da3"
+    },
+    "weights_sha256": "8ea64ec1ea4eb8fca0fc14b69a2ae571de6bfbc25fd214bb932dd4aba6a3a04e"
+  },
+  "task_id": "vsfc_sentiment",
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy",
+  "head": "CLS -> dropout0.1 -> dense768 -> tanh -> dropout0.1 -> logits (E14)",
+  "include_test": false,
+  "smoke": null,
+  "model_spec": {
+    "backbone": "jhu-clsp/mmBERT-base",
+    "hidden_size": 768,
+    "num_hidden_layers": 22,
+    "num_attention_heads": 12,
+    "intermediate_size": 1152,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 307532547,
+    "trainable_parameters": 307532547,
+    "hf_commit": "c5955035435e2bf121cde7f3c8863ef52ff35d82",
+    "encoder_class": "ModernBertModel",
+    "encoder_parameters": 306939648,
+    "embedding_parameters": 196608000,
+    "encoder_non_embedding_parameters": 110331648,
+    "total_parameters_with_head": 307532547,
+    "dropped_keys_on_load": [
+      "head.norm.weight",
+      "decoder.bias",
+      "decoder.weight",
+      "head.dense.weight"
+    ],
+    "vocab_size": 256000
+  },
+  "head_init_sha256": "d565cef9b61e7bce7ba76a142fa0bd986e95b791b4739c428adb007b7d8b5459",
+  "tokenizer_class": "PreTrainedTokenizerFast",
+  "vocab_size": 256000,
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt": "480480c3b9a6bc8bdf53339c721e93f8cc30472ac8f0bd21d4440ce1171aefac",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt": "a9584a22c926a54c6042236380c9a65ab8c41467477f7a5d794fb2505c96a9c3"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "vsfc_sentiment",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "include_test": false,
+    "slot_label_names": []
+  },
+  "train_count": 11426,
+  "validation_count": 1583,
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 169,
+    "p50_tokens": 14.0,
+    "p95_tokens": 37.0,
+    "p99_tokens": 56.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "1"
+  },
+  "started_at": "2026-09-19T05:10:21Z",
+  "argv": [
+    "scripts/base_encoder_baseline/finetune.py",
+    "--model",
+    "mmbert_base",
+    "--task",
+    "vsfc_sentiment",
+    "--lr",
+    "2e-5",
+    "--device",
+    "cuda:0",
+    "--micro-batch",
+    "32"
+  ],
+  "pid": 290174,
+  "best_epoch": 19,
+  "best_selection_f1": 0.8509798046337199,
+  "best_validation_metrics": {
+    "n": 1583,
+    "labels": [
+      0,
+      1,
+      2
+    ],
+    "accuracy": 0.9425142135186355,
+    "macro_precision": 0.8692870820277614,
+    "macro_recall": 0.8362278007989108,
+    "macro_f1": 0.8509798046337199,
+    "per_class": {
+      "0": {
+        "support": 705,
+        "predicted": 722,
+        "tp": 679,
+        "fp": 43,
+        "fn": 26,
+        "precision": 0.9404432132963989,
+        "recall": 0.9631205673758865,
+        "f1": 0.9516468114926419
+      },
+      "1": {
+        "support": 73,
+        "predicted": 61,
+        "tp": 43,
+        "fp": 18,
+        "fn": 30,
+        "precision": 0.7049180327868853,
+        "recall": 0.589041095890411,
+        "f1": 0.6417910447761194
+      },
+      "2": {
+        "support": 805,
+        "predicted": 800,
+        "tp": 770,
+        "fp": 30,
+        "fn": 35,
+        "precision": 0.9625,
+        "recall": 0.9565217391304348,
+        "f1": 0.9595015576323987
+      }
+    },
+    "task_id": "vsfc_sentiment",
+    "split": "validation",
+    "selection_f1": 0.8509798046337199,
+    "selection_metric": "fixed_label_macro_f1"
+  },
+  "elapsed_seconds": 1309.7219414710999,
+  "finished_at": "2026-09-19T05:32:07Z",
+  "checkpoint_sha256": "44a4f58449e7c116d24dbb3d00cad46bcbb1fcf1be8608f77e873eb2c013f931",
+  "peak_gpu_memory_allocated_bytes": 7202019328,
+  "postrun_checks": {
+    "checkpoint_epoch": 19,
+    "reload_selection_f1": 0.8509798046337199,
+    "reload_matches_best": true,
+    "prediction_file_selection_f1": 0.8509798046337199,
+    "prediction_file_matches_best": true,
+    "reload_predictions_identical": true,
+    "ids_stable_and_complete": true,
+    "strict_load_missing": [],
+    "strict_load_unexpected": []
+  },
+  "status": "completed"
+}

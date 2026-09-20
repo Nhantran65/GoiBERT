@@ -1,0 +1,42 @@
+{
+  "schema": "goibert-e2-ce-fidelity-probe-v1",
+  "observed_at": "2026-09-08T15:27:45+07:00",
+  "test_access": false,
+  "callable_identity": {
+    "compute_loss_same_callable": true,
+    "make_optimizer_same_callable": true,
+    "run_validation_same_callable": true,
+    "loader_same_callable": true
+  },
+  "loss_value_e1": 1.1732831001281738,
+  "loss_value_e2": 1.1732831001281738,
+  "loss_abs_diff": 0.0,
+  "gradient_max_abs_diff": 0.0,
+  "loss_and_grad_exact_within_fp32": true,
+  "optimizer_groups_e1": [[0.00001, 0.0, 3], [0.00001, 0.01, 1]],
+  "optimizer_groups_e2": [[0.00001, 0.0, 3], [0.00001, 0.01, 1]],
+  "optimizer_contract_equal": true,
+  "smoke_metadata": {
+    "task_id": "vsfc_sentiment",
+    "mode": "ce",
+    "seed": 42,
+    "learning_rate": 0.00001,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32,
+    "gradient_accumulation_steps": 1,
+    "include_test": false,
+    "attention_implementation": "sdpa",
+    "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "runtime": {
+      "python": "3.12.3",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.49.0",
+      "cuda": "12.4",
+      "device": "cuda:3",
+      "device_name": "NVIDIA L40S",
+      "precision": "bf16"
+    }
+  },
+  "smoke_artifact": "artifacts/e2/smoke/final_ce_vsfc_s42_gpu3"
+}

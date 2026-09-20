@@ -1,0 +1,187 @@
+{
+  "protocol": "E14-architecture-output-check-v1",
+  "created_at": "2026-09-12T08:14:55Z",
+  "device": "cuda:0",
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "tasks": {
+    "vsfc_sentiment": {
+      "model_spec": {
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 102953475,
+        "trainable_parameters": 102953475
+      },
+      "logits_shape": [
+        2,
+        3
+      ],
+      "loss": 1.14453125,
+      "finite_logits_loss_gradients": true,
+      "expected_output_schema": "scalar_3"
+    },
+    "vsfc_topic": {
+      "model_spec": {
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 4,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 102954244,
+        "trainable_parameters": 102954244
+      },
+      "logits_shape": [
+        2,
+        4
+      ],
+      "loss": 1.4453125,
+      "finite_logits_loss_gradients": true,
+      "expected_output_schema": "scalar_4"
+    },
+    "visfd": {
+      "model_spec": {
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 42,
+        "num_aspects": 11,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          2,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 102983466,
+        "trainable_parameters": 102983466
+      },
+      "logits_shape": [
+        2,
+        42
+      ],
+      "loss": 1.3560014963150024,
+      "finite_logits_loss_gradients": true,
+      "expected_output_schema": "flat_42"
+    },
+    "absa_restaurant": {
+      "model_spec": {
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 48,
+        "num_aspects": 12,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 102988080,
+        "trainable_parameters": 102988080
+      },
+      "logits_shape": [
+        2,
+        12,
+        4
+      ],
+      "loss": 1.4127603769302368,
+      "finite_logits_loss_gradients": true,
+      "expected_output_schema": "uniform_12x4"
+    },
+    "absa_hotel": {
+      "model_spec": {
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 136,
+        "num_aspects": 34,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 103055752,
+        "trainable_parameters": 103055752
+      },
+      "logits_shape": [
+        2,
+        34,
+        4
+      ],
+      "loss": 1.3876378536224365,
+      "finite_logits_loss_gradients": true,
+      "expected_output_schema": "uniform_34x4"
+    }
+  },
+  "all_five_finite": true
+}

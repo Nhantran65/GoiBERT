@@ -1,0 +1,64 @@
+{
+  "protocol": "E20-cti-screening-v1",
+  "revision": "e20-20260914-r1",
+  "encoder": "models/goibert-b-dapt",
+  "head": "goibert_e2.modeling.build_e2_teacher (768-wide task head)",
+  "loop": "goibert_e2.train._train_any(mode=\"nc\") / _train_loop (frozen, unmodified)",
+  "optimizer": "goibert_e7.optim.build_layerwise_optimizer (frozen, unmodified)",
+  "arms": {
+    "d1_composite": {"mu": 0.0, "description": "E19 + composite union-label rows, rare-pair-weighted sampling"},
+    "cti": {"mu": 0.3, "description": "d1_composite + L_inv token-state invariance under stop-gradient standalone forwards"}
+  },
+  "tasks": ["absa_restaurant", "absa_hotel"],
+  "baseline_arm_no_rerun": "e19 (artifacts/e19/<task>/seed_42)",
+  "seed": 42,
+  "task_lrs": {"absa_restaurant": 2e-5, "absa_hotel": 5e-5},
+  "nc_lambdas": {"absa_restaurant": 0.1, "absa_hotel": 0.1},
+  "nc_temperature": 1.0,
+  "layerwise_gamma": 0.8,
+  "num_layers": 12,
+  "weight_decay": 0.01,
+  "epochs": 30,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "effective_batch_size": 32,
+  "micro_batch_size": 16,
+  "accumulation_steps": 2,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "composite_construction": {
+    "pool": "train rows with exactly one gold aspect (all ABSA aspects scored) and <=48 tokens",
+    "n_composites": "round(len(train)/3)",
+    "pair_sampling": "prob(a,b) proportional to 1/(1+train_pair_frequency(a,b)), a<b, both pools nonempty",
+    "row_sampling": "A row uniform from pool[a], B row uniform from pool[b]",
+    "text": "A_text + ' ' + B_text",
+    "label": "union in raw ABSA code space (0=absent,1=neg,2=neutral,3=pos): A's code at aspect a, B's code at aspect b, 0 elsewhere",
+    "boundary": "1 + len(tokenizer(A_text, add_special_tokens=False).input_ids)",
+    "id_prefix": "e20comp:",
+    "assert": "tokenize(text).input_ids[1:boundary] == tokenize(A_text, specials=False); tail == tokenize(' '+B_text, specials=False)+[eos]; dropped/retried on failure or truncation"
+  },
+  "cti_loss": {
+    "formula": "L_inv = mean over composite rows of [mean_t(A content) ||h_t(x)-sg(h_t(A))||^2/D + mean_t(B content) ||h_t(x)-sg(h_t(B))||^2/D]",
+    "content_tokens": "exclude <s> and </s>",
+    "applies_to": "clean forward only (never noisy, never eval)",
+    "standalone_A": "tokenizer(A_text, add_special_tokens=True)",
+    "standalone_B": "tokenizer(' '+B_text, add_special_tokens=True) -- exact substring whose tokenization the manifest assert verified equals the composite's B tail, guaranteeing exact content-token alignment",
+    "stop_gradient": "standalone A/B forwards run under torch.no_grad()"
+  },
+  "selection": {
+    "metric": "selection_f1",
+    "validation_only": true,
+    "include_test": false
+  },
+  "gate": "docs/E20_PLAN.md: cti vs d1 rare-pair missed >=5 pts better AND B_present (fork contamination) reduced vs e19 AND F1 not down >0.3",
+  "gpu_guard": {"guard_used_mib": 5120, "guard_util_pct": 5.0},
+  "artifact_layout": {
+    "trials": "artifacts/e20/<arm>/<task>/seed_42/",
+    "logs": "artifacts/e20/logs/",
+    "controller_state": "artifacts/e20/controller_state.json",
+    "preflight": "artifacts/e20/preflight.json",
+    "composites_manifest": "artifacts/e20/<arm>/<task>/seed_42/composites_manifest.json",
+    "result_doc": "docs/E20_RESULT.md"
+  }
+}

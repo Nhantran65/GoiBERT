@@ -1,0 +1,228 @@
+{
+ "protocol": "CafeBERT-BamiBERT-repdistill-pilot-v1",
+ "created_at": "2026-09-18T15:56:42Z",
+ "device": "cuda:0",
+ "source_hash": "70d4ab9659cadca92f5845a169677a63c88b4cfc8f92deb790499c3520b3a0e3",
+ "student_checks": {
+  "architecture": [
+   "RobertaForMaskedLM"
+  ],
+  "layers": 12,
+  "hidden": 768,
+  "heads": 12,
+  "vocab": 20481,
+  "missing_keys": [],
+  "unexpected_keys": [],
+  "mismatched_keys": [],
+  "mlm_head_pretrained": true,
+  "decoder_tied_to_embeddings": true,
+  "pooler_absent": true,
+  "parameters_total": 102973185,
+  "parameters_encoder": 102360576,
+  "weights_sha256": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627"
+ },
+ "teacher_checks": {
+  "architecture": [
+   "XLMRobertaForMaskedLM"
+  ],
+  "layers": 24,
+  "hidden": 1024,
+  "heads": 16,
+  "vocab": 250002,
+  "missing_keys": [],
+  "unexpected_keys_dropped": [
+   "lm_head.bias",
+   "lm_head.dense.bias",
+   "lm_head.dense.weight",
+   "lm_head.layer_norm.bias",
+   "lm_head.layer_norm.weight"
+  ],
+  "mismatched_keys": [],
+  "parameters_total": 558840832,
+  "hf_commit": "af76fcf2a04096b2b54b348a3e4eb48253c93c5d",
+  "weights_sha256": "a7306a5665746ca3c617264d5055fc8c399612e1042511549016178fc550bb81",
+  "frozen": true
+ },
+ "tokenizers": {
+  "student": {
+   "source": "models/bamibert-base-original",
+   "hf_repo": "Qualcomm-AI-Research/BamiBERT",
+   "hf_commit": "57bc1340debbe4e348ec549047a763caebe4a977",
+   "files": {
+    "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+    "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+    "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+   }
+  },
+  "teacher": {
+   "source": "FacebookAI/xlm-roberta-large",
+   "hf_commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+   "files": {
+    "config.json": "ec7c3a99c58a38ebb702a2297f1c4586944e841b5eb29d201ff87e0f9c9abe0e",
+    "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+    "tokenizer.json": "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c",
+    "tokenizer_config.json": "994f46754c5bf4014f1aa92d34b1374319c3a6b3f702105cd5b742beaecd18ce"
+   },
+   "note": "uitnlp/CafeBERT ships only sentencepiece.bpe.model (identical to XLM-R-large); the XLM-R-large fast tokenizer is used as in CDBK"
+  }
+ },
+ "teacher_special_ids": [
+  0,
+  1,
+  2,
+  3,
+  250001
+ ],
+ "student_special_ids": [
+  0,
+  1,
+  2,
+  3,
+  20480
+ ],
+ "alignment": {
+  "passages": 600,
+  "spans_total": 46001,
+  "spans_valid_both": 45949,
+  "coverage_both": 0.9988695897915263,
+  "coverage_min_passage": 0.9545454545454546,
+  "passages_below_95": 0,
+  "spans_student_only": 33,
+  "spans_teacher_only": 10,
+  "span_index_out_of_range": 0,
+  "pass_95": true
+ },
+ "manual_cases": {
+  "file": "artifacts/cafe_bami_repdistill_pilot/alignment_cases.txt",
+  "count": 30,
+  "by_kind": {
+   "diacritics": 12,
+   "punct_digits": 9,
+   "teencode": 9
+  },
+  "verdict": "PASS — all 30 cases reviewed by the main agent: every subword overlapping a unit is pooled into that unit in both tokenizers (XLM-R often splits one syllable into 2–3 pieces, e.g. '▁h ụ t', '▁C ặ p'; BamiBERT mostly 1 piece); unmapped non-special tokens are punctuation only; digit groups like 23.11.1940 -> units 23/11/1940 with '19'+'40' pooled; hyphen-merged pieces such as '-3' in CA-3A-LG go to the unit with the largest overlap (ties -> earlier unit, e.g. '▁5-1' in 5-13%); teencode 'ko'/'dc' split into 2 pieces still pool to one unit; a letter+digit run like L1000xW450xH1830 is one unit in both. Caveat: one sampled holdout passage is adult-spam text (web corpus quality).",
+  "reviewed_at": "2026-09-18"
+ },
+ "gradients": {
+  "hidden_finite": {
+   "student_layer6": true,
+   "student_layer12": true,
+   "teacher_layer12": true,
+   "teacher_layer24": true
+  },
+  "rel_loss_value": 0.10207110643386841,
+  "rel_rows": [
+   1254,
+   1254
+  ],
+  "rel_by_layer": [
+   0.10154489427804947,
+   0.10259731858968735
+  ],
+  "teacher_requires_grad_any": false,
+  "teacher_grad_any": false,
+  "student_encoder_grad_norm_from_rel": 0.523646144661435,
+  "student_grad_nonzero": true,
+  "teacher_training_mode": false
+ },
+ "batch_invariance": {
+  "max_abs_diff_seq0_pooled": 0.030674129724502563,
+  "ok": true,
+  "note": "bf16 autocast with different padding lengths; differences are rounding only"
+ },
+ "objective_tests": {
+  "kl_hand": 3.141557565806041,
+  "kl_impl": 3.1415576934814453,
+  "hand_matches": true,
+  "kl_tt": 0.0,
+  "pad_invariant": true,
+  "diag_excluded": true,
+  "kl_teacher_self_real_batch": 0.0
+ },
+ "grad_ratio": {
+  "per_batch": [
+   {
+    "step": 0,
+    "mlm": 1.7417935132980347,
+    "rel": 0.07688814401626587,
+    "n_masked": 457,
+    "grad_norm_mlm": 13.592660567599971,
+    "grad_norm_rel": 0.4773587728227805,
+    "ratio": 0.03511886215717272,
+    "finite": true
+   },
+   {
+    "step": 1,
+    "mlm": 1.7646194696426392,
+    "rel": 0.07790493965148926,
+    "n_masked": 434,
+    "grad_norm_mlm": 15.540083445381068,
+    "grad_norm_rel": 0.31829727582006795,
+    "ratio": 0.020482340197129023,
+    "finite": true
+   },
+   {
+    "step": 2,
+    "mlm": 1.7288475036621094,
+    "rel": 0.07728397846221924,
+    "n_masked": 458,
+    "grad_norm_mlm": 20.036739391678395,
+    "grad_norm_rel": 0.30386022771577637,
+    "ratio": 0.015165153460147053,
+    "finite": true
+   },
+   {
+    "step": 3,
+    "mlm": 1.6698288917541504,
+    "rel": 0.07813389599323273,
+    "n_masked": 434,
+    "grad_norm_mlm": 19.14180548152159,
+    "grad_norm_rel": 0.3269837962969912,
+    "ratio": 0.017082181543044243,
+    "finite": true
+   }
+  ],
+  "min": 0.015165153460147053,
+  "max": 0.03511886215717272,
+  "in_range_0.05_20": false,
+  "all_finite": true
+ },
+ "determinism": {
+  "0": {
+   "batch_hash": "6c29e2f1dddcd69875584934cecb8aff3626f0c4587a6a1c67c6b5f4ea5662fb",
+   "batch_repeatable": true,
+   "mask_hash": "8e41323ee2d63eb989e13548f6b252573725260f35989b39be5ca88e900adccf",
+   "mask_repeatable": true
+  },
+  "1": {
+   "batch_hash": "e6b73aa9ba053e922a1c8dda0a3a825d5f7d4b1a96483d70aba9efae31e1c7e8",
+   "batch_repeatable": true,
+   "mask_hash": "f8e768231d0059368eeda2d2f7d93a10867e5e882643a6f928fd601e9f5bbd47",
+   "mask_repeatable": true
+  },
+  "2": {
+   "batch_hash": "4f0c2c963a86c17f158312e3d3b37d918309e3dc60e79dd02e83f238672ce8ed",
+   "batch_repeatable": true,
+   "mask_hash": "48d760932073fa59efd9fefcf85fa1e5a06d6f40cb31c359a38b3187ef8b0846",
+   "mask_repeatable": true
+  },
+  "3": {
+   "batch_hash": "aa5b7ef73ba5cfa239e3ec5a72a3ee59b4bb2e86d3963c86f87bc717d4528769",
+   "batch_repeatable": true,
+   "mask_hash": "04a72c55a4e25c848ed18d3ce06b1e9af91a399ec9724c53980d4ffcea86c233",
+   "mask_repeatable": true
+  }
+ },
+ "gate": {
+  "alignment_pass_95": true,
+  "no_out_of_range_spans": true,
+  "hidden_finite": true,
+  "teacher_frozen": true,
+  "student_grad_from_rel": true,
+  "objective_tests_ok": true,
+  "grad_ratio_ok": false,
+  "determinism_ok": true,
+  "manual_cases_reviewed": true,
+  "all_automatic_ok": false
+ }
+}

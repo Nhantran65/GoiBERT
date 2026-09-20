@@ -1,0 +1,82 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v4-test",
+ "arm": "P_inf",
+ "task_id": "vsfc_topic",
+ "seed": 42,
+ "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/P_inf_NC_research_only/vsfc_topic/seed_42/best_checkpoint.pt",
+ "checkpoint_sha256": "6ab9189ea0c1ce99f0af0ce936f741a753d280c07f9c0343bd67dd055c6d02e4",
+ "validation_selected_epoch": 26,
+ "validation_selection_f1": 0.8010412592531703,
+ "learning_rate": 2e-05,
+ "test_metrics": {
+  "n": 3166,
+  "labels": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "accuracy": 0.8862918509159823,
+  "macro_precision": 0.8050548402479732,
+  "macro_recall": 0.7702139202912345,
+  "macro_f1": 0.7850067676429435,
+  "per_class": {
+   "0": {
+    "support": 2290,
+    "predicted": 2330,
+    "tp": 2170,
+    "fp": 160,
+    "fn": 120,
+    "precision": 0.9313304721030042,
+    "recall": 0.9475982532751092,
+    "f1": 0.9393939393939394
+   },
+   "1": {
+    "support": 572,
+    "predicted": 572,
+    "tp": 429,
+    "fp": 143,
+    "fn": 143,
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75
+   },
+   "2": {
+    "support": 145,
+    "predicted": 144,
+    "tp": 134,
+    "fp": 10,
+    "fn": 11,
+    "precision": 0.9305555555555556,
+    "recall": 0.9241379310344827,
+    "f1": 0.9273356401384083
+   },
+   "3": {
+    "support": 159,
+    "predicted": 120,
+    "tp": 73,
+    "fp": 47,
+    "fn": 86,
+    "precision": 0.6083333333333333,
+    "recall": 0.4591194968553459,
+    "f1": 0.5232974910394266
+   }
+  },
+  "task_id": "vsfc_topic",
+  "split": "test",
+  "selection_f1": 0.7850067676429435,
+  "selection_metric": "fixed_label_macro_f1"
+ },
+ "test_selection_f1": 0.7850067676429435,
+ "selection_f1_recomputed_from_predictions": 0.7850067676429435,
+ "test_count": 3166,
+ "predictions_rows": 3166,
+ "reload_prediction_repeatable": true,
+ "load_missing_keys": [],
+ "load_unexpected_keys": [],
+ "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_inf_NC_research_only/hf_encoder",
+ "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+ "research_only": true,
+ "elapsed_s": 7.0,
+ "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+}

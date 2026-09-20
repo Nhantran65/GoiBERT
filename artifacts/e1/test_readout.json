@@ -1,0 +1,1100 @@
+{
+  "protocol": "E1-test-gate-v1",
+  "readout_id": "E1-test-readout-20260908-v1",
+  "generated_at_utc": "2026-09-08T07:38:19.644036+00:00",
+  "status": "complete",
+  "manifest": {
+    "path": "/home/kiettqa/GoiBERT/artifacts/e1/test_selection_manifest.json",
+    "sha256": "bd8e8855fc3507c3c88ed8797671ca7ed9f1edc246e0363ab17e398ea98c82c4",
+    "filesystem_mtime_utc": "2026-09-08T07:34:03.849315+00:00",
+    "declared_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "selection_count": 25
+  },
+  "execution": {
+    "index_path": "/home/kiettqa/GoiBERT/artifacts/e1/test_index_20260908T073518Z.json",
+    "index_sha256": "fcca59e8426d9b9e6e642f6796f5fbd82285bccac64610ee9e045d013e7c0847",
+    "index_filesystem_mtime_utc": "2026-09-08T07:35:18.693861+00:00",
+    "plan_index_path": "/home/kiettqa/GoiBERT/artifacts/e1/test_index_20260908T073435Z.json",
+    "plan_index_sha256": "da7ab446cfdf4215631ed1f774999c31ce2b677621840b79fa6341b6957ef2f3",
+    "access_log_path": "/home/kiettqa/GoiBERT/artifacts/e1/test_access_log.json",
+    "access_log_sha256": "b3a97d6c4096696a4e14517b2e41de067a9da24e8d6dbfbf1f6f09a67ed9891b",
+    "devices": [
+      "cuda:0",
+      "cuda:1",
+      "cuda:3"
+    ],
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "mode": "inference_only",
+    "test_access_log": "25/25 unique locked checkpoints evaluated once; no retraining or test-based selection"
+  },
+  "test_row_counts": {
+    "vsfc_sentiment": 3166,
+    "vsfc_topic": 3166,
+    "visfd": 2224,
+    "absa_restaurant": 1938,
+    "absa_hotel": 2030
+  },
+  "paper_metric_equivalence": {
+    "vsfc_accuracy": "comparable by definition",
+    "vsfc_macro_f1": "unresolved; paper does not specify averaging sufficiently",
+    "absa_detection_micro_f1": "unresolved; paper evaluator/averaging is not published sufficiently",
+    "absa_pair_micro_f1": "unresolved; paper evaluator/OTHERS and conditional-vs-end-to-end scope are not published sufficiently",
+    "uit_absa_lineage": "public candidate mirror; release lineage to the original paper split is not independently proven"
+  },
+  "per_seed_results": [
+    {
+      "task_id": "absa_hotel",
+      "task": "UIT-ABSA Hotel",
+      "seed": 42,
+      "learning_rate": 0.0001,
+      "stage": "screening",
+      "best_epoch": 27,
+      "n_test": 2030,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__screening__1e-04__seed42__attempt_20260907T185002",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__screening__1e-04__seed42__attempt_20260907T185002/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__screening__1e-04__seed42__attempt_20260907T185002/test_metrics.json",
+      "checkpoint_sha256": "293c718b676420cb5fcc62f05988fb37ca9c7201e8956ca99dda59090f528ca7",
+      "metadata_sha256": "7d598c378295cd7efe50f22e75c3358e8bb0c847501e55a0387dc961b9272148",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:3",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.7896794370602033,
+        "pair_micro_f1": 0.7233776387802971
+      }
+    },
+    {
+      "task_id": "absa_hotel",
+      "task": "UIT-ABSA Hotel",
+      "seed": 43,
+      "learning_rate": 0.0001,
+      "stage": "shortlist",
+      "best_epoch": 29,
+      "n_test": 2030,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__shortlist__1e-04__seed43__attempt_20260907T193337",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__shortlist__1e-04__seed43__attempt_20260907T193337/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__shortlist__1e-04__seed43__attempt_20260907T193337/test_metrics.json",
+      "checkpoint_sha256": "d073403f80c1d0f9116d7b696da6bc7a2f27564ce509b9e9252eccac0bbeaca0",
+      "metadata_sha256": "fd69af949be86ae8c0f9496803196ec907e03e4031a22a69cb648e4974e60581",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:0",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.7862763613471829,
+        "pair_micro_f1": 0.7173434057286748
+      }
+    },
+    {
+      "task_id": "absa_hotel",
+      "task": "UIT-ABSA Hotel",
+      "seed": 44,
+      "learning_rate": 0.0001,
+      "stage": "shortlist",
+      "best_epoch": 21,
+      "n_test": 2030,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__shortlist__1e-04__seed44__attempt_20260907T193337",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__shortlist__1e-04__seed44__attempt_20260907T193337/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__shortlist__1e-04__seed44__attempt_20260907T193337/test_metrics.json",
+      "checkpoint_sha256": "0021314ad9b8a8997d4a267dec4b1f36e5d1b86509179fe6ac0820eece67affe",
+      "metadata_sha256": "f07a00ece5fdaa9fa5fa2e0e20623ac9d1166aca66071a5acb8fefb41f0e3fda",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:1",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.7865028766910278,
+        "pair_micro_f1": 0.71590732389986
+      }
+    },
+    {
+      "task_id": "absa_hotel",
+      "task": "UIT-ABSA Hotel",
+      "seed": 45,
+      "learning_rate": 0.0001,
+      "stage": "final",
+      "best_epoch": 20,
+      "n_test": 2030,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__final__1e-04__seed45__attempt_20260907T195741",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__final__1e-04__seed45__attempt_20260907T195741/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__final__1e-04__seed45__attempt_20260907T195741/test_metrics.json",
+      "checkpoint_sha256": "216d54281c635a2eacaac63700136989fa19200379f38cc522b0f6a840236ff1",
+      "metadata_sha256": "63d20916ac6761ddeabca98331930d92962eaa3126b2a5a67ac4f27f7b49aff3",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:3",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.7826774142563616,
+        "pair_micro_f1": 0.7156630314525051
+      }
+    },
+    {
+      "task_id": "absa_hotel",
+      "task": "UIT-ABSA Hotel",
+      "seed": 46,
+      "learning_rate": 0.0001,
+      "stage": "final",
+      "best_epoch": 23,
+      "n_test": 2030,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__final__1e-04__seed46__attempt_20260907T195741",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__final__1e-04__seed46__attempt_20260907T195741/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__final__1e-04__seed46__attempt_20260907T195741/test_metrics.json",
+      "checkpoint_sha256": "d57870923d50ab4c88e9ad15270b23f274064a8450ec1664428a89f1087e3d36",
+      "metadata_sha256": "b0c993f407178c9f6513563562a261c739b9547e065dd9b7bbf4f2376ab19706",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:0",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.7866792334275841,
+        "pair_micro_f1": 0.7169337103361608
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "task": "UIT-ABSA Restaurant",
+      "seed": 42,
+      "learning_rate": 0.0001,
+      "stage": "screening",
+      "best_epoch": 22,
+      "n_test": 1938,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__screening__1e-04__seed42__attempt_20260907T184301",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__screening__1e-04__seed42__attempt_20260907T184301/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__screening__1e-04__seed42__attempt_20260907T184301/test_metrics.json",
+      "checkpoint_sha256": "3322d55e5160028b9b1ab4e580cb855435f9b230316c8cac228eb3b76e2e5a0f",
+      "metadata_sha256": "c913f41752735aee54b8c27193cac22dcf09687e8946b5fbc5520231e0dfb26a",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:0",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.8402344488561164,
+        "pair_micro_f1": 0.6938929854414824
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "task": "UIT-ABSA Restaurant",
+      "seed": 43,
+      "learning_rate": 0.0001,
+      "stage": "shortlist",
+      "best_epoch": 29,
+      "n_test": 1938,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__shortlist__1e-04__seed43__attempt_20260907T192706",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__shortlist__1e-04__seed43__attempt_20260907T192706/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__shortlist__1e-04__seed43__attempt_20260907T192706/test_metrics.json",
+      "checkpoint_sha256": "0551c14b3c9332112506d15639d2c45fd4d8e85614e16b43c2a46e750be1666e",
+      "metadata_sha256": "4c2cf5fed2ec7caa5e1c9d430f6e1e8219ba22c0d6a930db83599ffca8ca844c",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:1",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.8461684730937441,
+        "pair_micro_f1": 0.6902452937820879
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "task": "UIT-ABSA Restaurant",
+      "seed": 44,
+      "learning_rate": 0.0001,
+      "stage": "shortlist",
+      "best_epoch": 28,
+      "n_test": 1938,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__shortlist__1e-04__seed44__attempt_20260907T192706",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__shortlist__1e-04__seed44__attempt_20260907T192706/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__shortlist__1e-04__seed44__attempt_20260907T192706/test_metrics.json",
+      "checkpoint_sha256": "dfc9e5a3b373a4102960fe0c7981afa0780a05709b710fc7c40e535b154e96ed",
+      "metadata_sha256": "fd6becf1e8934c4e83845fdf86191f3e5bfa4a9ea5c5e7c9371a1eaa7380b6e1",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:3",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.8399318052661489,
+        "pair_micro_f1": 0.6808107596135632
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "task": "UIT-ABSA Restaurant",
+      "seed": 45,
+      "learning_rate": 0.0001,
+      "stage": "final",
+      "best_epoch": 28,
+      "n_test": 1938,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__final__1e-04__seed45__attempt_20260907T195110",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__final__1e-04__seed45__attempt_20260907T195110/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__final__1e-04__seed45__attempt_20260907T195110/test_metrics.json",
+      "checkpoint_sha256": "b5ae2affd069c5fc994b2e8a0205cdf7ffb3e555fa266935d327c582428506f5",
+      "metadata_sha256": "9fc9223e80446c175efc166b1796f4bcf17b43ed6136110bbd08b3b6fdda42a2",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:0",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.8459341077889926,
+        "pair_micro_f1": 0.6962483336507332
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "task": "UIT-ABSA Restaurant",
+      "seed": 46,
+      "learning_rate": 0.0001,
+      "stage": "final",
+      "best_epoch": 23,
+      "n_test": 1938,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__final__1e-04__seed46__attempt_20260907T195110",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__final__1e-04__seed46__attempt_20260907T195110/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__final__1e-04__seed46__attempt_20260907T195110/test_metrics.json",
+      "checkpoint_sha256": "12558663423eb01eb124340cd005cc5d1174c71c2d53f62c394ce5ec018967da",
+      "metadata_sha256": "6435a518c19a97c5acc4d6fb9bba4b4aa9e77d3d8c66795dc3cb1f39c5d18ae4",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:1",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.8435477731252379,
+        "pair_micro_f1": 0.6928054815378759
+      }
+    },
+    {
+      "task_id": "visfd",
+      "task": "ViSFD",
+      "seed": 42,
+      "learning_rate": 0.0001,
+      "stage": "screening",
+      "best_epoch": 14,
+      "n_test": 2224,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__screening__1e-04__seed42__attempt_20260907T183530",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__screening__1e-04__seed42__attempt_20260907T183530/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__screening__1e-04__seed42__attempt_20260907T183530/test_metrics.json",
+      "checkpoint_sha256": "668179272957a746fb8f0f4a9a58294b0658f04d7a3699bc97e4cbff74260073",
+      "metadata_sha256": "a244b083a0bf4928d4c8ec71e650f2e456efa07663f806bd94476a703f9d1b31",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:1",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.8669835365433629,
+        "pair_micro_f1": 0.7908076553609695
+      }
+    },
+    {
+      "task_id": "visfd",
+      "task": "ViSFD",
+      "seed": 43,
+      "learning_rate": 0.0001,
+      "stage": "shortlist",
+      "best_epoch": 25,
+      "n_test": 2224,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__shortlist__1e-04__seed43__attempt_20260907T191935",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__shortlist__1e-04__seed43__attempt_20260907T191935/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__shortlist__1e-04__seed43__attempt_20260907T191935/test_metrics.json",
+      "checkpoint_sha256": "1758c31c1e3abaddb31c93bfe0b6a639d853a674a67a8ff07722e258c82eb4b4",
+      "metadata_sha256": "02387f15340111948aaca23c5953d1b71d59d469beb43be0aa60f4cea2528cc2",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:3",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.8659149572069013,
+        "pair_micro_f1": 0.7964886613021215
+      }
+    },
+    {
+      "task_id": "visfd",
+      "task": "ViSFD",
+      "seed": 44,
+      "learning_rate": 0.0001,
+      "stage": "shortlist",
+      "best_epoch": 28,
+      "n_test": 2224,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__shortlist__1e-04__seed44__attempt_20260907T191935",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__shortlist__1e-04__seed44__attempt_20260907T191935/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__shortlist__1e-04__seed44__attempt_20260907T191935/test_metrics.json",
+      "checkpoint_sha256": "2b21f3c76b13f2dcffc76228ad13bdd8b076225d033d67ae6e1171b821dbf8e4",
+      "metadata_sha256": "fd98758ac69b3a65c29751f279edbb0635aae80e00da96ebee83c7e346cef1dc",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:0",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.8699924930048454,
+        "pair_micro_f1": 0.7993257109352097
+      }
+    },
+    {
+      "task_id": "visfd",
+      "task": "ViSFD",
+      "seed": 45,
+      "learning_rate": 0.0001,
+      "stage": "final",
+      "best_epoch": 30,
+      "n_test": 2224,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__final__1e-04__seed45__attempt_20260907T195110",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__final__1e-04__seed45__attempt_20260907T195110/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__final__1e-04__seed45__attempt_20260907T195110/test_metrics.json",
+      "checkpoint_sha256": "28f778fe5fd46b5eaf0474de6fc302d1a4e3530b0da138d1fa3aed2ac4fb8a99",
+      "metadata_sha256": "df5673dffdd66a3e7fdf0290d6fd11d054d76c38103b8d12fe2782702b6d40d3",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:1",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.8696487376509331,
+        "pair_micro_f1": 0.8010875156146667
+      }
+    },
+    {
+      "task_id": "visfd",
+      "task": "ViSFD",
+      "seed": 46,
+      "learning_rate": 0.0001,
+      "stage": "final",
+      "best_epoch": 29,
+      "n_test": 2224,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__final__1e-04__seed46__attempt_20260907T195110",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__final__1e-04__seed46__attempt_20260907T195110/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__final__1e-04__seed46__attempt_20260907T195110/test_metrics.json",
+      "checkpoint_sha256": "7f5fad9c713bff76dc56227b5c356fd84f425c6d8da54eb7f513450e91d6541c",
+      "metadata_sha256": "cc9cd72191d121e7f771726e8fa641f25f3047a2272430fe570e2bf22f1cae3f",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:3",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "detection_micro_f1": 0.8703792937289185,
+        "pair_micro_f1": 0.8039519280395193
+      }
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "task": "VSFC sentiment",
+      "seed": 42,
+      "learning_rate": 1e-05,
+      "stage": "screening",
+      "best_epoch": 5,
+      "n_test": 3166,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__screening__1e-05__seed42__attempt_20260907T180659",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__screening__1e-05__seed42__attempt_20260907T180659/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__screening__1e-05__seed42__attempt_20260907T180659/test_metrics.json",
+      "checkpoint_sha256": "3b1d8560b3ee63681775abab0db24f0266de7a72a358ab3f2ca08d5363f307c2",
+      "metadata_sha256": "78175bf7eafadc07e4601aaf2e02a8eb68486c206b1434a1532f7932e1abc1a3",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:0",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "accuracy": 0.9254579911560329,
+        "macro_f1": 0.8194421855398364
+      }
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "task": "VSFC sentiment",
+      "seed": 43,
+      "learning_rate": 1e-05,
+      "stage": "shortlist",
+      "best_epoch": 22,
+      "n_test": 3166,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__shortlist__1e-05__seed43__attempt_20260907T185833",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__shortlist__1e-05__seed43__attempt_20260907T185833/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__shortlist__1e-05__seed43__attempt_20260907T185833/test_metrics.json",
+      "checkpoint_sha256": "9e9b2252a2211e715fb475fe8f275dd04d64fc503ab97461c7d0eac71ce18624",
+      "metadata_sha256": "6c7a3bcf996677fc90a75a931b9eaacaf90e021dab1d12e31b4340042534137f",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:1",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "accuracy": 0.9185091598231206,
+        "macro_f1": 0.804573702453247
+      }
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "task": "VSFC sentiment",
+      "seed": 44,
+      "learning_rate": 1e-05,
+      "stage": "shortlist",
+      "best_epoch": 6,
+      "n_test": 3166,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__shortlist__1e-05__seed44__attempt_20260907T185833",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__shortlist__1e-05__seed44__attempt_20260907T185833/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__shortlist__1e-05__seed44__attempt_20260907T185833/test_metrics.json",
+      "checkpoint_sha256": "72f8ebc026032c48587edfe29bc110e63c6b42bea4565df8a70b2a4e74b4c2c7",
+      "metadata_sha256": "094b2e83120ec4f39723857494d0c519817590098cd44eceafbd2560f7d49550",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:3",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "accuracy": 0.9229311433986103,
+        "macro_f1": 0.8136491107509048
+      }
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "task": "VSFC sentiment",
+      "seed": 45,
+      "learning_rate": 1e-05,
+      "stage": "final",
+      "best_epoch": 12,
+      "n_test": 3166,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__final__1e-05__seed45__attempt_20260907T194038",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__final__1e-05__seed45__attempt_20260907T194038/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__final__1e-05__seed45__attempt_20260907T194038/test_metrics.json",
+      "checkpoint_sha256": "8d6e525fe760c581327e61120410438073e9815f7c58a641863590ebed442799",
+      "metadata_sha256": "17eb0b021c4c77f51d80c5578cccf5748973a4dccbba21d08805735c35f248d5",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:0",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "accuracy": 0.919772583701832,
+        "macro_f1": 0.7962345857882397
+      }
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "task": "VSFC sentiment",
+      "seed": 46,
+      "learning_rate": 1e-05,
+      "stage": "final",
+      "best_epoch": 8,
+      "n_test": 3166,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__final__1e-05__seed46__attempt_20260907T194038",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__final__1e-05__seed46__attempt_20260907T194038/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__final__1e-05__seed46__attempt_20260907T194038/test_metrics.json",
+      "checkpoint_sha256": "30d0f006979442db1d43d6d9895914309ae34bd810522c3b872c48e85b8ba489",
+      "metadata_sha256": "202509fe9fef14a63b1346ac541108e656defe399ac178ecc4a79c344678ed39",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:1",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "accuracy": 0.9238787113076438,
+        "macro_f1": 0.7960873075438109
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "task": "VSFC topic",
+      "seed": 42,
+      "learning_rate": 1e-05,
+      "stage": "screening",
+      "best_epoch": 7,
+      "n_test": 3166,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__screening__1e-05__seed42__attempt_20260907T181729",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__screening__1e-05__seed42__attempt_20260907T181729/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__screening__1e-05__seed42__attempt_20260907T181729/test_metrics.json",
+      "checkpoint_sha256": "a20aad757b7ee452a6c078f69f47186f657979ee5c8de6a426d7a52493657678",
+      "metadata_sha256": "e214b3fde9de5477d9d996f957b687992962ebdb567a28615fc4fd249f766e24",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:3",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "accuracy": 0.8859759949463045,
+        "macro_f1": 0.7973684704551642
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "task": "VSFC topic",
+      "seed": 43,
+      "learning_rate": 1e-05,
+      "stage": "shortlist",
+      "best_epoch": 9,
+      "n_test": 3166,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__shortlist__1e-05__seed43__attempt_20260907T190904",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__shortlist__1e-05__seed43__attempt_20260907T190904/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__shortlist__1e-05__seed43__attempt_20260907T190904/test_metrics.json",
+      "checkpoint_sha256": "987eb7e11bbd65302d6d7222d170bae901d49fa12734749f802b7444b8ef9166",
+      "metadata_sha256": "81cfda239583ea1987a5a3a97eb3dd6f1cf1e56d7b7995daedea8a564f07176f",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:0",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "accuracy": 0.8859759949463045,
+        "macro_f1": 0.7874007826773116
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "task": "VSFC topic",
+      "seed": 44,
+      "learning_rate": 1e-05,
+      "stage": "shortlist",
+      "best_epoch": 15,
+      "n_test": 3166,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__shortlist__1e-05__seed44__attempt_20260907T190904",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__shortlist__1e-05__seed44__attempt_20260907T190904/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__shortlist__1e-05__seed44__attempt_20260907T190904/test_metrics.json",
+      "checkpoint_sha256": "63ca31e74bfbe6da3a19bb1b3cf3677df43ecdd5827250f31b50dc2b8426118f",
+      "metadata_sha256": "80adb1884425ac8b444d6c5ebc6348dd18fcd968b4210b10f32ceb74faa995a8",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:1",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "accuracy": 0.8825015792798484,
+        "macro_f1": 0.7900382493387428
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "task": "VSFC topic",
+      "seed": 45,
+      "learning_rate": 1e-05,
+      "stage": "final",
+      "best_epoch": 6,
+      "n_test": 3166,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__final__1e-05__seed45__attempt_20260907T194038",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__final__1e-05__seed45__attempt_20260907T194038/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__final__1e-05__seed45__attempt_20260907T194038/test_metrics.json",
+      "checkpoint_sha256": "27e9c9ec8a074f2b25e561389392d835f8d1e0d5a65705be22a41312eb4fbc5c",
+      "metadata_sha256": "a961ecb54c04f5f191ff8bd0243ec5e3e574b3b6a43ff468924c71e70f3b78a2",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:3",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "accuracy": 0.8878711307643714,
+        "macro_f1": 0.7788157355423199
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "task": "VSFC topic",
+      "seed": 46,
+      "learning_rate": 1e-05,
+      "stage": "final",
+      "best_epoch": 8,
+      "n_test": 3166,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__final__1e-05__seed46__attempt_20260907T194039",
+      "test_evaluation_metadata": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__final__1e-05__seed46__attempt_20260907T194039/test_evaluation_metadata.json",
+      "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__final__1e-05__seed46__attempt_20260907T194039/test_metrics.json",
+      "checkpoint_sha256": "5baba0a1d1e6c872d2e0f0d6c79b968dc8a726f44ec07d97c1572f3a55494dce",
+      "metadata_sha256": "3e48f1f066a2901c6db8c8ef3bd0350f76520de8421c09da113f109b1b9ffa7a",
+      "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "hip": null,
+        "device": "cuda:0",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null
+      },
+      "metrics": {
+        "accuracy": 0.8821857233101705,
+        "macro_f1": 0.7774781654160428
+      }
+    }
+  ],
+  "aggregates": {
+    "vsfc_sentiment": {
+      "accuracy": {
+        "label": "Accuracy",
+        "per_seed_percent": {
+          "42": 92.54579911560329,
+          "43": 91.85091598231206,
+          "44": 92.29311433986102,
+          "45": 91.97725837018321,
+          "46": 92.38787113076438
+        },
+        "mean_percent": 92.21099178774479,
+        "sample_std_percent": 0.2891419454540966,
+        "bami_bert_paper_percent": 93.86,
+        "arithmetic_delta_percent": -1.649008212255211,
+        "metric_equivalence": "resolved for Accuracy"
+      },
+      "macro_f1": {
+        "label": "Macro F1",
+        "per_seed_percent": {
+          "42": 81.94421855398363,
+          "43": 80.4573702453247,
+          "44": 81.36491107509049,
+          "45": 79.62345857882397,
+          "46": 79.60873075438109
+        },
+        "mean_percent": 80.59973784152078,
+        "sample_std_percent": 1.0426652436827124,
+        "bami_bert_paper_percent": 83.41,
+        "arithmetic_delta_percent": -2.810262158479219,
+        "metric_equivalence": "unresolved"
+      }
+    },
+    "vsfc_topic": {
+      "accuracy": {
+        "label": "Accuracy",
+        "per_seed_percent": {
+          "42": 88.59759949463046,
+          "43": 88.59759949463046,
+          "44": 88.25015792798484,
+          "45": 88.78711307643714,
+          "46": 88.21857233101706
+        },
+        "mean_percent": 88.49020846494,
+        "sample_std_percent": 0.24628665432239785,
+        "bami_bert_paper_percent": 89.34,
+        "arithmetic_delta_percent": -0.8497915350600067,
+        "metric_equivalence": "resolved for Accuracy"
+      },
+      "macro_f1": {
+        "label": "Macro F1",
+        "per_seed_percent": {
+          "42": 79.73684704551643,
+          "43": 78.74007826773116,
+          "44": 79.00382493387428,
+          "45": 77.88157355423199,
+          "46": 77.74781654160428
+        },
+        "mean_percent": 78.62202806859163,
+        "sample_std_percent": 0.8238696390997363,
+        "bami_bert_paper_percent": 79.9,
+        "arithmetic_delta_percent": -1.2779719314083735,
+        "metric_equivalence": "unresolved"
+      }
+    },
+    "visfd": {
+      "detection_micro_f1": {
+        "label": "Aspect detection micro F1",
+        "per_seed_percent": {
+          "42": 86.69835365433629,
+          "43": 86.59149572069012,
+          "44": 86.99924930048454,
+          "45": 86.96487376509332,
+          "46": 87.03792937289185
+        },
+        "mean_percent": 86.85838036269922,
+        "sample_std_percent": 0.20016162780187727,
+        "bami_bert_paper_percent": 89.14,
+        "arithmetic_delta_percent": -2.2816196373007784,
+        "metric_equivalence": "unresolved"
+      },
+      "pair_micro_f1": {
+        "label": "End-to-end aspect-polarity pair micro F1",
+        "per_seed_percent": {
+          "42": 79.08076553609695,
+          "43": 79.64886613021214,
+          "44": 79.93257109352096,
+          "45": 80.10875156146668,
+          "46": 80.39519280395193
+        },
+        "mean_percent": 79.83322942504974,
+        "sample_std_percent": 0.5004437487467746,
+        "bami_bert_paper_percent": 84.24,
+        "arithmetic_delta_percent": -4.406770574950258,
+        "metric_equivalence": "unresolved"
+      }
+    },
+    "absa_restaurant": {
+      "detection_micro_f1": {
+        "label": "Aspect detection micro F1",
+        "per_seed_percent": {
+          "42": 84.02344488561164,
+          "43": 84.6168473093744,
+          "44": 83.99318052661488,
+          "45": 84.59341077889925,
+          "46": 84.3547773125238
+        },
+        "mean_percent": 84.3163321626048,
+        "sample_std_percent": 0.2994870111813422,
+        "bami_bert_paper_percent": 88.01,
+        "arithmetic_delta_percent": -3.6936678373952105,
+        "metric_equivalence": "unresolved"
+      },
+      "pair_micro_f1": {
+        "label": "End-to-end aspect-polarity pair micro F1",
+        "per_seed_percent": {
+          "42": 69.38929854414823,
+          "43": 69.02452937820878,
+          "44": 68.08107596135632,
+          "45": 69.62483336507333,
+          "46": 69.28054815378759
+        },
+        "mean_percent": 69.08005708051485,
+        "sample_std_percent": 0.598676614640186,
+        "bami_bert_paper_percent": 74.89,
+        "arithmetic_delta_percent": -5.809942919485152,
+        "metric_equivalence": "unresolved"
+      }
+    },
+    "absa_hotel": {
+      "detection_micro_f1": {
+        "label": "Aspect detection micro F1",
+        "per_seed_percent": {
+          "42": 78.96794370602032,
+          "43": 78.62763613471829,
+          "44": 78.65028766910278,
+          "45": 78.26774142563616,
+          "46": 78.6679233427584
+        },
+        "mean_percent": 78.63630645564719,
+        "sample_std_percent": 0.24854261381470696,
+        "bami_bert_paper_percent": 79.99,
+        "arithmetic_delta_percent": -1.353693544352808,
+        "metric_equivalence": "unresolved"
+      },
+      "pair_micro_f1": {
+        "label": "End-to-end aspect-polarity pair micro F1",
+        "per_seed_percent": {
+          "42": 72.33776387802972,
+          "43": 71.73434057286748,
+          "44": 71.590732389986,
+          "45": 71.56630314525052,
+          "46": 71.69337103361609
+        },
+        "mean_percent": 71.78450220394996,
+        "sample_std_percent": 0.31704776038704485,
+        "bami_bert_paper_percent": 72.65,
+        "arithmetic_delta_percent": -0.8654977960500503,
+        "metric_equivalence": "unresolved"
+      }
+    }
+  },
+  "comparison_rows": [
+    {
+      "task_id": "vsfc_sentiment",
+      "task": "VSFC sentiment",
+      "metric": "accuracy",
+      "metric_label": "Accuracy",
+      "bami_bert_paper_percent": 93.86,
+      "goibert_mean_percent": 92.21099178774479,
+      "goibert_sample_std_percent": 0.2891419454540966,
+      "arithmetic_delta_percent": -1.649008212255211,
+      "metric_equivalence": "resolved for Accuracy"
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "task": "VSFC sentiment",
+      "metric": "macro_f1",
+      "metric_label": "Macro F1",
+      "bami_bert_paper_percent": 83.41,
+      "goibert_mean_percent": 80.59973784152078,
+      "goibert_sample_std_percent": 1.0426652436827124,
+      "arithmetic_delta_percent": -2.810262158479219,
+      "metric_equivalence": "unresolved"
+    },
+    {
+      "task_id": "vsfc_topic",
+      "task": "VSFC topic",
+      "metric": "accuracy",
+      "metric_label": "Accuracy",
+      "bami_bert_paper_percent": 89.34,
+      "goibert_mean_percent": 88.49020846494,
+      "goibert_sample_std_percent": 0.24628665432239785,
+      "arithmetic_delta_percent": -0.8497915350600067,
+      "metric_equivalence": "resolved for Accuracy"
+    },
+    {
+      "task_id": "vsfc_topic",
+      "task": "VSFC topic",
+      "metric": "macro_f1",
+      "metric_label": "Macro F1",
+      "bami_bert_paper_percent": 79.9,
+      "goibert_mean_percent": 78.62202806859163,
+      "goibert_sample_std_percent": 0.8238696390997363,
+      "arithmetic_delta_percent": -1.2779719314083735,
+      "metric_equivalence": "unresolved"
+    },
+    {
+      "task_id": "visfd",
+      "task": "ViSFD",
+      "metric": "detection_micro_f1",
+      "metric_label": "Aspect detection micro F1",
+      "bami_bert_paper_percent": 89.14,
+      "goibert_mean_percent": 86.85838036269922,
+      "goibert_sample_std_percent": 0.20016162780187727,
+      "arithmetic_delta_percent": -2.2816196373007784,
+      "metric_equivalence": "unresolved"
+    },
+    {
+      "task_id": "visfd",
+      "task": "ViSFD",
+      "metric": "pair_micro_f1",
+      "metric_label": "End-to-end aspect-polarity pair micro F1",
+      "bami_bert_paper_percent": 84.24,
+      "goibert_mean_percent": 79.83322942504974,
+      "goibert_sample_std_percent": 0.5004437487467746,
+      "arithmetic_delta_percent": -4.406770574950258,
+      "metric_equivalence": "unresolved"
+    },
+    {
+      "task_id": "absa_restaurant",
+      "task": "UIT-ABSA Restaurant",
+      "metric": "detection_micro_f1",
+      "metric_label": "Aspect detection micro F1",
+      "bami_bert_paper_percent": 88.01,
+      "goibert_mean_percent": 84.3163321626048,
+      "goibert_sample_std_percent": 0.2994870111813422,
+      "arithmetic_delta_percent": -3.6936678373952105,
+      "metric_equivalence": "unresolved"
+    },
+    {
+      "task_id": "absa_restaurant",
+      "task": "UIT-ABSA Restaurant",
+      "metric": "pair_micro_f1",
+      "metric_label": "End-to-end aspect-polarity pair micro F1",
+      "bami_bert_paper_percent": 74.89,
+      "goibert_mean_percent": 69.08005708051485,
+      "goibert_sample_std_percent": 0.598676614640186,
+      "arithmetic_delta_percent": -5.809942919485152,
+      "metric_equivalence": "unresolved"
+    },
+    {
+      "task_id": "absa_hotel",
+      "task": "UIT-ABSA Hotel",
+      "metric": "detection_micro_f1",
+      "metric_label": "Aspect detection micro F1",
+      "bami_bert_paper_percent": 79.99,
+      "goibert_mean_percent": 78.63630645564719,
+      "goibert_sample_std_percent": 0.24854261381470696,
+      "arithmetic_delta_percent": -1.353693544352808,
+      "metric_equivalence": "unresolved"
+    },
+    {
+      "task_id": "absa_hotel",
+      "task": "UIT-ABSA Hotel",
+      "metric": "pair_micro_f1",
+      "metric_label": "End-to-end aspect-polarity pair micro F1",
+      "bami_bert_paper_percent": 72.65,
+      "goibert_mean_percent": 71.78450220394996,
+      "goibert_sample_std_percent": 0.31704776038704485,
+      "arithmetic_delta_percent": -0.8654977960500503,
+      "metric_equivalence": "unresolved"
+    }
+  ],
+  "sources": {
+    "bami_bert_targets": "benchmarks/paper_targets.csv",
+    "paper_target_source": "https://arxiv.org/html/2607.02259"
+  }
+}

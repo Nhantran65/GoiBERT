@@ -1,0 +1,482 @@
+{
+ "created_at": "2026-09-18T17:27:15Z",
+ "seed": 42,
+ "read_only": true,
+ "no_model_no_gpu_no_test": true,
+ "label_mapping": {
+  "absa_polarity": {
+   "0": "absent",
+   "1": "positive",
+   "2": "negative",
+   "3": "neutral"
+  },
+  "topic": {
+   "0": "lecturer",
+   "1": "training_program",
+   "2": "facility",
+   "3": "others"
+  },
+  "visfd_others": "slot 5 detection-only: gold raw 4 <-> model 1; excluded from pair F1"
+ },
+ "evaluator_sha256": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+ "loader_sha256": "aeff87536a81c039d4240962140463693286c5241ce09630f5ad1b13699efc57",
+ "train_helpers_sha256": "ede96aaf63f02b808e5034f58953cfbce9a03438ed71f10f775de314a40bc578",
+ "audit_source_sha256": "f260a5c15aa7fb0788a9f0bc5fb5e9a7d84758a7f0de3612ede0469a32678e78",
+ "tasks": {
+  "absa_restaurant": {
+   "predictions": {
+    "bami": {
+     "path": "artifacts/e14/trials/absa_restaurant/lr_5e-05/seed_42/validation_predictions.json",
+     "sha256": "d34adfba8f92771ccb55e6bb9e70a8997455e952794dbcfbf99c6763cc78792d",
+     "file_epoch": null,
+     "best_epoch_metadata": 29,
+     "best_selection_f1_metadata": 0.7474178403755869,
+     "best_selection_f1_metrics_file": 0.7474178403755869,
+     "checkpoint_sha256_metadata": "73b5113842a7678e7d76f92a2e77ba69f0010fd8cf1f7b117b4841d25a56c9fa",
+     "metadata_sha256": "c48a0c7c05c35435863b0401deeb9721d357e8ca10bd49e49158eb864ef05ac6",
+     "model_source": "Qualcomm-AI-Research/BamiBERT"
+    },
+    "cafe": {
+     "path": "artifacts/cdbk_pilot/runs/T_absa_restaurant_seed42/validation_predictions.json",
+     "sha256": "349e4de9bad021356c866c6d60eb7ffe2cfb24e800906bea938fecd42ee92b07",
+     "file_epoch": 21,
+     "best_epoch_metadata": 21,
+     "best_selection_f1_metadata": 0.7771971496437055,
+     "best_selection_f1_metrics_file": 0.7771971496437055,
+     "checkpoint_sha256_metadata": "21c1094e771fe774130ecd3774c3ac4faba31c7e3376f7b9a3d9918b89334660",
+     "metadata_sha256": "85e54cd066adce5acc786677b0b3ee08826c314987065d0e327009e2bf10b5f7",
+     "model_source": "uitnlp/CafeBERT"
+    }
+   },
+   "provenance": {
+    "bundle_provenance": {
+     "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+     ],
+     "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+     "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202"
+     },
+     "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+    },
+    "loader": "goibert.data.load_task via goibert.train.load_task_bundle(include_test=False)"
+   },
+   "gate": {
+    "loader_rows": 771,
+    "expected_rows": 771,
+    "rows_ok": true,
+    "ids_unique": true,
+    "bami_rows": 771,
+    "bami_rows_ok": true,
+    "bami_ids_unique": true,
+    "bami_same_id_set_as_loader": true,
+    "bami_same_order_as_loader": true,
+    "cafe_rows": 771,
+    "cafe_rows_ok": true,
+    "cafe_ids_unique": true,
+    "cafe_same_id_set_as_loader": true,
+    "cafe_same_order_as_loader": true,
+    "gold_identical_loader_and_both_files": true,
+    "shape_and_code_range_ok": true,
+    "bami_cafe_gold_identical": true,
+    "f1": {
+     "bami": {
+      "evaluator": 0.7474178403755869,
+      "independent": 0.7474178403755869,
+      "metric_name": "end_to_end_pair_micro_f1",
+      "plan_reference": 0.7474178403755869,
+      "artifact_metadata_best_selection_f1": 0.7474178403755869,
+      "artifact_best_validation_metrics_selection_f1": 0.7474178403755869,
+      "match_evaluator_vs_independent": true,
+      "match_evaluator_vs_artifact": true,
+      "match_vs_plan_reference_1e-6": true
+     },
+     "cafe": {
+      "evaluator": 0.7771971496437055,
+      "independent": 0.7771971496437055,
+      "metric_name": "end_to_end_pair_micro_f1",
+      "plan_reference": 0.7771971496437055,
+      "artifact_metadata_best_selection_f1": 0.7771971496437055,
+      "artifact_best_validation_metrics_selection_f1": 0.7771971496437055,
+      "match_evaluator_vs_independent": true,
+      "match_evaluator_vs_artifact": true,
+      "match_vs_plan_reference_1e-6": true
+     }
+    },
+    "all_ok": true
+   }
+  },
+  "vsfc_topic": {
+   "predictions": {
+    "bami": {
+     "path": "artifacts/e14/trials/vsfc_topic/lr_1e-05/seed_42/validation_predictions.json",
+     "sha256": "32fdf14f4b1a54a3e25fd10d4009f8b2bb9b36f037f0996f3e5433043a434cfa",
+     "file_epoch": null,
+     "best_epoch_metadata": 13,
+     "best_selection_f1_metadata": 0.7953280821882547,
+     "best_selection_f1_metrics_file": 0.7953280821882547,
+     "checkpoint_sha256_metadata": "34126c64e7647b0970fbf090fbda760c06f24048362b822a0295018a0bd65365",
+     "metadata_sha256": "3d27aa36445079ec72a98953ba49d816ece5f5f527df3c03133dd0e5809f3657",
+     "model_source": "Qualcomm-AI-Research/BamiBERT"
+    },
+    "cafe": {
+     "path": "artifacts/sealion_benchmark/cafe_runs/vsfc_topic/lr_2e-05/seed_42/validation_predictions.json",
+     "sha256": "d35136b0282a929e77cdce99c7b7894db5a2ab4904a61a9df965416e2664d6e4",
+     "file_epoch": 23,
+     "best_epoch_metadata": 23,
+     "best_selection_f1_metadata": 0.8174458365092476,
+     "best_selection_f1_metrics_file": 0.8174458365092476,
+     "checkpoint_sha256_metadata": "be7b0455cd9034d993c13451690a6dbbec4c4b6f1746ad06fcfdb32cad2c5747",
+     "metadata_sha256": "0b10447f009cd1add72f08a489e9d957ef9613056aa586f4263896bca6ddbe2b",
+     "model_source": "uitnlp/CafeBERT"
+    }
+   },
+   "provenance": {
+    "bundle_provenance": {
+     "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+     ],
+     "label_policy": "fixed_source_map",
+     "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt": "09cbb8147f419f225b171cadf82410c442d6c24997ab97f48dfa779f4e68a1b9",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt": "7483805b24f5362aa5a2f708509876e0b69bf35753e90199059c2409caad7d96"
+     },
+     "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+    },
+    "loader": "goibert.data.load_task via goibert.train.load_task_bundle(include_test=False)"
+   },
+   "gate": {
+    "loader_rows": 1583,
+    "expected_rows": 1583,
+    "rows_ok": true,
+    "ids_unique": true,
+    "bami_rows": 1583,
+    "bami_rows_ok": true,
+    "bami_ids_unique": true,
+    "bami_same_id_set_as_loader": true,
+    "bami_same_order_as_loader": true,
+    "cafe_rows": 1583,
+    "cafe_rows_ok": true,
+    "cafe_ids_unique": true,
+    "cafe_same_id_set_as_loader": true,
+    "cafe_same_order_as_loader": true,
+    "gold_identical_loader_and_both_files": true,
+    "shape_and_code_range_ok": true,
+    "bami_cafe_gold_identical": true,
+    "f1": {
+     "bami": {
+      "evaluator": 0.7953280821882547,
+      "independent": 0.7953280821882547,
+      "metric_name": "fixed_label_macro_f1",
+      "plan_reference": 0.7953280821882547,
+      "artifact_metadata_best_selection_f1": 0.7953280821882547,
+      "artifact_best_validation_metrics_selection_f1": 0.7953280821882547,
+      "match_evaluator_vs_independent": true,
+      "match_evaluator_vs_artifact": true,
+      "match_vs_plan_reference_1e-6": true
+     },
+     "cafe": {
+      "evaluator": 0.8174458365092476,
+      "independent": 0.8174458365092476,
+      "metric_name": "fixed_label_macro_f1",
+      "plan_reference": 0.8174463175313963,
+      "artifact_metadata_best_selection_f1": 0.8174458365092476,
+      "artifact_best_validation_metrics_selection_f1": 0.8174458365092476,
+      "match_evaluator_vs_independent": true,
+      "match_evaluator_vs_artifact": true,
+      "match_vs_plan_reference_1e-6": true
+     }
+    },
+    "all_ok": true
+   }
+  },
+  "visfd": {
+   "predictions": {
+    "bami": {
+     "path": "artifacts/e14/trials/visfd/lr_5e-05/seed_42/validation_predictions.json",
+     "sha256": "32388579e4c0d057670ad221cd0753019ebc2cefe338b6f10c45987fc86e4039",
+     "file_epoch": null,
+     "best_epoch_metadata": 23,
+     "best_selection_f1_metadata": 0.8438339802926247,
+     "best_selection_f1_metrics_file": 0.8438339802926247,
+     "checkpoint_sha256_metadata": "cada2c608c2072dc1eb3c9fb9d8dc1f9dff79b5285b70afb8f90fef2e92fd587",
+     "metadata_sha256": "fd0dacba7ff3784099d62cec7fb4d7316bb86a1e7f4cad8c2a941ce96ab2d9e8",
+     "model_source": "Qualcomm-AI-Research/BamiBERT"
+    },
+    "cafe": {
+     "path": "artifacts/sealion_benchmark/cafe_runs/visfd/lr_2e-05/seed_42/validation_predictions.json",
+     "sha256": "b42661951279d692f55900097e80a7aea6d587431e7d445c9b1dfa44cc095af5",
+     "file_epoch": 19,
+     "best_epoch_metadata": 19,
+     "best_selection_f1_metadata": 0.8546650717703349,
+     "best_selection_f1_metrics_file": 0.8546650717703349,
+     "checkpoint_sha256_metadata": "83ddf4cd7a3b86fdf87b145567e3cbc21a7098ed602483c455804d3057027bf0",
+     "metadata_sha256": "cc5139bb4b81274b1307530e04e6ea4644dc3ebba99b4e158127749ef14c8810",
+     "model_source": "uitnlp/CafeBERT"
+    }
+   },
+   "provenance": {
+    "bundle_provenance": {
+     "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+     ],
+     "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+     "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51"
+     },
+     "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+    },
+    "loader": "goibert.data.load_task via goibert.train.load_task_bundle(include_test=False)"
+   },
+   "gate": {
+    "loader_rows": 1112,
+    "expected_rows": 1112,
+    "rows_ok": true,
+    "ids_unique": true,
+    "bami_rows": 1112,
+    "bami_rows_ok": true,
+    "bami_ids_unique": true,
+    "bami_same_id_set_as_loader": true,
+    "bami_same_order_as_loader": true,
+    "cafe_rows": 1112,
+    "cafe_rows_ok": true,
+    "cafe_ids_unique": true,
+    "cafe_same_id_set_as_loader": true,
+    "cafe_same_order_as_loader": true,
+    "gold_identical_loader_and_both_files": true,
+    "shape_and_code_range_ok": true,
+    "bami_cafe_gold_identical": true,
+    "f1": {
+     "bami": {
+      "evaluator": 0.8438339802926247,
+      "independent": 0.8438339802926247,
+      "metric_name": "end_to_end_pair_micro_f1",
+      "plan_reference": 0.8438338152304786,
+      "artifact_metadata_best_selection_f1": 0.8438339802926247,
+      "artifact_best_validation_metrics_selection_f1": 0.8438339802926247,
+      "match_evaluator_vs_independent": true,
+      "match_evaluator_vs_artifact": true,
+      "match_vs_plan_reference_1e-6": true
+     },
+     "cafe": {
+      "evaluator": 0.8546650717703349,
+      "independent": 0.8546650717703349,
+      "metric_name": "end_to_end_pair_micro_f1",
+      "plan_reference": 0.8546649922543563,
+      "artifact_metadata_best_selection_f1": 0.8546650717703349,
+      "artifact_best_validation_metrics_selection_f1": 0.8546650717703349,
+      "match_evaluator_vs_independent": true,
+      "match_evaluator_vs_artifact": true,
+      "match_vs_plan_reference_1e-6": true
+     }
+    },
+    "all_ok": true
+   }
+  }
+ },
+ "gate_all_ok": true,
+ "packet": {
+  "rows": 72,
+  "quota_total": 72,
+  "shortfalls": {
+   "absa_restaurant": {
+    "cafe_only": {
+     "quota": 8,
+     "got": 8,
+     "candidates": 153,
+     "by_event": {
+      "miss": 3,
+      "wrong_polarity": 3,
+      "spurious": 2
+     },
+     "candidates_by_event": {
+      "spurious": 69,
+      "miss": 36,
+      "wrong_polarity": 48
+     }
+    },
+    "bami_only": {
+     "quota": 8,
+     "got": 8,
+     "candidates": 102,
+     "by_event": {
+      "miss": 3,
+      "wrong_polarity": 3,
+      "spurious": 2
+     },
+     "candidates_by_event": {
+      "miss": 31,
+      "spurious": 40,
+      "wrong_polarity": 31
+     }
+    },
+    "both_wrong": {
+     "quota": 4,
+     "got": 4,
+     "candidates_gold_present": 173,
+     "candidates_gold_absent": 87
+    },
+    "both_correct": {
+     "quota": 4,
+     "got": 4,
+     "candidates_gold_present": 734
+    }
+   },
+   "vsfc_topic": {
+    "cafe_only": {
+     "quota": 8,
+     "got": 8,
+     "candidates": 57,
+     "gold_classes_covered": [
+      "lecturer",
+      "training_program",
+      "others"
+     ],
+     "candidates_by_class": {
+      "lecturer": 16,
+      "training_program": 29,
+      "facility": 0,
+      "others": 12
+     }
+    },
+    "bami_only": {
+     "quota": 8,
+     "got": 8,
+     "candidates": 38,
+     "gold_classes_covered": [
+      "lecturer",
+      "training_program",
+      "facility",
+      "others"
+     ],
+     "candidates_by_class": {
+      "lecturer": 27,
+      "training_program": 6,
+      "facility": 2,
+      "others": 3
+     }
+    },
+    "both_wrong": {
+     "quota": 4,
+     "got": 4,
+     "candidates": 119,
+     "gold_classes_covered": [
+      "lecturer",
+      "training_program",
+      "facility",
+      "others"
+     ],
+     "candidates_by_class": {
+      "lecturer": 36,
+      "training_program": 39,
+      "facility": 6,
+      "others": 38
+     }
+    },
+    "both_correct": {
+     "quota": 4,
+     "got": 4,
+     "candidates": 1369,
+     "gold_classes_covered": [
+      "lecturer",
+      "training_program",
+      "facility",
+      "others"
+     ],
+     "candidates_by_class": {
+      "lecturer": 1072,
+      "training_program": 193,
+      "facility": 62,
+      "others": 42
+     }
+    }
+   },
+   "visfd": {
+    "cafe_only": {
+     "quota": 8,
+     "got": 8,
+     "candidates": 262,
+     "by_event": {
+      "miss": 3,
+      "wrong_polarity": 3,
+      "spurious": 2
+     },
+     "candidates_by_event": {
+      "wrong_polarity": 79,
+      "spurious": 102,
+      "miss": 81
+     }
+    },
+    "bami_only": {
+     "quota": 8,
+     "got": 8,
+     "candidates": 208,
+     "by_event": {
+      "miss": 3,
+      "wrong_polarity": 3,
+      "spurious": 2
+     },
+     "candidates_by_event": {
+      "spurious": 80,
+      "wrong_polarity": 59,
+      "miss": 69
+     }
+    },
+    "both_wrong": {
+     "quota": 4,
+     "got": 4,
+     "candidates_gold_present": 330,
+     "candidates_gold_absent": 201
+    },
+    "both_correct": {
+     "quota": 4,
+     "got": 4,
+     "candidates_gold_present": 2698
+    }
+   }
+  },
+  "by_task_bucket": {
+   "absa_restaurant": {
+    "cafe_only": 8,
+    "bami_only": 8,
+    "both_wrong": 4,
+    "both_correct": 4
+   },
+   "vsfc_topic": {
+    "cafe_only": 8,
+    "bami_only": 8,
+    "both_wrong": 4,
+    "both_correct": 4
+   },
+   "visfd": {
+    "cafe_only": 8,
+    "bami_only": 8,
+    "both_wrong": 4,
+    "both_correct": 4
+   }
+  },
+  "unique_ids_per_task": {
+   "absa_restaurant": 24,
+   "vsfc_topic": 24,
+   "visfd": 24
+  },
+  "selection_rule": "sha256('42|task|bucket|error_type|stable_id|aspect_index') ascending; event quotas 3/3/2 miss/wrong_polarity/spurious with fallback miss->wrong_polarity->spurious; <=2 per aspect per exclusive column when enough candidates; unique review id per task; both_wrong prefers gold-present; both_correct requires a correct gold-present pair; Topic round-robin over gold classes"
+ },
+ "outputs": {
+  "events.jsonl": "bfa545b28d64672f301730c4c3b9a3d27c294504aca9511ca91d372ef8525257",
+  "packet.jsonl": "82f49659b36f627214bcbd6b0352be652dc69d9c51ad2e7cac9c224abe656cb5",
+  "packet.md": "3f1e4d403b4e5a18be83170993ec4a2117f3da3104af4021bfa4d435d547483b",
+  "aggregate.json": "72a0036c170d74f0a5b11e1137b9b5fdadcd769d641621ce01302ab34ba13a26"
+ },
+ "events_rows": 6955,
+ "elapsed_s": 0.5
+}

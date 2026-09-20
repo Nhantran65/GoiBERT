@@ -1,0 +1,84 @@
+{
+  "protocol": "E2-training-ablation-v1",
+  "revision": "e2-20260908-r1",
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "runner_module": "goibert_e2.train",
+  "student_backbone": "models/goiturn-s-gd",
+  "teacher_backbone": "models/goibert-b-dapt",
+  "tasks": [
+    "vsfc_sentiment",
+    "vsfc_topic",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "student_learning_rate_by_task": {
+    "vsfc_sentiment": 0.00001,
+    "vsfc_topic": 0.00001,
+    "visfd": 0.0001,
+    "absa_restaurant": 0.0001,
+    "absa_hotel": 0.0001
+  },
+  "teacher": {
+    "mode": "teacher",
+    "learning_rates": [0.00001, 0.00002, 0.00005],
+    "seed": 42,
+    "epochs": 30
+  },
+  "ce_replay": {
+    "mode": "ce",
+    "task": "vsfc_sentiment",
+    "learning_rate": 0.00001,
+    "seed": 42,
+    "epochs": 30
+  },
+  "kd": {
+    "mode": "kd",
+    "alphas": [0.25, 0.5, 0.75],
+    "temperature": 2.0,
+    "selection_seed": 42,
+    "confirmation_seeds": [43, 44]
+  },
+  "noise_consistency": {
+    "mode": "nc",
+    "lambdas": [0.1, 0.5],
+    "selection_seed": 42,
+    "confirmation_seeds": [43, 44]
+  },
+  "training": {
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32,
+    "teacher_micro_batch_size": 8,
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.1,
+    "gradient_clip_norm": 1.0,
+    "include_test": false
+  },
+  "memory_guard_gib": {
+    "common_free_guard": 5.0,
+    "profile_evidence": [
+      "artifacts/e2/preflight/profile_teacher_train_20260908T150331+0700.json",
+      "artifacts/e2/preflight/profile_student_batch32_20260908T150818+0700.json"
+    ],
+    "scope": "teacher micro-batch 8, student CE/KD/NC micro-batch 32, cache teacher inference micro-batch 8",
+    "override_policy": "root may change only with a new recorded peak-memory profile; never kill existing processes"
+  },
+  "queue": {
+    "teacher_trials": 15,
+    "cache_passes": 5,
+    "ce_replay_trials": 1,
+    "student_screening_trials": 25,
+    "student_confirmation_trials": 20,
+    "full_training_trials": 61,
+    "combined_kd_nc": "manual_gate_only"
+  },
+  "selection": {
+    "metric": "selection_f1",
+    "teacher_tie_break": ["higher_validation_f1", "lower_learning_rate", "earlier_best_epoch"],
+    "coefficient_tie_break": ["higher_validation_f1", "lower_coefficient"],
+    "test_access": false
+  }
+}

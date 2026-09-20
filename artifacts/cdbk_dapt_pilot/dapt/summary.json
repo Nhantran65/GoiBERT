@@ -1,0 +1,171 @@
+{
+  "protocol": "CDBK-DAPT-pilot-D1-v1",
+  "stage": "dapt",
+  "corpus": {
+    "repo": "phucdev/ViSoBERT",
+    "revision": "74dbc64e92c627c70670dd91344b776c8500a104",
+    "description": "ViSoBERT pre-training corpus: Vietnamese social-media texts (Facebook posts, TikTok/YouTube comments, 2020-2022); terms: research purposes only (uitnlp/visobert card), CC-BY-NC-4.0 (SEACrowd/visobert)",
+    "domain_note": "broad social media, NOT restaurant/food reviews; domain mismatch vs UIT-ABSA Restaurant is expected and recorded",
+    "files": {
+      "train-00000-of-00003.parquet": {
+        "bytes": 284348275,
+        "sha256": "a5ac8b0dd759c7b61f3e394f7119155c73adefe9a353931dbf41ad1bff90a7c4"
+      },
+      "train-00001-of-00003.parquet": {
+        "bytes": 288941431,
+        "sha256": "28407dfcbf91addb209f8da4868d539fc027b292d11fb15da6f01b9065d5b737"
+      },
+      "train-00002-of-00003.parquet": {
+        "bytes": 289254202,
+        "sha256": "8729cc6e83d0310a100f43a8ea061ece4b647a33b80156308c02ea8aeb2dfa6f"
+      }
+    }
+  },
+  "corpus_tokens": {
+    "doc_tokens_excluding_eos": 158233526,
+    "tokens_per_doc_mean": 17.782372569433207,
+    "tokens_per_doc_median": 12.0,
+    "holdout_docs": 54322,
+    "holdout_sequences": 2000,
+    "holdout_token_positions": 1024000,
+    "train_docs": 8844014,
+    "train_sequences": 325067,
+    "train_token_positions": 166434304,
+    "dapt_tokens_target": 300023808,
+    "passes_over_train": 1.8026560678260175,
+    "floor_100M_train_positions_met": true,
+    "passes_le_3": true
+  },
+  "seq": 512,
+  "micro": 16,
+  "world": 2,
+  "accum": 8,
+  "global_batch": 256,
+  "tokens_target": 300000000,
+  "steps_target": 2289,
+  "tokens_processed_planned": 300023808,
+  "lr": 5e-05,
+  "warmup_frac": 0.06,
+  "warmup_steps": 137,
+  "wd": 0.01,
+  "betas": [
+    0.9,
+    0.98
+  ],
+  "eps": 1e-06,
+  "clip": 1.0,
+  "mask_prob": 0.15,
+  "mask_scheme": "80/10/10, no special/pad",
+  "precision": "bf16 autocast",
+  "attn": "sdpa",
+  "seed": 42,
+  "seed_per_rank": "seed + rank",
+  "checkpoint_policy": "end of token budget (no downstream selection)",
+  "source_checks": {
+    "backbone": "uitnlp/CafeBERT",
+    "hf_commit": "af76fcf2a04096b2b54b348a3e4eb48253c93c5d",
+    "architecture": [
+      "XLMRobertaForMaskedLM"
+    ],
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "mlm_head_pretrained": true,
+    "decoder_tied_to_embeddings": true,
+    "vocab_size": 250002,
+    "hidden": 1024,
+    "sparse_mlm_uses_embedding_matrix_and_lm_head_bias": true,
+    "tokenizer": {
+      "repo": "FacebookAI/xlm-roberta-large",
+      "revision": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+      "vocab": 250002,
+      "mask_id": 250001,
+      "special_ids": [
+        0,
+        1,
+        2,
+        3,
+        250001
+      ]
+    }
+  },
+  "source_hash": "f6e14b7bd5e68f1dd5e335eeef2d4e5b60e1da22851ba5817d60cd84a41eb4ab",
+  "adapter_source_hash": "e5be3ed0207770be901f91e96e47a19a498c4c8ec3ebda5e42d6e027b45c41da",
+  "pilot_b_cpt_train_sha256": "dbcefa3ff0c12a717b30e0b8fc720427c4927d4b59e85c3ac27db49b92a6498b",
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "2,3",
+    "cublas_workspace_config": ":4096:8",
+    "hostname": "server-ai-new-02.vntt.lan"
+  },
+  "argv": [
+    "scripts/cdbk_dapt_pilot/dapt_train.py",
+    "--micro",
+    "16"
+  ],
+  "started_at": "2026-09-17T09:08:36Z",
+  "finished_at": "2026-09-17T10:40:44Z",
+  "wall_time_s": 5508.3,
+  "steps_run": 2289,
+  "tokens_processed": 300023808,
+  "token_budget_error_batches": 0.181640625,
+  "masked_positions_total": 42457961,
+  "masked_fraction_of_processed": 0.14151530601198156,
+  "passes_over_train": 1.8026560678260175,
+  "sampler_epochs_started": 2,
+  "tokens_per_s": 54468,
+  "peak_gpu_memory_gb_rank0": 24.77,
+  "train_loss_first_50_mean": 3.5513396775722503,
+  "train_loss_last_50_mean": 2.5606861329078674,
+  "holdout": {
+    "masking_seed": 1234,
+    "sequences": 2000,
+    "losses": [
+      {
+        "step": 0,
+        "tokens_seen": 0,
+        "holdout_loss": 3.6651484094124167
+      },
+      {
+        "step": 500,
+        "tokens_seen": 65536000,
+        "holdout_loss": 2.670121791894119
+      },
+      {
+        "step": 1000,
+        "tokens_seen": 131072000,
+        "holdout_loss": 2.5401059540007647
+      },
+      {
+        "step": 1500,
+        "tokens_seen": 196608000,
+        "holdout_loss": 2.469795959760419
+      },
+      {
+        "step": 2000,
+        "tokens_seen": 262144000,
+        "holdout_loss": 2.434962708978444
+      },
+      {
+        "step": 2289,
+        "tokens_seen": 300023808,
+        "holdout_loss": 2.4260495767497883
+      }
+    ],
+    "initial": 3.6651484094124167,
+    "final": 2.4260495767497883
+  },
+  "export": {
+    "hf_dir": "artifacts/cdbk_dapt_pilot/dapt/hf",
+    "model_safetensors_sha256": "0134a914b2152f8048e3406373076f8fcef6e0a019aeec606cbce4bd9a1f9dbb",
+    "reload_layer0_query_equal": true,
+    "reload_decoder_tied": true
+  },
+  "status": "completed"
+}

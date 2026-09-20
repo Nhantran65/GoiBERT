@@ -1,0 +1,97 @@
+{
+  "protocol": "E2-test-gate-v1",
+  "status": "completed",
+  "evaluated_at_utc": "2026-09-09T02:00:36.214031+00:00",
+  "task_id": "visfd",
+  "seed": 43,
+  "method": "nc",
+  "coefficient": 0.5,
+  "learning_rate": 0.0001,
+  "stage": "stageB",
+  "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e2/stageB/nc/visfd/coef_0p5/seed_43",
+  "checkpoint_sha256": "ec36cfeb91a8f7d6ec72feeacead30cc2767a9b27205614143a9cc04672700bd",
+  "metadata_sha256": "3de5f155ebdf38cf31f49d62589257aa18849e22ae3ac4ba42cb4a3702790709",
+  "selection_manifest_sha256": "313b7b3fae986bac0e659e18010410b0d0739bb6e61237fd8b3beea6b832ee38",
+  "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Test.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Test.csv": "a30901f08b907f2a9df094626dbe96dcdfb01845fa7d152408aff20bc9785bd9"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "model": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 42,
+    "num_aspects": 11,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 26561706,
+    "trainable_parameters": 26561706
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:2",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "contract": {
+    "mode": "inference_only",
+    "teacher_inference": false,
+    "noise_inference": false,
+    "dropout": "disabled via model.eval()",
+    "max_length": 256,
+    "micro_batch_size": 32,
+    "attention_implementation": "sdpa",
+    "precision": "bf16",
+    "strict_state_dict": true
+  },
+  "n_test": 2224,
+  "elapsed_seconds": 3.008735418319702,
+  "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e2/stageB/nc/visfd/coef_0p5/seed_43/e2_test_metrics.json",
+  "test_predictions_path": "/home/kiettqa/GoiBERT/artifacts/e2/stageB/nc/visfd/coef_0p5/seed_43/e2_test_predictions.json"
+}

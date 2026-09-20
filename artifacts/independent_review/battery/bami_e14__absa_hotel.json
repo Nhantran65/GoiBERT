@@ -1,0 +1,2026 @@
+{
+ "model": "bami_e14",
+ "task": "absa_hotel",
+ "checkpoint": "artifacts/e14/trials/absa_hotel/lr_5e-05/seed_42/best_checkpoint.pt",
+ "checkpoint_sha256": "9943b50aaa6ae2914bb11ff7b0bced4345c448aa98e0675131ab72935a03b97f",
+ "layers": [
+  8,
+  9,
+  10,
+  11
+ ],
+ "device": "cuda:1",
+ "seed": 2026,
+ "include_test": false,
+ "parity": {
+  "f1_manual_rho0": 0.7320812571866615,
+  "f1_native_sdpa": 0.7323619631901841,
+  "max_abs_logit_diff": 0.046875,
+  "mean_abs_logit_diff": 0.0019453717395663261,
+  "pred_rows_differ_manual_vs_native": 1,
+  "native_pred_rows_equal_saved_artifact": 795,
+  "n_rows": 795
+ },
+ "step0a": {
+  "n_rows": 512,
+  "multiplicity": {
+   "tau4": {
+    "8": {
+     "0": {
+      "median_m": 2.506160934893395,
+      "iqr_logm": 0.48280107975006104,
+      "p10_m": 1.7164701966319054,
+      "p90_m": 4.322924568100725,
+      "frac_m_ge_1.5": 0.9627167582511902
+     },
+     "1": {
+      "median_m": 2.6913182333773316,
+      "iqr_logm": 0.5261701941490173,
+      "p10_m": 1.813992598599792,
+      "p90_m": 4.776728935234599,
+      "frac_m_ge_1.5": 0.9742774367332458
+     },
+     "2": {
+      "median_m": 2.452473801309173,
+      "iqr_logm": 0.48236972093582153,
+      "p10_m": 1.6731349821538308,
+      "p90_m": 4.24227310212698,
+      "frac_m_ge_1.5": 0.9568400979042053
+     },
+     "3": {
+      "median_m": 2.6958327267947486,
+      "iqr_logm": 0.5453411936759949,
+      "p10_m": 1.7861689209933065,
+      "p90_m": 4.865906257010245,
+      "frac_m_ge_1.5": 0.9761078953742981
+     },
+     "4": {
+      "median_m": 2.7970316534345114,
+      "iqr_logm": 0.5721916556358337,
+      "p10_m": 1.8478928271890667,
+      "p90_m": 5.129432266053543,
+      "frac_m_ge_1.5": 0.9770712852478027
+     },
+     "5": {
+      "median_m": 2.299107265510221,
+      "iqr_logm": 0.4800669550895691,
+      "p10_m": 1.5792226361388386,
+      "p90_m": 3.9509590591545916,
+      "frac_m_ge_1.5": 0.9310212135314941
+     },
+     "6": {
+      "median_m": 2.4620733928785965,
+      "iqr_logm": 0.4952162504196167,
+      "p10_m": 1.6767300942675774,
+      "p90_m": 4.365307884632034,
+      "frac_m_ge_1.5": 0.9557803273200989
+     },
+     "7": {
+      "median_m": 2.7511379537684926,
+      "iqr_logm": 0.5650044679641724,
+      "p10_m": 1.8403910565917851,
+      "p90_m": 5.021736198243959,
+      "frac_m_ge_1.5": 0.9763005971908569
+     },
+     "8": {
+      "median_m": 2.441743988732711,
+      "iqr_logm": 0.48363196849823,
+      "p10_m": 1.6716057753895426,
+      "p90_m": 4.280229680857103,
+      "frac_m_ge_1.5": 0.955491304397583
+     },
+     "9": {
+      "median_m": 2.3822159933761977,
+      "iqr_logm": 0.4783715009689331,
+      "p10_m": 1.631998991829399,
+      "p90_m": 4.11164375658465,
+      "frac_m_ge_1.5": 0.9460501074790955
+     },
+     "10": {
+      "median_m": 2.632899018239654,
+      "iqr_logm": 0.5352691411972046,
+      "p10_m": 1.753576521153989,
+      "p90_m": 4.722960160792554,
+      "frac_m_ge_1.5": 0.968497097492218
+     },
+     "11": {
+      "median_m": 2.757633337936583,
+      "iqr_logm": 0.5537319779396057,
+      "p10_m": 1.8363727929702385,
+      "p90_m": 5.068027186440375,
+      "frac_m_ge_1.5": 0.9754335284233093
+     }
+    },
+    "9": {
+     "0": {
+      "median_m": 3.4854890026007497,
+      "iqr_logm": 0.6661931276321411,
+      "p10_m": 2.0527962253389886,
+      "p90_m": 6.708395292714055,
+      "frac_m_ge_1.5": 0.9910404682159424
+     },
+     "1": {
+      "median_m": 3.4027234157049127,
+      "iqr_logm": 0.6124759912490845,
+      "p10_m": 2.074377373016963,
+      "p90_m": 6.342666967849213,
+      "frac_m_ge_1.5": 0.9913294911384583
+     },
+     "2": {
+      "median_m": 3.1268469695506536,
+      "iqr_logm": 0.6439662575721741,
+      "p10_m": 1.9369782905971933,
+      "p90_m": 6.05335659015221,
+      "frac_m_ge_1.5": 0.9819846153259277
+     },
+     "3": {
+      "median_m": 2.990984958688809,
+      "iqr_logm": 0.5845983028411865,
+      "p10_m": 1.957043311402827,
+      "p90_m": 5.572553722811187,
+      "frac_m_ge_1.5": 0.9851637482643127
+     },
+     "4": {
+      "median_m": 3.3093986485374343,
+      "iqr_logm": 0.6487913727760315,
+      "p10_m": 2.0399535611155177,
+      "p90_m": 6.461792237056306,
+      "frac_m_ge_1.5": 0.989402711391449
+     },
+     "5": {
+      "median_m": 2.9233788215035337,
+      "iqr_logm": 0.5771847367286682,
+      "p10_m": 1.886440603393865,
+      "p90_m": 5.393947983197608,
+      "frac_m_ge_1.5": 0.9837186932563782
+     },
+     "6": {
+      "median_m": 3.164501878578416,
+      "iqr_logm": 0.6145523190498352,
+      "p10_m": 2.0015061839993127,
+      "p90_m": 5.996828094692644,
+      "frac_m_ge_1.5": 0.989402711391449
+     },
+     "7": {
+      "median_m": 3.315341764559112,
+      "iqr_logm": 0.5980384945869446,
+      "p10_m": 2.046701064211695,
+      "p90_m": 6.153912922970746,
+      "frac_m_ge_1.5": 0.9908477663993835
+     },
+     "8": {
+      "median_m": 2.8257899702832034,
+      "iqr_logm": 0.617509663105011,
+      "p10_m": 1.8016182235660647,
+      "p90_m": 5.59304644187909,
+      "frac_m_ge_1.5": 0.9746628403663635
+     },
+     "9": {
+      "median_m": 3.373028931374487,
+      "iqr_logm": 0.6305783987045288,
+      "p10_m": 2.060323396161649,
+      "p90_m": 6.43387598191433,
+      "frac_m_ge_1.5": 0.9921965599060059
+     },
+     "10": {
+      "median_m": 2.825122055028729,
+      "iqr_logm": 0.6074535250663757,
+      "p10_m": 1.8300661552042896,
+      "p90_m": 5.43753977676223,
+      "frac_m_ge_1.5": 0.9743738174438477
+     },
+     "11": {
+      "median_m": 3.126463806845346,
+      "iqr_logm": 0.6266195774078369,
+      "p10_m": 1.973685629522315,
+      "p90_m": 5.988197874177858,
+      "frac_m_ge_1.5": 0.9859344959259033
+     }
+    },
+    "10": {
+     "0": {
+      "median_m": 4.007351485261162,
+      "iqr_logm": 0.7133051156997681,
+      "p10_m": 2.1717227398908903,
+      "p90_m": 8.170286058251087,
+      "frac_m_ge_1.5": 0.9944123029708862
+     },
+     "1": {
+      "median_m": 3.857447695094779,
+      "iqr_logm": 0.6917325258255005,
+      "p10_m": 2.145994265513959,
+      "p90_m": 7.720289415720803,
+      "frac_m_ge_1.5": 0.994508683681488
+     },
+     "2": {
+      "median_m": 4.006858037574333,
+      "iqr_logm": 0.6635736227035522,
+      "p10_m": 2.2083963249092005,
+      "p90_m": 7.905149792428074,
+      "frac_m_ge_1.5": 0.9937379360198975
+     },
+     "3": {
+      "median_m": 4.168293357522207,
+      "iqr_logm": 0.6788702011108398,
+      "p10_m": 2.240281492694419,
+      "p90_m": 8.117502333303051,
+      "frac_m_ge_1.5": 0.9955683946609497
+     },
+     "4": {
+      "median_m": 4.3926284261242365,
+      "iqr_logm": 0.671501874923706,
+      "p10_m": 2.2841827914053847,
+      "p90_m": 8.344055489504973,
+      "frac_m_ge_1.5": 0.9968208074569702
+     },
+     "5": {
+      "median_m": 4.1426634062326855,
+      "iqr_logm": 0.7012326717376709,
+      "p10_m": 2.169890963344959,
+      "p90_m": 8.243144738522615,
+      "frac_m_ge_1.5": 0.9953756928443909
+     },
+     "6": {
+      "median_m": 4.056587515737797,
+      "iqr_logm": 0.7149063348770142,
+      "p10_m": 2.1558449923414766,
+      "p90_m": 8.315671687278156,
+      "frac_m_ge_1.5": 0.9938343167304993
+     },
+     "7": {
+      "median_m": 4.1339517884203065,
+      "iqr_logm": 0.6965802907943726,
+      "p10_m": 2.222932015329214,
+      "p90_m": 8.248110629144712,
+      "frac_m_ge_1.5": 0.9958574175834656
+     },
+     "8": {
+      "median_m": 4.0844505845256975,
+      "iqr_logm": 0.6802850961685181,
+      "p10_m": 2.2174588178849803,
+      "p90_m": 8.0667769118078,
+      "frac_m_ge_1.5": 0.9956647157669067
+     },
+     "9": {
+      "median_m": 3.881307513210501,
+      "iqr_logm": 0.6973996162414551,
+      "p10_m": 2.106425750871729,
+      "p90_m": 7.813843727961572,
+      "frac_m_ge_1.5": 0.9946050047874451
+     },
+     "10": {
+      "median_m": 3.9454400766732536,
+      "iqr_logm": 0.6755737066268921,
+      "p10_m": 2.157836737166301,
+      "p90_m": 7.729682493455348,
+      "frac_m_ge_1.5": 0.9958574175834656
+     },
+     "11": {
+      "median_m": 4.002548090587555,
+      "iqr_logm": 0.708396315574646,
+      "p10_m": 2.130724319372223,
+      "p90_m": 8.109984994163629,
+      "frac_m_ge_1.5": 0.9932562708854675
+     }
+    },
+    "11": {
+     "0": {
+      "median_m": 5.0615239989730245,
+      "iqr_logm": 0.6737936735153198,
+      "p10_m": 2.6111323329918568,
+      "p90_m": 9.722431666066306,
+      "frac_m_ge_1.5": 0.9990366101264954
+     },
+     "1": {
+      "median_m": 5.172054589749594,
+      "iqr_logm": 0.6709316968917847,
+      "p10_m": 2.6295805656800266,
+      "p90_m": 10.039069802627393,
+      "frac_m_ge_1.5": 0.9991329312324524
+     },
+     "2": {
+      "median_m": 5.118184896605497,
+      "iqr_logm": 0.6750054359436035,
+      "p10_m": 2.5954629863086294,
+      "p90_m": 9.788626508541343,
+      "frac_m_ge_1.5": 0.9993256330490112
+     },
+     "3": {
+      "median_m": 5.143894455145069,
+      "iqr_logm": 0.6665647029876709,
+      "p10_m": 2.594779140421758,
+      "p90_m": 9.718457094390093,
+      "frac_m_ge_1.5": 0.9990366101264954
+     },
+     "4": {
+      "median_m": 5.321324154958743,
+      "iqr_logm": 0.6874840259552002,
+      "p10_m": 2.673348481276436,
+      "p90_m": 10.1908600133959,
+      "frac_m_ge_1.5": 0.9996146559715271
+     },
+     "5": {
+      "median_m": 5.285344775530285,
+      "iqr_logm": 0.6765507459640503,
+      "p10_m": 2.669923665790665,
+      "p90_m": 9.996570064758423,
+      "frac_m_ge_1.5": 0.9992293119430542
+     },
+     "6": {
+      "median_m": 5.020056103600827,
+      "iqr_logm": 0.7140275239944458,
+      "p10_m": 2.4739077157881892,
+      "p90_m": 9.69826637647977,
+      "frac_m_ge_1.5": 0.9983622431755066
+     },
+     "7": {
+      "median_m": 4.885648558613778,
+      "iqr_logm": 0.6482018232345581,
+      "p10_m": 2.5410979877576265,
+      "p90_m": 9.259164635815326,
+      "frac_m_ge_1.5": 0.9987475872039795
+     },
+     "8": {
+      "median_m": 5.054030736011431,
+      "iqr_logm": 0.6647677421569824,
+      "p10_m": 2.590092204436814,
+      "p90_m": 9.907459838989505,
+      "frac_m_ge_1.5": 0.9989402890205383
+     },
+     "9": {
+      "median_m": 5.369755825227642,
+      "iqr_logm": 0.6986212730407715,
+      "p10_m": 2.6524956227699934,
+      "p90_m": 10.136710526752925,
+      "frac_m_ge_1.5": 0.9993256330490112
+     },
+     "10": {
+      "median_m": 5.203746133736146,
+      "iqr_logm": 0.6859585046768188,
+      "p10_m": 2.639516082362254,
+      "p90_m": 9.848725653481255,
+      "frac_m_ge_1.5": 0.9988439083099365
+     },
+     "11": {
+      "median_m": 5.329560596047321,
+      "iqr_logm": 0.6903760433197021,
+      "p10_m": 2.6432142917736643,
+      "p90_m": 10.137160057822694,
+      "frac_m_ge_1.5": 0.9992293119430542
+     }
+    }
+   },
+   "tau8": {
+    "8": {
+     "0": {
+      "median_m": 1.5168984539808554,
+      "iqr_logm": 0.4689669907093048,
+      "p10_m": 1.0877853979856353,
+      "p90_m": 2.3598267815346383,
+      "frac_m_ge_1.5": 0.5135838389396667
+     },
+     "1": {
+      "median_m": 1.664567737489866,
+      "iqr_logm": 0.4527387320995331,
+      "p10_m": 1.1180362108833344,
+      "p90_m": 2.6844656987908575,
+      "frac_m_ge_1.5": 0.6092485785484314
+     },
+     "2": {
+      "median_m": 1.4676167292244426,
+      "iqr_logm": 0.47025197744369507,
+      "p10_m": 1.0773616884284942,
+      "p90_m": 2.3076700617523196,
+      "frac_m_ge_1.5": 0.4745664596557617
+     },
+     "3": {
+      "median_m": 1.650810763582146,
+      "iqr_logm": 0.49286890029907227,
+      "p10_m": 1.1009900868024922,
+      "p90_m": 2.8252766416419743,
+      "frac_m_ge_1.5": 0.5885356664657593
+     },
+     "4": {
+      "median_m": 1.7273192818999594,
+      "iqr_logm": 0.49961087107658386,
+      "p10_m": 1.1255117691723995,
+      "p90_m": 2.9379160271907048,
+      "frac_m_ge_1.5": 0.6356454491615295
+     },
+     "5": {
+      "median_m": 1.3546969965268694,
+      "iqr_logm": 0.4436219334602356,
+      "p10_m": 1.0516940357953002,
+      "p90_m": 2.1383612117404476,
+      "frac_m_ge_1.5": 0.39171484112739563
+     },
+     "6": {
+      "median_m": 1.4835726154853286,
+      "iqr_logm": 0.4900384247303009,
+      "p10_m": 1.0734486243912675,
+      "p90_m": 2.451378581782052,
+      "frac_m_ge_1.5": 0.49046242237091064
+     },
+     "7": {
+      "median_m": 1.6976628807213114,
+      "iqr_logm": 0.49837997555732727,
+      "p10_m": 1.1186810736070016,
+      "p90_m": 2.940728994409548,
+      "frac_m_ge_1.5": 0.6199421882629395
+     },
+     "8": {
+      "median_m": 1.4745923819507882,
+      "iqr_logm": 0.4826114773750305,
+      "p10_m": 1.0765968613540016,
+      "p90_m": 2.400122868654982,
+      "frac_m_ge_1.5": 0.4830443263053894
+     },
+     "9": {
+      "median_m": 1.4069340466566045,
+      "iqr_logm": 0.4422883093357086,
+      "p10_m": 1.0652809038861872,
+      "p90_m": 2.1975212737000085,
+      "frac_m_ge_1.5": 0.4272639751434326
+     },
+     "10": {
+      "median_m": 1.6211876625040607,
+      "iqr_logm": 0.45946407318115234,
+      "p10_m": 1.1030574461809917,
+      "p90_m": 2.5893853878902533,
+      "frac_m_ge_1.5": 0.5794797539710999
+     },
+     "11": {
+      "median_m": 1.7263415772669366,
+      "iqr_logm": 0.4853556156158447,
+      "p10_m": 1.125285528520785,
+      "p90_m": 2.916029973386862,
+      "frac_m_ge_1.5": 0.6403660774230957
+     }
+    },
+    "9": {
+     "0": {
+      "median_m": 1.9999866524134187,
+      "iqr_logm": 0.6344475746154785,
+      "p10_m": 1.217386308743244,
+      "p90_m": 4.054529425523191,
+      "frac_m_ge_1.5": 0.7609826326370239
+     },
+     "1": {
+      "median_m": 1.9976785591178,
+      "iqr_logm": 0.5594831705093384,
+      "p10_m": 1.2390317110417428,
+      "p90_m": 3.801886909085793,
+      "frac_m_ge_1.5": 0.7727360129356384
+     },
+     "2": {
+      "median_m": 1.7832664125672886,
+      "iqr_logm": 0.6172962784767151,
+      "p10_m": 1.121913219235352,
+      "p90_m": 3.573622247968694,
+      "frac_m_ge_1.5": 0.6436415910720825
+     },
+     "3": {
+      "median_m": 1.7760799321497112,
+      "iqr_logm": 0.5241692662239075,
+      "p10_m": 1.1523017879391764,
+      "p90_m": 3.1848017594816076,
+      "frac_m_ge_1.5": 0.6636801362037659
+     },
+     "4": {
+      "median_m": 1.9918413171535643,
+      "iqr_logm": 0.5986247658729553,
+      "p10_m": 1.2057081211648484,
+      "p90_m": 3.8874596554387786,
+      "frac_m_ge_1.5": 0.7441233396530151
+     },
+     "5": {
+      "median_m": 1.7230358560982275,
+      "iqr_logm": 0.518804669380188,
+      "p10_m": 1.130910182587118,
+      "p90_m": 3.1029175541771723,
+      "frac_m_ge_1.5": 0.6280347108840942
+     },
+     "6": {
+      "median_m": 1.841305269449213,
+      "iqr_logm": 0.5862400531768799,
+      "p10_m": 1.1543936081283055,
+      "p90_m": 3.537688369011462,
+      "frac_m_ge_1.5": 0.6815028786659241
+     },
+     "7": {
+      "median_m": 1.9866977662425271,
+      "iqr_logm": 0.543975830078125,
+      "p10_m": 1.2197759186253399,
+      "p90_m": 3.652491147634746,
+      "frac_m_ge_1.5": 0.7573217749595642
+     },
+     "8": {
+      "median_m": 1.614303399472152,
+      "iqr_logm": 0.5724737644195557,
+      "p10_m": 1.0894663725083376,
+      "p90_m": 3.2023586613690846,
+      "frac_m_ge_1.5": 0.5592485666275024
+     },
+     "9": {
+      "median_m": 1.9986568471237232,
+      "iqr_logm": 0.5751004219055176,
+      "p10_m": 1.2185954813606856,
+      "p90_m": 3.8451449269257747,
+      "frac_m_ge_1.5": 0.7608863115310669
+     },
+     "10": {
+      "median_m": 1.627610565793911,
+      "iqr_logm": 0.5498791933059692,
+      "p10_m": 1.0976972608752968,
+      "p90_m": 3.1318779082667714,
+      "frac_m_ge_1.5": 0.5714836120605469
+     },
+     "11": {
+      "median_m": 1.8430195991694218,
+      "iqr_logm": 0.5869808197021484,
+      "p10_m": 1.1531762594269124,
+      "p90_m": 3.582860671135201,
+      "frac_m_ge_1.5": 0.68131023645401
+     }
+    },
+    "10": {
+     "0": {
+      "median_m": 2.243773381043656,
+      "iqr_logm": 0.7612085342407227,
+      "p10_m": 1.282018985711528,
+      "p90_m": 5.245435599165389,
+      "frac_m_ge_1.5": 0.8066474199295044
+     },
+     "1": {
+      "median_m": 2.193508756804479,
+      "iqr_logm": 0.7048604488372803,
+      "p10_m": 1.273035708021194,
+      "p90_m": 4.925542301447998,
+      "frac_m_ge_1.5": 0.8073217868804932
+     },
+     "2": {
+      "median_m": 2.3069904003639556,
+      "iqr_logm": 0.6803643107414246,
+      "p10_m": 1.3469266288003379,
+      "p90_m": 5.02805999382463,
+      "frac_m_ge_1.5": 0.8425818681716919
+     },
+     "3": {
+      "median_m": 2.372264232710665,
+      "iqr_logm": 0.7199620008468628,
+      "p10_m": 1.3448732296633077,
+      "p90_m": 5.342625054381797,
+      "frac_m_ge_1.5": 0.8402697443962097
+     },
+     "4": {
+      "median_m": 2.477247053094941,
+      "iqr_logm": 0.7208042144775391,
+      "p10_m": 1.360574794540184,
+      "p90_m": 5.4173036098504435,
+      "frac_m_ge_1.5": 0.8532755374908447
+     },
+     "5": {
+      "median_m": 2.344115365179548,
+      "iqr_logm": 0.7255597710609436,
+      "p10_m": 1.291389611813187,
+      "p90_m": 5.342297702674851,
+      "frac_m_ge_1.5": 0.8252408504486084
+     },
+     "6": {
+      "median_m": 2.2253521984094444,
+      "iqr_logm": 0.7523193359375,
+      "p10_m": 1.2600066455750822,
+      "p90_m": 5.362449934724086,
+      "frac_m_ge_1.5": 0.8036608695983887
+     },
+     "7": {
+      "median_m": 2.336639150288578,
+      "iqr_logm": 0.7331572771072388,
+      "p10_m": 1.323203791054943,
+      "p90_m": 5.40301945352833,
+      "frac_m_ge_1.5": 0.8385356664657593
+     },
+     "8": {
+      "median_m": 2.3358880241374407,
+      "iqr_logm": 0.7006099224090576,
+      "p10_m": 1.3366333669846986,
+      "p90_m": 5.241686987269809,
+      "frac_m_ge_1.5": 0.8410404920578003
+     },
+     "9": {
+      "median_m": 2.080524200910146,
+      "iqr_logm": 0.7379488945007324,
+      "p10_m": 1.2170765089476334,
+      "p90_m": 4.860136331265425,
+      "frac_m_ge_1.5": 0.7719653248786926
+     },
+     "10": {
+      "median_m": 2.2180329101678526,
+      "iqr_logm": 0.7093568444252014,
+      "p10_m": 1.2781894074422795,
+      "p90_m": 4.955594566090858,
+      "frac_m_ge_1.5": 0.815703272819519
+     },
+     "11": {
+      "median_m": 2.1558480763046814,
+      "iqr_logm": 0.7638834714889526,
+      "p10_m": 1.2344180702751293,
+      "p90_m": 5.117116661389179,
+      "frac_m_ge_1.5": 0.781695544719696
+     }
+    },
+    "11": {
+     "0": {
+      "median_m": 2.9003702736874275,
+      "iqr_logm": 0.8215234279632568,
+      "p10_m": 1.5088122361211684,
+      "p90_m": 6.719765498987658,
+      "frac_m_ge_1.5": 0.902890145778656
+     },
+     "1": {
+      "median_m": 2.9687141839365125,
+      "iqr_logm": 0.8490191698074341,
+      "p10_m": 1.5364069610353068,
+      "p90_m": 6.9110688249770895,
+      "frac_m_ge_1.5": 0.907899796962738
+     },
+     "2": {
+      "median_m": 2.9238883640047195,
+      "iqr_logm": 0.829475462436676,
+      "p10_m": 1.5170655034009022,
+      "p90_m": 6.782652650539834,
+      "frac_m_ge_1.5": 0.9039499163627625
+     },
+     "3": {
+      "median_m": 2.9744610314151534,
+      "iqr_logm": 0.8266927599906921,
+      "p10_m": 1.555746333296235,
+      "p90_m": 6.637123212185761,
+      "frac_m_ge_1.5": 0.9131020903587341
+     },
+     "4": {
+      "median_m": 3.0092783703226376,
+      "iqr_logm": 0.8673739433288574,
+      "p10_m": 1.5553049561462946,
+      "p90_m": 7.043166376476894,
+      "frac_m_ge_1.5": 0.9131020903587341
+     },
+     "5": {
+      "median_m": 3.0685440065356677,
+      "iqr_logm": 0.8694561123847961,
+      "p10_m": 1.5982463527491375,
+      "p90_m": 6.765984585262042,
+      "frac_m_ge_1.5": 0.9218689799308777
+     },
+     "6": {
+      "median_m": 2.8253578114202673,
+      "iqr_logm": 0.8075470924377441,
+      "p10_m": 1.4713140795549302,
+      "p90_m": 6.708955907966682,
+      "frac_m_ge_1.5": 0.891811192035675
+     },
+     "7": {
+      "median_m": 2.7751068446636733,
+      "iqr_logm": 0.7687126398086548,
+      "p10_m": 1.4932800975281628,
+      "p90_m": 6.2505681121366345,
+      "frac_m_ge_1.5": 0.8981695771217346
+     },
+     "8": {
+      "median_m": 2.9115550495917164,
+      "iqr_logm": 0.8123195171356201,
+      "p10_m": 1.5348791180665002,
+      "p90_m": 6.915547150140303,
+      "frac_m_ge_1.5": 0.9093449115753174
+     },
+     "9": {
+      "median_m": 3.072433082819328,
+      "iqr_logm": 0.8979284763336182,
+      "p10_m": 1.5652957097389515,
+      "p90_m": 6.994661924481662,
+      "frac_m_ge_1.5": 0.9131984710693359
+     },
+     "10": {
+      "median_m": 3.035361663508077,
+      "iqr_logm": 0.8633794188499451,
+      "p10_m": 1.5798560159960051,
+      "p90_m": 6.803918578636392,
+      "frac_m_ge_1.5": 0.9174373745918274
+     },
+     "11": {
+      "median_m": 3.0245149354261756,
+      "iqr_logm": 0.8680628538131714,
+      "p10_m": 1.547521651461511,
+      "p90_m": 6.977218335993425,
+      "frac_m_ge_1.5": 0.9116570353507996
+     }
+    }
+   }
+  },
+  "duplicate_text_probe": {
+   "8": {
+    "n_tokens": 1228,
+    "mean_cos_copy1_copy2_per_head": [
+     0.2722679674625397,
+     0.2769290804862976,
+     0.32370525598526,
+     0.5155321359634399,
+     0.2817823588848114,
+     0.3998003900051117,
+     0.4871293902397156,
+     0.42214488983154297,
+     0.5072038173675537,
+     0.29434382915496826,
+     0.2087661772966385,
+     0.3713676631450653
+    ],
+    "median_m_copy1_per_head_tau8": [
+     1.6544616222381592,
+     1.8241102695465088,
+     1.5955142974853516,
+     1.8419952392578125,
+     1.9185657501220703,
+     1.466511845588684,
+     1.605587124824524,
+     1.8713115453720093,
+     1.5817556381225586,
+     1.5557963848114014,
+     1.8437880277633667,
+     1.8918803930282593
+    ]
+   },
+   "9": {
+    "n_tokens": 1228,
+    "mean_cos_copy1_copy2_per_head": [
+     0.4134671986103058,
+     0.2933816909790039,
+     0.7887132167816162,
+     0.3679165542125702,
+     0.316663533449173,
+     0.40876471996307373,
+     0.4896348714828491,
+     0.27938878536224365,
+     0.828302800655365,
+     0.36917737126350403,
+     0.6670622825622559,
+     0.495525062084198
+    ],
+    "median_m_copy1_per_head_tau8": [
+     2.3665993213653564,
+     2.331177234649658,
+     2.1996421813964844,
+     1.9833836555480957,
+     2.2345151901245117,
+     1.8535499572753906,
+     2.082089900970459,
+     2.2956018447875977,
+     2.112314224243164,
+     2.380275011062622,
+     1.7944910526275635,
+     2.0038137435913086
+    ]
+   },
+   "10": {
+    "n_tokens": 1228,
+    "mean_cos_copy1_copy2_per_head": [
+     0.5644180178642273,
+     0.5348798036575317,
+     0.4422432482242584,
+     0.5373653173446655,
+     0.7621444463729858,
+     0.654622495174408,
+     0.7649741172790527,
+     0.7053536772727966,
+     0.4476000666618347,
+     0.7752459645271301,
+     0.5923057198524475,
+     0.7771996855735779
+    ],
+    "median_m_copy1_per_head_tau8": [
+     2.6521823406219482,
+     2.5650634765625,
+     2.643420934677124,
+     2.758080244064331,
+     3.0052478313446045,
+     2.7826180458068848,
+     2.870858669281006,
+     2.9425556659698486,
+     2.743251085281372,
+     2.5709023475646973,
+     2.629697561264038,
+     2.650576114654541
+    ]
+   },
+   "11": {
+    "n_tokens": 1228,
+    "mean_cos_copy1_copy2_per_head": [
+     0.7710362672805786,
+     0.7588962316513062,
+     0.768918514251709,
+     0.7689732313156128,
+     0.7643812894821167,
+     0.7576966285705566,
+     0.7721347808837891,
+     0.760597288608551,
+     0.7572597861289978,
+     0.7642592787742615,
+     0.7490846514701843,
+     0.7680479288101196
+    ],
+    "median_m_copy1_per_head_tau8": [
+     3.326814651489258,
+     3.270665407180786,
+     3.2497851848602295,
+     3.407348394393921,
+     3.3816990852355957,
+     3.622560739517212,
+     3.241530179977417,
+     3.228372812271118,
+     3.439983367919922,
+     3.3692195415496826,
+     3.416335105895996,
+     3.3927981853485107
+    ]
+   }
+  }
+ },
+ "step0b_pairs": {
+  "n_single_aspect_rows_eligible": 421,
+  "n_pairs": 200,
+  "pair_ids": [
+   [
+    "absa_hotel:validation:000123",
+    "absa_hotel:validation:000317"
+   ],
+   [
+    "absa_hotel:validation:000618",
+    "absa_hotel:validation:000112"
+   ],
+   [
+    "absa_hotel:validation:000226",
+    "absa_hotel:validation:000566"
+   ],
+   [
+    "absa_hotel:validation:000414",
+    "absa_hotel:validation:000762"
+   ],
+   [
+    "absa_hotel:validation:000786",
+    "absa_hotel:validation:000659"
+   ],
+   [
+    "absa_hotel:validation:000468",
+    "absa_hotel:validation:000655"
+   ],
+   [
+    "absa_hotel:validation:000389",
+    "absa_hotel:validation:000246"
+   ],
+   [
+    "absa_hotel:validation:000338",
+    "absa_hotel:validation:000352"
+   ],
+   [
+    "absa_hotel:validation:000281",
+    "absa_hotel:validation:000445"
+   ],
+   [
+    "absa_hotel:validation:000147",
+    "absa_hotel:validation:000617"
+   ],
+   [
+    "absa_hotel:validation:000416",
+    "absa_hotel:validation:000479"
+   ],
+   [
+    "absa_hotel:validation:000566",
+    "absa_hotel:validation:000468"
+   ],
+   [
+    "absa_hotel:validation:000253",
+    "absa_hotel:validation:000414"
+   ],
+   [
+    "absa_hotel:validation:000685",
+    "absa_hotel:validation:000491"
+   ],
+   [
+    "absa_hotel:validation:000645",
+    "absa_hotel:validation:000112"
+   ],
+   [
+    "absa_hotel:validation:000147",
+    "absa_hotel:validation:000462"
+   ],
+   [
+    "absa_hotel:validation:000230",
+    "absa_hotel:validation:000125"
+   ],
+   [
+    "absa_hotel:validation:000511",
+    "absa_hotel:validation:000246"
+   ],
+   [
+    "absa_hotel:validation:000618",
+    "absa_hotel:validation:000476"
+   ],
+   [
+    "absa_hotel:validation:000288",
+    "absa_hotel:validation:000263"
+   ],
+   [
+    "absa_hotel:validation:000158",
+    "absa_hotel:validation:000626"
+   ],
+   [
+    "absa_hotel:validation:000467",
+    "absa_hotel:validation:000354"
+   ],
+   [
+    "absa_hotel:validation:000449",
+    "absa_hotel:validation:000481"
+   ],
+   [
+    "absa_hotel:validation:000315",
+    "absa_hotel:validation:000445"
+   ],
+   [
+    "absa_hotel:validation:000431",
+    "absa_hotel:validation:000663"
+   ],
+   [
+    "absa_hotel:validation:000694",
+    "absa_hotel:validation:000762"
+   ],
+   [
+    "absa_hotel:validation:000416",
+    "absa_hotel:validation:000701"
+   ],
+   [
+    "absa_hotel:validation:000730",
+    "absa_hotel:validation:000403"
+   ],
+   [
+    "absa_hotel:validation:000001",
+    "absa_hotel:validation:000442"
+   ],
+   [
+    "absa_hotel:validation:000589",
+    "absa_hotel:validation:000045"
+   ],
+   [
+    "absa_hotel:validation:000263",
+    "absa_hotel:validation:000641"
+   ],
+   [
+    "absa_hotel:validation:000737",
+    "absa_hotel:validation:000605"
+   ],
+   [
+    "absa_hotel:validation:000696",
+    "absa_hotel:validation:000140"
+   ],
+   [
+    "absa_hotel:validation:000137",
+    "absa_hotel:validation:000565"
+   ],
+   [
+    "absa_hotel:validation:000164",
+    "absa_hotel:validation:000140"
+   ],
+   [
+    "absa_hotel:validation:000551",
+    "absa_hotel:validation:000298"
+   ],
+   [
+    "absa_hotel:validation:000479",
+    "absa_hotel:validation:000403"
+   ],
+   [
+    "absa_hotel:validation:000158",
+    "absa_hotel:validation:000490"
+   ],
+   [
+    "absa_hotel:validation:000346",
+    "absa_hotel:validation:000746"
+   ],
+   [
+    "absa_hotel:validation:000027",
+    "absa_hotel:validation:000481"
+   ],
+   [
+    "absa_hotel:validation:000125",
+    "absa_hotel:validation:000472"
+   ],
+   [
+    "absa_hotel:validation:000203",
+    "absa_hotel:validation:000429"
+   ],
+   [
+    "absa_hotel:validation:000594",
+    "absa_hotel:validation:000332"
+   ],
+   [
+    "absa_hotel:validation:000445",
+    "absa_hotel:validation:000565"
+   ],
+   [
+    "absa_hotel:validation:000232",
+    "absa_hotel:validation:000655"
+   ],
+   [
+    "absa_hotel:validation:000690",
+    "absa_hotel:validation:000078"
+   ],
+   [
+    "absa_hotel:validation:000142",
+    "absa_hotel:validation:000165"
+   ],
+   [
+    "absa_hotel:validation:000384",
+    "absa_hotel:validation:000269"
+   ],
+   [
+    "absa_hotel:validation:000416",
+    "absa_hotel:validation:000499"
+   ],
+   [
+    "absa_hotel:validation:000183",
+    "absa_hotel:validation:000258"
+   ],
+   [
+    "absa_hotel:validation:000757",
+    "absa_hotel:validation:000786"
+   ],
+   [
+    "absa_hotel:validation:000462",
+    "absa_hotel:validation:000436"
+   ],
+   [
+    "absa_hotel:validation:000124",
+    "absa_hotel:validation:000496"
+   ],
+   [
+    "absa_hotel:validation:000443",
+    "absa_hotel:validation:000617"
+   ],
+   [
+    "absa_hotel:validation:000162",
+    "absa_hotel:validation:000346"
+   ],
+   [
+    "absa_hotel:validation:000526",
+    "absa_hotel:validation:000660"
+   ],
+   [
+    "absa_hotel:validation:000119",
+    "absa_hotel:validation:000589"
+   ],
+   [
+    "absa_hotel:validation:000263",
+    "absa_hotel:validation:000645"
+   ],
+   [
+    "absa_hotel:validation:000522",
+    "absa_hotel:validation:000137"
+   ],
+   [
+    "absa_hotel:validation:000114",
+    "absa_hotel:validation:000659"
+   ],
+   [
+    "absa_hotel:validation:000165",
+    "absa_hotel:validation:000254"
+   ],
+   [
+    "absa_hotel:validation:000014",
+    "absa_hotel:validation:000403"
+   ],
+   [
+    "absa_hotel:validation:000233",
+    "absa_hotel:validation:000021"
+   ],
+   [
+    "absa_hotel:validation:000303",
+    "absa_hotel:validation:000125"
+   ],
+   [
+    "absa_hotel:validation:000101",
+    "absa_hotel:validation:000660"
+   ],
+   [
+    "absa_hotel:validation:000339",
+    "absa_hotel:validation:000314"
+   ],
+   [
+    "absa_hotel:validation:000562",
+    "absa_hotel:validation:000447"
+   ],
+   [
+    "absa_hotel:validation:000124",
+    "absa_hotel:validation:000660"
+   ],
+   [
+    "absa_hotel:validation:000369",
+    "absa_hotel:validation:000476"
+   ],
+   [
+    "absa_hotel:validation:000657",
+    "absa_hotel:validation:000246"
+   ],
+   [
+    "absa_hotel:validation:000125",
+    "absa_hotel:validation:000291"
+   ],
+   [
+    "absa_hotel:validation:000020",
+    "absa_hotel:validation:000509"
+   ],
+   [
+    "absa_hotel:validation:000166",
+    "absa_hotel:validation:000586"
+   ],
+   [
+    "absa_hotel:validation:000039",
+    "absa_hotel:validation:000131"
+   ],
+   [
+    "absa_hotel:validation:000564",
+    "absa_hotel:validation:000618"
+   ],
+   [
+    "absa_hotel:validation:000030",
+    "absa_hotel:validation:000416"
+   ],
+   [
+    "absa_hotel:validation:000414",
+    "absa_hotel:validation:000636"
+   ],
+   [
+    "absa_hotel:validation:000509",
+    "absa_hotel:validation:000659"
+   ],
+   [
+    "absa_hotel:validation:000157",
+    "absa_hotel:validation:000229"
+   ],
+   [
+    "absa_hotel:validation:000185",
+    "absa_hotel:validation:000521"
+   ],
+   [
+    "absa_hotel:validation:000039",
+    "absa_hotel:validation:000620"
+   ],
+   [
+    "absa_hotel:validation:000224",
+    "absa_hotel:validation:000655"
+   ],
+   [
+    "absa_hotel:validation:000446",
+    "absa_hotel:validation:000606"
+   ],
+   [
+    "absa_hotel:validation:000445",
+    "absa_hotel:validation:000513"
+   ],
+   [
+    "absa_hotel:validation:000191",
+    "absa_hotel:validation:000164"
+   ],
+   [
+    "absa_hotel:validation:000597",
+    "absa_hotel:validation:000403"
+   ],
+   [
+    "absa_hotel:validation:000684",
+    "absa_hotel:validation:000399"
+   ],
+   [
+    "absa_hotel:validation:000775",
+    "absa_hotel:validation:000039"
+   ],
+   [
+    "absa_hotel:validation:000018",
+    "absa_hotel:validation:000502"
+   ],
+   [
+    "absa_hotel:validation:000218",
+    "absa_hotel:validation:000678"
+   ],
+   [
+    "absa_hotel:validation:000092",
+    "absa_hotel:validation:000147"
+   ],
+   [
+    "absa_hotel:validation:000044",
+    "absa_hotel:validation:000716"
+   ],
+   [
+    "absa_hotel:validation:000166",
+    "absa_hotel:validation:000287"
+   ],
+   [
+    "absa_hotel:validation:000138",
+    "absa_hotel:validation:000383"
+   ],
+   [
+    "absa_hotel:validation:000191",
+    "absa_hotel:validation:000730"
+   ],
+   [
+    "absa_hotel:validation:000602",
+    "absa_hotel:validation:000006"
+   ],
+   [
+    "absa_hotel:validation:000458",
+    "absa_hotel:validation:000415"
+   ],
+   [
+    "absa_hotel:validation:000152",
+    "absa_hotel:validation:000166"
+   ],
+   [
+    "absa_hotel:validation:000685",
+    "absa_hotel:validation:000615"
+   ],
+   [
+    "absa_hotel:validation:000324",
+    "absa_hotel:validation:000464"
+   ],
+   [
+    "absa_hotel:validation:000091",
+    "absa_hotel:validation:000078"
+   ],
+   [
+    "absa_hotel:validation:000754",
+    "absa_hotel:validation:000094"
+   ],
+   [
+    "absa_hotel:validation:000754",
+    "absa_hotel:validation:000309"
+   ],
+   [
+    "absa_hotel:validation:000320",
+    "absa_hotel:validation:000698"
+   ],
+   [
+    "absa_hotel:validation:000338",
+    "absa_hotel:validation:000738"
+   ],
+   [
+    "absa_hotel:validation:000767",
+    "absa_hotel:validation:000339"
+   ],
+   [
+    "absa_hotel:validation:000213",
+    "absa_hotel:validation:000161"
+   ],
+   [
+    "absa_hotel:validation:000435",
+    "absa_hotel:validation:000724"
+   ],
+   [
+    "absa_hotel:validation:000421",
+    "absa_hotel:validation:000263"
+   ],
+   [
+    "absa_hotel:validation:000436",
+    "absa_hotel:validation:000258"
+   ],
+   [
+    "absa_hotel:validation:000596",
+    "absa_hotel:validation:000263"
+   ],
+   [
+    "absa_hotel:validation:000263",
+    "absa_hotel:validation:000288"
+   ],
+   [
+    "absa_hotel:validation:000537",
+    "absa_hotel:validation:000445"
+   ],
+   [
+    "absa_hotel:validation:000391",
+    "absa_hotel:validation:000021"
+   ],
+   [
+    "absa_hotel:validation:000514",
+    "absa_hotel:validation:000694"
+   ],
+   [
+    "absa_hotel:validation:000326",
+    "absa_hotel:validation:000647"
+   ],
+   [
+    "absa_hotel:validation:000101",
+    "absa_hotel:validation:000655"
+   ],
+   [
+    "absa_hotel:validation:000655",
+    "absa_hotel:validation:000604"
+   ],
+   [
+    "absa_hotel:validation:000212",
+    "absa_hotel:validation:000416"
+   ],
+   [
+    "absa_hotel:validation:000346",
+    "absa_hotel:validation:000618"
+   ],
+   [
+    "absa_hotel:validation:000684",
+    "absa_hotel:validation:000248"
+   ],
+   [
+    "absa_hotel:validation:000754",
+    "absa_hotel:validation:000778"
+   ],
+   [
+    "absa_hotel:validation:000039",
+    "absa_hotel:validation:000737"
+   ],
+   [
+    "absa_hotel:validation:000222",
+    "absa_hotel:validation:000605"
+   ],
+   [
+    "absa_hotel:validation:000445",
+    "absa_hotel:validation:000485"
+   ],
+   [
+    "absa_hotel:validation:000668",
+    "absa_hotel:validation:000191"
+   ],
+   [
+    "absa_hotel:validation:000161",
+    "absa_hotel:validation:000326"
+   ],
+   [
+    "absa_hotel:validation:000203",
+    "absa_hotel:validation:000569"
+   ],
+   [
+    "absa_hotel:validation:000687",
+    "absa_hotel:validation:000303"
+   ],
+   [
+    "absa_hotel:validation:000411",
+    "absa_hotel:validation:000691"
+   ],
+   [
+    "absa_hotel:validation:000138",
+    "absa_hotel:validation:000117"
+   ],
+   [
+    "absa_hotel:validation:000413",
+    "absa_hotel:validation:000045"
+   ],
+   [
+    "absa_hotel:validation:000231",
+    "absa_hotel:validation:000454"
+   ],
+   [
+    "absa_hotel:validation:000249",
+    "absa_hotel:validation:000467"
+   ],
+   [
+    "absa_hotel:validation:000021",
+    "absa_hotel:validation:000462"
+   ],
+   [
+    "absa_hotel:validation:000057",
+    "absa_hotel:validation:000786"
+   ],
+   [
+    "absa_hotel:validation:000403",
+    "absa_hotel:validation:000073"
+   ],
+   [
+    "absa_hotel:validation:000480",
+    "absa_hotel:validation:000658"
+   ],
+   [
+    "absa_hotel:validation:000291",
+    "absa_hotel:validation:000463"
+   ],
+   [
+    "absa_hotel:validation:000480",
+    "absa_hotel:validation:000491"
+   ],
+   [
+    "absa_hotel:validation:000564",
+    "absa_hotel:validation:000321"
+   ],
+   [
+    "absa_hotel:validation:000467",
+    "absa_hotel:validation:000315"
+   ],
+   [
+    "absa_hotel:validation:000448",
+    "absa_hotel:validation:000240"
+   ],
+   [
+    "absa_hotel:validation:000213",
+    "absa_hotel:validation:000771"
+   ],
+   [
+    "absa_hotel:validation:000140",
+    "absa_hotel:validation:000525"
+   ],
+   [
+    "absa_hotel:validation:000655",
+    "absa_hotel:validation:000321"
+   ],
+   [
+    "absa_hotel:validation:000385",
+    "absa_hotel:validation:000499"
+   ],
+   [
+    "absa_hotel:validation:000508",
+    "absa_hotel:validation:000191"
+   ],
+   [
+    "absa_hotel:validation:000159",
+    "absa_hotel:validation:000569"
+   ],
+   [
+    "absa_hotel:validation:000519",
+    "absa_hotel:validation:000685"
+   ],
+   [
+    "absa_hotel:validation:000148",
+    "absa_hotel:validation:000137"
+   ],
+   [
+    "absa_hotel:validation:000778",
+    "absa_hotel:validation:000640"
+   ],
+   [
+    "absa_hotel:validation:000793",
+    "absa_hotel:validation:000185"
+   ],
+   [
+    "absa_hotel:validation:000143",
+    "absa_hotel:validation:000261"
+   ],
+   [
+    "absa_hotel:validation:000445",
+    "absa_hotel:validation:000173"
+   ],
+   [
+    "absa_hotel:validation:000057",
+    "absa_hotel:validation:000732"
+   ],
+   [
+    "absa_hotel:validation:000613",
+    "absa_hotel:validation:000590"
+   ],
+   [
+    "absa_hotel:validation:000467",
+    "absa_hotel:validation:000511"
+   ],
+   [
+    "absa_hotel:validation:000693",
+    "absa_hotel:validation:000480"
+   ],
+   [
+    "absa_hotel:validation:000042",
+    "absa_hotel:validation:000454"
+   ],
+   [
+    "absa_hotel:validation:000101",
+    "absa_hotel:validation:000346"
+   ],
+   [
+    "absa_hotel:validation:000551",
+    "absa_hotel:validation:000685"
+   ],
+   [
+    "absa_hotel:validation:000326",
+    "absa_hotel:validation:000737"
+   ],
+   [
+    "absa_hotel:validation:000030",
+    "absa_hotel:validation:000166"
+   ],
+   [
+    "absa_hotel:validation:000415",
+    "absa_hotel:validation:000636"
+   ],
+   [
+    "absa_hotel:validation:000471",
+    "absa_hotel:validation:000213"
+   ],
+   [
+    "absa_hotel:validation:000504",
+    "absa_hotel:validation:000415"
+   ],
+   [
+    "absa_hotel:validation:000697",
+    "absa_hotel:validation:000415"
+   ],
+   [
+    "absa_hotel:validation:000446",
+    "absa_hotel:validation:000358"
+   ],
+   [
+    "absa_hotel:validation:000685",
+    "absa_hotel:validation:000212"
+   ],
+   [
+    "absa_hotel:validation:000213",
+    "absa_hotel:validation:000720"
+   ],
+   [
+    "absa_hotel:validation:000655",
+    "absa_hotel:validation:000590"
+   ],
+   [
+    "absa_hotel:validation:000202",
+    "absa_hotel:validation:000613"
+   ],
+   [
+    "absa_hotel:validation:000428",
+    "absa_hotel:validation:000191"
+   ],
+   [
+    "absa_hotel:validation:000769",
+    "absa_hotel:validation:000263"
+   ],
+   [
+    "absa_hotel:validation:000006",
+    "absa_hotel:validation:000457"
+   ],
+   [
+    "absa_hotel:validation:000490",
+    "absa_hotel:validation:000446"
+   ],
+   [
+    "absa_hotel:validation:000269",
+    "absa_hotel:validation:000350"
+   ],
+   [
+    "absa_hotel:validation:000525",
+    "absa_hotel:validation:000324"
+   ],
+   [
+    "absa_hotel:validation:000447",
+    "absa_hotel:validation:000450"
+   ],
+   [
+    "absa_hotel:validation:000775",
+    "absa_hotel:validation:000496"
+   ],
+   [
+    "absa_hotel:validation:000794",
+    "absa_hotel:validation:000498"
+   ],
+   [
+    "absa_hotel:validation:000555",
+    "absa_hotel:validation:000044"
+   ],
+   [
+    "absa_hotel:validation:000078",
+    "absa_hotel:validation:000497"
+   ],
+   [
+    "absa_hotel:validation:000444",
+    "absa_hotel:validation:000575"
+   ],
+   [
+    "absa_hotel:validation:000021",
+    "absa_hotel:validation:000160"
+   ],
+   [
+    "absa_hotel:validation:000317",
+    "absa_hotel:validation:000138"
+   ],
+   [
+    "absa_hotel:validation:000027",
+    "absa_hotel:validation:000113"
+   ],
+   [
+    "absa_hotel:validation:000385",
+    "absa_hotel:validation:000098"
+   ],
+   [
+    "absa_hotel:validation:000249",
+    "absa_hotel:validation:000018"
+   ],
+   [
+    "absa_hotel:validation:000567",
+    "absa_hotel:validation:000490"
+   ],
+   [
+    "absa_hotel:validation:000313",
+    "absa_hotel:validation:000413"
+   ],
+   [
+    "absa_hotel:validation:000189",
+    "absa_hotel:validation:000431"
+   ],
+   [
+    "absa_hotel:validation:000191",
+    "absa_hotel:validation:000745"
+   ],
+   [
+    "absa_hotel:validation:000376",
+    "absa_hotel:validation:000463"
+   ],
+   [
+    "absa_hotel:validation:000498",
+    "absa_hotel:validation:000017"
+   ],
+   [
+    "absa_hotel:validation:000475",
+    "absa_hotel:validation:000218"
+   ],
+   [
+    "absa_hotel:validation:000036",
+    "absa_hotel:validation:000498"
+   ],
+   [
+    "absa_hotel:validation:000143",
+    "absa_hotel:validation:000288"
+   ],
+   [
+    "absa_hotel:validation:000240",
+    "absa_hotel:validation:000490"
+   ]
+  ]
+ },
+ "step0b": {
+  "baseline_rho0": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 131,
+    "A_flip_to_B": 5,
+    "A_other_pol": 5,
+    "A_missed": 59,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 105,
+    "A_flip_to_B": 10,
+    "A_other_pol": 3,
+    "A_missed": 82,
+    "B_present_correct": 106,
+    "B_present_wrong": 22
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 79,
+    "A_flip_to_B": 14,
+    "A_other_pol": 3,
+    "A_missed": 104,
+    "B_present_correct": 126,
+    "B_present_wrong": 17
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 71,
+    "A_flip_to_B": 14,
+    "A_other_pol": 1,
+    "A_missed": 114,
+    "B_present_correct": 131,
+    "B_present_wrong": 16
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 131,
+    "A_flip_to_B": 5,
+    "A_other_pol": 5,
+    "A_missed": 59,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 101,
+    "A_flip_to_B": 13,
+    "A_other_pol": 2,
+    "A_missed": 84,
+    "B_present_correct": 115,
+    "B_present_wrong": 18
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 89,
+    "A_flip_to_B": 13,
+    "A_other_pol": 2,
+    "A_missed": 96,
+    "B_present_correct": 124,
+    "B_present_wrong": 16
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 70,
+    "A_flip_to_B": 18,
+    "A_other_pol": 1,
+    "A_missed": 111,
+    "B_present_correct": 131,
+    "B_present_wrong": 17
+   }
+  },
+  "c1_rho0.5_tau8": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 130,
+    "A_flip_to_B": 5,
+    "A_other_pol": 5,
+    "A_missed": 60,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 105,
+    "A_flip_to_B": 11,
+    "A_other_pol": 3,
+    "A_missed": 81,
+    "B_present_correct": 105,
+    "B_present_wrong": 22
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 77,
+    "A_flip_to_B": 18,
+    "A_other_pol": 3,
+    "A_missed": 102,
+    "B_present_correct": 125,
+    "B_present_wrong": 19
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 62,
+    "A_flip_to_B": 14,
+    "A_other_pol": 3,
+    "A_missed": 121,
+    "B_present_correct": 133,
+    "B_present_wrong": 14
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 130,
+    "A_flip_to_B": 5,
+    "A_other_pol": 5,
+    "A_missed": 60,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 102,
+    "A_flip_to_B": 13,
+    "A_other_pol": 2,
+    "A_missed": 83,
+    "B_present_correct": 111,
+    "B_present_wrong": 17
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 85,
+    "A_flip_to_B": 18,
+    "A_other_pol": 1,
+    "A_missed": 96,
+    "B_present_correct": 123,
+    "B_present_wrong": 18
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 65,
+    "A_flip_to_B": 22,
+    "A_other_pol": 2,
+    "A_missed": 111,
+    "B_present_correct": 133,
+    "B_present_wrong": 16
+   }
+  },
+  "c1_rho1_tau8": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 127,
+    "A_flip_to_B": 5,
+    "A_other_pol": 3,
+    "A_missed": 65,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 100,
+    "A_flip_to_B": 10,
+    "A_other_pol": 4,
+    "A_missed": 86,
+    "B_present_correct": 107,
+    "B_present_wrong": 24
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 73,
+    "A_flip_to_B": 18,
+    "A_other_pol": 3,
+    "A_missed": 106,
+    "B_present_correct": 126,
+    "B_present_wrong": 18
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 55,
+    "A_flip_to_B": 17,
+    "A_other_pol": 3,
+    "A_missed": 125,
+    "B_present_correct": 131,
+    "B_present_wrong": 17
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 127,
+    "A_flip_to_B": 5,
+    "A_other_pol": 3,
+    "A_missed": 65,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 100,
+    "A_flip_to_B": 15,
+    "A_other_pol": 1,
+    "A_missed": 84,
+    "B_present_correct": 107,
+    "B_present_wrong": 18
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 84,
+    "A_flip_to_B": 19,
+    "A_other_pol": 1,
+    "A_missed": 96,
+    "B_present_correct": 121,
+    "B_present_wrong": 17
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 62,
+    "A_flip_to_B": 25,
+    "A_other_pol": 4,
+    "A_missed": 109,
+    "B_present_correct": 131,
+    "B_present_wrong": 17
+   }
+  },
+  "c1_rho1_tau4": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 129,
+    "A_flip_to_B": 5,
+    "A_other_pol": 5,
+    "A_missed": 61,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 101,
+    "A_flip_to_B": 10,
+    "A_other_pol": 3,
+    "A_missed": 86,
+    "B_present_correct": 102,
+    "B_present_wrong": 24
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 78,
+    "A_flip_to_B": 18,
+    "A_other_pol": 5,
+    "A_missed": 99,
+    "B_present_correct": 123,
+    "B_present_wrong": 20
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 65,
+    "A_flip_to_B": 15,
+    "A_other_pol": 4,
+    "A_missed": 116,
+    "B_present_correct": 130,
+    "B_present_wrong": 15
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 129,
+    "A_flip_to_B": 5,
+    "A_other_pol": 5,
+    "A_missed": 61,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 99,
+    "A_flip_to_B": 16,
+    "A_other_pol": 1,
+    "A_missed": 84,
+    "B_present_correct": 110,
+    "B_present_wrong": 17
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 86,
+    "A_flip_to_B": 19,
+    "A_other_pol": 1,
+    "A_missed": 94,
+    "B_present_correct": 118,
+    "B_present_wrong": 18
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 68,
+    "A_flip_to_B": 22,
+    "A_other_pol": 3,
+    "A_missed": 107,
+    "B_present_correct": 128,
+    "B_present_wrong": 17
+   }
+  },
+  "perm_rho1_tau8": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 131,
+    "A_flip_to_B": 5,
+    "A_other_pol": 5,
+    "A_missed": 59,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 105,
+    "A_flip_to_B": 11,
+    "A_other_pol": 3,
+    "A_missed": 81,
+    "B_present_correct": 106,
+    "B_present_wrong": 22
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 78,
+    "A_flip_to_B": 17,
+    "A_other_pol": 2,
+    "A_missed": 103,
+    "B_present_correct": 127,
+    "B_present_wrong": 17
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 73,
+    "A_flip_to_B": 13,
+    "A_other_pol": 2,
+    "A_missed": 112,
+    "B_present_correct": 130,
+    "B_present_wrong": 16
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 131,
+    "A_flip_to_B": 5,
+    "A_other_pol": 5,
+    "A_missed": 59,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 101,
+    "A_flip_to_B": 14,
+    "A_other_pol": 1,
+    "A_missed": 84,
+    "B_present_correct": 114,
+    "B_present_wrong": 18
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 88,
+    "A_flip_to_B": 15,
+    "A_other_pol": 2,
+    "A_missed": 95,
+    "B_present_correct": 126,
+    "B_present_wrong": 14
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 71,
+    "A_flip_to_B": 18,
+    "A_other_pol": 1,
+    "A_missed": 110,
+    "B_present_correct": 130,
+    "B_present_wrong": 18
+   }
+  }
+ },
+ "elapsed_s": 10.063467025756836
+}

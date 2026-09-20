@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 555, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 541, in main
+    report = build_report(kind, task, model, tokenizer, bundle, counts, checkpoint, model_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 381, in build_report
+    logits, probs, offsets, metadata = extract_readers(model, tokenizer, texts, device, masking)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 231, in extract_readers
+    slices = slot_slices(widths, int(logits.shape[1]))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 171, in slot_slices
+    raise RuntimeError(f"slot width mismatch: counts={counts}, logits={total_width}")
+RuntimeError: slot width mismatch: counts=(4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4), logits=12

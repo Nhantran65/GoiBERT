@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-09-18T05:40:00Z (before launch)",
+  "micro_batch_pairs": 64,
+  "validation_micro_batch_pairs": 128,
+  "reason": "plan proposed 16 pairs/micro-batch and allows changing it from the profile if recorded before launch; profile on idle cuda:3 (arm B prompts): 16 -> 2.02 s/step (7.4 min/epoch), 32 -> 1.04, 48 -> 0.71, 64 -> 0.55 s/step (2.0 min/epoch, 16.3 GiB peak reserved), 96 -> 0.46 (18.5 GiB). 64 chosen: same weighted-mean gradient over the 384-pair group (verified in preflight numerics), ~3.7x faster than 16, memory leaves room for both arms on one GPU.",
+  "same_for_A_and_B": true,
+  "device": "cuda:3 for both arms concurrently (46 GB free, 0 % util, no foreign process); other GPUs host other users' jobs and are not touched",
+  "eta": "alone: ~2.0 min train + 3 s validation per epoch -> ~1.0 h per arm; two arms sharing cuda:3 -> ~2-2.5 h wall-clock for both (encoder cost ~12x baseline passes per review, baseline was 23 min)",
+  "smoke": "artifacts/cafebert_aspect_pair/smoke/A (3 groups, checkpoint removed after the check) -> postrun checks all true"
+}

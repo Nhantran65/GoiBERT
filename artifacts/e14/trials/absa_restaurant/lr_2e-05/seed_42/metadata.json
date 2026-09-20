@@ -1,0 +1,536 @@
+{
+  "protocol": "E14-BamiBERT-original-local-baseline-v1",
+  "revision": "e14-20260912-r1",
+  "task_id": "absa_restaurant",
+  "seed": 42,
+  "stage": "validation_grid",
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 660,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy",
+  "head": "CLS -> dropout0.1 -> dense768 -> tanh -> dropout0.1 -> logits",
+  "no_noise_consistency": true,
+  "no_knowledge_distillation": true,
+  "no_layerwise_learning_rate_decay": true,
+  "include_test": false,
+  "source_hash": "bba42b8eb93dc2945fd49495bc48490daa5474e855e31b3cb261d96dfc089645",
+  "model_source": "Qualcomm-AI-Research/BamiBERT",
+  "hf_commit": "57bc1340debbe4e348ec549047a763caebe4a977",
+  "checkpoint_source": "models/bamibert-base-original",
+  "model_hashes": {
+    ".cache/huggingface/.gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+    ".cache/huggingface/download/.gitattributes.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/.gitattributes.metadata": "d2a1d8524993b3f3ad41c3ff2030bf07fdcbdd3baba8267f63bb9c10e84da3b0",
+    ".cache/huggingface/download/README.md.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/README.md.metadata": "08cb04c116039d7420532bf6edeed9d69e5545662403b8878ffefce06a7fdb99",
+    ".cache/huggingface/download/config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/config.json.metadata": "0a58347b0976ec3d43a089634cdb262fcf0b2bf9e654ea95bb45e40638a3ee23",
+    ".cache/huggingface/download/model.safetensors.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/model.safetensors.metadata": "3f7e152fa1fc3e78cfcf5d65087ae8a51a851e66c0f31fe955107e44c46e635b",
+    ".cache/huggingface/download/special_tokens_map.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/special_tokens_map.json.metadata": "69d7c4472e1520cf154ed292d5f0508b5716065704280b2dcd219f3226334656",
+    ".cache/huggingface/download/tokenizer.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/tokenizer.json.metadata": "5f1c062456c6cc860c19fd5de4b59327cbed44d256c1889e1e24fa7f73aeef10",
+    ".cache/huggingface/download/tokenizer_config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/tokenizer_config.json.metadata": "294e0df1cea0c77c2997f4289c7314053a67a6fa0dd6fde80beba74a7d7ee078",
+    ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+    "README.md": "6b23dbeffa7ed1e3b4ccf95fb5d6b9eb2f8e8041b334042f54f9c3926c128b61",
+    "config.json": "353049455318fb3fcdc42f4e275211834809143eeb67b5728d4eff556be05d5f",
+    "model.safetensors": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627",
+    "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+    "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+    "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+    "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+    "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+  },
+  "model": {
+    "backbone": "Qualcomm-AI-Research/BamiBERT",
+    "hidden_size": 768,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 48,
+    "num_aspects": 12,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 102988080,
+    "trainable_parameters": 102988080
+  },
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "absa_restaurant",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    ]
+  },
+  "label_name_overlay": {
+    "vsfc_sentiment": {
+      "0": "negative",
+      "1": "neutral",
+      "2": "positive"
+    },
+    "vsfc_topic": {
+      "0": "lecturer",
+      "1": "training_program",
+      "2": "facility",
+      "3": "others"
+    },
+    "absa": {
+      "0": "absent",
+      "1": "positive",
+      "2": "negative",
+      "3": "neutral"
+    },
+    "visfd_others": {
+      "raw_0": "absent",
+      "raw_4": "present_detection_only",
+      "model_0": "absent",
+      "model_1": "present_detection_only"
+    },
+    "numeric_gold_unchanged": true
+  },
+  "tokenizer_comparison": {
+    "comparison": "see artifacts/e14/preflight.json",
+    "source_is_original_bamibert": true
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "0",
+    "cublas_workspace_config": ":4096:8"
+  },
+  "length_stats": {
+    "train_count": 7028,
+    "max_tokens": 115,
+    "p50_tokens": 20.0,
+    "p95_tokens": 44.0,
+    "p99_tokens": 60.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "started_at": "2026-09-12T07:47:51Z",
+  "started_at_unix": 1789199271.8299065,
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e14.py",
+    "--worker",
+    "--task-id",
+    "absa_restaurant",
+    "--learning-rate",
+    "2e-05",
+    "--device",
+    "cuda:0",
+    "--micro-batch-size",
+    "32",
+    "--expected-source-hash",
+    "bba42b8eb93dc2945fd49495bc48490daa5474e855e31b3cb261d96dfc089645"
+  ],
+  "best_epoch": 22,
+  "best_selection_f1": 0.7342491710090004,
+  "best_validation_metrics": {
+    "n": 771,
+    "aspect_count": 12,
+    "aspect_names": [
+      "AMBIENCE#GENERAL",
+      "DRINKS#PRICES",
+      "DRINKS#QUALITY",
+      "DRINKS#STYLE&OPTIONS",
+      "FOOD#PRICES",
+      "FOOD#QUALITY",
+      "FOOD#STYLE&OPTIONS",
+      "LOCATION#GENERAL",
+      "RESTAURANT#GENERAL",
+      "RESTAURANT#MISCELLANEOUS",
+      "RESTAURANT#PRICES",
+      "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8516068052930057,
+    "detection_micro_recall": 0.855650522317189,
+    "detection_micro_f1": 0.8536238749407864,
+    "detection_macro_precision": 0.8352224331648328,
+    "detection_macro_recall": 0.8431169456022838,
+    "detection_macro_f1": 0.8381530463454133,
+    "pair_micro_precision": 0.7325141776937618,
+    "pair_micro_recall": 0.7359924026590693,
+    "pair_micro_f1": 0.7342491710090004,
+    "pair_macro_precision": 0.7134886021411408,
+    "pair_macro_recall": 0.7189101358768178,
+    "pair_macro_f1": 0.7153559566013797,
+    "classification_pair_micro_f1": 0.7342491710090004,
+    "classification_pair_macro_f1": 0.7153559566013797,
+    "per_aspect": {
+      "AMBIENCE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9010989010989011,
+          "recall": 0.9010989010989011,
+          "f1": 0.9010989010989011
+        },
+        "pair": {
+          "precision": 0.8021978021978022,
+          "recall": 0.8021978021978022,
+          "f1": 0.8021978021978022
+        },
+        "detection_tp": 82,
+        "gold_present": 91,
+        "predicted_present": 91
+      },
+      "DRINKS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7272727272727273,
+          "recall": 0.8421052631578947,
+          "f1": 0.7804878048780488
+        },
+        "pair": {
+          "precision": 0.5909090909090909,
+          "recall": 0.6842105263157895,
+          "f1": 0.6341463414634146
+        },
+        "detection_tp": 16,
+        "gold_present": 19,
+        "predicted_present": 22
+      },
+      "DRINKS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8426966292134831,
+          "recall": 0.9259259259259259,
+          "f1": 0.8823529411764706
+        },
+        "pair": {
+          "precision": 0.651685393258427,
+          "recall": 0.7160493827160493,
+          "f1": 0.6823529411764706
+        },
+        "detection_tp": 75,
+        "gold_present": 81,
+        "predicted_present": 89
+      },
+      "DRINKS#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6923076923076923,
+          "recall": 0.6923076923076923,
+          "f1": 0.6923076923076923
+        },
+        "pair": {
+          "precision": 0.5961538461538461,
+          "recall": 0.5961538461538461,
+          "f1": 0.5961538461538461
+        },
+        "detection_tp": 36,
+        "gold_present": 52,
+        "predicted_present": 52
+      },
+      "FOOD#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.926829268292683,
+          "recall": 0.8444444444444444,
+          "f1": 0.8837209302325582
+        },
+        "pair": {
+          "precision": 0.8536585365853658,
+          "recall": 0.7777777777777778,
+          "f1": 0.813953488372093
+        },
+        "detection_tp": 38,
+        "gold_present": 45,
+        "predicted_present": 41
+      },
+      "FOOD#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8986784140969163,
+          "recall": 0.918918918918919,
+          "f1": 0.9086859688195991
+        },
+        "pair": {
+          "precision": 0.7973568281938326,
+          "recall": 0.8153153153153153,
+          "f1": 0.8062360801781737
+        },
+        "detection_tp": 204,
+        "gold_present": 222,
+        "predicted_present": 227
+      },
+      "FOOD#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8131868131868132,
+          "recall": 0.8457142857142858,
+          "f1": 0.8291316526610645
+        },
+        "pair": {
+          "precision": 0.6868131868131868,
+          "recall": 0.7142857142857143,
+          "f1": 0.7002801120448179
+        },
+        "detection_tp": 148,
+        "gold_present": 175,
+        "predicted_present": 182
+      },
+      "LOCATION#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8666666666666667,
+          "recall": 0.9285714285714286,
+          "f1": 0.896551724137931
+        },
+        "pair": {
+          "precision": 0.7333333333333333,
+          "recall": 0.7857142857142857,
+          "f1": 0.7586206896551724
+        },
+        "detection_tp": 39,
+        "gold_present": 42,
+        "predicted_present": 45
+      },
+      "RESTAURANT#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7444444444444445,
+          "recall": 0.67,
+          "f1": 0.7052631578947368
+        },
+        "pair": {
+          "precision": 0.5888888888888889,
+          "recall": 0.53,
+          "f1": 0.5578947368421052
+        },
+        "detection_tp": 67,
+        "gold_present": 100,
+        "predicted_present": 90
+      },
+      "RESTAURANT#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7719298245614035,
+          "recall": 0.7586206896551724,
+          "f1": 0.7652173913043478
+        },
+        "pair": {
+          "precision": 0.7017543859649122,
+          "recall": 0.6896551724137931,
+          "f1": 0.6956521739130435
+        },
+        "detection_tp": 44,
+        "gold_present": 58,
+        "predicted_present": 57
+      },
+      "RESTAURANT#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8723404255319149,
+          "recall": 0.8723404255319149,
+          "f1": 0.8723404255319149
+        },
+        "pair": {
+          "precision": 0.6808510638297872,
+          "recall": 0.6808510638297872,
+          "f1": 0.6808510638297872
+        },
+        "detection_tp": 41,
+        "gold_present": 47,
+        "predicted_present": 47
+      },
+      "SERVICE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9652173913043478,
+          "recall": 0.9173553719008265,
+          "f1": 0.940677966101695
+        },
+        "pair": {
+          "precision": 0.8782608695652174,
+          "recall": 0.8347107438016529,
+          "f1": 0.8559322033898306
+        },
+        "detection_tp": 111,
+        "gold_present": 121,
+        "predicted_present": 115
+      }
+    },
+    "task_id": "absa_restaurant",
+    "split": "validation",
+    "selection_f1": 0.7342491710090004,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "elapsed_seconds": 458.40670251846313,
+  "peak_gpu_memory_allocated_bytes": 3081412608,
+  "peak_gpu_memory_reserved_bytes": 3481272320,
+  "status": "completed",
+  "checkpoint_sha256": "473c9aa88d06b1d5eddfd6423d77838db6e0ac346e259b8eac8e0a4b36bbce09",
+  "checkpoint_roundtrip": {
+    "required_state_keys": [
+      "epoch",
+      "global_step",
+      "model",
+      "optimizer",
+      "rng_state",
+      "scheduler"
+    ],
+    "model_key_count": 201,
+    "head_dense_shape": [
+      768,
+      768
+    ],
+    "epoch": 22,
+    "global_step": 4840
+  }
+}

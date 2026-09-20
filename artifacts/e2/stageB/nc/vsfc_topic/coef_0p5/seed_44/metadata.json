@@ -1,0 +1,564 @@
+{
+  "protocol": "E2-training-ablation-v1",
+  "revision": "e2-20260908-r1",
+  "stage": "stageb",
+  "method": "nc",
+  "coefficient": 0.5,
+  "task_id": "vsfc_topic",
+  "mode": "nc",
+  "seed": 44,
+  "learning_rate": 1e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 164,
+    "p50_tokens": 14.0,
+    "p95_tokens": 37.0,
+    "p99_tokens": 56.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "smoke": false,
+  "source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_config_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt": "09cbb8147f419f225b171cadf82410c442d6c24997ab97f48dfa779f4e68a1b9",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt": "7483805b24f5362aa5a2f708509876e0b69bf35753e90199059c2409caad7d96"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "vsfc_topic",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "include_test": false,
+    "slot_label_names": []
+  },
+  "model": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26547076,
+    "trainable_parameters": 26547076
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:3",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "hyperparameters": {
+    "temperature": 2.0,
+    "alpha": null,
+    "consistency_lambda": 0.5,
+    "teacher_cache": null,
+    "teacher_cache_hash": null
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "argv": [
+    "/home/kiettqa/GoiBERT/src/goibert_e2/train.py",
+    "--mode",
+    "nc",
+    "--repo-root",
+    "/home/kiettqa/GoiBERT",
+    "--task-id",
+    "vsfc_topic",
+    "--learning-rate",
+    "1e-05",
+    "--seed",
+    "44",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e2/stageB/nc/vsfc_topic/coef_0p5/seed_44",
+    "--device",
+    "cuda:3",
+    "--precision",
+    "bf16",
+    "--attention-implementation",
+    "sdpa",
+    "--epochs",
+    "30",
+    "--effective-batch-size",
+    "32",
+    "--micro-batch-size",
+    "32",
+    "--stage",
+    "stageb",
+    "--method",
+    "nc",
+    "--protocol",
+    "E2-training-ablation-v1",
+    "--revision",
+    "e2-20260908-r1",
+    "--expected-e2-code-hash",
+    "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "--expected-e2-config-hash",
+    "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "--expected-orchestrator-hash",
+    "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+    "--include-test",
+    "false",
+    "--coefficient",
+    "0.5",
+    "--consistency-lambda",
+    "0.5"
+  ],
+  "started_at_unix": 1788885098.8060126,
+  "noise_statistics": [
+    {
+      "count": 11426,
+      "changed_count": 4277,
+      "operation_counts": {
+        "teencode": 2210,
+        "remove_accents": 2897,
+        "none": 5726,
+        "internal_char_typo": 593
+      },
+      "change_rate": 0.3743217223875372
+    },
+    {
+      "count": 11426,
+      "changed_count": 4236,
+      "operation_counts": {
+        "none": 5748,
+        "remove_accents": 2854,
+        "teencode": 2242,
+        "internal_char_typo": 582
+      },
+      "change_rate": 0.37073341501837914
+    },
+    {
+      "count": 11426,
+      "changed_count": 4235,
+      "operation_counts": {
+        "none": 5735,
+        "remove_accents": 2850,
+        "teencode": 2279,
+        "internal_char_typo": 562
+      },
+      "change_rate": 0.3706458953264484
+    },
+    {
+      "count": 11426,
+      "changed_count": 4296,
+      "operation_counts": {
+        "none": 5637,
+        "remove_accents": 2842,
+        "internal_char_typo": 588,
+        "teencode": 2359
+      },
+      "change_rate": 0.3759845965342202
+    },
+    {
+      "count": 11426,
+      "changed_count": 4170,
+      "operation_counts": {
+        "teencode": 2332,
+        "none": 5700,
+        "remove_accents": 2842,
+        "internal_char_typo": 552
+      },
+      "change_rate": 0.364957115350954
+    },
+    {
+      "count": 11426,
+      "changed_count": 4193,
+      "operation_counts": {
+        "remove_accents": 2830,
+        "none": 5807,
+        "teencode": 2215,
+        "internal_char_typo": 574
+      },
+      "change_rate": 0.3669700682653597
+    },
+    {
+      "count": 11426,
+      "changed_count": 4180,
+      "operation_counts": {
+        "none": 5717,
+        "remove_accents": 2836,
+        "teencode": 2305,
+        "internal_char_typo": 568
+      },
+      "change_rate": 0.3658323122702608
+    },
+    {
+      "count": 11426,
+      "changed_count": 4247,
+      "operation_counts": {
+        "teencode": 2334,
+        "none": 5643,
+        "remove_accents": 2892,
+        "internal_char_typo": 557
+      },
+      "change_rate": 0.3716961316296167
+    },
+    {
+      "count": 11426,
+      "changed_count": 4232,
+      "operation_counts": {
+        "teencode": 2295,
+        "none": 5717,
+        "remove_accents": 2881,
+        "internal_char_typo": 533
+      },
+      "change_rate": 0.3703833362506564
+    },
+    {
+      "count": 11426,
+      "changed_count": 4208,
+      "operation_counts": {
+        "none": 5711,
+        "remove_accents": 2847,
+        "teencode": 2296,
+        "internal_char_typo": 572
+      },
+      "change_rate": 0.36828286364431995
+    },
+    {
+      "count": 11426,
+      "changed_count": 4204,
+      "operation_counts": {
+        "teencode": 2303,
+        "none": 5735,
+        "remove_accents": 2855,
+        "internal_char_typo": 533
+      },
+      "change_rate": 0.36793278487659725
+    },
+    {
+      "count": 11426,
+      "changed_count": 4261,
+      "operation_counts": {
+        "teencode": 2304,
+        "remove_accents": 2874,
+        "none": 5675,
+        "internal_char_typo": 573
+      },
+      "change_rate": 0.37292140731664625
+    },
+    {
+      "count": 11426,
+      "changed_count": 4237,
+      "operation_counts": {
+        "none": 5743,
+        "teencode": 2263,
+        "remove_accents": 2823,
+        "internal_char_typo": 597
+      },
+      "change_rate": 0.3708209347103098
+    },
+    {
+      "count": 11426,
+      "changed_count": 4256,
+      "operation_counts": {
+        "none": 5690,
+        "teencode": 2287,
+        "remove_accents": 2831,
+        "internal_char_typo": 618
+      },
+      "change_rate": 0.37248380885699284
+    },
+    {
+      "count": 11426,
+      "changed_count": 4326,
+      "operation_counts": {
+        "remove_accents": 2887,
+        "none": 5612,
+        "teencode": 2309,
+        "internal_char_typo": 618
+      },
+      "change_rate": 0.37861018729214074
+    },
+    {
+      "count": 11426,
+      "changed_count": 4240,
+      "operation_counts": {
+        "teencode": 2265,
+        "none": 5779,
+        "remove_accents": 2826,
+        "internal_char_typo": 556
+      },
+      "change_rate": 0.3710834937861019
+    },
+    {
+      "count": 11426,
+      "changed_count": 4249,
+      "operation_counts": {
+        "none": 5663,
+        "remove_accents": 2853,
+        "teencode": 2346,
+        "internal_char_typo": 564
+      },
+      "change_rate": 0.37187117101347805
+    },
+    {
+      "count": 11426,
+      "changed_count": 4184,
+      "operation_counts": {
+        "none": 5769,
+        "teencode": 2271,
+        "internal_char_typo": 581,
+        "remove_accents": 2805
+      },
+      "change_rate": 0.36618239103798356
+    },
+    {
+      "count": 11426,
+      "changed_count": 4266,
+      "operation_counts": {
+        "remove_accents": 2894,
+        "teencode": 2316,
+        "none": 5669,
+        "internal_char_typo": 547
+      },
+      "change_rate": 0.37335900577629966
+    },
+    {
+      "count": 11426,
+      "changed_count": 4308,
+      "operation_counts": {
+        "teencode": 2336,
+        "remove_accents": 2868,
+        "none": 5603,
+        "internal_char_typo": 619
+      },
+      "change_rate": 0.3770348328373884
+    },
+    {
+      "count": 11426,
+      "changed_count": 4229,
+      "operation_counts": {
+        "remove_accents": 2813,
+        "teencode": 2374,
+        "none": 5664,
+        "internal_char_typo": 575
+      },
+      "change_rate": 0.37012077717486436
+    },
+    {
+      "count": 11426,
+      "changed_count": 4178,
+      "operation_counts": {
+        "remove_accents": 2763,
+        "none": 5795,
+        "internal_char_typo": 570,
+        "teencode": 2298
+      },
+      "change_rate": 0.36565727288639943
+    },
+    {
+      "count": 11426,
+      "changed_count": 4212,
+      "operation_counts": {
+        "teencode": 2184,
+        "none": 5765,
+        "remove_accents": 2884,
+        "internal_char_typo": 593
+      },
+      "change_rate": 0.3686329424120427
+    },
+    {
+      "count": 11426,
+      "changed_count": 4317,
+      "operation_counts": {
+        "remove_accents": 2933,
+        "none": 5627,
+        "teencode": 2310,
+        "internal_char_typo": 556
+      },
+      "change_rate": 0.3778225100647646
+    },
+    {
+      "count": 11426,
+      "changed_count": 4318,
+      "operation_counts": {
+        "none": 5664,
+        "remove_accents": 2906,
+        "internal_char_typo": 605,
+        "teencode": 2251
+      },
+      "change_rate": 0.37791002975669524
+    },
+    {
+      "count": 11426,
+      "changed_count": 4191,
+      "operation_counts": {
+        "none": 5803,
+        "internal_char_typo": 563,
+        "teencode": 2234,
+        "remove_accents": 2826
+      },
+      "change_rate": 0.36679502888149834
+    },
+    {
+      "count": 11426,
+      "changed_count": 4281,
+      "operation_counts": {
+        "none": 5668,
+        "remove_accents": 2892,
+        "teencode": 2300,
+        "internal_char_typo": 566
+      },
+      "change_rate": 0.37467180115525994
+    },
+    {
+      "count": 11426,
+      "changed_count": 4214,
+      "operation_counts": {
+        "none": 5778,
+        "teencode": 2196,
+        "remove_accents": 2841,
+        "internal_char_typo": 611
+      },
+      "change_rate": 0.36880798179590407
+    },
+    {
+      "count": 11426,
+      "changed_count": 4235,
+      "operation_counts": {
+        "none": 5688,
+        "remove_accents": 2864,
+        "teencode": 2294,
+        "internal_char_typo": 580
+      },
+      "change_rate": 0.3706458953264484
+    },
+    {
+      "count": 11426,
+      "changed_count": 4327,
+      "operation_counts": {
+        "none": 5664,
+        "teencode": 2233,
+        "internal_char_typo": 597,
+        "remove_accents": 2932
+      },
+      "change_rate": 0.3786977069840714
+    }
+  ],
+  "best_epoch": 12,
+  "best_selection_f1": 0.7970006753538942,
+  "best_validation_metrics": {
+    "n": 1583,
+    "labels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "accuracy": 0.886923562855338,
+    "macro_precision": 0.8124141547487767,
+    "macro_recall": 0.7908079540263597,
+    "macro_f1": 0.7970006753538942,
+    "per_class": {
+      "0": {
+        "support": 1151,
+        "predicted": 1145,
+        "tp": 1075,
+        "fp": 70,
+        "fn": 76,
+        "precision": 0.9388646288209607,
+        "recall": 0.9339704604691572,
+        "f1": 0.936411149825784
+      },
+      "1": {
+        "support": 267,
+        "predicted": 298,
+        "tp": 218,
+        "fp": 80,
+        "fn": 49,
+        "precision": 0.7315436241610739,
+        "recall": 0.8164794007490637,
+        "f1": 0.7716814159292036
+      },
+      "2": {
+        "support": 70,
+        "predicted": 72,
+        "tp": 65,
+        "fp": 7,
+        "fn": 5,
+        "precision": 0.9027777777777778,
+        "recall": 0.9285714285714286,
+        "f1": 0.9154929577464789
+      },
+      "3": {
+        "support": 95,
+        "predicted": 68,
+        "tp": 46,
+        "fp": 22,
+        "fn": 49,
+        "precision": 0.6764705882352942,
+        "recall": 0.4842105263157895,
+        "f1": 0.5644171779141104
+      }
+    },
+    "task_id": "vsfc_topic",
+    "split": "validation",
+    "selection_f1": 0.7970006753538942,
+    "selection_metric": "fixed_label_macro_f1"
+  },
+  "elapsed_seconds": 743.7824194431305,
+  "peak_gpu_memory_allocated_bytes": 2505647616,
+  "peak_gpu_memory_reserved_bytes": 2850029568,
+  "status": "completed",
+  "checkpoint_sha256": "f2de83da10698c2bc81d005e08017b0885698d6f5a8f520b4f0a52c69f7ec66e"
+}

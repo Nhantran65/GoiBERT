@@ -1,0 +1,82 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v4-test",
+ "arm": "P_web",
+ "task_id": "vsfc_topic",
+ "seed": 42,
+ "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/P_web/vsfc_topic/seed_42/best_checkpoint.pt",
+ "checkpoint_sha256": "50a76dfcadd1115faf6075fcda7a22f10a115fd392aaec9de12705cd06256c9d",
+ "validation_selected_epoch": 28,
+ "validation_selection_f1": 0.8021457306987589,
+ "learning_rate": 2e-05,
+ "test_metrics": {
+  "n": 3166,
+  "labels": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "accuracy": 0.8834491471888819,
+  "macro_precision": 0.7982024083328674,
+  "macro_recall": 0.7830562574706657,
+  "macro_f1": 0.7888081713828424,
+  "per_class": {
+   "0": {
+    "support": 2290,
+    "predicted": 2292,
+    "tp": 2141,
+    "fp": 151,
+    "fn": 149,
+    "precision": 0.9341186736474695,
+    "recall": 0.9349344978165939,
+    "f1": 0.9345264076822348
+   },
+   "1": {
+    "support": 572,
+    "predicted": 598,
+    "tp": 443,
+    "fp": 155,
+    "fn": 129,
+    "precision": 0.7408026755852842,
+    "recall": 0.7744755244755245,
+    "f1": 0.7572649572649572
+   },
+   "2": {
+    "support": 145,
+    "predicted": 149,
+    "tp": 137,
+    "fp": 12,
+    "fn": 8,
+    "precision": 0.9194630872483222,
+    "recall": 0.9448275862068966,
+    "f1": 0.9319727891156463
+   },
+   "3": {
+    "support": 159,
+    "predicted": 127,
+    "tp": 76,
+    "fp": 51,
+    "fn": 83,
+    "precision": 0.5984251968503937,
+    "recall": 0.4779874213836478,
+    "f1": 0.5314685314685315
+   }
+  },
+  "task_id": "vsfc_topic",
+  "split": "test",
+  "selection_f1": 0.7888081713828424,
+  "selection_metric": "fixed_label_macro_f1"
+ },
+ "test_selection_f1": 0.7888081713828424,
+ "selection_f1_recomputed_from_predictions": 0.7888081713828424,
+ "test_count": 3166,
+ "predictions_rows": 3166,
+ "reload_prediction_repeatable": true,
+ "load_missing_keys": [],
+ "load_unexpected_keys": [],
+ "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_web/hf_encoder",
+ "license": "no NC data",
+ "research_only": false,
+ "elapsed_s": 7.2,
+ "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+}

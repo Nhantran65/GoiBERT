@@ -1,0 +1,131 @@
+{
+ "protocol": "CafeBERT-BamiBERT-repdistill-pilot-v2",
+ "arm": "G",
+ "stage": "intermediate_training",
+ "objective": "MLM + 1.0 * relational KL (CafeBERT frozen; layer pairs T12->S6, T24->S12; cosine/0.2; KL(P_T||P_S))",
+ "layer_pairs": [
+  [
+   12,
+   6
+  ],
+  [
+   24,
+   12
+  ]
+ ],
+ "rel_temperature": 0.2,
+ "rel_lambda": 1.0,
+ "mask_prob": 0.15,
+ "mask_scheme": "80/10/10, no special/pad, CPU generator seeded per (step, micro)",
+ "seed": 42,
+ "global_batch": 128,
+ "micro": 64,
+ "accum": 2,
+ "steps_target": 2536,
+ "warmup_steps": 152,
+ "token_budget": 30000000,
+ "tokens_at_steps_target": 30008828,
+ "lr": 2e-05,
+ "betas": [
+  0.9,
+  0.98
+ ],
+ "eps": 1e-06,
+ "weight_decay": 0.01,
+ "clip": 1.0,
+ "precision": "fp32 master + bf16 autocast",
+ "attn": "sdpa",
+ "corpus": {
+  "path": "data/cafe_bami_repdistill_pilot/corpus.npz",
+  "sha256": "c1fb80a1d5f94c6830153fee8278acd26e33b72a6ecdf0fcee8a47b86694a95b",
+  "train_sequences": 424960,
+  "holdout_sequences": 4102,
+  "train_s_ids_sha256": "f9bdb9005af7480eb701a877ec2cd74ea3f22fe794846fd3eab5fc101a7b1841"
+ },
+ "student_checks": {
+  "architecture": [
+   "RobertaForMaskedLM"
+  ],
+  "layers": 12,
+  "hidden": 768,
+  "heads": 12,
+  "vocab": 20481,
+  "missing_keys": [],
+  "unexpected_keys": [],
+  "mismatched_keys": [],
+  "mlm_head_pretrained": true,
+  "decoder_tied_to_embeddings": true,
+  "pooler_absent": true,
+  "parameters_total": 102973185,
+  "parameters_encoder": 102360576,
+  "weights_sha256": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627"
+ },
+ "teacher_checks": {
+  "architecture": [
+   "XLMRobertaForMaskedLM"
+  ],
+  "layers": 24,
+  "hidden": 1024,
+  "heads": 16,
+  "vocab": 250002,
+  "missing_keys": [],
+  "unexpected_keys_dropped": [
+   "lm_head.bias",
+   "lm_head.dense.bias",
+   "lm_head.dense.weight",
+   "lm_head.layer_norm.bias",
+   "lm_head.layer_norm.weight"
+  ],
+  "mismatched_keys": [],
+  "parameters_total": 558840832,
+  "hf_commit": "af76fcf2a04096b2b54b348a3e4eb48253c93c5d",
+  "weights_sha256": "a7306a5665746ca3c617264d5055fc8c399612e1042511549016178fc550bb81",
+  "frozen": true
+ },
+ "initial_layer0_query_sha256": "7eedc178a35ceb7976031f967bbcc4914a0e5c4ac650f2747b88a93127a93c95",
+ "checkpoint_policy": "end of fixed budget; no downstream selection",
+ "source_hash": "138b8335045982bfec7148e0c5e695283c5339b4227c46b8cc5195cd5747f4db",
+ "runtime": {
+  "python": "3.12.3",
+  "hostname": "server-ai-new-02.vntt.lan",
+  "cuda_visible_devices": "2",
+  "cublas_workspace_config": ":4096:8",
+  "torch": "2.6.0+cu124",
+  "transformers": "4.49.0",
+  "cuda": "12.4",
+  "device_name": "NVIDIA L40S"
+ },
+ "gpu_snapshot_at_start": {
+  "0": {
+   "free_mib": 30668,
+   "used_mib": 14791,
+   "util_pct": 16
+  },
+  "1": {
+   "free_mib": 34851,
+   "used_mib": 10608,
+   "util_pct": 18
+  },
+  "2": {
+   "free_mib": 42365,
+   "used_mib": 3094,
+   "util_pct": 24
+  },
+  "3": {
+   "free_mib": 43935,
+   "used_mib": 1523,
+   "util_pct": 2
+  }
+ },
+ "argv": [
+  "scripts/cafe_bami_repdistill_pilot/cpt_train.py",
+  "--arm",
+  "G",
+  "--device",
+  "cuda:0",
+  "--micro",
+  "64"
+ ],
+ "started_at": "2026-09-18T16:19:45Z",
+ "profile_steps": null
+}

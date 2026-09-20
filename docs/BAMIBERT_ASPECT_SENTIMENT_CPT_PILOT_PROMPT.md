@@ -1,0 +1,11 @@
+# Prompt bàn giao — BamiBERT aspect–sentiment CPT pilot
+
+Hãy đọc `AGENTS.md` và toàn bộ `docs/BAMIBERT_ASPECT_SENTIMENT_CPT_PILOT_PLAN.md` tại `/home/kiettqa/GoiBERT`, rồi **tự triển khai và chạy đúng pilot trong plan; không tạo subagent**. Mục tiêu là kiểm tra liệu selective aspect–sentiment masking trong continued pretraining BamiBERT có giúp hơn **plain MLM cùng corpus/ngân sách** trên validation hay không. Chưa cần xây chương trình SOTA hoàn chỉnh.
+
+1. **Làm gate dữ liệu trước khi dùng GPU train.** Audit train split tiếng Việt của `phamluan/vn_msa_sar_v3` và đoạn review/phản hồi thật từ shard FineWeb2 local đã nêu; pin revisions/hashes, đếm **review/document độc lập** và Bami tokens, kiểm license, chất lượng mẫu thủ công và decontam text-only so cả năm benchmark. Không dùng corpus social research-only/NC, benchmark train text, nguồn không rõ quyền dùng, hoặc web chung chỉ vì nhiều token. Nếu bất kỳ điều kiện gate ở §3 không đạt, viết báo cáo lý do và **dừng**.
+2. Tạo lexicon weak aspect/opinion từ **v3 train** theo §4, khóa trước CPT. Kiểm span→BPE, mask/special IDs, target/pair coverage, mask rate và finite gradients. Nếu selective signal không đủ để phân biệt S với R, báo và dừng.
+3. Chạy đúng **hai CPT arm R=random MLM, S=selective masking**, cùng BamiBERT gốc, cùng corpus/order/budget **20M non-pad tokens, ≤5 passes**, recipe §5; checkpoint cuối budget. Preflight phải xác nhận MLM head pretrained/tied và reload sạch. Profile GPU trước full run; không dừng job khác.
+4. Nếu CPT hoàn tất, fine-tune **Restaurant, Hotel, Topic × R/S**, seed 42, đúng E14 head/CE/LR/30 epochs và evaluator. Reuse O=Bami E14 và CafeBERT reference; không train lại baseline. R/S cùng head init/data order từng task. Lưu best validation checkpoints, predictions, curves và recompute/reload checks.
+5. Viết `docs/BAMIBERT_ASPECT_SENTIMENT_CPT_PILOT_RESULT.md` với data audit, mask statistics, O/R/S/Cafe, delta, runtime, correctness và quyết định theo gate §6. **Dừng ở đó**: không thêm seed, ViSFD/Sentiment, test, LR sweep, corpus mới hoặc random-span control.
+
+Source/artifacts mới theo §7; không sửa raw gold/split hoặc artifacts cũ. Nếu gặp blocker không giữ được protocol, báo cụ thể trước khi thay phương pháp. Đây là phép screening một seed, không được tuyên bố thắng CafeBERT/SOTA từ validation.

@@ -1,0 +1,805 @@
+{
+  "protocol": "architecture-transfer-audit-e13-e15-v1",
+  "rows": [
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_sentiment",
+      "dimension": "learning_rate",
+      "architecture": "E13",
+      "value": 1e-05,
+      "reference": 1e-05
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_sentiment",
+      "dimension": "learning_rate",
+      "architecture": "E15",
+      "value": 2e-05,
+      "reference": 2e-05
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_sentiment",
+      "dimension": "effective_batch_size",
+      "architecture": "E13",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_sentiment",
+      "dimension": "effective_batch_size",
+      "architecture": "E15",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_sentiment",
+      "dimension": "micro_batch_size",
+      "architecture": "E13",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_sentiment",
+      "dimension": "micro_batch_size",
+      "architecture": "E15",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_sentiment",
+      "dimension": "max_length",
+      "architecture": "E13",
+      "value": 256,
+      "reference": 256
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_sentiment",
+      "dimension": "max_length",
+      "architecture": "E15",
+      "value": 256,
+      "reference": 256
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_sentiment",
+      "dimension": "precision",
+      "architecture": "E13",
+      "value": "bf16",
+      "reference": "bf16"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_sentiment",
+      "dimension": "precision",
+      "architecture": "E15",
+      "value": "bf16",
+      "reference": "bf16"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_sentiment",
+      "dimension": "attention_implementation",
+      "architecture": "E13",
+      "value": "sdpa",
+      "reference": "sdpa"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_sentiment",
+      "dimension": "attention_implementation",
+      "architecture": "E15",
+      "value": "sdpa",
+      "reference": "sdpa"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_sentiment",
+      "dimension": "loss",
+      "architecture": "E13",
+      "value": "CE+NC",
+      "reference": "CE+NC"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_sentiment",
+      "dimension": "loss",
+      "architecture": "E15",
+      "value": "plain_cross_entropy",
+      "reference": "plain_cross_entropy"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_sentiment",
+      "dimension": "head",
+      "architecture": "E13",
+      "value": 384,
+      "reference": 384
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_sentiment",
+      "dimension": "head",
+      "architecture": "E15",
+      "value": 768,
+      "reference": 768
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_sentiment",
+      "dimension": "best_epoch",
+      "architecture": "E13",
+      "value": 21,
+      "reference": 21
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_sentiment",
+      "dimension": "best_epoch",
+      "architecture": "E15",
+      "value": 29,
+      "reference": 8
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_sentiment",
+      "dimension": "optimizer_contract",
+      "architecture": "E13",
+      "value": "E7 LLRD gamma=0.8",
+      "reference": "E7 LLRD gamma=0.8"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_sentiment",
+      "dimension": "optimizer_contract",
+      "architecture": "E15",
+      "value": "AdamW no LLRD",
+      "reference": "AdamW no LLRD"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_topic",
+      "dimension": "learning_rate",
+      "architecture": "E13",
+      "value": 1e-05,
+      "reference": 1e-05
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_topic",
+      "dimension": "learning_rate",
+      "architecture": "E15",
+      "value": 1e-05,
+      "reference": 1e-05
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_topic",
+      "dimension": "effective_batch_size",
+      "architecture": "E13",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_topic",
+      "dimension": "effective_batch_size",
+      "architecture": "E15",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_topic",
+      "dimension": "micro_batch_size",
+      "architecture": "E13",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_topic",
+      "dimension": "micro_batch_size",
+      "architecture": "E15",
+      "value": 32,
+      "reference": 16
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_topic",
+      "dimension": "max_length",
+      "architecture": "E13",
+      "value": 256,
+      "reference": 256
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_topic",
+      "dimension": "max_length",
+      "architecture": "E15",
+      "value": 256,
+      "reference": 256
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_topic",
+      "dimension": "precision",
+      "architecture": "E13",
+      "value": "bf16",
+      "reference": "bf16"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_topic",
+      "dimension": "precision",
+      "architecture": "E15",
+      "value": "bf16",
+      "reference": "bf16"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_topic",
+      "dimension": "attention_implementation",
+      "architecture": "E13",
+      "value": "sdpa",
+      "reference": "sdpa"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_topic",
+      "dimension": "attention_implementation",
+      "architecture": "E15",
+      "value": "sdpa",
+      "reference": "sdpa"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_topic",
+      "dimension": "loss",
+      "architecture": "E13",
+      "value": "CE+NC",
+      "reference": "CE+NC"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_topic",
+      "dimension": "loss",
+      "architecture": "E15",
+      "value": "plain_cross_entropy",
+      "reference": "plain_cross_entropy"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_topic",
+      "dimension": "head",
+      "architecture": "E13",
+      "value": 384,
+      "reference": 384
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_topic",
+      "dimension": "head",
+      "architecture": "E15",
+      "value": 768,
+      "reference": 768
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_topic",
+      "dimension": "best_epoch",
+      "architecture": "E13",
+      "value": 25,
+      "reference": 25
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_topic",
+      "dimension": "best_epoch",
+      "architecture": "E15",
+      "value": 5,
+      "reference": 13
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "vsfc_topic",
+      "dimension": "optimizer_contract",
+      "architecture": "E13",
+      "value": "E7 LLRD gamma=0.8",
+      "reference": "E7 LLRD gamma=0.8"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "vsfc_topic",
+      "dimension": "optimizer_contract",
+      "architecture": "E15",
+      "value": "AdamW no LLRD",
+      "reference": "AdamW no LLRD"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "visfd",
+      "dimension": "learning_rate",
+      "architecture": "E13",
+      "value": 0.0001,
+      "reference": 0.0001
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "visfd",
+      "dimension": "learning_rate",
+      "architecture": "E15",
+      "value": 5e-05,
+      "reference": 5e-05
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "visfd",
+      "dimension": "effective_batch_size",
+      "architecture": "E13",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "visfd",
+      "dimension": "effective_batch_size",
+      "architecture": "E15",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "visfd",
+      "dimension": "micro_batch_size",
+      "architecture": "E13",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "visfd",
+      "dimension": "micro_batch_size",
+      "architecture": "E15",
+      "value": 32,
+      "reference": 16
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "visfd",
+      "dimension": "max_length",
+      "architecture": "E13",
+      "value": 256,
+      "reference": 256
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "visfd",
+      "dimension": "max_length",
+      "architecture": "E15",
+      "value": 256,
+      "reference": 256
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "visfd",
+      "dimension": "precision",
+      "architecture": "E13",
+      "value": "bf16",
+      "reference": "bf16"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "visfd",
+      "dimension": "precision",
+      "architecture": "E15",
+      "value": "bf16",
+      "reference": "bf16"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "visfd",
+      "dimension": "attention_implementation",
+      "architecture": "E13",
+      "value": "sdpa",
+      "reference": "sdpa"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "visfd",
+      "dimension": "attention_implementation",
+      "architecture": "E15",
+      "value": "sdpa",
+      "reference": "sdpa"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "visfd",
+      "dimension": "loss",
+      "architecture": "E13",
+      "value": "CE+NC",
+      "reference": "CE+NC"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "visfd",
+      "dimension": "loss",
+      "architecture": "E15",
+      "value": "plain_cross_entropy",
+      "reference": "plain_cross_entropy"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "visfd",
+      "dimension": "head",
+      "architecture": "E13",
+      "value": 384,
+      "reference": 384
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "visfd",
+      "dimension": "head",
+      "architecture": "E15",
+      "value": 768,
+      "reference": 768
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "visfd",
+      "dimension": "best_epoch",
+      "architecture": "E13",
+      "value": 28,
+      "reference": 28
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "visfd",
+      "dimension": "best_epoch",
+      "architecture": "E15",
+      "value": 25,
+      "reference": 23
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "visfd",
+      "dimension": "optimizer_contract",
+      "architecture": "E13",
+      "value": "E7 LLRD gamma=0.8",
+      "reference": "E7 LLRD gamma=0.8"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "visfd",
+      "dimension": "optimizer_contract",
+      "architecture": "E15",
+      "value": "AdamW no LLRD",
+      "reference": "AdamW no LLRD"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_restaurant",
+      "dimension": "learning_rate",
+      "architecture": "E13",
+      "value": 0.0001,
+      "reference": 0.0001
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_restaurant",
+      "dimension": "learning_rate",
+      "architecture": "E15",
+      "value": 5e-05,
+      "reference": 5e-05
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_restaurant",
+      "dimension": "effective_batch_size",
+      "architecture": "E13",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_restaurant",
+      "dimension": "effective_batch_size",
+      "architecture": "E15",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_restaurant",
+      "dimension": "micro_batch_size",
+      "architecture": "E13",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_restaurant",
+      "dimension": "micro_batch_size",
+      "architecture": "E15",
+      "value": 16,
+      "reference": 32
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_restaurant",
+      "dimension": "max_length",
+      "architecture": "E13",
+      "value": 256,
+      "reference": 256
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_restaurant",
+      "dimension": "max_length",
+      "architecture": "E15",
+      "value": 256,
+      "reference": 256
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_restaurant",
+      "dimension": "precision",
+      "architecture": "E13",
+      "value": "bf16",
+      "reference": "bf16"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_restaurant",
+      "dimension": "precision",
+      "architecture": "E15",
+      "value": "bf16",
+      "reference": "bf16"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_restaurant",
+      "dimension": "attention_implementation",
+      "architecture": "E13",
+      "value": "sdpa",
+      "reference": "sdpa"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_restaurant",
+      "dimension": "attention_implementation",
+      "architecture": "E15",
+      "value": "sdpa",
+      "reference": "sdpa"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_restaurant",
+      "dimension": "loss",
+      "architecture": "E13",
+      "value": "CE+NC",
+      "reference": "CE+NC"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_restaurant",
+      "dimension": "loss",
+      "architecture": "E15",
+      "value": "plain_cross_entropy",
+      "reference": "plain_cross_entropy"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_restaurant",
+      "dimension": "head",
+      "architecture": "E13",
+      "value": 384,
+      "reference": 384
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_restaurant",
+      "dimension": "head",
+      "architecture": "E15",
+      "value": 768,
+      "reference": 768
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_restaurant",
+      "dimension": "best_epoch",
+      "architecture": "E13",
+      "value": 25,
+      "reference": 25
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_restaurant",
+      "dimension": "best_epoch",
+      "architecture": "E15",
+      "value": 17,
+      "reference": 29
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_restaurant",
+      "dimension": "optimizer_contract",
+      "architecture": "E13",
+      "value": "E7 LLRD gamma=0.8",
+      "reference": "E7 LLRD gamma=0.8"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_restaurant",
+      "dimension": "optimizer_contract",
+      "architecture": "E15",
+      "value": "AdamW no LLRD",
+      "reference": "AdamW no LLRD"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_hotel",
+      "dimension": "learning_rate",
+      "architecture": "E13",
+      "value": 0.0001,
+      "reference": 0.0001
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_hotel",
+      "dimension": "learning_rate",
+      "architecture": "E15",
+      "value": 5e-05,
+      "reference": 5e-05
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_hotel",
+      "dimension": "effective_batch_size",
+      "architecture": "E13",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_hotel",
+      "dimension": "effective_batch_size",
+      "architecture": "E15",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_hotel",
+      "dimension": "micro_batch_size",
+      "architecture": "E13",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_hotel",
+      "dimension": "micro_batch_size",
+      "architecture": "E15",
+      "value": 32,
+      "reference": 32
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_hotel",
+      "dimension": "max_length",
+      "architecture": "E13",
+      "value": 256,
+      "reference": 256
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_hotel",
+      "dimension": "max_length",
+      "architecture": "E15",
+      "value": 256,
+      "reference": 256
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_hotel",
+      "dimension": "precision",
+      "architecture": "E13",
+      "value": "bf16",
+      "reference": "bf16"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_hotel",
+      "dimension": "precision",
+      "architecture": "E15",
+      "value": "bf16",
+      "reference": "bf16"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_hotel",
+      "dimension": "attention_implementation",
+      "architecture": "E13",
+      "value": "sdpa",
+      "reference": "sdpa"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_hotel",
+      "dimension": "attention_implementation",
+      "architecture": "E15",
+      "value": "sdpa",
+      "reference": "sdpa"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_hotel",
+      "dimension": "loss",
+      "architecture": "E13",
+      "value": "CE+NC",
+      "reference": "CE+NC"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_hotel",
+      "dimension": "loss",
+      "architecture": "E15",
+      "value": "plain_cross_entropy",
+      "reference": "plain_cross_entropy"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_hotel",
+      "dimension": "head",
+      "architecture": "E13",
+      "value": 384,
+      "reference": 384
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_hotel",
+      "dimension": "head",
+      "architecture": "E15",
+      "value": 768,
+      "reference": 768
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_hotel",
+      "dimension": "best_epoch",
+      "architecture": "E13",
+      "value": 26,
+      "reference": 26
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_hotel",
+      "dimension": "best_epoch",
+      "architecture": "E15",
+      "value": 30,
+      "reference": 24
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "task": "absa_hotel",
+      "dimension": "optimizer_contract",
+      "architecture": "E13",
+      "value": "E7 LLRD gamma=0.8",
+      "reference": "E7 LLRD gamma=0.8"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "task": "absa_hotel",
+      "dimension": "optimizer_contract",
+      "architecture": "E15",
+      "value": "AdamW no LLRD",
+      "reference": "AdamW no LLRD"
+    }
+  ]
+}

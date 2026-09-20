@@ -1,0 +1,141 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v1",
+ "arm": "P_mix",
+ "steps": 3815,
+ "global_batch": 128,
+ "micro": 32,
+ "accum": 4,
+ "seq_len": 512,
+ "tokens_scheduled": 250019840,
+ "token_budget": 250000000,
+ "budget_error_batches": 0.302734375,
+ "lr": 5e-05,
+ "betas": [
+  0.9,
+  0.98
+ ],
+ "eps": 1e-06,
+ "weight_decay": 0.01,
+ "clip": 1.0,
+ "schedule": "WSD: linear warmup 6 %, constant to 70 %, linear decay to 0 (C_mix stage 3 coincides with the decay stage)",
+ "mask": "15 % module masking, 80/10/10, no special/pad tokens, CPU generator seeded by (step, micro)",
+ "precision": "bf16 autocast, fp32 master weights",
+ "seed": 42,
+ "attn": "sdpa",
+ "model_checks": {
+  "architecture": [
+   "ModernBertForMaskedLM"
+  ],
+  "layers": 22,
+  "hidden": 768,
+  "heads": 12,
+  "vocab": 256000,
+  "max_position_embeddings": 8192,
+  "tie_word_embeddings": true,
+  "missing_keys": [],
+  "unexpected_keys": [],
+  "mismatched_keys": [],
+  "mlm_head_pretrained": true,
+  "decoder_tied_to_embeddings": true,
+  "parameters_total": 307786240,
+  "parameters_non_embedding": 111178240,
+  "weights_sha256": "8ea64ec1ea4eb8fca0fc14b69a2ae571de6bfbc25fd214bb932dd4aba6a3a04e"
+ },
+ "arm_manifest": {
+  "tokens_hash": "5e6427fc54acadc7fd18e70c8f24d84b020715fd3184f53c8a5c607455fb5bbe",
+  "order_hash": "a404b6cc24b274a943e3e3634df3c63fab7b7f8ba1e2046deb08e2b769d344ab",
+  "multiset_hash": "2724a0607797cdfd87c25b4fb04bd87d3482dc281763d52fd9cbd1aa8883b0d5",
+  "sequence_counts_by_group": {
+   "general": 317408,
+   "register": 97664,
+   "bin8": 48832,
+   "wiki": 24416
+  },
+  "achieved_fractions": {
+   "general": 0.65,
+   "register": 0.2,
+   "bin8": 0.1,
+   "wiki": 0.05
+  },
+  "targets": {
+   "general": 0.65,
+   "register": 0.2,
+   "bin8": 0.1,
+   "wiki": 0.05
+  }
+ },
+ "holdouts": {
+  "a_hlpt": {
+   "shape": [
+    4000,
+    512
+   ],
+   "sha256": "1cc4ff98b8cae54f94de7a4286f3bcb75780ad315b62a20af4a5b54c3e0dd9bb"
+  },
+  "b_fineweb2": {
+   "shape": [
+    4000,
+    512
+   ],
+   "sha256": "54aff97daf7d4d34d26c044c48c2265d6eb0f44ba2c80cfe61b810b053d41329"
+  },
+  "c_register": {
+   "shape": [
+    1365,
+    512
+   ],
+   "sha256": "5e36f28b7a4a7e95b6187a7d4a5fa003531f023b8495b906497aee5f5123b7c6"
+  }
+ },
+ "source_hash": "5ce6fb003ffb3d10e8efb61b5e667add2c909627ea53d72d462a2bf9295823b2",
+ "runtime": {
+  "python": "3.12.3",
+  "hostname": "server-ai-new-02.vntt.lan",
+  "cuda_visible_devices": "1",
+  "torch_threads": null,
+  "torch": "2.6.0+cu124",
+  "transformers": "4.49.0",
+  "cuda": "12.4",
+  "device_name": "NVIDIA L40S"
+ },
+ "gpu_snapshot_at_start": {
+  "0": {
+   "name": "NVIDIA L40S",
+   "free_mib": 34157,
+   "used_mib": 11302,
+   "util_pct": 97
+  },
+  "1": {
+   "name": "NVIDIA L40S",
+   "free_mib": 43795,
+   "used_mib": 1663,
+   "util_pct": 12
+  },
+  "2": {
+   "name": "NVIDIA L40S",
+   "free_mib": 45438,
+   "used_mib": 20,
+   "util_pct": 0
+  },
+  "3": {
+   "name": "NVIDIA L40S",
+   "free_mib": 24541,
+   "used_mib": 20918,
+   "util_pct": 61
+  }
+ },
+ "argv": [
+  "scripts/mmbert_vi_cpt_pilot/cpt_train.py",
+  "--arm",
+  "P_mix",
+  "--device",
+  "cuda:0",
+  "--micro",
+  "32",
+  "--attn",
+  "sdpa",
+  "--resume"
+ ],
+ "started_at": "2026-09-19T11:48:19Z",
+ "profile_steps": null
+}

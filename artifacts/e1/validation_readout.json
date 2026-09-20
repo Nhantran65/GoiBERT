@@ -1,0 +1,44 @@
+{
+  "protocol": "E1-supervised-v1-durable-validation",
+  "audit_date": "2026-09-08",
+  "validation_only": true,
+  "source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "execution": {
+    "screening_approved": 25,
+    "shortlist_approved": 20,
+    "final_approved": 10,
+    "total_records": 55,
+    "launched_jobs": 54,
+    "reused_records": 1,
+    "failed_jobs": 0,
+    "epochs": 30,
+    "include_test": false,
+    "metadata_and_checkpoint_verified": 55,
+    "duplicate_selected_task_seed_records": 0
+  },
+  "selection": {
+    "seed_set": [42, 43, 44],
+    "metric": {
+      "vsfc_sentiment": "fixed_label_macro_f1",
+      "vsfc_topic": "fixed_label_macro_f1",
+      "visfd": "end_to_end_pair_micro_f1",
+      "absa_restaurant": "end_to_end_pair_micro_f1",
+      "absa_hotel": "end_to_end_pair_micro_f1"
+    },
+    "tasks": {
+      "vsfc_sentiment": {"learning_rate": 0.00001, "mean_pct": 84.490995, "sample_sd_pct": 0.085067},
+      "vsfc_topic": {"learning_rate": 0.00001, "mean_pct": 80.104347, "sample_sd_pct": 0.664891},
+      "visfd": {"learning_rate": 0.0001, "mean_pct": 80.247024, "sample_sd_pct": 0.378008},
+      "absa_restaurant": {"learning_rate": 0.0001, "mean_pct": 68.983877, "sample_sd_pct": 0.128823},
+      "absa_hotel": {"learning_rate": 0.0001, "mean_pct": 72.069513, "sample_sd_pct": 0.332130}
+    }
+  },
+  "five_seed_validation": {
+    "seed_set": [42, 43, 44, 45, 46],
+    "vsfc_sentiment": {"metric": "macro_f1", "mean_pct": 84.272712, "sample_sd_pct": 0.387462},
+    "vsfc_topic": {"metric": "macro_f1", "mean_pct": 79.735491, "sample_sd_pct": 0.704673},
+    "visfd": {"metric": "pair_micro_f1", "mean_pct": 80.366177, "sample_sd_pct": 0.364822, "detection_mean_pct": 87.051814, "detection_sample_sd_pct": 0.377217},
+    "absa_restaurant": {"metric": "pair_micro_f1", "mean_pct": 68.728819, "sample_sd_pct": 0.710919, "detection_mean_pct": 83.449226, "detection_sample_sd_pct": 0.703763},
+    "absa_hotel": {"metric": "pair_micro_f1", "mean_pct": 71.918139, "sample_sd_pct": 0.324914, "detection_mean_pct": 77.913356, "detection_sample_sd_pct": 0.539613}
+  }
+}

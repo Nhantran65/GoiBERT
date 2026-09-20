@@ -1,0 +1,95 @@
+{
+  "protocol": "mmbert-vi-cpt-pilot-v1",
+  "stage": "finetune",
+  "arm": "P_web",
+  "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_web/hf_encoder",
+  "encoder_origin": {
+    "kind": "local_export",
+    "path": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_web/hf_encoder",
+    "weights_sha256": "c45d263ee4ad6309c6e2421dbd3368dff865e438b0eeee4112c689b870b93631"
+  },
+  "encoder_dropped_keys": [],
+  "task_id": "vsfc_topic",
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy",
+  "head": "CLS -> dropout0.1 -> dense768 -> tanh -> dropout0.1 -> logits (E14)",
+  "include_test": false,
+  "head_init_sha256": "6940bcae08cb19e1571665909791ec859988502ce4319c4b0d0668abf585ea8c",
+  "tokenizer": "mmBERT Gemma 256K (pinned)",
+  "vocab_size": 256000,
+  "train_count": 11426,
+  "validation_count": 1583,
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 169,
+    "p50_tokens": 14.0,
+    "p95_tokens": 37.0,
+    "p99_tokens": 56.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt": "09cbb8147f419f225b171cadf82410c442d6c24997ab97f48dfa779f4e68a1b9",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt": "7483805b24f5362aa5a2f708509876e0b69bf35753e90199059c2409caad7d96"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "vsfc_topic",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "include_test": false,
+    "slot_label_names": []
+  },
+  "encoder_parameters": 306939648,
+  "started_at": "2026-09-19T19:01:49Z",
+  "argv": [
+    "scripts/mmbert_vi_cpt_pilot/v4/finetune_v4.py",
+    "--arm",
+    "P_web",
+    "--task",
+    "vsfc_topic",
+    "--seed",
+    "42",
+    "--device",
+    "cuda:0",
+    "--micro-batch",
+    "32"
+  ],
+  "pid": 1322231
+}

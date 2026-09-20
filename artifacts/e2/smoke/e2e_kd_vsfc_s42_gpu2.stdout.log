@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/kiettqa/GoiBERT/src/goibert_e2/train.py", line 1200, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/kiettqa/GoiBERT/src/goibert_e2/train.py", line 1170, in main
+    result = train_trial(
+             ^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/src/goibert_e2/train.py", line 1108, in train_trial
+    return train_student_trial(mode=mode, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/src/goibert_e2/train.py", line 782, in train_student_trial
+    return _train_any(
+           ^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/src/goibert_e2/train.py", line 897, in _train_any
+    _validate_cache_for_task(
+  File "/home/kiettqa/GoiBERT/src/goibert_e2/train.py", line 364, in _validate_cache_for_task
+    raise ValueError("Teacher-logit cache source/code hashes do not match current E2 inputs")
+ValueError: Teacher-logit cache source/code hashes do not match current E2 inputs

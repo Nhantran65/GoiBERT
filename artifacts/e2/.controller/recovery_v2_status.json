@@ -1,0 +1,37 @@
+{
+  "protocol": "E2-runtime-recovery-v2",
+  "revision": "e2-20260908-r1",
+  "status": "superseded",
+  "heartbeat_at": "2026-09-08T10:20:55Z",
+  "parent_pid": 1023543,
+  "script": "/home/kiettqa/GoiBERT/scripts/execute_e2_recovery_v2.py",
+  "command": [
+    "/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python",
+    "/home/kiettqa/GoiBERT/scripts/execute_e2_recovery_v2.py",
+    "--stage",
+    "all",
+    "--execute",
+    "--fresh-rerun-interrupted"
+  ],
+  "runtime_repair_hash": "4ea4943a4b015861954d39102b3be5fba9d4db8f1b5c0771d6cef909453a5f3a",
+  "frozen_scheduler_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "e1_dependency_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "recovery_report": "/home/kiettqa/GoiBERT/artifacts/e2/.orchestrator/recovery_v2_last_preflight.json",
+  "archive_root": "/home/kiettqa/GoiBERT/artifacts/e2/recovery/runtime_v2_20260908T101454Z_b0323759",
+  "completed_adopted": 1,
+  "interrupted_archived": 3,
+  "reused_completed_before_queue": 6,
+  "active_children": [
+    {"pid": 1026602, "device": "cuda:0", "task_id": "vsfc_topic", "learning_rate": 1e-05},
+    {"pid": 1026759, "device": "cuda:1", "task_id": "vsfc_topic", "learning_rate": 2e-05},
+    {"pid": 1026903, "device": "cuda:2", "task_id": "vsfc_topic", "learning_rate": 5e-05},
+    {"pid": 1026981, "device": "cuda:3", "task_id": "visfd", "learning_rate": 2e-05}
+  ],
+  "include_test": false,
+  "memory_guards_gib": {"student": 5.0, "teacher": 5.0, "nc": 5.0},
+  "legacy_controller_state": "/home/kiettqa/GoiBERT/artifacts/e2/.controller/state.json",
+  "legacy_controller_state_status": "superseded; original error retained",
+  "superseded_at": "2026-09-08T15:36:06Z",
+  "superseded_by": "/home/kiettqa/GoiBERT/artifacts/e2/.controller/recovery_v3_status.json",
+  "superseded_reason": "v3 durable supervisor owns the live recovery heartbeat"
+}

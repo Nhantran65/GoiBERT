@@ -1,0 +1,273 @@
+{
+  "protocol": "CDBK-pilot-M1-restaurant-v1",
+  "arm": "K",
+  "task_id": "absa_restaurant",
+  "seed": 42,
+  "stage": "validation_only",
+  "init": "bamibert",
+  "learning_rate": 5e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 660,
+  "total_steps": 6600,
+  "gradient_clip_norm": 1.0,
+  "loss": "0.5*CE + 0.5*KD",
+  "kd": {
+    "enabled": true,
+    "teacher_cache": "artifacts/cdbk_pilot/teacher_cache/absa_restaurant_train_logits_T_seed42.pt",
+    "teacher_cache_sha256": "ce3cfd3de3ef7fe35250484ff3378279bd81544d49880f30af3b3c0a17ab76f4",
+    "teacher_hash": "21c1094e771fe774130ecd3774c3ac4faba31c7e3376f7b9a3d9918b89334660",
+    "teacher_run": "artifacts/cdbk_pilot/runs/T_absa_restaurant_seed42",
+    "temperature": 2.0,
+    "alpha": 0.5,
+    "loss": "(1-alpha)*CE + alpha*T^2*KL(teacher||student); logits_kd_loss already multiplies by T^2",
+    "join": "stable example id (absa_restaurant:train:NNNNNN), not token ids",
+    "cache_logits_shape": [
+      7028,
+      12,
+      4
+    ]
+  },
+  "head": "CLS -> dropout0.1 -> dense768 -> tanh -> dropout0.1 -> 48 logits (12 slots x 4)",
+  "selection": "validation pair_micro_f1 (selection_f1), best epoch",
+  "include_test": false,
+  "smoke": null,
+  "source_hash": "f6e14b7bd5e68f1dd5e335eeef2d4e5b60e1da22851ba5817d60cd84a41eb4ab",
+  "model": {
+    "backbone": "Qualcomm-AI-Research/BamiBERT",
+    "hidden_size": 768,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 48,
+    "num_aspects": 12,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 102988080,
+    "trainable_parameters": 102988080,
+    "hf_commit": "57bc1340debbe4e348ec549047a763caebe4a977",
+    "local_path": "models/bamibert-base-original",
+    "weight_file_sha256": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627"
+  },
+  "tokenizer": {
+    "source": "models/bamibert-base-original",
+    "files": {
+      "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+      "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+      "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+    },
+    "tokenizer_class": "XLMRobertaTokenizerFast",
+    "vocab_size": 20481
+  },
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "absa_restaurant",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    ]
+  },
+  "train_count": 7028,
+  "validation_count": 771,
+  "num_aspects": 12,
+  "aspect_class_counts": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:2",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null,
+    "cublas_workspace_config": ":4096:8",
+    "hostname": "server-ai-new-02.vntt.lan"
+  },
+  "gpu_snapshot_at_start": {
+    "0": {
+      "free_mib": 41282,
+      "used_mib": 4176,
+      "util_pct": 7
+    },
+    "1": {
+      "free_mib": 19685,
+      "used_mib": 25773,
+      "util_pct": 19
+    },
+    "2": {
+      "free_mib": 25818,
+      "used_mib": 19641,
+      "util_pct": 0
+    },
+    "3": {
+      "free_mib": 34849,
+      "used_mib": 10610,
+      "util_pct": 21
+    }
+  },
+  "length_stats": {
+    "train_count": 7028,
+    "max_tokens": 115,
+    "p50_tokens": 20.0,
+    "p95_tokens": 44.0,
+    "p99_tokens": 60.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "started_at": "2026-09-17T08:21:51Z",
+  "started_at_unix": 1789633309.1824403,
+  "argv": [
+    "scripts/cdbk_pilot/finetune.py",
+    "--arm",
+    "K",
+    "--device",
+    "cuda:2",
+    "--micro-batch",
+    "32",
+    "--teacher-cache",
+    "artifacts/cdbk_pilot/teacher_cache/absa_restaurant_train_logits_T_seed42.pt"
+  ],
+  "pid": 3992485
+}

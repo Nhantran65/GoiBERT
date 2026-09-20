@@ -1,0 +1,57 @@
+{
+ "created_at": "2026-09-19T16:21:58Z",
+ "verdict": "PASS",
+ "checks": {
+  "vietnamese_ge_90": true,
+  "informal_ge_70": true,
+  "spam_le_10": true,
+  "tokens_ge_75M": true
+ },
+ "audit": {
+  "n": 100,
+  "real_vietnamese": 0.99,
+  "informal_voice": 0.95,
+  "adult_or_spam": 0.04
+ },
+ "volume": {
+  "train_token_positions": 167946752,
+  "train_sequences": 328021,
+  "holdout_comments": 2000,
+  "holdout_sequences": 73
+ },
+ "decontam_by_split": {
+  "vsfc/train": 11425,
+  "vsfc/test": 3166,
+  "shingle": 1992,
+  "visfd/Dev": 1007,
+  "visfd/Train": 7065,
+  "visfd/Test": 2013,
+  "absa_hotel/Train": 5,
+  "vsfc/dev": 3,
+  "absa_restaurant/Test": 1,
+  "absa_hotel/Test": 2
+ },
+ "prep_counters": {
+  "raw_rows": 15737126,
+  "drop_empty": 169186,
+  "drop_no_alnum": 54334,
+  "drop_exact_dup": 6588591,
+  "drop_decontam_exact": 24687,
+  "drop_decontam_shingle": 1992,
+  "train_comments": 8896336,
+  "holdout_comments": 2000,
+  "train_tokens_before_pack": 159050657,
+  "holdout_tokens": 35553
+ },
+ "teencode": {
+  "forms_ge_100_in_arm": 100,
+  "note": "descriptive only (no stopping condition); counts are over a scan subset and scaled to the 75M informal tokens of P_inf"
+ },
+ "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+ "thresholds": {
+  "vietnamese": 0.9,
+  "informal": 0.7,
+  "spam_max": 0.1,
+  "tokens_min": 75000000
+ }
+}

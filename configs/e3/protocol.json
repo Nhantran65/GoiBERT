@@ -1,0 +1,51 @@
+{
+  "protocol": "E3-conditional-polarity-v1",
+  "revision": "e3-20260909-r1",
+  "backbone": "models/goiturn-s-gd",
+  "tasks": {
+    "visfd": {
+      "kind": "absa",
+      "learning_rate": 0.0001,
+      "slot_class_counts": [4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4],
+      "polarity_slots": [0, 1, 2, 3, 4, 6, 7, 8, 9, 10],
+      "others_slot_excluded": 5
+    },
+    "absa_restaurant": {
+      "kind": "absa",
+      "learning_rate": 0.0001,
+      "slot_count": 12,
+      "slot_class_counts": "four classes per slot",
+      "polarity_slots": "all slots"
+    }
+  },
+  "loss": {
+    "base": "E1 compute_loss unchanged",
+    "auxiliary": "pooled conditional polarity CE over gold-present slots",
+    "remove_absent_logit": true,
+    "logit_slice": [1, 4],
+    "target_transform": "gold_label - 1",
+    "weight": 0.5,
+    "empty_active_batch": "differentiable zero"
+  },
+  "training": {
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32,
+    "gradient_accumulation_steps": 1,
+    "gradient_clip_norm": 1.0,
+    "learning_rate": 0.0001,
+    "warmup_fraction": 0.1,
+    "schedule": "linear",
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "max_length": 256
+  },
+  "selection": {
+    "metric": "validation end-to-end pair micro F1",
+    "seed": 42,
+    "include_test": false,
+    "screening_tasks": ["visfd", "absa_restaurant"]
+  }
+}

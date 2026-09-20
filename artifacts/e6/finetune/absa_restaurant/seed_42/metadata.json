@@ -1,0 +1,497 @@
+{
+  "task_id": "absa_restaurant",
+  "stage": "screening",
+  "seed": 42,
+  "learning_rate": 0.0001,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 660,
+  "gradient_clip_norm": 1.0,
+  "head": "CLS -> dropout0.1 -> dense384 -> tanh -> dropout0.1 -> logits",
+  "loss": "cross_entropy",
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 7028,
+    "max_tokens": 115,
+    "p50_tokens": 20.0,
+    "p95_tokens": 44.0,
+    "p99_tokens": 60.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "source_hash": "029ba1dd3f4f817dca37ea7f73caf3da6f5b535e8ec3604010b691a8404b43bf",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "absa_restaurant",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    ]
+  },
+  "model": {
+    "backbone": "goiturn-s-gd-mlm-e6",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 48,
+    "num_aspects": 12,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 26564016,
+    "trainable_parameters": 26564016
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:3",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "c0203f56a3d1276b5acbc45832a8724fde02f2dc595b673281ae977aa75009c9",
+    "model.safetensors": "96163c803854bdfe67f76a58158a450df45a14742312e0b529aa96b230f7406b",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738"
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "git_commit": null,
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e6_finetune.py",
+    "--task-id",
+    "absa_restaurant",
+    "--device",
+    "cuda:3",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e6/finetune/absa_restaurant/seed_42"
+  ],
+  "best_epoch": 29,
+  "best_validation_metrics": {
+    "n": 771,
+    "aspect_count": 12,
+    "aspect_names": [
+      "AMBIENCE#GENERAL",
+      "DRINKS#PRICES",
+      "DRINKS#QUALITY",
+      "DRINKS#STYLE&OPTIONS",
+      "FOOD#PRICES",
+      "FOOD#QUALITY",
+      "FOOD#STYLE&OPTIONS",
+      "LOCATION#GENERAL",
+      "RESTAURANT#GENERAL",
+      "RESTAURANT#MISCELLANEOUS",
+      "RESTAURANT#PRICES",
+      "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.824693685202639,
+    "detection_micro_recall": 0.8309591642924976,
+    "detection_micro_f1": 0.8278145695364238,
+    "detection_macro_precision": 0.8070951782719512,
+    "detection_macro_recall": 0.8124184723980711,
+    "detection_macro_f1": 0.8093642938583231,
+    "pair_micro_precision": 0.6767200754005656,
+    "pair_micro_recall": 0.6818613485280152,
+    "pair_micro_f1": 0.6792809839167455,
+    "pair_macro_precision": 0.6707791700096992,
+    "pair_macro_recall": 0.6758458690910697,
+    "pair_macro_f1": 0.6729940189444604,
+    "classification_pair_micro_f1": 0.6792809839167455,
+    "classification_pair_macro_f1": 0.6729940189444604,
+    "per_aspect": {
+      "AMBIENCE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9,
+          "recall": 0.8901098901098901,
+          "f1": 0.8950276243093923
+        },
+        "pair": {
+          "precision": 0.7555555555555555,
+          "recall": 0.7472527472527473,
+          "f1": 0.7513812154696132
+        },
+        "detection_tp": 81,
+        "gold_present": 91,
+        "predicted_present": 90
+      },
+      "DRINKS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7894736842105263,
+          "recall": 0.7894736842105263,
+          "f1": 0.7894736842105263
+        },
+        "pair": {
+          "precision": 0.7368421052631579,
+          "recall": 0.7368421052631579,
+          "f1": 0.7368421052631579
+        },
+        "detection_tp": 15,
+        "gold_present": 19,
+        "predicted_present": 19
+      },
+      "DRINKS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8152173913043478,
+          "recall": 0.9259259259259259,
+          "f1": 0.8670520231213873
+        },
+        "pair": {
+          "precision": 0.6739130434782609,
+          "recall": 0.7654320987654321,
+          "f1": 0.7167630057803468
+        },
+        "detection_tp": 75,
+        "gold_present": 81,
+        "predicted_present": 92
+      },
+      "DRINKS#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7115384615384616,
+          "recall": 0.7115384615384616,
+          "f1": 0.7115384615384616
+        },
+        "pair": {
+          "precision": 0.6346153846153846,
+          "recall": 0.6346153846153846,
+          "f1": 0.6346153846153846
+        },
+        "detection_tp": 37,
+        "gold_present": 52,
+        "predicted_present": 52
+      },
+      "FOOD#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7333333333333333,
+          "recall": 0.7333333333333333,
+          "f1": 0.7333333333333333
+        },
+        "pair": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "detection_tp": 33,
+        "gold_present": 45,
+        "predicted_present": 45
+      },
+      "FOOD#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8666666666666667,
+          "recall": 0.8783783783783784,
+          "f1": 0.87248322147651
+        },
+        "pair": {
+          "precision": 0.7377777777777778,
+          "recall": 0.7477477477477478,
+          "f1": 0.7427293064876958
+        },
+        "detection_tp": 195,
+        "gold_present": 222,
+        "predicted_present": 225
+      },
+      "FOOD#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.807909604519774,
+          "recall": 0.8171428571428572,
+          "f1": 0.8125
+        },
+        "pair": {
+          "precision": 0.6101694915254238,
+          "recall": 0.6171428571428571,
+          "f1": 0.6136363636363636
+        },
+        "detection_tp": 143,
+        "gold_present": 175,
+        "predicted_present": 177
+      },
+      "LOCATION#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9047619047619048,
+          "recall": 0.9047619047619048,
+          "f1": 0.9047619047619048
+        },
+        "pair": {
+          "precision": 0.7142857142857143,
+          "recall": 0.7142857142857143,
+          "f1": 0.7142857142857143
+        },
+        "detection_tp": 38,
+        "gold_present": 42,
+        "predicted_present": 42
+      },
+      "RESTAURANT#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7263157894736842,
+          "recall": 0.69,
+          "f1": 0.7076923076923077
+        },
+        "pair": {
+          "precision": 0.5157894736842106,
+          "recall": 0.49,
+          "f1": 0.5025641025641026
+        },
+        "detection_tp": 69,
+        "gold_present": 100,
+        "predicted_present": 95
+      },
+      "RESTAURANT#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.75,
+          "recall": 0.7758620689655172,
+          "f1": 0.7627118644067796
+        },
+        "pair": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6896551724137931,
+          "f1": 0.6779661016949152
+        },
+        "detection_tp": 45,
+        "gold_present": 58,
+        "predicted_present": 60
+      },
+      "RESTAURANT#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7555555555555555,
+          "recall": 0.723404255319149,
+          "f1": 0.7391304347826086
+        },
+        "pair": {
+          "precision": 0.5555555555555556,
+          "recall": 0.5319148936170213,
+          "f1": 0.5434782608695652
+        },
+        "detection_tp": 34,
+        "gold_present": 47,
+        "predicted_present": 45
+      },
+      "SERVICE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9243697478991597,
+          "recall": 0.9090909090909091,
+          "f1": 0.9166666666666666
+        },
+        "pair": {
+          "precision": 0.7815126050420168,
+          "recall": 0.768595041322314,
+          "f1": 0.775
+        },
+        "detection_tp": 110,
+        "gold_present": 121,
+        "predicted_present": 119
+      }
+    },
+    "task_id": "absa_restaurant",
+    "split": "validation",
+    "selection_f1": 0.6792809839167455,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "best_selection_f1": 0.6792809839167455,
+  "elapsed_seconds": 382.4105122089386,
+  "peak_gpu_memory_allocated_bytes": 1079042560,
+  "peak_gpu_memory_reserved_bytes": 1237319680,
+  "status": "completed",
+  "protocol": "E6-mlm-backbone-supervised-screening-v1",
+  "architecture_variant": "goiturn-s-gd-mlm-e6",
+  "backbone_name": "goiturn-s-gd-mlm-e6",
+  "backbone_path": "/home/kiettqa/GoiBERT/models/goiturn-s-gd-mlm-e6",
+  "mlm_backbone_path": "/home/kiettqa/GoiBERT/models/goiturn-s-gd-mlm-e6",
+  "mlm_backbone_hashes": {
+    "config.json": "c0203f56a3d1276b5acbc45832a8724fde02f2dc595b673281ae977aa75009c9",
+    "model.safetensors": "96163c803854bdfe67f76a58158a450df45a14742312e0b529aa96b230f7406b",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "mlm_backbone_directory_sha256": "1b6a7b6dfa363e3002e48397d69037d83a8be9220ab4ea1bdbd8c7da42956cb2",
+  "mlm_export_manifest_path": "/home/kiettqa/GoiBERT/artifacts/e6/mlm/mlm_metadata.json",
+  "mlm_export_manifest_sha256": "77f33c2d4622b39408306be6e2b6e821acbeb7417e46ee4cfc0e7d6ddb8e46b4",
+  "mlm_ready_marker_path": "/home/kiettqa/GoiBERT/artifacts/e6/mlm/READY_FOR_FINETUNE.json",
+  "mlm_ready_marker_sha256": "b67f1f4ce8306abaa1120457c330dd6a8365db2d440a6f59b291437f6cda5984",
+  "mlm_source_hash": "256cba9a9e48cb0ecd91b7276d381aa1995f1de68267c65f9fbdfba57eeb61e8",
+  "e6_source_hash": "029ba1dd3f4f817dca37ea7f73caf3da6f5b535e8ec3604010b691a8404b43bf",
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "backbone_provenance": {
+    "source": "student GoiTurn-S-GD after E6 supervised-independent MLM continuation",
+    "encoder_only_export": true,
+    "architecture_compatibility": {
+      "hidden_size": true,
+      "num_hidden_layers": true,
+      "num_attention_heads": true,
+      "intermediate_size": true,
+      "vocab_size": true,
+      "max_position_embeddings": true
+    },
+    "tokenizer_compatibility": {
+      "tokenizer.json": true,
+      "tokenizer_config.json": true,
+      "special_tokens_map.json": true
+    },
+    "tokenizer_hash_match": {
+      "tokenizer.json": true,
+      "tokenizer_config.json": true,
+      "special_tokens_map.json": true
+    }
+  }
+}

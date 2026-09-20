@@ -1,0 +1,200 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v4",
+ "created_at": "2026-09-19T16:38:48Z",
+ "device": "cuda:0",
+ "source_hash": "5ce6fb003ffb3d10e8efb61b5e667add2c909627ea53d72d462a2bf9295823b2",
+ "tokenizer": {
+  "vocab_size": 256000,
+  "pad": 0,
+  "eos": 1,
+  "bos": 2,
+  "unk": 3,
+  "mask": 4
+ },
+ "model": {
+  "repo": "jhu-clsp/mmBERT-base",
+  "commit": "c5955035435e2bf121cde7f3c8863ef52ff35d82",
+  "checks": {
+   "architecture": [
+    "ModernBertForMaskedLM"
+   ],
+   "layers": 22,
+   "hidden": 768,
+   "heads": 12,
+   "vocab": 256000,
+   "max_position_embeddings": 8192,
+   "tie_word_embeddings": true,
+   "missing_keys": [],
+   "unexpected_keys": [],
+   "mismatched_keys": [],
+   "mlm_head_pretrained": true,
+   "decoder_tied_to_embeddings": true,
+   "parameters_total": 307786240,
+   "parameters_non_embedding": 111178240,
+   "weights_sha256": "8ea64ec1ea4eb8fca0fc14b69a2ae571de6bfbc25fd214bb932dd4aba6a3a04e"
+  },
+  "params_total_millions": 307.78624,
+  "params_non_embedding_millions": 111.17824,
+  "documented": "mmBERT-base 307 M total (110 M non-embedding)"
+ },
+ "attention": {
+  "implementation": "sdpa",
+  "flash_attn_available": false
+ },
+ "arms": {
+  "P_web": {
+   "dir": "P_web",
+   "shape": [
+    3815,
+    128,
+    512
+   ],
+   "tokens": 250019840,
+   "pad_id_count_head": 0,
+   "tokens_hash": "2766f8b9d20af31ea54a8dcc858d727228af2ad37aed18feb44778dfb445c267",
+   "order_hash": "f4bfd6bff8556857b95d5c0a88b098d417de87b206b573c0b3cf69a46503d838",
+   "multiset_hash": null,
+   "informal_token_share": 0.0,
+   "research_only": false,
+   "license": "no NC data: general v3 pool + Wikipedia v2 (CC BY-SA 4.0)",
+   "batch_hashes_step0_3": [
+    "8b27fef77e02f59ff68cee8846ba987cf1b9b0b703317b5a0a58b1465438aa4c",
+    "40b65cd93326dd045c5675d4d7dd28dfb53f0bca499dcbfaed5047fd1dfeba37",
+    "a5654becb73e0ccdffc5b046685e982dd0b4dc2b0cb5a48cca3399544cb5ce53",
+    "f25157071e5ef850569a0fec6f89486a8c09345a0a50172ec0a7fa9920850234"
+   ]
+  },
+  "P_inf": {
+   "dir": "P_inf_NC_research_only",
+   "shape": [
+    3815,
+    128,
+    512
+   ],
+   "tokens": 250019840,
+   "pad_id_count_head": 0,
+   "tokens_hash": "d97e99582c4ec8a547c2c60c7114fee4905a1082add7d91b650fd53903c42cb6",
+   "order_hash": "5b739979397605b357f06a2c291a09c13f311cc283f804034ea15d22fbd6fe06",
+   "multiset_hash": "026067ff76c921ec5dd3d851cbca1aa9e179eccd5a13c7870af41c87f6541300",
+   "informal_token_share": 0.3,
+   "research_only": true,
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "batch_hashes_step0_3": [
+    "196ffb2814e5cc6ad659deb7858c1070fc0e25b0a35707946b71dd719ef97fab",
+    "230d88c59dd61a94d83eb25672ff871f9482d0f2f46c702fd45383103473d3e7",
+    "35052bbaa85e6e68edd0358a07297aa90947cc77f0651ead5f7f919977b7c5dd",
+    "ee22949699b09a8eddff050c811d2579cff9b6f4c1ab77729739f3efd7da6278"
+   ]
+  },
+  "C_inf": {
+   "dir": "C_inf_NC_research_only",
+   "shape": [
+    3815,
+    128,
+    512
+   ],
+   "tokens": 250019840,
+   "pad_id_count_head": 0,
+   "tokens_hash": "b395ae6ba04c3390d6c13bcbb36b8e42fbe2ac4f326d1eb32431b1be94046c8c",
+   "order_hash": "9feebc4398617fcfb738eb218e1c3941adce3dbee61e0fd8f7c0d337ba5f7ea6",
+   "multiset_hash": "026067ff76c921ec5dd3d851cbca1aa9e179eccd5a13c7870af41c87f6541300",
+   "informal_token_share": 0.3,
+   "research_only": true,
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "batch_hashes_step0_3": [
+    "5bbfa72480e650b81d2b6e936cdb90f37b8b4bb7b617c1bee76b502228b2f51f",
+    "deaac25dd8a2a8bc0268e9e76dfe51b881f6c365ce7225cbd9421da23d415ea2",
+    "7ad6807a2f95ae4b1c2e1144b01ab8435f376c7042233fb254190bcb048b3563",
+    "6317cea567f9e060adce201272ca0a5e00b7c4b27a1aab6d6cc7400afe4c5a9c"
+   ]
+  }
+ },
+ "masks": {
+  "per_arm": {
+   "P_web": [
+    {
+     "step": 0,
+     "grid_hash": "249334a8a5f065d009392d6930b14e820077365c887f00f697b79e058266d193",
+     "repeatable": true,
+     "masked_positions": 130
+    },
+    {
+     "step": 1,
+     "grid_hash": "406f6a61e8d6c4b245c559b7532946bd68a6e7de1612d931f96ed71352de5473",
+     "repeatable": true,
+     "masked_positions": 140
+    }
+   ],
+   "P_inf": [
+    {
+     "step": 0,
+     "grid_hash": "249334a8a5f065d009392d6930b14e820077365c887f00f697b79e058266d193",
+     "repeatable": true,
+     "masked_positions": 124
+    },
+    {
+     "step": 1,
+     "grid_hash": "406f6a61e8d6c4b245c559b7532946bd68a6e7de1612d931f96ed71352de5473",
+     "repeatable": true,
+     "masked_positions": 121
+    }
+   ],
+   "C_inf": [
+    {
+     "step": 0,
+     "grid_hash": "249334a8a5f065d009392d6930b14e820077365c887f00f697b79e058266d193",
+     "repeatable": true,
+     "masked_positions": 130
+    },
+    {
+     "step": 1,
+     "grid_hash": "406f6a61e8d6c4b245c559b7532946bd68a6e7de1612d931f96ed71352de5473",
+     "repeatable": true,
+     "masked_positions": 140
+    }
+   ]
+  },
+  "grid_identical_across_arms": true
+ },
+ "smoke": {
+  "steps": 50,
+  "micro": 32,
+  "tokens_seen": 3276800,
+  "tokens_s": 62724.03211549664,
+  "step_s": 1.04483078956604,
+  "eta_hours_full_budget": 1.107230406165123,
+  "peak_gpu_memory_gb": 20.982969856,
+  "loss_first": 2.226402521133423,
+  "loss_last": 1.8605731427669525,
+  "loss_all_finite": true,
+  "grad_norm_all_finite": true,
+  "device": "NVIDIA L40S"
+ },
+ "rebuild": {
+  "P_web": {
+   "tokens_hash_equal": true,
+   "order_hash_equal": true,
+   "batch0_3_equal": true
+  },
+  "P_inf": {
+   "tokens_hash_equal": true,
+   "order_hash_equal": true,
+   "batch0_3_equal": true
+  },
+  "C_inf": {
+   "tokens_hash_equal": true,
+   "order_hash_equal": true,
+   "batch0_3_equal": true
+  }
+ },
+ "gate": {
+  "model_loads_clean": true,
+  "packing_ok": true,
+  "masks_identical_across_arms": true,
+  "multiset_p_inf_c_inf_equal": true,
+  "smoke_finite": true,
+  "rebuild_ok": true,
+  "all_ok": true
+ },
+ "elapsed_s": 172.3
+}

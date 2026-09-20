@@ -1,0 +1,51 @@
+{
+  "protocol": "E7-layerwise-learning-rate-decay-screening-v1",
+  "hypothesis": "Reducing updates to lower encoder layers preserves useful student representations during task adaptation.",
+  "source_backbone": "models/goiturn-s-gd",
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "architecture": {
+    "encoder": "GoiTurn-S-GD unchanged, 10 layers, hidden 384, FFN 1536",
+    "classification_head": "E1 unchanged",
+    "pooling": "first encoder token (CLS)"
+  },
+  "tasks": {
+    "vsfc_sentiment": {"learning_rate": 1e-05},
+    "vsfc_topic": {"learning_rate": 1e-05},
+    "visfd": {"learning_rate": 1e-04},
+    "absa_restaurant": {"learning_rate": 1e-04},
+    "absa_hotel": {"learning_rate": 1e-04}
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "gamma": 0.8,
+    "num_layers": 10,
+    "head_and_last_block_scale": 1.0,
+    "embedding_scale": "gamma^10",
+    "block_scale": "gamma^(9-layer_index)",
+    "weight_decay": 0.01,
+    "exclude_from_weight_decay": ["bias", "LayerNorm.weight"],
+    "betas": [0.9, 0.999],
+    "epsilon": 1e-08,
+    "scheduler": "E1 linear warmup/decay with one common multiplier across groups"
+  },
+  "training": {
+    "seed": 42,
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32,
+    "loss": "E1 cross_entropy",
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "max_length_policy": "E1 train-only audit",
+    "include_test": false
+  },
+  "selection": {
+    "validation_only": true,
+    "multi_seed": false,
+    "test": false,
+    "kd": false,
+    "noise_consistency": false,
+    "mlm": false,
+    "architecture_expansion": false
+  }
+}

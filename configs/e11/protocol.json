@@ -1,0 +1,57 @@
+{
+  "protocol": "E11-signed-versus-convex-two-map-attention-v1",
+  "revision": "e11-20260911-r1",
+  "source_backbone": "models/goiturn-s-gd",
+  "insertion": {
+    "layer_index": 8,
+    "position": "block9 self-attention",
+    "hidden_size": 384,
+    "heads": 6,
+    "q1_k1_v_output": "reuse checkpoint modules",
+    "q2_k2": "Q1/K1 plus Normal(0,0.01) under fork_rng",
+    "shared_value": true
+  },
+  "variants": {
+    "signed": "O1 + lambda_h(t) * (O1 - O2)",
+    "convex": "O1 + lambda_h(t) * (O2 - O1)"
+  },
+  "gate": {
+    "formula": "min(1, optimizer_step / warmup_steps) * sigmoid(a_h)",
+    "initial_lambda": 0.1,
+    "initial_logit": -2.1972245773362196,
+    "heads": 6,
+    "weight_decay": 0.0,
+    "step_unit": "optimizer_step",
+    "clean_noisy_same_step": true
+  },
+  "recipe": {
+    "seed": 42,
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32,
+    "max_length": 256,
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "llrd_gamma": 0.8,
+    "nc_lambda": {
+      "vsfc_sentiment": 0.1,
+      "vsfc_topic": 0.5,
+      "visfd": 0.5,
+      "absa_restaurant": 0.1,
+      "absa_hotel": 0.1
+    }
+  },
+  "tasks": [
+    "vsfc_sentiment",
+    "vsfc_topic",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "selection": {
+    "validation_only": true,
+    "total_trials": 10,
+    "seed": 42,
+    "test": false
+  }
+}

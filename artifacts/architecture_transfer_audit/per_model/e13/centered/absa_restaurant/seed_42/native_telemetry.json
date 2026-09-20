@@ -1,0 +1,108 @@
+{
+  "rows": 128,
+  "batch_shapes": [
+    [
+      16,
+      45
+    ],
+    [
+      16,
+      40
+    ],
+    [
+      16,
+      59
+    ],
+    [
+      16,
+      60
+    ],
+    [
+      16,
+      38
+    ],
+    [
+      16,
+      54
+    ],
+    [
+      16,
+      45
+    ],
+    [
+      16,
+      68
+    ]
+  ],
+  "dtypes": {
+    "x": "bfloat16",
+    "d": "bfloat16",
+    "y": "bfloat16",
+    "h": "float32",
+    "ln_input": "float32"
+  },
+  "counts": {
+    "tokens": 2980,
+    "coords": 1144320,
+    "d_nonzero": 1144320,
+    "d_zero": 0,
+    "swallowed": 171363,
+    "err_tokens": 0
+  },
+  "frobenius": {
+    "d_over_x": 0.013080785130902233,
+    "d_over_h": 0.002905169508344269,
+    "x_norm": 230.97949444803265,
+    "d_norm": 3.02139313651914,
+    "h_norm": 1040.005799262677,
+    "effective_norm": 3.044239851133414,
+    "effective_minus_intended_norm": 0.38312428778509056
+  },
+  "token_quantiles": {
+    "d_over_x": {
+      "q10": 0.007585563603788615,
+      "q50": 0.011822210624814034,
+      "q90": 0.018357970751821995,
+      "q99": 0.027560571096837527,
+      "count": 2980
+    },
+    "d_over_h": {
+      "q10": 0.0015826968825422227,
+      "q50": 0.0024250431451946497,
+      "q90": 0.004127014707773924,
+      "q99": 0.00626709684263915,
+      "count": 2980
+    },
+    "relative_error": {
+      "q10": 0.08955366164445877,
+      "q50": 0.1403777077794075,
+      "q90": 0.2182225316762924,
+      "q99": 0.3001023253798486,
+      "count": 2980
+    }
+  },
+  "coordinate_swallowing": {
+    "nonzero_delta_coordinates": 1144320,
+    "swallowed_coordinates": 171363,
+    "fraction_among_nonzero": 0.1497509437919463,
+    "zero_delta_coordinates_excluded": 0
+  },
+  "after_ln_same_input": {
+    "branch_off": {
+      "tokens": 0,
+      "diff2": 0.0,
+      "ref2": 0.0,
+      "max_abs": 0.0,
+      "rms_diff": 0.0,
+      "relative_rms_to_native": 0.0
+    },
+    "fp32_fusion": {
+      "tokens": 0,
+      "diff2": 0.0,
+      "ref2": 0.0,
+      "max_abs": 0.0,
+      "rms_diff": 0.0,
+      "relative_rms_to_native": 0.0
+    }
+  }
+}

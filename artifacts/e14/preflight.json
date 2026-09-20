@@ -1,0 +1,525 @@
+{
+  "protocol": "E14-BamiBERT-original-local-baseline-v1",
+  "revision": "e14-20260912-r1",
+  "created_at": "2026-09-12T07:24:16Z",
+  "source_hash": "bba42b8eb93dc2945fd49495bc48490daa5474e855e31b3cb261d96dfc089645",
+  "model_manifest": {
+    "source": "huggingface",
+    "repository": "Qualcomm-AI-Research/BamiBERT",
+    "hf_commit": "57bc1340debbe4e348ec549047a763caebe4a977",
+    "local_path": "models/bamibert-base-original",
+    "files": {
+      ".cache/huggingface/.gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+      ".cache/huggingface/download/.gitattributes.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/.gitattributes.metadata": "d2a1d8524993b3f3ad41c3ff2030bf07fdcbdd3baba8267f63bb9c10e84da3b0",
+      ".cache/huggingface/download/README.md.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/README.md.metadata": "08cb04c116039d7420532bf6edeed9d69e5545662403b8878ffefce06a7fdb99",
+      ".cache/huggingface/download/config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/config.json.metadata": "0a58347b0976ec3d43a089634cdb262fcf0b2bf9e654ea95bb45e40638a3ee23",
+      ".cache/huggingface/download/model.safetensors.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/model.safetensors.metadata": "3f7e152fa1fc3e78cfcf5d65087ae8a51a851e66c0f31fe955107e44c46e635b",
+      ".cache/huggingface/download/special_tokens_map.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/special_tokens_map.json.metadata": "69d7c4472e1520cf154ed292d5f0508b5716065704280b2dcd219f3226334656",
+      ".cache/huggingface/download/tokenizer.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/tokenizer.json.metadata": "5f1c062456c6cc860c19fd5de4b59327cbed44d256c1889e1e24fa7f73aeef10",
+      ".cache/huggingface/download/tokenizer_config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/tokenizer_config.json.metadata": "294e0df1cea0c77c2997f4289c7314053a67a6fa0dd6fde80beba74a7d7ee078",
+      ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+      "README.md": "6b23dbeffa7ed1e3b4ccf95fb5d6b9eb2f8e8041b334042f54f9c3926c128b61",
+      "config.json": "353049455318fb3fcdc42f4e275211834809143eeb67b5728d4eff556be05d5f",
+      "model.safetensors": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627",
+      "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+      "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+      "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+    },
+    "config": {
+      "architectures": [
+        "RobertaForMaskedLM"
+      ],
+      "attention_probs_dropout_prob": 0.1,
+      "bos_token_id": 0,
+      "classifier_dropout": null,
+      "eos_token_id": 2,
+      "hidden_act": "gelu",
+      "hidden_dropout_prob": 0.1,
+      "hidden_size": 768,
+      "initializer_range": 0.02,
+      "intermediate_size": 3072,
+      "layer_norm_eps": 1e-05,
+      "max_position_embeddings": 2050,
+      "model_type": "roberta",
+      "num_attention_heads": 12,
+      "num_hidden_layers": 12,
+      "pad_token_id": 1,
+      "position_embedding_type": "absolute",
+      "torch_dtype": "float32",
+      "transformers_version": "4.38.1",
+      "type_vocab_size": 1,
+      "use_cache": true,
+      "vocab_size": 20481
+    },
+    "architecture_check": {
+      "num_hidden_layers": 12,
+      "hidden_size": 768,
+      "num_attention_heads": 12,
+      "intermediate_size": 3072
+    },
+    "weight_file_sha256": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627",
+    "not_teacher_dapt": true
+  },
+  "gpu_snapshot": {
+    "0": {
+      "free_mib": 40350,
+      "used_mib": 5109
+    },
+    "1": {
+      "free_mib": 45436,
+      "used_mib": 22
+    },
+    "2": {
+      "free_mib": 41642,
+      "used_mib": 3817
+    },
+    "3": {
+      "free_mib": 15485,
+      "used_mib": 29973
+    }
+  },
+  "gpu_profiles": {
+    "0": {
+      "device": "cuda:0",
+      "micro_batch_size": 32,
+      "effective_batch_size": 32,
+      "dtype": "bfloat16",
+      "finite_loss_and_gradients": true,
+      "logits_shape": [
+        32,
+        3
+      ],
+      "peak_memory_allocated_bytes": 4062020096,
+      "peak_memory_reserved_bytes": 4389339136,
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "device": "cuda:0",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null,
+        "cublas_workspace_config": ":4096:8"
+      },
+      "model_spec": {
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 102953475,
+        "trainable_parameters": 102953475
+      }
+    },
+    "1": {
+      "device": "cuda:1",
+      "micro_batch_size": 32,
+      "effective_batch_size": 32,
+      "dtype": "bfloat16",
+      "finite_loss_and_gradients": true,
+      "logits_shape": [
+        32,
+        3
+      ],
+      "peak_memory_allocated_bytes": 4062020096,
+      "peak_memory_reserved_bytes": 4389339136,
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "device": "cuda:1",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null,
+        "cublas_workspace_config": ":4096:8"
+      },
+      "model_spec": {
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 102953475,
+        "trainable_parameters": 102953475
+      }
+    },
+    "2": {
+      "device": "cuda:2",
+      "micro_batch_size": 32,
+      "effective_batch_size": 32,
+      "dtype": "bfloat16",
+      "finite_loss_and_gradients": true,
+      "logits_shape": [
+        32,
+        3
+      ],
+      "peak_memory_allocated_bytes": 4062020096,
+      "peak_memory_reserved_bytes": 4389339136,
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "device": "cuda:2",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null,
+        "cublas_workspace_config": ":4096:8"
+      },
+      "model_spec": {
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 102953475,
+        "trainable_parameters": 102953475
+      }
+    },
+    "3": {
+      "device": "cuda:3",
+      "micro_batch_size": 16,
+      "effective_batch_size": 32,
+      "dtype": "bfloat16",
+      "finite_loss_and_gradients": true,
+      "logits_shape": [
+        16,
+        3
+      ],
+      "peak_memory_allocated_bytes": 2405441536,
+      "peak_memory_reserved_bytes": 2606759936,
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "device": "cuda:3",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null,
+        "cublas_workspace_config": ":4096:8"
+      },
+      "model_spec": {
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 102953475,
+        "trainable_parameters": 102953475
+      }
+    }
+  },
+  "task_contracts": {
+    "vsfc_sentiment": {
+      "train_count": 11426,
+      "validation_count": 1583,
+      "num_classes": 3,
+      "num_aspects": 0,
+      "aspect_class_counts": [],
+      "label_overlay": {
+        "vsfc_sentiment": {
+          "0": "negative",
+          "1": "neutral",
+          "2": "positive"
+        },
+        "vsfc_topic": {
+          "0": "lecturer",
+          "1": "training_program",
+          "2": "facility",
+          "3": "others"
+        },
+        "absa": {
+          "0": "absent",
+          "1": "positive",
+          "2": "negative",
+          "3": "neutral"
+        },
+        "visfd_others": {
+          "raw_0": "absent",
+          "raw_4": "present_detection_only",
+          "model_0": "absent",
+          "model_1": "present_detection_only"
+        },
+        "numeric_gold_unchanged": true
+      }
+    },
+    "vsfc_topic": {
+      "train_count": 11426,
+      "validation_count": 1583,
+      "num_classes": 4,
+      "num_aspects": 0,
+      "aspect_class_counts": [],
+      "label_overlay": {
+        "vsfc_sentiment": {
+          "0": "negative",
+          "1": "neutral",
+          "2": "positive"
+        },
+        "vsfc_topic": {
+          "0": "lecturer",
+          "1": "training_program",
+          "2": "facility",
+          "3": "others"
+        },
+        "absa": {
+          "0": "absent",
+          "1": "positive",
+          "2": "negative",
+          "3": "neutral"
+        },
+        "visfd_others": {
+          "raw_0": "absent",
+          "raw_4": "present_detection_only",
+          "model_0": "absent",
+          "model_1": "present_detection_only"
+        },
+        "numeric_gold_unchanged": true
+      }
+    },
+    "visfd": {
+      "train_count": 7786,
+      "validation_count": 1112,
+      "num_classes": 42,
+      "num_aspects": 11,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "label_overlay": {
+        "vsfc_sentiment": {
+          "0": "negative",
+          "1": "neutral",
+          "2": "positive"
+        },
+        "vsfc_topic": {
+          "0": "lecturer",
+          "1": "training_program",
+          "2": "facility",
+          "3": "others"
+        },
+        "absa": {
+          "0": "absent",
+          "1": "positive",
+          "2": "negative",
+          "3": "neutral"
+        },
+        "visfd_others": {
+          "raw_0": "absent",
+          "raw_4": "present_detection_only",
+          "model_0": "absent",
+          "model_1": "present_detection_only"
+        },
+        "numeric_gold_unchanged": true
+      }
+    },
+    "absa_restaurant": {
+      "train_count": 7028,
+      "validation_count": 771,
+      "num_classes": 48,
+      "num_aspects": 12,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "label_overlay": {
+        "vsfc_sentiment": {
+          "0": "negative",
+          "1": "neutral",
+          "2": "positive"
+        },
+        "vsfc_topic": {
+          "0": "lecturer",
+          "1": "training_program",
+          "2": "facility",
+          "3": "others"
+        },
+        "absa": {
+          "0": "absent",
+          "1": "positive",
+          "2": "negative",
+          "3": "neutral"
+        },
+        "visfd_others": {
+          "raw_0": "absent",
+          "raw_4": "present_detection_only",
+          "model_0": "absent",
+          "model_1": "present_detection_only"
+        },
+        "numeric_gold_unchanged": true
+      }
+    },
+    "absa_hotel": {
+      "train_count": 7180,
+      "validation_count": 795,
+      "num_classes": 136,
+      "num_aspects": 34,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "label_overlay": {
+        "vsfc_sentiment": {
+          "0": "negative",
+          "1": "neutral",
+          "2": "positive"
+        },
+        "vsfc_topic": {
+          "0": "lecturer",
+          "1": "training_program",
+          "2": "facility",
+          "3": "others"
+        },
+        "absa": {
+          "0": "absent",
+          "1": "positive",
+          "2": "negative",
+          "3": "neutral"
+        },
+        "visfd_others": {
+          "raw_0": "absent",
+          "raw_4": "present_detection_only",
+          "model_0": "absent",
+          "model_1": "present_detection_only"
+        },
+        "numeric_gold_unchanged": true
+      }
+    }
+  },
+  "tokenizer_comparison": {
+    "original_hashes": {
+      "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+      "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+      "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+    },
+    "gd_hashes": {
+      "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+      "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+      "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+    },
+    "hashes_equal": false,
+    "comparison_interpretation": "Serialized tokenizer files/config metadata have different hashes; sampled token ID sequences matched exactly (400 train/validation rows per task). E14 used the original BamiBERT tokenizer.",
+    "tasks": {
+      "vsfc_sentiment": {
+        "sample_count": 400,
+        "different_token_sequences": 0,
+        "same": true
+      },
+      "vsfc_topic": {
+        "sample_count": 400,
+        "different_token_sequences": 0,
+        "same": true
+      },
+      "visfd": {
+        "sample_count": 400,
+        "different_token_sequences": 0,
+        "same": true
+      },
+      "absa_restaurant": {
+        "sample_count": 400,
+        "different_token_sequences": 0,
+        "same": true
+      },
+      "absa_hotel": {
+        "sample_count": 400,
+        "different_token_sequences": 0,
+        "same": true
+      }
+    }
+  },
+  "checks": {
+    "official_model_dir": true,
+    "weights_present": true,
+    "all_tasks_loaded_without_test": true,
+    "encoder_shape": {
+      "layers": 12,
+      "hidden": 768,
+      "heads": 12,
+      "ffn": 3072
+    },
+    "head_hidden": 768,
+    "max_length": 256,
+    "effective_batch_size": 32,
+    "no_test_access": true
+  }
+}

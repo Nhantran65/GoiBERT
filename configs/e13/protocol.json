@@ -1,0 +1,23 @@
+{
+  "protocol": "E13-centered-pair-value-residual-v1",
+  "revision": "e13-20260912-r1",
+  "seed": 42,
+  "epochs": 30,
+  "variants": ["centered", "uncentered"],
+  "tasks": ["vsfc_sentiment", "vsfc_topic", "visfd", "absa_restaurant", "absa_hotel"],
+  "insertion_layer_index": 6,
+  "hidden_size": 384,
+  "pair_rank": 64,
+  "pair_chunk_size": 64,
+  "added_parameter_count": 73728,
+  "pair_activation": "gelu_exact",
+  "attention_implementation": "sdpa",
+  "max_length": 256,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "precision": "bf16",
+  "weight_decay": 0.01,
+  "layerwise_gamma": 0.8,
+  "noise_consistency_temperature": 1.0,
+  "test_all_locked_checkpoints": true
+}

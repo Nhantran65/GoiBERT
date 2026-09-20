@@ -1,0 +1,553 @@
+{
+  "protocol": "E2-training-ablation-v1",
+  "revision": "e2-20260908-r1",
+  "stage": "stagea_nc",
+  "method": "nc",
+  "coefficient": 0.5,
+  "task_id": "vsfc_sentiment",
+  "mode": "nc",
+  "seed": 42,
+  "learning_rate": 1e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 164,
+    "p50_tokens": 14.0,
+    "p95_tokens": 37.0,
+    "p99_tokens": 56.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "smoke": false,
+  "source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_config_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt": "480480c3b9a6bc8bdf53339c721e93f8cc30472ac8f0bd21d4440ce1171aefac",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt": "a9584a22c926a54c6042236380c9a65ab8c41467477f7a5d794fb2505c96a9c3"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "vsfc_sentiment",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "include_test": false,
+    "slot_label_names": []
+  },
+  "model": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26546691,
+    "trainable_parameters": 26546691
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "hyperparameters": {
+    "temperature": 2.0,
+    "alpha": null,
+    "consistency_lambda": 0.5,
+    "teacher_cache": null,
+    "teacher_cache_hash": null
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "argv": [
+    "/home/kiettqa/GoiBERT/src/goibert_e2/train.py",
+    "--mode",
+    "nc",
+    "--repo-root",
+    "/home/kiettqa/GoiBERT",
+    "--task-id",
+    "vsfc_sentiment",
+    "--learning-rate",
+    "1e-05",
+    "--seed",
+    "42",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e2/stageA/nc/vsfc_sentiment/coef_0p5/seed_42",
+    "--device",
+    "cuda:0",
+    "--precision",
+    "bf16",
+    "--attention-implementation",
+    "sdpa",
+    "--epochs",
+    "30",
+    "--effective-batch-size",
+    "32",
+    "--micro-batch-size",
+    "32",
+    "--stage",
+    "stagea_nc",
+    "--method",
+    "nc",
+    "--protocol",
+    "E2-training-ablation-v1",
+    "--revision",
+    "e2-20260908-r1",
+    "--expected-e2-code-hash",
+    "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "--expected-e2-config-hash",
+    "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "--expected-orchestrator-hash",
+    "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+    "--include-test",
+    "false",
+    "--coefficient",
+    "0.5",
+    "--consistency-lambda",
+    "0.5"
+  ],
+  "started_at_unix": 1788882485.9453676,
+  "noise_statistics": [
+    {
+      "count": 11426,
+      "changed_count": 4290,
+      "operation_counts": {
+        "none": 5656,
+        "teencode": 2297,
+        "remove_accents": 2911,
+        "internal_char_typo": 562
+      },
+      "change_rate": 0.3754594783826361
+    },
+    {
+      "count": 11426,
+      "changed_count": 4218,
+      "operation_counts": {
+        "none": 5750,
+        "internal_char_typo": 588,
+        "teencode": 2261,
+        "remove_accents": 2827
+      },
+      "change_rate": 0.3691580605636268
+    },
+    {
+      "count": 11426,
+      "changed_count": 4225,
+      "operation_counts": {
+        "none": 5687,
+        "teencode": 2336,
+        "remove_accents": 2797,
+        "internal_char_typo": 606
+      },
+      "change_rate": 0.3697706984071416
+    },
+    {
+      "count": 11426,
+      "changed_count": 4203,
+      "operation_counts": {
+        "none": 5697,
+        "teencode": 2337,
+        "remove_accents": 2839,
+        "internal_char_typo": 553
+      },
+      "change_rate": 0.36784526518466654
+    },
+    {
+      "count": 11426,
+      "changed_count": 4212,
+      "operation_counts": {
+        "teencode": 2357,
+        "none": 5686,
+        "remove_accents": 2821,
+        "internal_char_typo": 562
+      },
+      "change_rate": 0.3686329424120427
+    },
+    {
+      "count": 11426,
+      "changed_count": 4310,
+      "operation_counts": {
+        "none": 5629,
+        "remove_accents": 2848,
+        "teencode": 2325,
+        "internal_char_typo": 624
+      },
+      "change_rate": 0.3772098722212498
+    },
+    {
+      "count": 11426,
+      "changed_count": 4251,
+      "operation_counts": {
+        "none": 5690,
+        "teencode": 2275,
+        "remove_accents": 2884,
+        "internal_char_typo": 577
+      },
+      "change_rate": 0.3720462103973394
+    },
+    {
+      "count": 11426,
+      "changed_count": 4214,
+      "operation_counts": {
+        "remove_accents": 2847,
+        "none": 5781,
+        "teencode": 2210,
+        "internal_char_typo": 588
+      },
+      "change_rate": 0.36880798179590407
+    },
+    {
+      "count": 11426,
+      "changed_count": 4233,
+      "operation_counts": {
+        "none": 5710,
+        "remove_accents": 2814,
+        "internal_char_typo": 582,
+        "teencode": 2320
+      },
+      "change_rate": 0.3704708559425871
+    },
+    {
+      "count": 11426,
+      "changed_count": 4248,
+      "operation_counts": {
+        "remove_accents": 2879,
+        "internal_char_typo": 577,
+        "teencode": 2241,
+        "none": 5729
+      },
+      "change_rate": 0.37178365132154734
+    },
+    {
+      "count": 11426,
+      "changed_count": 4321,
+      "operation_counts": {
+        "remove_accents": 2937,
+        "none": 5678,
+        "teencode": 2250,
+        "internal_char_typo": 561
+      },
+      "change_rate": 0.37817258883248733
+    },
+    {
+      "count": 11426,
+      "changed_count": 4222,
+      "operation_counts": {
+        "none": 5663,
+        "remove_accents": 2800,
+        "teencode": 2379,
+        "internal_char_typo": 584
+      },
+      "change_rate": 0.36950813933134957
+    },
+    {
+      "count": 11426,
+      "changed_count": 4316,
+      "operation_counts": {
+        "none": 5623,
+        "teencode": 2297,
+        "remove_accents": 2947,
+        "internal_char_typo": 559
+      },
+      "change_rate": 0.37773499037283387
+    },
+    {
+      "count": 11426,
+      "changed_count": 4302,
+      "operation_counts": {
+        "none": 5666,
+        "teencode": 2320,
+        "remove_accents": 2882,
+        "internal_char_typo": 558
+      },
+      "change_rate": 0.3765097146858043
+    },
+    {
+      "count": 11426,
+      "changed_count": 4259,
+      "operation_counts": {
+        "remove_accents": 2877,
+        "none": 5725,
+        "teencode": 2271,
+        "internal_char_typo": 553
+      },
+      "change_rate": 0.37274636793278487
+    },
+    {
+      "count": 11426,
+      "changed_count": 4241,
+      "operation_counts": {
+        "none": 5737,
+        "remove_accents": 2882,
+        "teencode": 2222,
+        "internal_char_typo": 585
+      },
+      "change_rate": 0.37117101347803255
+    },
+    {
+      "count": 11426,
+      "changed_count": 4341,
+      "operation_counts": {
+        "teencode": 2216,
+        "none": 5680,
+        "remove_accents": 2933,
+        "internal_char_typo": 597
+      },
+      "change_rate": 0.379922982671101
+    },
+    {
+      "count": 11426,
+      "changed_count": 4309,
+      "operation_counts": {
+        "none": 5662,
+        "internal_char_typo": 585,
+        "teencode": 2265,
+        "remove_accents": 2914
+      },
+      "change_rate": 0.3771223525293191
+    },
+    {
+      "count": 11426,
+      "changed_count": 4274,
+      "operation_counts": {
+        "none": 5688,
+        "internal_char_typo": 574,
+        "remove_accents": 2906,
+        "teencode": 2258
+      },
+      "change_rate": 0.37405916331174516
+    },
+    {
+      "count": 11426,
+      "changed_count": 4215,
+      "operation_counts": {
+        "none": 5751,
+        "teencode": 2235,
+        "remove_accents": 2867,
+        "internal_char_typo": 573
+      },
+      "change_rate": 0.3688955014878348
+    },
+    {
+      "count": 11426,
+      "changed_count": 4209,
+      "operation_counts": {
+        "none": 5735,
+        "internal_char_typo": 587,
+        "remove_accents": 2808,
+        "teencode": 2296
+      },
+      "change_rate": 0.36837038333625066
+    },
+    {
+      "count": 11426,
+      "changed_count": 4182,
+      "operation_counts": {
+        "none": 5759,
+        "remove_accents": 2785,
+        "teencode": 2324,
+        "internal_char_typo": 558
+      },
+      "change_rate": 0.3660073516541222
+    },
+    {
+      "count": 11426,
+      "changed_count": 4352,
+      "operation_counts": {
+        "teencode": 2328,
+        "none": 5589,
+        "remove_accents": 2885,
+        "internal_char_typo": 624
+      },
+      "change_rate": 0.3808856992823385
+    },
+    {
+      "count": 11426,
+      "changed_count": 4326,
+      "operation_counts": {
+        "none": 5678,
+        "remove_accents": 2935,
+        "teencode": 2256,
+        "internal_char_typo": 557
+      },
+      "change_rate": 0.37861018729214074
+    },
+    {
+      "count": 11426,
+      "changed_count": 4215,
+      "operation_counts": {
+        "remove_accents": 2884,
+        "none": 5731,
+        "teencode": 2279,
+        "internal_char_typo": 532
+      },
+      "change_rate": 0.3688955014878348
+    },
+    {
+      "count": 11426,
+      "changed_count": 4244,
+      "operation_counts": {
+        "teencode": 2303,
+        "none": 5703,
+        "remove_accents": 2851,
+        "internal_char_typo": 569
+      },
+      "change_rate": 0.3714335725538246
+    },
+    {
+      "count": 11426,
+      "changed_count": 4261,
+      "operation_counts": {
+        "internal_char_typo": 539,
+        "remove_accents": 2895,
+        "teencode": 2293,
+        "none": 5699
+      },
+      "change_rate": 0.37292140731664625
+    },
+    {
+      "count": 11426,
+      "changed_count": 4275,
+      "operation_counts": {
+        "none": 5704,
+        "teencode": 2279,
+        "remove_accents": 2872,
+        "internal_char_typo": 571
+      },
+      "change_rate": 0.3741466830036758
+    },
+    {
+      "count": 11426,
+      "changed_count": 4122,
+      "operation_counts": {
+        "none": 5808,
+        "teencode": 2303,
+        "remove_accents": 2804,
+        "internal_char_typo": 511
+      },
+      "change_rate": 0.3607561701382811
+    },
+    {
+      "count": 11426,
+      "changed_count": 4252,
+      "operation_counts": {
+        "remove_accents": 2855,
+        "none": 5778,
+        "internal_char_typo": 559,
+        "teencode": 2234
+      },
+      "change_rate": 0.3721337300892701
+    }
+  ],
+  "best_epoch": 28,
+  "best_selection_f1": 0.8473622923747742,
+  "best_validation_metrics": {
+    "n": 1583,
+    "labels": [
+      0,
+      1,
+      2
+    ],
+    "accuracy": 0.9431459254579911,
+    "macro_precision": 0.8802211576435036,
+    "macro_recall": 0.8241854853617174,
+    "macro_f1": 0.8473622923747742,
+    "per_class": {
+      "0": {
+        "support": 705,
+        "predicted": 719,
+        "tp": 679,
+        "fp": 40,
+        "fn": 26,
+        "precision": 0.9443671766342142,
+        "recall": 0.9631205673758865,
+        "f1": 0.9536516853932584
+      },
+      "1": {
+        "support": 73,
+        "predicted": 54,
+        "tp": 40,
+        "fp": 14,
+        "fn": 33,
+        "precision": 0.7407407407407407,
+        "recall": 0.547945205479452,
+        "f1": 0.6299212598425197
+      },
+      "2": {
+        "support": 805,
+        "predicted": 810,
+        "tp": 774,
+        "fp": 36,
+        "fn": 31,
+        "precision": 0.9555555555555556,
+        "recall": 0.9614906832298137,
+        "f1": 0.958513931888545
+      }
+    },
+    "task_id": "vsfc_sentiment",
+    "split": "validation",
+    "selection_f1": 0.8473622923747742,
+    "selection_metric": "fixed_label_macro_f1"
+  },
+  "elapsed_seconds": 744.4038443565369,
+  "peak_gpu_memory_allocated_bytes": 2503511040,
+  "peak_gpu_memory_reserved_bytes": 2833252352,
+  "status": "completed",
+  "checkpoint_sha256": "21f47f1aaa7973608ab4fbb2fdda7e25059f6f2b946158a9f1bb5efd2545a94b"
+}

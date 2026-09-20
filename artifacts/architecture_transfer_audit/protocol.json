@@ -1,0 +1,64 @@
+{
+  "protocol": "architecture-transfer-audit-e13-e15-v1",
+  "created_at": "2026-09-12T12:18:38Z",
+  "source_hash": "728043e1d8e3df111dfe78c2ecfac37cc4fbb3be21eefb140a9695651fd504ee",
+  "families": [
+    "e13",
+    "e15"
+  ],
+  "variants": [
+    "centered",
+    "uncentered"
+  ],
+  "tasks": [
+    "vsfc_sentiment",
+    "vsfc_topic",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "modes": [
+    "native",
+    "branch_off",
+    "fp32_fusion"
+  ],
+  "micro_batch_size": 16,
+  "telemetry_rows": 128,
+  "include_test": false,
+  "optimizer_step": false,
+  "label_overlay": {
+    "absa_raw_integer_labels": {
+      "0": "absent",
+      "1": "positive",
+      "2": "negative",
+      "3": "neutral"
+    },
+    "absa_source_loader_note": "source file integer codes are preserved verbatim in gold; names are the requested audit overlay",
+    "visfd_others": {
+      "raw_0": "absent",
+      "raw_4": "present_detection_only",
+      "model_0": "absent",
+      "model_1": "present_detection_only"
+    },
+    "numeric_gold_unchanged": true
+  },
+  "gpu_snapshot": {
+    "0": {
+      "free_mib": 40352,
+      "used_mib": 5107
+    },
+    "1": {
+      "free_mib": 32641,
+      "used_mib": 12817
+    },
+    "2": {
+      "free_mib": 31842,
+      "used_mib": 13616
+    },
+    "3": {
+      "free_mib": 15485,
+      "used_mib": 29973
+    }
+  },
+  "protocol_comparability": "protocol_comparability.csv/json"
+}

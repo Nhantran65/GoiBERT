@@ -1,0 +1,110 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v4",
+ "arm": "P_web",
+ "arm_dir": "P_web",
+ "steps": 3815,
+ "global_batch": 128,
+ "micro": 32,
+ "accum": 4,
+ "seq_len": 512,
+ "tokens_scheduled": 250019840,
+ "token_budget": 250000000,
+ "budget_error_batches": 0.302734375,
+ "lr": 5e-05,
+ "betas": [
+  0.9,
+  0.98
+ ],
+ "eps": 1e-06,
+ "weight_decay": 0.01,
+ "clip": 1.0,
+ "schedule": "WSD: warmup 6 %, constant to 70 %, linear decay to 0 (C_inf stage 3 = decay stage)",
+ "mask": "15 % module masking, 80/10/10, no special/pad, CPU generator seeded by (step, micro)",
+ "seed": 42,
+ "attn": "sdpa",
+ "model_checks": {
+  "architecture": [
+   "ModernBertForMaskedLM"
+  ],
+  "layers": 22,
+  "hidden": 768,
+  "heads": 12,
+  "vocab": 256000,
+  "max_position_embeddings": 8192,
+  "tie_word_embeddings": true,
+  "missing_keys": [],
+  "unexpected_keys": [],
+  "mismatched_keys": [],
+  "mlm_head_pretrained": true,
+  "decoder_tied_to_embeddings": true,
+  "parameters_total": 307786240,
+  "parameters_non_embedding": 111178240,
+  "weights_sha256": "8ea64ec1ea4eb8fca0fc14b69a2ae571de6bfbc25fd214bb932dd4aba6a3a04e"
+ },
+ "arm_manifest": {
+  "tokens_hash": "2766f8b9d20af31ea54a8dcc858d727228af2ad37aed18feb44778dfb445c267",
+  "order_hash": "f4bfd6bff8556857b95d5c0a88b098d417de87b206b573c0b3cf69a46503d838",
+  "multiset_hash": null,
+  "sequence_counts_by_group": {
+   "general": 463904,
+   "wiki": 24416
+  },
+  "informal_token_share": 0.0,
+  "license": "no NC data: general v3 pool + Wikipedia v2 (CC BY-SA 4.0)",
+  "research_only": false
+ },
+ "holdouts": {
+  "a_hlpt": {
+   "shape": [
+    4000,
+    512
+   ],
+   "sha256": "1cc4ff98b8cae54f94de7a4286f3bcb75780ad315b62a20af4a5b54c3e0dd9bb"
+  },
+  "b_fineweb2": {
+   "shape": [
+    4000,
+    512
+   ],
+   "sha256": "54aff97daf7d4d34d26c044c48c2265d6eb0f44ba2c80cfe61b810b053d41329"
+  },
+  "c_visobert": {
+   "shape": [
+    73,
+    512
+   ],
+   "sha256": "acf725ddbb39780ec9fc52c5544fa7e13e2e09f39d466242c36144b97246e67e"
+  },
+  "d_v3review": {
+   "shape": [
+    392,
+    512
+   ],
+   "sha256": "9945c8a53cd8bf0c0830b8f5c30e81cc95616c383609716c0dc45f86b1b80499"
+  }
+ },
+ "license": "no NC data (general v3 pool + Wikipedia v2)",
+ "research_only": false,
+ "source_hash": "5ce6fb003ffb3d10e8efb61b5e667add2c909627ea53d72d462a2bf9295823b2",
+ "runtime": {
+  "python": "3.12.3",
+  "hostname": "server-ai-new-02.vntt.lan",
+  "cuda_visible_devices": "0",
+  "torch_threads": null,
+  "torch": "2.6.0+cu124",
+  "transformers": "4.49.0",
+  "cuda": "12.4",
+  "device_name": "NVIDIA L40S"
+ },
+ "argv": [
+  "scripts/mmbert_vi_cpt_pilot/v4/cpt_train_v4.py",
+  "--arm",
+  "P_web",
+  "--device",
+  "cuda:0",
+  "--micro",
+  "32",
+  "--resume"
+ ],
+ "started_at": "2026-09-19T16:45:43Z"
+}

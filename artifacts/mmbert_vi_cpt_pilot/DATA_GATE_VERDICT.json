@@ -1,0 +1,45 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v1",
+ "created_at": "2026-09-19T12:05:00Z",
+ "stage": "data_gate_section_3",
+ "verdict": "STOP_AT_DATA_GATE",
+ "reason": "manual audit of the register bucket failed: user-voice opinion/review precision 0.41 (bins 9-10) and 0.33 (bins 7-8) vs the >= 0.70 gate; HPLT web-register OP/re flags on Vietnamese mostly capture SEO/rewritten, informational and religious text",
+ "gate": {
+  "pool_tokens_unique": 3269873509,
+  "pool_tokens_arm_usable": 2673732903,
+  "pool_tokens_ge_1_2B": true,
+  "register_tokens": 367401674,
+  "register_tokens_ge_240M": true,
+  "register_tokens_ge_50M": true,
+  "general_tokens_bins_9_10": 1588719574,
+  "bin8_general_tokens": 626247593,
+  "bin7_general_tokens_unused": 677372404,
+  "wiki_tokens": 91363372,
+  "audit_opinion_precision_bin910": 0.41,
+  "audit_opinion_precision_bin78": 0.33,
+  "audit_opinion_precision_ge_70": false,
+  "audit_general_real_vietnamese_ge_90": true,
+  "audit_general_boilerplate_le_10": true,
+  "audit_mt_flag_correct_ge_70": true,
+  "all_ok": false
+ },
+ "work_completed_before_verdict": {
+  "preflight_all_ok": true,
+  "arms_materialized": ["P_web", "P_mix", "C_mix"],
+  "cpt_started": true,
+  "cpt_stopped_at_step_approx": 220,
+  "cpt_steps_total": 3815,
+  "finetunes_run": 0
+ },
+ "artifacts": {
+  "data_audit_report": "artifacts/mmbert_vi_cpt_pilot/data_audit/audit_report.json",
+  "preflight": "artifacts/mmbert_vi_cpt_pilot/preflight.json",
+  "arms_manifest": "artifacts/mmbert_vi_cpt_pilot/arms/arms_manifest.json",
+  "pool_manifest": "data/mmbert_vi_cpt_pilot/pool/dedup_manifest.json",
+  "tokenize_manifest": "data/mmbert_vi_cpt_pilot/pool/tokenize_manifest.json",
+  "wiki_manifest": "data/mmbert_vi_cpt_pilot/wiki/wiki_manifest.json",
+  "holdout_manifest": "artifacts/mmbert_vi_cpt_pilot/holdouts/holdout_manifest.json",
+  "report": "docs/MMBERT_VI_CPT_PILOT_RESULT.md"
+ },
+ "next_step_requires_root_decision": ["re-define the register selection signal and re-audit", "or run Q1 only (P_web arm) as a separate, newly approved plan"]
+}

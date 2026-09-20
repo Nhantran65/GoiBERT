@@ -1,0 +1,243 @@
+{
+ "protocol": "CafeBERT-BamiBERT-repdistill-pilot-v2",
+ "stage": "finetune_validation_only",
+ "arm": "G",
+ "task_id": "absa_restaurant",
+ "seed": 42,
+ "learning_rate": 5e-05,
+ "epochs": 30,
+ "effective_batch_size": 32,
+ "micro_batch_size": 32,
+ "gradient_accumulation_steps": 1,
+ "max_length": 256,
+ "precision": "bf16",
+ "attention_implementation": "sdpa",
+ "weight_decay": 0.01,
+ "betas": [
+  0.9,
+  0.999
+ ],
+ "adamw_epsilon": 1e-08,
+ "warmup_fraction": 0.1,
+ "warmup_steps": 660,
+ "total_steps": 6600,
+ "gradient_clip_norm": 1.0,
+ "loss": "plain_cross_entropy",
+ "head": "CLS -> dropout0.1 -> dense768 -> tanh -> dropout0.1 -> logits (E14)",
+ "no_nc_kd_llrd_composite": true,
+ "include_test": false,
+ "smoke": null,
+ "encoder_dir": "artifacts/cafe_bami_repdistill_pilot/cpt/G/hf_encoder",
+ "encoder_sha256": "81be3bef0a85d6f1de6e6da0822bd5b8f94b597c5223b16311d12f67117ae5cd",
+ "model": {
+  "backbone": "Qualcomm-AI-Research/BamiBERT",
+  "hidden_size": 768,
+  "num_hidden_layers": 12,
+  "num_attention_heads": 12,
+  "intermediate_size": 3072,
+  "head_hidden_size": 768,
+  "head_dropout": 0.1,
+  "num_labels": 48,
+  "num_aspects": 12,
+  "aspect_class_counts": [
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4
+  ],
+  "total_parameters": 102988080,
+  "trainable_parameters": 102988080
+ },
+ "head_init_sha256": "214c17600bcf4e6bb1bea0d0fcfbf7269f3702501011bc8b6362cdfc36e4f0b1",
+ "data_provenance": {
+  "source_files": [
+   "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+   "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+  ],
+  "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+  "source_file_hashes": {
+   "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+   "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202"
+  },
+  "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+ },
+ "task_metadata": {
+  "task_id": "absa_restaurant",
+  "source_files": [
+   "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+   "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+  ],
+  "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+  "include_test": false,
+  "pair_scored_aspects": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "slot_label_names": [
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ],
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ],
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ],
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ],
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ],
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ],
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ],
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ],
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ],
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ],
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ],
+   [
+    "absent",
+    "negative",
+    "neutral",
+    "positive"
+   ]
+  ]
+ },
+ "train_count": 7028,
+ "validation_count": 771,
+ "num_aspects": 12,
+ "aspect_class_counts": [
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4
+ ],
+ "source_hash": "ec17835b3b2b66ac2947ac4bf61692596fe9be78e28e306aa7a681eb5b537683",
+ "runtime": {
+  "python": "3.12.3",
+  "hostname": "server-ai-new-02.vntt.lan",
+  "cuda_visible_devices": "0",
+  "cublas_workspace_config": ":4096:8",
+  "torch": "2.6.0+cu124",
+  "transformers": "4.49.0",
+  "cuda": "12.4",
+  "device_name": "NVIDIA L40S"
+ },
+ "gpu_snapshot_at_start": {
+  "0": {
+   "free_mib": 29722,
+   "used_mib": 15736,
+   "util_pct": 23
+  },
+  "1": {
+   "free_mib": 30343,
+   "used_mib": 15115,
+   "util_pct": 84
+  },
+  "2": {
+   "free_mib": 45438,
+   "used_mib": 20,
+   "util_pct": 0
+  },
+  "3": {
+   "free_mib": 45439,
+   "used_mib": 20,
+   "util_pct": 0
+  }
+ },
+ "length_stats": {
+  "train_count": 7028,
+  "max_tokens": 115,
+  "p50_tokens": 20.0,
+  "p95_tokens": 44.0,
+  "p99_tokens": 60.0,
+  "truncation_rate_256": 0.0,
+  "truncation_rate_512": 0.0,
+  "max_length": 256,
+  "warning_over_512": false
+ },
+ "started_at": "2026-09-18T16:38:34Z",
+ "argv": [
+  "scripts/cafe_bami_repdistill_pilot/finetune.py",
+  "--arm",
+  "G",
+  "--task",
+  "absa_restaurant",
+  "--device",
+  "cuda:0",
+  "--micro-batch",
+  "32"
+ ],
+ "pid": 2292082
+}

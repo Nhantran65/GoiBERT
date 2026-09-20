@@ -1,0 +1,50 @@
+{
+  "protocol": "E9-label-aware-attention-screening-v1",
+  "revision": "e9-20260910-r1",
+  "hypothesis": "One learned token-attention query per class/aspect can provide task-specific evidence while retaining CLS context.",
+  "source_backbone": "models/goiturn-s-gd",
+  "encoder": {
+    "initialization": "fresh RobertaModel.from_pretrained(goiturn-s-gd)",
+    "trainable": true,
+    "hidden_size": 384,
+    "num_hidden_layers": 10
+  },
+  "head": {
+    "name": "label_aware_attention",
+    "query_size": 384,
+    "query_initializer": "normal(std=0.02)",
+    "attention": "softmax_fp32(q dot h / sqrt(384)) over attention-valid non-special tokens",
+    "empty_content_fallback": "CLS as sole token",
+    "readout": "(CLS + weighted_context) / 2",
+    "dense": "dropout0.1 -> dense384 -> tanh -> dropout0.1",
+    "output": "reuse E1 output Linear rows; VSFC one row per query, ABSA contiguous rows per aspect"
+  },
+  "recipe": {
+    "seed": 42,
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32,
+    "max_length": 256,
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "optimizer": "E7 AdamW layer-wise learning-rate decay",
+    "llrd_gamma": 0.8,
+    "llrd_num_layers": 10,
+    "noise_consistency_temperature": 1.0,
+    "include_test": false
+  },
+  "tasks": {
+    "vsfc_sentiment": {"learning_rate": 1e-5, "consistency_lambda": 0.1},
+    "vsfc_topic": {"learning_rate": 1e-5, "consistency_lambda": 0.5},
+    "visfd": {"learning_rate": 1e-4, "consistency_lambda": 0.5},
+    "absa_restaurant": {"learning_rate": 1e-4, "consistency_lambda": 0.1},
+    "absa_hotel": {"learning_rate": 1e-4, "consistency_lambda": 0.1}
+  },
+  "selection": {
+    "metric": "selection_f1",
+    "validation_only": true,
+    "multi_seed": false,
+    "test": false,
+    "screening_gate": "at least 4/5 increases, no decrease over 0.3pp, at least 2 increases of 0.3pp"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "artifact_files": [
+    "absa_slot_error_breakdown.csv",
+    "domain_summary.csv",
+    "e11_flip_reanalysis.json",
+    "metric_recompute.json",
+    "provenance.json",
+    "sample_review.csv",
+    "sample_review.json",
+    "sample_review.md",
+    "slice_adjusted_common_support.csv",
+    "slice_raw.csv",
+    "slice_strata.csv",
+    "summary.json",
+    "train_thresholds.json",
+    "train_unit_frequency.csv",
+    "validation_features.csv",
+    "validation_units.csv"
+  ],
+  "domain_summary": [
+    {
+      "domain": "vsfc",
+      "error_burden": 0.08022741629816804,
+      "error_events": 254,
+      "gold_positive_slots": 3166,
+      "n": 1583,
+      "row_error_rate": 0.08022741629816804,
+      "scope": "shared text; sentiment+topic outcomes"
+    },
+    {
+      "domain": "visfd",
+      "error_burden": 0.2674909529553679,
+      "error_events": 887,
+      "gold_positive_slots": 3316,
+      "n": 1112,
+      "row_error_rate": 0.5305755395683454,
+      "scope": "visfd"
+    },
+    {
+      "domain": "absa_restaurant",
+      "error_burden": 0.4311490978157645,
+      "error_events": 454,
+      "gold_positive_slots": 1053,
+      "n": 771,
+      "row_error_rate": 0.41245136186770426,
+      "scope": "absa_restaurant"
+    },
+    {
+      "domain": "absa_hotel",
+      "error_burden": 0.4637127578304049,
+      "error_events": 607,
+      "gold_positive_slots": 1309,
+      "n": 795,
+      "row_error_rate": 0.4641509433962264,
+      "scope": "absa_hotel"
+    }
+  ],
+  "domains": [
+    "vsfc",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "limitations": [
+    "validation-only",
+    "single E8 seed42",
+    "descriptive association",
+    "rarity and fragmentation remain confounded",
+    "accent absence is a proxy with ambiguity, not an error label"
+  ],
+  "manual_sample_count": 60,
+  "manual_sample_seed": 12042,
+  "protocol": "E12-surface-error-audit-v1",
+  "selection_metrics": {
+    "absa_hotel": 0.7304907481898633,
+    "absa_restaurant": 0.7127659574468085,
+    "visfd": 0.8244205423420694,
+    "vsfc_sentiment": 0.8516044280030853,
+    "vsfc_topic": 0.8036778903266237
+  },
+  "status": "completed",
+  "tasks": [
+    "vsfc_sentiment",
+    "vsfc_topic",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ]
+}

@@ -1,0 +1,80 @@
+[absa_restaurant K=1 beta=0.0] parity {'max_abs_slot_vs_manualK1': 0.0, 'max_abs_manualK1_vs_native_bf16': 0.047088623046875}
+  step 0 loss 0.1995 |delta| 1.015 |qb| 0.309
+  step 100 loss 0.2053 |delta| 3.450 |qb| 9.244
+  step 200 loss 0.1370 |delta| 5.432 |qb| 14.970
+  step 300 loss 0.1467 |delta| 6.320 |qb| 17.536
+  step 400 loss 0.1534 |delta| 7.536 |qb| 20.133
+  step 499 loss 0.1083 |delta| 8.383 |qb| 22.182
+[absa_restaurant K=1 beta=0.0] valF1=69.731 multi_missed=16.7 usage=[9252]
+  {"A_first|A_correct": 42.5, "A_first|A_present": 74.0, "A_first|B_correct": 40.0, "A_first|B_present": 66.0, "A_first|both_correct": 12.0, "B_first|A_correct": 44.0, "B_first|A_present": 69.0, "B_first|B_correct": 40.5, "B_first|B_present": 70.0, "B_first|both_correct": 14.0, "A+3B|A_correct": 30.0, "A+3B|A_present": 62.0, "A+3B|B_correct": 59.5, "A+3B|B_present": 81.0, "A+3B|both_correct": 17.5, "A_alone|A_correct": 66.5}
+  partition null
+[absa_restaurant K=2 beta=0.0] parity {'max_abs_slot_vs_manualK1': 3.814697265625e-06, 'max_abs_manualK1_vs_native_bf16': 0.047088623046875}
+  step 0 loss 0.1994 |delta| 1.422 |qb| 0.437
+  step 100 loss 0.1614 |delta| 5.951 |qb| 15.477
+  step 200 loss 0.1053 |delta| 7.474 |qb| 20.306
+  step 300 loss 0.1057 |delta| 8.061 |qb| 23.272
+  step 400 loss 0.1242 |delta| 9.188 |qb| 26.993
+  step 499 loss 0.0992 |delta| 9.512 |qb| 29.167
+[absa_restaurant K=2 beta=0.0] valF1=69.65 multi_missed=16.9 usage=[4756, 4496]
+  {"A_first|A_correct": 56.0, "A_first|A_present": 79.0, "A_first|B_correct": 58.0, "A_first|B_present": 76.5, "A_first|both_correct": 30.5, "B_first|A_correct": 56.0, "B_first|A_present": 78.0, "B_first|B_correct": 52.5, "B_first|B_present": 77.0, "B_first|both_correct": 30.5, "A+3B|A_correct": 47.5, "A+3B|A_present": 71.5, "A+3B|B_correct": 67.5, "A+3B|B_present": 84.0, "A+3B|both_correct": 30.0, "A_alone|A_correct": 68.5}
+  partition null
+[absa_restaurant K=2 beta=1.0] parity {'max_abs_slot_vs_manualK1': 4.589557647705078e-06, 'max_abs_manualK1_vs_native_bf16': 0.047088623046875}
+  step 0 loss 0.1992 |delta| 1.425 |qb| 0.438
+  step 100 loss 0.1400 |delta| 3.902 |qb| 10.181
+  step 200 loss 0.1004 |delta| 4.897 |qb| 13.207
+  step 300 loss 0.1105 |delta| 5.685 |qb| 15.820
+  step 400 loss 0.1277 |delta| 6.739 |qb| 19.069
+  step 499 loss 0.0925 |delta| 7.232 |qb| 21.229
+[absa_restaurant K=2 beta=1.0] valF1=70.336 multi_missed=17.3 usage=[4575, 4677]
+  {"A_first|A_correct": 58.5, "A_first|A_present": 79.5, "A_first|B_correct": 59.5, "A_first|B_present": 76.5, "A_first|both_correct": 32.5, "B_first|A_correct": 59.0, "B_first|A_present": 79.0, "B_first|B_correct": 54.0, "B_first|B_present": 78.0, "B_first|both_correct": 32.5, "A+3B|A_correct": 48.0, "A+3B|A_present": 70.5, "A+3B|B_correct": 66.5, "A+3B|B_present": 83.0, "A+3B|both_correct": 31.0, "A_alone|A_correct": 68.5}
+  partition {"gate_mass_on_selected_slot|A_tokens": 0.6, "gate_mass_on_selected_slot|B_tokens": 0.386}
+[absa_restaurant K=3 beta=1.0] parity {'max_abs_slot_vs_manualK1': 3.337860107421875e-06, 'max_abs_manualK1_vs_native_bf16': 0.047088623046875}
+  step 0 loss 0.1989 |delta| 1.787 |qb| 0.536
+  step 100 loss 0.1140 |delta| 4.392 |qb| 11.315
+  step 200 loss 0.0940 |delta| 5.639 |qb| 15.110
+  step 300 loss 0.0999 |delta| 6.669 |qb| 18.443
+  step 400 loss 0.1390 |delta| 7.781 |qb| 21.532
+  step 499 loss 0.0623 |delta| 8.512 |qb| 23.580
+[absa_restaurant K=3 beta=1.0] valF1=70.506 multi_missed=17.9 usage=[1805, 3003, 4444]
+  {"A_first|A_correct": 60.0, "A_first|A_present": 80.0, "A_first|B_correct": 59.0, "A_first|B_present": 75.5, "A_first|both_correct": 33.0, "B_first|A_correct": 58.5, "B_first|A_present": 77.0, "B_first|B_correct": 52.5, "B_first|B_present": 75.0, "B_first|both_correct": 30.5, "A+3B|A_correct": 50.5, "A+3B|A_present": 73.5, "A+3B|B_correct": 68.5, "A+3B|B_present": 84.5, "A+3B|both_correct": 33.5, "A_alone|A_correct": 68.0}
+  partition {"gate_mass_on_selected_slot|A_tokens": 0.502, "gate_mass_on_selected_slot|B_tokens": 0.297}
+[absa_hotel K=1 beta=0.0] parity {'max_abs_slot_vs_manualK1': 0.0, 'max_abs_manualK1_vs_native_bf16': 0.027775049209594727}
+  step 0 loss 0.0653 |delta| 1.021 |qb| 0.308
+  step 100 loss 0.0652 |delta| 3.810 |qb| 9.804
+  step 200 loss 0.0695 |delta| 6.290 |qb| 15.032
+  step 300 loss 0.0548 |delta| 7.263 |qb| 17.130
+  step 400 loss 0.0715 |delta| 8.261 |qb| 19.076
+  step 499 loss 0.0643 |delta| 9.210 |qb| 21.445
+[absa_hotel K=1 beta=0.0] valF1=71.248 multi_missed=24.7 usage=[27030]
+  {"A_first|A_correct": 47.0, "A_first|A_present": 57.0, "A_first|B_correct": 46.0, "A_first|B_present": 59.5, "A_first|both_correct": 18.5, "B_first|A_correct": 47.5, "B_first|A_present": 54.0, "B_first|B_correct": 50.0, "B_first|B_present": 62.0, "B_first|both_correct": 18.0, "A+3B|A_correct": 29.5, "A+3B|A_present": 45.5, "A+3B|B_correct": 64.5, "A+3B|B_present": 75.5, "A+3B|both_correct": 16.0, "A_alone|A_correct": 59.0}
+  partition null
+[absa_hotel K=2 beta=0.0] parity {'max_abs_slot_vs_manualK1': 2.86102294921875e-06, 'max_abs_manualK1_vs_native_bf16': 0.027775049209594727}
+  step 0 loss 0.0652 |delta| 1.421 |qb| 0.435
+  step 100 loss 0.0494 |delta| 5.882 |qb| 15.204
+  step 200 loss 0.0639 |delta| 7.006 |qb| 20.393
+  step 300 loss 0.0590 |delta| 7.254 |qb| 22.784
+  step 400 loss 0.0601 |delta| 7.630 |qb| 25.338
+  step 499 loss 0.0563 |delta| 8.084 |qb| 27.711
+[absa_hotel K=2 beta=0.0] valF1=71.505 multi_missed=24.5 usage=[11669, 15361]
+  {"A_first|A_correct": 54.0, "A_first|A_present": 61.5, "A_first|B_correct": 64.0, "A_first|B_present": 68.5, "A_first|both_correct": 30.5, "B_first|A_correct": 55.0, "B_first|A_present": 58.0, "B_first|B_correct": 63.5, "B_first|B_present": 71.5, "B_first|both_correct": 30.5, "A+3B|A_correct": 48.0, "A+3B|A_present": 55.0, "A+3B|B_correct": 68.5, "A+3B|B_present": 73.0, "A+3B|both_correct": 30.5, "A_alone|A_correct": 56.5}
+  partition null
+[absa_hotel K=2 beta=1.0] parity {'max_abs_slot_vs_manualK1': 3.2186508178710938e-06, 'max_abs_manualK1_vs_native_bf16': 0.027775049209594727}
+  step 0 loss 0.0651 |delta| 1.422 |qb| 0.437
+  step 100 loss 0.0515 |delta| 3.482 |qb| 9.633
+  step 200 loss 0.0595 |delta| 4.271 |qb| 13.184
+  step 300 loss 0.0572 |delta| 4.504 |qb| 15.456
+  step 400 loss 0.0583 |delta| 5.104 |qb| 17.872
+  step 499 loss 0.0548 |delta| 5.571 |qb| 19.948
+[absa_hotel K=2 beta=1.0] valF1=71.511 multi_missed=24.6 usage=[12963, 14067]
+  {"A_first|A_correct": 54.0, "A_first|A_present": 62.0, "A_first|B_correct": 64.0, "A_first|B_present": 69.0, "A_first|both_correct": 32.5, "B_first|A_correct": 53.0, "B_first|A_present": 55.5, "B_first|B_correct": 64.5, "B_first|B_present": 73.0, "B_first|both_correct": 30.5, "A+3B|A_correct": 43.5, "A+3B|A_present": 52.0, "A+3B|B_correct": 69.0, "A+3B|B_present": 73.5, "A+3B|both_correct": 27.5, "A_alone|A_correct": 58.5}
+  partition {"gate_mass_on_selected_slot|A_tokens": 0.608, "gate_mass_on_selected_slot|B_tokens": 0.394}
+[absa_hotel K=3 beta=1.0] parity {'max_abs_slot_vs_manualK1': 2.5033950805664062e-06, 'max_abs_manualK1_vs_native_bf16': 0.027775049209594727}
+  step 0 loss 0.0649 |delta| 1.787 |qb| 0.535
+  step 100 loss 0.0442 |delta| 4.096 |qb| 11.480
+  step 200 loss 0.0575 |delta| 4.748 |qb| 14.459
+  step 300 loss 0.0534 |delta| 4.930 |qb| 16.559
+  step 400 loss 0.0580 |delta| 5.433 |qb| 18.969
+  step 499 loss 0.0542 |delta| 5.889 |qb| 21.316
+[absa_hotel K=3 beta=1.0] valF1=71.74 multi_missed=23.8 usage=[7125, 11238, 8667]
+  {"A_first|A_correct": 53.0, "A_first|A_present": 61.5, "A_first|B_correct": 64.0, "A_first|B_present": 70.0, "A_first|both_correct": 30.5, "B_first|A_correct": 55.0, "B_first|A_present": 58.0, "B_first|B_correct": 62.5, "B_first|B_present": 70.0, "B_first|both_correct": 31.0, "A+3B|A_correct": 50.0, "A+3B|A_present": 59.0, "A+3B|B_correct": 69.5, "A+3B|B_present": 75.0, "A+3B|both_correct": 30.0, "A_alone|A_correct": 58.5}
+  partition {"gate_mass_on_selected_slot|A_tokens": 0.441, "gate_mass_on_selected_slot|B_tokens": 0.261}

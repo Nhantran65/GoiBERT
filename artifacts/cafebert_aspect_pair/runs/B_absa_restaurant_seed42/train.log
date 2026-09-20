@@ -1,0 +1,155 @@
+[B] start lr=2e-05 epochs=30 groups/epoch=220 micro=64 steps=6600 warmup=660 train_pairs=84336 val_pairs=9252 device=cuda:3 head_init=8d1ceb774b50
+You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:683.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[B] epoch 1 group 55/220 loss 1.0659 1.07s/group eta_epoch 2.9 min
+[B] epoch 1 group 110/220 loss 0.7644 1.07s/group eta_epoch 2.0 min
+[B] epoch 1 group 165/220 loss 0.6478 1.08s/group eta_epoch 1.0 min
+[B] epoch 1 group 220/220 loss 0.5635 1.07s/group eta_epoch 0.0 min
+[B] epoch  1 loss 0.5635 val_f1 40.77 best 40.77@1 (train 236s, val 7s, order 78aa723c) *
+[B] epoch 2 group 55/220 loss 0.2416 1.07s/group eta_epoch 2.9 min
+[B] epoch 2 group 110/220 loss 0.2222 1.07s/group eta_epoch 2.0 min
+[B] epoch 2 group 165/220 loss 0.2069 1.07s/group eta_epoch 1.0 min
+[B] epoch 2 group 220/220 loss 0.1968 1.06s/group eta_epoch 0.0 min
+[B] epoch  2 loss 0.1968 val_f1 69.92 best 69.92@2 (train 233s, val 7s, order d88ffded) *
+[B] epoch 3 group 55/220 loss 0.1369 1.07s/group eta_epoch 2.9 min
+[B] epoch 3 group 110/220 loss 0.1345 1.07s/group eta_epoch 2.0 min
+[B] epoch 3 group 165/220 loss 0.1323 1.06s/group eta_epoch 1.0 min
+[B] epoch 3 group 220/220 loss 0.1324 1.06s/group eta_epoch 0.0 min
+[B] epoch  3 loss 0.1324 val_f1 73.57 best 73.57@3 (train 234s, val 7s, order 9a65abca) *
+[B] epoch 4 group 55/220 loss 0.1027 1.07s/group eta_epoch 3.0 min
+[B] epoch 4 group 110/220 loss 0.1048 1.07s/group eta_epoch 2.0 min
+[B] epoch 4 group 165/220 loss 0.1036 1.06s/group eta_epoch 1.0 min
+[B] epoch 4 group 220/220 loss 0.1041 1.06s/group eta_epoch 0.0 min
+[B] epoch  4 loss 0.1041 val_f1 73.48 best 73.57@3 (train 234s, val 7s, order b064e5c0)
+[B] epoch 5 group 55/220 loss 0.0792 1.08s/group eta_epoch 3.0 min
+[B] epoch 5 group 110/220 loss 0.0776 1.08s/group eta_epoch 2.0 min
+[B] epoch 5 group 165/220 loss 0.0766 1.07s/group eta_epoch 1.0 min
+[B] epoch 5 group 220/220 loss 0.0767 1.07s/group eta_epoch 0.0 min
+[B] epoch  5 loss 0.0767 val_f1 75.45 best 75.45@5 (train 236s, val 7s, order 25c9b8db) *
+[B] epoch 6 group 55/220 loss 0.0585 1.07s/group eta_epoch 2.9 min
+[B] epoch 6 group 110/220 loss 0.0588 1.08s/group eta_epoch 2.0 min
+[B] epoch 6 group 165/220 loss 0.0600 1.07s/group eta_epoch 1.0 min
+[B] epoch 6 group 220/220 loss 0.0608 1.07s/group eta_epoch 0.0 min
+[B] epoch  6 loss 0.0608 val_f1 72.99 best 75.45@5 (train 234s, val 7s, order ab27cf99)
+[B] epoch 7 group 55/220 loss 0.0390 1.06s/group eta_epoch 2.9 min
+[B] epoch 7 group 110/220 loss 0.0409 1.06s/group eta_epoch 1.9 min
+[B] epoch 7 group 165/220 loss 0.0433 1.06s/group eta_epoch 1.0 min
+[B] epoch 7 group 220/220 loss 0.0446 1.06s/group eta_epoch 0.0 min
+[B] epoch  7 loss 0.0446 val_f1 74.90 best 75.45@5 (train 233s, val 7s, order 786a87e6)
+[B] epoch 8 group 55/220 loss 0.0329 1.06s/group eta_epoch 2.9 min
+[B] epoch 8 group 110/220 loss 0.0356 1.05s/group eta_epoch 1.9 min
+[B] epoch 8 group 165/220 loss 0.0365 1.06s/group eta_epoch 1.0 min
+[B] epoch 8 group 220/220 loss 0.0365 1.06s/group eta_epoch 0.0 min
+[B] epoch  8 loss 0.0365 val_f1 75.46 best 75.46@8 (train 234s, val 7s, order f4967ee7) *
+[B] epoch 9 group 55/220 loss 0.0273 1.07s/group eta_epoch 2.9 min
+[B] epoch 9 group 110/220 loss 0.0261 1.06s/group eta_epoch 1.9 min
+[B] epoch 9 group 165/220 loss 0.0276 1.06s/group eta_epoch 1.0 min
+[B] epoch 9 group 220/220 loss 0.0276 1.06s/group eta_epoch 0.0 min
+[B] epoch  9 loss 0.0276 val_f1 75.63 best 75.63@9 (train 233s, val 7s, order 4b005e49) *
+[B] epoch 10 group 55/220 loss 0.0191 1.08s/group eta_epoch 3.0 min
+[B] epoch 10 group 110/220 loss 0.0224 1.08s/group eta_epoch 2.0 min
+[B] epoch 10 group 165/220 loss 0.0228 1.07s/group eta_epoch 1.0 min
+[B] epoch 10 group 220/220 loss 0.0240 1.07s/group eta_epoch 0.0 min
+[B] epoch 10 loss 0.0240 val_f1 74.75 best 75.63@9 (train 236s, val 7s, order 80a06600)
+[B] epoch 11 group 55/220 loss 0.0197 1.06s/group eta_epoch 2.9 min
+[B] epoch 11 group 110/220 loss 0.0205 1.07s/group eta_epoch 2.0 min
+[B] epoch 11 group 165/220 loss 0.0197 1.07s/group eta_epoch 1.0 min
+[B] epoch 11 group 220/220 loss 0.0191 1.07s/group eta_epoch 0.0 min
+[B] epoch 11 loss 0.0191 val_f1 74.58 best 75.63@9 (train 236s, val 7s, order 9f4d2ad3)
+[B] epoch 12 group 55/220 loss 0.0136 1.07s/group eta_epoch 2.9 min
+[B] epoch 12 group 110/220 loss 0.0147 1.07s/group eta_epoch 2.0 min
+[B] epoch 12 group 165/220 loss 0.0152 1.07s/group eta_epoch 1.0 min
+[B] epoch 12 group 220/220 loss 0.0161 1.07s/group eta_epoch 0.0 min
+[B] epoch 12 loss 0.0161 val_f1 74.47 best 75.63@9 (train 236s, val 7s, order 1a7a3751)
+[B] epoch 13 group 55/220 loss 0.0112 1.03s/group eta_epoch 2.8 min
+[B] epoch 13 group 110/220 loss 0.0108 1.06s/group eta_epoch 1.9 min
+[B] epoch 13 group 165/220 loss 0.0117 1.06s/group eta_epoch 1.0 min
+[B] epoch 13 group 220/220 loss 0.0121 1.06s/group eta_epoch 0.0 min
+[B] epoch 13 loss 0.0121 val_f1 75.13 best 75.63@9 (train 233s, val 7s, order bedea3b7)
+[B] epoch 14 group 55/220 loss 0.0123 1.07s/group eta_epoch 2.9 min
+[B] epoch 14 group 110/220 loss 0.0104 1.08s/group eta_epoch 2.0 min
+[B] epoch 14 group 165/220 loss 0.0106 1.07s/group eta_epoch 1.0 min
+[B] epoch 14 group 220/220 loss 0.0107 1.07s/group eta_epoch 0.0 min
+[B] epoch 14 loss 0.0107 val_f1 73.75 best 75.63@9 (train 235s, val 7s, order 03d4fcaa)
+[B] epoch 15 group 55/220 loss 0.0099 1.08s/group eta_epoch 3.0 min
+[B] epoch 15 group 110/220 loss 0.0103 1.08s/group eta_epoch 2.0 min
+[B] epoch 15 group 165/220 loss 0.0101 1.08s/group eta_epoch 1.0 min
+[B] epoch 15 group 220/220 loss 0.0099 1.07s/group eta_epoch 0.0 min
+[B] epoch 15 loss 0.0099 val_f1 74.96 best 75.63@9 (train 236s, val 7s, order dde89f7e)
+[B] epoch 16 group 55/220 loss 0.0073 1.05s/group eta_epoch 2.9 min
+[B] epoch 16 group 110/220 loss 0.0076 1.07s/group eta_epoch 2.0 min
+[B] epoch 16 group 165/220 loss 0.0069 1.07s/group eta_epoch 1.0 min
+[B] epoch 16 group 220/220 loss 0.0076 1.06s/group eta_epoch 0.0 min
+[B] epoch 16 loss 0.0076 val_f1 74.89 best 75.63@9 (train 234s, val 7s, order 15354a8a)
+[B] epoch 17 group 55/220 loss 0.0062 1.08s/group eta_epoch 3.0 min
+[B] epoch 17 group 110/220 loss 0.0063 1.07s/group eta_epoch 2.0 min
+[B] epoch 17 group 165/220 loss 0.0062 1.07s/group eta_epoch 1.0 min
+[B] epoch 17 group 220/220 loss 0.0067 1.07s/group eta_epoch 0.0 min
+[B] epoch 17 loss 0.0067 val_f1 75.90 best 75.90@17 (train 234s, val 7s, order 94f856ca) *
+[B] epoch 18 group 55/220 loss 0.0063 1.08s/group eta_epoch 3.0 min
+[B] epoch 18 group 110/220 loss 0.0066 1.08s/group eta_epoch 2.0 min
+[B] epoch 18 group 165/220 loss 0.0062 1.07s/group eta_epoch 1.0 min
+[B] epoch 18 group 220/220 loss 0.0062 1.07s/group eta_epoch 0.0 min
+[B] epoch 18 loss 0.0062 val_f1 75.57 best 75.90@17 (train 236s, val 7s, order 61fbf4cd)
+[B] epoch 19 group 55/220 loss 0.0044 1.05s/group eta_epoch 2.9 min
+[B] epoch 19 group 110/220 loss 0.0041 1.07s/group eta_epoch 2.0 min
+[B] epoch 19 group 165/220 loss 0.0045 1.07s/group eta_epoch 1.0 min
+[B] epoch 19 group 220/220 loss 0.0048 1.07s/group eta_epoch 0.0 min
+[B] epoch 19 loss 0.0048 val_f1 75.78 best 75.90@17 (train 235s, val 7s, order f3091d6a)
+[B] epoch 20 group 55/220 loss 0.0032 1.08s/group eta_epoch 3.0 min
+[B] epoch 20 group 110/220 loss 0.0034 1.08s/group eta_epoch 2.0 min
+[B] epoch 20 group 165/220 loss 0.0036 1.07s/group eta_epoch 1.0 min
+[B] epoch 20 group 220/220 loss 0.0039 1.07s/group eta_epoch 0.0 min
+[B] epoch 20 loss 0.0039 val_f1 75.34 best 75.90@17 (train 236s, val 7s, order eb55ea1a)
+[B] epoch 21 group 55/220 loss 0.0051 1.07s/group eta_epoch 2.9 min
+[B] epoch 21 group 110/220 loss 0.0036 1.07s/group eta_epoch 2.0 min
+[B] epoch 21 group 165/220 loss 0.0034 1.06s/group eta_epoch 1.0 min
+[B] epoch 21 group 220/220 loss 0.0030 1.07s/group eta_epoch 0.0 min
+[B] epoch 21 loss 0.0030 val_f1 75.64 best 75.90@17 (train 234s, val 7s, order a08d0120)
+[B] epoch 22 group 55/220 loss 0.0017 1.08s/group eta_epoch 3.0 min
+[B] epoch 22 group 110/220 loss 0.0019 1.07s/group eta_epoch 2.0 min
+[B] epoch 22 group 165/220 loss 0.0015 1.07s/group eta_epoch 1.0 min
+[B] epoch 22 group 220/220 loss 0.0019 1.06s/group eta_epoch 0.0 min
+[B] epoch 22 loss 0.0019 val_f1 75.09 best 75.90@17 (train 234s, val 7s, order dcb51686)
+[B] epoch 23 group 55/220 loss 0.0029 1.07s/group eta_epoch 2.9 min
+[B] epoch 23 group 110/220 loss 0.0027 1.07s/group eta_epoch 2.0 min
+[B] epoch 23 group 165/220 loss 0.0023 1.07s/group eta_epoch 1.0 min
+[B] epoch 23 group 220/220 loss 0.0025 1.07s/group eta_epoch 0.0 min
+[B] epoch 23 loss 0.0025 val_f1 75.85 best 75.90@17 (train 236s, val 7s, order ec34dd6a)
+[B] epoch 24 group 55/220 loss 0.0009 1.06s/group eta_epoch 2.9 min
+[B] epoch 24 group 110/220 loss 0.0010 1.07s/group eta_epoch 2.0 min
+[B] epoch 24 group 165/220 loss 0.0017 1.07s/group eta_epoch 1.0 min
+[B] epoch 24 group 220/220 loss 0.0019 1.07s/group eta_epoch 0.0 min
+[B] epoch 24 loss 0.0019 val_f1 75.82 best 75.90@17 (train 236s, val 7s, order 90b963ae)
+[B] epoch 25 group 55/220 loss 0.0008 1.07s/group eta_epoch 2.9 min
+[B] epoch 25 group 110/220 loss 0.0012 1.07s/group eta_epoch 2.0 min
+[B] epoch 25 group 165/220 loss 0.0010 1.07s/group eta_epoch 1.0 min
+[B] epoch 25 group 220/220 loss 0.0011 1.07s/group eta_epoch 0.0 min
+[B] epoch 25 loss 0.0011 val_f1 75.31 best 75.90@17 (train 236s, val 7s, order fd51464c)
+[B] epoch 26 group 55/220 loss 0.0008 1.07s/group eta_epoch 3.0 min
+[B] epoch 26 group 110/220 loss 0.0010 1.08s/group eta_epoch 2.0 min
+[B] epoch 26 group 165/220 loss 0.0010 1.08s/group eta_epoch 1.0 min
+[B] epoch 26 group 220/220 loss 0.0012 1.07s/group eta_epoch 0.0 min
+[B] epoch 26 loss 0.0012 val_f1 75.82 best 75.90@17 (train 236s, val 7s, order 68b2e54a)
+[B] epoch 27 group 55/220 loss 0.0015 1.07s/group eta_epoch 3.0 min
+[B] epoch 27 group 110/220 loss 0.0010 1.07s/group eta_epoch 2.0 min
+[B] epoch 27 group 165/220 loss 0.0009 1.07s/group eta_epoch 1.0 min
+[B] epoch 27 group 220/220 loss 0.0008 1.07s/group eta_epoch 0.0 min
+[B] epoch 27 loss 0.0008 val_f1 75.23 best 75.90@17 (train 236s, val 7s, order f91797f8)
+[B] epoch 28 group 55/220 loss 0.0004 1.07s/group eta_epoch 3.0 min
+[B] epoch 28 group 110/220 loss 0.0007 1.07s/group eta_epoch 2.0 min
+[B] epoch 28 group 165/220 loss 0.0007 1.08s/group eta_epoch 1.0 min
+[B] epoch 28 group 220/220 loss 0.0006 1.07s/group eta_epoch 0.0 min
+[B] epoch 28 loss 0.0006 val_f1 75.71 best 75.90@17 (train 235s, val 7s, order 405a6aed)
+[B] epoch 29 group 55/220 loss 0.0006 0.73s/group eta_epoch 2.0 min
+[B] epoch 29 group 110/220 loss 0.0006 0.66s/group eta_epoch 1.2 min
+[B] epoch 29 group 165/220 loss 0.0006 0.64s/group eta_epoch 0.6 min
+[B] epoch 29 group 220/220 loss 0.0005 0.63s/group eta_epoch 0.0 min
+[B] epoch 29 loss 0.0005 val_f1 75.13 best 75.90@17 (train 138s, val 3s, order 9a7daa8c)
+[B] epoch 30 group 55/220 loss 0.0011 0.61s/group eta_epoch 1.7 min
+[B] epoch 30 group 110/220 loss 0.0008 0.60s/group eta_epoch 1.1 min
+[B] epoch 30 group 165/220 loss 0.0007 0.60s/group eta_epoch 0.5 min
+[B] epoch 30 group 220/220 loss 0.0006 0.59s/group eta_epoch 0.0 min
+[B] epoch 30 loss 0.0006 val_f1 75.50 best 75.90@17 (train 131s, val 3s, order f3bf4207)
+[B] done best 75.90@17 elapsed 117.6 min; postrun_checks={'checkpoint_epoch': 17, 'best_epoch': 17, 'reload_selection_f1': 0.7590079550772111, 'best_selection_f1': 0.7590079550772111, 'reload_matches_best': True, 'prediction_file_selection_f1': 0.7590079550772111, 'prediction_file_matches_best': True, 'reload_predictions_identical': True, 'prediction_file_ids_and_gold_match_loader': True}

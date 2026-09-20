@@ -1,0 +1,66 @@
+{
+  "objective": "cross_entropy_probe",
+  "training_objective_context": "E13 checkpoints trained with CE+NC; E15 with CE",
+  "device": "cpu",
+  "precision": "fp32",
+  "batch_size": 16,
+  "no_optimizer_step": true,
+  "loss": 0.0012092799879610538,
+  "elapsed_seconds": 16.49419903755188,
+  "groups": {
+    "U": {
+      "parameter_names": [
+        "encoder.encoder.layer.7.attention.self.U.weight"
+      ],
+      "weight_norm": 4.44559782215372,
+      "raw_grad_norm": 1.8045896828402148e-05,
+      "grad_over_weight": 4.059273364422248e-06,
+      "finite": true,
+      "zero_gradient": false
+    },
+    "W": {
+      "parameter_names": [
+        "encoder.encoder.layer.7.attention.self.W.weight"
+      ],
+      "weight_norm": 4.462440144113411,
+      "raw_grad_norm": 1.1133595816757094e-05,
+      "grad_over_weight": 2.4949568973925355e-06,
+      "finite": true,
+      "zero_gradient": false
+    },
+    "P": {
+      "parameter_names": [
+        "encoder.encoder.layer.7.attention.self.P.weight"
+      ],
+      "weight_norm": 0.41188265453282125,
+      "raw_grad_norm": 7.424155700927853e-05,
+      "grad_over_weight": 0.0001802492923463533,
+      "finite": true,
+      "zero_gradient": false
+    },
+    "Wo": {
+      "parameter_names": [
+        "encoder.encoder.layer.7.attention.output.dense.weight",
+        "encoder.encoder.layer.7.attention.output.dense.bias"
+      ],
+      "weight_norm": 24.67783705731893,
+      "raw_grad_norm": 0.0007769730616312736,
+      "grad_over_weight": 3.148464996452514e-05,
+      "finite": true,
+      "zero_gradient": false
+    },
+    "FFN": {
+      "parameter_names": [
+        "encoder.encoder.layer.7.intermediate.dense.weight",
+        "encoder.encoder.layer.7.intermediate.dense.bias",
+        "encoder.encoder.layer.7.output.dense.weight",
+        "encoder.encoder.layer.7.output.dense.bias"
+      ],
+      "weight_norm": 87.21471357009104,
+      "raw_grad_norm": 0.001311565982736481,
+      "grad_over_weight": 1.5038356821322666e-05,
+      "finite": true,
+      "zero_gradient": false
+    }
+  }
+}

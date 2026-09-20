@@ -1,0 +1,12 @@
+Pilot command (launched under root GO):
+CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src .venv-e0-cuda/bin/python -m goibert.train --task-id vsfc_sentiment --learning-rate 2e-05 --seed 42 --repo-root /home/kiettqa/GoiBERT --output-dir /home/kiettqa/GoiBERT/artifacts/e1/vsfc_sentiment/screening/2e-05/seed_42 --device cuda:3 --precision bf16 --attention-implementation sdpa --stage screening --expected-source-hash 456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873
+
+Launch:
+- PID: 4083334
+- exec session: 53356
+- GPU: physical cuda:3, NVIDIA L40S
+- preflight free memory: 45,327 MiB
+- CUBLAS_WORKSPACE_CONFIG: :4096:8
+- source hash: 456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873
+
+The initial tee target was placed before the runner-created output directory and reported a path error. The Python pilot remained alive; epoch artifacts are the authoritative live log. A corrected completion snapshot will be appended after the process exits.

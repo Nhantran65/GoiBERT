@@ -1,0 +1,1534 @@
+{
+ "model": "student_e8",
+ "task": "absa_hotel",
+ "checkpoint": "artifacts/e8/absa_hotel/seed_42/best_checkpoint.pt",
+ "checkpoint_sha256": "e47dfbeb4273de6f2d502ca82c7981f2c05826ce71ee1731ae27bd1c15d57a3b",
+ "layers": [
+  7,
+  8,
+  9
+ ],
+ "device": "cuda:1",
+ "seed": 2026,
+ "include_test": false,
+ "parity": {
+  "f1_manual_rho0": 0.7304907481898633,
+  "f1_native_sdpa": 0.7304907481898633,
+  "max_abs_logit_diff": 0.03125,
+  "mean_abs_logit_diff": 0.0012539258459582925,
+  "pred_rows_differ_manual_vs_native": 0,
+  "native_pred_rows_equal_saved_artifact": 795,
+  "n_rows": 795
+ },
+ "step0a": {
+  "n_rows": 512,
+  "multiplicity": {
+   "tau4": {
+    "7": {
+     "0": {
+      "median_m": 2.704803027818331,
+      "iqr_logm": 0.4703325033187866,
+      "p10_m": 1.8312411104317536,
+      "p90_m": 4.330098277206081,
+      "frac_m_ge_1.5": 0.9829480051994324
+     },
+     "1": {
+      "median_m": 2.0514733695644725,
+      "iqr_logm": 0.4092724323272705,
+      "p10_m": 1.446558684555682,
+      "p90_m": 3.1849346425380327,
+      "frac_m_ge_1.5": 0.8706165552139282
+     },
+     "2": {
+      "median_m": 2.3500772483924206,
+      "iqr_logm": 0.45100533962249756,
+      "p10_m": 1.6399900583316374,
+      "p90_m": 4.014408743773756,
+      "frac_m_ge_1.5": 0.9514451026916504
+     },
+     "3": {
+      "median_m": 2.2842488240932086,
+      "iqr_logm": 0.4254719018936157,
+      "p10_m": 1.577091112688354,
+      "p90_m": 3.6678305730637293,
+      "frac_m_ge_1.5": 0.9319846034049988
+     },
+     "4": {
+      "median_m": 2.3311980498783784,
+      "iqr_logm": 0.47175270318984985,
+      "p10_m": 1.5609007026589699,
+      "p90_m": 3.8590312615622313,
+      "frac_m_ge_1.5": 0.9249518513679504
+     },
+     "5": {
+      "median_m": 2.3498796101453037,
+      "iqr_logm": 0.45201748609542847,
+      "p10_m": 1.5918062535699276,
+      "p90_m": 3.8515101704279804,
+      "frac_m_ge_1.5": 0.9382466077804565
+     }
+    },
+    "8": {
+     "0": {
+      "median_m": 3.1704485806699756,
+      "iqr_logm": 0.5301065444946289,
+      "p10_m": 2.0177177795008165,
+      "p90_m": 5.4983254044085585,
+      "frac_m_ge_1.5": 0.9870905876159668
+     },
+     "1": {
+      "median_m": 2.629947508419558,
+      "iqr_logm": 0.5208767652511597,
+      "p10_m": 1.723738679231812,
+      "p90_m": 4.653545331255137,
+      "frac_m_ge_1.5": 0.9639691710472107
+     },
+     "2": {
+      "median_m": 2.6042553072563637,
+      "iqr_logm": 0.5506289005279541,
+      "p10_m": 1.6455479987343393,
+      "p90_m": 4.692887408518907,
+      "frac_m_ge_1.5": 0.9484585523605347
+     },
+     "3": {
+      "median_m": 2.505500468741008,
+      "iqr_logm": 0.5336427092552185,
+      "p10_m": 1.6678246079915815,
+      "p90_m": 4.746589938943815,
+      "frac_m_ge_1.5": 0.9574180841445923
+     },
+     "4": {
+      "median_m": 2.4266511039225933,
+      "iqr_logm": 0.4942450523376465,
+      "p10_m": 1.6159228718833383,
+      "p90_m": 4.17614579063047,
+      "frac_m_ge_1.5": 0.944894015789032
+     },
+     "5": {
+      "median_m": 2.2620374657535463,
+      "iqr_logm": 0.4634002447128296,
+      "p10_m": 1.548030066724375,
+      "p90_m": 3.8199866040428163,
+      "frac_m_ge_1.5": 0.9224470257759094
+     }
+    },
+    "9": {
+     "0": {
+      "median_m": 2.676007022629147,
+      "iqr_logm": 0.5974262952804565,
+      "p10_m": 1.6526401707670724,
+      "p90_m": 5.050597724240744,
+      "frac_m_ge_1.5": 0.9515414237976074
+     },
+     "1": {
+      "median_m": 2.486733427259271,
+      "iqr_logm": 0.5860346555709839,
+      "p10_m": 1.586403825845777,
+      "p90_m": 4.904733610821951,
+      "frac_m_ge_1.5": 0.9381502866744995
+     },
+     "2": {
+      "median_m": 2.303685031388836,
+      "iqr_logm": 0.4650116562843323,
+      "p10_m": 1.5535935276070842,
+      "p90_m": 3.7903866518059384,
+      "frac_m_ge_1.5": 0.9217726588249207
+     },
+     "3": {
+      "median_m": 2.6217653159483105,
+      "iqr_logm": 0.6068887114524841,
+      "p10_m": 1.6399581918071344,
+      "p90_m": 5.1995754335965545,
+      "frac_m_ge_1.5": 0.947398841381073
+     },
+     "4": {
+      "median_m": 2.6262534595732068,
+      "iqr_logm": 0.5825601816177368,
+      "p10_m": 1.658849842828315,
+      "p90_m": 4.884897301424587,
+      "frac_m_ge_1.5": 0.9511560797691345
+     },
+     "5": {
+      "median_m": 2.4908152188343773,
+      "iqr_logm": 0.5173287391662598,
+      "p10_m": 1.6218021061402232,
+      "p90_m": 4.4533697020192715,
+      "frac_m_ge_1.5": 0.944894015789032
+     }
+    }
+   },
+   "tau8": {
+    "7": {
+     "0": {
+      "median_m": 1.4882290888399923,
+      "iqr_logm": 0.4767777919769287,
+      "p10_m": 1.0845618572794085,
+      "p90_m": 2.2809851475137726,
+      "frac_m_ge_1.5": 0.4898844063282013
+     },
+     "1": {
+      "median_m": 1.1640253629922925,
+      "iqr_logm": 0.2559914290904999,
+      "p10_m": 1.02749141556885,
+      "p90_m": 1.7911681056411008,
+      "frac_m_ge_1.5": 0.1796724498271942
+     },
+     "2": {
+      "median_m": 1.3677922050720113,
+      "iqr_logm": 0.4189838171005249,
+      "p10_m": 1.058925774304699,
+      "p90_m": 2.0699313843288696,
+      "frac_m_ge_1.5": 0.39306357502937317
+     },
+     "3": {
+      "median_m": 1.2982403654763879,
+      "iqr_logm": 0.40279269218444824,
+      "p10_m": 1.042867411126504,
+      "p90_m": 1.9982654268025526,
+      "frac_m_ge_1.5": 0.34075143933296204
+     },
+     "4": {
+      "median_m": 1.3364898499831073,
+      "iqr_logm": 0.419010728597641,
+      "p10_m": 1.0471766483384095,
+      "p90_m": 2.0367394137175623,
+      "frac_m_ge_1.5": 0.3734104037284851
+     },
+     "5": {
+      "median_m": 1.3426660946791253,
+      "iqr_logm": 0.4386643171310425,
+      "p10_m": 1.0465691678773545,
+      "p90_m": 2.083167888875186,
+      "frac_m_ge_1.5": 0.3770712912082672
+     }
+    },
+    "8": {
+     "0": {
+      "median_m": 1.7140014016347611,
+      "iqr_logm": 0.5272024869918823,
+      "p10_m": 1.1409692525265411,
+      "p90_m": 3.18233531798162,
+      "frac_m_ge_1.5": 0.626204252243042
+     },
+     "1": {
+      "median_m": 1.5054893976368802,
+      "iqr_logm": 0.5150740742683411,
+      "p10_m": 1.0721728677536588,
+      "p90_m": 2.5795272516148633,
+      "frac_m_ge_1.5": 0.5036608576774597
+     },
+     "2": {
+      "median_m": 1.4940372891214924,
+      "iqr_logm": 0.5241861343383789,
+      "p10_m": 1.0659686888981434,
+      "p90_m": 2.639658152844426,
+      "frac_m_ge_1.5": 0.49653178453445435
+     },
+     "3": {
+      "median_m": 1.4357736216037817,
+      "iqr_logm": 0.5304039716720581,
+      "p10_m": 1.0640221595449961,
+      "p90_m": 2.634353718169227,
+      "frac_m_ge_1.5": 0.45973023772239685
+     },
+     "4": {
+      "median_m": 1.3718819013119619,
+      "iqr_logm": 0.4735945761203766,
+      "p10_m": 1.0558078545533147,
+      "p90_m": 2.247587520950328,
+      "frac_m_ge_1.5": 0.4082851707935333
+     },
+     "5": {
+      "median_m": 1.2788946083412596,
+      "iqr_logm": 0.42066073417663574,
+      "p10_m": 1.040941443347111,
+      "p90_m": 2.0453277632154023,
+      "frac_m_ge_1.5": 0.3352601230144501
+     }
+    },
+    "9": {
+     "0": {
+      "median_m": 1.5089550102709461,
+      "iqr_logm": 0.5621293783187866,
+      "p10_m": 1.063466299802514,
+      "p90_m": 2.903346642112668,
+      "frac_m_ge_1.5": 0.5041425824165344
+     },
+     "1": {
+      "median_m": 1.415974711802066,
+      "iqr_logm": 0.5512738227844238,
+      "p10_m": 1.0523354409410945,
+      "p90_m": 2.8266969440411125,
+      "frac_m_ge_1.5": 0.44682079553604126
+     },
+     "2": {
+      "median_m": 1.333196983248375,
+      "iqr_logm": 0.4350568354129791,
+      "p10_m": 1.0452851191675991,
+      "p90_m": 2.1172903836853707,
+      "frac_m_ge_1.5": 0.37716764211654663
+     },
+     "3": {
+      "median_m": 1.5195265369884159,
+      "iqr_logm": 0.5554764270782471,
+      "p10_m": 1.0582885643630422,
+      "p90_m": 3.0032054011636116,
+      "frac_m_ge_1.5": 0.5115606784820557
+     },
+     "4": {
+      "median_m": 1.4983453913314542,
+      "iqr_logm": 0.5496777296066284,
+      "p10_m": 1.062653043842841,
+      "p90_m": 2.8098242684553054,
+      "frac_m_ge_1.5": 0.4991329610347748
+     },
+     "5": {
+      "median_m": 1.4195020673138026,
+      "iqr_logm": 0.5266050696372986,
+      "p10_m": 1.0581439973674232,
+      "p90_m": 2.492299560179901,
+      "frac_m_ge_1.5": 0.4466281235218048
+     }
+    }
+   }
+  },
+  "duplicate_text_probe": {
+   "7": {
+    "n_tokens": 1228,
+    "mean_cos_copy1_copy2_per_head": [
+     0.8529282212257385,
+     0.4609132409095764,
+     0.7017489075660706,
+     0.7839895486831665,
+     0.46837925910949707,
+     0.802909791469574
+    ],
+    "median_m_copy1_per_head_tau8": [
+     2.058413505554199,
+     1.2856483459472656,
+     1.7228124141693115,
+     1.6596565246582031,
+     1.5671442747116089,
+     1.7595727443695068
+    ]
+   },
+   "8": {
+    "n_tokens": 1228,
+    "mean_cos_copy1_copy2_per_head": [
+     0.8910138607025146,
+     0.8486139178276062,
+     0.7111043930053711,
+     0.7638105750083923,
+     0.5544165968894958,
+     0.6760673522949219
+    ],
+    "median_m_copy1_per_head_tau8": [
+     2.424309730529785,
+     2.1476080417633057,
+     1.8202245235443115,
+     1.8377646207809448,
+     1.5334866046905518,
+     1.5423729419708252
+    ]
+   },
+   "9": {
+    "n_tokens": 1228,
+    "mean_cos_copy1_copy2_per_head": [
+     0.7389822602272034,
+     0.6976783275604248,
+     0.6894407272338867,
+     0.7633140683174133,
+     0.7467870116233826,
+     0.7674936652183533
+    ],
+    "median_m_copy1_per_head_tau8": [
+     1.8468620777130127,
+     1.643454909324646,
+     1.4804450273513794,
+     1.8680297136306763,
+     1.870227575302124,
+     1.7557957172393799
+    ]
+   }
+  }
+ },
+ "step0b_pairs": {
+  "n_single_aspect_rows_eligible": 421,
+  "n_pairs": 200,
+  "pair_ids": [
+   [
+    "absa_hotel:validation:000123",
+    "absa_hotel:validation:000317"
+   ],
+   [
+    "absa_hotel:validation:000618",
+    "absa_hotel:validation:000112"
+   ],
+   [
+    "absa_hotel:validation:000226",
+    "absa_hotel:validation:000566"
+   ],
+   [
+    "absa_hotel:validation:000414",
+    "absa_hotel:validation:000762"
+   ],
+   [
+    "absa_hotel:validation:000786",
+    "absa_hotel:validation:000659"
+   ],
+   [
+    "absa_hotel:validation:000468",
+    "absa_hotel:validation:000655"
+   ],
+   [
+    "absa_hotel:validation:000389",
+    "absa_hotel:validation:000246"
+   ],
+   [
+    "absa_hotel:validation:000338",
+    "absa_hotel:validation:000352"
+   ],
+   [
+    "absa_hotel:validation:000281",
+    "absa_hotel:validation:000445"
+   ],
+   [
+    "absa_hotel:validation:000147",
+    "absa_hotel:validation:000617"
+   ],
+   [
+    "absa_hotel:validation:000416",
+    "absa_hotel:validation:000479"
+   ],
+   [
+    "absa_hotel:validation:000566",
+    "absa_hotel:validation:000468"
+   ],
+   [
+    "absa_hotel:validation:000253",
+    "absa_hotel:validation:000414"
+   ],
+   [
+    "absa_hotel:validation:000685",
+    "absa_hotel:validation:000491"
+   ],
+   [
+    "absa_hotel:validation:000645",
+    "absa_hotel:validation:000112"
+   ],
+   [
+    "absa_hotel:validation:000147",
+    "absa_hotel:validation:000462"
+   ],
+   [
+    "absa_hotel:validation:000230",
+    "absa_hotel:validation:000125"
+   ],
+   [
+    "absa_hotel:validation:000511",
+    "absa_hotel:validation:000246"
+   ],
+   [
+    "absa_hotel:validation:000618",
+    "absa_hotel:validation:000476"
+   ],
+   [
+    "absa_hotel:validation:000288",
+    "absa_hotel:validation:000263"
+   ],
+   [
+    "absa_hotel:validation:000158",
+    "absa_hotel:validation:000626"
+   ],
+   [
+    "absa_hotel:validation:000467",
+    "absa_hotel:validation:000354"
+   ],
+   [
+    "absa_hotel:validation:000449",
+    "absa_hotel:validation:000481"
+   ],
+   [
+    "absa_hotel:validation:000315",
+    "absa_hotel:validation:000445"
+   ],
+   [
+    "absa_hotel:validation:000431",
+    "absa_hotel:validation:000663"
+   ],
+   [
+    "absa_hotel:validation:000694",
+    "absa_hotel:validation:000762"
+   ],
+   [
+    "absa_hotel:validation:000416",
+    "absa_hotel:validation:000701"
+   ],
+   [
+    "absa_hotel:validation:000730",
+    "absa_hotel:validation:000403"
+   ],
+   [
+    "absa_hotel:validation:000001",
+    "absa_hotel:validation:000442"
+   ],
+   [
+    "absa_hotel:validation:000589",
+    "absa_hotel:validation:000045"
+   ],
+   [
+    "absa_hotel:validation:000263",
+    "absa_hotel:validation:000641"
+   ],
+   [
+    "absa_hotel:validation:000737",
+    "absa_hotel:validation:000605"
+   ],
+   [
+    "absa_hotel:validation:000696",
+    "absa_hotel:validation:000140"
+   ],
+   [
+    "absa_hotel:validation:000137",
+    "absa_hotel:validation:000565"
+   ],
+   [
+    "absa_hotel:validation:000164",
+    "absa_hotel:validation:000140"
+   ],
+   [
+    "absa_hotel:validation:000551",
+    "absa_hotel:validation:000298"
+   ],
+   [
+    "absa_hotel:validation:000479",
+    "absa_hotel:validation:000403"
+   ],
+   [
+    "absa_hotel:validation:000158",
+    "absa_hotel:validation:000490"
+   ],
+   [
+    "absa_hotel:validation:000346",
+    "absa_hotel:validation:000746"
+   ],
+   [
+    "absa_hotel:validation:000027",
+    "absa_hotel:validation:000481"
+   ],
+   [
+    "absa_hotel:validation:000125",
+    "absa_hotel:validation:000472"
+   ],
+   [
+    "absa_hotel:validation:000203",
+    "absa_hotel:validation:000429"
+   ],
+   [
+    "absa_hotel:validation:000594",
+    "absa_hotel:validation:000332"
+   ],
+   [
+    "absa_hotel:validation:000445",
+    "absa_hotel:validation:000565"
+   ],
+   [
+    "absa_hotel:validation:000232",
+    "absa_hotel:validation:000655"
+   ],
+   [
+    "absa_hotel:validation:000690",
+    "absa_hotel:validation:000078"
+   ],
+   [
+    "absa_hotel:validation:000142",
+    "absa_hotel:validation:000165"
+   ],
+   [
+    "absa_hotel:validation:000384",
+    "absa_hotel:validation:000269"
+   ],
+   [
+    "absa_hotel:validation:000416",
+    "absa_hotel:validation:000499"
+   ],
+   [
+    "absa_hotel:validation:000183",
+    "absa_hotel:validation:000258"
+   ],
+   [
+    "absa_hotel:validation:000757",
+    "absa_hotel:validation:000786"
+   ],
+   [
+    "absa_hotel:validation:000462",
+    "absa_hotel:validation:000436"
+   ],
+   [
+    "absa_hotel:validation:000124",
+    "absa_hotel:validation:000496"
+   ],
+   [
+    "absa_hotel:validation:000443",
+    "absa_hotel:validation:000617"
+   ],
+   [
+    "absa_hotel:validation:000162",
+    "absa_hotel:validation:000346"
+   ],
+   [
+    "absa_hotel:validation:000526",
+    "absa_hotel:validation:000660"
+   ],
+   [
+    "absa_hotel:validation:000119",
+    "absa_hotel:validation:000589"
+   ],
+   [
+    "absa_hotel:validation:000263",
+    "absa_hotel:validation:000645"
+   ],
+   [
+    "absa_hotel:validation:000522",
+    "absa_hotel:validation:000137"
+   ],
+   [
+    "absa_hotel:validation:000114",
+    "absa_hotel:validation:000659"
+   ],
+   [
+    "absa_hotel:validation:000165",
+    "absa_hotel:validation:000254"
+   ],
+   [
+    "absa_hotel:validation:000014",
+    "absa_hotel:validation:000403"
+   ],
+   [
+    "absa_hotel:validation:000233",
+    "absa_hotel:validation:000021"
+   ],
+   [
+    "absa_hotel:validation:000303",
+    "absa_hotel:validation:000125"
+   ],
+   [
+    "absa_hotel:validation:000101",
+    "absa_hotel:validation:000660"
+   ],
+   [
+    "absa_hotel:validation:000339",
+    "absa_hotel:validation:000314"
+   ],
+   [
+    "absa_hotel:validation:000562",
+    "absa_hotel:validation:000447"
+   ],
+   [
+    "absa_hotel:validation:000124",
+    "absa_hotel:validation:000660"
+   ],
+   [
+    "absa_hotel:validation:000369",
+    "absa_hotel:validation:000476"
+   ],
+   [
+    "absa_hotel:validation:000657",
+    "absa_hotel:validation:000246"
+   ],
+   [
+    "absa_hotel:validation:000125",
+    "absa_hotel:validation:000291"
+   ],
+   [
+    "absa_hotel:validation:000020",
+    "absa_hotel:validation:000509"
+   ],
+   [
+    "absa_hotel:validation:000166",
+    "absa_hotel:validation:000586"
+   ],
+   [
+    "absa_hotel:validation:000039",
+    "absa_hotel:validation:000131"
+   ],
+   [
+    "absa_hotel:validation:000564",
+    "absa_hotel:validation:000618"
+   ],
+   [
+    "absa_hotel:validation:000030",
+    "absa_hotel:validation:000416"
+   ],
+   [
+    "absa_hotel:validation:000414",
+    "absa_hotel:validation:000636"
+   ],
+   [
+    "absa_hotel:validation:000509",
+    "absa_hotel:validation:000659"
+   ],
+   [
+    "absa_hotel:validation:000157",
+    "absa_hotel:validation:000229"
+   ],
+   [
+    "absa_hotel:validation:000185",
+    "absa_hotel:validation:000521"
+   ],
+   [
+    "absa_hotel:validation:000039",
+    "absa_hotel:validation:000620"
+   ],
+   [
+    "absa_hotel:validation:000224",
+    "absa_hotel:validation:000655"
+   ],
+   [
+    "absa_hotel:validation:000446",
+    "absa_hotel:validation:000606"
+   ],
+   [
+    "absa_hotel:validation:000445",
+    "absa_hotel:validation:000513"
+   ],
+   [
+    "absa_hotel:validation:000191",
+    "absa_hotel:validation:000164"
+   ],
+   [
+    "absa_hotel:validation:000597",
+    "absa_hotel:validation:000403"
+   ],
+   [
+    "absa_hotel:validation:000684",
+    "absa_hotel:validation:000399"
+   ],
+   [
+    "absa_hotel:validation:000775",
+    "absa_hotel:validation:000039"
+   ],
+   [
+    "absa_hotel:validation:000018",
+    "absa_hotel:validation:000502"
+   ],
+   [
+    "absa_hotel:validation:000218",
+    "absa_hotel:validation:000678"
+   ],
+   [
+    "absa_hotel:validation:000092",
+    "absa_hotel:validation:000147"
+   ],
+   [
+    "absa_hotel:validation:000044",
+    "absa_hotel:validation:000716"
+   ],
+   [
+    "absa_hotel:validation:000166",
+    "absa_hotel:validation:000287"
+   ],
+   [
+    "absa_hotel:validation:000138",
+    "absa_hotel:validation:000383"
+   ],
+   [
+    "absa_hotel:validation:000191",
+    "absa_hotel:validation:000730"
+   ],
+   [
+    "absa_hotel:validation:000602",
+    "absa_hotel:validation:000006"
+   ],
+   [
+    "absa_hotel:validation:000458",
+    "absa_hotel:validation:000415"
+   ],
+   [
+    "absa_hotel:validation:000152",
+    "absa_hotel:validation:000166"
+   ],
+   [
+    "absa_hotel:validation:000685",
+    "absa_hotel:validation:000615"
+   ],
+   [
+    "absa_hotel:validation:000324",
+    "absa_hotel:validation:000464"
+   ],
+   [
+    "absa_hotel:validation:000091",
+    "absa_hotel:validation:000078"
+   ],
+   [
+    "absa_hotel:validation:000754",
+    "absa_hotel:validation:000094"
+   ],
+   [
+    "absa_hotel:validation:000754",
+    "absa_hotel:validation:000309"
+   ],
+   [
+    "absa_hotel:validation:000320",
+    "absa_hotel:validation:000698"
+   ],
+   [
+    "absa_hotel:validation:000338",
+    "absa_hotel:validation:000738"
+   ],
+   [
+    "absa_hotel:validation:000767",
+    "absa_hotel:validation:000339"
+   ],
+   [
+    "absa_hotel:validation:000213",
+    "absa_hotel:validation:000161"
+   ],
+   [
+    "absa_hotel:validation:000435",
+    "absa_hotel:validation:000724"
+   ],
+   [
+    "absa_hotel:validation:000421",
+    "absa_hotel:validation:000263"
+   ],
+   [
+    "absa_hotel:validation:000436",
+    "absa_hotel:validation:000258"
+   ],
+   [
+    "absa_hotel:validation:000596",
+    "absa_hotel:validation:000263"
+   ],
+   [
+    "absa_hotel:validation:000263",
+    "absa_hotel:validation:000288"
+   ],
+   [
+    "absa_hotel:validation:000537",
+    "absa_hotel:validation:000445"
+   ],
+   [
+    "absa_hotel:validation:000391",
+    "absa_hotel:validation:000021"
+   ],
+   [
+    "absa_hotel:validation:000514",
+    "absa_hotel:validation:000694"
+   ],
+   [
+    "absa_hotel:validation:000326",
+    "absa_hotel:validation:000647"
+   ],
+   [
+    "absa_hotel:validation:000101",
+    "absa_hotel:validation:000655"
+   ],
+   [
+    "absa_hotel:validation:000655",
+    "absa_hotel:validation:000604"
+   ],
+   [
+    "absa_hotel:validation:000212",
+    "absa_hotel:validation:000416"
+   ],
+   [
+    "absa_hotel:validation:000346",
+    "absa_hotel:validation:000618"
+   ],
+   [
+    "absa_hotel:validation:000684",
+    "absa_hotel:validation:000248"
+   ],
+   [
+    "absa_hotel:validation:000754",
+    "absa_hotel:validation:000778"
+   ],
+   [
+    "absa_hotel:validation:000039",
+    "absa_hotel:validation:000737"
+   ],
+   [
+    "absa_hotel:validation:000222",
+    "absa_hotel:validation:000605"
+   ],
+   [
+    "absa_hotel:validation:000445",
+    "absa_hotel:validation:000485"
+   ],
+   [
+    "absa_hotel:validation:000668",
+    "absa_hotel:validation:000191"
+   ],
+   [
+    "absa_hotel:validation:000161",
+    "absa_hotel:validation:000326"
+   ],
+   [
+    "absa_hotel:validation:000203",
+    "absa_hotel:validation:000569"
+   ],
+   [
+    "absa_hotel:validation:000687",
+    "absa_hotel:validation:000303"
+   ],
+   [
+    "absa_hotel:validation:000411",
+    "absa_hotel:validation:000691"
+   ],
+   [
+    "absa_hotel:validation:000138",
+    "absa_hotel:validation:000117"
+   ],
+   [
+    "absa_hotel:validation:000413",
+    "absa_hotel:validation:000045"
+   ],
+   [
+    "absa_hotel:validation:000231",
+    "absa_hotel:validation:000454"
+   ],
+   [
+    "absa_hotel:validation:000249",
+    "absa_hotel:validation:000467"
+   ],
+   [
+    "absa_hotel:validation:000021",
+    "absa_hotel:validation:000462"
+   ],
+   [
+    "absa_hotel:validation:000057",
+    "absa_hotel:validation:000786"
+   ],
+   [
+    "absa_hotel:validation:000403",
+    "absa_hotel:validation:000073"
+   ],
+   [
+    "absa_hotel:validation:000480",
+    "absa_hotel:validation:000658"
+   ],
+   [
+    "absa_hotel:validation:000291",
+    "absa_hotel:validation:000463"
+   ],
+   [
+    "absa_hotel:validation:000480",
+    "absa_hotel:validation:000491"
+   ],
+   [
+    "absa_hotel:validation:000564",
+    "absa_hotel:validation:000321"
+   ],
+   [
+    "absa_hotel:validation:000467",
+    "absa_hotel:validation:000315"
+   ],
+   [
+    "absa_hotel:validation:000448",
+    "absa_hotel:validation:000240"
+   ],
+   [
+    "absa_hotel:validation:000213",
+    "absa_hotel:validation:000771"
+   ],
+   [
+    "absa_hotel:validation:000140",
+    "absa_hotel:validation:000525"
+   ],
+   [
+    "absa_hotel:validation:000655",
+    "absa_hotel:validation:000321"
+   ],
+   [
+    "absa_hotel:validation:000385",
+    "absa_hotel:validation:000499"
+   ],
+   [
+    "absa_hotel:validation:000508",
+    "absa_hotel:validation:000191"
+   ],
+   [
+    "absa_hotel:validation:000159",
+    "absa_hotel:validation:000569"
+   ],
+   [
+    "absa_hotel:validation:000519",
+    "absa_hotel:validation:000685"
+   ],
+   [
+    "absa_hotel:validation:000148",
+    "absa_hotel:validation:000137"
+   ],
+   [
+    "absa_hotel:validation:000778",
+    "absa_hotel:validation:000640"
+   ],
+   [
+    "absa_hotel:validation:000793",
+    "absa_hotel:validation:000185"
+   ],
+   [
+    "absa_hotel:validation:000143",
+    "absa_hotel:validation:000261"
+   ],
+   [
+    "absa_hotel:validation:000445",
+    "absa_hotel:validation:000173"
+   ],
+   [
+    "absa_hotel:validation:000057",
+    "absa_hotel:validation:000732"
+   ],
+   [
+    "absa_hotel:validation:000613",
+    "absa_hotel:validation:000590"
+   ],
+   [
+    "absa_hotel:validation:000467",
+    "absa_hotel:validation:000511"
+   ],
+   [
+    "absa_hotel:validation:000693",
+    "absa_hotel:validation:000480"
+   ],
+   [
+    "absa_hotel:validation:000042",
+    "absa_hotel:validation:000454"
+   ],
+   [
+    "absa_hotel:validation:000101",
+    "absa_hotel:validation:000346"
+   ],
+   [
+    "absa_hotel:validation:000551",
+    "absa_hotel:validation:000685"
+   ],
+   [
+    "absa_hotel:validation:000326",
+    "absa_hotel:validation:000737"
+   ],
+   [
+    "absa_hotel:validation:000030",
+    "absa_hotel:validation:000166"
+   ],
+   [
+    "absa_hotel:validation:000415",
+    "absa_hotel:validation:000636"
+   ],
+   [
+    "absa_hotel:validation:000471",
+    "absa_hotel:validation:000213"
+   ],
+   [
+    "absa_hotel:validation:000504",
+    "absa_hotel:validation:000415"
+   ],
+   [
+    "absa_hotel:validation:000697",
+    "absa_hotel:validation:000415"
+   ],
+   [
+    "absa_hotel:validation:000446",
+    "absa_hotel:validation:000358"
+   ],
+   [
+    "absa_hotel:validation:000685",
+    "absa_hotel:validation:000212"
+   ],
+   [
+    "absa_hotel:validation:000213",
+    "absa_hotel:validation:000720"
+   ],
+   [
+    "absa_hotel:validation:000655",
+    "absa_hotel:validation:000590"
+   ],
+   [
+    "absa_hotel:validation:000202",
+    "absa_hotel:validation:000613"
+   ],
+   [
+    "absa_hotel:validation:000428",
+    "absa_hotel:validation:000191"
+   ],
+   [
+    "absa_hotel:validation:000769",
+    "absa_hotel:validation:000263"
+   ],
+   [
+    "absa_hotel:validation:000006",
+    "absa_hotel:validation:000457"
+   ],
+   [
+    "absa_hotel:validation:000490",
+    "absa_hotel:validation:000446"
+   ],
+   [
+    "absa_hotel:validation:000269",
+    "absa_hotel:validation:000350"
+   ],
+   [
+    "absa_hotel:validation:000525",
+    "absa_hotel:validation:000324"
+   ],
+   [
+    "absa_hotel:validation:000447",
+    "absa_hotel:validation:000450"
+   ],
+   [
+    "absa_hotel:validation:000775",
+    "absa_hotel:validation:000496"
+   ],
+   [
+    "absa_hotel:validation:000794",
+    "absa_hotel:validation:000498"
+   ],
+   [
+    "absa_hotel:validation:000555",
+    "absa_hotel:validation:000044"
+   ],
+   [
+    "absa_hotel:validation:000078",
+    "absa_hotel:validation:000497"
+   ],
+   [
+    "absa_hotel:validation:000444",
+    "absa_hotel:validation:000575"
+   ],
+   [
+    "absa_hotel:validation:000021",
+    "absa_hotel:validation:000160"
+   ],
+   [
+    "absa_hotel:validation:000317",
+    "absa_hotel:validation:000138"
+   ],
+   [
+    "absa_hotel:validation:000027",
+    "absa_hotel:validation:000113"
+   ],
+   [
+    "absa_hotel:validation:000385",
+    "absa_hotel:validation:000098"
+   ],
+   [
+    "absa_hotel:validation:000249",
+    "absa_hotel:validation:000018"
+   ],
+   [
+    "absa_hotel:validation:000567",
+    "absa_hotel:validation:000490"
+   ],
+   [
+    "absa_hotel:validation:000313",
+    "absa_hotel:validation:000413"
+   ],
+   [
+    "absa_hotel:validation:000189",
+    "absa_hotel:validation:000431"
+   ],
+   [
+    "absa_hotel:validation:000191",
+    "absa_hotel:validation:000745"
+   ],
+   [
+    "absa_hotel:validation:000376",
+    "absa_hotel:validation:000463"
+   ],
+   [
+    "absa_hotel:validation:000498",
+    "absa_hotel:validation:000017"
+   ],
+   [
+    "absa_hotel:validation:000475",
+    "absa_hotel:validation:000218"
+   ],
+   [
+    "absa_hotel:validation:000036",
+    "absa_hotel:validation:000498"
+   ],
+   [
+    "absa_hotel:validation:000143",
+    "absa_hotel:validation:000288"
+   ],
+   [
+    "absa_hotel:validation:000240",
+    "absa_hotel:validation:000490"
+   ]
+  ]
+ },
+ "step0b": {
+  "baseline_rho0": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 119,
+    "A_flip_to_B": 2,
+    "A_other_pol": 2,
+    "A_missed": 77,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 83,
+    "A_flip_to_B": 16,
+    "A_other_pol": 3,
+    "A_missed": 98,
+    "B_present_correct": 92,
+    "B_present_wrong": 21
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 61,
+    "A_flip_to_B": 25,
+    "A_other_pol": 3,
+    "A_missed": 111,
+    "B_present_correct": 115,
+    "B_present_wrong": 15
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 45,
+    "A_flip_to_B": 28,
+    "A_other_pol": 3,
+    "A_missed": 124,
+    "B_present_correct": 122,
+    "B_present_wrong": 9
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 119,
+    "A_flip_to_B": 2,
+    "A_other_pol": 2,
+    "A_missed": 77,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 84,
+    "A_flip_to_B": 11,
+    "A_other_pol": 3,
+    "A_missed": 102,
+    "B_present_correct": 88,
+    "B_present_wrong": 29
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 62,
+    "A_flip_to_B": 20,
+    "A_other_pol": 4,
+    "A_missed": 114,
+    "B_present_correct": 116,
+    "B_present_wrong": 18
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 45,
+    "A_flip_to_B": 26,
+    "A_other_pol": 3,
+    "A_missed": 126,
+    "B_present_correct": 124,
+    "B_present_wrong": 14
+   }
+  },
+  "c1_rho0.5_tau8": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 119,
+    "A_flip_to_B": 2,
+    "A_other_pol": 2,
+    "A_missed": 77,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 82,
+    "A_flip_to_B": 18,
+    "A_other_pol": 2,
+    "A_missed": 98,
+    "B_present_correct": 93,
+    "B_present_wrong": 22
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 59,
+    "A_flip_to_B": 25,
+    "A_other_pol": 3,
+    "A_missed": 113,
+    "B_present_correct": 113,
+    "B_present_wrong": 16
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 47,
+    "A_flip_to_B": 25,
+    "A_other_pol": 4,
+    "A_missed": 124,
+    "B_present_correct": 119,
+    "B_present_wrong": 11
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 119,
+    "A_flip_to_B": 2,
+    "A_other_pol": 2,
+    "A_missed": 77,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 85,
+    "A_flip_to_B": 11,
+    "A_other_pol": 3,
+    "A_missed": 101,
+    "B_present_correct": 88,
+    "B_present_wrong": 28
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 62,
+    "A_flip_to_B": 20,
+    "A_other_pol": 5,
+    "A_missed": 113,
+    "B_present_correct": 116,
+    "B_present_wrong": 18
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 49,
+    "A_flip_to_B": 27,
+    "A_other_pol": 3,
+    "A_missed": 121,
+    "B_present_correct": 124,
+    "B_present_wrong": 15
+   }
+  },
+  "c1_rho1_tau8": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 119,
+    "A_flip_to_B": 2,
+    "A_other_pol": 2,
+    "A_missed": 77,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 83,
+    "A_flip_to_B": 18,
+    "A_other_pol": 2,
+    "A_missed": 97,
+    "B_present_correct": 93,
+    "B_present_wrong": 23
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 59,
+    "A_flip_to_B": 25,
+    "A_other_pol": 3,
+    "A_missed": 113,
+    "B_present_correct": 112,
+    "B_present_wrong": 17
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 48,
+    "A_flip_to_B": 24,
+    "A_other_pol": 4,
+    "A_missed": 124,
+    "B_present_correct": 118,
+    "B_present_wrong": 12
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 119,
+    "A_flip_to_B": 2,
+    "A_other_pol": 2,
+    "A_missed": 77,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 83,
+    "A_flip_to_B": 11,
+    "A_other_pol": 3,
+    "A_missed": 103,
+    "B_present_correct": 87,
+    "B_present_wrong": 28
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 59,
+    "A_flip_to_B": 19,
+    "A_other_pol": 5,
+    "A_missed": 117,
+    "B_present_correct": 114,
+    "B_present_wrong": 18
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 50,
+    "A_flip_to_B": 25,
+    "A_other_pol": 4,
+    "A_missed": 121,
+    "B_present_correct": 123,
+    "B_present_wrong": 16
+   }
+  },
+  "c1_rho1_tau4": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 120,
+    "A_flip_to_B": 2,
+    "A_other_pol": 2,
+    "A_missed": 76,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 85,
+    "A_flip_to_B": 18,
+    "A_other_pol": 2,
+    "A_missed": 95,
+    "B_present_correct": 93,
+    "B_present_wrong": 21
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 60,
+    "A_flip_to_B": 25,
+    "A_other_pol": 3,
+    "A_missed": 112,
+    "B_present_correct": 113,
+    "B_present_wrong": 17
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 47,
+    "A_flip_to_B": 25,
+    "A_other_pol": 4,
+    "A_missed": 124,
+    "B_present_correct": 119,
+    "B_present_wrong": 11
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 120,
+    "A_flip_to_B": 2,
+    "A_other_pol": 2,
+    "A_missed": 76,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 84,
+    "A_flip_to_B": 12,
+    "A_other_pol": 3,
+    "A_missed": 101,
+    "B_present_correct": 88,
+    "B_present_wrong": 28
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 62,
+    "A_flip_to_B": 20,
+    "A_other_pol": 5,
+    "A_missed": 113,
+    "B_present_correct": 116,
+    "B_present_wrong": 18
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 50,
+    "A_flip_to_B": 30,
+    "A_other_pol": 3,
+    "A_missed": 117,
+    "B_present_correct": 124,
+    "B_present_wrong": 14
+   }
+  },
+  "perm_rho1_tau8": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 117,
+    "A_flip_to_B": 2,
+    "A_other_pol": 2,
+    "A_missed": 79,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 83,
+    "A_flip_to_B": 18,
+    "A_other_pol": 2,
+    "A_missed": 97,
+    "B_present_correct": 91,
+    "B_present_wrong": 22
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 62,
+    "A_flip_to_B": 25,
+    "A_other_pol": 2,
+    "A_missed": 111,
+    "B_present_correct": 115,
+    "B_present_wrong": 15
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 45,
+    "A_flip_to_B": 27,
+    "A_other_pol": 3,
+    "A_missed": 125,
+    "B_present_correct": 121,
+    "B_present_wrong": 9
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 119,
+    "A_flip_to_B": 2,
+    "A_other_pol": 2,
+    "A_missed": 77,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 82,
+    "A_flip_to_B": 11,
+    "A_other_pol": 3,
+    "A_missed": 104,
+    "B_present_correct": 88,
+    "B_present_wrong": 28
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 62,
+    "A_flip_to_B": 19,
+    "A_other_pol": 4,
+    "A_missed": 115,
+    "B_present_correct": 115,
+    "B_present_wrong": 18
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 45,
+    "A_flip_to_B": 26,
+    "A_other_pol": 3,
+    "A_missed": 126,
+    "B_present_correct": 126,
+    "B_present_wrong": 13
+   }
+  }
+ },
+ "elapsed_s": 7.495047092437744
+}

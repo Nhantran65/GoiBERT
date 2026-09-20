@@ -1,0 +1,82 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v4-test",
+ "arm": "O",
+ "task_id": "vsfc_topic",
+ "seed": 42,
+ "checkpoint": "artifacts/base_encoder_baseline/mmbert_base/vsfc_topic/lr_2e-05/best_checkpoint.pt",
+ "checkpoint_sha256": "a07dea276efac9fc75beb1af5d013b3538d0a7e140188a90f87c1e7b944b4972",
+ "validation_selected_epoch": 11,
+ "validation_selection_f1": 0.811808487044734,
+ "learning_rate": 2e-05,
+ "test_metrics": {
+  "n": 3166,
+  "labels": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "accuracy": 0.8932406822488945,
+  "macro_precision": 0.8170026615615458,
+  "macro_recall": 0.8032407114170133,
+  "macro_f1": 0.8081225402990719,
+  "per_class": {
+   "0": {
+    "support": 2290,
+    "predicted": 2271,
+    "tp": 2142,
+    "fp": 129,
+    "fn": 148,
+    "precision": 0.9431968295904888,
+    "recall": 0.9353711790393013,
+    "f1": 0.9392677044507783
+   },
+   "1": {
+    "support": 572,
+    "predicted": 620,
+    "tp": 467,
+    "fp": 153,
+    "fn": 105,
+    "precision": 0.7532258064516129,
+    "recall": 0.8164335664335665,
+    "f1": 0.7835570469798657
+   },
+   "2": {
+    "support": 145,
+    "predicted": 147,
+    "tp": 138,
+    "fp": 9,
+    "fn": 7,
+    "precision": 0.9387755102040817,
+    "recall": 0.9517241379310345,
+    "f1": 0.9452054794520548
+   },
+   "3": {
+    "support": 159,
+    "predicted": 128,
+    "tp": 81,
+    "fp": 47,
+    "fn": 78,
+    "precision": 0.6328125,
+    "recall": 0.5094339622641509,
+    "f1": 0.5644599303135889
+   }
+  },
+  "task_id": "vsfc_topic",
+  "split": "test",
+  "selection_f1": 0.8081225402990719,
+  "selection_metric": "fixed_label_macro_f1"
+ },
+ "test_selection_f1": 0.8081225402990719,
+ "selection_f1_recomputed_from_predictions": 0.8081225402990719,
+ "test_count": 3166,
+ "predictions_rows": 3166,
+ "reload_prediction_repeatable": true,
+ "load_missing_keys": [],
+ "load_unexpected_keys": [],
+ "encoder_source": "O",
+ "license": "no NC data",
+ "research_only": false,
+ "elapsed_s": 6.9,
+ "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+}

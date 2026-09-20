@@ -1,0 +1,82 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v4-test",
+ "arm": "C_inf",
+ "task_id": "vsfc_topic",
+ "seed": 42,
+ "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/C_inf_NC_research_only/vsfc_topic/seed_42/best_checkpoint.pt",
+ "checkpoint_sha256": "1126e9016160534697abce49ca02a4d40ff864b01d6706d5cba953a42ffa3e69",
+ "validation_selected_epoch": 2,
+ "validation_selection_f1": 0.8076498741774236,
+ "learning_rate": 2e-05,
+ "test_metrics": {
+  "n": 3166,
+  "labels": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "accuracy": 0.8894504106127605,
+  "macro_precision": 0.824706405757347,
+  "macro_recall": 0.7751675223525337,
+  "macro_f1": 0.7924139790026794,
+  "per_class": {
+   "0": {
+    "support": 2290,
+    "predicted": 2342,
+    "tp": 2171,
+    "fp": 171,
+    "fn": 119,
+    "precision": 0.9269854824935952,
+    "recall": 0.9480349344978166,
+    "f1": 0.937392055267703
+   },
+   "1": {
+    "support": 572,
+    "predicted": 575,
+    "tp": 438,
+    "fp": 137,
+    "fn": 134,
+    "precision": 0.7617391304347826,
+    "recall": 0.7657342657342657,
+    "f1": 0.7637314734088928
+   },
+   "2": {
+    "support": 145,
+    "predicted": 150,
+    "tp": 140,
+    "fp": 10,
+    "fn": 5,
+    "precision": 0.9333333333333333,
+    "recall": 0.9655172413793104,
+    "f1": 0.9491525423728814
+   },
+   "3": {
+    "support": 159,
+    "predicted": 99,
+    "tp": 67,
+    "fp": 32,
+    "fn": 92,
+    "precision": 0.6767676767676768,
+    "recall": 0.42138364779874216,
+    "f1": 0.5193798449612403
+   }
+  },
+  "task_id": "vsfc_topic",
+  "split": "test",
+  "selection_f1": 0.7924139790026794,
+  "selection_metric": "fixed_label_macro_f1"
+ },
+ "test_selection_f1": 0.7924139790026794,
+ "selection_f1_recomputed_from_predictions": 0.7924139790026794,
+ "test_count": 3166,
+ "predictions_rows": 3166,
+ "reload_prediction_repeatable": true,
+ "load_missing_keys": [],
+ "load_unexpected_keys": [],
+ "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/C_inf_NC_research_only/hf_encoder",
+ "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+ "research_only": true,
+ "elapsed_s": 6.9,
+ "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+}

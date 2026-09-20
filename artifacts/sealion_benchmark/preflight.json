@@ -1,0 +1,443 @@
+{
+  "protocol": "SEA-LION-ModernBERT-300M-five-task-v1",
+  "status": "passed",
+  "seed": 42,
+  "model": {
+    "repo": "aisingapore/SEA-LION-ModernBERT-300M",
+    "commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+    "path": "models/sea-lion-modernbert-300m"
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "2",
+    "cublas_workspace_config": ":4096:8",
+    "hostname": "server-ai-new-02.vntt.lan"
+  },
+  "gpu_snapshot": {
+    "0": {
+      "free_mib": 41282,
+      "used_mib": 4176,
+      "util_pct": 10
+    },
+    "1": {
+      "free_mib": 14442,
+      "used_mib": 31017,
+      "util_pct": 79
+    },
+    "2": {
+      "free_mib": 45438,
+      "used_mib": 20,
+      "util_pct": 0
+    },
+    "3": {
+      "free_mib": 45439,
+      "used_mib": 20,
+      "util_pct": 0
+    }
+  },
+  "tokenizer": {
+    "source": "models/sea-lion-modernbert-300m",
+    "hf_repo": "aisingapore/SEA-LION-ModernBERT-300M",
+    "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+    "files": {
+      "special_tokens_map.json": "230075193082c0422c032bfc511aa304c3057f2fd87612e871d6522fd85a1651",
+      "tokenizer.json": "31de34af3072a06a88f10047733aa7a53db467bf66bfc1ef4d469a537e6e448d",
+      "tokenizer_config.json": "cda328a6066edd668bdc88cd8ab8e736198ab73cbb84001cc722620d1d2272b1"
+    },
+    "tokenizer_class": "PreTrainedTokenizerFast",
+    "vocab_size": 262144,
+    "special_tokens": {
+      "bos_token_id": 2,
+      "eos_token_id": 1,
+      "cls_token_id": 2,
+      "sep_token_id": 1,
+      "pad_token_id": 0,
+      "mask_token_id": 4
+    },
+    "first_token_head": "input_ids[:,0] = <bos> (token ID 2); ModernBERT native classifier_pooling=mean is not used",
+    "token_type_ids": "not emitted and not passed to ModernBERT"
+  },
+  "tasks": {
+    "vsfc_sentiment": {
+      "train_count": 11426,
+      "validation_count": 1583,
+      "num_classes": 3,
+      "num_aspects": 0,
+      "aspect_class_counts": [],
+      "validation_ids_exact": true,
+      "first_batch_ids": [
+        "vsfc_sentiment:train:000108",
+        "vsfc_sentiment:train:001265"
+      ],
+      "logits_shape": [
+        2,
+        3
+      ],
+      "expected_logits_shape": [
+        2,
+        3
+      ],
+      "finite_logits": true,
+      "finite_loss": true,
+      "finite_gradients": true,
+      "model": {
+        "backbone": "aisingapore/SEA-LION-ModernBERT-300M",
+        "local_path": "models/sea-lion-modernbert-300m",
+        "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+        "encoder_class": "ModernBertModel",
+        "model_type": "modernbert",
+        "hidden_size": 768,
+        "num_hidden_layers": 22,
+        "num_attention_heads": 12,
+        "intermediate_size": 1152,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "pooling": "first-token/BOS",
+        "native_classifier_pooling": "mean",
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 312251139,
+        "trainable_parameters": 312251139,
+        "encoder_weight_file_sha256": "8197fa020536cb907299ff9fc6e1a1a436808f5606dba3dc6c56f7e4899dfdac"
+      },
+      "checkpoint_id_roundtrip": true
+    },
+    "vsfc_topic": {
+      "train_count": 11426,
+      "validation_count": 1583,
+      "num_classes": 4,
+      "num_aspects": 0,
+      "aspect_class_counts": [],
+      "validation_ids_exact": true,
+      "first_batch_ids": [
+        "vsfc_topic:train:000108",
+        "vsfc_topic:train:001265"
+      ],
+      "logits_shape": [
+        2,
+        4
+      ],
+      "expected_logits_shape": [
+        2,
+        4
+      ],
+      "finite_logits": true,
+      "finite_loss": true,
+      "finite_gradients": true,
+      "model": {
+        "backbone": "aisingapore/SEA-LION-ModernBERT-300M",
+        "local_path": "models/sea-lion-modernbert-300m",
+        "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+        "encoder_class": "ModernBertModel",
+        "model_type": "modernbert",
+        "hidden_size": 768,
+        "num_hidden_layers": 22,
+        "num_attention_heads": 12,
+        "intermediate_size": 1152,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "pooling": "first-token/BOS",
+        "native_classifier_pooling": "mean",
+        "num_labels": 4,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 312251908,
+        "trainable_parameters": 312251908,
+        "encoder_weight_file_sha256": "8197fa020536cb907299ff9fc6e1a1a436808f5606dba3dc6c56f7e4899dfdac"
+      },
+      "checkpoint_id_roundtrip": null
+    },
+    "visfd": {
+      "train_count": 7786,
+      "validation_count": 1112,
+      "num_classes": 42,
+      "num_aspects": 11,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "validation_ids_exact": true,
+      "first_batch_ids": [
+        "visfd:train:004822",
+        "visfd:train:004415"
+      ],
+      "logits_shape": [
+        2,
+        42
+      ],
+      "expected_logits_shape": [
+        2,
+        42
+      ],
+      "finite_logits": true,
+      "finite_loss": true,
+      "finite_gradients": true,
+      "model": {
+        "backbone": "aisingapore/SEA-LION-ModernBERT-300M",
+        "local_path": "models/sea-lion-modernbert-300m",
+        "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+        "encoder_class": "ModernBertModel",
+        "model_type": "modernbert",
+        "hidden_size": 768,
+        "num_hidden_layers": 22,
+        "num_attention_heads": 12,
+        "intermediate_size": 1152,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "pooling": "first-token/BOS",
+        "native_classifier_pooling": "mean",
+        "num_labels": 42,
+        "num_aspects": 11,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          2,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 312281130,
+        "trainable_parameters": 312281130,
+        "encoder_weight_file_sha256": "8197fa020536cb907299ff9fc6e1a1a436808f5606dba3dc6c56f7e4899dfdac"
+      },
+      "checkpoint_id_roundtrip": null
+    },
+    "absa_restaurant": {
+      "train_count": 7028,
+      "validation_count": 771,
+      "num_classes": 48,
+      "num_aspects": 12,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "validation_ids_exact": true,
+      "first_batch_ids": [
+        "absa_restaurant:train:004820",
+        "absa_restaurant:train:000256"
+      ],
+      "logits_shape": [
+        2,
+        12,
+        4
+      ],
+      "expected_logits_shape": [
+        2,
+        12,
+        4
+      ],
+      "finite_logits": true,
+      "finite_loss": true,
+      "finite_gradients": true,
+      "model": {
+        "backbone": "aisingapore/SEA-LION-ModernBERT-300M",
+        "local_path": "models/sea-lion-modernbert-300m",
+        "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+        "encoder_class": "ModernBertModel",
+        "model_type": "modernbert",
+        "hidden_size": 768,
+        "num_hidden_layers": 22,
+        "num_attention_heads": 12,
+        "intermediate_size": 1152,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "pooling": "first-token/BOS",
+        "native_classifier_pooling": "mean",
+        "num_labels": 48,
+        "num_aspects": 12,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 312285744,
+        "trainable_parameters": 312285744,
+        "encoder_weight_file_sha256": "8197fa020536cb907299ff9fc6e1a1a436808f5606dba3dc6c56f7e4899dfdac"
+      },
+      "checkpoint_id_roundtrip": null
+    },
+    "absa_hotel": {
+      "train_count": 7180,
+      "validation_count": 795,
+      "num_classes": 136,
+      "num_aspects": 34,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "validation_ids_exact": true,
+      "first_batch_ids": [
+        "absa_hotel:train:006516",
+        "absa_hotel:train:001418"
+      ],
+      "logits_shape": [
+        2,
+        34,
+        4
+      ],
+      "expected_logits_shape": [
+        2,
+        34,
+        4
+      ],
+      "finite_logits": true,
+      "finite_loss": true,
+      "finite_gradients": true,
+      "model": {
+        "backbone": "aisingapore/SEA-LION-ModernBERT-300M",
+        "local_path": "models/sea-lion-modernbert-300m",
+        "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+        "encoder_class": "ModernBertModel",
+        "model_type": "modernbert",
+        "hidden_size": 768,
+        "num_hidden_layers": 22,
+        "num_attention_heads": 12,
+        "intermediate_size": 1152,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "pooling": "first-token/BOS",
+        "native_classifier_pooling": "mean",
+        "num_labels": 136,
+        "num_aspects": 34,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 312353416,
+        "trainable_parameters": 312353416,
+        "encoder_weight_file_sha256": "8197fa020536cb907299ff9fc6e1a1a436808f5606dba3dc6c56f7e4899dfdac"
+      },
+      "checkpoint_id_roundtrip": null
+    }
+  },
+  "source_hash": "3cb7f95bd2f349a491143f5900f50881b25c23e075cd828a08dc097c45418320",
+  "started_at": "2026-09-17T15:01:53Z",
+  "finished_at": "2026-09-17T15:02:09Z",
+  "elapsed_seconds": 18.07578182220459,
+  "gpu_snapshot_end": {
+    "0": {
+      "free_mib": 41282,
+      "used_mib": 4176,
+      "util_pct": 13
+    },
+    "1": {
+      "free_mib": 13427,
+      "used_mib": 32032,
+      "util_pct": 83
+    },
+    "2": {
+      "free_mib": 42307,
+      "used_mib": 3152,
+      "util_pct": 18
+    },
+    "3": {
+      "free_mib": 45439,
+      "used_mib": 20,
+      "util_pct": 0
+    }
+  }
+}

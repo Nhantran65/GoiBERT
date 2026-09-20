@@ -1,0 +1,399 @@
+{
+  "protocol": "E8-confirmation-NC-LLRD-v1",
+  "test_protocol": "E8-confirmation-test-gate-v1",
+  "manifest_id": "E8-confirmation-manifest-20260910-seeds43-44-v1",
+  "created_at": "2026-09-10T10:37:57.878448+00:00",
+  "locked": true,
+  "selection_locked_before_test": true,
+  "checkpoint_count": 4,
+  "tasks": [
+    "visfd",
+    "absa_restaurant"
+  ],
+  "seeds": [
+    43,
+    44
+  ],
+  "method": "nc_plus_llrd",
+  "mode": "nc",
+  "original_e8_source_hash": "089726d5d0294d2835ff6b4212bf30e6e47f246e84f50213536c0cbe4ccfd437",
+  "adapter_hash": "0f88e854745b4591b38b25a8159a48ad9c585ffb26347f95aa5bfb847fff14f8",
+  "selection_basis": "validation-only best checkpoint per fixed task/seed; test split excluded",
+  "test_reselection": false,
+  "rows": [
+    {
+      "task_id": "visfd",
+      "task": "ViSFD",
+      "seed": 43,
+      "method": "nc_plus_llrd",
+      "mode": "nc",
+      "coefficient": 0.5,
+      "learning_rate": 0.0001,
+      "best_epoch": 30,
+      "best_selection_f1": 0.8216772630941568,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_43",
+      "checkpoint_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_43/best_checkpoint.pt",
+      "metadata_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_43/metadata.json",
+      "resolved_config_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_43/resolved_config.json",
+      "validation_predictions_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_43/validation_predictions.json",
+      "best_validation_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_43/best_validation_metrics.json",
+      "checkpoint_sha256": "c3f59a23baf175f0c2b13ababde315183c7fe752f5ffd29275feafcdfffc36ea",
+      "metadata_sha256": "4c129cbb83c124abce038b27029410befacdee0d046ba86b2f3fb39c70893aa9",
+      "resolved_config_sha256": "0a071d07abc81e5565f70c17f37c0ef087ffb08a41e9ec158f5f563a74323765",
+      "validation_predictions_sha256": "b391a7c2b6f0218594008f154e013ac758d81430044b57d2bf1a9def4fc72184",
+      "best_validation_metrics_sha256": "43d7a0b7df79812115001ef40731e3eb555c3a94098f9acffcecf2d5616f47b5",
+      "source_hashes": {
+        "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+        "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+        "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+        "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+        "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+      },
+      "e8_source_hash": "089726d5d0294d2835ff6b4212bf30e6e47f246e84f50213536c0cbe4ccfd437",
+      "original_e8_source_hash": "089726d5d0294d2835ff6b4212bf30e6e47f246e84f50213536c0cbe4ccfd437",
+      "adapter_hash": "0f88e854745b4591b38b25a8159a48ad9c585ffb26347f95aa5bfb847fff14f8",
+      "model": {
+        "backbone": "goiturn-s-gd",
+        "hidden_size": 384,
+        "head_hidden_size": 384,
+        "head_dropout": 0.1,
+        "num_labels": 42,
+        "num_aspects": 11,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          2,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 26561706,
+        "trainable_parameters": 26561706
+      },
+      "backbone_hashes": {
+        "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+        "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+        "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "tokenizer_hashes": {
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "data_provenance": {
+        "source_files": [
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+        ],
+        "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+        "source_file_hashes": {
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51"
+        },
+        "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+      },
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "max_length": 256,
+      "micro_batch_size": 32,
+      "effective_batch_size": 32,
+      "validation_row_count": 1112,
+      "validation_split_snapshot": {
+        "count": 1112,
+        "ids_sha256": "5ef3b93292d1953dc60e93634606a0b17ba68aa3c42dc3ca73302ab046958321",
+        "labels_sha256": "164a6bc3871c4be166f798ff45d6e296b7aa0f8985fe7c2983d4c8638ad9dde2",
+        "rows_sha256": "097b7d6dc8017703179881f466cf92f2070ec8cc42cf4ba24ee43b5f1db26438"
+      },
+      "selection_basis": "best validation selection_f1 only; test not loaded during training"
+    },
+    {
+      "task_id": "absa_restaurant",
+      "task": "UIT-ABSA Restaurant",
+      "seed": 43,
+      "method": "nc_plus_llrd",
+      "mode": "nc",
+      "coefficient": 0.1,
+      "learning_rate": 0.0001,
+      "best_epoch": 21,
+      "best_selection_f1": 0.713126491646778,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_43",
+      "checkpoint_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_43/best_checkpoint.pt",
+      "metadata_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_43/metadata.json",
+      "resolved_config_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_43/resolved_config.json",
+      "validation_predictions_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_43/validation_predictions.json",
+      "best_validation_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_43/best_validation_metrics.json",
+      "checkpoint_sha256": "367f7c726b3fda5b7809ee561b58f9c8f86b9d7d575de3157c247e028ea74ae3",
+      "metadata_sha256": "479db6ac59f822c4178aee8477985f1c273d167426ccee88865327b68ff89d97",
+      "resolved_config_sha256": "6b3bce0809f1c9897332239cae4a32147522eeb36e6493cc6a8dcffc9b0da21c",
+      "validation_predictions_sha256": "64385dae07d54f4f642e36e84505f98d10f0d94f3e0a92c451754d770fbf17ce",
+      "best_validation_metrics_sha256": "fd7e7c48b46e663543a565f3279b59fc511dc85dd50cf2c757d7a6df56c2ab28",
+      "source_hashes": {
+        "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+        "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+        "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+        "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+        "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+      },
+      "e8_source_hash": "089726d5d0294d2835ff6b4212bf30e6e47f246e84f50213536c0cbe4ccfd437",
+      "original_e8_source_hash": "089726d5d0294d2835ff6b4212bf30e6e47f246e84f50213536c0cbe4ccfd437",
+      "adapter_hash": "0f88e854745b4591b38b25a8159a48ad9c585ffb26347f95aa5bfb847fff14f8",
+      "model": {
+        "backbone": "goiturn-s-gd",
+        "hidden_size": 384,
+        "head_hidden_size": 384,
+        "head_dropout": 0.1,
+        "num_labels": 48,
+        "num_aspects": 12,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 26564016,
+        "trainable_parameters": 26564016
+      },
+      "backbone_hashes": {
+        "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+        "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+        "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "tokenizer_hashes": {
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "data_provenance": {
+        "source_files": [
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+        ],
+        "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+        "source_file_hashes": {
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202"
+        },
+        "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+      },
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "max_length": 256,
+      "micro_batch_size": 32,
+      "effective_batch_size": 32,
+      "validation_row_count": 771,
+      "validation_split_snapshot": {
+        "count": 771,
+        "ids_sha256": "7d6e57ba057aae0cabae54599cc4c5d9afebfc0420a81463b75eedf9379e955b",
+        "labels_sha256": "245245d49b20068ebe71348772ee525803de45e719370ac9acef447d437946dc",
+        "rows_sha256": "be6a2986e3a60b0ba0ec9ab574373b19a79d77e809251ac8cacf44e49f37e52e"
+      },
+      "selection_basis": "best validation selection_f1 only; test not loaded during training"
+    },
+    {
+      "task_id": "visfd",
+      "task": "ViSFD",
+      "seed": 44,
+      "method": "nc_plus_llrd",
+      "mode": "nc",
+      "coefficient": 0.5,
+      "learning_rate": 0.0001,
+      "best_epoch": 24,
+      "best_selection_f1": 0.8213042820396429,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_44",
+      "checkpoint_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_44/best_checkpoint.pt",
+      "metadata_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_44/metadata.json",
+      "resolved_config_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_44/resolved_config.json",
+      "validation_predictions_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_44/validation_predictions.json",
+      "best_validation_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_44/best_validation_metrics.json",
+      "checkpoint_sha256": "cfb567a25bee34b97ea5d3c9b74410f9b3cf52c8ca6764ea35d3f5e11d2c1314",
+      "metadata_sha256": "d0f8087318e19a70a3e8a5861091304dc2cbd1fddb4006a3288ee01f01e4d993",
+      "resolved_config_sha256": "6f7d9bca5082d70bb8009906421a3efa1a18fd8bbb828ca0ad039fffe7258935",
+      "validation_predictions_sha256": "2d7681613374e61624be5114cf7ac4f2c721fbdd66a058e8972135abb12e2cdc",
+      "best_validation_metrics_sha256": "262580b713e946ee47e6648ad81c0d5adf6f2e57586b320fba769c1be2da7e9f",
+      "source_hashes": {
+        "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+        "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+        "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+        "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+        "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+      },
+      "e8_source_hash": "089726d5d0294d2835ff6b4212bf30e6e47f246e84f50213536c0cbe4ccfd437",
+      "original_e8_source_hash": "089726d5d0294d2835ff6b4212bf30e6e47f246e84f50213536c0cbe4ccfd437",
+      "adapter_hash": "0f88e854745b4591b38b25a8159a48ad9c585ffb26347f95aa5bfb847fff14f8",
+      "model": {
+        "backbone": "goiturn-s-gd",
+        "hidden_size": 384,
+        "head_hidden_size": 384,
+        "head_dropout": 0.1,
+        "num_labels": 42,
+        "num_aspects": 11,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          2,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 26561706,
+        "trainable_parameters": 26561706
+      },
+      "backbone_hashes": {
+        "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+        "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+        "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "tokenizer_hashes": {
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "data_provenance": {
+        "source_files": [
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+        ],
+        "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+        "source_file_hashes": {
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51"
+        },
+        "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+      },
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "max_length": 256,
+      "micro_batch_size": 32,
+      "effective_batch_size": 32,
+      "validation_row_count": 1112,
+      "validation_split_snapshot": {
+        "count": 1112,
+        "ids_sha256": "5ef3b93292d1953dc60e93634606a0b17ba68aa3c42dc3ca73302ab046958321",
+        "labels_sha256": "164a6bc3871c4be166f798ff45d6e296b7aa0f8985fe7c2983d4c8638ad9dde2",
+        "rows_sha256": "097b7d6dc8017703179881f466cf92f2070ec8cc42cf4ba24ee43b5f1db26438"
+      },
+      "selection_basis": "best validation selection_f1 only; test not loaded during training"
+    },
+    {
+      "task_id": "absa_restaurant",
+      "task": "UIT-ABSA Restaurant",
+      "seed": 44,
+      "method": "nc_plus_llrd",
+      "mode": "nc",
+      "coefficient": 0.1,
+      "learning_rate": 0.0001,
+      "best_epoch": 27,
+      "best_selection_f1": 0.731824747231584,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_44",
+      "checkpoint_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_44/best_checkpoint.pt",
+      "metadata_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_44/metadata.json",
+      "resolved_config_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_44/resolved_config.json",
+      "validation_predictions_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_44/validation_predictions.json",
+      "best_validation_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_44/best_validation_metrics.json",
+      "checkpoint_sha256": "8e28cdc57c68e072ed42657aa35b96fb2c1d4aeeb4d4bc5e8adcd2c10aca6e8c",
+      "metadata_sha256": "ced4ebfe2efe64d4d2dd9cd6ca329717c514c011f213f91540d17327dc8c4b63",
+      "resolved_config_sha256": "93c85e46346d118785305a0760b2a8b6e13843d01ec6244ceae5f2599c2a1b5e",
+      "validation_predictions_sha256": "426347517ea252ff3afc290f57e2fc4eb8cdf02a86daec599fbbeec1131847ec",
+      "best_validation_metrics_sha256": "33803d63cb0da211356ef2ef09155a12b500fc670f9e74d5ba1b3ce2f740973b",
+      "source_hashes": {
+        "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+        "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+        "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+        "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+        "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+      },
+      "e8_source_hash": "089726d5d0294d2835ff6b4212bf30e6e47f246e84f50213536c0cbe4ccfd437",
+      "original_e8_source_hash": "089726d5d0294d2835ff6b4212bf30e6e47f246e84f50213536c0cbe4ccfd437",
+      "adapter_hash": "0f88e854745b4591b38b25a8159a48ad9c585ffb26347f95aa5bfb847fff14f8",
+      "model": {
+        "backbone": "goiturn-s-gd",
+        "hidden_size": 384,
+        "head_hidden_size": 384,
+        "head_dropout": 0.1,
+        "num_labels": 48,
+        "num_aspects": 12,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 26564016,
+        "trainable_parameters": 26564016
+      },
+      "backbone_hashes": {
+        "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+        "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+        "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "tokenizer_hashes": {
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "data_provenance": {
+        "source_files": [
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+        ],
+        "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+        "source_file_hashes": {
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202"
+        },
+        "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+      },
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "max_length": 256,
+      "micro_batch_size": 32,
+      "effective_batch_size": 32,
+      "validation_row_count": 771,
+      "validation_split_snapshot": {
+        "count": 771,
+        "ids_sha256": "7d6e57ba057aae0cabae54599cc4c5d9afebfc0420a81463b75eedf9379e955b",
+        "labels_sha256": "245245d49b20068ebe71348772ee525803de45e719370ac9acef447d437946dc",
+        "rows_sha256": "be6a2986e3a60b0ba0ec9ab574373b19a79d77e809251ac8cacf44e49f37e52e"
+      },
+      "selection_basis": "best validation selection_f1 only; test not loaded during training"
+    }
+  ]
+}

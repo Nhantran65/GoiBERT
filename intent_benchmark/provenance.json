@@ -1,0 +1,64 @@
+{
+  "source_version": "prompt-bench-v1 bundle snapshot; cases schema prompt-bench-case.v1",
+  "bundle_version": "2.0.5-g6.8",
+  "source_path": "tmp/prompt-bench-v1-250-standalone/scripts/ai-verify/packs/prompt-bench-v1/cases.jsonl",
+  "source_sha256": "bd29e71cc49a7ccf92f9287d0d8c74d6d1240cd157cc42027a62e9f5c7cdcc19",
+  "manifest_path": "tmp/prompt-bench-v1-250-standalone/scripts/ai-verify/packs/prompt-bench-v1/manifest.json",
+  "manifest_sha256": "72546694708dafa19d1214156396fe62dff8c54fb306c48fe8d92e657363d1ed",
+  "taxonomy_path": "tmp/prompt-bench-v1-250-standalone/src/modules/ai/ai.schema.ts",
+  "taxonomy_sha256": "afc98cfba00ef2c635157b78378061e7202597770464ff0802ae684acb0f7b10",
+  "classifier_prompt_path": "tmp/prompt-bench-v1-250-standalone/src/modules/ai/docs/technicals/prompts_doc/production/INTENT_CLASSIFIER_PROMPT.md",
+  "classifier_prompt_sha256": "2cfc8f7ed52cc02f0df450fa2e7d855e2e05ce56b9e4975b2687439a60ca09f7",
+  "classifier_config_path": "tmp/prompt-bench-v1-250-standalone/src/modules/ai/ai.config.ts",
+  "classifier_config_sha256": "fe65f6c7e6ed3e948188e5665b3b6f9b83d4fb867a78a378526a18078ab06a6e",
+  "review_policy_path": "intent_benchmark/ROOT_LABEL_REVIEW_DECISIONS.md",
+  "review_policy_sha256": "4de93ed33f98dcbdd24e8c2ce8098ded5e074cb5b0b4cd71e4b9e629fb1b3647",
+  "label_map_path": "intent_benchmark/label_map.json",
+  "label_map_sha256": "23063af163dd52c2d9afddd3d0f527b732a00380f6592c8c74d0568a96dc86a2",
+  "preparation_script": "intent_benchmark/prepare_intent_benchmark.py",
+  "preparation_script_sha256": "d2e53c151fd7dd307532149c458a721c485f87570660efd7d09d38290c7c5a0d",
+  "counts": {
+    "cases": 250,
+    "all_target_turns": 512,
+    "labeled_targets": 507,
+    "missing_targets": 5
+  },
+  "labels": {
+    "original": {
+      "ADDRESS": 40,
+      "COMPLAINT": 37,
+      "CONFIRMATION": 41,
+      "GRATITUDE": 11,
+      "GREETING": 12,
+      "MENU_QUERY": 150,
+      "OTHER": 204,
+      "PHONE": 12
+    },
+    "reviewed": {
+      "ADDRESS": 38,
+      "COMPLAINT": 35,
+      "CONFIRMATION": 44,
+      "GRATITUDE": 11,
+      "GREETING": 12,
+      "MENU_QUERY": 144,
+      "OTHER": 211,
+      "PHONE": 12
+    },
+    "changed_rows": 19,
+    "uncertain_rows": 82
+  },
+  "model_input_contract": {
+    "current_turn_only_target": true,
+    "history_roles_preserved": [
+      "customer"
+    ],
+    "assistant_messages_invented": false,
+    "forbidden_fields": [
+      "expectedIntent",
+      "assertions",
+      "fixtures",
+      "primaryIntent",
+      "source_ref"
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "protocol": "E16-BamiBERT-original-identity-gated-ffn-v1",
+  "revision": "e16-20260912-r1",
+  "model": {
+    "source": "models/bamibert-base-original",
+    "repository": "Qualcomm-AI-Research/BamiBERT",
+    "hf_commit": "57bc1340debbe4e348ec549047a763caebe4a977",
+    "weight_sha256": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627",
+    "hidden_size": 768,
+    "intermediate_size": 3072,
+    "layers": 12,
+    "target_layer_index": 7,
+    "attention_implementation": "sdpa"
+  },
+  "arms": ["baseline", "attention_update_gate", "ffn_input_gate"],
+  "tasks": ["vsfc_sentiment", "vsfc_topic", "visfd", "absa_restaurant", "absa_hotel"],
+  "training": {
+    "seed": 42,
+    "epochs": 30,
+    "micro_batch_size": 16,
+    "gradient_accumulation_steps": 2,
+    "effective_batch_size": 32,
+    "max_length": 256,
+    "precision": "bf16",
+    "loss": "plain_cross_entropy",
+    "optimizer": "AdamW",
+    "betas": [0.9, 0.999],
+    "epsilon": 1e-8,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.1,
+    "gradient_clip_norm": 1.0,
+    "learning_rates": {
+      "vsfc_sentiment": 2e-5,
+      "vsfc_topic": 1e-5,
+      "visfd": 5e-5,
+      "absa_restaurant": 5e-5,
+      "absa_hotel": 5e-5
+    }
+  },
+  "gate": {
+    "shape": [3072, 768],
+    "bias": false,
+    "init": "zero",
+    "formula": "fnew=f0+W2(z*tanh(Gv)); f0=W2(z)+b2",
+    "attention_update_source": "c=Wo(attention) before output dropout/residual/LN",
+    "ffn_input_source": "x=FFN input after attention residual/LN",
+    "shared_scalars": true,
+    "correction_dtype": "float32",
+    "f0_cast_at_fusion": "float32"
+  },
+  "calibration": {
+    "seed": 16042,
+    "texts_per_domain": 512,
+    "domains": ["VSFC", "ViSFD", "Restaurant", "Hotel"],
+    "split": "train",
+    "rms_mask": "valid_nonpad_non_special_tokens"
+  },
+  "evaluation": {
+    "selection": "best_validation_f1_earliest_tie",
+    "fractions": true,
+    "test": "closed_until_root_review"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "protocol": "E18-segment-fork-consistency-screening-4B-v1",
+  "revision": "e18-20260913-r1",
+  "source_backbone": "models/goiturn-s-gd",
+  "seed": 42,
+  "tasks": [
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "arms": [
+    "b0_baseline",
+    "b1_fork",
+    "b2_random_mask",
+    "b3_fork_detach"
+  ],
+  "dispatch_arms_batch1": [
+    "b0_baseline",
+    "b1_fork",
+    "b2_random_mask"
+  ],
+  "hidden_size": 384,
+  "num_attention_heads": 6,
+  "head_dim": 64,
+  "s_max": 6,
+  "lambda_fork": 0.3,
+  "connector_token_ids": [
+    15,
+    17,
+    30,
+    4,
+    34,
+    258,
+    643,
+    617,
+    572,
+    2238,
+    659,
+    656
+  ],
+  "connector_token_texts": [
+    ",",
+    ".",
+    ";",
+    "!",
+    "?",
+    " và",
+    " nhưng",
+    " còn",
+    " mà",
+    " tuy",
+    " nên",
+    " thì"
+  ],
+  "layerwise_gamma": 0.8,
+  "num_layers": 10,
+  "weight_decay": 0.01,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 16,
+  "accumulation_steps": 2,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "fork_attention_kernel": "manual_row_extended_bf16_matmul_fp32_softmax",
+  "learning_rates": {
+    "absa_restaurant": 0.0001,
+    "absa_hotel": 0.0001
+  },
+  "consistency_lambdas": {
+    "absa_restaurant": 0.1,
+    "absa_hotel": 0.1
+  },
+  "selection": {
+    "metric": "selection_f1",
+    "validation_only": true,
+    "test": false
+  },
+  "gate": {
+    "primary": "b1 > b0 and b1 > b2 by >= 0.5 pair F1 on both tasks",
+    "spurious_guard": "b1 spurious does not exceed b0 by more than 10%",
+    "oracle_gap_guard": "b1 segment oracle-gap (contiguous - random-mask) increases vs b0",
+    "no_test_no_multiseed_no_grid": true
+  },
+  "notes": {
+    "no_new_parameters": true,
+    "checkpoint_state_dict_identical_to_e2_student": true,
+    "forks_disabled_for_noisy_forward_and_validation": true,
+    "b3_and_b4_composite_out_of_scope_for_batch1": true,
+    "full_training_requires_root_review": true
+  },
+  "lambda_fork_ramp_epochs": 3,
+  "attention_probs_dropout_in_fork_path": "F.dropout on FP32 softmax probs, p=config.attention_probs_dropout_prob, training only (fix 1)"
+}

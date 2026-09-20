@@ -1,0 +1,470 @@
+{"event": "launch", "time": "2026-09-10T10:16:25.560029+00:00", "command": ["/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python", "/home/kiettqa/GoiBERT/scripts/run_e8_confirmation.py", "--worker", "--task-id", "visfd", "--seed", "43", "--device", "cuda:2"]}
+You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:683.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+{
+  "task_id": "visfd",
+  "mode": "nc",
+  "seed": 43,
+  "learning_rate": 0.0001,
+  "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_43",
+  "best_epoch": 30,
+  "best_selection_f1": 0.8216772630941568,
+  "validation_metrics": {
+    "n": 1112,
+    "aspect_count": 11,
+    "aspect_names": [
+      "BATTERY",
+      "CAMERA",
+      "DESIGN",
+      "FEATURES",
+      "GENERAL",
+      "OTHERS",
+      "PERFORMANCE",
+      "PRICE",
+      "SCREEN",
+      "SER&ACC",
+      "STORAGE"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8925100057175529,
+    "detection_micro_recall": 0.8752453041771797,
+    "detection_micro_f1": 0.883793347487615,
+    "detection_macro_precision": 0.8605460933335555,
+    "detection_macro_recall": 0.8121007020858013,
+    "detection_macro_f1": 0.8313612429324877,
+    "pair_micro_precision": 0.8249240121580547,
+    "pair_micro_recall": 0.8184559710494572,
+    "pair_micro_f1": 0.8216772630941568,
+    "pair_macro_precision": 0.7949467398014475,
+    "pair_macro_recall": 0.7567935854430177,
+    "pair_macro_f1": 0.7716352051865851,
+    "classification_pair_micro_f1": 0.8216772630941568,
+    "classification_pair_macro_f1": 0.7716352051865851,
+    "per_aspect": {
+      "BATTERY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9652509652509652,
+          "recall": 0.9920634920634921,
+          "f1": 0.9784735812133072
+        },
+        "pair": {
+          "precision": 0.8397683397683398,
+          "recall": 0.8630952380952381,
+          "f1": 0.8512720156555773
+        },
+        "detection_tp": 500,
+        "gold_present": 504,
+        "predicted_present": 518
+      },
+      "CAMERA": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9285714285714286,
+          "recall": 0.9662162162162162,
+          "f1": 0.9470198675496688
+        },
+        "pair": {
+          "precision": 0.8084415584415584,
+          "recall": 0.8412162162162162,
+          "f1": 0.8245033112582781
+        },
+        "detection_tp": 286,
+        "gold_present": 296,
+        "predicted_present": 308
+      },
+      "DESIGN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8820224719101124,
+          "recall": 0.839572192513369,
+          "f1": 0.8602739726027397
+        },
+        "pair": {
+          "precision": 0.8202247191011236,
+          "recall": 0.7807486631016043,
+          "f1": 0.8
+        },
+        "detection_tp": 157,
+        "gold_present": 187,
+        "predicted_present": 178
+      },
+      "FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9076517150395779,
+          "recall": 0.9028871391076115,
+          "f1": 0.9052631578947369
+        },
+        "pair": {
+          "precision": 0.8100263852242744,
+          "recall": 0.8057742782152231,
+          "f1": 0.8078947368421052
+        },
+        "detection_tp": 344,
+        "gold_present": 381,
+        "predicted_present": 379
+      },
+      "GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9078947368421053,
+          "recall": 0.9013062409288825,
+          "f1": 0.9045884923525127
+        },
+        "pair": {
+          "precision": 0.8742690058479532,
+          "recall": 0.8679245283018868,
+          "f1": 0.8710852148579752
+        },
+        "detection_tp": 621,
+        "gold_present": 689,
+        "predicted_present": 684
+      },
+      "OTHERS": {
+        "pair_scored": false,
+        "detection": {
+          "precision": 0.5384615384615384,
+          "recall": 0.44621513944223107,
+          "f1": 0.4880174291938998
+        },
+        "pair": null,
+        "detection_tp": 112,
+        "gold_present": 251,
+        "predicted_present": 208
+      },
+      "PERFORMANCE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9023972602739726,
+          "recall": 0.9054982817869416,
+          "f1": 0.9039451114922813
+        },
+        "pair": {
+          "precision": 0.8013698630136986,
+          "recall": 0.8041237113402062,
+          "f1": 0.8027444253859348
+        },
+        "detection_tp": 527,
+        "gold_present": 582,
+        "predicted_present": 584
+      },
+      "PRICE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9204545454545454,
+          "recall": 0.9642857142857143,
+          "f1": 0.9418604651162791
+        },
+        "pair": {
+          "precision": 0.7878787878787878,
+          "recall": 0.8253968253968254,
+          "f1": 0.8062015503875969
+        },
+        "detection_tp": 243,
+        "gold_present": 252,
+        "predicted_present": 264
+      },
+      "SCREEN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8648648648648649,
+          "recall": 0.7933884297520661,
+          "f1": 0.8275862068965517
+        },
+        "pair": {
+          "precision": 0.7387387387387387,
+          "recall": 0.6776859504132231,
+          "f1": 0.7068965517241379
+        },
+        "detection_tp": 96,
+        "gold_present": 121,
+        "predicted_present": 111
+      },
+      "SER&ACC": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8984375,
+          "recall": 0.7931034482758621,
+          "f1": 0.8424908424908425
+        },
+        "pair": {
+          "precision": 0.84375,
+          "recall": 0.7448275862068966,
+          "f1": 0.7912087912087912
+        },
+        "detection_tp": 230,
+        "gold_present": 290,
+        "predicted_present": 256
+      },
+      "STORAGE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.75,
+          "recall": 0.42857142857142855,
+          "f1": 0.5454545454545454
+        },
+        "pair": {
+          "precision": 0.625,
+          "recall": 0.35714285714285715,
+          "f1": 0.45454545454545453
+        },
+        "detection_tp": 6,
+        "gold_present": 14,
+        "predicted_present": 8
+      }
+    },
+    "task_id": "visfd",
+    "split": "validation",
+    "selection_f1": 0.8216772630941568,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "status": "completed"
+}
+{
+  "task_id": "visfd",
+  "mode": "nc",
+  "seed": 43,
+  "learning_rate": 0.0001,
+  "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_43",
+  "best_epoch": 30,
+  "best_selection_f1": 0.8216772630941568,
+  "validation_metrics": {
+    "n": 1112,
+    "aspect_count": 11,
+    "aspect_names": [
+      "BATTERY",
+      "CAMERA",
+      "DESIGN",
+      "FEATURES",
+      "GENERAL",
+      "OTHERS",
+      "PERFORMANCE",
+      "PRICE",
+      "SCREEN",
+      "SER&ACC",
+      "STORAGE"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8925100057175529,
+    "detection_micro_recall": 0.8752453041771797,
+    "detection_micro_f1": 0.883793347487615,
+    "detection_macro_precision": 0.8605460933335555,
+    "detection_macro_recall": 0.8121007020858013,
+    "detection_macro_f1": 0.8313612429324877,
+    "pair_micro_precision": 0.8249240121580547,
+    "pair_micro_recall": 0.8184559710494572,
+    "pair_micro_f1": 0.8216772630941568,
+    "pair_macro_precision": 0.7949467398014475,
+    "pair_macro_recall": 0.7567935854430177,
+    "pair_macro_f1": 0.7716352051865851,
+    "classification_pair_micro_f1": 0.8216772630941568,
+    "classification_pair_macro_f1": 0.7716352051865851,
+    "per_aspect": {
+      "BATTERY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9652509652509652,
+          "recall": 0.9920634920634921,
+          "f1": 0.9784735812133072
+        },
+        "pair": {
+          "precision": 0.8397683397683398,
+          "recall": 0.8630952380952381,
+          "f1": 0.8512720156555773
+        },
+        "detection_tp": 500,
+        "gold_present": 504,
+        "predicted_present": 518
+      },
+      "CAMERA": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9285714285714286,
+          "recall": 0.9662162162162162,
+          "f1": 0.9470198675496688
+        },
+        "pair": {
+          "precision": 0.8084415584415584,
+          "recall": 0.8412162162162162,
+          "f1": 0.8245033112582781
+        },
+        "detection_tp": 286,
+        "gold_present": 296,
+        "predicted_present": 308
+      },
+      "DESIGN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8820224719101124,
+          "recall": 0.839572192513369,
+          "f1": 0.8602739726027397
+        },
+        "pair": {
+          "precision": 0.8202247191011236,
+          "recall": 0.7807486631016043,
+          "f1": 0.8
+        },
+        "detection_tp": 157,
+        "gold_present": 187,
+        "predicted_present": 178
+      },
+      "FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9076517150395779,
+          "recall": 0.9028871391076115,
+          "f1": 0.9052631578947369
+        },
+        "pair": {
+          "precision": 0.8100263852242744,
+          "recall": 0.8057742782152231,
+          "f1": 0.8078947368421052
+        },
+        "detection_tp": 344,
+        "gold_present": 381,
+        "predicted_present": 379
+      },
+      "GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9078947368421053,
+          "recall": 0.9013062409288825,
+          "f1": 0.9045884923525127
+        },
+        "pair": {
+          "precision": 0.8742690058479532,
+          "recall": 0.8679245283018868,
+          "f1": 0.8710852148579752
+        },
+        "detection_tp": 621,
+        "gold_present": 689,
+        "predicted_present": 684
+      },
+      "OTHERS": {
+        "pair_scored": false,
+        "detection": {
+          "precision": 0.5384615384615384,
+          "recall": 0.44621513944223107,
+          "f1": 0.4880174291938998
+        },
+        "pair": null,
+        "detection_tp": 112,
+        "gold_present": 251,
+        "predicted_present": 208
+      },
+      "PERFORMANCE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9023972602739726,
+          "recall": 0.9054982817869416,
+          "f1": 0.9039451114922813
+        },
+        "pair": {
+          "precision": 0.8013698630136986,
+          "recall": 0.8041237113402062,
+          "f1": 0.8027444253859348
+        },
+        "detection_tp": 527,
+        "gold_present": 582,
+        "predicted_present": 584
+      },
+      "PRICE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9204545454545454,
+          "recall": 0.9642857142857143,
+          "f1": 0.9418604651162791
+        },
+        "pair": {
+          "precision": 0.7878787878787878,
+          "recall": 0.8253968253968254,
+          "f1": 0.8062015503875969
+        },
+        "detection_tp": 243,
+        "gold_present": 252,
+        "predicted_present": 264
+      },
+      "SCREEN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8648648648648649,
+          "recall": 0.7933884297520661,
+          "f1": 0.8275862068965517
+        },
+        "pair": {
+          "precision": 0.7387387387387387,
+          "recall": 0.6776859504132231,
+          "f1": 0.7068965517241379
+        },
+        "detection_tp": 96,
+        "gold_present": 121,
+        "predicted_present": 111
+      },
+      "SER&ACC": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8984375,
+          "recall": 0.7931034482758621,
+          "f1": 0.8424908424908425
+        },
+        "pair": {
+          "precision": 0.84375,
+          "recall": 0.7448275862068966,
+          "f1": 0.7912087912087912
+        },
+        "detection_tp": 230,
+        "gold_present": 290,
+        "predicted_present": 256
+      },
+      "STORAGE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.75,
+          "recall": 0.42857142857142855,
+          "f1": 0.5454545454545454
+        },
+        "pair": {
+          "precision": 0.625,
+          "recall": 0.35714285714285715,
+          "f1": 0.45454545454545453
+        },
+        "detection_tp": 6,
+        "gold_present": 14,
+        "predicted_present": 8
+      }
+    },
+    "task_id": "visfd",
+    "split": "validation",
+    "selection_f1": 0.8216772630941568,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "status": "completed"
+}

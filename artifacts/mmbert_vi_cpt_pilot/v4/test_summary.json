@@ -1,0 +1,3501 @@
+{
+ "created_at": "2026-09-20T03:23:34Z",
+ "runs": {
+  "P_web/absa_restaurant/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "P_web",
+   "task_id": "absa_restaurant",
+   "seed": 42,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/P_web/absa_restaurant/seed_42/best_checkpoint.pt",
+   "checkpoint_sha256": "5aa3fdfb8befa6b02bf62d27d28032aff7baf43604cf81e2bf6684324dc7661d",
+   "validation_selected_epoch": 25,
+   "validation_selection_f1": 0.7630560928433269,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 1938,
+    "aspect_count": 12,
+    "aspect_names": [
+     "AMBIENCE#GENERAL",
+     "DRINKS#PRICES",
+     "DRINKS#QUALITY",
+     "DRINKS#STYLE&OPTIONS",
+     "FOOD#PRICES",
+     "FOOD#QUALITY",
+     "FOOD#STYLE&OPTIONS",
+     "LOCATION#GENERAL",
+     "RESTAURANT#GENERAL",
+     "RESTAURANT#MISCELLANEOUS",
+     "RESTAURANT#PRICES",
+     "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8878281622911695,
+    "detection_micro_recall": 0.8489920121719285,
+    "detection_micro_f1": 0.8679758895586234,
+    "detection_macro_precision": 0.8892946444908271,
+    "detection_macro_recall": 0.8283420395934056,
+    "detection_macro_f1": 0.8565033752198081,
+    "pair_micro_precision": 0.7589498806682577,
+    "pair_micro_recall": 0.7257512362114873,
+    "pair_micro_f1": 0.7419793894614038,
+    "pair_macro_precision": 0.7499819286594657,
+    "pair_macro_recall": 0.7005973760651698,
+    "pair_macro_f1": 0.7233832111006765,
+    "classification_pair_micro_f1": 0.7419793894614038,
+    "classification_pair_macro_f1": 0.7233832111006765,
+    "per_aspect": {
+     "AMBIENCE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9436619718309859,
+       "recall": 0.8854625550660793,
+       "f1": 0.9136363636363637
+      },
+      "pair": {
+       "precision": 0.8544600938967136,
+       "recall": 0.801762114537445,
+       "f1": 0.8272727272727273
+      },
+      "detection_tp": 201,
+      "gold_present": 227,
+      "predicted_present": 213
+     },
+     "DRINKS#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8837209302325582,
+       "recall": 0.8085106382978723,
+       "f1": 0.8444444444444444
+      },
+      "pair": {
+       "precision": 0.6976744186046512,
+       "recall": 0.6382978723404256,
+       "f1": 0.6666666666666666
+      },
+      "detection_tp": 38,
+      "gold_present": 47,
+      "predicted_present": 43
+     },
+     "DRINKS#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9267015706806283,
+       "recall": 0.8719211822660099,
+       "f1": 0.8984771573604061
+      },
+      "pair": {
+       "precision": 0.8010471204188482,
+       "recall": 0.7536945812807881,
+       "f1": 0.7766497461928934
+      },
+      "detection_tp": 177,
+      "gold_present": 203,
+      "predicted_present": 191
+     },
+     "DRINKS#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8640776699029126,
+       "recall": 0.689922480620155,
+       "f1": 0.7672413793103449
+      },
+      "pair": {
+       "precision": 0.7281553398058253,
+       "recall": 0.5813953488372093,
+       "f1": 0.646551724137931
+      },
+      "detection_tp": 89,
+      "gold_present": 129,
+      "predicted_present": 103
+     },
+     "FOOD#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8305084745762712,
+       "recall": 0.875,
+       "f1": 0.8521739130434782
+      },
+      "pair": {
+       "precision": 0.7711864406779662,
+       "recall": 0.8125,
+       "f1": 0.7913043478260869
+      },
+      "detection_tp": 98,
+      "gold_present": 112,
+      "predicted_present": 118
+     },
+     "FOOD#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8846153846153846,
+       "recall": 0.9133574007220217,
+       "f1": 0.8987566607460036
+      },
+      "pair": {
+       "precision": 0.7832167832167832,
+       "recall": 0.8086642599277978,
+       "f1": 0.7957371225577264
+      },
+      "detection_tp": 506,
+      "gold_present": 554,
+      "predicted_present": 572
+     },
+     "FOOD#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8732057416267942,
+       "recall": 0.8352402745995423,
+       "f1": 0.8538011695906432
+      },
+      "pair": {
+       "precision": 0.6961722488038278,
+       "recall": 0.665903890160183,
+       "f1": 0.6807017543859649
+      },
+      "detection_tp": 365,
+      "gold_present": 437,
+      "predicted_present": 418
+     },
+     "LOCATION#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9891304347826086,
+       "recall": 0.875,
+       "f1": 0.9285714285714286
+      },
+      "pair": {
+       "precision": 0.75,
+       "recall": 0.6634615384615384,
+       "f1": 0.7040816326530612
+      },
+      "detection_tp": 91,
+      "gold_present": 104,
+      "predicted_present": 92
+     },
+     "RESTAURANT#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8154506437768241,
+       "recall": 0.7569721115537849,
+       "f1": 0.7851239669421488
+      },
+      "pair": {
+       "precision": 0.6695278969957081,
+       "recall": 0.6215139442231076,
+       "f1": 0.6446280991735537
+      },
+      "detection_tp": 190,
+      "gold_present": 251,
+      "predicted_present": 233
+     },
+     "RESTAURANT#MISCELLANEOUS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.792,
+       "recall": 0.6827586206896552,
+       "f1": 0.7333333333333333
+      },
+      "pair": {
+       "precision": 0.64,
+       "recall": 0.5517241379310345,
+       "f1": 0.5925925925925926
+      },
+      "detection_tp": 99,
+      "gold_present": 145,
+      "predicted_present": 125
+     },
+     "RESTAURANT#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9405940594059405,
+       "recall": 0.811965811965812,
+       "f1": 0.8715596330275229
+      },
+      "pair": {
+       "precision": 0.7722772277227723,
+       "recall": 0.6666666666666666,
+       "f1": 0.7155963302752294
+      },
+      "detection_tp": 95,
+      "gold_present": 117,
+      "predicted_present": 101
+     },
+     "SERVICE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9278688524590164,
+       "recall": 0.933993399339934,
+       "f1": 0.930921052631579
+      },
+      "pair": {
+       "precision": 0.8360655737704918,
+       "recall": 0.8415841584158416,
+       "f1": 0.8388157894736842
+      },
+      "detection_tp": 283,
+      "gold_present": 303,
+      "predicted_present": 305
+     }
+    },
+    "task_id": "absa_restaurant",
+    "split": "test",
+    "selection_f1": 0.7419793894614038,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.7419793894614038,
+   "selection_f1_recomputed_from_predictions": 0.7419793894614038,
+   "test_count": 1938,
+   "predictions_rows": 1938,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_web/hf_encoder",
+   "license": "no NC data",
+   "research_only": false,
+   "elapsed_s": 6.0,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "P_web/absa_restaurant/43": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "P_web",
+   "task_id": "absa_restaurant",
+   "seed": 43,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/P_web/absa_restaurant/seed_43/best_checkpoint.pt",
+   "checkpoint_sha256": "a0899d7bc68899d944d1992b97160fc94d20fd71d409f3b5f21633047dc1b3fc",
+   "validation_selected_epoch": 29,
+   "validation_selection_f1": 0.7450024378352024,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 1938,
+    "aspect_count": 12,
+    "aspect_names": [
+     "AMBIENCE#GENERAL",
+     "DRINKS#PRICES",
+     "DRINKS#QUALITY",
+     "DRINKS#STYLE&OPTIONS",
+     "FOOD#PRICES",
+     "FOOD#QUALITY",
+     "FOOD#STYLE&OPTIONS",
+     "LOCATION#GENERAL",
+     "RESTAURANT#GENERAL",
+     "RESTAURANT#MISCELLANEOUS",
+     "RESTAURANT#PRICES",
+     "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8873015873015873,
+    "detection_micro_recall": 0.8505135032331685,
+    "detection_micro_f1": 0.8685181588657992,
+    "detection_macro_precision": 0.882807881146667,
+    "detection_macro_recall": 0.8394571085363509,
+    "detection_macro_f1": 0.860155526126179,
+    "pair_micro_precision": 0.7531746031746032,
+    "pair_micro_recall": 0.7219475085583872,
+    "pair_micro_f1": 0.7372305302000388,
+    "pair_macro_precision": 0.7426703171886638,
+    "pair_macro_recall": 0.7063515944809744,
+    "pair_macro_f1": 0.7236910265953135,
+    "classification_pair_micro_f1": 0.7372305302000388,
+    "classification_pair_macro_f1": 0.7236910265953135,
+    "per_aspect": {
+     "AMBIENCE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9471153846153846,
+       "recall": 0.8678414096916299,
+       "f1": 0.9057471264367816
+      },
+      "pair": {
+       "precision": 0.8509615384615384,
+       "recall": 0.7797356828193832,
+       "f1": 0.8137931034482758
+      },
+      "detection_tp": 197,
+      "gold_present": 227,
+      "predicted_present": 208
+     },
+     "DRINKS#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8723404255319149,
+       "recall": 0.8723404255319149,
+       "f1": 0.8723404255319149
+      },
+      "pair": {
+       "precision": 0.7021276595744681,
+       "recall": 0.7021276595744681,
+       "f1": 0.7021276595744681
+      },
+      "detection_tp": 41,
+      "gold_present": 47,
+      "predicted_present": 47
+     },
+     "DRINKS#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8921568627450981,
+       "recall": 0.896551724137931,
+       "f1": 0.8943488943488943
+      },
+      "pair": {
+       "precision": 0.7401960784313726,
+       "recall": 0.7438423645320197,
+       "f1": 0.742014742014742
+      },
+      "detection_tp": 182,
+      "gold_present": 203,
+      "predicted_present": 204
+     },
+     "DRINKS#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8135593220338984,
+       "recall": 0.7441860465116279,
+       "f1": 0.7773279352226721
+      },
+      "pair": {
+       "precision": 0.6610169491525424,
+       "recall": 0.6046511627906976,
+       "f1": 0.631578947368421
+      },
+      "detection_tp": 96,
+      "gold_present": 129,
+      "predicted_present": 118
+     },
+     "FOOD#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8828828828828829,
+       "recall": 0.875,
+       "f1": 0.8789237668161435
+      },
+      "pair": {
+       "precision": 0.8018018018018018,
+       "recall": 0.7946428571428571,
+       "f1": 0.7982062780269058
+      },
+      "detection_tp": 98,
+      "gold_present": 112,
+      "predicted_present": 111
+     },
+     "FOOD#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8990990990990991,
+       "recall": 0.9007220216606499,
+       "f1": 0.8999098286744815
+      },
+      "pair": {
+       "precision": 0.7927927927927928,
+       "recall": 0.7942238267148014,
+       "f1": 0.7935076645626691
+      },
+      "detection_tp": 499,
+      "gold_present": 554,
+      "predicted_present": 555
+     },
+     "FOOD#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8688524590163934,
+       "recall": 0.8489702517162472,
+       "f1": 0.8587962962962963
+      },
+      "pair": {
+       "precision": 0.6861826697892272,
+       "recall": 0.6704805491990846,
+       "f1": 0.6782407407407407
+      },
+      "detection_tp": 371,
+      "gold_present": 437,
+      "predicted_present": 427
+     },
+     "LOCATION#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9387755102040817,
+       "recall": 0.8846153846153846,
+       "f1": 0.9108910891089109
+      },
+      "pair": {
+       "precision": 0.7040816326530612,
+       "recall": 0.6634615384615384,
+       "f1": 0.6831683168316832
+      },
+      "detection_tp": 92,
+      "gold_present": 104,
+      "predicted_present": 98
+     },
+     "RESTAURANT#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8008849557522124,
+       "recall": 0.7211155378486056,
+       "f1": 0.7589098532494759
+      },
+      "pair": {
+       "precision": 0.6460176991150443,
+       "recall": 0.5816733067729084,
+       "f1": 0.6121593291404612
+      },
+      "detection_tp": 181,
+      "gold_present": 251,
+      "predicted_present": 226
+     },
+     "RESTAURANT#MISCELLANEOUS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8203125,
+       "recall": 0.7241379310344828,
+       "f1": 0.7692307692307693
+      },
+      "pair": {
+       "precision": 0.703125,
+       "recall": 0.6206896551724138,
+       "f1": 0.6593406593406593
+      },
+      "detection_tp": 105,
+      "gold_present": 145,
+      "predicted_present": 128
+     },
+     "RESTAURANT#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9056603773584906,
+       "recall": 0.8205128205128205,
+       "f1": 0.8609865470852018
+      },
+      "pair": {
+       "precision": 0.7641509433962265,
+       "recall": 0.6923076923076923,
+       "f1": 0.726457399103139
+      },
+      "detection_tp": 96,
+      "gold_present": 117,
+      "predicted_present": 106
+     },
+     "SERVICE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.952054794520548,
+       "recall": 0.9174917491749175,
+       "f1": 0.934453781512605
+      },
+      "pair": {
+       "precision": 0.8595890410958904,
+       "recall": 0.8283828382838284,
+       "f1": 0.8436974789915966
+      },
+      "detection_tp": 278,
+      "gold_present": 303,
+      "predicted_present": 292
+     }
+    },
+    "task_id": "absa_restaurant",
+    "split": "test",
+    "selection_f1": 0.7372305302000388,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.7372305302000388,
+   "selection_f1_recomputed_from_predictions": 0.7372305302000388,
+   "test_count": 1938,
+   "predictions_rows": 1938,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_web/hf_encoder",
+   "license": "no NC data",
+   "research_only": false,
+   "elapsed_s": 5.5,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "P_web/visfd/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "P_web",
+   "task_id": "visfd",
+   "seed": 42,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/P_web/visfd/seed_42/best_checkpoint.pt",
+   "checkpoint_sha256": "fb58352217da6a9d6bd1ae956513269925de2b187132645c396ddc28527a0252",
+   "validation_selected_epoch": 14,
+   "validation_selection_f1": 0.8318024393916579,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 2224,
+    "aspect_count": 11,
+    "aspect_names": [
+     "BATTERY",
+     "CAMERA",
+     "DESIGN",
+     "FEATURES",
+     "GENERAL",
+     "OTHERS",
+     "PERFORMANCE",
+     "PRICE",
+     "SCREEN",
+     "SER&ACC",
+     "STORAGE"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     false,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8932504942106749,
+    "detection_micro_recall": 0.8743607463718037,
+    "detection_micro_f1": 0.8837046867360481,
+    "detection_macro_precision": 0.8793995060405063,
+    "detection_macro_recall": 0.8229316131004357,
+    "detection_macro_f1": 0.8452740067180309,
+    "pair_micro_precision": 0.837188479331443,
+    "pair_micro_recall": 0.834573043736983,
+    "pair_micro_f1": 0.8358787156373388,
+    "pair_macro_precision": 0.8152942294583975,
+    "pair_macro_recall": 0.778748720849785,
+    "pair_macro_f1": 0.7929897460222921,
+    "classification_pair_micro_f1": 0.8358787156373388,
+    "classification_pair_macro_f1": 0.7929897460222921,
+    "per_aspect": {
+     "BATTERY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.956064947468959,
+       "recall": 0.9871794871794872,
+       "f1": 0.9713731198447355
+      },
+      "pair": {
+       "precision": 0.8490926456542502,
+       "recall": 0.8767258382642998,
+       "f1": 0.8626880155264435
+      },
+      "detection_tp": 1001,
+      "gold_present": 1014,
+      "predicted_present": 1047
+     },
+     "CAMERA": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9533333333333334,
+       "recall": 0.9727891156462585,
+       "f1": 0.9629629629629629
+      },
+      "pair": {
+       "precision": 0.8716666666666667,
+       "recall": 0.8894557823129252,
+       "f1": 0.8804713804713805
+      },
+      "detection_tp": 572,
+      "gold_present": 588,
+      "predicted_present": 600
+     },
+     "DESIGN": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9265536723163842,
+       "recall": 0.8241206030150754,
+       "f1": 0.8723404255319149
+      },
+      "pair": {
+       "precision": 0.8559322033898306,
+       "recall": 0.7613065326633166,
+       "f1": 0.8058510638297872
+      },
+      "detection_tp": 328,
+      "gold_present": 398,
+      "predicted_present": 354
+     },
+     "FEATURES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8909090909090909,
+       "recall": 0.8959212376933896,
+       "f1": 0.8934081346423562
+      },
+      "pair": {
+       "precision": 0.8,
+       "recall": 0.8045007032348804,
+       "f1": 0.8022440392706872
+      },
+      "detection_tp": 637,
+      "gold_present": 711,
+      "predicted_present": 715
+     },
+     "GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.891583452211127,
+       "recall": 0.9051412020275162,
+       "f1": 0.8983111749910169
+      },
+      "pair": {
+       "precision": 0.8651925820256776,
+       "recall": 0.8783490224475018,
+       "f1": 0.8717211642112828
+      },
+      "detection_tp": 1250,
+      "gold_present": 1381,
+      "predicted_present": 1402
+     },
+     "OTHERS": {
+      "pair_scored": false,
+      "detection": {
+       "precision": 0.5853018372703412,
+       "recall": 0.4346978557504873,
+       "f1": 0.4988814317673378
+      },
+      "pair": null,
+      "detection_tp": 223,
+      "gold_present": 513,
+      "predicted_present": 381
+     },
+     "PERFORMANCE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.91396933560477,
+       "recall": 0.9155290102389079,
+       "f1": 0.9147485080988917
+      },
+      "pair": {
+       "precision": 0.8407155025553663,
+       "recall": 0.8421501706484642,
+       "f1": 0.8414322250639387
+      },
+      "detection_tp": 1073,
+      "gold_present": 1172,
+      "predicted_present": 1174
+     },
+     "PRICE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9048442906574394,
+       "recall": 0.9191564147627417,
+       "f1": 0.911944202266783
+      },
+      "pair": {
+       "precision": 0.7768166089965398,
+       "recall": 0.789103690685413,
+       "f1": 0.7829119442022667
+      },
+      "detection_tp": 523,
+      "gold_present": 569,
+      "predicted_present": 578
+     },
+     "SCREEN": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.835820895522388,
+       "recall": 0.8327137546468402,
+       "f1": 0.8342644320297952
+      },
+      "pair": {
+       "precision": 0.7723880597014925,
+       "recall": 0.7695167286245354,
+       "f1": 0.770949720670391
+      },
+      "detection_tp": 224,
+      "gold_present": 269,
+      "predicted_present": 268
+     },
+     "SER&ACC": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8775137111517367,
+       "recall": 0.8094435075885329,
+       "f1": 0.8421052631578947
+      },
+      "pair": {
+       "precision": 0.8336380255941499,
+       "recall": 0.7689713322091062,
+       "f1": 0.8
+      },
+      "detection_tp": 480,
+      "gold_present": 593,
+      "predicted_present": 547
+     },
+     "STORAGE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9375,
+       "recall": 0.5555555555555556,
+       "f1": 0.6976744186046512
+      },
+      "pair": {
+       "precision": 0.6875,
+       "recall": 0.4074074074074074,
+       "f1": 0.5116279069767442
+      },
+      "detection_tp": 15,
+      "gold_present": 27,
+      "predicted_present": 16
+     }
+    },
+    "task_id": "visfd",
+    "split": "test",
+    "selection_f1": 0.8358787156373388,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.8358787156373388,
+   "selection_f1_recomputed_from_predictions": 0.8358787156373388,
+   "test_count": 2224,
+   "predictions_rows": 2224,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_web/hf_encoder",
+   "license": "no NC data",
+   "research_only": false,
+   "elapsed_s": 6.1,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "P_web/vsfc_topic/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "P_web",
+   "task_id": "vsfc_topic",
+   "seed": 42,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/P_web/vsfc_topic/seed_42/best_checkpoint.pt",
+   "checkpoint_sha256": "50a76dfcadd1115faf6075fcda7a22f10a115fd392aaec9de12705cd06256c9d",
+   "validation_selected_epoch": 28,
+   "validation_selection_f1": 0.8021457306987589,
+   "learning_rate": 2e-05,
+   "test_metrics": {
+    "n": 3166,
+    "labels": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "accuracy": 0.8834491471888819,
+    "macro_precision": 0.7982024083328674,
+    "macro_recall": 0.7830562574706657,
+    "macro_f1": 0.7888081713828424,
+    "per_class": {
+     "0": {
+      "support": 2290,
+      "predicted": 2292,
+      "tp": 2141,
+      "fp": 151,
+      "fn": 149,
+      "precision": 0.9341186736474695,
+      "recall": 0.9349344978165939,
+      "f1": 0.9345264076822348
+     },
+     "1": {
+      "support": 572,
+      "predicted": 598,
+      "tp": 443,
+      "fp": 155,
+      "fn": 129,
+      "precision": 0.7408026755852842,
+      "recall": 0.7744755244755245,
+      "f1": 0.7572649572649572
+     },
+     "2": {
+      "support": 145,
+      "predicted": 149,
+      "tp": 137,
+      "fp": 12,
+      "fn": 8,
+      "precision": 0.9194630872483222,
+      "recall": 0.9448275862068966,
+      "f1": 0.9319727891156463
+     },
+     "3": {
+      "support": 159,
+      "predicted": 127,
+      "tp": 76,
+      "fp": 51,
+      "fn": 83,
+      "precision": 0.5984251968503937,
+      "recall": 0.4779874213836478,
+      "f1": 0.5314685314685315
+     }
+    },
+    "task_id": "vsfc_topic",
+    "split": "test",
+    "selection_f1": 0.7888081713828424,
+    "selection_metric": "fixed_label_macro_f1"
+   },
+   "test_selection_f1": 0.7888081713828424,
+   "selection_f1_recomputed_from_predictions": 0.7888081713828424,
+   "test_count": 3166,
+   "predictions_rows": 3166,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_web/hf_encoder",
+   "license": "no NC data",
+   "research_only": false,
+   "elapsed_s": 7.2,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "P_inf/absa_restaurant/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "P_inf",
+   "task_id": "absa_restaurant",
+   "seed": 42,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/P_inf_NC_research_only/absa_restaurant/seed_42/best_checkpoint.pt",
+   "checkpoint_sha256": "ecc983ed33c3008ac546928509cc9112fb97e5c0718bae54c4cd3a0a958854f1",
+   "validation_selected_epoch": 8,
+   "validation_selection_f1": 0.7404616109279322,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 1938,
+    "aspect_count": 12,
+    "aspect_names": [
+     "AMBIENCE#GENERAL",
+     "DRINKS#PRICES",
+     "DRINKS#QUALITY",
+     "DRINKS#STYLE&OPTIONS",
+     "FOOD#PRICES",
+     "FOOD#QUALITY",
+     "FOOD#STYLE&OPTIONS",
+     "LOCATION#GENERAL",
+     "RESTAURANT#GENERAL",
+     "RESTAURANT#MISCELLANEOUS",
+     "RESTAURANT#PRICES",
+     "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8617580766341096,
+    "detection_micro_recall": 0.8725751236211488,
+    "detection_micro_f1": 0.8671328671328671,
+    "detection_macro_precision": 0.859803910167659,
+    "detection_macro_recall": 0.8599461443516337,
+    "detection_macro_f1": 0.8587752957800218,
+    "pair_micro_precision": 0.7381667918858001,
+    "pair_micro_recall": 0.7474324838341575,
+    "pair_micro_f1": 0.7427707427707427,
+    "pair_macro_precision": 0.7367975173830503,
+    "pair_macro_recall": 0.7362795529071365,
+    "pair_macro_f1": 0.7356051531032838,
+    "classification_pair_micro_f1": 0.7427707427707427,
+    "classification_pair_macro_f1": 0.7356051531032838,
+    "per_aspect": {
+     "AMBIENCE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9395348837209302,
+       "recall": 0.8898678414096917,
+       "f1": 0.9140271493212669
+      },
+      "pair": {
+       "precision": 0.8558139534883721,
+       "recall": 0.8105726872246696,
+       "f1": 0.832579185520362
+      },
+      "detection_tp": 202,
+      "gold_present": 227,
+      "predicted_present": 215
+     },
+     "DRINKS#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.875,
+       "recall": 0.8936170212765957,
+       "f1": 0.8842105263157894
+      },
+      "pair": {
+       "precision": 0.7291666666666666,
+       "recall": 0.7446808510638298,
+       "f1": 0.7368421052631579
+      },
+      "detection_tp": 42,
+      "gold_present": 47,
+      "predicted_present": 48
+     },
+     "DRINKS#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8394495412844036,
+       "recall": 0.9014778325123153,
+       "f1": 0.8693586698337292
+      },
+      "pair": {
+       "precision": 0.6926605504587156,
+       "recall": 0.7438423645320197,
+       "f1": 0.7173396674584323
+      },
+      "detection_tp": 183,
+      "gold_present": 203,
+      "predicted_present": 218
+     },
+     "DRINKS#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.7916666666666666,
+       "recall": 0.7364341085271318,
+       "f1": 0.7630522088353414
+      },
+      "pair": {
+       "precision": 0.7166666666666667,
+       "recall": 0.6666666666666666,
+       "f1": 0.6907630522088354
+      },
+      "detection_tp": 95,
+      "gold_present": 129,
+      "predicted_present": 120
+     },
+     "FOOD#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.808,
+       "recall": 0.9017857142857143,
+       "f1": 0.8523206751054853
+      },
+      "pair": {
+       "precision": 0.72,
+       "recall": 0.8035714285714286,
+       "f1": 0.759493670886076
+      },
+      "detection_tp": 101,
+      "gold_present": 112,
+      "predicted_present": 125
+     },
+     "FOOD#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9175824175824175,
+       "recall": 0.9043321299638989,
+       "f1": 0.9109090909090909
+      },
+      "pair": {
+       "precision": 0.8040293040293041,
+       "recall": 0.7924187725631769,
+       "f1": 0.7981818181818182
+      },
+      "detection_tp": 501,
+      "gold_present": 554,
+      "predicted_present": 546
+     },
+     "FOOD#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8145833333333333,
+       "recall": 0.8947368421052632,
+       "f1": 0.8527808069792803
+      },
+      "pair": {
+       "precision": 0.65,
+       "recall": 0.7139588100686499,
+       "f1": 0.6804798255179935
+      },
+      "detection_tp": 391,
+      "gold_present": 437,
+      "predicted_present": 480
+     },
+     "LOCATION#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.95,
+       "recall": 0.9134615384615384,
+       "f1": 0.9313725490196079
+      },
+      "pair": {
+       "precision": 0.78,
+       "recall": 0.75,
+       "f1": 0.7647058823529411
+      },
+      "detection_tp": 95,
+      "gold_present": 104,
+      "predicted_present": 100
+     },
+     "RESTAURANT#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.7574626865671642,
+       "recall": 0.8087649402390438,
+       "f1": 0.7822736030828517
+      },
+      "pair": {
+       "precision": 0.6268656716417911,
+       "recall": 0.6693227091633466,
+       "f1": 0.6473988439306358
+      },
+      "detection_tp": 203,
+      "gold_present": 251,
+      "predicted_present": 268
+     },
+     "RESTAURANT#MISCELLANEOUS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.7972027972027972,
+       "recall": 0.7862068965517242,
+       "f1": 0.7916666666666666
+      },
+      "pair": {
+       "precision": 0.6783216783216783,
+       "recall": 0.6689655172413793,
+       "f1": 0.6736111111111112
+      },
+      "detection_tp": 114,
+      "gold_present": 145,
+      "predicted_present": 143
+     },
+     "RESTAURANT#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.900990099009901,
+       "recall": 0.7777777777777778,
+       "f1": 0.8348623853211009
+      },
+      "pair": {
+       "precision": 0.7524752475247525,
+       "recall": 0.6495726495726496,
+       "f1": 0.6972477064220184
+      },
+      "detection_tp": 91,
+      "gold_present": 117,
+      "predicted_present": 101
+     },
+     "SERVICE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9261744966442953,
+       "recall": 0.9108910891089109,
+       "f1": 0.9184692179700499
+      },
+      "pair": {
+       "precision": 0.8355704697986577,
+       "recall": 0.8217821782178217,
+       "f1": 0.8286189683860233
+      },
+      "detection_tp": 276,
+      "gold_present": 303,
+      "predicted_present": 298
+     }
+    },
+    "task_id": "absa_restaurant",
+    "split": "test",
+    "selection_f1": 0.7427707427707427,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.7427707427707427,
+   "selection_f1_recomputed_from_predictions": 0.7427707427707427,
+   "test_count": 1938,
+   "predictions_rows": 1938,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_inf_NC_research_only/hf_encoder",
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "research_only": true,
+   "elapsed_s": 5.6,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "P_inf/absa_restaurant/43": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "P_inf",
+   "task_id": "absa_restaurant",
+   "seed": 43,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/P_inf_NC_research_only/absa_restaurant/seed_43/best_checkpoint.pt",
+   "checkpoint_sha256": "20310f0d45f89dd729c6ef7c6932f6dd67bb70b76c1dae4c36111a51dcbe1d20",
+   "validation_selected_epoch": 11,
+   "validation_selection_f1": 0.7417027417027418,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 1938,
+    "aspect_count": 12,
+    "aspect_names": [
+     "AMBIENCE#GENERAL",
+     "DRINKS#PRICES",
+     "DRINKS#QUALITY",
+     "DRINKS#STYLE&OPTIONS",
+     "FOOD#PRICES",
+     "FOOD#QUALITY",
+     "FOOD#STYLE&OPTIONS",
+     "LOCATION#GENERAL",
+     "RESTAURANT#GENERAL",
+     "RESTAURANT#MISCELLANEOUS",
+     "RESTAURANT#PRICES",
+     "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8713789107763615,
+    "detection_micro_recall": 0.8581209585393685,
+    "detection_micro_f1": 0.8646991184361824,
+    "detection_macro_precision": 0.8769179508829964,
+    "detection_macro_recall": 0.8384456793483422,
+    "detection_macro_f1": 0.8554733138627583,
+    "pair_micro_precision": 0.7477790652761684,
+    "pair_micro_recall": 0.7364016736401674,
+    "pair_micro_f1": 0.7420467612111921,
+    "pair_macro_precision": 0.7441362722104082,
+    "pair_macro_recall": 0.7117199534586652,
+    "pair_macro_f1": 0.7260382510824922,
+    "classification_pair_micro_f1": 0.7420467612111921,
+    "classification_pair_macro_f1": 0.7260382510824922,
+    "per_aspect": {
+     "AMBIENCE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9162790697674419,
+       "recall": 0.8678414096916299,
+       "f1": 0.8914027149321267
+      },
+      "pair": {
+       "precision": 0.786046511627907,
+       "recall": 0.7444933920704846,
+       "f1": 0.7647058823529411
+      },
+      "detection_tp": 197,
+      "gold_present": 227,
+      "predicted_present": 215
+     },
+     "DRINKS#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.925,
+       "recall": 0.7872340425531915,
+       "f1": 0.8505747126436781
+      },
+      "pair": {
+       "precision": 0.725,
+       "recall": 0.6170212765957447,
+       "f1": 0.6666666666666666
+      },
+      "detection_tp": 37,
+      "gold_present": 47,
+      "predicted_present": 40
+     },
+     "DRINKS#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8672985781990521,
+       "recall": 0.9014778325123153,
+       "f1": 0.8840579710144928
+      },
+      "pair": {
+       "precision": 0.7061611374407583,
+       "recall": 0.7339901477832512,
+       "f1": 0.7198067632850241
+      },
+      "detection_tp": 183,
+      "gold_present": 203,
+      "predicted_present": 211
+     },
+     "DRINKS#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8787878787878788,
+       "recall": 0.6744186046511628,
+       "f1": 0.7631578947368421
+      },
+      "pair": {
+       "precision": 0.7777777777777778,
+       "recall": 0.5968992248062015,
+       "f1": 0.6754385964912281
+      },
+      "detection_tp": 87,
+      "gold_present": 129,
+      "predicted_present": 99
+     },
+     "FOOD#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.847457627118644,
+       "recall": 0.8928571428571429,
+       "f1": 0.8695652173913043
+      },
+      "pair": {
+       "precision": 0.7796610169491526,
+       "recall": 0.8214285714285714,
+       "f1": 0.8
+      },
+      "detection_tp": 100,
+      "gold_present": 112,
+      "predicted_present": 118
+     },
+     "FOOD#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8904593639575972,
+       "recall": 0.9097472924187726,
+       "f1": 0.9
+      },
+      "pair": {
+       "precision": 0.7915194346289752,
+       "recall": 0.8086642599277978,
+       "f1": 0.8
+      },
+      "detection_tp": 504,
+      "gold_present": 554,
+      "predicted_present": 566
+     },
+     "FOOD#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8362831858407079,
+       "recall": 0.8649885583524027,
+       "f1": 0.8503937007874016
+      },
+      "pair": {
+       "precision": 0.6836283185840708,
+       "recall": 0.7070938215102975,
+       "f1": 0.6951631046119235
+      },
+      "detection_tp": 378,
+      "gold_present": 437,
+      "predicted_present": 452
+     },
+     "LOCATION#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9411764705882353,
+       "recall": 0.9230769230769231,
+       "f1": 0.9320388349514563
+      },
+      "pair": {
+       "precision": 0.7352941176470589,
+       "recall": 0.7211538461538461,
+       "f1": 0.7281553398058253
+      },
+      "detection_tp": 96,
+      "gold_present": 104,
+      "predicted_present": 102
+     },
+     "RESTAURANT#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.754863813229572,
+       "recall": 0.7729083665338645,
+       "f1": 0.7637795275590551
+      },
+      "pair": {
+       "precision": 0.6342412451361867,
+       "recall": 0.649402390438247,
+       "f1": 0.6417322834645669
+      },
+      "detection_tp": 194,
+      "gold_present": 251,
+      "predicted_present": 257
+     },
+     "RESTAURANT#MISCELLANEOUS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.808,
+       "recall": 0.696551724137931,
+       "f1": 0.7481481481481481
+      },
+      "pair": {
+       "precision": 0.696,
+       "recall": 0.6,
+       "f1": 0.6444444444444445
+      },
+      "detection_tp": 101,
+      "gold_present": 145,
+      "predicted_present": 125
+     },
+     "RESTAURANT#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.908256880733945,
+       "recall": 0.8461538461538461,
+       "f1": 0.8761061946902655
+      },
+      "pair": {
+       "precision": 0.7431192660550459,
+       "recall": 0.6923076923076923,
+       "f1": 0.7168141592920354
+      },
+      "detection_tp": 99,
+      "gold_present": 117,
+      "predicted_present": 109
+     },
+     "SERVICE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9491525423728814,
+       "recall": 0.9240924092409241,
+       "f1": 0.9364548494983278
+      },
+      "pair": {
+       "precision": 0.8711864406779661,
+       "recall": 0.8481848184818482,
+       "f1": 0.8595317725752508
+      },
+      "detection_tp": 280,
+      "gold_present": 303,
+      "predicted_present": 295
+     }
+    },
+    "task_id": "absa_restaurant",
+    "split": "test",
+    "selection_f1": 0.7420467612111921,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.7420467612111921,
+   "selection_f1_recomputed_from_predictions": 0.7420467612111921,
+   "test_count": 1938,
+   "predictions_rows": 1938,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_inf_NC_research_only/hf_encoder",
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "research_only": true,
+   "elapsed_s": 5.3,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "P_inf/visfd/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "P_inf",
+   "task_id": "visfd",
+   "seed": 42,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/P_inf_NC_research_only/visfd/seed_42/best_checkpoint.pt",
+   "checkpoint_sha256": "4d48cb0a2a0f4763b0a5e77fac2e21b9e288aadd19969335c8439d14b6da18de",
+   "validation_selected_epoch": 18,
+   "validation_selection_f1": 0.8433953699500681,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 2224,
+    "aspect_count": 11,
+    "aspect_names": [
+     "BATTERY",
+     "CAMERA",
+     "DESIGN",
+     "FEATURES",
+     "GENERAL",
+     "OTHERS",
+     "PERFORMANCE",
+     "PRICE",
+     "SCREEN",
+     "SER&ACC",
+     "STORAGE"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     false,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8969859912268289,
+    "detection_micro_recall": 0.8761575673807879,
+    "detection_micro_f1": 0.8864494476297021,
+    "detection_macro_precision": 0.8763975062715857,
+    "detection_macro_recall": 0.827644513509927,
+    "detection_macro_f1": 0.8480699800713634,
+    "pair_micro_precision": 0.8356205250596659,
+    "pair_micro_recall": 0.8333829217494794,
+    "pair_micro_f1": 0.834500223447043,
+    "pair_macro_precision": 0.811293913803276,
+    "pair_macro_recall": 0.7817687925213543,
+    "pair_macro_f1": 0.7942573268849744,
+    "classification_pair_micro_f1": 0.834500223447043,
+    "classification_pair_macro_f1": 0.7942573268849744,
+    "per_aspect": {
+     "BATTERY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9560229445506692,
+       "recall": 0.9861932938856016,
+       "f1": 0.970873786407767
+      },
+      "pair": {
+       "precision": 0.8546845124282982,
+       "recall": 0.8816568047337278,
+       "f1": 0.8679611650485437
+      },
+      "detection_tp": 1000,
+      "gold_present": 1014,
+      "predicted_present": 1046
+     },
+     "CAMERA": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9411764705882353,
+       "recall": 0.9795918367346939,
+       "f1": 0.96
+      },
+      "pair": {
+       "precision": 0.8627450980392157,
+       "recall": 0.8979591836734694,
+       "f1": 0.88
+      },
+      "detection_tp": 576,
+      "gold_present": 588,
+      "predicted_present": 612
+     },
+     "DESIGN": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9418604651162791,
+       "recall": 0.8140703517587939,
+       "f1": 0.8733153638814016
+      },
+      "pair": {
+       "precision": 0.8691860465116279,
+       "recall": 0.7512562814070352,
+       "f1": 0.8059299191374663
+      },
+      "detection_tp": 324,
+      "gold_present": 398,
+      "predicted_present": 344
+     },
+     "FEATURES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8991477272727273,
+       "recall": 0.890295358649789,
+       "f1": 0.8946996466431095
+      },
+      "pair": {
+       "precision": 0.8110795454545454,
+       "recall": 0.8030942334739803,
+       "f1": 0.8070671378091873
+      },
+      "detection_tp": 633,
+      "gold_present": 711,
+      "predicted_present": 704
+     },
+     "GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8909348441926346,
+       "recall": 0.9109341057204924,
+       "f1": 0.9008234872896527
+      },
+      "pair": {
+       "precision": 0.8555240793201133,
+       "recall": 0.8747284576393918,
+       "f1": 0.8650196920873613
+      },
+      "detection_tp": 1258,
+      "gold_present": 1381,
+      "predicted_present": 1412
+     },
+     "OTHERS": {
+      "pair_scored": false,
+      "detection": {
+       "precision": 0.5895316804407713,
+       "recall": 0.4171539961013645,
+       "f1": 0.4885844748858447
+      },
+      "pair": null,
+      "detection_tp": 214,
+      "gold_present": 513,
+      "predicted_present": 363
+     },
+     "PERFORMANCE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9166666666666666,
+       "recall": 0.9197952218430034,
+       "f1": 0.9182282793867121
+      },
+      "pair": {
+       "precision": 0.8367346938775511,
+       "recall": 0.8395904436860068,
+       "f1": 0.838160136286201
+      },
+      "detection_tp": 1078,
+      "gold_present": 1172,
+      "predicted_present": 1176
+     },
+     "PRICE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9018932874354562,
+       "recall": 0.9209138840070299,
+       "f1": 0.9113043478260869
+      },
+      "pair": {
+       "precision": 0.7573149741824441,
+       "recall": 0.773286467486819,
+       "f1": 0.7652173913043478
+      },
+      "detection_tp": 524,
+      "gold_present": 569,
+      "predicted_present": 581
+     },
+     "SCREEN": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.870722433460076,
+       "recall": 0.8513011152416357,
+       "f1": 0.8609022556390977
+      },
+      "pair": {
+       "precision": 0.8022813688212928,
+       "recall": 0.7843866171003717,
+       "f1": 0.793233082706767
+      },
+      "detection_tp": 229,
+      "gold_present": 269,
+      "predicted_present": 263
+     },
+     "SER&ACC": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8903107861060329,
+       "recall": 0.821247892074199,
+       "f1": 0.8543859649122807
+      },
+      "pair": {
+       "precision": 0.8318098720292505,
+       "recall": 0.7672849915682968,
+       "f1": 0.7982456140350878
+      },
+      "detection_tp": 487,
+      "gold_present": 593,
+      "predicted_present": 547
+     },
+     "STORAGE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8421052631578947,
+       "recall": 0.5925925925925926,
+       "f1": 0.6956521739130435
+      },
+      "pair": {
+       "precision": 0.631578947368421,
+       "recall": 0.4444444444444444,
+       "f1": 0.5217391304347826
+      },
+      "detection_tp": 16,
+      "gold_present": 27,
+      "predicted_present": 19
+     }
+    },
+    "task_id": "visfd",
+    "split": "test",
+    "selection_f1": 0.834500223447043,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.834500223447043,
+   "selection_f1_recomputed_from_predictions": 0.834500223447043,
+   "test_count": 2224,
+   "predictions_rows": 2224,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_inf_NC_research_only/hf_encoder",
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "research_only": true,
+   "elapsed_s": 6.2,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "P_inf/vsfc_topic/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "P_inf",
+   "task_id": "vsfc_topic",
+   "seed": 42,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/P_inf_NC_research_only/vsfc_topic/seed_42/best_checkpoint.pt",
+   "checkpoint_sha256": "6ab9189ea0c1ce99f0af0ce936f741a753d280c07f9c0343bd67dd055c6d02e4",
+   "validation_selected_epoch": 26,
+   "validation_selection_f1": 0.8010412592531703,
+   "learning_rate": 2e-05,
+   "test_metrics": {
+    "n": 3166,
+    "labels": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "accuracy": 0.8862918509159823,
+    "macro_precision": 0.8050548402479732,
+    "macro_recall": 0.7702139202912345,
+    "macro_f1": 0.7850067676429435,
+    "per_class": {
+     "0": {
+      "support": 2290,
+      "predicted": 2330,
+      "tp": 2170,
+      "fp": 160,
+      "fn": 120,
+      "precision": 0.9313304721030042,
+      "recall": 0.9475982532751092,
+      "f1": 0.9393939393939394
+     },
+     "1": {
+      "support": 572,
+      "predicted": 572,
+      "tp": 429,
+      "fp": 143,
+      "fn": 143,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75
+     },
+     "2": {
+      "support": 145,
+      "predicted": 144,
+      "tp": 134,
+      "fp": 10,
+      "fn": 11,
+      "precision": 0.9305555555555556,
+      "recall": 0.9241379310344827,
+      "f1": 0.9273356401384083
+     },
+     "3": {
+      "support": 159,
+      "predicted": 120,
+      "tp": 73,
+      "fp": 47,
+      "fn": 86,
+      "precision": 0.6083333333333333,
+      "recall": 0.4591194968553459,
+      "f1": 0.5232974910394266
+     }
+    },
+    "task_id": "vsfc_topic",
+    "split": "test",
+    "selection_f1": 0.7850067676429435,
+    "selection_metric": "fixed_label_macro_f1"
+   },
+   "test_selection_f1": 0.7850067676429435,
+   "selection_f1_recomputed_from_predictions": 0.7850067676429435,
+   "test_count": 3166,
+   "predictions_rows": 3166,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_inf_NC_research_only/hf_encoder",
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "research_only": true,
+   "elapsed_s": 7.0,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "C_inf/absa_restaurant/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "C_inf",
+   "task_id": "absa_restaurant",
+   "seed": 42,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/C_inf_NC_research_only/absa_restaurant/seed_42/best_checkpoint.pt",
+   "checkpoint_sha256": "9e8a6ae9a1950225ef807deeae719626961b20d931b781060963f4148c5cc1f0",
+   "validation_selected_epoch": 15,
+   "validation_selection_f1": 0.7608906098741529,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 1938,
+    "aspect_count": 12,
+    "aspect_names": [
+     "AMBIENCE#GENERAL",
+     "DRINKS#PRICES",
+     "DRINKS#QUALITY",
+     "DRINKS#STYLE&OPTIONS",
+     "FOOD#PRICES",
+     "FOOD#QUALITY",
+     "FOOD#STYLE&OPTIONS",
+     "LOCATION#GENERAL",
+     "RESTAURANT#GENERAL",
+     "RESTAURANT#MISCELLANEOUS",
+     "RESTAURANT#PRICES",
+     "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8862485391507596,
+    "detection_micro_recall": 0.8653480410802586,
+    "detection_micro_f1": 0.8756735950731331,
+    "detection_macro_precision": 0.8836032445187066,
+    "detection_macro_recall": 0.8534442241381321,
+    "detection_macro_f1": 0.8677150420431049,
+    "pair_micro_precision": 0.7666536813400857,
+    "pair_micro_recall": 0.7485736021300875,
+    "pair_micro_f1": 0.7575057736720554,
+    "pair_macro_precision": 0.7569363830804744,
+    "pair_macro_recall": 0.7313154452397534,
+    "pair_macro_f1": 0.7434345175661323,
+    "classification_pair_micro_f1": 0.7575057736720554,
+    "classification_pair_macro_f1": 0.7434345175661323,
+    "per_aspect": {
+     "AMBIENCE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9530516431924883,
+       "recall": 0.8942731277533039,
+       "f1": 0.9227272727272727
+      },
+      "pair": {
+       "precision": 0.8591549295774648,
+       "recall": 0.8061674008810573,
+       "f1": 0.8318181818181818
+      },
+      "detection_tp": 203,
+      "gold_present": 227,
+      "predicted_present": 213
+     },
+     "DRINKS#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9318181818181818,
+       "recall": 0.8723404255319149,
+       "f1": 0.9010989010989011
+      },
+      "pair": {
+       "precision": 0.7727272727272727,
+       "recall": 0.723404255319149,
+       "f1": 0.7472527472527473
+      },
+      "detection_tp": 41,
+      "gold_present": 47,
+      "predicted_present": 44
+     },
+     "DRINKS#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8955223880597015,
+       "recall": 0.8866995073891626,
+       "f1": 0.8910891089108911
+      },
+      "pair": {
+       "precision": 0.7512437810945274,
+       "recall": 0.7438423645320197,
+       "f1": 0.7475247524752475
+      },
+      "detection_tp": 180,
+      "gold_present": 203,
+      "predicted_present": 201
+     },
+     "DRINKS#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8103448275862069,
+       "recall": 0.7286821705426356,
+       "f1": 0.7673469387755102
+      },
+      "pair": {
+       "precision": 0.6982758620689655,
+       "recall": 0.627906976744186,
+       "f1": 0.6612244897959184
+      },
+      "detection_tp": 94,
+      "gold_present": 129,
+      "predicted_present": 116
+     },
+     "FOOD#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8608695652173913,
+       "recall": 0.8839285714285714,
+       "f1": 0.8722466960352423
+      },
+      "pair": {
+       "precision": 0.8,
+       "recall": 0.8214285714285714,
+       "f1": 0.8105726872246696
+      },
+      "detection_tp": 99,
+      "gold_present": 112,
+      "predicted_present": 115
+     },
+     "FOOD#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9045936395759717,
+       "recall": 0.924187725631769,
+       "f1": 0.9142857142857143
+      },
+      "pair": {
+       "precision": 0.8144876325088339,
+       "recall": 0.8321299638989169,
+       "f1": 0.8232142857142857
+      },
+      "detection_tp": 512,
+      "gold_present": 554,
+      "predicted_present": 566
+     },
+     "FOOD#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8679245283018868,
+       "recall": 0.8421052631578947,
+       "f1": 0.8548199767711963
+      },
+      "pair": {
+       "precision": 0.714622641509434,
+       "recall": 0.6933638443935927,
+       "f1": 0.7038327526132404
+      },
+      "detection_tp": 368,
+      "gold_present": 437,
+      "predicted_present": 424
+     },
+     "LOCATION#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9245283018867925,
+       "recall": 0.9423076923076923,
+       "f1": 0.9333333333333333
+      },
+      "pair": {
+       "precision": 0.7358490566037735,
+       "recall": 0.75,
+       "f1": 0.7428571428571429
+      },
+      "detection_tp": 98,
+      "gold_present": 104,
+      "predicted_present": 106
+     },
+     "RESTAURANT#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.788,
+       "recall": 0.7848605577689243,
+       "f1": 0.7864271457085829
+      },
+      "pair": {
+       "precision": 0.628,
+       "recall": 0.6254980079681275,
+       "f1": 0.626746506986028
+      },
+      "detection_tp": 197,
+      "gold_present": 251,
+      "predicted_present": 250
+     },
+     "RESTAURANT#MISCELLANEOUS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.808,
+       "recall": 0.696551724137931,
+       "f1": 0.7481481481481481
+      },
+      "pair": {
+       "precision": 0.688,
+       "recall": 0.593103448275862,
+       "f1": 0.6370370370370371
+      },
+      "detection_tp": 101,
+      "gold_present": 145,
+      "predicted_present": 125
+     },
+     "RESTAURANT#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9090909090909091,
+       "recall": 0.8547008547008547,
+       "f1": 0.8810572687224669
+      },
+      "pair": {
+       "precision": 0.7454545454545455,
+       "recall": 0.7008547008547008,
+       "f1": 0.7224669603524229
+      },
+      "detection_tp": 100,
+      "gold_present": 117,
+      "predicted_present": 110
+     },
+     "SERVICE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9494949494949495,
+       "recall": 0.9306930693069307,
+       "f1": 0.94
+      },
+      "pair": {
+       "precision": 0.8754208754208754,
+       "recall": 0.858085808580858,
+       "f1": 0.8666666666666667
+      },
+      "detection_tp": 282,
+      "gold_present": 303,
+      "predicted_present": 297
+     }
+    },
+    "task_id": "absa_restaurant",
+    "split": "test",
+    "selection_f1": 0.7575057736720554,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.7575057736720554,
+   "selection_f1_recomputed_from_predictions": 0.7575057736720554,
+   "test_count": 1938,
+   "predictions_rows": 1938,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/C_inf_NC_research_only/hf_encoder",
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "research_only": true,
+   "elapsed_s": 5.4,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "C_inf/absa_restaurant/43": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "C_inf",
+   "task_id": "absa_restaurant",
+   "seed": 43,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/C_inf_NC_research_only/absa_restaurant/seed_43/best_checkpoint.pt",
+   "checkpoint_sha256": "6d73c239a7d61c4b6ef6316b726c0f24fcf7d71eb0fbf7e7b0e95a8c6682c205",
+   "validation_selected_epoch": 12,
+   "validation_selection_f1": 0.7422178988326849,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 1938,
+    "aspect_count": 12,
+    "aspect_names": [
+     "AMBIENCE#GENERAL",
+     "DRINKS#PRICES",
+     "DRINKS#QUALITY",
+     "DRINKS#STYLE&OPTIONS",
+     "FOOD#PRICES",
+     "FOOD#QUALITY",
+     "FOOD#STYLE&OPTIONS",
+     "LOCATION#GENERAL",
+     "RESTAURANT#GENERAL",
+     "RESTAURANT#MISCELLANEOUS",
+     "RESTAURANT#PRICES",
+     "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.882051282051282,
+    "detection_micro_recall": 0.8505135032331685,
+    "detection_micro_f1": 0.8659953524399691,
+    "detection_macro_precision": 0.8761729247419688,
+    "detection_macro_recall": 0.8364343616408977,
+    "detection_macro_f1": 0.8554957388079135,
+    "pair_micro_precision": 0.7581854043392505,
+    "pair_micro_recall": 0.7310764549258273,
+    "pair_micro_f1": 0.7443841982958946,
+    "pair_macro_precision": 0.7441304988261287,
+    "pair_macro_recall": 0.7113293938220253,
+    "pair_macro_f1": 0.7270522333768478,
+    "classification_pair_micro_f1": 0.7443841982958946,
+    "classification_pair_macro_f1": 0.7270522333768478,
+    "per_aspect": {
+     "AMBIENCE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.933649289099526,
+       "recall": 0.8678414096916299,
+       "f1": 0.8995433789954338
+      },
+      "pair": {
+       "precision": 0.8341232227488151,
+       "recall": 0.775330396475771,
+       "f1": 0.8036529680365296
+      },
+      "detection_tp": 197,
+      "gold_present": 227,
+      "predicted_present": 211
+     },
+     "DRINKS#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9090909090909091,
+       "recall": 0.851063829787234,
+       "f1": 0.8791208791208791
+      },
+      "pair": {
+       "precision": 0.75,
+       "recall": 0.7021276595744681,
+       "f1": 0.7252747252747253
+      },
+      "detection_tp": 40,
+      "gold_present": 47,
+      "predicted_present": 44
+     },
+     "DRINKS#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.895,
+       "recall": 0.8817733990147784,
+       "f1": 0.8883374689826302
+      },
+      "pair": {
+       "precision": 0.74,
+       "recall": 0.729064039408867,
+       "f1": 0.7344913151364765
+      },
+      "detection_tp": 179,
+      "gold_present": 203,
+      "predicted_present": 200
+     },
+     "DRINKS#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.7916666666666666,
+       "recall": 0.7364341085271318,
+       "f1": 0.7630522088353414
+      },
+      "pair": {
+       "precision": 0.625,
+       "recall": 0.5813953488372093,
+       "f1": 0.6024096385542169
+      },
+      "detection_tp": 95,
+      "gold_present": 129,
+      "predicted_present": 120
+     },
+     "FOOD#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8376068376068376,
+       "recall": 0.875,
+       "f1": 0.8558951965065502
+      },
+      "pair": {
+       "precision": 0.7777777777777778,
+       "recall": 0.8125,
+       "f1": 0.7947598253275109
+      },
+      "detection_tp": 98,
+      "gold_present": 112,
+      "predicted_present": 117
+     },
+     "FOOD#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9008849557522124,
+       "recall": 0.9187725631768953,
+       "f1": 0.9097408400357462
+      },
+      "pair": {
+       "precision": 0.8141592920353983,
+       "recall": 0.8303249097472925,
+       "f1": 0.8221626452189454
+      },
+      "detection_tp": 509,
+      "gold_present": 554,
+      "predicted_present": 565
+     },
+     "FOOD#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8725961538461539,
+       "recall": 0.8306636155606407,
+       "f1": 0.8511137162954279
+      },
+      "pair": {
+       "precision": 0.7091346153846154,
+       "recall": 0.6750572082379863,
+       "f1": 0.6916764361078547
+      },
+      "detection_tp": 363,
+      "gold_present": 437,
+      "predicted_present": 416
+     },
+     "LOCATION#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9583333333333334,
+       "recall": 0.8846153846153846,
+       "f1": 0.92
+      },
+      "pair": {
+       "precision": 0.75,
+       "recall": 0.6923076923076923,
+       "f1": 0.72
+      },
+      "detection_tp": 92,
+      "gold_present": 104,
+      "predicted_present": 96
+     },
+     "RESTAURANT#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8,
+       "recall": 0.749003984063745,
+       "f1": 0.7736625514403292
+      },
+      "pair": {
+       "precision": 0.6638297872340425,
+       "recall": 0.6215139442231076,
+       "f1": 0.6419753086419753
+      },
+      "detection_tp": 188,
+      "gold_present": 251,
+      "predicted_present": 235
+     },
+     "RESTAURANT#MISCELLANEOUS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.7851851851851852,
+       "recall": 0.7310344827586207,
+       "f1": 0.7571428571428571
+      },
+      "pair": {
+       "precision": 0.6666666666666666,
+       "recall": 0.6206896551724138,
+       "f1": 0.6428571428571429
+      },
+      "detection_tp": 106,
+      "gold_present": 145,
+      "predicted_present": 135
+     },
+     "RESTAURANT#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8785046728971962,
+       "recall": 0.8034188034188035,
+       "f1": 0.8392857142857143
+      },
+      "pair": {
+       "precision": 0.7476635514018691,
+       "recall": 0.6837606837606838,
+       "f1": 0.7142857142857143
+      },
+      "detection_tp": 94,
+      "gold_present": 117,
+      "predicted_present": 107
+     },
+     "SERVICE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9515570934256056,
+       "recall": 0.9075907590759076,
+       "f1": 0.9290540540540541
+      },
+      "pair": {
+       "precision": 0.8512110726643599,
+       "recall": 0.8118811881188119,
+       "f1": 0.831081081081081
+      },
+      "detection_tp": 275,
+      "gold_present": 303,
+      "predicted_present": 289
+     }
+    },
+    "task_id": "absa_restaurant",
+    "split": "test",
+    "selection_f1": 0.7443841982958946,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.7443841982958946,
+   "selection_f1_recomputed_from_predictions": 0.7443841982958946,
+   "test_count": 1938,
+   "predictions_rows": 1938,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/C_inf_NC_research_only/hf_encoder",
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "research_only": true,
+   "elapsed_s": 6.1,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "C_inf/visfd/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "C_inf",
+   "task_id": "visfd",
+   "seed": 42,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/C_inf_NC_research_only/visfd/seed_42/best_checkpoint.pt",
+   "checkpoint_sha256": "25699f6e9736dad26949853883694cd0d5b3845f8a8e860567b81690cb1964fb",
+   "validation_selected_epoch": 28,
+   "validation_selection_f1": 0.8342133051742344,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 2224,
+    "aspect_count": 11,
+    "aspect_names": [
+     "BATTERY",
+     "CAMERA",
+     "DESIGN",
+     "FEATURES",
+     "GENERAL",
+     "OTHERS",
+     "PERFORMANCE",
+     "PRICE",
+     "SCREEN",
+     "SER&ACC",
+     "STORAGE"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     false,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.899419181187137,
+    "detection_micro_recall": 0.8775397373876986,
+    "detection_micro_f1": 0.8883447600391773,
+    "detection_macro_precision": 0.8730709509657625,
+    "detection_macro_recall": 0.8335982072443191,
+    "detection_macro_f1": 0.8505990547821508,
+    "pair_micro_precision": 0.838318875261741,
+    "pair_micro_recall": 0.8338292174947932,
+    "pair_micro_f1": 0.8360680190930787,
+    "pair_macro_precision": 0.8051167581426629,
+    "pair_macro_recall": 0.7833087966177481,
+    "pair_macro_f1": 0.792837600654501,
+    "classification_pair_micro_f1": 0.8360680190930787,
+    "classification_pair_macro_f1": 0.792837600654501,
+    "per_aspect": {
+     "BATTERY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9568552253116012,
+       "recall": 0.9842209072978304,
+       "f1": 0.9703451628585319
+      },
+      "pair": {
+       "precision": 0.8552253116011506,
+       "recall": 0.8796844181459567,
+       "f1": 0.8672824501701507
+      },
+      "detection_tp": 998,
+      "gold_present": 1014,
+      "predicted_present": 1043
+     },
+     "CAMERA": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9459016393442623,
+       "recall": 0.9812925170068028,
+       "f1": 0.9632721202003339
+      },
+      "pair": {
+       "precision": 0.860655737704918,
+       "recall": 0.8928571428571429,
+       "f1": 0.8764607679465777
+      },
+      "detection_tp": 577,
+      "gold_present": 588,
+      "predicted_present": 610
+     },
+     "DESIGN": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.936231884057971,
+       "recall": 0.8115577889447236,
+       "f1": 0.8694481830417228
+      },
+      "pair": {
+       "precision": 0.8724637681159421,
+       "recall": 0.7562814070351759,
+       "f1": 0.8102288021534321
+      },
+      "detection_tp": 323,
+      "gold_present": 398,
+      "predicted_present": 345
+     },
+     "FEATURES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8904299583911235,
+       "recall": 0.9029535864978903,
+       "f1": 0.8966480446927374
+      },
+      "pair": {
+       "precision": 0.8002773925104022,
+       "recall": 0.8115330520393812,
+       "f1": 0.8058659217877095
+      },
+      "detection_tp": 642,
+      "gold_present": 711,
+      "predicted_present": 721
+     },
+     "GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8951497860199714,
+       "recall": 0.9087617668356264,
+       "f1": 0.901904419690981
+      },
+      "pair": {
+       "precision": 0.8637660485021398,
+       "recall": 0.8769007965242578,
+       "f1": 0.8702838663312972
+      },
+      "detection_tp": 1255,
+      "gold_present": 1381,
+      "predicted_present": 1402
+     },
+     "OTHERS": {
+      "pair_scored": false,
+      "detection": {
+       "precision": 0.6300268096514745,
+       "recall": 0.4580896686159844,
+       "f1": 0.5304740406320542
+      },
+      "pair": null,
+      "detection_tp": 235,
+      "gold_present": 513,
+      "predicted_present": 373
+     },
+     "PERFORMANCE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9183147033533964,
+       "recall": 0.9112627986348123,
+       "f1": 0.9147751605995718
+      },
+      "pair": {
+       "precision": 0.8349097162510748,
+       "recall": 0.8284982935153583,
+       "f1": 0.8316916488222698
+      },
+      "detection_tp": 1068,
+      "gold_present": 1172,
+      "predicted_present": 1163
+     },
+     "PRICE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8984771573604061,
+       "recall": 0.9332161687170475,
+       "f1": 0.9155172413793103
+      },
+      "pair": {
+       "precision": 0.7698815566835872,
+       "recall": 0.7996485061511424,
+       "f1": 0.7844827586206896
+      },
+      "detection_tp": 531,
+      "gold_present": 569,
+      "predicted_present": 591
+     },
+     "SCREEN": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8444444444444444,
+       "recall": 0.8475836431226765,
+       "f1": 0.8460111317254174
+      },
+      "pair": {
+       "precision": 0.7814814814814814,
+       "recall": 0.7843866171003717,
+       "f1": 0.7829313543599258
+      },
+      "detection_tp": 228,
+      "gold_present": 269,
+      "predicted_present": 270
+     },
+     "SER&ACC": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9152215799614644,
+       "recall": 0.8010118043844857,
+       "f1": 0.85431654676259
+      },
+      "pair": {
+       "precision": 0.8670520231213873,
+       "recall": 0.7588532883642496,
+       "f1": 0.8093525179856115
+      },
+      "detection_tp": 475,
+      "gold_present": 593,
+      "predicted_present": 519
+     },
+     "STORAGE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.7727272727272727,
+       "recall": 0.6296296296296297,
+       "f1": 0.6938775510204082
+      },
+      "pair": {
+       "precision": 0.5454545454545454,
+       "recall": 0.4444444444444444,
+       "f1": 0.4897959183673469
+      },
+      "detection_tp": 17,
+      "gold_present": 27,
+      "predicted_present": 22
+     }
+    },
+    "task_id": "visfd",
+    "split": "test",
+    "selection_f1": 0.8360680190930787,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.8360680190930787,
+   "selection_f1_recomputed_from_predictions": 0.8360680190930787,
+   "test_count": 2224,
+   "predictions_rows": 2224,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/C_inf_NC_research_only/hf_encoder",
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "research_only": true,
+   "elapsed_s": 6.1,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "C_inf/vsfc_topic/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "C_inf",
+   "task_id": "vsfc_topic",
+   "seed": 42,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/C_inf_NC_research_only/vsfc_topic/seed_42/best_checkpoint.pt",
+   "checkpoint_sha256": "1126e9016160534697abce49ca02a4d40ff864b01d6706d5cba953a42ffa3e69",
+   "validation_selected_epoch": 2,
+   "validation_selection_f1": 0.8076498741774236,
+   "learning_rate": 2e-05,
+   "test_metrics": {
+    "n": 3166,
+    "labels": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "accuracy": 0.8894504106127605,
+    "macro_precision": 0.824706405757347,
+    "macro_recall": 0.7751675223525337,
+    "macro_f1": 0.7924139790026794,
+    "per_class": {
+     "0": {
+      "support": 2290,
+      "predicted": 2342,
+      "tp": 2171,
+      "fp": 171,
+      "fn": 119,
+      "precision": 0.9269854824935952,
+      "recall": 0.9480349344978166,
+      "f1": 0.937392055267703
+     },
+     "1": {
+      "support": 572,
+      "predicted": 575,
+      "tp": 438,
+      "fp": 137,
+      "fn": 134,
+      "precision": 0.7617391304347826,
+      "recall": 0.7657342657342657,
+      "f1": 0.7637314734088928
+     },
+     "2": {
+      "support": 145,
+      "predicted": 150,
+      "tp": 140,
+      "fp": 10,
+      "fn": 5,
+      "precision": 0.9333333333333333,
+      "recall": 0.9655172413793104,
+      "f1": 0.9491525423728814
+     },
+     "3": {
+      "support": 159,
+      "predicted": 99,
+      "tp": 67,
+      "fp": 32,
+      "fn": 92,
+      "precision": 0.6767676767676768,
+      "recall": 0.42138364779874216,
+      "f1": 0.5193798449612403
+     }
+    },
+    "task_id": "vsfc_topic",
+    "split": "test",
+    "selection_f1": 0.7924139790026794,
+    "selection_metric": "fixed_label_macro_f1"
+   },
+   "test_selection_f1": 0.7924139790026794,
+   "selection_f1_recomputed_from_predictions": 0.7924139790026794,
+   "test_count": 3166,
+   "predictions_rows": 3166,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/C_inf_NC_research_only/hf_encoder",
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "research_only": true,
+   "elapsed_s": 6.9,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "O/absa_restaurant/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "O",
+   "task_id": "absa_restaurant",
+   "seed": 42,
+   "checkpoint": "artifacts/base_encoder_baseline/mmbert_base/absa_restaurant/lr_5e-05/best_checkpoint.pt",
+   "checkpoint_sha256": "2b4aae0a5f48fa1ab1650934241391da8db4c0771dd98432bd54af9a87e29443",
+   "validation_selected_epoch": 24,
+   "validation_selection_f1": 0.75626204238921,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 1938,
+    "aspect_count": 12,
+    "aspect_names": [
+     "AMBIENCE#GENERAL",
+     "DRINKS#PRICES",
+     "DRINKS#QUALITY",
+     "DRINKS#STYLE&OPTIONS",
+     "FOOD#PRICES",
+     "FOOD#QUALITY",
+     "FOOD#STYLE&OPTIONS",
+     "LOCATION#GENERAL",
+     "RESTAURANT#GENERAL",
+     "RESTAURANT#MISCELLANEOUS",
+     "RESTAURANT#PRICES",
+     "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8838125246159906,
+    "detection_micro_recall": 0.8535564853556485,
+    "detection_micro_f1": 0.868421052631579,
+    "detection_macro_precision": 0.885061315691159,
+    "detection_macro_recall": 0.8400264639544601,
+    "detection_macro_f1": 0.8611436257925015,
+    "pair_micro_precision": 0.7569909413154785,
+    "pair_micro_recall": 0.7310764549258273,
+    "pair_micro_f1": 0.7438080495356038,
+    "pair_macro_precision": 0.7501611933633257,
+    "pair_macro_recall": 0.7132997738013703,
+    "pair_macro_f1": 0.7305807553610549,
+    "classification_pair_micro_f1": 0.7438080495356038,
+    "classification_pair_macro_f1": 0.7305807553610549,
+    "per_aspect": {
+     "AMBIENCE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9136363636363637,
+       "recall": 0.8854625550660793,
+       "f1": 0.8993288590604027
+      },
+      "pair": {
+       "precision": 0.8318181818181818,
+       "recall": 0.8061674008810573,
+       "f1": 0.8187919463087249
+      },
+      "detection_tp": 201,
+      "gold_present": 227,
+      "predicted_present": 220
+     },
+     "DRINKS#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9512195121951219,
+       "recall": 0.8297872340425532,
+       "f1": 0.8863636363636364
+      },
+      "pair": {
+       "precision": 0.7560975609756098,
+       "recall": 0.6595744680851063,
+       "f1": 0.7045454545454546
+      },
+      "detection_tp": 39,
+      "gold_present": 47,
+      "predicted_present": 41
+     },
+     "DRINKS#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9045226130653267,
+       "recall": 0.8866995073891626,
+       "f1": 0.8955223880597015
+      },
+      "pair": {
+       "precision": 0.7437185929648241,
+       "recall": 0.729064039408867,
+       "f1": 0.736318407960199
+      },
+      "detection_tp": 180,
+      "gold_present": 203,
+      "predicted_present": 199
+     },
+     "DRINKS#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8034188034188035,
+       "recall": 0.7286821705426356,
+       "f1": 0.7642276422764228
+      },
+      "pair": {
+       "precision": 0.6923076923076923,
+       "recall": 0.627906976744186,
+       "f1": 0.6585365853658537
+      },
+      "detection_tp": 94,
+      "gold_present": 129,
+      "predicted_present": 117
+     },
+     "FOOD#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8695652173913043,
+       "recall": 0.8928571428571429,
+       "f1": 0.8810572687224669
+      },
+      "pair": {
+       "precision": 0.8173913043478261,
+       "recall": 0.8392857142857143,
+       "f1": 0.8281938325991189
+      },
+      "detection_tp": 100,
+      "gold_present": 112,
+      "predicted_present": 115
+     },
+     "FOOD#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8939929328621908,
+       "recall": 0.9133574007220217,
+       "f1": 0.9035714285714286
+      },
+      "pair": {
+       "precision": 0.7826855123674912,
+       "recall": 0.7996389891696751,
+       "f1": 0.7910714285714285
+      },
+      "detection_tp": 506,
+      "gold_present": 554,
+      "predicted_present": 566
+     },
+     "FOOD#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8687350835322196,
+       "recall": 0.8329519450800915,
+       "f1": 0.8504672897196262
+      },
+      "pair": {
+       "precision": 0.7064439140811456,
+       "recall": 0.6773455377574371,
+       "f1": 0.6915887850467289
+      },
+      "detection_tp": 364,
+      "gold_present": 437,
+      "predicted_present": 419
+     },
+     "LOCATION#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9313725490196079,
+       "recall": 0.9134615384615384,
+       "f1": 0.9223300970873787
+      },
+      "pair": {
+       "precision": 0.7254901960784313,
+       "recall": 0.7115384615384616,
+       "f1": 0.7184466019417476
+      },
+      "detection_tp": 95,
+      "gold_present": 104,
+      "predicted_present": 102
+     },
+     "RESTAURANT#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8034188034188035,
+       "recall": 0.749003984063745,
+       "f1": 0.7752577319587629
+      },
+      "pair": {
+       "precision": 0.6666666666666666,
+       "recall": 0.6215139442231076,
+       "f1": 0.643298969072165
+      },
+      "detection_tp": 188,
+      "gold_present": 251,
+      "predicted_present": 234
+     },
+     "RESTAURANT#MISCELLANEOUS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8403361344537815,
+       "recall": 0.6896551724137931,
+       "f1": 0.7575757575757576
+      },
+      "pair": {
+       "precision": 0.6890756302521008,
+       "recall": 0.5655172413793104,
+       "f1": 0.6212121212121212
+      },
+      "detection_tp": 100,
+      "gold_present": 145,
+      "predicted_present": 119
+     },
+     "RESTAURANT#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9074074074074074,
+       "recall": 0.8376068376068376,
+       "f1": 0.8711111111111111
+      },
+      "pair": {
+       "precision": 0.7407407407407407,
+       "recall": 0.6837606837606838,
+       "f1": 0.7111111111111111
+      },
+      "detection_tp": 98,
+      "gold_present": 117,
+      "predicted_present": 108
+     },
+     "SERVICE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9331103678929766,
+       "recall": 0.9207920792079208,
+       "f1": 0.9269102990033222
+      },
+      "pair": {
+       "precision": 0.8494983277591973,
+       "recall": 0.8382838283828383,
+       "f1": 0.8438538205980066
+      },
+      "detection_tp": 279,
+      "gold_present": 303,
+      "predicted_present": 299
+     }
+    },
+    "task_id": "absa_restaurant",
+    "split": "test",
+    "selection_f1": 0.7438080495356038,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.7438080495356038,
+   "selection_f1_recomputed_from_predictions": 0.7438080495356038,
+   "test_count": 1938,
+   "predictions_rows": 1938,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "O",
+   "license": "no NC data",
+   "research_only": false,
+   "elapsed_s": 5.4,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "O/absa_restaurant/43": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "O",
+   "task_id": "absa_restaurant",
+   "seed": 43,
+   "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/O/absa_restaurant/seed_43/best_checkpoint.pt",
+   "checkpoint_sha256": "55daeb5a420721ebaab165fddca06f643a5f24a57d0ce3ee0315ada9c7614e5c",
+   "validation_selected_epoch": 13,
+   "validation_selection_f1": 0.7641646489104116,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 1938,
+    "aspect_count": 12,
+    "aspect_names": [
+     "AMBIENCE#GENERAL",
+     "DRINKS#PRICES",
+     "DRINKS#QUALITY",
+     "DRINKS#STYLE&OPTIONS",
+     "FOOD#PRICES",
+     "FOOD#QUALITY",
+     "FOOD#STYLE&OPTIONS",
+     "LOCATION#GENERAL",
+     "RESTAURANT#GENERAL",
+     "RESTAURANT#MISCELLANEOUS",
+     "RESTAURANT#PRICES",
+     "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8722093918398768,
+    "detection_micro_recall": 0.8619246861924686,
+    "detection_micro_f1": 0.8670365410369236,
+    "detection_macro_precision": 0.8687270446859259,
+    "detection_macro_recall": 0.8432480159869583,
+    "detection_macro_f1": 0.8549397643587707,
+    "pair_micro_precision": 0.7501924557351809,
+    "pair_micro_recall": 0.7413465195891974,
+    "pair_micro_f1": 0.7457432561698871,
+    "pair_macro_precision": 0.7412323939562887,
+    "pair_macro_recall": 0.7196452967282633,
+    "pair_macro_f1": 0.7295465225448586,
+    "classification_pair_micro_f1": 0.7457432561698871,
+    "classification_pair_macro_f1": 0.7295465225448586,
+    "per_aspect": {
+     "AMBIENCE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9339622641509434,
+       "recall": 0.8722466960352423,
+       "f1": 0.9020501138952164
+      },
+      "pair": {
+       "precision": 0.8632075471698113,
+       "recall": 0.8061674008810573,
+       "f1": 0.8337129840546698
+      },
+      "detection_tp": 198,
+      "gold_present": 227,
+      "predicted_present": 212
+     },
+     "DRINKS#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8478260869565217,
+       "recall": 0.8297872340425532,
+       "f1": 0.8387096774193549
+      },
+      "pair": {
+       "precision": 0.6521739130434783,
+       "recall": 0.6382978723404256,
+       "f1": 0.6451612903225806
+      },
+      "detection_tp": 39,
+      "gold_present": 47,
+      "predicted_present": 46
+     },
+     "DRINKS#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8558139534883721,
+       "recall": 0.9064039408866995,
+       "f1": 0.8803827751196173
+      },
+      "pair": {
+       "precision": 0.7302325581395349,
+       "recall": 0.7733990147783252,
+       "f1": 0.7511961722488039
+      },
+      "detection_tp": 184,
+      "gold_present": 203,
+      "predicted_present": 215
+     },
+     "DRINKS#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8050847457627118,
+       "recall": 0.7364341085271318,
+       "f1": 0.7692307692307693
+      },
+      "pair": {
+       "precision": 0.6949152542372882,
+       "recall": 0.6356589147286822,
+       "f1": 0.6639676113360324
+      },
+      "detection_tp": 95,
+      "gold_present": 129,
+      "predicted_present": 118
+     },
+     "FOOD#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.853448275862069,
+       "recall": 0.8839285714285714,
+       "f1": 0.868421052631579
+      },
+      "pair": {
+       "precision": 0.7586206896551724,
+       "recall": 0.7857142857142857,
+       "f1": 0.7719298245614035
+      },
+      "detection_tp": 99,
+      "gold_present": 112,
+      "predicted_present": 116
+     },
+     "FOOD#QUALITY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.884083044982699,
+       "recall": 0.9223826714801444,
+       "f1": 0.9028268551236749
+      },
+      "pair": {
+       "precision": 0.7820069204152249,
+       "recall": 0.8158844765342961,
+       "f1": 0.7985865724381626
+      },
+      "detection_tp": 511,
+      "gold_present": 554,
+      "predicted_present": 578
+     },
+     "FOOD#STYLE&OPTIONS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8485523385300668,
+       "recall": 0.8718535469107551,
+       "f1": 0.8600451467268623
+      },
+      "pair": {
+       "precision": 0.6792873051224945,
+       "recall": 0.6979405034324943,
+       "f1": 0.6884875846501128
+      },
+      "detection_tp": 381,
+      "gold_present": 437,
+      "predicted_present": 449
+     },
+     "LOCATION#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.92,
+       "recall": 0.8846153846153846,
+       "f1": 0.9019607843137255
+      },
+      "pair": {
+       "precision": 0.75,
+       "recall": 0.7211538461538461,
+       "f1": 0.7352941176470589
+      },
+      "detection_tp": 92,
+      "gold_present": 104,
+      "predicted_present": 100
+     },
+     "RESTAURANT#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8061674008810573,
+       "recall": 0.7290836653386454,
+       "f1": 0.7656903765690377
+      },
+      "pair": {
+       "precision": 0.6784140969162996,
+       "recall": 0.6135458167330677,
+       "f1": 0.6443514644351465
+      },
+      "detection_tp": 183,
+      "gold_present": 251,
+      "predicted_present": 227
+     },
+     "RESTAURANT#MISCELLANEOUS": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.848,
+       "recall": 0.7310344827586207,
+       "f1": 0.7851851851851852
+      },
+      "pair": {
+       "precision": 0.704,
+       "recall": 0.6068965517241379,
+       "f1": 0.6518518518518519
+      },
+      "detection_tp": 106,
+      "gold_present": 145,
+      "predicted_present": 125
+     },
+     "RESTAURANT#PRICES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.897196261682243,
+       "recall": 0.8205128205128205,
+       "f1": 0.8571428571428571
+      },
+      "pair": {
+       "precision": 0.7757009345794392,
+       "recall": 0.7094017094017094,
+       "f1": 0.7410714285714286
+      },
+      "detection_tp": 96,
+      "gold_present": 117,
+      "predicted_present": 107
+     },
+     "SERVICE#GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9245901639344263,
+       "recall": 0.9306930693069307,
+       "f1": 0.9276315789473685
+      },
+      "pair": {
+       "precision": 0.8262295081967214,
+       "recall": 0.8316831683168316,
+       "f1": 0.8289473684210527
+      },
+      "detection_tp": 282,
+      "gold_present": 303,
+      "predicted_present": 305
+     }
+    },
+    "task_id": "absa_restaurant",
+    "split": "test",
+    "selection_f1": 0.7457432561698871,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.7457432561698871,
+   "selection_f1_recomputed_from_predictions": 0.7457432561698871,
+   "test_count": 1938,
+   "predictions_rows": 1938,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "O",
+   "license": "no NC data",
+   "research_only": false,
+   "elapsed_s": 5.3,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "O/visfd/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "O",
+   "task_id": "visfd",
+   "seed": 42,
+   "checkpoint": "artifacts/base_encoder_baseline/mmbert_base/visfd/lr_5e-05/best_checkpoint.pt",
+   "checkpoint_sha256": "9fb0b1cfadce4c0293c0f20545a85d2f6a10c891cf55a1c93a5e944c315d546d",
+   "validation_selected_epoch": 16,
+   "validation_selection_f1": 0.836390977443609,
+   "learning_rate": 5e-05,
+   "test_metrics": {
+    "n": 2224,
+    "aspect_count": 11,
+    "aspect_names": [
+     "BATTERY",
+     "CAMERA",
+     "DESIGN",
+     "FEATURES",
+     "GENERAL",
+     "OTHERS",
+     "PERFORMANCE",
+     "PRICE",
+     "SCREEN",
+     "SER&ACC",
+     "STORAGE"
+    ],
+    "pair_scored_aspects": [
+     true,
+     true,
+     true,
+     true,
+     true,
+     false,
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8951952795729138,
+    "detection_micro_recall": 0.8807187284035937,
+    "detection_micro_f1": 0.887898000418031,
+    "detection_macro_precision": 0.8770846114930279,
+    "detection_macro_recall": 0.8443641626840904,
+    "detection_macro_f1": 0.8587644019853081,
+    "pair_micro_precision": 0.8440011908306043,
+    "pair_micro_recall": 0.843498958643261,
+    "pair_micro_f1": 0.84375,
+    "pair_macro_precision": 0.8191717678322326,
+    "pair_macro_recall": 0.8003561073159797,
+    "pair_macro_f1": 0.8086538254827778,
+    "classification_pair_micro_f1": 0.84375,
+    "classification_pair_macro_f1": 0.8086538254827778,
+    "per_aspect": {
+     "BATTERY": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9578544061302682,
+       "recall": 0.9861932938856016,
+       "f1": 0.9718172983479106
+      },
+      "pair": {
+       "precision": 0.8659003831417624,
+       "recall": 0.8915187376725838,
+       "f1": 0.8785228377065112
+      },
+      "detection_tp": 1000,
+      "gold_present": 1014,
+      "predicted_present": 1044
+     },
+     "CAMERA": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9485903814262023,
+       "recall": 0.9727891156462585,
+       "f1": 0.9605373635600336
+      },
+      "pair": {
+       "precision": 0.8706467661691543,
+       "recall": 0.8928571428571429,
+       "f1": 0.8816120906801007
+      },
+      "detection_tp": 572,
+      "gold_present": 588,
+      "predicted_present": 603
+     },
+     "DESIGN": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9378531073446328,
+       "recall": 0.8341708542713567,
+       "f1": 0.8829787234042553
+      },
+      "pair": {
+       "precision": 0.8700564971751412,
+       "recall": 0.7738693467336684,
+       "f1": 0.8191489361702128
+      },
+      "detection_tp": 332,
+      "gold_present": 398,
+      "predicted_present": 354
+     },
+     "FEATURES": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8916666666666667,
+       "recall": 0.9029535864978903,
+       "f1": 0.8972746331236897
+      },
+      "pair": {
+       "precision": 0.8055555555555556,
+       "recall": 0.8157524613220816,
+       "f1": 0.8106219426974144
+      },
+      "detection_tp": 642,
+      "gold_present": 711,
+      "predicted_present": 720
+     },
+     "GENERAL": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8900785153461813,
+       "recall": 0.9029688631426502,
+       "f1": 0.8964773544212796
+      },
+      "pair": {
+       "precision": 0.8615274803711634,
+       "recall": 0.8740043446777698,
+       "f1": 0.8677210639827462
+      },
+      "detection_tp": 1247,
+      "gold_present": 1381,
+      "predicted_present": 1401
+     },
+     "OTHERS": {
+      "pair_scored": false,
+      "detection": {
+       "precision": 0.5825,
+       "recall": 0.45419103313840153,
+       "f1": 0.5104052573932092
+      },
+      "pair": null,
+      "detection_tp": 233,
+      "gold_present": 513,
+      "predicted_present": 400
+     },
+     "PERFORMANCE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9174468085106383,
+       "recall": 0.9197952218430034,
+       "f1": 0.9186195142735407
+      },
+      "pair": {
+       "precision": 0.84,
+       "recall": 0.8421501706484642,
+       "f1": 0.8410737111205795
+      },
+      "detection_tp": 1078,
+      "gold_present": 1172,
+      "predicted_present": 1175
+     },
+     "PRICE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.9047619047619048,
+       "recall": 0.9349736379613357,
+       "f1": 0.9196197061365601
+      },
+      "pair": {
+       "precision": 0.7993197278911565,
+       "recall": 0.8260105448154658,
+       "f1": 0.8124459809853068
+      },
+      "detection_tp": 532,
+      "gold_present": 569,
+      "predicted_present": 588
+     },
+     "SCREEN": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8550185873605948,
+       "recall": 0.8550185873605948,
+       "f1": 0.8550185873605948
+      },
+      "pair": {
+       "precision": 0.7881040892193308,
+       "recall": 0.7881040892193308,
+       "f1": 0.7881040892193308
+      },
+      "detection_tp": 230,
+      "gold_present": 269,
+      "predicted_present": 269
+     },
+     "SER&ACC": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8985239852398524,
+       "recall": 0.821247892074199,
+       "f1": 0.8581497797356828
+      },
+      "pair": {
+       "precision": 0.8542435424354243,
+       "recall": 0.7807757166947723,
+       "f1": 0.8158590308370044
+      },
+      "detection_tp": 487,
+      "gold_present": 593,
+      "predicted_present": 542
+     },
+     "STORAGE": {
+      "pair_scored": true,
+      "detection": {
+       "precision": 0.8636363636363636,
+       "recall": 0.7037037037037037,
+       "f1": 0.7755102040816326
+      },
+      "pair": {
+       "precision": 0.6363636363636364,
+       "recall": 0.5185185185185185,
+       "f1": 0.5714285714285714
+      },
+      "detection_tp": 19,
+      "gold_present": 27,
+      "predicted_present": 22
+     }
+    },
+    "task_id": "visfd",
+    "split": "test",
+    "selection_f1": 0.84375,
+    "selection_metric": "end_to_end_pair_micro_f1"
+   },
+   "test_selection_f1": 0.84375,
+   "selection_f1_recomputed_from_predictions": 0.84375,
+   "test_count": 2224,
+   "predictions_rows": 2224,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "O",
+   "license": "no NC data",
+   "research_only": false,
+   "elapsed_s": 6.1,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  },
+  "O/vsfc_topic/42": {
+   "protocol": "mmbert-vi-cpt-pilot-v4-test",
+   "arm": "O",
+   "task_id": "vsfc_topic",
+   "seed": 42,
+   "checkpoint": "artifacts/base_encoder_baseline/mmbert_base/vsfc_topic/lr_2e-05/best_checkpoint.pt",
+   "checkpoint_sha256": "a07dea276efac9fc75beb1af5d013b3538d0a7e140188a90f87c1e7b944b4972",
+   "validation_selected_epoch": 11,
+   "validation_selection_f1": 0.811808487044734,
+   "learning_rate": 2e-05,
+   "test_metrics": {
+    "n": 3166,
+    "labels": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "accuracy": 0.8932406822488945,
+    "macro_precision": 0.8170026615615458,
+    "macro_recall": 0.8032407114170133,
+    "macro_f1": 0.8081225402990719,
+    "per_class": {
+     "0": {
+      "support": 2290,
+      "predicted": 2271,
+      "tp": 2142,
+      "fp": 129,
+      "fn": 148,
+      "precision": 0.9431968295904888,
+      "recall": 0.9353711790393013,
+      "f1": 0.9392677044507783
+     },
+     "1": {
+      "support": 572,
+      "predicted": 620,
+      "tp": 467,
+      "fp": 153,
+      "fn": 105,
+      "precision": 0.7532258064516129,
+      "recall": 0.8164335664335665,
+      "f1": 0.7835570469798657
+     },
+     "2": {
+      "support": 145,
+      "predicted": 147,
+      "tp": 138,
+      "fp": 9,
+      "fn": 7,
+      "precision": 0.9387755102040817,
+      "recall": 0.9517241379310345,
+      "f1": 0.9452054794520548
+     },
+     "3": {
+      "support": 159,
+      "predicted": 128,
+      "tp": 81,
+      "fp": 47,
+      "fn": 78,
+      "precision": 0.6328125,
+      "recall": 0.5094339622641509,
+      "f1": 0.5644599303135889
+     }
+    },
+    "task_id": "vsfc_topic",
+    "split": "test",
+    "selection_f1": 0.8081225402990719,
+    "selection_metric": "fixed_label_macro_f1"
+   },
+   "test_selection_f1": 0.8081225402990719,
+   "selection_f1_recomputed_from_predictions": 0.8081225402990719,
+   "test_count": 3166,
+   "predictions_rows": 3166,
+   "reload_prediction_repeatable": true,
+   "load_missing_keys": [],
+   "load_unexpected_keys": [],
+   "encoder_source": "O",
+   "license": "no NC data",
+   "research_only": false,
+   "elapsed_s": 6.9,
+   "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+  }
+ },
+ "pair_means": {
+  "O": {
+   "absa_restaurant": 0.7447756528527454,
+   "visfd": 0.84375,
+   "vsfc_topic": 0.8081225402990719
+  },
+  "P_web": {
+   "absa_restaurant": 0.7396049598307213,
+   "visfd": 0.8358787156373388,
+   "vsfc_topic": 0.7888081713828424
+  },
+  "P_inf": {
+   "absa_restaurant": 0.7424087519909675,
+   "visfd": 0.834500223447043,
+   "vsfc_topic": 0.7850067676429435
+  },
+  "C_inf": {
+   "absa_restaurant": 0.750944985983975,
+   "visfd": 0.8360680190930787,
+   "vsfc_topic": 0.7924139790026794
+  }
+ },
+ "deltas": {
+  "Q1": {
+   "absa_restaurant": -0.005170693022024109,
+   "visfd": -0.007871284362661157,
+   "vsfc_topic": -0.019314368916229507
+  },
+  "Q2": {
+   "absa_restaurant": 0.002803792160246177,
+   "visfd": -0.0013784921902958436,
+   "vsfc_topic": -0.003801403739898901
+  },
+  "Q3": {
+   "absa_restaurant": 0.008536233993007514,
+   "visfd": 0.0015677956460357079,
+   "vsfc_topic": 0.007407211359735877
+  }
+ },
+ "note": "test numbers are descriptive only: the test split was opened by explicit user instruction after the pilot gate failed; checkpoints were selected on validation"
+}

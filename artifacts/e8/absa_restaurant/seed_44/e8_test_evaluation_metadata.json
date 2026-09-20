@@ -1,0 +1,104 @@
+{
+  "protocol": "E8-confirmation-test-gate-v1",
+  "status": "completed",
+  "evaluated_at_utc": "2026-09-10T15:43:11.020499+00:00",
+  "task_id": "absa_restaurant",
+  "seed": 44,
+  "method": "nc_plus_llrd",
+  "mode": "nc",
+  "coefficient": 0.1,
+  "best_epoch": 27,
+  "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_44",
+  "checkpoint_sha256": "8e28cdc57c68e072ed42657aa35b96fb2c1d4aeeb4d4bc5e8adcd2c10aca6e8c",
+  "metadata_sha256": "ced4ebfe2efe64d4d2dd9cd6ca329717c514c011f213f91540d17327dc8c4b63",
+  "manifest_sha256": "48b091346b1ca2e0140845334bbb8306878a4c9e083b19f415b06ae86bd720d1",
+  "original_e8_source_hash": "089726d5d0294d2835ff6b4212bf30e6e47f246e84f50213536c0cbe4ccfd437",
+  "confirmation_adapter_hash": "0f88e854745b4591b38b25a8159a48ad9c585ffb26347f95aa5bfb847fff14f8",
+  "source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "model": {
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "backbone": "goiturn-s-gd",
+    "head_dropout": 0.1,
+    "head_hidden_size": 384,
+    "hidden_size": 384,
+    "num_aspects": 12,
+    "num_labels": 48,
+    "total_parameters": 26564016,
+    "trainable_parameters": 26564016
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:2",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null,
+    "torch_version": "2.6.0+cu124",
+    "transformers_version": "4.49.0",
+    "cuda_available": true,
+    "cublas_workspace_config": ":4096:8",
+    "attention_implementation": "sdpa",
+    "cpu_fallback": false
+  },
+  "contract": {
+    "mode": "inference_only",
+    "teacher_inference": false,
+    "noise_inference": false,
+    "dropout": "disabled via model.eval()",
+    "strict_state_dict": true,
+    "max_length": 256,
+    "micro_batch_size": 32,
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "seed_for_loader": 44
+  },
+  "n_test": 1938,
+  "elapsed_seconds": 0.5701584815979004
+}

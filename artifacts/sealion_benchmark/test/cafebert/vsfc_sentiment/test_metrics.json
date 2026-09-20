@@ -1,0 +1,61 @@
+{
+  "model_kind": "cafebert",
+  "task_id": "vsfc_sentiment",
+  "metrics": {
+    "n": 3166,
+    "labels": [
+      0,
+      1,
+      2
+    ],
+    "accuracy": 0.9368288060644346,
+    "macro_precision": 0.857190233881148,
+    "macro_recall": 0.8014456920708266,
+    "macro_f1": 0.8235671008442988,
+    "per_class": {
+      "0": {
+        "support": 1409,
+        "predicted": 1442,
+        "tp": 1364,
+        "fp": 78,
+        "fn": 45,
+        "precision": 0.9459084604715673,
+        "recall": 0.9680624556422995,
+        "f1": 0.9568572430726061
+      },
+      "1": {
+        "support": 167,
+        "predicted": 118,
+        "tp": 80,
+        "fp": 38,
+        "fn": 87,
+        "precision": 0.6779661016949152,
+        "recall": 0.47904191616766467,
+        "f1": 0.5614035087719298
+      },
+      "2": {
+        "support": 1590,
+        "predicted": 1606,
+        "tp": 1522,
+        "fp": 84,
+        "fn": 68,
+        "precision": 0.9476961394769614,
+        "recall": 0.9572327044025157,
+        "f1": 0.9524405506883604
+      }
+    },
+    "task_id": "vsfc_sentiment",
+    "split": "test",
+    "selection_f1": 0.8235671008442988,
+    "selection_metric": "fixed_label_macro_f1"
+  },
+  "selected": {
+    "path": "artifacts/sealion_benchmark/cafe_runs/vsfc_sentiment/lr_2e-05/seed_42",
+    "learning_rate": 2e-05,
+    "best_epoch": 27,
+    "validation_selection_f1": 0.8769241120832681,
+    "checkpoint_sha256": "1a4e4b7955d5a57cc41d09ce7280db6da82109e830e1e78bf349641a8b1b33f0",
+    "source_hash": "6979f3966bea74a8d8f4a465561245bab4d35859f2adbe21a402c65a6ad2c4a5",
+    "selection_rule": "max validation selection_f1; tie smaller learning rate then earliest best epoch"
+  }
+}

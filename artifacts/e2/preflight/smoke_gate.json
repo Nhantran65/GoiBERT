@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "created_at": "2026-09-08T15:34:13+07:00",
+  "test_access": false,
+  "protocol": "E2-training-ablation-v1",
+  "revision": "e2-20260908-r1",
+  "e1_dependency_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "pytest_passed": 43,
+  "checks": {
+    "teacher_student_gpu_smoke": true,
+    "teacher_profile": true,
+    "student_ce_profile": true,
+    "student_nc_profile": true,
+    "ce_fidelity_loss_gradient": true,
+    "initial_student_state_fidelity": true,
+    "scalar_kd_cache_smoke": true,
+    "packed_visfd_kd_cache_smoke": true,
+    "nc_smoke": true,
+    "test_split_access": false
+  },
+  "artifacts": [
+    "artifacts/e2/smoke/final_ce_vsfc_s42_gpu3",
+    "artifacts/e2/smoke/final_nc_vsfc_s42_gpu2",
+    "artifacts/e2/smoke/freeze_kd_vsfc_s42_gpu2",
+    "artifacts/e2/smoke/freeze_kd_visfd_s42_gpu3",
+    "artifacts/e2/preflight/ce_fidelity_probe_20260908T152745+0700.json",
+    "artifacts/e2/preflight/initial_state_fidelity_20260908T153034+0700.json"
+  ],
+  "note": "This gate permits the canonical teacher/cache/student queue to be prepared. Full E2 mode remains subject to the teacher pilot and CE replay review, including the <=0.5-point CE replay delta check."
+}

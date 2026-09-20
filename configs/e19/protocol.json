@@ -1,0 +1,85 @@
+{
+  "protocol": "E19-dapt-nc-llrd-screening-v1",
+  "revision": "e19-20260914-r1",
+  "encoder": "models/goibert-b-dapt",
+  "head": "goibert_e2.modeling.build_e2_teacher (768-wide task head)",
+  "loop": "goibert_e2.train._train_any(mode=\"nc\") / _train_loop (frozen, unmodified)",
+  "optimizer": "goibert_e7.optim.build_layerwise_optimizer (frozen, unmodified)",
+  "arm": "dapt_nc_llrd",
+  "seed": 42,
+  "dispatch_order": [
+    "absa_restaurant",
+    "absa_hotel",
+    "visfd",
+    "vsfc_topic",
+    "vsfc_sentiment"
+  ],
+  "task_lrs": {
+    "vsfc_sentiment": 2e-5,
+    "vsfc_topic": 1e-5,
+    "visfd": 5e-5,
+    "absa_restaurant": 2e-5,
+    "absa_hotel": 5e-5
+  },
+  "nc_lambdas": {
+    "vsfc_sentiment": 0.1,
+    "vsfc_topic": 0.5,
+    "visfd": 0.5,
+    "absa_restaurant": 0.1,
+    "absa_hotel": 0.1
+  },
+  "nc_temperature": 1.0,
+  "layerwise_gamma": 0.8,
+  "num_layers": 12,
+  "weight_decay": 0.01,
+  "epochs": 30,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "effective_batch_size": 32,
+  "micro_batch_size": 16,
+  "accumulation_steps": 2,
+  "oom_fallback": {
+    "micro_batch_size": 8,
+    "accumulation_steps": 4
+  },
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "selection": {
+    "metric": "selection_f1",
+    "validation_only": true,
+    "include_test": false
+  },
+  "references_no_rerun": {
+    "e2_teacher_ce": {
+      "vsfc_sentiment": 85.92,
+      "vsfc_topic": 82.17,
+      "visfd": 84.36,
+      "absa_restaurant": 74.62,
+      "absa_hotel": 73.22
+    },
+    "e14_bamibert_ce": {
+      "vsfc_sentiment": 86.33,
+      "vsfc_topic": 79.53,
+      "visfd": 84.38,
+      "absa_restaurant": 74.74,
+      "absa_hotel": 73.24
+    }
+  },
+  "gate": {
+    "primary": ">=3/5 tasks improve by >=0.3 over E2 teacher CE, no task regresses by >0.3",
+    "pass_action": "seeds 43-44, then open test once for the validation-selected checkpoint",
+    "fail_action": "stop, record results"
+  },
+  "gpu_guard": {
+    "guard_used_mib": 5120,
+    "guard_util_pct": 5.0,
+    "note": "single-GPU-capable; GPU0/2/3 belonged to other users at dispatch time, only GPU1 was eligible"
+  },
+  "artifact_layout": {
+    "trials": "artifacts/e19/<task>/seed_42/",
+    "logs": "artifacts/e19/logs/",
+    "controller_state": "artifacts/e19/controller_state.json",
+    "preflight": "artifacts/e19/preflight.json"
+  }
+}

@@ -1,0 +1,87 @@
+{
+ "arm": "P_mix",
+ "created_at": "2026-09-19T11:39:49Z",
+ "steps": 3815,
+ "global_batch": 128,
+ "seq_len": 512,
+ "tokens_non_pad": 250019840,
+ "budget_error_vs_250M": 19840,
+ "budget_error_batches": 0.302734375,
+ "targets": {
+  "general": 0.65,
+  "register": 0.2,
+  "bin8": 0.1,
+  "wiki": 0.05
+ },
+ "sequence_counts_by_group": {
+  "general": 317408,
+  "register": 97664,
+  "bin8": 48832,
+  "wiki": 24416
+ },
+ "group_stats": {
+  "general": {
+   "documents": 87048,
+   "doc_tokens": 162425849,
+   "sequences_emitted": 317408,
+   "tail_tokens_dropped": 0,
+   "sequences": 317408,
+   "tokens": 162512896,
+   "target_fraction": 0.65,
+   "available_tokens": 1588719574
+  },
+  "register": {
+   "documents": 32918,
+   "doc_tokens": 49971051,
+   "sequences_emitted": 97664,
+   "tail_tokens_dropped": 0,
+   "sequences": 97664,
+   "tokens": 50003968,
+   "target_fraction": 0.2,
+   "available_tokens": 367401674
+  },
+  "bin8": {
+   "documents": 37311,
+   "doc_tokens": 24964674,
+   "sequences_emitted": 48832,
+   "tail_tokens_dropped": 0,
+   "sequences": 48832,
+   "tokens": 25001984,
+   "target_fraction": 0.1,
+   "available_tokens": 626247593
+  },
+  "wiki": {
+   "documents": 17278,
+   "doc_tokens": 12483715,
+   "sequences_emitted": 24416,
+   "tail_tokens_dropped": 0,
+   "sequences": 24416,
+   "tokens": 12500992,
+   "target_fraction": 0.05,
+   "available_tokens": 91363372
+  }
+ },
+ "achieved_fractions": {
+  "general": 0.65,
+  "register": 0.2,
+  "bin8": 0.1,
+  "wiki": 0.05
+ },
+ "group_config": {
+  "general": "HPLT bins 9-10 non-register",
+  "register": "HPLT bins 7-10 max(OP,re)>=0.5 or ID>=0.5",
+  "bin8": "HPLT bin 8 non-register",
+  "wiki": "wikimedia/wikipedia 20231101.vi (CC BY-SA 4.0)"
+ },
+ "order": "single shuffle seed 42",
+ "tokens_hash": "5e6427fc54acadc7fd18e70c8f24d84b020715fd3184f53c8a5c607455fb5bbe",
+ "order_hash": "a404b6cc24b274a943e3e3634df3c63fab7b7f8ba1e2046deb08e2b769d344ab",
+ "batch_hashes_step0_3": [
+  "254e463dfe087ad86c436bf331c33bf6f82f0898d1cbc0048f27095b6a0a915c",
+  "e237003665252dbb51201bc3e9227c29c5f04a20b5ac718a163a641d456eb09f",
+  "d1e367944906dc34a762f87cb8a683029990335d38388d1d8b99b459f22cb9a6",
+  "924edbf78b14867b1189d4d77db18c1cea63a7a367378c9c65307b6c3f5cb57e"
+ ],
+ "multiset_hash": "2724a0607797cdfd87c25b4fb04bd87d3482dc281763d52fd9cbd1aa8883b0d5",
+ "source_hash": "e0c04960bfb21e003ad230fbf4297cb156c22ce2f1c2cb463d45971dbd2aa711"
+}

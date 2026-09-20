@@ -1,0 +1,91 @@
+{
+  "protocol": "E2-test-gate-v1",
+  "status": "completed",
+  "evaluated_at_utc": "2026-09-09T02:00:25.707441+00:00",
+  "task_id": "vsfc_sentiment",
+  "seed": 42,
+  "method": "nc",
+  "coefficient": 0.1,
+  "learning_rate": 1e-05,
+  "stage": "stageA",
+  "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e2/stageA/nc/vsfc_sentiment/coef_0p1/seed_42__rerun1",
+  "checkpoint_sha256": "d14f2344105dfb532cfa3691a00eabcbd6b7206a30b163fe8c56725b838651d8",
+  "metadata_sha256": "2b21553d758f581e2ec43313821b1f30fba0b6e6e07e8d4d5f101faa3551b9e3",
+  "selection_manifest_sha256": "313b7b3fae986bac0e659e18010410b0d0739bb6e61237fd8b3beea6b832ee38",
+  "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/sentiments.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt": "480480c3b9a6bc8bdf53339c721e93f8cc30472ac8f0bd21d4440ce1171aefac",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt": "a9584a22c926a54c6042236380c9a65ab8c41467477f7a5d794fb2505c96a9c3",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/sents.txt": "75100e0559ecc0d7052870e2e7991391bfa7442bbaee91a6e271157c6fea343b",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/sentiments.txt": "0f04ebe3ada9655aff0a4c6eec27e5e7b8f552e26d3a6f06a35831e07e102f18"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "model": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26546691,
+    "trainable_parameters": 26546691
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:1",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "contract": {
+    "mode": "inference_only",
+    "teacher_inference": false,
+    "noise_inference": false,
+    "dropout": "disabled via model.eval()",
+    "max_length": 256,
+    "micro_batch_size": 32,
+    "attention_implementation": "sdpa",
+    "precision": "bf16",
+    "strict_state_dict": true
+  },
+  "n_test": 3166,
+  "elapsed_seconds": 2.002896547317505,
+  "test_metrics_path": "/home/kiettqa/GoiBERT/artifacts/e2/stageA/nc/vsfc_sentiment/coef_0p1/seed_42__rerun1/e2_test_metrics.json",
+  "test_predictions_path": "/home/kiettqa/GoiBERT/artifacts/e2/stageA/nc/vsfc_sentiment/coef_0p1/seed_42__rerun1/e2_test_predictions.json"
+}

@@ -1,0 +1,24 @@
+$ /home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python /home/kiettqa/GoiBERT/scripts/execute_e2_validation.py --stage all --repo-root /home/kiettqa/GoiBERT --output-root /home/kiettqa/GoiBERT/artifacts/e2 --root-smoke-gate /home/kiettqa/GoiBERT/artifacts/e2/preflight/smoke_gate.json --devices cuda:0 cuda:1 cuda:2 cuda:3 --poll-seconds 5.0 --student-memory-guard-gib 5 --teacher-memory-guard-gib 5 --nc-memory-guard-gib 5 --execute
+Traceback (most recent call last):
+  File "/home/kiettqa/GoiBERT/scripts/execute_e2_validation.py", line 1843, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/execute_e2_validation.py", line 1836, in main
+    return run_orchestration(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/execute_e2_validation.py", line 1710, in run_orchestration
+    teacher_records = _run_stage(
+                      ^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/execute_e2_validation.py", line 1501, in _run_stage
+    records = run_specs(
+              ^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/execute_e2_validation.py", line 1216, in run_specs
+    approved.append(_finish_process(store, job, process, spec, log_handle, hashes=hashes))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/execute_e2_validation.py", line 1142, in _finish_process
+    record = _validate_completed_artifact(output_dir, spec, hashes=hashes)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/execute_e2_validation.py", line 1005, in _validate_completed_artifact
+    if metadata is None or not metadata_matches(metadata, path, spec, **hashes):
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: metadata_matches() got an unexpected keyword argument 'e1_dependency_hash'

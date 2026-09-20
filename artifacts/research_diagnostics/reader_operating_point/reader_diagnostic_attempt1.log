@@ -1,0 +1,71 @@
+Traceback (most recent call last):
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 552, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 538, in main
+    report = build_report(kind, task, model, tokenizer, bundle, counts, checkpoint, model_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 378, in build_report
+    logits, probs, offsets, metadata = extract_readers(model, tokenizer, texts, device)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 223, in extract_readers
+    logits_parts.append(model(model_input.to(device), model_mask.to(device)).float().cpu())
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/src/goibert/modeling.py", line 136, in forward
+    outputs = self.encoder(**encoder_kwargs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/transformers/models/roberta/modeling_roberta.py", line 976, in forward
+    encoder_outputs = self.encoder(
+                      ^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/transformers/models/roberta/modeling_roberta.py", line 631, in forward
+    layer_outputs = layer_module(
+                    ^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/transformers/models/roberta/modeling_roberta.py", line 520, in forward
+    self_attention_outputs = self.attention(
+                             ^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/transformers/models/roberta/modeling_roberta.py", line 447, in forward
+    self_outputs = self.self(
+                   ^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 126, in forward
+    valid = state.mask2d.to(x.device).bool()
+            ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'to'

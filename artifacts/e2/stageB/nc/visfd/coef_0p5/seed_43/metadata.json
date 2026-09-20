@@ -1,0 +1,812 @@
+{
+  "protocol": "E2-training-ablation-v1",
+  "revision": "e2-20260908-r1",
+  "stage": "stageb",
+  "method": "nc",
+  "coefficient": 0.5,
+  "task_id": "visfd",
+  "mode": "nc",
+  "seed": 43,
+  "learning_rate": 0.0001,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 7786,
+    "max_tokens": 241,
+    "p50_tokens": 39.0,
+    "p95_tokens": 100.0,
+    "p99_tokens": 139.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "smoke": false,
+  "source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_config_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "visfd",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "others"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ]
+    ]
+  },
+  "model": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 42,
+    "num_aspects": 11,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 26561706,
+    "trainable_parameters": 26561706
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:1",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "hyperparameters": {
+    "temperature": 2.0,
+    "alpha": null,
+    "consistency_lambda": 0.5,
+    "teacher_cache": null,
+    "teacher_cache_hash": null
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "argv": [
+    "/home/kiettqa/GoiBERT/src/goibert_e2/train.py",
+    "--mode",
+    "nc",
+    "--repo-root",
+    "/home/kiettqa/GoiBERT",
+    "--task-id",
+    "visfd",
+    "--learning-rate",
+    "0.0001",
+    "--seed",
+    "43",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e2/stageB/nc/visfd/coef_0p5/seed_43",
+    "--device",
+    "cuda:1",
+    "--precision",
+    "bf16",
+    "--attention-implementation",
+    "sdpa",
+    "--epochs",
+    "30",
+    "--effective-batch-size",
+    "32",
+    "--micro-batch-size",
+    "32",
+    "--stage",
+    "stageb",
+    "--method",
+    "nc",
+    "--protocol",
+    "E2-training-ablation-v1",
+    "--revision",
+    "e2-20260908-r1",
+    "--expected-e2-code-hash",
+    "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "--expected-e2-config-hash",
+    "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "--expected-orchestrator-hash",
+    "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+    "--include-test",
+    "false",
+    "--coefficient",
+    "0.5",
+    "--consistency-lambda",
+    "0.5"
+  ],
+  "started_at_unix": 1788885770.0516598,
+  "noise_statistics": [
+    {
+      "count": 7786,
+      "changed_count": 3422,
+      "operation_counts": {
+        "remove_accents": 1893,
+        "none": 3941,
+        "teencode": 1560,
+        "internal_char_typo": 392
+      },
+      "change_rate": 0.43950680708964807
+    },
+    {
+      "count": 7786,
+      "changed_count": 3454,
+      "operation_counts": {
+        "remove_accents": 1995,
+        "none": 3888,
+        "teencode": 1538,
+        "internal_char_typo": 365
+      },
+      "change_rate": 0.4436167480092474
+    },
+    {
+      "count": 7786,
+      "changed_count": 3454,
+      "operation_counts": {
+        "none": 3881,
+        "remove_accents": 1965,
+        "teencode": 1598,
+        "internal_char_typo": 342
+      },
+      "change_rate": 0.4436167480092474
+    },
+    {
+      "count": 7786,
+      "changed_count": 3443,
+      "operation_counts": {
+        "none": 3886,
+        "internal_char_typo": 381,
+        "remove_accents": 1962,
+        "teencode": 1557
+      },
+      "change_rate": 0.4422039558181351
+    },
+    {
+      "count": 7786,
+      "changed_count": 3447,
+      "operation_counts": {
+        "none": 3904,
+        "remove_accents": 1913,
+        "internal_char_typo": 442,
+        "teencode": 1527
+      },
+      "change_rate": 0.442717698433085
+    },
+    {
+      "count": 7786,
+      "changed_count": 3483,
+      "operation_counts": {
+        "none": 3862,
+        "remove_accents": 1960,
+        "teencode": 1593,
+        "internal_char_typo": 371
+      },
+      "change_rate": 0.44734138196763423
+    },
+    {
+      "count": 7786,
+      "changed_count": 3494,
+      "operation_counts": {
+        "none": 3811,
+        "remove_accents": 1978,
+        "teencode": 1582,
+        "internal_char_typo": 415
+      },
+      "change_rate": 0.44875417415874647
+    },
+    {
+      "count": 7786,
+      "changed_count": 3550,
+      "operation_counts": {
+        "none": 3784,
+        "remove_accents": 2030,
+        "internal_char_typo": 405,
+        "teencode": 1567
+      },
+      "change_rate": 0.45594657076804523
+    },
+    {
+      "count": 7786,
+      "changed_count": 3500,
+      "operation_counts": {
+        "remove_accents": 1919,
+        "internal_char_typo": 381,
+        "none": 3861,
+        "teencode": 1625
+      },
+      "change_rate": 0.44952478808117136
+    },
+    {
+      "count": 7786,
+      "changed_count": 3451,
+      "operation_counts": {
+        "remove_accents": 1886,
+        "none": 3918,
+        "teencode": 1566,
+        "internal_char_typo": 416
+      },
+      "change_rate": 0.4432314410480349
+    },
+    {
+      "count": 7786,
+      "changed_count": 3375,
+      "operation_counts": {
+        "none": 3977,
+        "remove_accents": 1932,
+        "teencode": 1473,
+        "internal_char_typo": 404
+      },
+      "change_rate": 0.43347033136398666
+    },
+    {
+      "count": 7786,
+      "changed_count": 3435,
+      "operation_counts": {
+        "remove_accents": 1909,
+        "none": 3917,
+        "teencode": 1580,
+        "internal_char_typo": 380
+      },
+      "change_rate": 0.4411764705882353
+    },
+    {
+      "count": 7786,
+      "changed_count": 3409,
+      "operation_counts": {
+        "teencode": 1542,
+        "none": 3929,
+        "remove_accents": 1945,
+        "internal_char_typo": 370
+      },
+      "change_rate": 0.43783714359106085
+    },
+    {
+      "count": 7786,
+      "changed_count": 3411,
+      "operation_counts": {
+        "none": 3958,
+        "remove_accents": 1910,
+        "internal_char_typo": 373,
+        "teencode": 1545
+      },
+      "change_rate": 0.43809401489853583
+    },
+    {
+      "count": 7786,
+      "changed_count": 3482,
+      "operation_counts": {
+        "none": 3870,
+        "remove_accents": 2003,
+        "teencode": 1516,
+        "internal_char_typo": 397
+      },
+      "change_rate": 0.44721294631389674
+    },
+    {
+      "count": 7786,
+      "changed_count": 3445,
+      "operation_counts": {
+        "none": 3922,
+        "remove_accents": 1923,
+        "teencode": 1523,
+        "internal_char_typo": 418
+      },
+      "change_rate": 0.4424608271256101
+    },
+    {
+      "count": 7786,
+      "changed_count": 3468,
+      "operation_counts": {
+        "remove_accents": 1940,
+        "none": 3889,
+        "internal_char_typo": 402,
+        "teencode": 1555
+      },
+      "change_rate": 0.44541484716157204
+    },
+    {
+      "count": 7786,
+      "changed_count": 3411,
+      "operation_counts": {
+        "none": 3909,
+        "internal_char_typo": 386,
+        "remove_accents": 1942,
+        "teencode": 1549
+      },
+      "change_rate": 0.43809401489853583
+    },
+    {
+      "count": 7786,
+      "changed_count": 3407,
+      "operation_counts": {
+        "none": 3928,
+        "internal_char_typo": 402,
+        "teencode": 1555,
+        "remove_accents": 1901
+      },
+      "change_rate": 0.4375802722835859
+    },
+    {
+      "count": 7786,
+      "changed_count": 3512,
+      "operation_counts": {
+        "none": 3816,
+        "teencode": 1601,
+        "internal_char_typo": 375,
+        "remove_accents": 1994
+      },
+      "change_rate": 0.4510660159260211
+    },
+    {
+      "count": 7786,
+      "changed_count": 3424,
+      "operation_counts": {
+        "remove_accents": 1930,
+        "internal_char_typo": 411,
+        "none": 3930,
+        "teencode": 1515
+      },
+      "change_rate": 0.43976367839712305
+    },
+    {
+      "count": 7786,
+      "changed_count": 3471,
+      "operation_counts": {
+        "none": 3869,
+        "teencode": 1565,
+        "remove_accents": 1947,
+        "internal_char_typo": 405
+      },
+      "change_rate": 0.4458001541227845
+    },
+    {
+      "count": 7786,
+      "changed_count": 3463,
+      "operation_counts": {
+        "none": 3895,
+        "remove_accents": 1920,
+        "teencode": 1546,
+        "internal_char_typo": 425
+      },
+      "change_rate": 0.44477266889288464
+    },
+    {
+      "count": 7786,
+      "changed_count": 3473,
+      "operation_counts": {
+        "none": 3870,
+        "remove_accents": 1957,
+        "teencode": 1567,
+        "internal_char_typo": 392
+      },
+      "change_rate": 0.44605702543025944
+    },
+    {
+      "count": 7786,
+      "changed_count": 3434,
+      "operation_counts": {
+        "none": 3932,
+        "teencode": 1582,
+        "remove_accents": 1886,
+        "internal_char_typo": 386
+      },
+      "change_rate": 0.4410480349344978
+    },
+    {
+      "count": 7786,
+      "changed_count": 3411,
+      "operation_counts": {
+        "none": 3933,
+        "teencode": 1580,
+        "remove_accents": 1926,
+        "internal_char_typo": 347
+      },
+      "change_rate": 0.43809401489853583
+    },
+    {
+      "count": 7786,
+      "changed_count": 3437,
+      "operation_counts": {
+        "teencode": 1519,
+        "none": 3947,
+        "remove_accents": 1917,
+        "internal_char_typo": 403
+      },
+      "change_rate": 0.44143334189571026
+    },
+    {
+      "count": 7786,
+      "changed_count": 3443,
+      "operation_counts": {
+        "none": 3878,
+        "internal_char_typo": 361,
+        "remove_accents": 1895,
+        "teencode": 1652
+      },
+      "change_rate": 0.4422039558181351
+    },
+    {
+      "count": 7786,
+      "changed_count": 3408,
+      "operation_counts": {
+        "none": 3929,
+        "remove_accents": 1938,
+        "internal_char_typo": 391,
+        "teencode": 1528
+      },
+      "change_rate": 0.4377087079373234
+    },
+    {
+      "count": 7786,
+      "changed_count": 3445,
+      "operation_counts": {
+        "teencode": 1511,
+        "remove_accents": 2007,
+        "none": 3892,
+        "internal_char_typo": 376
+      },
+      "change_rate": 0.4424608271256101
+    }
+  ],
+  "best_epoch": 30,
+  "best_selection_f1": 0.8105436573311368,
+  "best_validation_metrics": {
+    "n": 1112,
+    "aspect_count": 11,
+    "aspect_names": [
+      "BATTERY",
+      "CAMERA",
+      "DESIGN",
+      "FEATURES",
+      "GENERAL",
+      "OTHERS",
+      "PERFORMANCE",
+      "PRICE",
+      "SCREEN",
+      "SER&ACC",
+      "STORAGE"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8726612678022898,
+    "detection_micro_recall": 0.8760863470703673,
+    "detection_micro_f1": 0.8743704532736429,
+    "detection_macro_precision": 0.8236783499586565,
+    "detection_macro_recall": 0.8139466009865696,
+    "detection_macro_f1": 0.8163017715209766,
+    "pair_micro_precision": 0.805117524546266,
+    "pair_micro_recall": 0.8160434258142341,
+    "pair_micro_f1": 0.8105436573311368,
+    "pair_macro_precision": 0.7569200894306289,
+    "pair_macro_recall": 0.7536981627218805,
+    "pair_macro_f1": 0.7532352049323137,
+    "classification_pair_micro_f1": 0.8105436573311368,
+    "classification_pair_macro_f1": 0.7532352049323137,
+    "per_aspect": {
+      "BATTERY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9596153846153846,
+          "recall": 0.9900793650793651,
+          "f1": 0.974609375
+        },
+        "pair": {
+          "precision": 0.8480769230769231,
+          "recall": 0.875,
+          "f1": 0.861328125
+        },
+        "detection_tp": 499,
+        "gold_present": 504,
+        "predicted_present": 520
+      },
+      "CAMERA": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9169329073482428,
+          "recall": 0.9695945945945946,
+          "f1": 0.9425287356321839
+        },
+        "pair": {
+          "precision": 0.7859424920127795,
+          "recall": 0.831081081081081,
+          "f1": 0.8078817733990148
+        },
+        "detection_tp": 287,
+        "gold_present": 296,
+        "predicted_present": 313
+      },
+      "DESIGN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8895027624309392,
+          "recall": 0.8609625668449198,
+          "f1": 0.875
+        },
+        "pair": {
+          "precision": 0.8232044198895028,
+          "recall": 0.7967914438502673,
+          "f1": 0.8097826086956522
+        },
+        "detection_tp": 161,
+        "gold_present": 187,
+        "predicted_present": 181
+      },
+      "FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8781725888324873,
+          "recall": 0.9081364829396326,
+          "f1": 0.8929032258064517
+        },
+        "pair": {
+          "precision": 0.7944162436548223,
+          "recall": 0.821522309711286,
+          "f1": 0.807741935483871
+        },
+        "detection_tp": 346,
+        "gold_present": 381,
+        "predicted_present": 394
+      },
+      "GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8954344624447718,
+          "recall": 0.8824383164005806,
+          "f1": 0.8888888888888888
+        },
+        "pair": {
+          "precision": 0.8630338733431517,
+          "recall": 0.8505079825834543,
+          "f1": 0.8567251461988304
+        },
+        "detection_tp": 608,
+        "gold_present": 689,
+        "predicted_present": 679
+      },
+      "OTHERS": {
+        "pair_scored": false,
+        "detection": {
+          "precision": 0.5,
+          "recall": 0.43824701195219123,
+          "f1": 0.46709129511677283
+        },
+        "pair": null,
+        "detection_tp": 110,
+        "gold_present": 251,
+        "predicted_present": 220
+      },
+      "PERFORMANCE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.893760539629005,
+          "recall": 0.9106529209621993,
+          "f1": 0.902127659574468
+        },
+        "pair": {
+          "precision": 0.7875210792580101,
+          "recall": 0.802405498281787,
+          "f1": 0.7948936170212766
+        },
+        "detection_tp": 530,
+        "gold_present": 582,
+        "predicted_present": 593
+      },
+      "PRICE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8851851851851852,
+          "recall": 0.9484126984126984,
+          "f1": 0.9157088122605364
+        },
+        "pair": {
+          "precision": 0.725925925925926,
+          "recall": 0.7777777777777778,
+          "f1": 0.7509578544061303
+        },
+        "detection_tp": 239,
+        "gold_present": 252,
+        "predicted_present": 270
+      },
+      "SCREEN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8359375,
+          "recall": 0.8842975206611571,
+          "f1": 0.8594377510040161
+        },
+        "pair": {
+          "precision": 0.7265625,
+          "recall": 0.768595041322314,
+          "f1": 0.7469879518072289
+        },
+        "detection_tp": 107,
+        "gold_present": 121,
+        "predicted_present": 128
+      },
+      "SER&ACC": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8503649635036497,
+          "recall": 0.803448275862069,
+          "f1": 0.8262411347517731
+        },
+        "pair": {
+          "precision": 0.7700729927007299,
+          "recall": 0.7275862068965517,
+          "f1": 0.74822695035461
+        },
+        "detection_tp": 233,
+        "gold_present": 290,
+        "predicted_present": 274
+      },
+      "STORAGE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5555555555555556,
+          "recall": 0.35714285714285715,
+          "f1": 0.43478260869565216
+        },
+        "pair": {
+          "precision": 0.4444444444444444,
+          "recall": 0.2857142857142857,
+          "f1": 0.34782608695652173
+        },
+        "detection_tp": 5,
+        "gold_present": 14,
+        "predicted_present": 9
+      }
+    },
+    "task_id": "visfd",
+    "split": "validation",
+    "selection_f1": 0.8105436573311368,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "elapsed_seconds": 604.8690342903137,
+  "peak_gpu_memory_allocated_bytes": 3167291904,
+  "peak_gpu_memory_reserved_bytes": 4003463168,
+  "status": "completed",
+  "checkpoint_sha256": "ec36cfeb91a8f7d6ec72feeacead30cc2767a9b27205614143a9cc04672700bd"
+}

@@ -1,0 +1,560 @@
+{
+  "protocol": "E13A-reviewed-binding-diagnostic-v1",
+  "status": "root_reviewed_before_inference",
+  "pair_count": 30,
+  "occurrence_count": 60,
+  "numeric_maps": {
+    "vsfc_sentiment": {
+      "0": "negative",
+      "1": "neutral",
+      "2": "positive"
+    },
+    "vsfc_topic": {
+      "0": "lecturer",
+      "1": "training_program",
+      "2": "facility",
+      "3": "others"
+    },
+    "absa": {
+      "0": "absent",
+      "1": "positive",
+      "2": "negative",
+      "3": "neutral"
+    },
+    "visfd_others": "raw code 4, not scored"
+  },
+  "pairs": [
+    {
+      "task_id": "vsfc_sentiment",
+      "pair_id": "S1",
+      "kind": "paraphrase",
+      "texts": {
+        "A": "Thầy giảng bài rất dễ hiểu.",
+        "B": "Bài giảng của thầy rất dễ hiểu."
+      },
+      "expected": {
+        "A": {
+          "label": 2
+        },
+        "B": {
+          "label": 2
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "pair_id": "S2",
+      "kind": "negation",
+      "texts": {
+        "A": "Thầy giảng bài dễ hiểu.",
+        "B": "Thầy giảng bài không dễ hiểu."
+      },
+      "expected": {
+        "A": {
+          "label": 2
+        },
+        "B": {
+          "label": 0
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "pair_id": "S3",
+      "kind": "negated_negative",
+      "texts": {
+        "A": "Thầy dạy rất khó hiểu.",
+        "B": "Thầy dạy không hề khó hiểu."
+      },
+      "expected": {
+        "A": {
+          "label": 0
+        },
+        "B": {
+          "label": 2
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "pair_id": "S4",
+      "kind": "desire_scope",
+      "texts": {
+        "A": "Mong cô tiếp tục cách dạy dễ hiểu này.",
+        "B": "Mong cô thay đổi cách dạy khó hiểu này."
+      },
+      "expected": {
+        "A": {
+          "label": 2
+        },
+        "B": {
+          "label": 0
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "pair_id": "S5",
+      "kind": "speaker_contrast",
+      "texts": {
+        "A": "Có người nói cô dạy khó hiểu, nhưng tôi thấy cô dạy rất dễ hiểu.",
+        "B": "Có người nói cô dạy dễ hiểu, nhưng tôi thấy cô dạy rất khó hiểu."
+      },
+      "expected": {
+        "A": {
+          "label": 2
+        },
+        "B": {
+          "label": 0
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "pair_id": "S6",
+      "kind": "reported_disagreement_control",
+      "texts": {
+        "A": "Tôi thấy cô dạy rất dễ hiểu, dù có người chê cô dạy khó hiểu.",
+        "B": "Dù có người chê cô dạy khó hiểu, tôi vẫn thấy cô dạy rất dễ hiểu."
+      },
+      "expected": {
+        "A": {
+          "label": 2
+        },
+        "B": {
+          "label": 2
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "pair_id": "T1",
+      "kind": "paraphrase",
+      "texts": {
+        "A": "Máy chiếu trong phòng học bị hỏng.",
+        "B": "Phòng học có máy chiếu bị hỏng."
+      },
+      "expected": {
+        "A": {
+          "label": 2
+        },
+        "B": {
+          "label": 2
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "pair_id": "T2",
+      "kind": "entity_context",
+      "texts": {
+        "A": "Máy chiếu trong phòng học bị hỏng.",
+        "B": "Máy chiếu trong phòng học do thầy phụ trách bị hỏng."
+      },
+      "expected": {
+        "A": {
+          "label": 2
+        },
+        "B": {
+          "label": 2
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "pair_id": "T3",
+      "kind": "target_change",
+      "texts": {
+        "A": "Giảng viên thường xuyên vắng mặt trong buổi thực hành.",
+        "B": "Các buổi thực hành bị cắt khỏi chương trình đào tạo."
+      },
+      "expected": {
+        "A": {
+          "label": 0
+        },
+        "B": {
+          "label": 1
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "pair_id": "T4",
+      "kind": "negation_preserves_topic",
+      "texts": {
+        "A": "Giảng viên dạy nhiệt tình.",
+        "B": "Giảng viên dạy không nhiệt tình."
+      },
+      "expected": {
+        "A": {
+          "label": 0
+        },
+        "B": {
+          "label": 0
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "pair_id": "T5",
+      "kind": "target_change",
+      "texts": {
+        "A": "Nội dung chương trình đào tạo quá nặng.",
+        "B": "Máy chiếu của phòng học quá mờ."
+      },
+      "expected": {
+        "A": {
+          "label": 1
+        },
+        "B": {
+          "label": 2
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "pair_id": "T6",
+      "kind": "event_paraphrase",
+      "texts": {
+        "A": "Giáo viên không đến lớp trong buổi thực hành.",
+        "B": "Buổi thực hành diễn ra nhưng giáo viên vắng mặt."
+      },
+      "expected": {
+        "A": {
+          "label": 0
+        },
+        "B": {
+          "label": 0
+        }
+      }
+    },
+    {
+      "task_id": "visfd",
+      "pair_id": "V1",
+      "kind": "swap_binding",
+      "texts": {
+        "A": "Pin dùng rất lâu nhưng camera chụp ảnh rất xấu.",
+        "B": "Camera chụp ảnh rất đẹp nhưng pin hết rất nhanh."
+      },
+      "expected": {
+        "A": {
+          "BATTERY": 1,
+          "CAMERA": 2
+        },
+        "B": {
+          "BATTERY": 2,
+          "CAMERA": 1
+        }
+      }
+    },
+    {
+      "task_id": "visfd",
+      "pair_id": "V2",
+      "kind": "clause_reorder",
+      "texts": {
+        "A": "Pin dùng rất lâu nhưng camera chụp ảnh rất xấu.",
+        "B": "Camera chụp ảnh rất xấu nhưng pin dùng rất lâu."
+      },
+      "expected": {
+        "A": {
+          "BATTERY": 1,
+          "CAMERA": 2
+        },
+        "B": {
+          "BATTERY": 1,
+          "CAMERA": 2
+        }
+      }
+    },
+    {
+      "task_id": "visfd",
+      "pair_id": "V3",
+      "kind": "accessory_target",
+      "texts": {
+        "A": "Pin của điện thoại bị hỏng, còn sạc dự phòng được tặng thì dùng tốt.",
+        "B": "Pin của điện thoại dùng tốt, còn sạc dự phòng được tặng thì bị hỏng."
+      },
+      "expected": {
+        "A": {
+          "BATTERY": 2,
+          "SER&ACC": 1
+        },
+        "B": {
+          "BATTERY": 1,
+          "SER&ACC": 2
+        }
+      }
+    },
+    {
+      "task_id": "visfd",
+      "pair_id": "V4",
+      "kind": "negation",
+      "texts": {
+        "A": "Camera chụp ảnh đẹp.",
+        "B": "Camera chụp ảnh không đẹp."
+      },
+      "expected": {
+        "A": {
+          "CAMERA": 1
+        },
+        "B": {
+          "CAMERA": 2
+        }
+      }
+    },
+    {
+      "task_id": "visfd",
+      "pair_id": "V5",
+      "kind": "added_other_target",
+      "texts": {
+        "A": "Pin máy dùng rất lâu.",
+        "B": "Pin máy dùng rất lâu, nhưng nhân viên phục vụ thiếu nhiệt tình."
+      },
+      "expected": {
+        "A": {
+          "BATTERY": 1
+        },
+        "B": {
+          "BATTERY": 1,
+          "SER&ACC": 2
+        }
+      }
+    },
+    {
+      "task_id": "visfd",
+      "pair_id": "V6",
+      "kind": "paraphrase",
+      "texts": {
+        "A": "Nhân viên bán hàng rất nhiệt tình.",
+        "B": "Người bán hàng phục vụ rất tận tình."
+      },
+      "expected": {
+        "A": {
+          "SER&ACC": 1
+        },
+        "B": {
+          "SER&ACC": 1
+        }
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "pair_id": "R1",
+      "kind": "swap_binding",
+      "texts": {
+        "A": "Món ăn ngon nhưng nhân viên phục vụ rất bất lịch sự.",
+        "B": "Món ăn dở nhưng nhân viên phục vụ rất lịch sự."
+      },
+      "expected": {
+        "A": {
+          "FOOD#QUALITY": 1,
+          "SERVICE#GENERAL": 2
+        },
+        "B": {
+          "FOOD#QUALITY": 2,
+          "SERVICE#GENERAL": 1
+        }
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "pair_id": "R2",
+      "kind": "clause_reorder",
+      "texts": {
+        "A": "Món ăn ngon nhưng nhân viên phục vụ rất bất lịch sự.",
+        "B": "Nhân viên phục vụ rất bất lịch sự nhưng món ăn ngon."
+      },
+      "expected": {
+        "A": {
+          "FOOD#QUALITY": 1,
+          "SERVICE#GENERAL": 2
+        },
+        "B": {
+          "FOOD#QUALITY": 1,
+          "SERVICE#GENERAL": 2
+        }
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "pair_id": "R3",
+      "kind": "role_paraphrase",
+      "texts": {
+        "A": "Nhân viên phục vụ rất thân thiện.",
+        "B": "Anh quản lý phục vụ khách rất thân thiện."
+      },
+      "expected": {
+        "A": {
+          "SERVICE#GENERAL": 1
+        },
+        "B": {
+          "SERVICE#GENERAL": 1
+        }
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "pair_id": "R4",
+      "kind": "negation",
+      "texts": {
+        "A": "Đồ uống có hương vị ngon.",
+        "B": "Đồ uống có hương vị không ngon."
+      },
+      "expected": {
+        "A": {
+          "DRINKS#QUALITY": 1
+        },
+        "B": {
+          "DRINKS#QUALITY": 2
+        }
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "pair_id": "R5",
+      "kind": "added_other_target",
+      "texts": {
+        "A": "Không gian quán rất sạch sẽ.",
+        "B": "Không gian quán rất sạch sẽ nhưng món ăn có mùi hôi."
+      },
+      "expected": {
+        "A": {
+          "AMBIENCE#GENERAL": 1
+        },
+        "B": {
+          "AMBIENCE#GENERAL": 1,
+          "FOOD#QUALITY": 2
+        }
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "pair_id": "R6",
+      "kind": "target_change",
+      "texts": {
+        "A": "Giá món ăn quá đắt.",
+        "B": "Giá đồ uống quá đắt."
+      },
+      "expected": {
+        "A": {
+          "FOOD#PRICES": 2
+        },
+        "B": {
+          "DRINKS#PRICES": 2
+        }
+      }
+    },
+    {
+      "task_id": "absa_hotel",
+      "pair_id": "H1",
+      "kind": "swap_binding",
+      "texts": {
+        "A": "Phòng rất sạch nhưng nhân viên phục vụ bất lịch sự.",
+        "B": "Phòng rất bẩn nhưng nhân viên phục vụ lịch sự."
+      },
+      "expected": {
+        "A": {
+          "ROOMS#CLEANLINESS": 1,
+          "SERVICE#GENERAL": 2
+        },
+        "B": {
+          "ROOMS#CLEANLINESS": 2,
+          "SERVICE#GENERAL": 1
+        }
+      }
+    },
+    {
+      "task_id": "absa_hotel",
+      "pair_id": "H2",
+      "kind": "clause_reorder",
+      "texts": {
+        "A": "Phòng rất sạch nhưng nhân viên phục vụ bất lịch sự.",
+        "B": "Nhân viên phục vụ bất lịch sự nhưng phòng rất sạch."
+      },
+      "expected": {
+        "A": {
+          "ROOMS#CLEANLINESS": 1,
+          "SERVICE#GENERAL": 2
+        },
+        "B": {
+          "ROOMS#CLEANLINESS": 1,
+          "SERVICE#GENERAL": 2
+        }
+      }
+    },
+    {
+      "task_id": "absa_hotel",
+      "pair_id": "H3",
+      "kind": "paraphrase",
+      "texts": {
+        "A": "Phòng ở được vệ sinh sạch sẽ.",
+        "B": "Phòng ốc rất sạch sẽ."
+      },
+      "expected": {
+        "A": {
+          "ROOMS#CLEANLINESS": 1
+        },
+        "B": {
+          "ROOMS#CLEANLINESS": 1
+        }
+      }
+    },
+    {
+      "task_id": "absa_hotel",
+      "pair_id": "H4",
+      "kind": "negation",
+      "texts": {
+        "A": "Nhân viên lễ tân lịch sự.",
+        "B": "Nhân viên lễ tân không lịch sự."
+      },
+      "expected": {
+        "A": {
+          "SERVICE#GENERAL": 1
+        },
+        "B": {
+          "SERVICE#GENERAL": 2
+        }
+      }
+    },
+    {
+      "task_id": "absa_hotel",
+      "pair_id": "H5",
+      "kind": "added_other_target",
+      "texts": {
+        "A": "Bữa sáng rất ngon.",
+        "B": "Bữa sáng rất ngon nhưng phòng ngủ rất bẩn."
+      },
+      "expected": {
+        "A": {
+          "FOOD&DRINKS#QUALITY": 1
+        },
+        "B": {
+          "FOOD&DRINKS#QUALITY": 1,
+          "ROOMS#CLEANLINESS": 2
+        }
+      }
+    },
+    {
+      "task_id": "absa_hotel",
+      "pair_id": "H6",
+      "kind": "target_change",
+      "texts": {
+        "A": "Giá phòng quá đắt.",
+        "B": "Giá bữa sáng quá đắt."
+      },
+      "expected": {
+        "A": {
+          "ROOMS#PRICES": 2
+        },
+        "B": {
+          "FOOD&DRINKS#PRICES": 2
+        }
+      }
+    }
+  ],
+  "unique_text_count": 56,
+  "duplicate_train_validation_matches": {},
+  "test_access": "not requested",
+  "max_length": 256,
+  "batch_size": 4
+}

@@ -1,0 +1,905 @@
+{
+  "protocol": "E2-training-ablation-v1",
+  "revision": "e19-20260914-r1",
+  "stage": "stageE19_dapt_nc_llrd",
+  "method": "dapt_nc_llrd",
+  "coefficient": 0.5,
+  "task_id": "visfd",
+  "mode": "nc",
+  "seed": 43,
+  "learning_rate": 5e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 7786,
+    "max_tokens": 241,
+    "p50_tokens": 39.0,
+    "p95_tokens": 100.0,
+    "p99_tokens": 139.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "smoke": false,
+  "source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_config_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "visfd",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "others"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ]
+    ]
+  },
+  "model": {
+    "role": "teacher",
+    "backbone": "goibert-b-dapt",
+    "hidden_size": 768,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 42,
+    "num_aspects": 11,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 102983466,
+    "trainable_parameters": 102983466
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:3",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "hyperparameters": {
+    "temperature": 2.0,
+    "alpha": null,
+    "consistency_lambda": 0.5,
+    "teacher_cache": null,
+    "teacher_cache_hash": null
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e19.py",
+    "--worker",
+    "--task-id",
+    "visfd",
+    "--device",
+    "cuda:3",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e19/visfd/seed_43",
+    "--seed",
+    "43"
+  ],
+  "started_at_unix": 1789354834.3017335,
+  "noise_statistics": [
+    {
+      "count": 7786,
+      "changed_count": 3422,
+      "operation_counts": {
+        "remove_accents": 1893,
+        "none": 3941,
+        "teencode": 1560,
+        "internal_char_typo": 392
+      },
+      "change_rate": 0.43950680708964807
+    },
+    {
+      "count": 7786,
+      "changed_count": 3454,
+      "operation_counts": {
+        "remove_accents": 1995,
+        "none": 3888,
+        "teencode": 1538,
+        "internal_char_typo": 365
+      },
+      "change_rate": 0.4436167480092474
+    },
+    {
+      "count": 7786,
+      "changed_count": 3454,
+      "operation_counts": {
+        "none": 3881,
+        "remove_accents": 1965,
+        "teencode": 1598,
+        "internal_char_typo": 342
+      },
+      "change_rate": 0.4436167480092474
+    },
+    {
+      "count": 7786,
+      "changed_count": 3443,
+      "operation_counts": {
+        "none": 3886,
+        "internal_char_typo": 381,
+        "remove_accents": 1962,
+        "teencode": 1557
+      },
+      "change_rate": 0.4422039558181351
+    },
+    {
+      "count": 7786,
+      "changed_count": 3447,
+      "operation_counts": {
+        "none": 3904,
+        "remove_accents": 1913,
+        "internal_char_typo": 442,
+        "teencode": 1527
+      },
+      "change_rate": 0.442717698433085
+    },
+    {
+      "count": 7786,
+      "changed_count": 3483,
+      "operation_counts": {
+        "none": 3862,
+        "remove_accents": 1960,
+        "teencode": 1593,
+        "internal_char_typo": 371
+      },
+      "change_rate": 0.44734138196763423
+    },
+    {
+      "count": 7786,
+      "changed_count": 3494,
+      "operation_counts": {
+        "none": 3811,
+        "remove_accents": 1978,
+        "teencode": 1582,
+        "internal_char_typo": 415
+      },
+      "change_rate": 0.44875417415874647
+    },
+    {
+      "count": 7786,
+      "changed_count": 3550,
+      "operation_counts": {
+        "none": 3784,
+        "remove_accents": 2030,
+        "internal_char_typo": 405,
+        "teencode": 1567
+      },
+      "change_rate": 0.45594657076804523
+    },
+    {
+      "count": 7786,
+      "changed_count": 3500,
+      "operation_counts": {
+        "remove_accents": 1919,
+        "internal_char_typo": 381,
+        "none": 3861,
+        "teencode": 1625
+      },
+      "change_rate": 0.44952478808117136
+    },
+    {
+      "count": 7786,
+      "changed_count": 3451,
+      "operation_counts": {
+        "remove_accents": 1886,
+        "none": 3918,
+        "teencode": 1566,
+        "internal_char_typo": 416
+      },
+      "change_rate": 0.4432314410480349
+    },
+    {
+      "count": 7786,
+      "changed_count": 3375,
+      "operation_counts": {
+        "none": 3977,
+        "remove_accents": 1932,
+        "teencode": 1473,
+        "internal_char_typo": 404
+      },
+      "change_rate": 0.43347033136398666
+    },
+    {
+      "count": 7786,
+      "changed_count": 3435,
+      "operation_counts": {
+        "remove_accents": 1909,
+        "none": 3917,
+        "teencode": 1580,
+        "internal_char_typo": 380
+      },
+      "change_rate": 0.4411764705882353
+    },
+    {
+      "count": 7786,
+      "changed_count": 3409,
+      "operation_counts": {
+        "teencode": 1542,
+        "none": 3929,
+        "remove_accents": 1945,
+        "internal_char_typo": 370
+      },
+      "change_rate": 0.43783714359106085
+    },
+    {
+      "count": 7786,
+      "changed_count": 3411,
+      "operation_counts": {
+        "none": 3958,
+        "remove_accents": 1910,
+        "internal_char_typo": 373,
+        "teencode": 1545
+      },
+      "change_rate": 0.43809401489853583
+    },
+    {
+      "count": 7786,
+      "changed_count": 3482,
+      "operation_counts": {
+        "none": 3870,
+        "remove_accents": 2003,
+        "teencode": 1516,
+        "internal_char_typo": 397
+      },
+      "change_rate": 0.44721294631389674
+    },
+    {
+      "count": 7786,
+      "changed_count": 3445,
+      "operation_counts": {
+        "none": 3922,
+        "remove_accents": 1923,
+        "teencode": 1523,
+        "internal_char_typo": 418
+      },
+      "change_rate": 0.4424608271256101
+    },
+    {
+      "count": 7786,
+      "changed_count": 3468,
+      "operation_counts": {
+        "remove_accents": 1940,
+        "none": 3889,
+        "internal_char_typo": 402,
+        "teencode": 1555
+      },
+      "change_rate": 0.44541484716157204
+    },
+    {
+      "count": 7786,
+      "changed_count": 3411,
+      "operation_counts": {
+        "none": 3909,
+        "internal_char_typo": 386,
+        "remove_accents": 1942,
+        "teencode": 1549
+      },
+      "change_rate": 0.43809401489853583
+    },
+    {
+      "count": 7786,
+      "changed_count": 3407,
+      "operation_counts": {
+        "none": 3928,
+        "internal_char_typo": 402,
+        "teencode": 1555,
+        "remove_accents": 1901
+      },
+      "change_rate": 0.4375802722835859
+    },
+    {
+      "count": 7786,
+      "changed_count": 3512,
+      "operation_counts": {
+        "none": 3816,
+        "teencode": 1601,
+        "internal_char_typo": 375,
+        "remove_accents": 1994
+      },
+      "change_rate": 0.4510660159260211
+    },
+    {
+      "count": 7786,
+      "changed_count": 3424,
+      "operation_counts": {
+        "remove_accents": 1930,
+        "internal_char_typo": 411,
+        "none": 3930,
+        "teencode": 1515
+      },
+      "change_rate": 0.43976367839712305
+    },
+    {
+      "count": 7786,
+      "changed_count": 3471,
+      "operation_counts": {
+        "none": 3869,
+        "teencode": 1565,
+        "remove_accents": 1947,
+        "internal_char_typo": 405
+      },
+      "change_rate": 0.4458001541227845
+    },
+    {
+      "count": 7786,
+      "changed_count": 3463,
+      "operation_counts": {
+        "none": 3895,
+        "remove_accents": 1920,
+        "teencode": 1546,
+        "internal_char_typo": 425
+      },
+      "change_rate": 0.44477266889288464
+    },
+    {
+      "count": 7786,
+      "changed_count": 3473,
+      "operation_counts": {
+        "none": 3870,
+        "remove_accents": 1957,
+        "teencode": 1567,
+        "internal_char_typo": 392
+      },
+      "change_rate": 0.44605702543025944
+    },
+    {
+      "count": 7786,
+      "changed_count": 3434,
+      "operation_counts": {
+        "none": 3932,
+        "teencode": 1582,
+        "remove_accents": 1886,
+        "internal_char_typo": 386
+      },
+      "change_rate": 0.4410480349344978
+    },
+    {
+      "count": 7786,
+      "changed_count": 3411,
+      "operation_counts": {
+        "none": 3933,
+        "teencode": 1580,
+        "remove_accents": 1926,
+        "internal_char_typo": 347
+      },
+      "change_rate": 0.43809401489853583
+    },
+    {
+      "count": 7786,
+      "changed_count": 3437,
+      "operation_counts": {
+        "teencode": 1519,
+        "none": 3947,
+        "remove_accents": 1917,
+        "internal_char_typo": 403
+      },
+      "change_rate": 0.44143334189571026
+    },
+    {
+      "count": 7786,
+      "changed_count": 3443,
+      "operation_counts": {
+        "none": 3878,
+        "internal_char_typo": 361,
+        "remove_accents": 1895,
+        "teencode": 1652
+      },
+      "change_rate": 0.4422039558181351
+    },
+    {
+      "count": 7786,
+      "changed_count": 3408,
+      "operation_counts": {
+        "none": 3929,
+        "remove_accents": 1938,
+        "internal_char_typo": 391,
+        "teencode": 1528
+      },
+      "change_rate": 0.4377087079373234
+    },
+    {
+      "count": 7786,
+      "changed_count": 3445,
+      "operation_counts": {
+        "teencode": 1511,
+        "remove_accents": 2007,
+        "none": 3892,
+        "internal_char_typo": 376
+      },
+      "change_rate": 0.4424608271256101
+    }
+  ],
+  "best_epoch": 30,
+  "best_selection_f1": 0.8513936503204651,
+  "best_validation_metrics": {
+    "n": 1112,
+    "aspect_count": 11,
+    "aspect_names": [
+      "BATTERY",
+      "CAMERA",
+      "DESIGN",
+      "FEATURES",
+      "GENERAL",
+      "OTHERS",
+      "PERFORMANCE",
+      "PRICE",
+      "SCREEN",
+      "SER&ACC",
+      "STORAGE"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8934177912420821,
+    "detection_micro_recall": 0.9094477151668069,
+    "detection_micro_f1": 0.9013614893025841,
+    "detection_macro_precision": 0.868215993216004,
+    "detection_macro_recall": 0.8617377947132624,
+    "detection_macro_f1": 0.862919481601713,
+    "pair_micro_precision": 0.8417329796640142,
+    "pair_micro_recall": 0.8612786489746683,
+    "pair_micro_f1": 0.8513936503204651,
+    "pair_macro_precision": 0.8074137111297851,
+    "pair_macro_recall": 0.8067647674138299,
+    "pair_macro_f1": 0.8053736953531798,
+    "classification_pair_micro_f1": 0.8513936503204651,
+    "classification_pair_macro_f1": 0.8053736953531798,
+    "per_aspect": {
+      "BATTERY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9654510556621881,
+          "recall": 0.998015873015873,
+          "f1": 0.9814634146341463
+        },
+        "pair": {
+          "precision": 0.8790786948176583,
+          "recall": 0.9087301587301587,
+          "f1": 0.8936585365853659
+        },
+        "detection_tp": 503,
+        "gold_present": 504,
+        "predicted_present": 521
+      },
+      "CAMERA": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9285714285714286,
+          "recall": 0.9662162162162162,
+          "f1": 0.9470198675496688
+        },
+        "pair": {
+          "precision": 0.8181818181818182,
+          "recall": 0.8513513513513513,
+          "f1": 0.8344370860927153
+        },
+        "detection_tp": 286,
+        "gold_present": 296,
+        "predicted_present": 308
+      },
+      "DESIGN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9226519337016574,
+          "recall": 0.893048128342246,
+          "f1": 0.907608695652174
+        },
+        "pair": {
+          "precision": 0.8674033149171271,
+          "recall": 0.839572192513369,
+          "f1": 0.8532608695652174
+        },
+        "detection_tp": 167,
+        "gold_present": 187,
+        "predicted_present": 181
+      },
+      "FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.910761154855643,
+          "recall": 0.910761154855643,
+          "f1": 0.910761154855643
+        },
+        "pair": {
+          "precision": 0.8346456692913385,
+          "recall": 0.8346456692913385,
+          "f1": 0.8346456692913385
+        },
+        "detection_tp": 347,
+        "gold_present": 381,
+        "predicted_present": 381
+      },
+      "GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9137199434229137,
+          "recall": 0.9375907111756169,
+          "f1": 0.9255014326647565
+        },
+        "pair": {
+          "precision": 0.8769448373408769,
+          "recall": 0.8998548621190131,
+          "f1": 0.8882521489971347
+        },
+        "detection_tp": 646,
+        "gold_present": 689,
+        "predicted_present": 707
+      },
+      "OTHERS": {
+        "pair_scored": false,
+        "detection": {
+          "precision": 0.5588235294117647,
+          "recall": 0.5298804780876494,
+          "f1": 0.5439672801635992
+        },
+        "pair": null,
+        "detection_tp": 133,
+        "gold_present": 251,
+        "predicted_present": 238
+      },
+      "PERFORMANCE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9126853377265239,
+          "recall": 0.9518900343642611,
+          "f1": 0.9318755256518082
+        },
+        "pair": {
+          "precision": 0.8336079077429983,
+          "recall": 0.8694158075601375,
+          "f1": 0.8511354079058032
+        },
+        "detection_tp": 554,
+        "gold_present": 582,
+        "predicted_present": 607
+      },
+      "PRICE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9067164179104478,
+          "recall": 0.9642857142857143,
+          "f1": 0.9346153846153846
+        },
+        "pair": {
+          "precision": 0.7873134328358209,
+          "recall": 0.8373015873015873,
+          "f1": 0.8115384615384615
+        },
+        "detection_tp": 243,
+        "gold_present": 252,
+        "predicted_present": 268
+      },
+      "SCREEN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8515625,
+          "recall": 0.9008264462809917,
+          "f1": 0.8755020080321285
+        },
+        "pair": {
+          "precision": 0.7578125,
+          "recall": 0.8016528925619835,
+          "f1": 0.7791164658634538
+        },
+        "detection_tp": 109,
+        "gold_present": 121,
+        "predicted_present": 128
+      },
+      "SER&ACC": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8794326241134752,
+          "recall": 0.8551724137931035,
+          "f1": 0.8671328671328671
+        },
+        "pair": {
+          "precision": 0.8191489361702128,
+          "recall": 0.7965517241379311,
+          "f1": 0.8076923076923077
+        },
+        "detection_tp": 248,
+        "gold_present": 290,
+        "predicted_present": 282
+      },
+      "STORAGE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8,
+          "recall": 0.5714285714285714,
+          "f1": 0.6666666666666666
+        },
+        "pair": {
+          "precision": 0.6,
+          "recall": 0.42857142857142855,
+          "f1": 0.5
+        },
+        "detection_tp": 8,
+        "gold_present": 14,
+        "predicted_present": 10
+      }
+    },
+    "task_id": "visfd",
+    "split": "validation",
+    "selection_f1": 0.8513936503204651,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "elapsed_seconds": 1504.8195204734802,
+  "peak_gpu_memory_allocated_bytes": 5232744960,
+  "peak_gpu_memory_reserved_bytes": 5962203136,
+  "status": "completed",
+  "checkpoint_sha256": "e26cbcd1469e43a121fa43d35ef5f0cbe6adf681e20c2cb77136634985653866",
+  "e19_protocol": "E19-dapt-nc-llrd-screening-v1",
+  "e19_revision": "e19-20260914-r1",
+  "e19_arm": "dapt_nc_llrd",
+  "e19_seed": 43,
+  "e19_encoder_dir": "/home/kiettqa/GoiBERT/models/goibert-b-dapt",
+  "e19_encoder_hashes": {
+    "config.json": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89",
+    "model.safetensors": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f",
+    "pretrain_manifest.json": "e035bf3cf53eaf7558c23129d56732472cf7a79bff66424b03609c41a6798191",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "e19_optimizer_coverage": {
+    "all_trainable": true,
+    "duplicate_parameter_count": 0,
+    "parameter_count": 201,
+    "group_count": 28,
+    "group_names": [
+      "embeddings_decay",
+      "embeddings_no_decay",
+      "block_00_decay",
+      "block_00_no_decay",
+      "block_01_decay",
+      "block_01_no_decay",
+      "block_02_decay",
+      "block_02_no_decay",
+      "block_03_decay",
+      "block_03_no_decay",
+      "block_04_decay",
+      "block_04_no_decay",
+      "block_05_decay",
+      "block_05_no_decay",
+      "block_06_decay",
+      "block_06_no_decay",
+      "block_07_decay",
+      "block_07_no_decay",
+      "block_08_decay",
+      "block_08_no_decay",
+      "block_09_decay",
+      "block_09_no_decay",
+      "block_10_decay",
+      "block_10_no_decay",
+      "block_11_decay",
+      "block_11_no_decay",
+      "head_decay",
+      "head_no_decay"
+    ],
+    "endpoint_scales": {
+      "embeddings": 0.06871947673600004,
+      "block_00": 0.08589934592000005,
+      "block_09": 0.6400000000000001,
+      "head": 1.0
+    }
+  },
+  "e19_source_manifest": {
+    "protocol": "E19-dapt-nc-llrd-screening-v1",
+    "revision": "e19-20260914-r1",
+    "created_at": "2026-09-14T03:00:30Z",
+    "runner_sha256": "505a62c30683b01705ca582f1377e6a8f33f85f51a26adf5d624f1c61c172323",
+    "source_hashes": {
+      "scripts/run_e19.py": "505a62c30683b01705ca582f1377e6a8f33f85f51a26adf5d624f1c61c172323",
+      "configs/e19/protocol.json": "4f69fb3b2ca4033e4ba88ef26646d4342ae5f14bba690b1e2e01dfefcd22da96",
+      "src/goibert_e2/train.py": "b3c28a9ee2c55ef6f24a1fe9ed2f342e5aea18f533b2e571ece0aae2e06f3ce2",
+      "src/goibert_e2/modeling.py": "b6049133d32f6a8b6f9aa063e47be3b5e1b79aeba1e06e917343079586ab0af4",
+      "src/goibert_e2/losses.py": "ca5ffa013350ba720a1f1a00debc3c2615cc3c25aad5b4726143293bf96491df",
+      "src/goibert_e2/noise.py": "8409775ef99ef5f96a9504f2d91eb5a738c5928ce960567ecaa3e5929a87dd29",
+      "src/goibert_e2/cache.py": "3b8db5cd1797212fe5d9b18f0ca59717594b1f69d76ea0c79bed45b2f862d2e7",
+      "src/goibert_e7/optim.py": "188ef994c5b271804be71ba618881071397e397731320624bd271b236a77d690",
+      "src/goibert/train.py": "ede96aaf63f02b808e5034f58953cfbce9a03438ed71f10f775de314a40bc578",
+      "src/goibert/modeling.py": "c8cf5b69e056cffd81f5606a813cd36779a7ef9f785c0d107faf8d8485585c49"
+    },
+    "encoder": {
+      "path": "/home/kiettqa/GoiBERT/models/goibert-b-dapt",
+      "files": {
+        "config.json": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89",
+        "model.safetensors": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f",
+        "pretrain_manifest.json": "e035bf3cf53eaf7558c23129d56732472cf7a79bff66424b03609c41a6798191",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      }
+    },
+    "frozen_e2_source_hashes": {
+      "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+      "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+      "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+      "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+    },
+    "recipe": {
+      "arm": "dapt_nc_llrd",
+      "tasks": [
+        "absa_restaurant",
+        "absa_hotel",
+        "visfd",
+        "vsfc_topic",
+        "vsfc_sentiment"
+      ],
+      "seed": 43,
+      "epochs": 30,
+      "effective_batch_size": 32,
+      "micro_batch_size": 16,
+      "accumulation_steps": 2,
+      "max_length": 256,
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "gamma": 0.8,
+      "num_layers": 12,
+      "weight_decay": 0.01,
+      "task_lrs": {
+        "vsfc_sentiment": 2e-05,
+        "vsfc_topic": 1e-05,
+        "visfd": 5e-05,
+        "absa_restaurant": 2e-05,
+        "absa_hotel": 5e-05
+      },
+      "nc_lambdas": {
+        "vsfc_sentiment": 0.1,
+        "vsfc_topic": 0.5,
+        "visfd": 0.5,
+        "absa_restaurant": 0.1,
+        "absa_hotel": 0.1
+      }
+    }
+  },
+  "e19_note": "backbone_hashes above is directory_hashes(models/goiturn-s-gd) as recorded internally by goibert_e2.train._train_any's non-teacher branch; it is a metadata artifact of calling _train_any with mode='nc' and is NOT the encoder actually trained. The real encoder is models/goibert-b-dapt (E2TeacherClassifier, 768 hidden, 12 layers); see e19_encoder_dir/e19_encoder_hashes above and model.backbone='goibert-b-dapt' in the model spec below."
+}

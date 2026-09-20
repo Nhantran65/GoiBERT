@@ -1,0 +1,1251 @@
+{
+  "protocol": "E2-training-ablation-v1",
+  "revision": "e17-20260913-r1",
+  "stage": "stageE17_recipient_excluded_keys",
+  "method": "cavity",
+  "coefficient": 0.5,
+  "task_id": "vsfc_topic",
+  "mode": "nc",
+  "seed": 42,
+  "learning_rate": 1e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 164,
+    "p50_tokens": 14.0,
+    "p95_tokens": 37.0,
+    "p99_tokens": 56.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "smoke": false,
+  "source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_config_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt": "09cbb8147f419f225b171cadf82410c442d6c24997ab97f48dfa779f4e68a1b9",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt": "7483805b24f5362aa5a2f708509876e0b69bf35753e90199059c2409caad7d96"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "vsfc_topic",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "include_test": false,
+    "slot_label_names": []
+  },
+  "model": {
+    "role": "student",
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26547082,
+    "trainable_parameters": 26547082,
+    "architecture": "original_explicit_target_block6_recipient_excluded_key",
+    "arm": "cavity",
+    "insertion_layer_index": 6,
+    "pair_chunk_size": 64,
+    "layer_norm_eps": 1e-05,
+    "guard_relative": 0.001,
+    "guard_absolute": 1e-07,
+    "eta_init": 0.0,
+    "eta_weight_decay": 0.0,
+    "added_parameter_count": 6
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "hyperparameters": {
+    "temperature": 2.0,
+    "alpha": null,
+    "consistency_lambda": 0.5,
+    "teacher_cache": null,
+    "teacher_cache_hash": null
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e17.py",
+    "--worker",
+    "--arm",
+    "cavity",
+    "--task-id",
+    "vsfc_topic",
+    "--device",
+    "cuda:0",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e17/cavity/vsfc_topic/seed_42"
+  ],
+  "started_at_unix": 1789236625.7082624,
+  "noise_statistics": [
+    {
+      "count": 11426,
+      "changed_count": 4261,
+      "operation_counts": {
+        "remove_accents": 2842,
+        "teencode": 2336,
+        "none": 5676,
+        "internal_char_typo": 572
+      },
+      "change_rate": 0.37292140731664625
+    },
+    {
+      "count": 11426,
+      "changed_count": 4272,
+      "operation_counts": {
+        "none": 5658,
+        "remove_accents": 2833,
+        "teencode": 2357,
+        "internal_char_typo": 578
+      },
+      "change_rate": 0.3738841239278838
+    },
+    {
+      "count": 11426,
+      "changed_count": 4253,
+      "operation_counts": {
+        "none": 5686,
+        "teencode": 2352,
+        "remove_accents": 2804,
+        "internal_char_typo": 584
+      },
+      "change_rate": 0.37222124978120075
+    },
+    {
+      "count": 11426,
+      "changed_count": 4291,
+      "operation_counts": {
+        "none": 5634,
+        "teencode": 2324,
+        "remove_accents": 2884,
+        "internal_char_typo": 584
+      },
+      "change_rate": 0.37554699807456676
+    },
+    {
+      "count": 11426,
+      "changed_count": 4220,
+      "operation_counts": {
+        "teencode": 2271,
+        "none": 5772,
+        "internal_char_typo": 557,
+        "remove_accents": 2826
+      },
+      "change_rate": 0.3693330999474882
+    },
+    {
+      "count": 11426,
+      "changed_count": 4316,
+      "operation_counts": {
+        "remove_accents": 2890,
+        "none": 5644,
+        "teencode": 2298,
+        "internal_char_typo": 594
+      },
+      "change_rate": 0.37773499037283387
+    },
+    {
+      "count": 11426,
+      "changed_count": 4227,
+      "operation_counts": {
+        "teencode": 2321,
+        "none": 5695,
+        "remove_accents": 2810,
+        "internal_char_typo": 600
+      },
+      "change_rate": 0.369945737791003
+    },
+    {
+      "count": 11426,
+      "changed_count": 4240,
+      "operation_counts": {
+        "remove_accents": 2841,
+        "none": 5750,
+        "teencode": 2261,
+        "internal_char_typo": 574
+      },
+      "change_rate": 0.3710834937861019
+    },
+    {
+      "count": 11426,
+      "changed_count": 4233,
+      "operation_counts": {
+        "none": 5731,
+        "remove_accents": 2835,
+        "teencode": 2285,
+        "internal_char_typo": 575
+      },
+      "change_rate": 0.3704708559425871
+    },
+    {
+      "count": 11426,
+      "changed_count": 4283,
+      "operation_counts": {
+        "none": 5674,
+        "remove_accents": 2938,
+        "teencode": 2301,
+        "internal_char_typo": 513
+      },
+      "change_rate": 0.3748468405391213
+    },
+    {
+      "count": 11426,
+      "changed_count": 4220,
+      "operation_counts": {
+        "remove_accents": 2879,
+        "none": 5803,
+        "teencode": 2189,
+        "internal_char_typo": 555
+      },
+      "change_rate": 0.3693330999474882
+    },
+    {
+      "count": 11426,
+      "changed_count": 4120,
+      "operation_counts": {
+        "none": 5785,
+        "teencode": 2334,
+        "remove_accents": 2775,
+        "internal_char_typo": 532
+      },
+      "change_rate": 0.3605811307544197
+    },
+    {
+      "count": 11426,
+      "changed_count": 4356,
+      "operation_counts": {
+        "none": 5614,
+        "teencode": 2275,
+        "remove_accents": 2958,
+        "internal_char_typo": 579
+      },
+      "change_rate": 0.38123577805006126
+    },
+    {
+      "count": 11426,
+      "changed_count": 4244,
+      "operation_counts": {
+        "none": 5714,
+        "teencode": 2301,
+        "internal_char_typo": 535,
+        "remove_accents": 2876
+      },
+      "change_rate": 0.3714335725538246
+    },
+    {
+      "count": 11426,
+      "changed_count": 4154,
+      "operation_counts": {
+        "none": 5805,
+        "remove_accents": 2802,
+        "internal_char_typo": 540,
+        "teencode": 2279
+      },
+      "change_rate": 0.36355680028006304
+    },
+    {
+      "count": 11426,
+      "changed_count": 4271,
+      "operation_counts": {
+        "teencode": 2286,
+        "internal_char_typo": 579,
+        "none": 5685,
+        "remove_accents": 2876
+      },
+      "change_rate": 0.37379660423595307
+    },
+    {
+      "count": 11426,
+      "changed_count": 4206,
+      "operation_counts": {
+        "none": 5767,
+        "teencode": 2236,
+        "remove_accents": 2879,
+        "internal_char_typo": 544
+      },
+      "change_rate": 0.3681078242604586
+    },
+    {
+      "count": 11426,
+      "changed_count": 4295,
+      "operation_counts": {
+        "remove_accents": 2875,
+        "none": 5667,
+        "teencode": 2311,
+        "internal_char_typo": 573
+      },
+      "change_rate": 0.3758970768422895
+    },
+    {
+      "count": 11426,
+      "changed_count": 4341,
+      "operation_counts": {
+        "none": 5641,
+        "remove_accents": 2963,
+        "teencode": 2240,
+        "internal_char_typo": 582
+      },
+      "change_rate": 0.379922982671101
+    },
+    {
+      "count": 11426,
+      "changed_count": 4228,
+      "operation_counts": {
+        "none": 5680,
+        "teencode": 2347,
+        "remove_accents": 2829,
+        "internal_char_typo": 570
+      },
+      "change_rate": 0.37003325748293364
+    },
+    {
+      "count": 11426,
+      "changed_count": 4197,
+      "operation_counts": {
+        "none": 5806,
+        "teencode": 2159,
+        "remove_accents": 2868,
+        "internal_char_typo": 593
+      },
+      "change_rate": 0.36732014703308247
+    },
+    {
+      "count": 11426,
+      "changed_count": 4233,
+      "operation_counts": {
+        "internal_char_typo": 592,
+        "none": 5669,
+        "teencode": 2355,
+        "remove_accents": 2810
+      },
+      "change_rate": 0.3704708559425871
+    },
+    {
+      "count": 11426,
+      "changed_count": 4212,
+      "operation_counts": {
+        "remove_accents": 2831,
+        "none": 5738,
+        "internal_char_typo": 589,
+        "teencode": 2268
+      },
+      "change_rate": 0.3686329424120427
+    },
+    {
+      "count": 11426,
+      "changed_count": 4218,
+      "operation_counts": {
+        "none": 5740,
+        "remove_accents": 2762,
+        "internal_char_typo": 625,
+        "teencode": 2299
+      },
+      "change_rate": 0.3691580605636268
+    },
+    {
+      "count": 11426,
+      "changed_count": 4264,
+      "operation_counts": {
+        "remove_accents": 2886,
+        "none": 5634,
+        "teencode": 2340,
+        "internal_char_typo": 566
+      },
+      "change_rate": 0.3731839663924383
+    },
+    {
+      "count": 11426,
+      "changed_count": 4277,
+      "operation_counts": {
+        "none": 5712,
+        "remove_accents": 2862,
+        "teencode": 2277,
+        "internal_char_typo": 575
+      },
+      "change_rate": 0.3743217223875372
+    },
+    {
+      "count": 11426,
+      "changed_count": 4297,
+      "operation_counts": {
+        "none": 5705,
+        "teencode": 2292,
+        "remove_accents": 2805,
+        "internal_char_typo": 624
+      },
+      "change_rate": 0.3760721162261509
+    },
+    {
+      "count": 11426,
+      "changed_count": 4241,
+      "operation_counts": {
+        "none": 5740,
+        "remove_accents": 2848,
+        "teencode": 2262,
+        "internal_char_typo": 576
+      },
+      "change_rate": 0.37117101347803255
+    },
+    {
+      "count": 11426,
+      "changed_count": 4292,
+      "operation_counts": {
+        "none": 5676,
+        "teencode": 2251,
+        "remove_accents": 2929,
+        "internal_char_typo": 570
+      },
+      "change_rate": 0.3756345177664975
+    },
+    {
+      "count": 11426,
+      "changed_count": 4238,
+      "operation_counts": {
+        "remove_accents": 2898,
+        "none": 5685,
+        "teencode": 2292,
+        "internal_char_typo": 551
+      },
+      "change_rate": 0.3709084544022405
+    }
+  ],
+  "best_epoch": 20,
+  "best_selection_f1": 0.8017658232959779,
+  "best_validation_metrics": {
+    "n": 1583,
+    "labels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "accuracy": 0.8926089703095389,
+    "macro_precision": 0.8033763164063518,
+    "macro_recall": 0.8050397955519026,
+    "macro_f1": 0.8017658232959779,
+    "per_class": {
+      "0": {
+        "support": 1151,
+        "predicted": 1132,
+        "tp": 1074,
+        "fp": 58,
+        "fn": 77,
+        "precision": 0.9487632508833922,
+        "recall": 0.9331016507384883,
+        "f1": 0.9408672798948752
+      },
+      "1": {
+        "support": 267,
+        "predicted": 300,
+        "tp": 225,
+        "fp": 75,
+        "fn": 42,
+        "precision": 0.75,
+        "recall": 0.8426966292134831,
+        "f1": 0.7936507936507936
+      },
+      "2": {
+        "support": 70,
+        "predicted": 74,
+        "tp": 65,
+        "fp": 9,
+        "fn": 5,
+        "precision": 0.8783783783783784,
+        "recall": 0.9285714285714286,
+        "f1": 0.9027777777777778
+      },
+      "3": {
+        "support": 95,
+        "predicted": 77,
+        "tp": 49,
+        "fp": 28,
+        "fn": 46,
+        "precision": 0.6363636363636364,
+        "recall": 0.5157894736842106,
+        "f1": 0.5697674418604651
+      }
+    },
+    "task_id": "vsfc_topic",
+    "split": "validation",
+    "selection_f1": 0.8017658232959779,
+    "selection_metric": "fixed_label_macro_f1"
+  },
+  "elapsed_seconds": 2094.496832370758,
+  "peak_gpu_memory_allocated_bytes": 2509512192,
+  "peak_gpu_memory_reserved_bytes": 2829058048,
+  "status": "completed",
+  "checkpoint_sha256": "a6e193023c512779127b8d692a00b56f3b58a5074b28294686b349f5f2f0c08f",
+  "e17_protocol": "E17-recipient-excluded-keys-screening-v1",
+  "e17_revision": "e17-20260913-r1",
+  "e17_arm": "cavity",
+  "e17_optimizer_coverage": {
+    "all_trainable": true,
+    "parameter_count": 170,
+    "group_count": 24,
+    "duplicate_parameter_count": 0,
+    "group_names": [
+      "embeddings_decay",
+      "embeddings_no_decay",
+      "block_00_decay",
+      "block_00_no_decay",
+      "block_01_decay",
+      "block_01_no_decay",
+      "block_02_decay",
+      "block_02_no_decay",
+      "block_03_decay",
+      "block_03_no_decay",
+      "block_04_decay",
+      "block_04_no_decay",
+      "block_05_decay",
+      "block_05_no_decay",
+      "block_06_decay",
+      "block_06_no_decay",
+      "block_07_decay",
+      "block_07_no_decay",
+      "block_08_decay",
+      "block_08_no_decay",
+      "block_09_decay",
+      "block_09_no_decay",
+      "head_decay",
+      "head_no_decay"
+    ],
+    "endpoint_scales": {
+      "embeddings": 0.10737418240000006,
+      "block_00": 0.13421772800000006,
+      "block_09": 1.0,
+      "head": 1.0
+    },
+    "groups": [
+      {
+        "index": 0,
+        "name": "embeddings_decay",
+        "region": "embeddings",
+        "decay": true,
+        "lr": 1.0737418240000007e-06,
+        "initial_lr": 1.0737418240000007e-06,
+        "lr_scale": 0.10737418240000006,
+        "exponent": 10,
+        "weight_decay": 0.01,
+        "parameter_count": 3,
+        "parameter_names": [
+          "encoder.embeddings.word_embeddings.weight",
+          "encoder.embeddings.position_embeddings.weight",
+          "encoder.embeddings.token_type_embeddings.weight"
+        ]
+      },
+      {
+        "index": 1,
+        "name": "embeddings_no_decay",
+        "region": "embeddings",
+        "decay": false,
+        "lr": 1.0737418240000007e-06,
+        "initial_lr": 1.0737418240000007e-06,
+        "lr_scale": 0.10737418240000006,
+        "exponent": 10,
+        "weight_decay": 0.0,
+        "parameter_count": 2,
+        "parameter_names": [
+          "encoder.embeddings.LayerNorm.weight",
+          "encoder.embeddings.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 2,
+        "name": "block_00_decay",
+        "region": "block_00",
+        "decay": true,
+        "lr": 1.3421772800000008e-06,
+        "initial_lr": 1.3421772800000008e-06,
+        "lr_scale": 0.13421772800000006,
+        "exponent": 9,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.0.attention.self.query.weight",
+          "encoder.encoder.layer.0.attention.self.key.weight",
+          "encoder.encoder.layer.0.attention.self.value.weight",
+          "encoder.encoder.layer.0.attention.output.dense.weight",
+          "encoder.encoder.layer.0.intermediate.dense.weight",
+          "encoder.encoder.layer.0.output.dense.weight"
+        ]
+      },
+      {
+        "index": 3,
+        "name": "block_00_no_decay",
+        "region": "block_00",
+        "decay": false,
+        "lr": 1.3421772800000008e-06,
+        "initial_lr": 1.3421772800000008e-06,
+        "lr_scale": 0.13421772800000006,
+        "exponent": 9,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.0.attention.self.query.bias",
+          "encoder.encoder.layer.0.attention.self.key.bias",
+          "encoder.encoder.layer.0.attention.self.value.bias",
+          "encoder.encoder.layer.0.attention.output.dense.bias",
+          "encoder.encoder.layer.0.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.0.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.0.intermediate.dense.bias",
+          "encoder.encoder.layer.0.output.dense.bias",
+          "encoder.encoder.layer.0.output.LayerNorm.weight",
+          "encoder.encoder.layer.0.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 4,
+        "name": "block_01_decay",
+        "region": "block_01",
+        "decay": true,
+        "lr": 1.6777216000000011e-06,
+        "initial_lr": 1.6777216000000011e-06,
+        "lr_scale": 0.1677721600000001,
+        "exponent": 8,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.1.attention.self.query.weight",
+          "encoder.encoder.layer.1.attention.self.key.weight",
+          "encoder.encoder.layer.1.attention.self.value.weight",
+          "encoder.encoder.layer.1.attention.output.dense.weight",
+          "encoder.encoder.layer.1.intermediate.dense.weight",
+          "encoder.encoder.layer.1.output.dense.weight"
+        ]
+      },
+      {
+        "index": 5,
+        "name": "block_01_no_decay",
+        "region": "block_01",
+        "decay": false,
+        "lr": 1.6777216000000011e-06,
+        "initial_lr": 1.6777216000000011e-06,
+        "lr_scale": 0.1677721600000001,
+        "exponent": 8,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.1.attention.self.query.bias",
+          "encoder.encoder.layer.1.attention.self.key.bias",
+          "encoder.encoder.layer.1.attention.self.value.bias",
+          "encoder.encoder.layer.1.attention.output.dense.bias",
+          "encoder.encoder.layer.1.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.1.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.1.intermediate.dense.bias",
+          "encoder.encoder.layer.1.output.dense.bias",
+          "encoder.encoder.layer.1.output.LayerNorm.weight",
+          "encoder.encoder.layer.1.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 6,
+        "name": "block_02_decay",
+        "region": "block_02",
+        "decay": true,
+        "lr": 2.097152000000001e-06,
+        "initial_lr": 2.097152000000001e-06,
+        "lr_scale": 0.20971520000000007,
+        "exponent": 7,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.2.attention.self.query.weight",
+          "encoder.encoder.layer.2.attention.self.key.weight",
+          "encoder.encoder.layer.2.attention.self.value.weight",
+          "encoder.encoder.layer.2.attention.output.dense.weight",
+          "encoder.encoder.layer.2.intermediate.dense.weight",
+          "encoder.encoder.layer.2.output.dense.weight"
+        ]
+      },
+      {
+        "index": 7,
+        "name": "block_02_no_decay",
+        "region": "block_02",
+        "decay": false,
+        "lr": 2.097152000000001e-06,
+        "initial_lr": 2.097152000000001e-06,
+        "lr_scale": 0.20971520000000007,
+        "exponent": 7,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.2.attention.self.query.bias",
+          "encoder.encoder.layer.2.attention.self.key.bias",
+          "encoder.encoder.layer.2.attention.self.value.bias",
+          "encoder.encoder.layer.2.attention.output.dense.bias",
+          "encoder.encoder.layer.2.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.2.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.2.intermediate.dense.bias",
+          "encoder.encoder.layer.2.output.dense.bias",
+          "encoder.encoder.layer.2.output.LayerNorm.weight",
+          "encoder.encoder.layer.2.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 8,
+        "name": "block_03_decay",
+        "region": "block_03",
+        "decay": true,
+        "lr": 2.621440000000001e-06,
+        "initial_lr": 2.621440000000001e-06,
+        "lr_scale": 0.2621440000000001,
+        "exponent": 6,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.3.attention.self.query.weight",
+          "encoder.encoder.layer.3.attention.self.key.weight",
+          "encoder.encoder.layer.3.attention.self.value.weight",
+          "encoder.encoder.layer.3.attention.output.dense.weight",
+          "encoder.encoder.layer.3.intermediate.dense.weight",
+          "encoder.encoder.layer.3.output.dense.weight"
+        ]
+      },
+      {
+        "index": 9,
+        "name": "block_03_no_decay",
+        "region": "block_03",
+        "decay": false,
+        "lr": 2.621440000000001e-06,
+        "initial_lr": 2.621440000000001e-06,
+        "lr_scale": 0.2621440000000001,
+        "exponent": 6,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.3.attention.self.query.bias",
+          "encoder.encoder.layer.3.attention.self.key.bias",
+          "encoder.encoder.layer.3.attention.self.value.bias",
+          "encoder.encoder.layer.3.attention.output.dense.bias",
+          "encoder.encoder.layer.3.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.3.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.3.intermediate.dense.bias",
+          "encoder.encoder.layer.3.output.dense.bias",
+          "encoder.encoder.layer.3.output.LayerNorm.weight",
+          "encoder.encoder.layer.3.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 10,
+        "name": "block_04_decay",
+        "region": "block_04",
+        "decay": true,
+        "lr": 3.276800000000001e-06,
+        "initial_lr": 3.276800000000001e-06,
+        "lr_scale": 0.3276800000000001,
+        "exponent": 5,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.4.attention.self.query.weight",
+          "encoder.encoder.layer.4.attention.self.key.weight",
+          "encoder.encoder.layer.4.attention.self.value.weight",
+          "encoder.encoder.layer.4.attention.output.dense.weight",
+          "encoder.encoder.layer.4.intermediate.dense.weight",
+          "encoder.encoder.layer.4.output.dense.weight"
+        ]
+      },
+      {
+        "index": 11,
+        "name": "block_04_no_decay",
+        "region": "block_04",
+        "decay": false,
+        "lr": 3.276800000000001e-06,
+        "initial_lr": 3.276800000000001e-06,
+        "lr_scale": 0.3276800000000001,
+        "exponent": 5,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.4.attention.self.query.bias",
+          "encoder.encoder.layer.4.attention.self.key.bias",
+          "encoder.encoder.layer.4.attention.self.value.bias",
+          "encoder.encoder.layer.4.attention.output.dense.bias",
+          "encoder.encoder.layer.4.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.4.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.4.intermediate.dense.bias",
+          "encoder.encoder.layer.4.output.dense.bias",
+          "encoder.encoder.layer.4.output.LayerNorm.weight",
+          "encoder.encoder.layer.4.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 12,
+        "name": "block_05_decay",
+        "region": "block_05",
+        "decay": true,
+        "lr": 4.096000000000001e-06,
+        "initial_lr": 4.096000000000001e-06,
+        "lr_scale": 0.4096000000000001,
+        "exponent": 4,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.5.attention.self.query.weight",
+          "encoder.encoder.layer.5.attention.self.key.weight",
+          "encoder.encoder.layer.5.attention.self.value.weight",
+          "encoder.encoder.layer.5.attention.output.dense.weight",
+          "encoder.encoder.layer.5.intermediate.dense.weight",
+          "encoder.encoder.layer.5.output.dense.weight"
+        ]
+      },
+      {
+        "index": 13,
+        "name": "block_05_no_decay",
+        "region": "block_05",
+        "decay": false,
+        "lr": 4.096000000000001e-06,
+        "initial_lr": 4.096000000000001e-06,
+        "lr_scale": 0.4096000000000001,
+        "exponent": 4,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.5.attention.self.query.bias",
+          "encoder.encoder.layer.5.attention.self.key.bias",
+          "encoder.encoder.layer.5.attention.self.value.bias",
+          "encoder.encoder.layer.5.attention.output.dense.bias",
+          "encoder.encoder.layer.5.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.5.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.5.intermediate.dense.bias",
+          "encoder.encoder.layer.5.output.dense.bias",
+          "encoder.encoder.layer.5.output.LayerNorm.weight",
+          "encoder.encoder.layer.5.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 14,
+        "name": "block_06_decay",
+        "region": "block_06",
+        "decay": true,
+        "lr": 5.120000000000002e-06,
+        "initial_lr": 5.120000000000002e-06,
+        "lr_scale": 0.5120000000000001,
+        "exponent": 3,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.6.attention.self.query.weight",
+          "encoder.encoder.layer.6.attention.self.key.weight",
+          "encoder.encoder.layer.6.attention.self.value.weight",
+          "encoder.encoder.layer.6.attention.output.dense.weight",
+          "encoder.encoder.layer.6.intermediate.dense.weight",
+          "encoder.encoder.layer.6.output.dense.weight"
+        ]
+      },
+      {
+        "index": 15,
+        "name": "block_06_no_decay",
+        "region": "block_06",
+        "decay": false,
+        "lr": 5.120000000000002e-06,
+        "initial_lr": 5.120000000000002e-06,
+        "lr_scale": 0.5120000000000001,
+        "exponent": 3,
+        "weight_decay": 0.0,
+        "parameter_count": 11,
+        "parameter_names": [
+          "encoder.encoder.layer.6.attention.self.query.bias",
+          "encoder.encoder.layer.6.attention.self.key.bias",
+          "encoder.encoder.layer.6.attention.self.value.bias",
+          "encoder.encoder.layer.6.attention.output.dense.bias",
+          "encoder.encoder.layer.6.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.6.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.6.intermediate.dense.bias",
+          "encoder.encoder.layer.6.output.dense.bias",
+          "encoder.encoder.layer.6.output.LayerNorm.weight",
+          "encoder.encoder.layer.6.output.LayerNorm.bias",
+          "encoder.encoder.layer.6.attention.self.eta"
+        ]
+      },
+      {
+        "index": 16,
+        "name": "block_07_decay",
+        "region": "block_07",
+        "decay": true,
+        "lr": 6.400000000000001e-06,
+        "initial_lr": 6.400000000000001e-06,
+        "lr_scale": 0.6400000000000001,
+        "exponent": 2,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.7.attention.self.query.weight",
+          "encoder.encoder.layer.7.attention.self.key.weight",
+          "encoder.encoder.layer.7.attention.self.value.weight",
+          "encoder.encoder.layer.7.attention.output.dense.weight",
+          "encoder.encoder.layer.7.intermediate.dense.weight",
+          "encoder.encoder.layer.7.output.dense.weight"
+        ]
+      },
+      {
+        "index": 17,
+        "name": "block_07_no_decay",
+        "region": "block_07",
+        "decay": false,
+        "lr": 6.400000000000001e-06,
+        "initial_lr": 6.400000000000001e-06,
+        "lr_scale": 0.6400000000000001,
+        "exponent": 2,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.7.attention.self.query.bias",
+          "encoder.encoder.layer.7.attention.self.key.bias",
+          "encoder.encoder.layer.7.attention.self.value.bias",
+          "encoder.encoder.layer.7.attention.output.dense.bias",
+          "encoder.encoder.layer.7.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.7.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.7.intermediate.dense.bias",
+          "encoder.encoder.layer.7.output.dense.bias",
+          "encoder.encoder.layer.7.output.LayerNorm.weight",
+          "encoder.encoder.layer.7.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 18,
+        "name": "block_08_decay",
+        "region": "block_08",
+        "decay": true,
+        "lr": 8.000000000000001e-06,
+        "initial_lr": 8.000000000000001e-06,
+        "lr_scale": 0.8,
+        "exponent": 1,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.8.attention.self.query.weight",
+          "encoder.encoder.layer.8.attention.self.key.weight",
+          "encoder.encoder.layer.8.attention.self.value.weight",
+          "encoder.encoder.layer.8.attention.output.dense.weight",
+          "encoder.encoder.layer.8.intermediate.dense.weight",
+          "encoder.encoder.layer.8.output.dense.weight"
+        ]
+      },
+      {
+        "index": 19,
+        "name": "block_08_no_decay",
+        "region": "block_08",
+        "decay": false,
+        "lr": 8.000000000000001e-06,
+        "initial_lr": 8.000000000000001e-06,
+        "lr_scale": 0.8,
+        "exponent": 1,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.8.attention.self.query.bias",
+          "encoder.encoder.layer.8.attention.self.key.bias",
+          "encoder.encoder.layer.8.attention.self.value.bias",
+          "encoder.encoder.layer.8.attention.output.dense.bias",
+          "encoder.encoder.layer.8.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.8.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.8.intermediate.dense.bias",
+          "encoder.encoder.layer.8.output.dense.bias",
+          "encoder.encoder.layer.8.output.LayerNorm.weight",
+          "encoder.encoder.layer.8.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 20,
+        "name": "block_09_decay",
+        "region": "block_09",
+        "decay": true,
+        "lr": 1e-05,
+        "initial_lr": 1e-05,
+        "lr_scale": 1.0,
+        "exponent": 0,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.9.attention.self.query.weight",
+          "encoder.encoder.layer.9.attention.self.key.weight",
+          "encoder.encoder.layer.9.attention.self.value.weight",
+          "encoder.encoder.layer.9.attention.output.dense.weight",
+          "encoder.encoder.layer.9.intermediate.dense.weight",
+          "encoder.encoder.layer.9.output.dense.weight"
+        ]
+      },
+      {
+        "index": 21,
+        "name": "block_09_no_decay",
+        "region": "block_09",
+        "decay": false,
+        "lr": 1e-05,
+        "initial_lr": 1e-05,
+        "lr_scale": 1.0,
+        "exponent": 0,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.9.attention.self.query.bias",
+          "encoder.encoder.layer.9.attention.self.key.bias",
+          "encoder.encoder.layer.9.attention.self.value.bias",
+          "encoder.encoder.layer.9.attention.output.dense.bias",
+          "encoder.encoder.layer.9.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.9.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.9.intermediate.dense.bias",
+          "encoder.encoder.layer.9.output.dense.bias",
+          "encoder.encoder.layer.9.output.LayerNorm.weight",
+          "encoder.encoder.layer.9.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 22,
+        "name": "head_decay",
+        "region": "head",
+        "decay": true,
+        "lr": 1e-05,
+        "initial_lr": 1e-05,
+        "lr_scale": 1.0,
+        "exponent": 0,
+        "weight_decay": 0.01,
+        "parameter_count": 2,
+        "parameter_names": [
+          "head.dense.weight",
+          "head.output.weight"
+        ]
+      },
+      {
+        "index": 23,
+        "name": "head_no_decay",
+        "region": "head",
+        "decay": false,
+        "lr": 1e-05,
+        "initial_lr": 1e-05,
+        "lr_scale": 1.0,
+        "exponent": 0,
+        "weight_decay": 0.0,
+        "parameter_count": 2,
+        "parameter_names": [
+          "head.dense.bias",
+          "head.output.bias"
+        ]
+      }
+    ],
+    "eta_present": true,
+    "eta_group": "block_06_no_decay",
+    "eta_weight_decay": 0.0,
+    "eta_learning_rate": 5.120000000000002e-06,
+    "eta_lr_scale": 0.5120000000000001,
+    "eta_parameter_name": "encoder.encoder.layer.6.attention.self.eta"
+  },
+  "e17_optimizer_step_post_hook": true,
+  "e17_source_binding": {
+    "protocol": "E17-recipient-excluded-keys-screening-v1",
+    "revision": "e17-20260913-r1",
+    "runner_sha256": "5e241c0d0e5999a1005f84a8d5475aa86f437de49fe7b2630c24e4cabcc78561",
+    "source_hashes": {
+      "scripts/run_e17.py": "5e241c0d0e5999a1005f84a8d5475aa86f437de49fe7b2630c24e4cabcc78561",
+      "src/goibert_e17/modeling.py": "132fc2aee7565022582fb97b7675c1c4587f6852bd63191134c7c2fd9e27a16d",
+      "src/goibert_e17/optim.py": "9bcd2f23ba20a03191a20b9c160fd89a0cd1c8fe7800f039cbbc6d3efe445fb7",
+      "src/goibert_e17/__init__.py": "eb3ec5e3853a22096dc01f535a18e016b1194c553ff2864f0ce8ccbc86ea2caf",
+      "configs/e17/protocol.json": "4514b0fc95c9ea8ea6083a4fdcb606263e4f5ea7dee1291a6db478f08424e071",
+      "src/goibert_e2/train.py": "b3c28a9ee2c55ef6f24a1fe9ed2f342e5aea18f533b2e571ece0aae2e06f3ce2",
+      "src/goibert_e2/modeling.py": "b6049133d32f6a8b6f9aa063e47be3b5e1b79aeba1e06e917343079586ab0af4",
+      "src/goibert_e7/optim.py": "188ef994c5b271804be71ba618881071397e397731320624bd271b236a77d690"
+    },
+    "backbone": {
+      "path": "/home/kiettqa/GoiBERT/models/goiturn-s-gd",
+      "files": {
+        "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+        "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+        "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      }
+    },
+    "frozen_e2_source_hashes": {
+      "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+      "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+      "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+      "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+    },
+    "frozen_e7_files": {
+      "src/goibert_e7/__init__.py": "6c1ace8a3fa38d4376d277682fd32ad30e05599d346986be3cc3d1b6a90797d1",
+      "src/goibert_e7/optim.py": "188ef994c5b271804be71ba618881071397e397731320624bd271b236a77d690"
+    },
+    "recipe": {
+      "tasks": [
+        "vsfc_sentiment",
+        "vsfc_topic",
+        "visfd",
+        "absa_restaurant",
+        "absa_hotel"
+      ],
+      "arms": [
+        "baseline",
+        "full_context",
+        "cavity"
+      ],
+      "seed": 42,
+      "epochs": 30,
+      "effective_batch_size": 32,
+      "micro_batch_size": 16,
+      "accumulation_steps": 2,
+      "max_length": 256,
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "gamma": 0.8,
+      "weight_decay": 0.01
+    }
+  },
+  "e17_root_approval": {
+    "status": "approved",
+    "reviewer": "root",
+    "created_at": "2026-09-12T17:34:34.363868+00:00",
+    "source_binding": {
+      "protocol": "E17-recipient-excluded-keys-screening-v1",
+      "revision": "e17-20260913-r1",
+      "runner_sha256": "5e241c0d0e5999a1005f84a8d5475aa86f437de49fe7b2630c24e4cabcc78561",
+      "source_hashes": {
+        "scripts/run_e17.py": "5e241c0d0e5999a1005f84a8d5475aa86f437de49fe7b2630c24e4cabcc78561",
+        "src/goibert_e17/modeling.py": "132fc2aee7565022582fb97b7675c1c4587f6852bd63191134c7c2fd9e27a16d",
+        "src/goibert_e17/optim.py": "9bcd2f23ba20a03191a20b9c160fd89a0cd1c8fe7800f039cbbc6d3efe445fb7",
+        "src/goibert_e17/__init__.py": "eb3ec5e3853a22096dc01f535a18e016b1194c553ff2864f0ce8ccbc86ea2caf",
+        "configs/e17/protocol.json": "4514b0fc95c9ea8ea6083a4fdcb606263e4f5ea7dee1291a6db478f08424e071",
+        "src/goibert_e2/train.py": "b3c28a9ee2c55ef6f24a1fe9ed2f342e5aea18f533b2e571ece0aae2e06f3ce2",
+        "src/goibert_e2/modeling.py": "b6049133d32f6a8b6f9aa063e47be3b5e1b79aeba1e06e917343079586ab0af4",
+        "src/goibert_e7/optim.py": "188ef994c5b271804be71ba618881071397e397731320624bd271b236a77d690"
+      },
+      "backbone": {
+        "path": "/home/kiettqa/GoiBERT/models/goiturn-s-gd",
+        "files": {
+          "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+          "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+          "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+          "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+          "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+          "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+        }
+      },
+      "frozen_e2_source_hashes": {
+        "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+        "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+        "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+        "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+        "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+      },
+      "frozen_e7_files": {
+        "src/goibert_e7/__init__.py": "6c1ace8a3fa38d4376d277682fd32ad30e05599d346986be3cc3d1b6a90797d1",
+        "src/goibert_e7/optim.py": "188ef994c5b271804be71ba618881071397e397731320624bd271b236a77d690"
+      },
+      "recipe": {
+        "tasks": [
+          "vsfc_sentiment",
+          "vsfc_topic",
+          "visfd",
+          "absa_restaurant",
+          "absa_hotel"
+        ],
+        "arms": [
+          "baseline",
+          "full_context",
+          "cavity"
+        ],
+        "seed": 42,
+        "epochs": 30,
+        "effective_batch_size": 32,
+        "micro_batch_size": 16,
+        "accumulation_steps": 2,
+        "max_length": 256,
+        "precision": "bf16",
+        "attention_implementation": "sdpa",
+        "gamma": 0.8,
+        "weight_decay": 0.01
+      }
+    },
+    "scope": {
+      "trials": 15,
+      "seed": 42,
+      "epochs": 30,
+      "tasks": [
+        "vsfc_sentiment",
+        "vsfc_topic",
+        "visfd",
+        "absa_restaurant",
+        "absa_hotel"
+      ],
+      "arms": [
+        "baseline",
+        "full_context",
+        "cavity"
+      ],
+      "test": false,
+      "multi_seed": false
+    },
+    "evidence_sha256": {
+      "preflight.json": "5444fefbd126cd744a0ca0e475733ef22566b9c7e4e8af2f74e789f0c182b910",
+      "profile.json": "7d647096f942314dd24d991ad2ac3f33484edf8b3ece848c8a5899e8d2492e16",
+      "plumbing_check.json": "cad81e2faae149f2295bbc1d996cb893ce8649cf938a8226de7014cdbaeec975"
+    },
+    "review_note": "Root read implementation, GPU BF16 preflight, measured NC accumulation2 profile, source gate, telemetry callbacks and counter fix. Numeric model/optimizer/config unchanged since GPU preflight. First epoch and startup logs remain runtime checks; no dataset test authorized."
+  },
+  "e17_epoch_telemetry_path": "/home/kiettqa/GoiBERT/artifacts/e17/cavity/vsfc_topic/seed_42/epoch_telemetry.json",
+  "e17_optimizer_step_telemetry_path": "/home/kiettqa/GoiBERT/artifacts/e17/cavity/vsfc_topic/seed_42/optimizer_step_telemetry.json",
+  "e17_telemetry_policy": "validation-wrapper fixed probe; eta/correction/probability/fallback telemetry; post-clip eta gradients at selected steps; no full tensors"
+}

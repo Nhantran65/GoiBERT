@@ -1,0 +1,29 @@
+{
+  "protocol": "E5-mean-pooling-screening-v1",
+  "source_backbone": "models/goiturn-s-gd",
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "architecture": {
+    "encoder": "E1 unchanged",
+    "classification_head": "E1 unchanged",
+    "pooling": "arithmetic mean of hidden states where attention_mask=1 and input_id not in tokenizer.all_special_ids",
+    "empty_content_fallback": "first token (CLS) hidden state"
+  },
+  "tasks": {
+    "vsfc_sentiment": {"learning_rate": 1e-5},
+    "vsfc_topic": {"learning_rate": 1e-5},
+    "visfd": {"learning_rate": 1e-4},
+    "absa_restaurant": {"learning_rate": 1e-4},
+    "absa_hotel": {"learning_rate": 1e-4}
+  },
+  "training": {
+    "seed": 42,
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32,
+    "loss": "E1 cross_entropy",
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "max_length_policy": "E1 train-only audit",
+    "include_test": false
+  }
+}

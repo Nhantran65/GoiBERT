@@ -1,0 +1,19 @@
+[2026-09-13T17:44:33Z] === e20_autolaunch.sh started, pid 2938292, session 2938292 ===
+[2026-09-13T17:44:33Z] polling every 120s for E19 absa_hotel AND absa_restaurant status=completed
+[2026-09-13T17:50:33Z] both E19 absa_hotel and absa_restaurant are completed; proceeding to E20 dispatch
+[2026-09-13T17:50:33Z] launching: /home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python /home/kiettqa/GoiBERT/scripts/run_e20.py --run-all --dispatch-approved --workers-per-gpu 1
+Traceback (most recent call last):
+  File "/home/kiettqa/GoiBERT/scripts/run_e20.py", line 1267, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/run_e20.py", line 1259, in main
+    result = run_all(devices, dispatch_approved=args.dispatch_approved, arms=args.arms, tasks=args.tasks)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/run_e20.py", line 1209, in run_all
+    raise RuntimeError(f"E20 worker failed: {meta0}")
+RuntimeError: E20 worker failed: {'arm': 'd1_composite', 'task_id': 'absa_hotel', 'device': 'cuda:1', 'pid': 3205003, 'output_dir': '/home/kiettqa/GoiBERT/artifacts/e20/d1_composite/absa_hotel/seed_42', 'log': '/home/kiettqa/GoiBERT/artifacts/e20/logs/d1_composite__absa_hotel.log', 'command': ['/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python', '/home/kiettqa/GoiBERT/scripts/run_e20.py', '--worker', '--arm', 'd1_composite', '--task-id', 'absa_hotel', '--device', 'cuda:1', '--output-dir', '/home/kiettqa/GoiBERT/artifacts/e20/d1_composite/absa_hotel/seed_42'], 'status': 'failed', 'started_at': '2026-09-13T18:57:17Z', 'returncode': 1, 'finished_at': '2026-09-13T18:57:27Z'}
+[2026-09-13T18:57:28Z] run_e20.py --run-all exited with code 1
+[2026-09-13T18:57:28Z] launching evaluation: /home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python /home/kiettqa/GoiBERT/scripts/eval_e20.py (writes docs/E20_RESULT.md)
+Wrote /home/kiettqa/GoiBERT/docs/E20_RESULT.md
+[2026-09-13T18:57:36Z] eval_e20.py exited with code 0
+[2026-09-13T18:57:36Z] === e20_autolaunch.sh finished (run_all_rc=1 eval_rc=0) ===

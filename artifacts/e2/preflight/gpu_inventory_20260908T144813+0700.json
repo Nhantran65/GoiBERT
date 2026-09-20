@@ -1,0 +1,72 @@
+{
+  "observed_at": "2026-09-08T14:48:13+07:00",
+  "command": "/usr/bin/nvidia-smi --query-gpu=index,uuid,name,memory.total,memory.used,memory.free,utilization.gpu,driver_version --format=csv,noheader,nounits; /usr/bin/nvidia-smi --query-compute-apps=pid,gpu_uuid,used_memory --format=csv,noheader,nounits",
+  "read_only": true,
+  "existing_workloads_preserved": true,
+  "driver": "580.126.20",
+  "gpus": [
+    {
+      "index": 0,
+      "uuid": "GPU-3e47988d-1803-811c-e396-e2aa7ce6e6bf",
+      "name": "NVIDIA L40S",
+      "memory_total_mib": 46068,
+      "memory_used_mib": 12950,
+      "memory_free_mib": 32509,
+      "utilization_gpu_percent": 10,
+      "compute_processes": [
+        {"pid": 2346978, "used_memory_mib": 2248, "label": "uvicorn"},
+        {"pid": 1531026, "used_memory_mib": 1240, "label": "python3"},
+        {"pid": 4113824, "used_memory_mib": 510, "label": "gst-launch-1.0"},
+        {"pid": 61856, "used_memory_mib": 8757, "label": "python3"}
+      ]
+    },
+    {
+      "index": 1,
+      "uuid": "GPU-85cd1463-adda-ec0c-c7a4-7d9b24d8ae47",
+      "name": "NVIDIA L40S",
+      "memory_total_mib": 46068,
+      "memory_used_mib": 8687,
+      "memory_free_mib": 36771,
+      "utilization_gpu_percent": 4,
+      "compute_processes": [
+        {"pid": 61857, "used_memory_mib": 8640, "label": "python3"}
+      ]
+    },
+    {
+      "index": 2,
+      "uuid": "GPU-e0c552e0-6e69-6d82-d61d-657dae4509aa",
+      "name": "NVIDIA L40S",
+      "memory_total_mib": 46068,
+      "memory_used_mib": 37889,
+      "memory_free_mib": 7569,
+      "utilization_gpu_percent": 3,
+      "compute_processes": [
+        {"pid": 2789902, "used_memory_mib": 29148, "label": "VLLM::EngineCore"},
+        {"pid": 61858, "used_memory_mib": 8694, "label": "python3"}
+      ]
+    },
+    {
+      "index": 3,
+      "uuid": "GPU-80c259ad-5765-055d-4deb-40ef718e33d2",
+      "name": "NVIDIA L40S",
+      "memory_total_mib": 46068,
+      "memory_used_mib": 8731,
+      "memory_free_mib": 36727,
+      "utilization_gpu_percent": 4,
+      "compute_processes": [
+        {"pid": 61859, "used_memory_mib": 8578, "label": "python3"}
+      ]
+    }
+  ],
+  "guard_check_mib": {
+    "student_min_free": 8192,
+    "teacher_min_free": 14336,
+    "student_eligible_at_observation": [0, 1, 3],
+    "teacher_eligible_at_observation": [0, 1, 3]
+  },
+  "notes": [
+    "GPU2 was below both initial guards and remains reserved for its existing VLLM workload.",
+    "The GPU2 compute process and all other listed processes were left running.",
+    "Process labels are intentionally sanitized; no command arguments or credentials are stored."
+  ]
+}

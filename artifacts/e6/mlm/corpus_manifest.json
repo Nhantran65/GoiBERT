@@ -1,0 +1,61 @@
+{
+  "protocol": "E6-train-only-MLM-corpus-v1",
+  "status": "completed",
+  "created_at_utc": "2026-09-09T16:18:57.103851+00:00",
+  "include_test": false,
+  "input_scope": "train texts only; no validation or test rows used",
+  "loader_compatibility": "equivalent to include_test=False, with direct train-file readers to avoid materialising dev rows",
+  "source_tasks": [
+    "vsfc_sentiment",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "excluded_tasks": {
+    "vsfc_topic": "same VSFC train sentence texts as vsfc_sentiment; excluded before reading to avoid duplicate text"
+  },
+  "source_split": "train",
+  "source_row_counts": {
+    "vsfc_sentiment": 11426,
+    "visfd": 7786,
+    "absa_restaurant": 7028,
+    "absa_hotel": 7180
+  },
+  "source_file_hashes": {
+    "data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+    "data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+    "data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+    "data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv": "38298d4d8e77a27d7b66ecb9756414ff0303724224502ac3ffdd9a7d24f0491e"
+  },
+  "unique_text_count_before_token_filter": 33414,
+  "unique_text_count_after_token_filter": 33414,
+  "duplicate_text_count": 6,
+  "duplicate_membership_count": 6,
+  "dropped_empty_text_count": 0,
+  "dropped_nonmaskable_count": 0,
+  "split_rule": {
+    "seed": 42,
+    "holdout_fraction": 0.05,
+    "hash": "sha256(str(seed)+text)",
+    "threshold": "int(fraction * 2**256)",
+    "holdout_name": "mlm_holdout; downstream train-only diagnostic, not official validation"
+  },
+  "mlm_train_count": 31716,
+  "mlm_holdout_count": 1698,
+  "membership_count": 33420,
+  "token_length_256": {
+    "min": 4,
+    "max": 241,
+    "mean": 26.609445142754534,
+    "median": 21.0
+  },
+  "tokenizer_dir": "/home/kiettqa/GoiBERT/models/goiturn-s-gd",
+  "tokenizer_hashes": {
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738"
+  },
+  "max_length": 256,
+  "corpus_jsonl": "/home/kiettqa/GoiBERT/artifacts/e6/mlm/corpus.jsonl",
+  "corpus_jsonl_sha256": "7399c1f100b1d83775d9a3ae6c5e60842a6e18a76f9dbb4bf007aa9bcc63b2c9"
+}

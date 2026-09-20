@@ -1,0 +1,57 @@
+{
+  "protocol": "E17-recipient-excluded-keys-screening-v1",
+  "revision": "e17-20260913-r1",
+  "source_backbone": "models/goiturn-s-gd",
+  "seed": 42,
+  "tasks": ["vsfc_sentiment", "vsfc_topic", "visfd", "absa_restaurant", "absa_hotel"],
+  "arms": ["baseline", "full_context", "cavity"],
+  "target_block_index": 6,
+  "hidden_size": 384,
+  "num_attention_heads": 6,
+  "head_dim": 64,
+  "eta_shape": [6],
+  "eta_init": 0.0,
+  "eta_weight_decay": 0.0,
+  "layerwise_gamma": 0.8,
+  "weight_decay": 0.01,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 16,
+  "accumulation_steps": 2,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "target_attention_kernel": "explicit_fp32_scores_softmax_probability_cast_av",
+  "guard_relative": 0.001,
+  "guard_absolute": 1e-7,
+  "guard_chunk_pairs": 64,
+  "learning_rates": {
+    "vsfc_sentiment": 1e-5,
+    "vsfc_topic": 1e-5,
+    "visfd": 1e-4,
+    "absa_restaurant": 1e-4,
+    "absa_hotel": 1e-4
+  },
+  "consistency_lambdas": {
+    "vsfc_sentiment": 0.1,
+    "vsfc_topic": 0.5,
+    "visfd": 0.5,
+    "absa_restaurant": 0.1,
+    "absa_hotel": 0.1
+  },
+  "selection": {
+    "metric": "selection_f1",
+    "validation_only": true,
+    "test": false,
+    "teacher_inference": false
+  },
+  "notes": {
+    "original_value_bias_relocated": true,
+    "preview_dropout": false,
+    "final_value_path_uses_original_bias": true,
+    "no_diagonal_renormalization": true,
+    "full_context_control_uses_same_factorized_path": true,
+    "guard_nonfinite_policy": "fail_closed",
+    "full_training_requires_root_review": true
+  }
+}

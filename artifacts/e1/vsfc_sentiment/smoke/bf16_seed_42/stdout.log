@@ -1,0 +1,18 @@
+Command:
+PYTHONPATH=src .venv-e0-cuda/bin/python -m goibert.train --task-id vsfc_sentiment --learning-rate 2e-05 --seed 42 --repo-root /home/kiettqa/GoiBERT --output-dir /home/kiettqa/GoiBERT/artifacts/e1/vsfc_sentiment/smoke/bf16_seed_42 --device cuda:3 --precision bf16 --attention-implementation sdpa --stage screening --expected-source-hash d3dff1d2a70fd50ebe00aa9c4e96ea63507c2e0b1bfdc4d68ad6a479819bbded --smoke
+
+Warnings:
+- Fast tokenizer suggested using __call__ directly.
+- torch.use_deterministic_algorithms(warn_only=True) reported that CUBLAS workspace was not configured.
+- SDPA memory-efficient attention backward is non-deterministic.
+
+Result:
+status=completed
+epochs=2
+train_rows=24
+validation_rows=24
+include_test=false
+best_epoch=1
+selection_metric=fixed_label_macro_f1
+best_selection_f1=0.23423423423423426
+elapsed_seconds=1.7668213844299316

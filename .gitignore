@@ -1,0 +1,49 @@
+# ---- Python / tooling
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.pytest_cache/
+.venv
+.venv-*/
+tmp/
+downloads_logs/
+recovery/
+
+# ---- Model weights and local model copies (re-download from HF; see docs/*PLAN*.md for pins)
+models/
+*.pt
+*.safetensors
+*.bin
+*.ckpt
+*.model
+*.npy
+*.npz
+*.pkl
+*.tar
+
+# ---- Corpora and derived pretraining data (tens/hundreds of GB; rebuild with scripts/*)
+data/raw/hplt3_vie/
+data/raw/fineweb2_vie/
+data/raw/wikipedia_vi/
+data/mmbert_vi_cpt_pilot/
+data/cdbk_dapt_pilot/
+data/cpt/
+data/cafe_bami_repdistill_pilot/
+data/bami_as_cpt_pilot/
+# benchmark gold splits (data/raw/uit-*, data/raw/social) stay tracked: small, needed to run
+
+# ---- Artifacts: keep configs/metrics/summaries/reports; drop bulky per-run payloads
+artifacts/**/*predictions*.json
+artifacts/**/tokenizer.json
+artifacts/**/hf/
+artifacts/**/hf_*/
+artifacts/**/cache/
+artifacts/**/.orchestrator/
+artifacts/**/*.jsonl
+
+# ---- intent_benchmark: keep manifests/results, drop run dumps
+intent_benchmark/runs/
+intent_benchmark/handoff/

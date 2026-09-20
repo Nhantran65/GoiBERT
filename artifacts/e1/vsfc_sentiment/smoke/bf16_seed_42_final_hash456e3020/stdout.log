@@ -1,0 +1,19 @@
+Command:
+CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src .venv-e0-cuda/bin/python -m goibert.train --task-id vsfc_sentiment --learning-rate 2e-05 --seed 42 --repo-root /home/kiettqa/GoiBERT --output-dir /home/kiettqa/GoiBERT/artifacts/e1/vsfc_sentiment/smoke/bf16_seed_42_final_hash456e3020 --device cuda:3 --precision bf16 --attention-implementation sdpa --stage screening --expected-source-hash 456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873 --smoke
+
+Warnings:
+- Fast tokenizer suggested using __call__ directly.
+- SDPA memory-efficient attention backward remains non-deterministic.
+- CUBLAS workspace was configured; no CUBLAS determinism warning occurred.
+
+Result:
+status=completed
+epochs=2
+train_rows=24
+validation_rows=24
+include_test=false
+best_epoch=1
+selection_metric=fixed_label_macro_f1
+best_selection_f1=0.23423423423423426
+elapsed_seconds=1.6278741359710693
+source_hash=456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873

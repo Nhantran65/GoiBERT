@@ -1,0 +1,24 @@
+{
+  "protocol": "E12-readonly-e11-flip-reanalysis-v1",
+  "source": "artifacts/e11/diagnostic_results.json",
+  "definition": {
+    "changed_all": "count(base_prediction != candidate_prediction)",
+    "changed_when_base_correct": "count(base_correct AND base_prediction != candidate_prediction)",
+    "conditional_disagreement_rate": "changed_when_base_correct / base_correct_count",
+    "candidate_loss_when_base_correct": "count(base_correct AND NOT candidate_correct)",
+    "candidate_gain_when_base_incorrect": "count(NOT base_correct AND candidate_correct)",
+    "interpretation": "candidate-vs-baseline model disagreement; not robustness to the base/variant text pair"
+  },
+  "rows": [
+    {"task_id": "vsfc_sentiment", "variant": "signed", "observations": 12, "base_correct_count": 11, "changed_all": 0, "changed_when_base_correct": 0, "conditional_disagreement_rate": 0.0, "candidate_loss_when_base_correct": 0, "candidate_gain_when_base_incorrect": 0, "semantic_status": "valid"},
+    {"task_id": "vsfc_sentiment", "variant": "convex", "observations": 12, "base_correct_count": 11, "changed_all": 0, "changed_when_base_correct": 0, "conditional_disagreement_rate": 0.0, "candidate_loss_when_base_correct": 0, "candidate_gain_when_base_incorrect": 0, "semantic_status": "valid"},
+    {"task_id": "vsfc_topic", "variant": "signed", "observations": 10, "base_correct_count": 10, "changed_all": 1, "changed_when_base_correct": 1, "conditional_disagreement_rate": 0.1, "candidate_loss_when_base_correct": 1, "candidate_gain_when_base_incorrect": 0, "semantic_status": "valid"},
+    {"task_id": "vsfc_topic", "variant": "convex", "observations": 10, "base_correct_count": 10, "changed_all": 1, "changed_when_base_correct": 1, "conditional_disagreement_rate": 0.1, "candidate_loss_when_base_correct": 1, "candidate_gain_when_base_incorrect": 0, "semantic_status": "valid"},
+    {"task_id": "visfd", "variant": "signed", "observations": 10, "base_correct_count": 8, "changed_all": 0, "changed_when_base_correct": 0, "conditional_disagreement_rate": 0.0, "candidate_loss_when_base_correct": 0, "candidate_gain_when_base_incorrect": 0, "semantic_status": "valid"},
+    {"task_id": "visfd", "variant": "convex", "observations": 10, "base_correct_count": 8, "changed_all": 0, "changed_when_base_correct": 0, "conditional_disagreement_rate": 0.0, "candidate_loss_when_base_correct": 0, "candidate_gain_when_base_incorrect": 0, "semantic_status": "valid"},
+    {"task_id": "absa_restaurant", "variant": "signed", "observations": 11, "base_correct_count": 0, "changed_all": 0, "changed_when_base_correct": 0, "conditional_disagreement_rate": null, "candidate_loss_when_base_correct": 0, "candidate_gain_when_base_incorrect": 0, "semantic_status": "invalid_expected_polarity_ids"},
+    {"task_id": "absa_restaurant", "variant": "convex", "observations": 11, "base_correct_count": 0, "changed_all": 0, "changed_when_base_correct": 0, "conditional_disagreement_rate": null, "candidate_loss_when_base_correct": 0, "candidate_gain_when_base_incorrect": 0, "semantic_status": "invalid_expected_polarity_ids"},
+    {"task_id": "absa_hotel", "variant": "signed", "observations": 11, "base_correct_count": 0, "changed_all": 0, "changed_when_base_correct": 0, "conditional_disagreement_rate": null, "candidate_loss_when_base_correct": 0, "candidate_gain_when_base_incorrect": 0, "semantic_status": "invalid_expected_polarity_ids_and_aspect_slots"},
+    {"task_id": "absa_hotel", "variant": "convex", "observations": 11, "base_correct_count": 0, "changed_all": 0, "changed_when_base_correct": 0, "conditional_disagreement_rate": null, "candidate_loss_when_base_correct": 0, "candidate_gain_when_base_incorrect": 0, "semantic_status": "invalid_expected_polarity_ids_and_aspect_slots"}
+  ]
+}

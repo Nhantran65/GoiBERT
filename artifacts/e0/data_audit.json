@@ -1,0 +1,180 @@
+{
+  "generated_date": "2026-09-08",
+  "scope": "E0 structural data and metric audit; no training; raw bytes and official split order preserved",
+  "loader": {
+    "module": "src/goibert/data.py",
+    "screening_default_include_test": false,
+    "test_requires": "load_task(..., include_test=True)",
+    "ids": "<task_id>:<split>:<zero_based_source_row>",
+    "text_normalization": "none; VSFC line terminators removed by splitlines only"
+  },
+  "tasks": {
+    "vsfc_sentiment": {
+      "training_ready": true,
+      "paper_comparison_ready": false,
+      "paper_comparison_note": "Accuracy directly comparable; F1 averaging/evaluator not specified by paper",
+      "counts": {"train": 11426, "validation": 1583, "test": 3166},
+      "label_names": ["negative", "neutral", "positive"],
+      "label_map": {"0": "negative", "1": "neutral", "2": "positive"},
+      "duplicates": {
+        "train_duplicate_rows": 1,
+        "train_conflicting_duplicate_texts": 1,
+        "cross_split_duplicate_texts": 0,
+        "cross_split_label_conflicts": 0,
+        "conflict_examples": [
+          {
+            "text": "thầy dạy hay , tuy nhiên còn nhiều chỗ chưa thật sự giải đáp hoàn toàn cho sinh viên vì chưa đủ thời gian .",
+            "ids": ["vsfc_sentiment:train:011293", "vsfc_sentiment:train:011417"],
+            "labels": [2, 0]
+          }
+        ]
+      },
+      "label_counts": {
+        "train": {"0": 5325, "1": 458, "2": 5643},
+        "validation": {"0": 705, "1": 73, "2": 805},
+        "test": {"0": 1409, "1": 167, "2": 1590}
+      },
+      "sha256": {
+        "train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+        "train/sentiments.txt": "480480c3b9a6bc8bdf53339c721e93f8cc30472ac8f0bd21d4440ce1171aefac",
+        "dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+        "dev/sentiments.txt": "a9584a22c926a54c6042236380c9a65ab8c41467477f7a5d794fb2505c96a9c3",
+        "test/sents.txt": "75100e0559ecc0d7052870e2e7991391bfa7442bbaee91a6e271157c6fea343b",
+        "test/sentiments.txt": "0f04ebe3ada9655aff0a4c6eec27e5e7b8f552e26d3a6f06a35831e07e102f18"
+      }
+    },
+    "vsfc_topic": {
+      "training_ready": true,
+      "paper_comparison_ready": false,
+      "paper_comparison_note": "Accuracy directly comparable; F1 averaging/evaluator not specified by paper",
+      "counts": {"train": 11426, "validation": 1583, "test": 3166},
+      "label_names": ["lecturer", "training_program", "facility", "others"],
+      "label_map": {"0": "lecturer", "1": "training_program", "2": "facility", "3": "others"},
+      "duplicates": {
+        "train_duplicate_rows": 1,
+        "train_conflicting_duplicate_texts": 0,
+        "cross_split_duplicate_texts": 0,
+        "cross_split_label_conflicts": 0
+      },
+      "label_counts": {
+        "train": {"0": 8166, "1": 2201, "2": 497, "3": 562},
+        "validation": {"0": 1151, "1": 267, "2": 70, "3": 95},
+        "test": {"0": 2290, "1": 572, "2": 145, "3": 159}
+      },
+      "sha256": {
+        "train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+        "train/topics.txt": "09cbb8147f419f225b171cadf82410c442d6c24997ab97f48dfa779f4e68a1b9",
+        "dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+        "dev/topics.txt": "7483805b24f5362aa5a2f708509876e0b69bf35753e90199059c2409caad7d96",
+        "test/sents.txt": "75100e0559ecc0d7052870e2e7991391bfa7442bbaee91a6e271157c6fea343b",
+        "test/topics.txt": "ba04f1bd4014be3c1f1940236a8ceae71a455aa0837295bdbe2cdbcc44bd0745"
+      }
+    },
+    "visfd": {
+      "training_ready": true,
+      "paper_comparison_ready": false,
+      "paper_comparison_note": "Internal detection/pair metrics only until OTHERS and paper evaluator equivalence are verified",
+      "counts": {"train": 7786, "validation": 1112, "test": 2224},
+      "aspect_names": ["BATTERY", "CAMERA", "DESIGN", "FEATURES", "GENERAL", "OTHERS", "PERFORMANCE", "PRICE", "SCREEN", "SER&ACC", "STORAGE"],
+      "encoding": "0=absent, 1=positive, 2=negative, 3=neutral, 4=OTHERS",
+      "others_policy": {
+        "status": "frozen_internal_policy",
+        "raw_code": 4,
+        "model_code": 1,
+        "detection_scored": true,
+        "pair_classification_scored": false
+      },
+      "duplicates": {
+        "train_duplicate_rows": 0,
+        "validation_duplicate_rows": 0,
+        "test_duplicate_rows": 0,
+        "cross_split_duplicate_texts": 0,
+        "cross_split_label_conflicts": 0
+      },
+      "label_counts": {
+        "train": {"0": 60080, "1": 13505, "2": 7464, "3": 2903, "4": 1694},
+        "validation": {"0": 8665, "1": 1924, "2": 1011, "3": 381, "4": 251},
+        "test": {"0": 17229, "1": 3695, "2": 2210, "3": 817, "4": 513}
+      },
+      "sha256": {
+        "Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+        "Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51",
+        "Test.csv": "a30901f08b907f2a9df094626dbe96dcdfb01845fa7d152408aff20bc9785bd9"
+      }
+    },
+    "absa_restaurant": {
+      "training_ready": true,
+      "paper_comparison_ready": false,
+      "paper_comparison_note": "Third-party candidate provenance and paper evaluator equivalence unresolved",
+      "counts": {"train": 7028, "validation": 771, "test": 1938},
+      "aspect_count": 12,
+      "encoding": "0=absent, 1=negative, 2=neutral, 3=positive",
+      "duplicates": {
+        "train_duplicate_rows": 0,
+        "validation_duplicate_rows": 0,
+        "test_duplicate_rows": 0,
+        "cross_split_duplicate_texts": 0,
+        "cross_split_label_conflicts": 0
+      },
+      "sha256": {
+        "Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+        "Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202",
+        "Test.csv": "e79761dce8f7bef6912c6d4f3ba3df4baf39096870d7dfdc5bab5697a0f6f055"
+      }
+    },
+    "absa_hotel": {
+      "training_ready": true,
+      "paper_comparison_ready": false,
+      "paper_comparison_note": "Third-party candidate provenance and paper evaluator equivalence unresolved",
+      "counts": {"train": 7180, "validation": 795, "test": 2030},
+      "aspect_count": 34,
+      "encoding": "0=absent, 1=negative, 2=neutral, 3=positive",
+      "duplicates": {
+        "train_duplicate_rows": 4,
+        "validation_duplicate_rows": 0,
+        "test_duplicate_rows": 0,
+        "train_validation_duplicate_texts": 1,
+        "train_test_duplicate_texts": 2,
+        "train_test_label_conflicts": 1,
+        "conflict_examples": [
+          {
+            "text": "Sẽ quay trở lại.",
+            "ids": ["absa_hotel:train:004301", "absa_hotel:test:000027"],
+            "differing_aspect": "HOTEL#GENERAL",
+            "labels": [1, 3]
+          }
+        ]
+      },
+      "sha256": {
+        "Train.csv": "38298d4d8e77a27d7b66ecb9756414ff0303724224502ac3ffdd9a7d24f0491e",
+        "Dev.csv": "21ec6bc4811dc44b977ce4510f8abef0290dd5d13fdd75feeb693ae408629ba7",
+        "Test.csv": "095963affd0833e44aab92b6a4b6704e104e886bf40f2f72ef0a97c978b83632"
+      }
+    }
+  },
+  "metric_policy": {
+    "classification": "fixed-label macro F1 plus accuracy",
+    "absa": "detection_micro/macro and pair_micro/macro; no flattened label macro",
+    "selection_candidate": "pair_micro_f1 for ABSA internal validation; root gate required before full screening"
+  },
+  "inherited_validation_text_exposure": {
+    "status": "unknown_possible",
+    "backbone": "models/goiturn-s-gd",
+    "historical_manifest": "models/goiturn-s-gd/distill_manifest.json",
+    "historical_corpus_path": "/pfs/lustrep2/scratch/project_462001285/goiturn/corpus_v1/mlm_mix.txt",
+    "historical_corpus_available_here": false,
+    "historical_corpus_stats_sha256": "1fa34627adddf9206f850e4595ecb0f88fdb47477eebb5beadb191ad20b26c80",
+    "current_split_exact_overlap_checked": false,
+    "reason": "Historical handoff records validation text in an earlier corpus mix, but the corpus bytes are unavailable for exact overlap hashing",
+    "reporting_requirement": "Carry this caveat in E1/E2 reports; do not claim the inherited encoder was validation-disjoint"
+  },
+  "evidence_urls": {
+    "vsfc": "https://huggingface.co/datasets/uitnlp/vietnamese_students_feedback",
+    "visfd": "https://github.com/LuongPhan/UIT-ViSFD",
+    "uit_absa_official_description": "https://mmlab.uit.edu.vn/dataset",
+    "uit_absa_candidate": "https://github.com/tienquocbao/ABSA-RAG-Vietnamese-Restaurant-Hotel-Bot/tree/2ff3fb7ac67ec404f5323cdc30f46e4853969998/dataset",
+    "uit_absa_paper": "https://doi.org/10.1145/3446678",
+    "bamibert": "https://arxiv.org/html/2607.02259",
+    "secondary_label_map_cross_check": "https://www.researchgate.net/publication/395747763_PBA-Net_A_Dual-Branch_Architecture_with_Positional_Bias_Attention_and_Multi-Scale_CNN_for_Low-resource_Language_Aspect-Based_Sentiment_Analysis"
+  }
+}

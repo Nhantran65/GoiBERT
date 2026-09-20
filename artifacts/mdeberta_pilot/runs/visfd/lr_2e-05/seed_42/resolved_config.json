@@ -1,0 +1,288 @@
+{
+  "protocol": "mdeberta-v3-base-five-task-pilot-v1",
+  "task_id": "visfd",
+  "seed": 42,
+  "stage": "validation_only",
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "requested_epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "gradient_accumulation_final_window": "sample-weighted by actual sample count",
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "eager",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 732,
+  "steps_per_epoch": 244,
+  "total_steps": 7320,
+  "gradient_clip_norm": 1.0,
+  "loss": "standard cross entropy; per-slot softmax for ABSA",
+  "selection": "validation task-specific selection_f1, best epoch",
+  "include_test": false,
+  "smoke": null,
+  "source_hash": "c932fe392dda68d68be5b4fee7c9c9b3bd28caae4e2a1df246ccf29ae65bc801",
+  "model": {
+    "backbone": "microsoft/mdeberta-v3-base",
+    "local_path": "models/mdeberta-v3-base",
+    "hf_commit": "a0484667b22365f84929a935b5e50a51f71f159d",
+    "encoder_class": "DebertaV2Model",
+    "classifier_class": "DebertaV2ForSequenceClassification",
+    "model_type": "deberta-v2",
+    "hidden_size": 768,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "vocab_size": 251000,
+    "pooling": "native DebertaV2 ContextPooler: hidden_states[:,0]",
+    "pooler_dropout": 0.0,
+    "pooler_hidden_act": "gelu",
+    "classifier_dropout": 0.1,
+    "attention_implementation": "eager",
+    "num_labels": 42,
+    "num_aspects": 11,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 278841642,
+    "trainable_parameters": 278841642,
+    "encoder_weight_file_sha256": "6f89419baf0f1aaad5cab7d53901e36a8c1af8f6b4ab58b15db9af32df656ead",
+    "loading_info": {
+      "missing_keys": [
+        "classifier.bias",
+        "classifier.weight",
+        "pooler.dense.bias",
+        "pooler.dense.weight"
+      ],
+      "unexpected_keys": [
+        "deberta.embeddings.word_embeddings._weight",
+        "lm_predictions.lm_head.LayerNorm.bias",
+        "lm_predictions.lm_head.LayerNorm.weight",
+        "lm_predictions.lm_head.bias",
+        "lm_predictions.lm_head.dense.bias",
+        "lm_predictions.lm_head.dense.weight",
+        "mask_predictions.LayerNorm.bias",
+        "mask_predictions.LayerNorm.weight",
+        "mask_predictions.classifier.bias",
+        "mask_predictions.classifier.weight",
+        "mask_predictions.dense.bias",
+        "mask_predictions.dense.weight"
+      ],
+      "mismatched_keys": [],
+      "error_msgs": []
+    }
+  },
+  "tokenizer": {
+    "source": "models/mdeberta-v3-base",
+    "hf_repo": "microsoft/mdeberta-v3-base",
+    "hf_commit": "a0484667b22365f84929a935b5e50a51f71f159d",
+    "files": {
+      "config.json": "bcffcd343dc5efa5ef2d5a58d2b405eed108f01cc45b48d0a907b333ec41801f",
+      "pytorch_model.bin": "6f89419baf0f1aaad5cab7d53901e36a8c1af8f6b4ab58b15db9af32df656ead",
+      "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+      "tokenizer_config.json": "3f3978e0c036f2c2588cac34a6047cbb0af0b0dc1814254e291028529805496d"
+    },
+    "tokenizer_class": "DebertaV2Tokenizer",
+    "vocab_size": 250102,
+    "special_tokens": {
+      "bos_token_id": 1,
+      "eos_token_id": 2,
+      "cls_token_id": 1,
+      "sep_token_id": 2,
+      "pad_token_id": 0,
+      "mask_token_id": 250101
+    },
+    "preprocessing": "official mDeBERTa tokenizer; raw Vietnamese text; no external word segmentation"
+  },
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "visfd",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "others"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ]
+    ]
+  },
+  "train_count": 7786,
+  "validation_count": 1112,
+  "num_aspects": 11,
+  "aspect_class_counts": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    2,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "attention_implementation_requested": "eager",
+    "cuda_visible_devices": "2",
+    "cublas_workspace_config": ":4096:8",
+    "hostname": "server-ai-new-02.vntt.lan"
+  },
+  "gpu_snapshot_at_start": {
+    "0": {
+      "free_mib": 33141,
+      "used_mib": 12318,
+      "util_pct": 34
+    },
+    "1": {
+      "free_mib": 43537,
+      "used_mib": 1921,
+      "util_pct": 2
+    },
+    "2": {
+      "free_mib": 43821,
+      "used_mib": 1638,
+      "util_pct": 0
+    },
+    "3": {
+      "free_mib": 35885,
+      "used_mib": 9573,
+      "util_pct": 89
+    }
+  },
+  "length_stats": {
+    "train_count": 7786,
+    "max_tokens": 410,
+    "p50_tokens": 66.0,
+    "p95_tokens": 171.0,
+    "p99_tokens": 236.14999999999964,
+    "truncation_rate_256": 0.005908040071923966,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "started_at": "2026-09-18T02:01:55Z",
+  "started_at_unix": 1789696909.1758013,
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/mdeberta_pilot/controller.py",
+    "--task",
+    "visfd",
+    "--device",
+    "cuda:0",
+    "--micro-batch",
+    "32"
+  ],
+  "pid": 2749288
+}

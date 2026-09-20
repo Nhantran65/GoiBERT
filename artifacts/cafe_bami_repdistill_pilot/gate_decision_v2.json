@@ -1,0 +1,103 @@
+{
+ "protocol": "CafeBERT-BamiBERT-repdistill-pilot-v2",
+ "stage": "gate_v2_before_launch",
+ "created_at": "2026-09-18T16:19:26Z",
+ "source_hash": "138b8335045982bfec7148e0c5e695283c5339b4227c46b8cc5195cd5747f4db",
+ "amendment": "plan Phụ lục A (2026-09-18): §5 gate = finite, non-zero, stable; ratio floor 0.05 removed; lambda 1.0, T 0.2, layer pairs, corpus, budget, §6 gate unchanged",
+ "evidence": {
+  "preflight_file": "artifacts/cafe_bami_repdistill_pilot/preflight.json",
+  "profile_G": "artifacts/cafe_bami_repdistill_pilot/cpt/profile_G_micro64.json",
+  "profile_M": "artifacts/cafe_bami_repdistill_pilot/cpt/profile_M_micro64.json",
+  "preflight_ratios": [
+   0.03511886215717272,
+   0.020482340197129023,
+   0.015165153460147053,
+   0.017082181543044243
+  ],
+  "preflight_rel_grad_norms": [
+   0.4773587728227805,
+   0.31829727582006795,
+   0.30386022771577637,
+   0.3269837962969912
+  ],
+  "diagnostic_16_batches_ratio_min": 0.007051187722742766,
+  "profile_G_loss_first_last": [
+   1.4087,
+   1.3671
+  ],
+  "profile_G_rel_first_last": [
+   0.0796,
+   0.0553
+  ],
+  "profile_G_ratio_trajectory": [
+   [
+    0,
+    0.0237
+   ],
+   [
+    10,
+    0.0328
+   ],
+   [
+    20,
+    0.0559
+   ],
+   [
+    30,
+    0.061
+   ],
+   [
+    40,
+    0.0616
+   ],
+   [
+    50,
+    0.0496
+   ],
+   [
+    60,
+    0.0572
+   ],
+   [
+    70,
+    0.0575
+   ],
+   [
+    80,
+    0.0477
+   ],
+   [
+    90,
+    0.0519
+   ]
+  ],
+  "profile_M_loss_first_last": [
+   1.5056803822517395,
+   1.3102266788482666
+  ]
+ },
+ "criteria": {
+  "finite": true,
+  "rel_gradient_nonzero": true,
+  "stable_in_profile": true
+ },
+ "v1_gate_for_record": {
+  "ratio_range_0.05_20": false,
+  "note": "v1 preflight ratio 0.015-0.035 recorded in gate_decision.json; no longer a stop condition under v2"
+ },
+ "data_gate": {
+  "train_tokens_ge_31M": true,
+  "train_tokens": 39289634,
+  "min_required": 31000000,
+  "one_pass": true,
+  "all_ok": true
+ },
+ "alignment_gate_pass": true,
+ "launch_allowed": true,
+ "runs_launched_at_decision_time": {
+  "cpt_M": false,
+  "cpt_G": false,
+  "finetunes": false
+ },
+ "decision": "LAUNCH_M_AND_G"
+}

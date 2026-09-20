@@ -1,0 +1,54 @@
+{
+  "protocol": "E2-pilot-manifest-v1",
+  "observed_at": "2026-09-08T15:42:08+07:00",
+  "test_access": false,
+  "teacher_pilots": [
+    {
+      "pid": 436790,
+      "learning_rate": 0.00001,
+      "seed": 42,
+      "device": "cuda:0",
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e2/stage0_teacher/vsfc_sentiment/1e-05/seed_42"
+    },
+    {
+      "pid": 387894,
+      "learning_rate": 0.00002,
+      "seed": 42,
+      "device": "cuda:1",
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e2/stage0_teacher/vsfc_sentiment/2e-05/seed_42"
+    },
+    {
+      "pid": 436972,
+      "learning_rate": 0.00005,
+      "seed": 42,
+      "device": "cuda:3",
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e2/stage0_teacher/vsfc_sentiment/5e-05/seed_42"
+    }
+  ],
+  "ce_replay": {
+    "pid": 387430,
+    "seed": 42,
+    "learning_rate": 0.00001,
+    "device": "cuda:2",
+    "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e2/stageA/ce_replay/vsfc_sentiment/seed_42"
+  },
+  "nc_screening": {
+    "pid": 488258,
+    "seed": 42,
+    "learning_rate": 0.00001,
+    "coefficient": 0.1,
+    "device": "cuda:2",
+    "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e2/stageA/nc/vsfc_sentiment/coef_0p1/seed_42"
+  },
+  "additional_nc_pilots": [
+    {
+      "pid": 488258,
+      "seed": 42,
+      "learning_rate": 0.00001,
+      "coefficient": 0.1,
+      "device": "cuda:2",
+      "task_id": "vsfc_sentiment",
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e2/stageA/nc/vsfc_sentiment/coef_0p1/seed_42"
+    }
+  ]
+}

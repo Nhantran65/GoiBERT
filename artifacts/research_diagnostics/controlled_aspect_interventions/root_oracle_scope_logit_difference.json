@@ -1,0 +1,150 @@
+{
+  "scope": "oracle source spans AND target presence, conditional polarity only",
+  "correction": "ViSFD variable width OTHERS accounted for; previous index-error artifact retained",
+  "reports": [
+    {
+      "model": "student_e8",
+      "task": "absa_restaurant",
+      "conditional_target_accuracy": 0.9375,
+      "joint_delta_conditional": 0.875,
+      "joint_full_original": 0.71875,
+      "joint_full_conditional_same_presence_oracle": 0.875,
+      "examples": [
+        {
+          "id": "restaurant_negation:factorial_A2_B1_AB_dot:012",
+          "gold": 1,
+          "full": 2,
+          "delta_prediction": 3,
+          "delta": [
+            3.3125,
+            3.06640625,
+            4.4326171875
+          ]
+        },
+        {
+          "id": "restaurant_negation:factorial_A2_B1_AB_and:013",
+          "gold": 1,
+          "full": 2,
+          "delta_prediction": 2,
+          "delta": [
+            2.953125,
+            4.26953125,
+            4.0078125
+          ]
+        },
+        {
+          "id": "restaurant_negation:factorial_A2_B1_BA_dot:014",
+          "gold": 1,
+          "full": 2,
+          "delta_prediction": 3,
+          "delta": [
+            3.4765625,
+            3.19140625,
+            4.81640625
+          ]
+        },
+        {
+          "id": "restaurant_negation:factorial_A2_B1_BA_and:015",
+          "gold": 1,
+          "full": 2,
+          "delta_prediction": 2,
+          "delta": [
+            2.765625,
+            4.41015625,
+            3.93359375
+          ]
+        }
+      ]
+    },
+    {
+      "model": "student_e8",
+      "task": "absa_hotel",
+      "conditional_target_accuracy": 0.890625,
+      "joint_delta_conditional": 0.8125,
+      "joint_full_original": 0.4375,
+      "joint_full_conditional_same_presence_oracle": 0.625,
+      "examples": []
+    },
+    {
+      "model": "student_e8",
+      "task": "visfd",
+      "conditional_target_accuracy": 0.953125,
+      "joint_delta_conditional": 0.90625,
+      "joint_full_original": 0.84375,
+      "joint_full_conditional_same_presence_oracle": 0.84375,
+      "examples": []
+    },
+    {
+      "model": "bami_e14",
+      "task": "absa_restaurant",
+      "conditional_target_accuracy": 1.0,
+      "joint_delta_conditional": 1.0,
+      "joint_full_original": 1.0,
+      "joint_full_conditional_same_presence_oracle": 1.0,
+      "examples": [
+        {
+          "id": "restaurant_negation:factorial_A2_B1_AB_dot:012",
+          "gold": 1,
+          "full": 1,
+          "delta_prediction": 1,
+          "delta": [
+            8.765625,
+            0.5234375,
+            1.671875
+          ]
+        },
+        {
+          "id": "restaurant_negation:factorial_A2_B1_AB_and:013",
+          "gold": 1,
+          "full": 1,
+          "delta_prediction": 1,
+          "delta": [
+            8.828125,
+            0.578125,
+            1.8125
+          ]
+        },
+        {
+          "id": "restaurant_negation:factorial_A2_B1_BA_dot:014",
+          "gold": 1,
+          "full": 1,
+          "delta_prediction": 1,
+          "delta": [
+            8.765625,
+            0.5703125,
+            1.78125
+          ]
+        },
+        {
+          "id": "restaurant_negation:factorial_A2_B1_BA_and:015",
+          "gold": 1,
+          "full": 1,
+          "delta_prediction": 1,
+          "delta": [
+            8.609375,
+            0.7734375,
+            1.8125
+          ]
+        }
+      ]
+    },
+    {
+      "model": "bami_e14",
+      "task": "absa_hotel",
+      "conditional_target_accuracy": 0.9375,
+      "joint_delta_conditional": 0.875,
+      "joint_full_original": 0.4375,
+      "joint_full_conditional_same_presence_oracle": 0.75,
+      "examples": []
+    },
+    {
+      "model": "bami_e14",
+      "task": "visfd",
+      "conditional_target_accuracy": 0.96875,
+      "joint_delta_conditional": 0.9375,
+      "joint_full_original": 0.9375,
+      "joint_full_conditional_same_presence_oracle": 0.9375,
+      "examples": []
+    }
+  ]
+}

@@ -1,0 +1,997 @@
+{
+  "protocol": "E2-training-ablation-v1",
+  "revision": "e20-20260914-r1",
+  "stage": "stageE20_cti_screening",
+  "method": "cti",
+  "coefficient": 0.3,
+  "task_id": "absa_restaurant",
+  "mode": "nc",
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 9371,
+    "max_tokens": 115,
+    "p50_tokens": 23.0,
+    "p95_tokens": 50.0,
+    "p99_tokens": 64.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "smoke": false,
+  "source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_config_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "absa_restaurant",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    ]
+  },
+  "model": {
+    "role": "e20_cti_student",
+    "backbone": "goibert-b-dapt",
+    "hidden_size": 768,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 48,
+    "num_aspects": 12,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 102988080,
+    "trainable_parameters": 102988080,
+    "arm": "cti",
+    "mu": 0.3,
+    "added_parameter_count": 0
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:1",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "hyperparameters": {
+    "temperature": 2.0,
+    "alpha": null,
+    "consistency_lambda": 0.1,
+    "teacher_cache": null,
+    "teacher_cache_hash": null
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e20.py",
+    "--worker",
+    "--arm",
+    "cti",
+    "--task-id",
+    "absa_restaurant",
+    "--device",
+    "cuda:1",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e20/cti/absa_restaurant/seed_42"
+  ],
+  "started_at_unix": 1789323673.2736382,
+  "noise_statistics": [
+    {
+      "count": 9371,
+      "changed_count": 3879,
+      "operation_counts": {
+        "none": 4660,
+        "teencode": 1931,
+        "remove_accents": 2278,
+        "internal_char_typo": 502
+      },
+      "change_rate": 0.4139366129548607
+    },
+    {
+      "count": 9371,
+      "changed_count": 3851,
+      "operation_counts": {
+        "none": 4722,
+        "teencode": 1903,
+        "remove_accents": 2295,
+        "internal_char_typo": 451
+      },
+      "change_rate": 0.4109486714331448
+    },
+    {
+      "count": 9371,
+      "changed_count": 3874,
+      "operation_counts": {
+        "teencode": 1878,
+        "remove_accents": 2334,
+        "none": 4706,
+        "internal_char_typo": 453
+      },
+      "change_rate": 0.41340305196884003
+    },
+    {
+      "count": 9371,
+      "changed_count": 3915,
+      "operation_counts": {
+        "none": 4653,
+        "teencode": 1918,
+        "remove_accents": 2337,
+        "internal_char_typo": 463
+      },
+      "change_rate": 0.4177782520542098
+    },
+    {
+      "count": 9371,
+      "changed_count": 3856,
+      "operation_counts": {
+        "internal_char_typo": 457,
+        "remove_accents": 2312,
+        "none": 4729,
+        "teencode": 1873
+      },
+      "change_rate": 0.4114822324191655
+    },
+    {
+      "count": 9371,
+      "changed_count": 3891,
+      "operation_counts": {
+        "none": 4687,
+        "teencode": 1836,
+        "remove_accents": 2361,
+        "internal_char_typo": 487
+      },
+      "change_rate": 0.4152171593213104
+    },
+    {
+      "count": 9371,
+      "changed_count": 3835,
+      "operation_counts": {
+        "none": 4739,
+        "remove_accents": 2311,
+        "teencode": 1873,
+        "internal_char_typo": 448
+      },
+      "change_rate": 0.40924127627787854
+    },
+    {
+      "count": 9371,
+      "changed_count": 3909,
+      "operation_counts": {
+        "none": 4683,
+        "internal_char_typo": 474,
+        "remove_accents": 2351,
+        "teencode": 1863
+      },
+      "change_rate": 0.41713797887098497
+    },
+    {
+      "count": 9371,
+      "changed_count": 3904,
+      "operation_counts": {
+        "internal_char_typo": 468,
+        "remove_accents": 2361,
+        "teencode": 1791,
+        "none": 4751
+      },
+      "change_rate": 0.4166044178849643
+    },
+    {
+      "count": 9371,
+      "changed_count": 3850,
+      "operation_counts": {
+        "teencode": 1926,
+        "none": 4706,
+        "remove_accents": 2305,
+        "internal_char_typo": 434
+      },
+      "change_rate": 0.4108419592359407
+    },
+    {
+      "count": 9371,
+      "changed_count": 3907,
+      "operation_counts": {
+        "teencode": 1863,
+        "none": 4666,
+        "remove_accents": 2396,
+        "internal_char_typo": 446
+      },
+      "change_rate": 0.41692455447657667
+    },
+    {
+      "count": 9371,
+      "changed_count": 3796,
+      "operation_counts": {
+        "internal_char_typo": 479,
+        "teencode": 1887,
+        "none": 4763,
+        "remove_accents": 2242
+      },
+      "change_rate": 0.4050795005869171
+    },
+    {
+      "count": 9371,
+      "changed_count": 3814,
+      "operation_counts": {
+        "teencode": 1885,
+        "none": 4757,
+        "remove_accents": 2275,
+        "internal_char_typo": 454
+      },
+      "change_rate": 0.4070003201365916
+    },
+    {
+      "count": 9371,
+      "changed_count": 3923,
+      "operation_counts": {
+        "teencode": 1856,
+        "none": 4651,
+        "remove_accents": 2437,
+        "internal_char_typo": 427
+      },
+      "change_rate": 0.4186319496318429
+    },
+    {
+      "count": 9371,
+      "changed_count": 3967,
+      "operation_counts": {
+        "remove_accents": 2382,
+        "none": 4622,
+        "teencode": 1877,
+        "internal_char_typo": 490
+      },
+      "change_rate": 0.4233272863088251
+    },
+    {
+      "count": 9371,
+      "changed_count": 3916,
+      "operation_counts": {
+        "teencode": 1875,
+        "none": 4644,
+        "remove_accents": 2389,
+        "internal_char_typo": 463
+      },
+      "change_rate": 0.4178849642514139
+    },
+    {
+      "count": 9371,
+      "changed_count": 3829,
+      "operation_counts": {
+        "none": 4767,
+        "remove_accents": 2356,
+        "teencode": 1837,
+        "internal_char_typo": 411
+      },
+      "change_rate": 0.4086010030946537
+    },
+    {
+      "count": 9371,
+      "changed_count": 3895,
+      "operation_counts": {
+        "remove_accents": 2295,
+        "none": 4675,
+        "teencode": 1875,
+        "internal_char_typo": 526
+      },
+      "change_rate": 0.415644008110127
+    },
+    {
+      "count": 9371,
+      "changed_count": 3890,
+      "operation_counts": {
+        "none": 4691,
+        "teencode": 1884,
+        "remove_accents": 2323,
+        "internal_char_typo": 473
+      },
+      "change_rate": 0.4151104471241063
+    },
+    {
+      "count": 9371,
+      "changed_count": 3865,
+      "operation_counts": {
+        "none": 4747,
+        "teencode": 1823,
+        "remove_accents": 2382,
+        "internal_char_typo": 419
+      },
+      "change_rate": 0.4124426421940028
+    },
+    {
+      "count": 9371,
+      "changed_count": 3921,
+      "operation_counts": {
+        "teencode": 1909,
+        "remove_accents": 2347,
+        "none": 4636,
+        "internal_char_typo": 479
+      },
+      "change_rate": 0.4184185252374346
+    },
+    {
+      "count": 9371,
+      "changed_count": 3874,
+      "operation_counts": {
+        "none": 4740,
+        "teencode": 1813,
+        "internal_char_typo": 478,
+        "remove_accents": 2340
+      },
+      "change_rate": 0.41340305196884003
+    },
+    {
+      "count": 9371,
+      "changed_count": 3858,
+      "operation_counts": {
+        "remove_accents": 2292,
+        "none": 4764,
+        "teencode": 1835,
+        "internal_char_typo": 480
+      },
+      "change_rate": 0.4116956568135738
+    },
+    {
+      "count": 9371,
+      "changed_count": 3891,
+      "operation_counts": {
+        "remove_accents": 2334,
+        "teencode": 1878,
+        "none": 4676,
+        "internal_char_typo": 483
+      },
+      "change_rate": 0.4152171593213104
+    },
+    {
+      "count": 9371,
+      "changed_count": 3803,
+      "operation_counts": {
+        "teencode": 1910,
+        "none": 4750,
+        "remove_accents": 2256,
+        "internal_char_typo": 455
+      },
+      "change_rate": 0.40582648596734605
+    },
+    {
+      "count": 9371,
+      "changed_count": 3924,
+      "operation_counts": {
+        "none": 4604,
+        "remove_accents": 2383,
+        "teencode": 1927,
+        "internal_char_typo": 457
+      },
+      "change_rate": 0.41873866182904707
+    },
+    {
+      "count": 9371,
+      "changed_count": 3837,
+      "operation_counts": {
+        "remove_accents": 2318,
+        "teencode": 1862,
+        "none": 4744,
+        "internal_char_typo": 447
+      },
+      "change_rate": 0.40945470067228684
+    },
+    {
+      "count": 9371,
+      "changed_count": 3931,
+      "operation_counts": {
+        "none": 4675,
+        "teencode": 1907,
+        "remove_accents": 2300,
+        "internal_char_typo": 489
+      },
+      "change_rate": 0.41948564720947606
+    },
+    {
+      "count": 9371,
+      "changed_count": 3896,
+      "operation_counts": {
+        "remove_accents": 2392,
+        "none": 4699,
+        "teencode": 1829,
+        "internal_char_typo": 451
+      },
+      "change_rate": 0.4157507203073311
+    },
+    {
+      "count": 9371,
+      "changed_count": 3847,
+      "operation_counts": {
+        "teencode": 1841,
+        "none": 4725,
+        "remove_accents": 2352,
+        "internal_char_typo": 453
+      },
+      "change_rate": 0.41052182264432824
+    }
+  ],
+  "best_epoch": 29,
+  "best_selection_f1": 0.7511870845204178,
+  "best_validation_metrics": {
+    "n": 771,
+    "aspect_count": 12,
+    "aspect_names": [
+      "AMBIENCE#GENERAL",
+      "DRINKS#PRICES",
+      "DRINKS#QUALITY",
+      "DRINKS#STYLE&OPTIONS",
+      "FOOD#PRICES",
+      "FOOD#QUALITY",
+      "FOOD#STYLE&OPTIONS",
+      "LOCATION#GENERAL",
+      "RESTAURANT#GENERAL",
+      "RESTAURANT#MISCELLANEOUS",
+      "RESTAURANT#PRICES",
+      "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8755935422602089,
+    "detection_micro_recall": 0.8755935422602089,
+    "detection_micro_f1": 0.8755935422602089,
+    "detection_macro_precision": 0.864066811600833,
+    "detection_macro_recall": 0.8641437839918914,
+    "detection_macro_f1": 0.8636433345052188,
+    "pair_micro_precision": 0.7511870845204178,
+    "pair_micro_recall": 0.7511870845204178,
+    "pair_micro_f1": 0.7511870845204178,
+    "pair_macro_precision": 0.7406142175970585,
+    "pair_macro_recall": 0.7418334374178778,
+    "pair_macro_f1": 0.7408405554842404,
+    "classification_pair_micro_f1": 0.7511870845204178,
+    "classification_pair_macro_f1": 0.7408405554842404,
+    "per_aspect": {
+      "AMBIENCE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9310344827586207,
+          "recall": 0.8901098901098901,
+          "f1": 0.9101123595505618
+        },
+        "pair": {
+          "precision": 0.8390804597701149,
+          "recall": 0.8021978021978022,
+          "f1": 0.8202247191011236
+        },
+        "detection_tp": 81,
+        "gold_present": 91,
+        "predicted_present": 87
+      },
+      "DRINKS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8,
+          "recall": 0.8421052631578947,
+          "f1": 0.8205128205128205
+        },
+        "pair": {
+          "precision": 0.7,
+          "recall": 0.7368421052631579,
+          "f1": 0.717948717948718
+        },
+        "detection_tp": 16,
+        "gold_present": 19,
+        "predicted_present": 20
+      },
+      "DRINKS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.872093023255814,
+          "recall": 0.9259259259259259,
+          "f1": 0.8982035928143712
+        },
+        "pair": {
+          "precision": 0.7790697674418605,
+          "recall": 0.8271604938271605,
+          "f1": 0.8023952095808383
+        },
+        "detection_tp": 75,
+        "gold_present": 81,
+        "predicted_present": 86
+      },
+      "DRINKS#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7358490566037735,
+          "recall": 0.75,
+          "f1": 0.7428571428571429
+        },
+        "pair": {
+          "precision": 0.660377358490566,
+          "recall": 0.6730769230769231,
+          "f1": 0.6666666666666666
+        },
+        "detection_tp": 39,
+        "gold_present": 52,
+        "predicted_present": 53
+      },
+      "FOOD#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8723404255319149,
+          "recall": 0.9111111111111111,
+          "f1": 0.8913043478260869
+        },
+        "pair": {
+          "precision": 0.7659574468085106,
+          "recall": 0.8,
+          "f1": 0.782608695652174
+        },
+        "detection_tp": 41,
+        "gold_present": 45,
+        "predicted_present": 47
+      },
+      "FOOD#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.908695652173913,
+          "recall": 0.9414414414414415,
+          "f1": 0.9247787610619469
+        },
+        "pair": {
+          "precision": 0.808695652173913,
+          "recall": 0.8378378378378378,
+          "f1": 0.8230088495575221
+        },
+        "detection_tp": 209,
+        "gold_present": 222,
+        "predicted_present": 230
+      },
+      "FOOD#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8258426966292135,
+          "recall": 0.84,
+          "f1": 0.8328611898016998
+        },
+        "pair": {
+          "precision": 0.6629213483146067,
+          "recall": 0.6742857142857143,
+          "f1": 0.6685552407932012
+        },
+        "detection_tp": 147,
+        "gold_present": 175,
+        "predicted_present": 178
+      },
+      "LOCATION#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9047619047619048,
+          "recall": 0.9047619047619048,
+          "f1": 0.9047619047619048
+        },
+        "pair": {
+          "precision": 0.8095238095238095,
+          "recall": 0.8095238095238095,
+          "f1": 0.8095238095238095
+        },
+        "detection_tp": 38,
+        "gold_present": 42,
+        "predicted_present": 42
+      },
+      "RESTAURANT#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8444444444444444,
+          "recall": 0.76,
+          "f1": 0.8
+        },
+        "pair": {
+          "precision": 0.6555555555555556,
+          "recall": 0.59,
+          "f1": 0.6210526315789474
+        },
+        "detection_tp": 76,
+        "gold_present": 100,
+        "predicted_present": 90
+      },
+      "RESTAURANT#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8275862068965517,
+          "recall": 0.8275862068965517,
+          "f1": 0.8275862068965517
+        },
+        "pair": {
+          "precision": 0.7241379310344828,
+          "recall": 0.7241379310344828,
+          "f1": 0.7241379310344828
+        },
+        "detection_tp": 48,
+        "gold_present": 58,
+        "predicted_present": 58
+      },
+      "RESTAURANT#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8888888888888888,
+          "recall": 0.851063829787234,
+          "f1": 0.8695652173913043
+        },
+        "pair": {
+          "precision": 0.6444444444444445,
+          "recall": 0.6170212765957447,
+          "f1": 0.6304347826086957
+        },
+        "detection_tp": 40,
+        "gold_present": 47,
+        "predicted_present": 45
+      },
+      "SERVICE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9572649572649573,
+          "recall": 0.9256198347107438,
+          "f1": 0.9411764705882353
+        },
+        "pair": {
+          "precision": 0.8376068376068376,
+          "recall": 0.8099173553719008,
+          "f1": 0.8235294117647058
+        },
+        "detection_tp": 112,
+        "gold_present": 121,
+        "predicted_present": 117
+      }
+    },
+    "task_id": "absa_restaurant",
+    "split": "validation",
+    "selection_f1": 0.7511870845204178,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "elapsed_seconds": 2152.8490772247314,
+  "peak_gpu_memory_allocated_bytes": 3644093952,
+  "peak_gpu_memory_reserved_bytes": 3961520128,
+  "status": "completed",
+  "checkpoint_sha256": "e0de2a559f730224297a8e4ecf17d24f94e5208efb9a3b12e97a4faed100ad9a",
+  "e20_protocol": "E20-cti-screening-v1",
+  "e20_revision": "e20-20260914-r1",
+  "e20_arm": "cti",
+  "e20_mu": 0.3,
+  "e20_encoder_dir": "/home/kiettqa/GoiBERT/models/goibert-b-dapt",
+  "e20_encoder_hashes": {
+    "config.json": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89",
+    "model.safetensors": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f",
+    "pretrain_manifest.json": "e035bf3cf53eaf7558c23129d56732472cf7a79bff66424b03609c41a6798191",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "e20_optimizer_coverage": {
+    "all_trainable": true,
+    "duplicate_parameter_count": 0,
+    "parameter_count": 201,
+    "group_count": 28,
+    "endpoint_scales": {
+      "embeddings": 0.06871947673600004,
+      "block_00": 0.08589934592000005,
+      "block_09": 0.6400000000000001,
+      "head": 1.0
+    }
+  },
+  "e20_composite_coverage": {
+    "task_id": "absa_restaurant",
+    "seed": 42,
+    "n_train": 7028,
+    "n_composites_target": 2343,
+    "n_composites_built": 2343,
+    "attempts": 2343,
+    "dropped_assert_failures": 0,
+    "n_valid_pairs": 66,
+    "n_rare_pairs_le5": 15,
+    "n_rare_pairs_covered": 15,
+    "distinct_pairs_used": 65,
+    "pair_use_count": {
+      "0-1": 103,
+      "0-2": 9,
+      "0-3": 48,
+      "0-4": 42,
+      "0-5": 9,
+      "0-6": 18,
+      "0-7": 7,
+      "0-8": 2,
+      "0-9": 6,
+      "0-10": 16,
+      "0-11": 2,
+      "1-2": 4,
+      "1-3": 3,
+      "1-4": 24,
+      "1-5": 177,
+      "1-6": 103,
+      "1-7": 107,
+      "1-8": 152,
+      "1-9": 21,
+      "1-10": 57,
+      "1-11": 62,
+      "2-3": 1,
+      "2-4": 190,
+      "2-5": 9,
+      "2-6": 44,
+      "2-7": 84,
+      "2-8": 26,
+      "2-9": 28,
+      "2-10": 21,
+      "2-11": 14,
+      "3-4": 76,
+      "3-5": 28,
+      "3-6": 15,
+      "3-7": 112,
+      "3-8": 60,
+      "3-9": 26,
+      "3-10": 48,
+      "3-11": 23,
+      "4-5": 3,
+      "4-6": 1,
+      "4-7": 109,
+      "4-8": 41,
+      "4-9": 70,
+      "4-10": 36,
+      "4-11": 33,
+      "5-6": 0,
+      "5-7": 40,
+      "5-8": 5,
+      "5-9": 11,
+      "5-10": 3,
+      "5-11": 4,
+      "6-7": 45,
+      "6-8": 12,
+      "6-9": 17,
+      "6-10": 12,
+      "6-11": 5,
+      "7-8": 10,
+      "7-9": 15,
+      "7-10": 29,
+      "7-11": 22,
+      "8-9": 8,
+      "8-10": 2,
+      "8-11": 1,
+      "9-10": 14,
+      "9-11": 3,
+      "10-11": 15
+    }
+  },
+  "e20_inv_loss_summary": {
+    "n_observations": 17400,
+    "mean": 0.04630555980667558,
+    "max": 0.19049011170864105,
+    "min": 0.026264963671565056
+  },
+  "e20_source_manifest": {
+    "protocol": "E20-cti-screening-v1",
+    "revision": "e20-20260914-r1",
+    "created_at": "2026-09-13T18:21:10Z",
+    "runner_sha256": "13a898949070058cd2bbb22cfdbe22069ec67b55793d02a2ef2fb2af8e3ecc28",
+    "source_hashes": {
+      "scripts/run_e20.py": "13a898949070058cd2bbb22cfdbe22069ec67b55793d02a2ef2fb2af8e3ecc28",
+      "configs/e20/protocol.json": "af475c5b26a3eae6441e730d28c9ddffcee9894629912565e0213a47766647fd",
+      "src/goibert_e2/train.py": "b3c28a9ee2c55ef6f24a1fe9ed2f342e5aea18f533b2e571ece0aae2e06f3ce2",
+      "src/goibert_e2/modeling.py": "b6049133d32f6a8b6f9aa063e47be3b5e1b79aeba1e06e917343079586ab0af4",
+      "src/goibert_e2/losses.py": "ca5ffa013350ba720a1f1a00debc3c2615cc3c25aad5b4726143293bf96491df",
+      "src/goibert_e2/noise.py": "8409775ef99ef5f96a9504f2d91eb5a738c5928ce960567ecaa3e5929a87dd29",
+      "src/goibert_e2/cache.py": "3b8db5cd1797212fe5d9b18f0ca59717594b1f69d76ea0c79bed45b2f862d2e7",
+      "src/goibert_e7/optim.py": "188ef994c5b271804be71ba618881071397e397731320624bd271b236a77d690",
+      "src/goibert/train.py": "ede96aaf63f02b808e5034f58953cfbce9a03438ed71f10f775de314a40bc578",
+      "src/goibert/modeling.py": "c8cf5b69e056cffd81f5606a813cd36779a7ef9f785c0d107faf8d8485585c49",
+      "src/goibert/data.py": "aeff87536a81c039d4240962140463693286c5241ce09630f5ad1b13699efc57"
+    },
+    "encoder": {
+      "path": "/home/kiettqa/GoiBERT/models/goibert-b-dapt",
+      "files": {
+        "config.json": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89",
+        "model.safetensors": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f",
+        "pretrain_manifest.json": "e035bf3cf53eaf7558c23129d56732472cf7a79bff66424b03609c41a6798191",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      }
+    },
+    "frozen_e2_source_hashes": {
+      "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+      "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+      "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+      "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+    },
+    "recipe": {
+      "arms": [
+        "d1_composite",
+        "cti"
+      ],
+      "mu_by_arm": {
+        "d1_composite": 0.0,
+        "cti": 0.3
+      },
+      "tasks": [
+        "absa_restaurant",
+        "absa_hotel"
+      ],
+      "seed": 42,
+      "epochs": 30,
+      "effective_batch_size": 32,
+      "micro_batch_size": 16,
+      "accumulation_steps": 2,
+      "max_length": 256,
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "gamma": 0.8,
+      "num_layers": 12,
+      "weight_decay": 0.01,
+      "task_lrs": {
+        "absa_restaurant": 2e-05,
+        "absa_hotel": 5e-05
+      },
+      "nc_lambdas": {
+        "absa_restaurant": 0.1,
+        "absa_hotel": 0.1
+      },
+      "max_composite_tokens": 48,
+      "rare_pair_threshold": 5
+    }
+  }
+}

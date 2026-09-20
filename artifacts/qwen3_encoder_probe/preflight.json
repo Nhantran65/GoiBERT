@@ -1,0 +1,677 @@
+{
+ "protocol": "qwen3-encoder-probe-v1",
+ "created_at": "2026-09-20T09:16:47Z",
+ "device": "cuda:0",
+ "checks": [
+  {
+   "name": "weights_sha256_recorded",
+   "ok": true,
+   "detail": {
+    "bidirlm_base": "f17cb2979f399eb4df938a0a93230add0f564648138c01c96f3d4b84c765c1a5",
+    "qwen3_base": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+   }
+  },
+  {
+   "name": "C_loading_info_clean",
+   "ok": true,
+   "detail": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "mismatched_ignored": []
+   }
+  },
+  {
+   "name": "C_parameters_596.0M_440.5M",
+   "ok": true,
+   "detail": {
+    "parameters": 596049920,
+    "expected": 596049920,
+    "non_embedding": 440467456,
+    "expected_non_embedding": 440467456
+   }
+  },
+  {
+   "name": "C_attention_dropout_0.1",
+   "ok": true,
+   "detail": {
+    "config": 0.1,
+    "modules": 28
+   }
+  },
+  {
+   "name": "C_master_weights_fp32",
+   "ok": true,
+   "detail": "torch.float32"
+  },
+  {
+   "name": "C_attention_dropout_reaches_modules",
+   "ok": true,
+   "detail": 28
+  },
+  {
+   "name": "B0_loading_info_clean",
+   "ok": true,
+   "detail": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "mismatched_ignored": []
+   }
+  },
+  {
+   "name": "B0_parameters_596.0M_440.5M",
+   "ok": true,
+   "detail": {
+    "parameters": 596049920,
+    "expected": 596049920,
+    "non_embedding": 440467456,
+    "expected_non_embedding": 440467456
+   }
+  },
+  {
+   "name": "B0_attention_dropout_0.1",
+   "ok": true,
+   "detail": {
+    "config": 0.1,
+    "modules": 28
+   }
+  },
+  {
+   "name": "B0_master_weights_fp32",
+   "ok": true,
+   "detail": "torch.float32"
+  },
+  {
+   "name": "B0_attention_dropout_reaches_modules",
+   "ok": true,
+   "detail": 28
+  },
+  {
+   "name": "B2_loading_info_clean",
+   "ok": true,
+   "detail": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "mismatched_ignored": []
+   }
+  },
+  {
+   "name": "B2_parameters_596.0M_440.5M",
+   "ok": true,
+   "detail": {
+    "parameters": 596049920,
+    "expected": 596049920,
+    "non_embedding": 440467456,
+    "expected_non_embedding": 440467456
+   }
+  },
+  {
+   "name": "B2_attention_dropout_0.1",
+   "ok": true,
+   "detail": {
+    "config": 0.1,
+    "modules": 28
+   }
+  },
+  {
+   "name": "B2_master_weights_fp32",
+   "ok": true,
+   "detail": "torch.float32"
+  },
+  {
+   "name": "B2_attention_dropout_reaches_modules",
+   "ok": true,
+   "detail": 28
+  },
+  {
+   "name": "B0_is_causal_disabled_everywhere",
+   "ok": true,
+   "detail": 28
+  },
+  {
+   "name": "direction_C_backward_influence_expected_False",
+   "ok": true,
+   "detail": 0.0
+  },
+  {
+   "name": "direction_C_forward_influence_true",
+   "ok": true,
+   "detail": 25.780410766601562
+  },
+  {
+   "name": "direction_B0_backward_influence_expected_True",
+   "ok": true,
+   "detail": 38.53028869628906
+  },
+  {
+   "name": "direction_B0_forward_influence_true",
+   "ok": true,
+   "detail": 37.29289245605469
+  },
+  {
+   "name": "direction_B2_backward_influence_expected_True",
+   "ok": true,
+   "detail": 2.827944755554199
+  },
+  {
+   "name": "direction_B2_forward_influence_true",
+   "ok": true,
+   "detail": 37.8031005859375
+  },
+  {
+   "name": "trap_2d_mask_padded_stays_one_directional",
+   "ok": true,
+   "detail": {
+    "padded_batch_is_bidirectional": false,
+    "padded_batch_max_abs_delta": 0.0,
+    "unpadded_batch_is_bidirectional": true,
+    "unpadded_batch_max_abs_delta": 8.488622665405273,
+    "conclusion": "with a 2D mask the padded batch stays one-directional; the unpadded batch turns two-directional, so the explicit 4D mask is required for B0"
+   }
+  },
+  {
+   "name": "trap_2d_mask_unpadded_turns_two_directional",
+   "ok": true,
+   "detail": 8.488622665405273
+  },
+  {
+   "name": "padding_invariance_C_mask_content_exact_le_1e-4",
+   "ok": true,
+   "detail": 0.0
+  },
+  {
+   "name": "padding_invariance_B0_mask_content_exact_le_1e-4",
+   "ok": true,
+   "detail": 0.0
+  },
+  {
+   "name": "padding_invariance_B0_cross_geometry_within_1e-3_kernel_noise",
+   "ok": true,
+   "detail": {
+    "cross_geometry": 0.000240325927734375,
+    "plan_tolerance": 0.0001,
+    "batch_dimension_noise_floor": 8.296966552734375e-05
+   }
+  },
+  {
+   "name": "padding_invariance_B2_mask_content_exact_le_1e-4",
+   "ok": true,
+   "detail": 0.0
+  },
+  {
+   "name": "padding_invariance_B2_cross_geometry_within_1e-3_kernel_noise",
+   "ok": true,
+   "detail": {
+    "cross_geometry": 6.985664367675781e-05,
+    "plan_tolerance": 0.0001,
+    "batch_dimension_noise_floor": 3.4332275390625e-05
+   }
+  },
+  {
+   "name": "attention_dropout_C_active",
+   "ok": true,
+   "detail": {
+    "train_mode_delta_with_0.1": 64.4521255493164,
+    "train_mode_delta_with_0.0": 0.0
+   }
+  },
+  {
+   "name": "attention_dropout_B0_active",
+   "ok": true,
+   "detail": {
+    "train_mode_delta_with_0.1": 68.69636535644531,
+    "train_mode_delta_with_0.0": 0.0
+   }
+  },
+  {
+   "name": "attention_dropout_B2_active",
+   "ok": true,
+   "detail": {
+    "train_mode_delta_with_0.1": 29.049440383911133,
+    "train_mode_delta_with_0.0": 0.0
+   }
+  },
+  {
+   "name": "tokenizer_absa_restaurant_every_string_ends_with_eos",
+   "ok": true,
+   "detail": {
+    "train_count": 7028
+   }
+  },
+  {
+   "name": "tokenizer_absa_restaurant_rate_over_256_le_1pct",
+   "ok": true,
+   "detail": 0.0
+  },
+  {
+   "name": "tokenizer_vsfc_topic_every_string_ends_with_eos",
+   "ok": true,
+   "detail": {
+    "train_count": 11426
+   }
+  },
+  {
+   "name": "tokenizer_vsfc_topic_rate_over_256_le_1pct",
+   "ok": true,
+   "detail": 0.0
+  },
+  {
+   "name": "tokenizer_visfd_every_string_ends_with_eos",
+   "ok": true,
+   "detail": {
+    "train_count": 7786
+   }
+  },
+  {
+   "name": "tokenizer_visfd_rate_over_256_le_1pct",
+   "ok": true,
+   "detail": 0.0
+  },
+  {
+   "name": "tokenizer_sample_ends_with_eos_151643",
+   "ok": true,
+   "detail": [
+    18,
+    74,
+    1379,
+    128727,
+    13,
+    151643
+   ]
+  },
+  {
+   "name": "head_init_hashes_recorded",
+   "ok": true,
+   "detail": {
+    "C": "8dc0af1b174bd9ac6d660cee4ea5f7bf5d95f9e5ee6349e3065273cb8a0a7f8b",
+    "B0": "8dc0af1b174bd9ac6d660cee4ea5f7bf5d95f9e5ee6349e3065273cb8a0a7f8b",
+    "B2": "8dc0af1b174bd9ac6d660cee4ea5f7bf5d95f9e5ee6349e3065273cb8a0a7f8b"
+   }
+  },
+  {
+   "name": "smoke_C_completed",
+   "ok": true,
+   "detail": {
+    "returncode": 0,
+    "status": "completed"
+   }
+  },
+  {
+   "name": "smoke_C_finite_loss_and_reload",
+   "ok": true,
+   "detail": {
+    "best_selection_f1": 0.0,
+    "reload_matches_best": true
+   }
+  },
+  {
+   "name": "smoke_B0_completed",
+   "ok": true,
+   "detail": {
+    "returncode": 0,
+    "status": "completed"
+   }
+  },
+  {
+   "name": "smoke_B0_finite_loss_and_reload",
+   "ok": true,
+   "detail": {
+    "best_selection_f1": 0.0,
+    "reload_matches_best": true
+   }
+  },
+  {
+   "name": "smoke_B2_completed",
+   "ok": true,
+   "detail": {
+    "returncode": 0,
+    "status": "completed"
+   }
+  },
+  {
+   "name": "smoke_B2_finite_loss_and_reload",
+   "ok": true,
+   "detail": {
+    "best_selection_f1": 0.021505376344086023,
+    "reload_matches_best": true
+   }
+  }
+ ],
+ "smoke_batches": 20,
+ "environment": {
+  "python": "3.12.3",
+  "torch": "2.6.0+cu124",
+  "torch_cuda": "12.4",
+  "transformers": "4.57.6",
+  "tokenizers": "0.22.2",
+  "numpy": "2.5.3",
+  "device_name": "NVIDIA L40S",
+  "cuda_visible_devices": "1",
+  "venv": "/home/kiettqa/GoiBERT/.venv-qwen-probe",
+  "PYTHONPATH": "src"
+ },
+ "models": {
+  "bidirlm_base": {
+   "repo": "BidirLM/BidirLM-0.6B-Base",
+   "commit": "29794508bbb4e378b4789eebff42ae4c2d47d524",
+   "weights": "model.safetensors",
+   "weights_sha256": "f17cb2979f399eb4df938a0a93230add0f564648138c01c96f3d4b84c765c1a5",
+   "license": "apache-2.0",
+   "snapshot": "/home/kiettqa/.cache/huggingface/hub/models--BidirLM--BidirLM-0.6B-Base/snapshots/29794508bbb4e378b4789eebff42ae4c2d47d524"
+  },
+  "qwen3_base": {
+   "repo": "Qwen/Qwen3-0.6B-Base",
+   "commit": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+   "weights": "model.safetensors",
+   "weights_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+   "license": "apache-2.0",
+   "snapshot": "/home/kiettqa/.cache/huggingface/hub/models--Qwen--Qwen3-0.6B-Base/snapshots/da87bfb608c14b7cf20ba1ce41287e8de496c0cd"
+  }
+ },
+ "parameters": {
+  "C": {
+   "arm": "C",
+   "encoder_class": "Qwen3Model",
+   "backbone": "qwen3_base",
+   "mask_mode": "2d",
+   "is_causal_attributes_set_false": 0,
+   "loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "mismatched_ignored": []
+   },
+   "parameters": 596049920,
+   "parameters_millions": 596.0,
+   "non_embedding_parameters": 440467456,
+   "non_embedding_parameters_millions": 440.5,
+   "attention_dropout": 0.1,
+   "attention_dropout_modules": 28,
+   "parameter_dtype": "torch.float32"
+  },
+  "B0": {
+   "arm": "B0",
+   "encoder_class": "Qwen3Model",
+   "backbone": "qwen3_base",
+   "mask_mode": "4d_bidir",
+   "is_causal_attributes_set_false": 28,
+   "loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "mismatched_ignored": []
+   },
+   "parameters": 596049920,
+   "parameters_millions": 596.0,
+   "non_embedding_parameters": 440467456,
+   "non_embedding_parameters_millions": 440.5,
+   "attention_dropout": 0.1,
+   "attention_dropout_modules": 28,
+   "parameter_dtype": "torch.float32"
+  },
+  "B2": {
+   "arm": "B2",
+   "encoder_class": "BidirLMModel",
+   "backbone": "bidirlm_base",
+   "mask_mode": "native",
+   "is_causal_attributes_set_false": 0,
+   "loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "mismatched_ignored": []
+   },
+   "parameters": 596049920,
+   "parameters_millions": 596.0,
+   "non_embedding_parameters": 440467456,
+   "non_embedding_parameters_millions": 440.5,
+   "attention_dropout": 0.1,
+   "attention_dropout_modules": 28,
+   "parameter_dtype": "torch.float32"
+  }
+ },
+ "direction_batch": {
+  "short_tokens": 7,
+  "long_tokens": 78,
+  "width": 78,
+  "short_text": "Decor xinh n\u00e8.",
+  "long_text": "N\u1eeda c\u00e1nh g\u00e0 h\u1ebft, ch\u1ec9 c\u00f2n thanh c\u00e1 nh\u01b0ng m\u00ecnh ch\u1ecdn g\u00e0, b\u1ea1n nh\u00e2n vi\u00ean hi\u1ec1n l\u1eafm n\u00f3i m\u00ecnh chuy\u1ec3n sang ch\u1ecdn thanh c\u00e1 nh\u01b0ng kh"
+ },
+ "direction": {
+  "C": {
+   "mask_mode": "2d",
+   "last_token_to_first_token": {
+    "changed": {
+     "position": 6,
+     "from": 151643,
+     "to": 856
+    },
+    "max_abs_delta": 0.0,
+    "bidirectional_signal": false
+   },
+   "first_token_to_later_tokens": {
+    "changed": {
+     "position": 0,
+     "from": 35227,
+     "to": 151643
+    },
+    "max_abs_delta": 25.780410766601562,
+    "bidirectional_signal": true
+   }
+  },
+  "B0": {
+   "mask_mode": "4d_bidir",
+   "last_token_to_first_token": {
+    "changed": {
+     "position": 6,
+     "from": 151643,
+     "to": 856
+    },
+    "max_abs_delta": 38.53028869628906,
+    "bidirectional_signal": true
+   },
+   "first_token_to_later_tokens": {
+    "changed": {
+     "position": 0,
+     "from": 35227,
+     "to": 151643
+    },
+    "max_abs_delta": 37.29289245605469,
+    "bidirectional_signal": true
+   }
+  },
+  "B2": {
+   "mask_mode": "native",
+   "last_token_to_first_token": {
+    "changed": {
+     "position": 6,
+     "from": 151643,
+     "to": 856
+    },
+    "max_abs_delta": 2.827944755554199,
+    "bidirectional_signal": true
+   },
+   "first_token_to_later_tokens": {
+    "changed": {
+     "position": 0,
+     "from": 35227,
+     "to": 151643
+    },
+    "max_abs_delta": 37.8031005859375,
+    "bidirectional_signal": true
+   }
+  }
+ },
+ "trap_2d_mask_with_is_causal_false": {
+  "padded_batch_is_bidirectional": false,
+  "padded_batch_max_abs_delta": 0.0,
+  "unpadded_batch_is_bidirectional": true,
+  "unpadded_batch_max_abs_delta": 8.488622665405273,
+  "conclusion": "with a 2D mask the padded batch stays one-directional; the unpadded batch turns two-directional, so the explicit 4D mask is required for B0"
+ },
+ "padding_invariance": {
+  "C": {
+   "mask_content_invariance_max_abs_delta": 0.0,
+   "mask_content_tolerance": 0.0001,
+   "mask_content_within_tolerance": true,
+   "cross_geometry_max_abs_delta": 0.000698089599609375,
+   "cross_geometry_plan_tolerance": 0.0001,
+   "cross_geometry_within_plan_tolerance": false,
+   "batch_dimension_noise_floor_max_abs_delta": 9.5367431640625e-05
+  },
+  "B0": {
+   "mask_content_invariance_max_abs_delta": 0.0,
+   "mask_content_tolerance": 0.0001,
+   "mask_content_within_tolerance": true,
+   "cross_geometry_max_abs_delta": 0.000240325927734375,
+   "cross_geometry_plan_tolerance": 0.0001,
+   "cross_geometry_within_plan_tolerance": false,
+   "batch_dimension_noise_floor_max_abs_delta": 8.296966552734375e-05
+  },
+  "B2": {
+   "mask_content_invariance_max_abs_delta": 0.0,
+   "mask_content_tolerance": 0.0001,
+   "mask_content_within_tolerance": true,
+   "cross_geometry_max_abs_delta": 6.985664367675781e-05,
+   "cross_geometry_plan_tolerance": 0.0001,
+   "cross_geometry_within_plan_tolerance": true,
+   "batch_dimension_noise_floor_max_abs_delta": 3.4332275390625e-05
+  },
+  "note": "mask-content invariance is exact (0.0) for C/B0/B2: padded slots never reach real tokens. The cross-geometry number is a kernel summation-order floor: the untouched causal arm C reaches 6.98e-04 while B0 is 2.40e-04, so it is not caused by the bidirectional 4D mask; the plan \u00a76 1e-4 tolerance is applied to mask content, and 1e-3 is the hard bound."
+ },
+ "attention_dropout_active": {
+  "C": {
+   "train_mode_delta_with_0.1": 64.4521255493164,
+   "train_mode_delta_with_0.0": 0.0
+  },
+  "B0": {
+   "train_mode_delta_with_0.1": 68.69636535644531,
+   "train_mode_delta_with_0.0": 0.0
+  },
+  "B2": {
+   "train_mode_delta_with_0.1": 29.049440383911133,
+   "train_mode_delta_with_0.0": 0.0
+  }
+ },
+ "tokenizer": {
+  "qwen3": {
+   "pad_token_id": 151643,
+   "padding_side": "right",
+   "length": 151669,
+   "vocab_size": 151643,
+   "post_processor": "TemplateProcessing"
+  },
+  "tasks": {
+   "absa_restaurant": {
+    "train_count": 7028,
+    "every_string_ends_with_eos": true,
+    "max_tokens": 128,
+    "rate_over_256": 0.0,
+    "length_stats": {
+     "train_count": 7028,
+     "max_tokens": 128,
+     "p50_tokens": 22.0,
+     "p95_tokens": 49.0,
+     "p99_tokens": 66.0,
+     "truncation_rate_256": 0.0,
+     "truncation_rate_512": 0.0,
+     "max_length": 256,
+     "warning_over_512": false
+    }
+   },
+   "vsfc_topic": {
+    "train_count": 11426,
+    "every_string_ends_with_eos": true,
+    "max_tokens": 177,
+    "rate_over_256": 0.0,
+    "length_stats": {
+     "train_count": 11426,
+     "max_tokens": 177,
+     "p50_tokens": 14.0,
+     "p95_tokens": 38.0,
+     "p99_tokens": 57.75,
+     "truncation_rate_256": 0.0,
+     "truncation_rate_512": 0.0,
+     "max_length": 256,
+     "warning_over_512": false
+    }
+   },
+   "visfd": {
+    "train_count": 7786,
+    "every_string_ends_with_eos": true,
+    "max_tokens": 256,
+    "rate_over_256": 0.0,
+    "length_stats": {
+     "train_count": 7786,
+     "max_tokens": 265,
+     "p50_tokens": 43.0,
+     "p95_tokens": 111.0,
+     "p99_tokens": 155.0,
+     "truncation_rate_256": 0.00025687130747495504,
+     "truncation_rate_512": 0.0,
+     "max_length": 256,
+     "warning_over_512": false
+    }
+   }
+  },
+  "bidirlm": {
+   "pad_token_id": 151643,
+   "padding_side": "right",
+   "length": 151669,
+   "post_processor": "ByteLevel"
+  },
+  "sample_ids": [
+   46841,
+   1953,
+   220,
+   20,
+   18,
+   74,
+   1379,
+   128727,
+   13,
+   151643
+  ]
+ },
+ "head_init_sha256": {
+  "C": "8dc0af1b174bd9ac6d660cee4ea5f7bf5d95f9e5ee6349e3065273cb8a0a7f8b",
+  "B0": "8dc0af1b174bd9ac6d660cee4ea5f7bf5d95f9e5ee6349e3065273cb8a0a7f8b",
+  "B2": "8dc0af1b174bd9ac6d660cee4ea5f7bf5d95f9e5ee6349e3065273cb8a0a7f8b"
+ },
+ "smoke": {
+  "C": {
+   "returncode": 0,
+   "status": "completed",
+   "best_epoch": 1,
+   "best_selection_f1": 0.0,
+   "reload_matches_best": true,
+   "log": "/home/kiettqa/GoiBERT/artifacts/qwen3_encoder_probe/logs/preflight_smoke_C.log",
+   "out_dir": "/home/kiettqa/GoiBERT/artifacts/qwen3_encoder_probe/smoke/C",
+   "peak_gpu_memory_allocated_bytes": 14976008192
+  },
+  "B0": {
+   "returncode": 0,
+   "status": "completed",
+   "best_epoch": 1,
+   "best_selection_f1": 0.0,
+   "reload_matches_best": true,
+   "log": "/home/kiettqa/GoiBERT/artifacts/qwen3_encoder_probe/logs/preflight_smoke_B0.log",
+   "out_dir": "/home/kiettqa/GoiBERT/artifacts/qwen3_encoder_probe/smoke/B0",
+   "peak_gpu_memory_allocated_bytes": 14983196672
+  },
+  "B2": {
+   "returncode": 0,
+   "status": "completed",
+   "best_epoch": 1,
+   "best_selection_f1": 0.021505376344086023,
+   "reload_matches_best": true,
+   "log": "/home/kiettqa/GoiBERT/artifacts/qwen3_encoder_probe/logs/preflight_smoke_B2.log",
+   "out_dir": "/home/kiettqa/GoiBERT/artifacts/qwen3_encoder_probe/smoke/B2",
+   "peak_gpu_memory_allocated_bytes": 12467693568
+  }
+ },
+ "elapsed_seconds": 69.27316951751709,
+ "passed": true
+}

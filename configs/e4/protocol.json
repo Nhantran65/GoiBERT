@@ -1,0 +1,38 @@
+{
+  "protocol": "E4-ffn-expansion-screening-v1",
+  "source_backbone": "models/goiturn-s-gd",
+  "architecture": {
+    "layers": 10,
+    "hidden_size": 384,
+    "attention_heads": 6,
+    "source_intermediate_size": 1536,
+    "expanded_intermediate_size": 3072,
+    "head": "E1 unchanged"
+  },
+  "conversion": {
+    "mapping": "W1'=[W1;W1], b1'=[b1;b1], W2'=[0.5W2+D;0.5W2-D], b2'=b2",
+    "noise": "Gaussian",
+    "noise_scale_relative_to_w2_std": 0.01,
+    "seed": 314159,
+    "generator": "local CPU generator advanced once across layers",
+    "activation_rescale": false
+  },
+  "tasks": {
+    "vsfc_sentiment": {"learning_rate": 1e-5},
+    "vsfc_topic": {"learning_rate": 1e-5},
+    "visfd": {"learning_rate": 1e-4},
+    "absa_restaurant": {"learning_rate": 1e-4},
+    "absa_hotel": {"learning_rate": 1e-4}
+  },
+  "training": {
+    "seed": 42,
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32,
+    "max_length": 256,
+    "loss": "E1 cross_entropy",
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "include_test": false
+  }
+}

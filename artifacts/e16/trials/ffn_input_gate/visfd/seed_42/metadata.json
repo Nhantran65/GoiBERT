@@ -1,0 +1,580 @@
+{
+  "protocol": "E16-BamiBERT-original-identity-gated-ffn-v1",
+  "revision": "e16-20260912-r1",
+  "arm": "ffn_input_gate",
+  "task_id": "visfd",
+  "seed": 42,
+  "stage": "validation",
+  "learning_rate": 5e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 732,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy",
+  "no_noise_consistency": true,
+  "no_knowledge_distillation": true,
+  "no_layerwise_learning_rate_decay": true,
+  "include_test": false,
+  "test_accessed": false,
+  "source_hash": "8f37d926c3cdf8dc6ad44df53a79e012010637511099f4d6039ddc37aaf18faa",
+  "model_source": "Qualcomm-AI-Research/BamiBERT",
+  "hf_commit": "57bc1340debbe4e348ec549047a763caebe4a977",
+  "checkpoint_source": "models/bamibert-base-original",
+  "weight_sha256": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627",
+  "model_hashes": {
+    ".cache/huggingface/.gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+    ".cache/huggingface/download/.gitattributes.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/.gitattributes.metadata": "d2a1d8524993b3f3ad41c3ff2030bf07fdcbdd3baba8267f63bb9c10e84da3b0",
+    ".cache/huggingface/download/README.md.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/README.md.metadata": "08cb04c116039d7420532bf6edeed9d69e5545662403b8878ffefce06a7fdb99",
+    ".cache/huggingface/download/config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/config.json.metadata": "0a58347b0976ec3d43a089634cdb262fcf0b2bf9e654ea95bb45e40638a3ee23",
+    ".cache/huggingface/download/model.safetensors.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/model.safetensors.metadata": "3f7e152fa1fc3e78cfcf5d65087ae8a51a851e66c0f31fe955107e44c46e635b",
+    ".cache/huggingface/download/special_tokens_map.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/special_tokens_map.json.metadata": "69d7c4472e1520cf154ed292d5f0508b5716065704280b2dcd219f3226334656",
+    ".cache/huggingface/download/tokenizer.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/tokenizer.json.metadata": "5f1c062456c6cc860c19fd5de4b59327cbed44d256c1889e1e24fa7f73aeef10",
+    ".cache/huggingface/download/tokenizer_config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".cache/huggingface/download/tokenizer_config.json.metadata": "294e0df1cea0c77c2997f4289c7314053a67a6fa0dd6fde80beba74a7d7ee078",
+    ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+    "README.md": "6b23dbeffa7ed1e3b4ccf95fb5d6b9eb2f8e8041b334042f54f9c3926c128b61",
+    "config.json": "353049455318fb3fcdc42f4e275211834809143eeb67b5728d4eff556be05d5f",
+    "model.safetensors": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627",
+    "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+    "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+    "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+    "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+    "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+  },
+  "model": {
+    "role": "bamibert_original_e16",
+    "backbone": "Qualcomm-AI-Research/BamiBERT",
+    "hidden_size": 768,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 42,
+    "num_aspects": 11,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 105342762,
+    "trainable_parameters": 105342762,
+    "architecture": "original_bamibert_sdpa_plus_block7_identity_gated_ffn",
+    "arm": "ffn_input_gate",
+    "insertion_layer_index": 7,
+    "gate_shape": [
+      3072,
+      768
+    ],
+    "gate_bias": false,
+    "gate_init": "zero",
+    "calibration_sc": 0.18826518756836297,
+    "calibration_sx": 0.6567370621083235,
+    "added_parameter_count": 2359296
+  },
+  "gate": {
+    "shape": [
+      3072,
+      768
+    ],
+    "bias": false,
+    "init": "zero",
+    "target_layer_index": 7,
+    "formula": "fnew=f0+W2(z*tanh(Gv))"
+  },
+  "calibration": {
+    "manifest": "artifacts/e16/calibration_manifest.json",
+    "sc": 0.18826518756836297,
+    "sx": 0.6567370621083235,
+    "seed": 16042,
+    "train_only": true
+  },
+  "optimizer_coverage": {
+    "trainable_parameter_count": 105342762,
+    "optimizer_parameter_count": 105342762,
+    "group_count": 2,
+    "uniform_lr": true,
+    "unique_coverage": true,
+    "group_weight_decays": [
+      0.01,
+      0.0
+    ],
+    "gate_in_optimizer": true
+  },
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "visfd",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "others"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ]
+    ]
+  },
+  "label_name_overlay": {
+    "vsfc_sentiment": {
+      "0": "negative",
+      "1": "neutral",
+      "2": "positive"
+    },
+    "vsfc_topic": {
+      "0": "absent",
+      "1": "positive",
+      "2": "negative",
+      "3": "neutral",
+      "4": "others"
+    },
+    "absa_polarity": {
+      "0": "absent",
+      "1": "positive",
+      "2": "negative",
+      "3": "neutral"
+    },
+    "visfd_others": {
+      "raw_0": "absent",
+      "raw_4": "present_detection_only",
+      "model_0": "absent",
+      "model_1": "present_detection_only"
+    },
+    "numeric_gold_unchanged": true
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "cuda_visible_devices": "2",
+    "cublas_workspace_config": ":4096:8"
+  },
+  "length_stats": {
+    "train_count": 7786,
+    "max_tokens": 241,
+    "p50_tokens": 39.0,
+    "p95_tokens": 100.0,
+    "p99_tokens": 139.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "started_at": "2026-09-12T14:01:11Z",
+  "started_at_unix": 1789221671.6250315,
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e16.py",
+    "--worker",
+    "--arm",
+    "ffn_input_gate",
+    "--task-id",
+    "visfd",
+    "--device",
+    "cuda:0",
+    "--expected-source-hash",
+    "8f37d926c3cdf8dc6ad44df53a79e012010637511099f4d6039ddc37aaf18faa"
+  ],
+  "fixed_probe": {
+    "split": "train",
+    "count": 16,
+    "ids": [
+      "visfd:train:000000",
+      "visfd:train:000001",
+      "visfd:train:000002",
+      "visfd:train:000003",
+      "visfd:train:000004",
+      "visfd:train:000005",
+      "visfd:train:000006",
+      "visfd:train:000007",
+      "visfd:train:000008",
+      "visfd:train:000009",
+      "visfd:train:000010",
+      "visfd:train:000011",
+      "visfd:train:000012",
+      "visfd:train:000013",
+      "visfd:train:000014",
+      "visfd:train:000015"
+    ]
+  },
+  "best_epoch": 26,
+  "best_selection_f1": 0.8403860430586488,
+  "best_validation_metrics": {
+    "n": 1112,
+    "aspect_count": 11,
+    "aspect_names": [
+      "BATTERY",
+      "CAMERA",
+      "DESIGN",
+      "FEATURES",
+      "GENERAL",
+      "OTHERS",
+      "PERFORMANCE",
+      "PRICE",
+      "SCREEN",
+      "SER&ACC",
+      "STORAGE"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.880348868901608,
+    "detection_micro_recall": 0.9055228483319316,
+    "detection_micro_f1": 0.892758430071863,
+    "detection_macro_precision": 0.854278951327273,
+    "detection_macro_recall": 0.8867044341989533,
+    "detection_macro_f1": 0.8697841586882099,
+    "pair_micro_precision": 0.8277274056741737,
+    "pair_micro_recall": 0.853437876960193,
+    "pair_micro_f1": 0.8403860430586488,
+    "pair_macro_precision": 0.8000648695536423,
+    "pair_macro_recall": 0.8315674102166695,
+    "pair_macro_f1": 0.8151279908046083,
+    "classification_pair_micro_f1": 0.8403860430586488,
+    "classification_pair_macro_f1": 0.8151279908046083,
+    "per_aspect": {
+      "BATTERY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9580152671755725,
+          "recall": 0.996031746031746,
+          "f1": 0.9766536964980544
+        },
+        "pair": {
+          "precision": 0.8702290076335878,
+          "recall": 0.9047619047619048,
+          "f1": 0.8871595330739299
+        },
+        "detection_tp": 502,
+        "gold_present": 504,
+        "predicted_present": 524
+      },
+      "CAMERA": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9174603174603174,
+          "recall": 0.9763513513513513,
+          "f1": 0.9459901800327333
+        },
+        "pair": {
+          "precision": 0.8126984126984127,
+          "recall": 0.8648648648648649,
+          "f1": 0.8379705400981997
+        },
+        "detection_tp": 289,
+        "gold_present": 296,
+        "predicted_present": 315
+      },
+      "DESIGN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8911917098445595,
+          "recall": 0.9197860962566845,
+          "f1": 0.9052631578947369
+        },
+        "pair": {
+          "precision": 0.8393782383419689,
+          "recall": 0.8663101604278075,
+          "f1": 0.8526315789473684
+        },
+        "detection_tp": 172,
+        "gold_present": 187,
+        "predicted_present": 193
+      },
+      "FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8976982097186701,
+          "recall": 0.9212598425196851,
+          "f1": 0.9093264248704663
+        },
+        "pair": {
+          "precision": 0.8132992327365729,
+          "recall": 0.8346456692913385,
+          "f1": 0.8238341968911918
+        },
+        "detection_tp": 351,
+        "gold_present": 381,
+        "predicted_present": 391
+      },
+      "GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9019886363636364,
+          "recall": 0.9216255442670537,
+          "f1": 0.9117013639626705
+        },
+        "pair": {
+          "precision": 0.8721590909090909,
+          "recall": 0.8911465892597968,
+          "f1": 0.8815506101938263
+        },
+        "detection_tp": 635,
+        "gold_present": 689,
+        "predicted_present": 704
+      },
+      "OTHERS": {
+        "pair_scored": false,
+        "detection": {
+          "precision": 0.524,
+          "recall": 0.5219123505976095,
+          "f1": 0.5229540918163673
+        },
+        "pair": null,
+        "detection_tp": 131,
+        "gold_present": 251,
+        "predicted_present": 250
+      },
+      "PERFORMANCE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9096989966555183,
+          "recall": 0.9347079037800687,
+          "f1": 0.9220338983050848
+        },
+        "pair": {
+          "precision": 0.8127090301003345,
+          "recall": 0.8350515463917526,
+          "f1": 0.823728813559322
+        },
+        "detection_tp": 544,
+        "gold_present": 582,
+        "predicted_present": 598
+      },
+      "PRICE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8905109489051095,
+          "recall": 0.9682539682539683,
+          "f1": 0.9277566539923955
+        },
+        "pair": {
+          "precision": 0.7518248175182481,
+          "recall": 0.8174603174603174,
+          "f1": 0.7832699619771863
+        },
+        "detection_tp": 244,
+        "gold_present": 252,
+        "predicted_present": 274
+      },
+      "SCREEN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8208955223880597,
+          "recall": 0.9090909090909091,
+          "f1": 0.8627450980392157
+        },
+        "pair": {
+          "precision": 0.7388059701492538,
+          "recall": 0.8181818181818182,
+          "f1": 0.7764705882352941
+        },
+        "detection_tp": 110,
+        "gold_present": 121,
+        "predicted_present": 134
+      },
+      "SER&ACC": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8856088560885609,
+          "recall": 0.8275862068965517,
+          "f1": 0.8556149732620321
+        },
+        "pair": {
+          "precision": 0.8228782287822878,
+          "recall": 0.7689655172413793,
+          "f1": 0.7950089126559715
+        },
+        "detection_tp": 240,
+        "gold_present": 290,
+        "predicted_present": 271
+      },
+      "STORAGE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8,
+          "recall": 0.8571428571428571,
+          "f1": 0.8275862068965517
+        },
+        "pair": {
+          "precision": 0.6666666666666666,
+          "recall": 0.7142857142857143,
+          "f1": 0.6896551724137931
+        },
+        "detection_tp": 12,
+        "gold_present": 14,
+        "predicted_present": 15
+      }
+    },
+    "task_id": "visfd",
+    "split": "validation",
+    "selection_f1": 0.8403860430586488,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "elapsed_seconds": 958.410079240799,
+  "peak_gpu_memory_allocated_bytes": 3791205888,
+  "peak_gpu_memory_reserved_bytes": 4550819840,
+  "status": "completed",
+  "final_optimizer_step": 7320,
+  "gradient_log": "artifacts/e16/trials/ffn_input_gate/visfd/seed_42/gradient_logs.jsonl",
+  "probe_log": "artifacts/e16/trials/ffn_input_gate/visfd/seed_42/probe_logs.jsonl",
+  "checkpoint_sha256": "100905fbed7f45fc9b47a0cedbb6dae02f180097b5f12b50f62b943effbc115a",
+  "checkpoint_roundtrip": {
+    "required_state_keys": [
+      "epoch",
+      "global_step",
+      "model",
+      "optimizer",
+      "rng_state",
+      "scheduler"
+    ],
+    "gate_keys": [
+      "encoder.encoder.layer.7.gate.weight"
+    ],
+    "epoch": 26,
+    "global_step": 6344
+  },
+  "final_train_probe": {
+    "gate_s_rms": 0.19808053970336914,
+    "gate_s_abs_p95": 0.39630186557769775,
+    "correction_norm": 286.3799743652344,
+    "correction_relative_norm": 0.3372279565063897,
+    "f0_norm": 849.2177734375,
+    "dtypes": {
+      "gate_source": "torch.float32",
+      "gate_signal": "torch.float32",
+      "correction": "torch.float32",
+      "fused": "torch.float32"
+    }
+  }
+}

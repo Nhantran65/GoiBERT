@@ -1,0 +1,592 @@
+{
+  "protocol": "mdeberta-v3-base-five-task-pilot-v1",
+  "status": "passed",
+  "seed": 42,
+  "model": {
+    "repo": "microsoft/mdeberta-v3-base",
+    "commit": "a0484667b22365f84929a935b5e50a51f71f159d",
+    "path": "models/mdeberta-v3-base"
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "attention_implementation_requested": "eager",
+    "cuda_visible_devices": null,
+    "cublas_workspace_config": null,
+    "hostname": "server-ai-new-02.vntt.lan"
+  },
+  "gpu_snapshot": {
+    "0": {
+      "free_mib": 41282,
+      "used_mib": 4176,
+      "util_pct": 14
+    },
+    "1": {
+      "free_mib": 45438,
+      "used_mib": 20,
+      "util_pct": 0
+    },
+    "2": {
+      "free_mib": 45438,
+      "used_mib": 20,
+      "util_pct": 0
+    },
+    "3": {
+      "free_mib": 45439,
+      "used_mib": 20,
+      "util_pct": 0
+    }
+  },
+  "tokenizer": {
+    "source": "models/mdeberta-v3-base",
+    "hf_repo": "microsoft/mdeberta-v3-base",
+    "hf_commit": "a0484667b22365f84929a935b5e50a51f71f159d",
+    "files": {
+      "config.json": "bcffcd343dc5efa5ef2d5a58d2b405eed108f01cc45b48d0a907b333ec41801f",
+      "pytorch_model.bin": "6f89419baf0f1aaad5cab7d53901e36a8c1af8f6b4ab58b15db9af32df656ead",
+      "spm.model": "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3",
+      "tokenizer_config.json": "3f3978e0c036f2c2588cac34a6047cbb0af0b0dc1814254e291028529805496d"
+    },
+    "tokenizer_class": "DebertaV2Tokenizer",
+    "vocab_size": 250102,
+    "special_tokens": {
+      "bos_token_id": 1,
+      "eos_token_id": 2,
+      "cls_token_id": 1,
+      "sep_token_id": 2,
+      "pad_token_id": 0,
+      "mask_token_id": 250101
+    },
+    "preprocessing": "official mDeBERTa tokenizer; raw Vietnamese text; no external word segmentation"
+  },
+  "tasks": {
+    "vsfc_sentiment": {
+      "train_count": 11426,
+      "validation_count": 1583,
+      "num_classes": 3,
+      "num_aspects": 0,
+      "aspect_class_counts": [],
+      "validation_ids_exact": true,
+      "first_batch_ids": [
+        "vsfc_sentiment:train:000108",
+        "vsfc_sentiment:train:001265"
+      ],
+      "logits_shape": [
+        2,
+        3
+      ],
+      "expected_flat_logits_shape": [
+        2,
+        3
+      ],
+      "semantic_slot_shape": [
+        2,
+        3
+      ],
+      "finite_logits": true,
+      "finite_loss": true,
+      "finite_gradients": true,
+      "model": {
+        "backbone": "microsoft/mdeberta-v3-base",
+        "local_path": "models/mdeberta-v3-base",
+        "hf_commit": "a0484667b22365f84929a935b5e50a51f71f159d",
+        "encoder_class": "DebertaV2Model",
+        "classifier_class": "DebertaV2ForSequenceClassification",
+        "model_type": "deberta-v2",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "vocab_size": 251000,
+        "pooling": "native DebertaV2 ContextPooler: hidden_states[:,0]",
+        "pooler_dropout": 0.0,
+        "pooler_hidden_act": "gelu",
+        "classifier_dropout": 0.1,
+        "attention_implementation": "eager",
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 278811651,
+        "trainable_parameters": 278811651,
+        "encoder_weight_file_sha256": "6f89419baf0f1aaad5cab7d53901e36a8c1af8f6b4ab58b15db9af32df656ead",
+        "loading_info": {
+          "missing_keys": [
+            "classifier.bias",
+            "classifier.weight",
+            "pooler.dense.bias",
+            "pooler.dense.weight"
+          ],
+          "unexpected_keys": [
+            "deberta.embeddings.word_embeddings._weight",
+            "lm_predictions.lm_head.LayerNorm.bias",
+            "lm_predictions.lm_head.LayerNorm.weight",
+            "lm_predictions.lm_head.bias",
+            "lm_predictions.lm_head.dense.bias",
+            "lm_predictions.lm_head.dense.weight",
+            "mask_predictions.LayerNorm.bias",
+            "mask_predictions.LayerNorm.weight",
+            "mask_predictions.classifier.bias",
+            "mask_predictions.classifier.weight",
+            "mask_predictions.dense.bias",
+            "mask_predictions.dense.weight"
+          ],
+          "mismatched_keys": [],
+          "error_msgs": []
+        }
+      }
+    },
+    "vsfc_topic": {
+      "train_count": 11426,
+      "validation_count": 1583,
+      "num_classes": 4,
+      "num_aspects": 0,
+      "aspect_class_counts": [],
+      "validation_ids_exact": true,
+      "first_batch_ids": [
+        "vsfc_topic:train:000108",
+        "vsfc_topic:train:001265"
+      ],
+      "logits_shape": [
+        2,
+        4
+      ],
+      "expected_flat_logits_shape": [
+        2,
+        4
+      ],
+      "semantic_slot_shape": [
+        2,
+        4
+      ],
+      "finite_logits": true,
+      "finite_loss": true,
+      "finite_gradients": true,
+      "model": {
+        "backbone": "microsoft/mdeberta-v3-base",
+        "local_path": "models/mdeberta-v3-base",
+        "hf_commit": "a0484667b22365f84929a935b5e50a51f71f159d",
+        "encoder_class": "DebertaV2Model",
+        "classifier_class": "DebertaV2ForSequenceClassification",
+        "model_type": "deberta-v2",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "vocab_size": 251000,
+        "pooling": "native DebertaV2 ContextPooler: hidden_states[:,0]",
+        "pooler_dropout": 0.0,
+        "pooler_hidden_act": "gelu",
+        "classifier_dropout": 0.1,
+        "attention_implementation": "eager",
+        "num_labels": 4,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 278812420,
+        "trainable_parameters": 278812420,
+        "encoder_weight_file_sha256": "6f89419baf0f1aaad5cab7d53901e36a8c1af8f6b4ab58b15db9af32df656ead",
+        "loading_info": {
+          "missing_keys": [
+            "classifier.bias",
+            "classifier.weight",
+            "pooler.dense.bias",
+            "pooler.dense.weight"
+          ],
+          "unexpected_keys": [
+            "deberta.embeddings.word_embeddings._weight",
+            "lm_predictions.lm_head.LayerNorm.bias",
+            "lm_predictions.lm_head.LayerNorm.weight",
+            "lm_predictions.lm_head.bias",
+            "lm_predictions.lm_head.dense.bias",
+            "lm_predictions.lm_head.dense.weight",
+            "mask_predictions.LayerNorm.bias",
+            "mask_predictions.LayerNorm.weight",
+            "mask_predictions.classifier.bias",
+            "mask_predictions.classifier.weight",
+            "mask_predictions.dense.bias",
+            "mask_predictions.dense.weight"
+          ],
+          "mismatched_keys": [],
+          "error_msgs": []
+        }
+      }
+    },
+    "visfd": {
+      "train_count": 7786,
+      "validation_count": 1112,
+      "num_classes": 42,
+      "num_aspects": 11,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "validation_ids_exact": true,
+      "first_batch_ids": [
+        "visfd:train:004822",
+        "visfd:train:004415"
+      ],
+      "logits_shape": [
+        2,
+        42
+      ],
+      "expected_flat_logits_shape": [
+        2,
+        42
+      ],
+      "semantic_slot_shape": [
+        2,
+        42
+      ],
+      "finite_logits": true,
+      "finite_loss": true,
+      "finite_gradients": true,
+      "model": {
+        "backbone": "microsoft/mdeberta-v3-base",
+        "local_path": "models/mdeberta-v3-base",
+        "hf_commit": "a0484667b22365f84929a935b5e50a51f71f159d",
+        "encoder_class": "DebertaV2Model",
+        "classifier_class": "DebertaV2ForSequenceClassification",
+        "model_type": "deberta-v2",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "vocab_size": 251000,
+        "pooling": "native DebertaV2 ContextPooler: hidden_states[:,0]",
+        "pooler_dropout": 0.0,
+        "pooler_hidden_act": "gelu",
+        "classifier_dropout": 0.1,
+        "attention_implementation": "eager",
+        "num_labels": 42,
+        "num_aspects": 11,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          2,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 278841642,
+        "trainable_parameters": 278841642,
+        "encoder_weight_file_sha256": "6f89419baf0f1aaad5cab7d53901e36a8c1af8f6b4ab58b15db9af32df656ead",
+        "loading_info": {
+          "missing_keys": [
+            "classifier.bias",
+            "classifier.weight",
+            "pooler.dense.bias",
+            "pooler.dense.weight"
+          ],
+          "unexpected_keys": [
+            "deberta.embeddings.word_embeddings._weight",
+            "lm_predictions.lm_head.LayerNorm.bias",
+            "lm_predictions.lm_head.LayerNorm.weight",
+            "lm_predictions.lm_head.bias",
+            "lm_predictions.lm_head.dense.bias",
+            "lm_predictions.lm_head.dense.weight",
+            "mask_predictions.LayerNorm.bias",
+            "mask_predictions.LayerNorm.weight",
+            "mask_predictions.classifier.bias",
+            "mask_predictions.classifier.weight",
+            "mask_predictions.dense.bias",
+            "mask_predictions.dense.weight"
+          ],
+          "mismatched_keys": [],
+          "error_msgs": []
+        }
+      }
+    },
+    "absa_restaurant": {
+      "train_count": 7028,
+      "validation_count": 771,
+      "num_classes": 48,
+      "num_aspects": 12,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "validation_ids_exact": true,
+      "first_batch_ids": [
+        "absa_restaurant:train:004820",
+        "absa_restaurant:train:000256"
+      ],
+      "logits_shape": [
+        2,
+        48
+      ],
+      "expected_flat_logits_shape": [
+        2,
+        48
+      ],
+      "semantic_slot_shape": [
+        2,
+        12,
+        4
+      ],
+      "finite_logits": true,
+      "finite_loss": true,
+      "finite_gradients": true,
+      "model": {
+        "backbone": "microsoft/mdeberta-v3-base",
+        "local_path": "models/mdeberta-v3-base",
+        "hf_commit": "a0484667b22365f84929a935b5e50a51f71f159d",
+        "encoder_class": "DebertaV2Model",
+        "classifier_class": "DebertaV2ForSequenceClassification",
+        "model_type": "deberta-v2",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "vocab_size": 251000,
+        "pooling": "native DebertaV2 ContextPooler: hidden_states[:,0]",
+        "pooler_dropout": 0.0,
+        "pooler_hidden_act": "gelu",
+        "classifier_dropout": 0.1,
+        "attention_implementation": "eager",
+        "num_labels": 48,
+        "num_aspects": 12,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 278846256,
+        "trainable_parameters": 278846256,
+        "encoder_weight_file_sha256": "6f89419baf0f1aaad5cab7d53901e36a8c1af8f6b4ab58b15db9af32df656ead",
+        "loading_info": {
+          "missing_keys": [
+            "classifier.bias",
+            "classifier.weight",
+            "pooler.dense.bias",
+            "pooler.dense.weight"
+          ],
+          "unexpected_keys": [
+            "deberta.embeddings.word_embeddings._weight",
+            "lm_predictions.lm_head.LayerNorm.bias",
+            "lm_predictions.lm_head.LayerNorm.weight",
+            "lm_predictions.lm_head.bias",
+            "lm_predictions.lm_head.dense.bias",
+            "lm_predictions.lm_head.dense.weight",
+            "mask_predictions.LayerNorm.bias",
+            "mask_predictions.LayerNorm.weight",
+            "mask_predictions.classifier.bias",
+            "mask_predictions.classifier.weight",
+            "mask_predictions.dense.bias",
+            "mask_predictions.dense.weight"
+          ],
+          "mismatched_keys": [],
+          "error_msgs": []
+        }
+      }
+    },
+    "absa_hotel": {
+      "train_count": 7180,
+      "validation_count": 795,
+      "num_classes": 136,
+      "num_aspects": 34,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "validation_ids_exact": true,
+      "first_batch_ids": [
+        "absa_hotel:train:006516",
+        "absa_hotel:train:001418"
+      ],
+      "logits_shape": [
+        2,
+        136
+      ],
+      "expected_flat_logits_shape": [
+        2,
+        136
+      ],
+      "semantic_slot_shape": [
+        2,
+        34,
+        4
+      ],
+      "finite_logits": true,
+      "finite_loss": true,
+      "finite_gradients": true,
+      "model": {
+        "backbone": "microsoft/mdeberta-v3-base",
+        "local_path": "models/mdeberta-v3-base",
+        "hf_commit": "a0484667b22365f84929a935b5e50a51f71f159d",
+        "encoder_class": "DebertaV2Model",
+        "classifier_class": "DebertaV2ForSequenceClassification",
+        "model_type": "deberta-v2",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "vocab_size": 251000,
+        "pooling": "native DebertaV2 ContextPooler: hidden_states[:,0]",
+        "pooler_dropout": 0.0,
+        "pooler_hidden_act": "gelu",
+        "classifier_dropout": 0.1,
+        "attention_implementation": "eager",
+        "num_labels": 136,
+        "num_aspects": 34,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 278913928,
+        "trainable_parameters": 278913928,
+        "encoder_weight_file_sha256": "6f89419baf0f1aaad5cab7d53901e36a8c1af8f6b4ab58b15db9af32df656ead",
+        "loading_info": {
+          "missing_keys": [
+            "classifier.bias",
+            "classifier.weight",
+            "pooler.dense.bias",
+            "pooler.dense.weight"
+          ],
+          "unexpected_keys": [
+            "deberta.embeddings.word_embeddings._weight",
+            "lm_predictions.lm_head.LayerNorm.bias",
+            "lm_predictions.lm_head.LayerNorm.weight",
+            "lm_predictions.lm_head.bias",
+            "lm_predictions.lm_head.dense.bias",
+            "lm_predictions.lm_head.dense.weight",
+            "mask_predictions.LayerNorm.bias",
+            "mask_predictions.LayerNorm.weight",
+            "mask_predictions.classifier.bias",
+            "mask_predictions.classifier.weight",
+            "mask_predictions.dense.bias",
+            "mask_predictions.dense.weight"
+          ],
+          "mismatched_keys": [],
+          "error_msgs": []
+        }
+      }
+    }
+  },
+  "source_hash": "c932fe392dda68d68be5b4fee7c9c9b3bd28caae4e2a1df246ccf29ae65bc801",
+  "started_at": "2026-09-18T02:00:35Z",
+  "finished_at": "2026-09-18T02:00:53Z",
+  "elapsed_seconds": 19.127699613571167,
+  "gpu_snapshot_end": {
+    "0": {
+      "free_mib": 38477,
+      "used_mib": 6982,
+      "util_pct": 0
+    },
+    "1": {
+      "free_mib": 45438,
+      "used_mib": 20,
+      "util_pct": 0
+    },
+    "2": {
+      "free_mib": 45438,
+      "used_mib": 20,
+      "util_pct": 0
+    },
+    "3": {
+      "free_mib": 45439,
+      "used_mib": 20,
+      "util_pct": 0
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "protocol": "E1-supervised-v1",
+  "backbone": "models/goiturn-s-gd",
+  "tasks": {
+    "vsfc_sentiment": {"kind": "categorical", "classes": 3},
+    "vsfc_topic": {"kind": "categorical", "classes": 4},
+    "visfd": {"kind": "absa", "slot_classes": "from_audit"},
+    "absa_restaurant": {"kind": "absa", "slot_classes": "from_audit"},
+    "absa_hotel": {"kind": "absa", "slot_classes": "from_audit"}
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rates": [1e-05, 2e-05, 5e-05, 0.0001, 0.0002],
+    "weight_decay": 0.01,
+    "exclude_from_weight_decay": ["bias", "LayerNorm.weight"],
+    "betas": [0.9, 0.999],
+    "epsilon": 1e-08
+  },
+  "schedule": {"name": "linear", "warmup_fraction": 0.1},
+  "training": {
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size_default": 32,
+    "gradient_clip_norm": 1.0,
+    "gradient_clip_error_if_nonfinite": true
+  },
+  "head": {
+    "pooling": "first_token",
+    "input_dropout": 0.1,
+    "dense_hidden_size": 384,
+    "activation": "tanh",
+    "output_dropout": 0.1
+  },
+  "tokenization": {
+    "padding": "dynamic",
+    "max_length_policy": {
+      "candidates": [256, 512],
+      "max_train_truncation_rate": 0.01,
+      "source": "train_only",
+      "over_512_action": "hard_block_task"
+    }
+  },
+  "precision": {"allowed": ["fp32", "bf16"], "selection": "environment_smoke"},
+  "seeds": {
+    "screening": [42],
+    "shortlist": [42, 43, 44],
+    "final": [42, 43, 44, 45, 46]
+  },
+  "evaluation": {
+    "selection_metric": "selection_f1",
+    "test_stage_requires": "E1-test-gate-v1",
+    "screening_loads_test": false
+  }
+}

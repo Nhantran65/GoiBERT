@@ -1,0 +1,72 @@
+{
+  "model_kind": "cafebert",
+  "task_id": "vsfc_topic",
+  "metrics": {
+    "n": 3166,
+    "labels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "accuracy": 0.8945041061276058,
+    "macro_precision": 0.8202519067387057,
+    "macro_recall": 0.7976480099193347,
+    "macro_f1": 0.8076781077913175,
+    "per_class": {
+      "0": {
+        "support": 2290,
+        "predicted": 2293,
+        "tp": 2160,
+        "fp": 133,
+        "fn": 130,
+        "precision": 0.9419973833406018,
+        "recall": 0.9432314410480349,
+        "f1": 0.9426140082915121
+      },
+      "1": {
+        "support": 572,
+        "predicted": 599,
+        "tp": 454,
+        "fp": 145,
+        "fn": 118,
+        "precision": 0.7579298831385642,
+        "recall": 0.7937062937062938,
+        "f1": 0.7754056362083689
+      },
+      "2": {
+        "support": 145,
+        "predicted": 141,
+        "tp": 136,
+        "fp": 5,
+        "fn": 9,
+        "precision": 0.9645390070921985,
+        "recall": 0.9379310344827586,
+        "f1": 0.951048951048951
+      },
+      "3": {
+        "support": 159,
+        "predicted": 133,
+        "tp": 82,
+        "fp": 51,
+        "fn": 77,
+        "precision": 0.6165413533834586,
+        "recall": 0.5157232704402516,
+        "f1": 0.5616438356164384
+      }
+    },
+    "task_id": "vsfc_topic",
+    "split": "test",
+    "selection_f1": 0.8076781077913175,
+    "selection_metric": "fixed_label_macro_f1"
+  },
+  "selected": {
+    "path": "artifacts/sealion_benchmark/cafe_runs/vsfc_topic/lr_2e-05/seed_42",
+    "learning_rate": 2e-05,
+    "best_epoch": 23,
+    "validation_selection_f1": 0.8174458365092476,
+    "checkpoint_sha256": "be7b0455cd9034d993c13451690a6dbbec4c4b6f1746ad06fcfdb32cad2c5747",
+    "source_hash": "6979f3966bea74a8d8f4a465561245bab4d35859f2adbe21a402c65a6ad2c4a5",
+    "selection_rule": "max validation selection_f1; tie smaller learning rate then earliest best epoch"
+  }
+}

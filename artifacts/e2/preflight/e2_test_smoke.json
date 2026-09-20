@@ -1,0 +1,79 @@
+{
+  "protocol": "E2-test-wrapper-smoke-v1",
+  "created_at_utc": "2026-09-09T01:54:58.248018+00:00",
+  "status": "passed",
+  "test_split_loaded": false,
+  "dummy_checkpoint": "/home/kiettqa/GoiBERT/artifacts/e2/preflight/e2_test_dummy_checkpoint/dummy_checkpoint.pt",
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26546691,
+    "trainable_parameters": 26546691
+  },
+  "restored_model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26546691,
+    "trainable_parameters": 26546691
+  },
+  "strict_state_dict": true,
+  "validation_rows": 24,
+  "validation_metrics": {
+    "n": 24,
+    "labels": [
+      0,
+      1,
+      2
+    ],
+    "accuracy": 0.375,
+    "macro_precision": 0.125,
+    "macro_recall": 0.3333333333333333,
+    "macro_f1": 0.1818181818181818,
+    "per_class": {
+      "0": {
+        "support": 13,
+        "predicted": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 13,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "1": {
+        "support": 2,
+        "predicted": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "2": {
+        "support": 9,
+        "predicted": 24,
+        "tp": 9,
+        "fp": 15,
+        "fn": 0,
+        "precision": 0.375,
+        "recall": 1.0,
+        "f1": 0.5454545454545454
+      }
+    },
+    "task_id": "vsfc_sentiment",
+    "split": "validation",
+    "selection_f1": 0.1818181818181818,
+    "selection_metric": "fixed_label_macro_f1"
+  }
+}

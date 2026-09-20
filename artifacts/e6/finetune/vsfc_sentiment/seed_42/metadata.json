@@ -1,0 +1,206 @@
+{
+  "task_id": "vsfc_sentiment",
+  "stage": "screening",
+  "seed": 42,
+  "learning_rate": 1e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 1074,
+  "gradient_clip_norm": 1.0,
+  "head": "CLS -> dropout0.1 -> dense384 -> tanh -> dropout0.1 -> logits",
+  "loss": "cross_entropy",
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 164,
+    "p50_tokens": 14.0,
+    "p95_tokens": 37.0,
+    "p99_tokens": 56.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "source_hash": "029ba1dd3f4f817dca37ea7f73caf3da6f5b535e8ec3604010b691a8404b43bf",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt": "480480c3b9a6bc8bdf53339c721e93f8cc30472ac8f0bd21d4440ce1171aefac",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt": "a9584a22c926a54c6042236380c9a65ab8c41467477f7a5d794fb2505c96a9c3"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "vsfc_sentiment",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "include_test": false,
+    "slot_label_names": []
+  },
+  "model": {
+    "backbone": "goiturn-s-gd-mlm-e6",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26546691,
+    "trainable_parameters": 26546691
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:2",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "c0203f56a3d1276b5acbc45832a8724fde02f2dc595b673281ae977aa75009c9",
+    "model.safetensors": "96163c803854bdfe67f76a58158a450df45a14742312e0b529aa96b230f7406b",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738"
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "git_commit": null,
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e6_finetune.py",
+    "--task-id",
+    "vsfc_sentiment",
+    "--device",
+    "cuda:2",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e6/finetune/vsfc_sentiment/seed_42"
+  ],
+  "best_epoch": 11,
+  "best_validation_metrics": {
+    "n": 1583,
+    "labels": [
+      0,
+      1,
+      2
+    ],
+    "accuracy": 0.9368288060644346,
+    "macro_precision": 0.8513460032664814,
+    "macro_recall": 0.8369468969142027,
+    "macro_f1": 0.8435507115834984,
+    "per_class": {
+      "0": {
+        "support": 705,
+        "predicted": 735,
+        "tp": 684,
+        "fp": 51,
+        "fn": 21,
+        "precision": 0.9306122448979591,
+        "recall": 0.9702127659574468,
+        "f1": 0.95
+      },
+      "1": {
+        "support": 73,
+        "predicted": 67,
+        "tp": 44,
+        "fp": 23,
+        "fn": 29,
+        "precision": 0.6567164179104478,
+        "recall": 0.6027397260273972,
+        "f1": 0.6285714285714286
+      },
+      "2": {
+        "support": 805,
+        "predicted": 781,
+        "tp": 755,
+        "fp": 26,
+        "fn": 50,
+        "precision": 0.9667093469910372,
+        "recall": 0.937888198757764,
+        "f1": 0.9520807061790668
+      }
+    },
+    "task_id": "vsfc_sentiment",
+    "split": "validation",
+    "selection_f1": 0.8435507115834984,
+    "selection_metric": "fixed_label_macro_f1"
+  },
+  "best_selection_f1": 0.8435507115834984,
+  "elapsed_seconds": 699.5656526088715,
+  "peak_gpu_memory_allocated_bytes": 1385047552,
+  "peak_gpu_memory_reserved_bytes": 1564475392,
+  "status": "completed",
+  "protocol": "E6-mlm-backbone-supervised-screening-v1",
+  "architecture_variant": "goiturn-s-gd-mlm-e6",
+  "backbone_name": "goiturn-s-gd-mlm-e6",
+  "backbone_path": "/home/kiettqa/GoiBERT/models/goiturn-s-gd-mlm-e6",
+  "mlm_backbone_path": "/home/kiettqa/GoiBERT/models/goiturn-s-gd-mlm-e6",
+  "mlm_backbone_hashes": {
+    "config.json": "c0203f56a3d1276b5acbc45832a8724fde02f2dc595b673281ae977aa75009c9",
+    "model.safetensors": "96163c803854bdfe67f76a58158a450df45a14742312e0b529aa96b230f7406b",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "mlm_backbone_directory_sha256": "1b6a7b6dfa363e3002e48397d69037d83a8be9220ab4ea1bdbd8c7da42956cb2",
+  "mlm_export_manifest_path": "/home/kiettqa/GoiBERT/artifacts/e6/mlm/mlm_metadata.json",
+  "mlm_export_manifest_sha256": "77f33c2d4622b39408306be6e2b6e821acbeb7417e46ee4cfc0e7d6ddb8e46b4",
+  "mlm_ready_marker_path": "/home/kiettqa/GoiBERT/artifacts/e6/mlm/READY_FOR_FINETUNE.json",
+  "mlm_ready_marker_sha256": "b67f1f4ce8306abaa1120457c330dd6a8365db2d440a6f59b291437f6cda5984",
+  "mlm_source_hash": "256cba9a9e48cb0ecd91b7276d381aa1995f1de68267c65f9fbdfba57eeb61e8",
+  "e6_source_hash": "029ba1dd3f4f817dca37ea7f73caf3da6f5b535e8ec3604010b691a8404b43bf",
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "backbone_provenance": {
+    "source": "student GoiTurn-S-GD after E6 supervised-independent MLM continuation",
+    "encoder_only_export": true,
+    "architecture_compatibility": {
+      "hidden_size": true,
+      "num_hidden_layers": true,
+      "num_attention_heads": true,
+      "intermediate_size": true,
+      "vocab_size": true,
+      "max_position_embeddings": true
+    },
+    "tokenizer_compatibility": {
+      "tokenizer.json": true,
+      "tokenizer_config.json": true,
+      "special_tokens_map.json": true
+    },
+    "tokenizer_hash_match": {
+      "tokenizer.json": true,
+      "tokenizer_config.json": true,
+      "special_tokens_map.json": true
+    }
+  }
+}

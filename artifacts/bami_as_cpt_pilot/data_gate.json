@@ -1,0 +1,642 @@
+{
+ "protocol": "BamiBERT-AS-CPT-pilot-v1",
+ "stage": "data_gate",
+ "decision": "STOP_AT_DATA_GATE",
+ "created_at": "2026-09-18T15:27:34Z",
+ "source_hash": "2fb7efe292a344273d5a4069dab582a962d891584f99e50f4aea415b0c5c95d7",
+ "script_hashes": {
+  "common.py": "51e852bfb8c42bf0c216f5b5b41bc32515c75b3c76130ec553a7a3de6d34daa9",
+  "fw2_extract.py": "e60eff5c6f3788fb2fdae65abc33b471ae66b38c3b9257a6abfe4f840c35f644",
+  "fw2_filter.py": "be790b4112c637c7527878b75732615e3aa34e49599605d97d8b3ba1a1ffc182",
+  "prepare_corpus.py": "f868599497cbe06c5ee17a93611f0c9a52a5edcbb599e4d42e80d868ecc22481"
+ },
+ "gpu_used_for_training": false,
+ "gpu_snapshot_at_decision": {
+  "0": {
+   "free_mib": 41280,
+   "used_mib": 4178,
+   "util_pct": 23
+  },
+  "1": {
+   "free_mib": 45438,
+   "used_mib": 20,
+   "util_pct": 0
+  },
+  "2": {
+   "free_mib": 45438,
+   "used_mib": 20,
+   "util_pct": 0
+  },
+  "3": {
+   "free_mib": 12265,
+   "used_mib": 33194,
+   "util_pct": 99
+  }
+ },
+ "runtime": {
+  "python": "3.12.3",
+  "hostname": "server-ai-new-02.vntt.lan",
+  "cuda_visible_devices": null,
+  "cublas_workspace_config": ":4096:8",
+  "torch": "2.6.0+cu124",
+  "transformers": "4.49.0",
+  "cuda": "12.4"
+ },
+ "sources": {
+  "v3": {
+   "repo": "phamluan/vn_msa_sar_v3",
+   "revision": "6f3f17b390dcf1bf411804e1bc8246bf88ea1bf4",
+   "file": "data/train-00000-of-00001.parquet",
+   "sha256": "c7fe8ab15d5023c3a618a9fa94bfa3ea4db61fb02dcb1fdccb9c2f6d36601ce1",
+   "license": "CC BY 4.0 (dataset card); attribution: phamluan/vn_msa_sar_v3 @ 6f3f17b3",
+   "split": "train only"
+  },
+  "fw2": {
+   "repo": "HuggingFaceFW/fineweb-2",
+   "commit": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+   "file": "data/vie_Latn/train/000_00000.parquet",
+   "sha256": "337df3c387a7d5bc854059605acb9382e3887dc7ab0da958ecfe3f73d6219acf",
+   "bytes": 4840313001,
+   "rows": 2319000,
+   "row_groups": 2319,
+   "license": "ODC-By 1.0 (dataset card); underlying page rights unresolved -> pilot does not redistribute raw text",
+   "filter_source_sha256": "be790b4112c637c7527878b75732615e3aa34e49599605d97d8b3ba1a1ffc182",
+   "tier": "strict",
+   "extract_counters": {
+    "docs": 2319000,
+    "paragraphs": 42027962,
+    "too_short": 12658241,
+    "not_vi": 213409,
+    "no_domain": 27866050,
+    "no_review_run": 1245234,
+    "gate_fail": 43074,
+    "kept": 1954,
+    "story_host": 68646,
+    "fiction_doc": 330258,
+    "mt_page": 10247,
+    "excluded_host": 581
+   },
+   "passages_extracted": 1954
+  }
+ },
+ "excluded_sources": [
+  "ViSoBERT social corpus (research-only / CC BY-NC)",
+  "ViHoRec / CAMEO (CC BY-NC)",
+  "pqthinh232/vietnamese-restaurant-review-sentiment-dataset (rights unclear)",
+  "benchmark train text (never used for CPT)",
+  "generic FineWeb-2 web text (only user-voice review passages are extracted)",
+  "tripadvisor.* pages (machine-translated reviews)"
+ ],
+ "fw2_extraction": {
+  "docs_scanned": 2319000,
+  "paragraphs": 42027962,
+  "elapsed_s": 369.4,
+  "workers": 48,
+  "strict_passages": 1954,
+  "relaxed_passages": 9020,
+  "strict_counters": {
+   "docs": 2319000,
+   "paragraphs": 42027962,
+   "too_short": 12658241,
+   "not_vi": 213409,
+   "no_domain": 27866050,
+   "no_review_run": 1245234,
+   "gate_fail": 43074,
+   "kept": 1954,
+   "story_host": 68646,
+   "fiction_doc": 330258,
+   "mt_page": 10247,
+   "excluded_host": 581
+  },
+  "relaxed_counters": {
+   "docs": 2319000,
+   "paragraphs": 42027962,
+   "too_short": 12658241,
+   "not_vi": 213409,
+   "no_domain": 27866050,
+   "no_review_run": 1180182,
+   "gate_fail": 101060,
+   "kept": 9020,
+   "story_host": 68646,
+   "fiction_doc": 330258,
+   "mt_page": 10247,
+   "excluded_host": 581
+  },
+  "strict_distinct_hosts": 1225,
+  "strict_hosts_with_one_passage": 943,
+  "strict_top_hosts": [
+   [
+    "khongsolac.com",
+    50
+   ],
+   [
+    "grab.com",
+    32
+   ],
+   [
+    "wesave.vn",
+    25
+   ],
+   [
+    "vvnm.vietbao.com",
+    17
+   ],
+   [
+    "sotaychame.com",
+    15
+   ],
+   [
+    "eva.vn",
+    14
+   ],
+   [
+    "dulichchat.com",
+    14
+   ],
+   [
+    "gody.vn",
+    14
+   ],
+   [
+    "kenh14.vn",
+    11
+   ],
+   [
+    "blog.vietnambooking.com",
+    11
+   ],
+   [
+    "tintuc.hahalolo.com",
+    10
+   ],
+   [
+    "saigonamthuc.vn",
+    10
+   ],
+   [
+    "binhminhtravel.com",
+    9
+   ],
+   [
+    "tinhte.vn",
+    9
+   ],
+   [
+    "vietbao.vn",
+    9
+   ]
+  ]
+ },
+ "v3_audit": {
+  "rows": 60406,
+  "reviews": 14536,
+  "unique_sentences": 51199,
+  "language_tag_counts": {
+   "en": 21050,
+   "zh": 14663,
+   "ja": 12549,
+   "vi": 12144
+  },
+  "source_counts": {
+   "google_maps": 48876,
+   "booking": 5428,
+   "foody": 4413,
+   "other": 1689
+  },
+  "place_type_counts": {
+   "hotel": 46619,
+   "restaurant": 13787
+  },
+  "vi_tag_rows": 12144,
+  "vi_tag_but_not_vi_text_rows": 255,
+  "non_vi_tag_but_vi_text_rows": 4239,
+  "vi_by_content_rows": 16128,
+  "language_check": "content-based: CJK absent AND (>=2 % Vietnamese-specific letters OR >=15 % common Vietnamese function words); the release's `language` tag is not trusted (259 vi-tagged rows are non-Vietnamese, 4,221 non-vi-tagged rows are Vietnamese)",
+  "vi_reviews": 4790,
+  "vi_unique_sentences": 13773,
+  "vi_reviews_by_domain": {
+   "hotel": 3590,
+   "restaurant": 1200
+  },
+  "vi_reviews_by_platform": {
+   "google_maps": 1518,
+   "foody": 1015,
+   "booking": 1874,
+   "other": 383
+  },
+  "review_reconstruction": "unique sentences of a review_id joined in first-appearance row order; the original within-review order is not recoverable from the release, so reconstructed reviews are approximate"
+ },
+ "dedup_decontam": {
+  "counters": {
+   "v3/candidates": 4790,
+   "v3/decontam": 68,
+   "v3/kept": 4480,
+   "v3/near_dup": 202,
+   "v3/exact_dup": 40,
+   "fw2/candidates": 1954,
+   "fw2/kept": 1925,
+   "fw2/decontam": 6,
+   "fw2/near_dup": 8,
+   "fw2/exact_dup": 15
+  },
+  "decontam_dropped_by_benchmark_split": {
+   "absa_restaurant/Dev": 1,
+   "absa_restaurant/Test": 2,
+   "absa_hotel/Train": 41,
+   "visfd/Train": 11,
+   "absa_hotel/Test": 10,
+   "absa_restaurant/Train": 2,
+   "visfd/Dev": 3,
+   "absa_hotel/Dev": 3,
+   "visfd/Test": 1
+  },
+  "decontam_dropped_by_source": {
+   "v3": 68,
+   "fw2": 6
+  },
+  "benchmark_rows": {
+   "vsfc/train": 11426,
+   "vsfc/dev": 1583,
+   "vsfc/test": 3166,
+   "visfd/Train": 7786,
+   "absa_restaurant/Train": 7028,
+   "absa_hotel/Train": 7180,
+   "visfd/Dev": 1112,
+   "absa_restaurant/Dev": 771,
+   "absa_hotel/Dev": 795,
+   "visfd/Test": 2224,
+   "absa_restaurant/Test": 1938,
+   "absa_hotel/Test": 2030
+  },
+  "benchmark_unique_keys": 47007,
+  "benchmark_shingles": 639662,
+  "benchmark_key_set_sha256": "6c02e7c29c8b13a61dc9f942b4f5db8dc6661038bdb7ed247b63584194e25020",
+  "method": "exact casefolded-NFC key OR any shared 8-word shingle with train/dev/test text of vsfc, visfd, absa_restaurant, absa_hotel (text columns only, labels never read); near-dup = >=50 % of a unit's 8-word shingles already seen in kept units"
+ },
+ "manual_audit": {
+  "criterion": "firsthand = written in the customer's/guest's own voice about their own visit to a restaurant/hotel (opinion, evaluation or feedback, incl. short fragments and sarcasm); other = business/description/marketing voice, third-party summary, news, fiction, advice/listicle, recipe, unrelated venue (beach, apartment, water park, shop), empty/header fragments, or non-Vietnamese",
+  "labeller": "main agent (manual reading, 2026-09-18)",
+  "note": "Labels assigned by the main agent by reading every sampled unit (400 units, 2026-09-18). Quoted customer reviews embedded in news/blog pages were counted as firsthand; domain mislabels (e.g. a hotel review in the restaurant cell) were still counted firsthand because the audit question is voice/firsthandness, not domain.",
+  "cells": {
+   "fw2/hotel": {
+    "sampled": 100,
+    "labelled": 100,
+    "firsthand": 39,
+    "other": 61,
+    "firsthand_fraction": 0.39,
+    "pass_70": false,
+    "missing_labels": 0
+   },
+   "fw2/restaurant": {
+    "sampled": 100,
+    "labelled": 100,
+    "firsthand": 41,
+    "other": 59,
+    "firsthand_fraction": 0.41,
+    "pass_70": false,
+    "missing_labels": 0
+   },
+   "v3/hotel": {
+    "sampled": 100,
+    "labelled": 100,
+    "firsthand": 91,
+    "other": 9,
+    "firsthand_fraction": 0.91,
+    "pass_70": true,
+    "missing_labels": 0
+   },
+   "v3/restaurant": {
+    "sampled": 100,
+    "labelled": 100,
+    "firsthand": 94,
+    "other": 6,
+    "firsthand_fraction": 0.94,
+    "pass_70": true,
+    "missing_labels": 0
+   }
+  },
+  "cell_notes": {
+   "v3/hotel": {
+    "n": 100,
+    "other_indexes": [
+     3,
+     20,
+     41,
+     69,
+     80,
+     81,
+     83,
+     95,
+     99
+    ],
+    "note": "others: destination/beach reviews (3,95,99), third-party summary (20), promo copy (81), apartment building (83), empty/header fragments (41,69,80)"
+   },
+   "v3/restaurant": {
+    "n": 100,
+    "other_indexes": [
+     16,
+     26,
+     54,
+     56,
+     87,
+     88
+    ],
+    "note": "others: promo voice (16), owner reply (26), English text (54,88), shop-product complaint (56), header fragment (87)"
+   },
+   "fw2/hotel": {
+    "n": 100,
+    "other_indexes": [
+     0,
+     3,
+     4,
+     5,
+     7,
+     9,
+     13,
+     14,
+     16,
+     18,
+     21,
+     22,
+     24,
+     25,
+     26,
+     27,
+     29,
+     30,
+     33,
+     35,
+     37,
+     38,
+     39,
+     40,
+     43,
+     46,
+     48,
+     49,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     59,
+     61,
+     62,
+     64,
+     65,
+     68,
+     69,
+     70,
+     73,
+     74,
+     76,
+     77,
+     78,
+     79,
+     80,
+     83,
+     84,
+     85,
+     89,
+     90,
+     91,
+     92,
+     93,
+     94,
+     95,
+     99
+    ],
+    "note": "others dominated by travel narratives without venue evaluation, advice/guide posts, promo copy, news/interview quotes, fiction/confession, adult-content pages, non-hotel venues (app, bus, cinema, public pool)"
+   },
+   "fw2/restaurant": {
+    "n": 100,
+    "other_indexes": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     11,
+     13,
+     14,
+     15,
+     16,
+     17,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     29,
+     30,
+     31,
+     32,
+     33,
+     37,
+     39,
+     40,
+     42,
+     46,
+     47,
+     48,
+     49,
+     55,
+     56,
+     58,
+     59,
+     60,
+     61,
+     64,
+     66,
+     67,
+     68,
+     70,
+     73,
+     74,
+     76,
+     79,
+     80,
+     81,
+     82,
+     85,
+     88,
+     90,
+     92,
+     93,
+     95,
+     96,
+     98,
+     99
+    ],
+    "note": "others dominated by food essays/memoirs, celebrity/interview quotes, promo/listicle voice, home cooking, retail shops, fiction, adult-content pages, general commentary; quoted customer reviews inside news articles were counted firsthand"
+   }
+  },
+  "sample_sha256": "7f6be0805909b5c46b0ffe6ad25ab1e568a1afbe4c539c660957a51779ae54be",
+  "labels_sha256": "32209ae3a9dfa0e3a449f3d39693da2f02b87a77ef899128cee06bfcb80236e5"
+ },
+ "tokens": {
+  "strict": {
+   "holdout/fw2/hotel/tokens": 546,
+   "holdout/fw2/restaurant/tokens": 2455,
+   "holdout/fw2/tokens": 3001,
+   "holdout/hotel/tokens": 2785,
+   "holdout/restaurant/tokens": 3786,
+   "holdout/sequences": 133,
+   "holdout/tokens": 6571,
+   "holdout/v3/hotel/tokens": 2239,
+   "holdout/v3/restaurant/tokens": 1331,
+   "holdout/v3/tokens": 3570,
+   "train/fw2/hotel/tokens": 34483,
+   "train/fw2/restaurant/tokens": 103388,
+   "train/fw2/tokens": 137871,
+   "train/hotel/tokens": 176176,
+   "train/restaurant/tokens": 170183,
+   "train/sequences": 6331,
+   "train/tokens": 346359,
+   "train/v3/hotel/tokens": 141693,
+   "train/v3/restaurant/tokens": 66795,
+   "train/v3/tokens": 208488
+  },
+  "relaxed": {
+   "holdout/fw2/hotel/tokens": 2866,
+   "holdout/fw2/restaurant/tokens": 7110,
+   "holdout/fw2/tokens": 9976,
+   "holdout/hotel/tokens": 6178,
+   "holdout/restaurant/tokens": 8195,
+   "holdout/sequences": 266,
+   "holdout/tokens": 14373,
+   "holdout/v3/hotel/tokens": 3312,
+   "holdout/v3/restaurant/tokens": 1085,
+   "holdout/v3/tokens": 4397,
+   "train/fw2/hotel/tokens": 101644,
+   "train/fw2/restaurant/tokens": 350601,
+   "train/fw2/tokens": 452245,
+   "train/hotel/tokens": 242264,
+   "train/restaurant/tokens": 417642,
+   "train/sequences": 12992,
+   "train/tokens": 659906,
+   "train/v3/hotel/tokens": 140620,
+   "train/v3/restaurant/tokens": 67041,
+   "train/v3/tokens": 207661
+  }
+ },
+ "documents": {
+  "strict": {
+   "holdout/fw2/docs": 32,
+   "holdout/fw2/hotel/docs": 5,
+   "holdout/fw2/restaurant/docs": 27,
+   "holdout/v3/docs": 90,
+   "holdout/v3/hotel/docs": 63,
+   "holdout/v3/restaurant/docs": 27,
+   "train/fw2/docs": 1585,
+   "train/fw2/hotel/docs": 409,
+   "train/fw2/restaurant/docs": 1176,
+   "train/v3/docs": 4390,
+   "train/v3/hotel/docs": 3310,
+   "train/v3/restaurant/docs": 1080
+  },
+  "relaxed": {
+   "holdout/fw2/docs": 145,
+   "holdout/fw2/hotel/docs": 44,
+   "holdout/fw2/restaurant/docs": 101,
+   "holdout/v3/docs": 90,
+   "holdout/v3/hotel/docs": 67,
+   "holdout/v3/restaurant/docs": 23,
+   "train/fw2/docs": 7088,
+   "train/fw2/hotel/docs": 1636,
+   "train/fw2/restaurant/docs": 5452,
+   "train/v3/docs": 4390,
+   "train/v3/hotel/docs": 3306,
+   "train/v3/restaurant/docs": 1084
+  }
+ },
+ "gate_strict": {
+  "train_unique_nonspecial_tokens": 346359,
+  "min_required": 4000000,
+  "tokens_ok": false,
+  "per_domain_tokens": {
+   "restaurant": 170183,
+   "hotel": 176176
+  },
+  "min_per_domain": 500000,
+  "domains_ok": false,
+  "budget_tokens": 20000000,
+  "passes_at_budget": 57.743555097456685,
+  "max_passes": 5,
+  "passes_ok": false,
+  "manual_audit_ok": false,
+  "manual_audit_cells": {
+   "fw2/hotel": {
+    "sampled": 100,
+    "labelled": 100,
+    "firsthand": 39,
+    "other": 61,
+    "firsthand_fraction": 0.39,
+    "pass_70": false,
+    "missing_labels": 0
+   },
+   "fw2/restaurant": {
+    "sampled": 100,
+    "labelled": 100,
+    "firsthand": 41,
+    "other": 59,
+    "firsthand_fraction": 0.41,
+    "pass_70": false,
+    "missing_labels": 0
+   },
+   "v3/hotel": {
+    "sampled": 100,
+    "labelled": 100,
+    "firsthand": 91,
+    "other": 9,
+    "firsthand_fraction": 0.91,
+    "pass_70": true,
+    "missing_labels": 0
+   },
+   "v3/restaurant": {
+    "sampled": 100,
+    "labelled": 100,
+    "firsthand": 94,
+    "other": 6,
+    "firsthand_fraction": 0.94,
+    "pass_70": true,
+    "missing_labels": 0
+   }
+  },
+  "license_ok": true,
+  "license_note": "v3 CC BY 4.0; FineWeb-2 ODC-By 1.0 (page-level rights unresolved; no redistribution of raw text in this pilot)",
+  "all_ok": false
+ },
+ "gate_relaxed_diagnostic": {
+  "train_unique_nonspecial_tokens": 659906,
+  "per_domain_tokens": {
+   "restaurant": 417642,
+   "hotel": 242264
+  },
+  "passes_at_budget": 30.307346803938742,
+  "tokens_ok": false,
+  "domains_ok": false,
+  "passes_ok": false
+ },
+ "v3_only_after_audit": {
+  "train_tokens": 208488,
+  "passes_at_budget": 95.92878247189287,
+  "per_domain": {
+   "hotel": 141693,
+   "restaurant": 66795
+  }
+ },
+ "conditions": {
+  "manual_audit_ge_70_all_cells": false,
+  "train_tokens_ge_4M": false,
+  "domain_tokens_ge_0_5M": false,
+  "passes_le_5": false,
+  "license_ok": true
+ },
+ "reason": "Only phamluan/vn_msa_sar_v3 passes the manual firsthand audit (hotel 91 %, restaurant 94 %); the FineWeb-2 review-passage extraction fails it (hotel 39 %, restaurant 41 %) and is tiny anyway (1,954 strict passages / 138K train tokens from 2.319M documents). Even counting FineWeb-2, the train corpus is 346K unique tokens (8.7 % of the 4M floor; 57.7 passes at the 20M budget); the relaxed diagnostic tier reaches 660K (30.3 passes). v3 alone is 208K tokens (96 passes). No CPT, lexicon, or fine-tune was run."
+}

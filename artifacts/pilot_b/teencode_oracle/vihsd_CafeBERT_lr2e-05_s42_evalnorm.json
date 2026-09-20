@@ -1,0 +1,59 @@
+{
+ "args": {
+  "model": "uitnlp/CafeBERT",
+  "tokenizer": "FacebookAI/xlm-roberta-large",
+  "task": "vihsd",
+  "device": "cuda:0",
+  "lr": 2e-05,
+  "epochs": 10,
+  "seed": 42,
+  "micro": 8,
+  "max_len": 128,
+  "tag": "_evalnorm",
+  "out": "artifacts/pilot_b/teencode_oracle",
+  "eval_strip": true,
+  "eval_norm": true,
+  "norm_train": false
+ },
+ "best_f1": 70.441,
+ "best_epoch": 2,
+ "curves": [
+  {
+   "epoch": 1,
+   "f1": 57.887,
+   "elapsed": 296,
+   "f1_strip": 47.13,
+   "f1_norm": 56.813
+  },
+  {
+   "epoch": 2,
+   "f1": 70.441,
+   "elapsed": 594,
+   "f1_strip": 55.077,
+   "f1_norm": 70.945
+  },
+  {
+   "epoch": 3,
+   "f1": 68.965,
+   "elapsed": 893,
+   "f1_strip": 55.06,
+   "f1_norm": 69.24
+  },
+  {
+   "epoch": 4,
+   "f1": 67.897,
+   "elapsed": 1191,
+   "f1_strip": 58.548,
+   "f1_norm": 68.318
+  },
+  {
+   "epoch": 5,
+   "f1": 68.724,
+   "elapsed": 1487,
+   "f1_strip": 56.929,
+   "f1_norm": 69.327
+  }
+ ],
+ "strip_f1_at_best": 55.077,
+ "norm_f1_at_best": 70.945
+}

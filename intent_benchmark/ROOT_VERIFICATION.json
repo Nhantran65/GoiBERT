@@ -1,0 +1,45 @@
+{
+  "checks": {
+    "corrected_dataset.jsonl": {
+      "sha256": "950d4d47b1b9bb51957840390b969674ad1906f310f2d347211b83f8c3581f02",
+      "repro_matches": true
+    },
+    "review_ledger.jsonl": {
+      "sha256": "763b175e7ef1f147a362f2b8bf403edded9a7412ddf690a3ac0d597ccd7fc578",
+      "repro_matches": true
+    },
+    "train.jsonl": {
+      "sha256": "775475397d9bb28d006a842a6201efe532b0da65d3562b97cad425b34cf9331c",
+      "repro_matches": true
+    },
+    "dev.jsonl": {
+      "sha256": "184c0efb674aefae99854b2090bd693990f62a188739131a60378ff0df13b7ae",
+      "repro_matches": true
+    },
+    "test.jsonl": {
+      "sha256": "33eb33cc8292650c320b167d52eb5c979e6591acd36a5b27a3336d6b6b54f4a5",
+      "repro_matches": true
+    },
+    "split_assignments.jsonl": {
+      "sha256": "1d70a7f8caa84c884f4e9b4c06634125ae7659a0533cd930952a9fbcdb79d987",
+      "repro_matches": true
+    },
+    "group_manifest.json": {
+      "sha256": "05587f34db9d83330851d0ff311c55870ef5e6e0e2caa773747691d0d3bbb908",
+      "repro_matches": true
+    }
+  },
+  "provenance_hashes_verified": true,
+  "reproduction_note": "Static label_map and root review policy are versioned inputs in intent_benchmark, not regenerated in alternate output directory.",
+  "review_csv_counts": {
+    "changed": 19,
+    "uncertain": 82
+  },
+  "independent_input_audit": "507 exact source prefixes through current turn; labels aligned; five missing targets excluded",
+  "independent_split_audit": "353/77/77; all8classes; all250cases/sourceIDs disjoint; normalized full-input duplicates disjoint; all9confirmed template families indivisible",
+  "limitations": [
+    "10current-text overlap groups across splits with differing histories",
+    "test PHONE has2turns from1case",
+    "AI-assisted labels;82remainuncertain; typed anonymization placeholders"
+  ]
+}

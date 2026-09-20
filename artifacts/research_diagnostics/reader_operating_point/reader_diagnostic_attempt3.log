@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 560, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 546, in main
+    report = build_report(kind, task, model, tokenizer, bundle, counts, checkpoint, model_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 441, in build_report
+    reference = read_json(REFERENCE).get(reference_key, {}) if REFERENCE.is_file() else {}
+                ^^^^^^^^^
+NameError: name 'read_json' is not defined

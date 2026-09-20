@@ -1,0 +1,60 @@
+{
+  "protocol": "E8-confirmation-NC-LLRD-v1",
+  "status": "passed",
+  "created_at": "2026-09-10T10:16:24.558001+00:00",
+  "adapter_hash": "0f88e854745b4591b38b25a8159a48ad9c585ffb26347f95aa5bfb847fff14f8",
+  "original_e8_source_hash": "089726d5d0294d2835ff6b4212bf30e6e47f246e84f50213536c0cbe4ccfd437",
+  "e2_source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "eligible_devices": [
+    "cuda:2",
+    "cuda:1",
+    "cuda:3"
+  ],
+  "gpu_snapshot": {
+    "0": {
+      "free_mib": 6282,
+      "used_mib": 39176
+    },
+    "1": {
+      "free_mib": 37171,
+      "used_mib": 8288
+    },
+    "2": {
+      "free_mib": 37171,
+      "used_mib": 8288
+    },
+    "3": {
+      "free_mib": 37177,
+      "used_mib": 8282
+    }
+  },
+  "checks": {
+    "frozen_e8_source_hash": true,
+    "frozen_e1_dependency": true,
+    "frozen_e2_code": true,
+    "frozen_e2_config": true,
+    "tasks_locked": true,
+    "seeds_locked": true,
+    "recipe_locked": {
+      "epochs": 30,
+      "effective_batch_size": 32,
+      "micro_batch_size": 32,
+      "max_length": 256,
+      "gamma": 0.8,
+      "attention_implementation": "sdpa",
+      "precision": "bf16"
+    },
+    "no_seed42_confirmation_dirs": true
+  },
+  "worker_count": 4,
+  "test_counts": {
+    "visfd": 2224,
+    "absa_restaurant": 1938
+  }
+}

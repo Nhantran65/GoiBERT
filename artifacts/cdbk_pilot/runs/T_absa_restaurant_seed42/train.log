@@ -1,0 +1,35 @@
+[T] start lr=2e-05 epochs=30 micro=32 accum=1 steps=6600 warmup=660 device=cuda:2
+You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:683.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[T] epoch  1 loss 0.7316 ce 0.7316 kd - val_f1 28.20 best 28.20@1 (43s) *
+[T] epoch  2 loss 0.2698 ce 0.2698 kd - val_f1 56.71 best 56.71@2 (46s) *
+[T] epoch  3 loss 0.1810 ce 0.1810 kd - val_f1 66.80 best 66.80@3 (42s) *
+[T] epoch  4 loss 0.1378 ce 0.1378 kd - val_f1 71.14 best 71.14@4 (45s) *
+[T] epoch  5 loss 0.1063 ce 0.1063 kd - val_f1 72.83 best 72.83@5 (38s) *
+[T] epoch  6 loss 0.0833 ce 0.0833 kd - val_f1 74.50 best 74.50@6 (45s) *
+[T] epoch  7 loss 0.0653 ce 0.0653 kd - val_f1 75.72 best 75.72@7 (42s) *
+[T] epoch  8 loss 0.0515 ce 0.0515 kd - val_f1 75.89 best 75.89@8 (45s) *
+[T] epoch  9 loss 0.0408 ce 0.0408 kd - val_f1 75.49 best 75.89@8 (47s)
+[T] epoch 10 loss 0.0322 ce 0.0322 kd - val_f1 76.39 best 76.39@10 (41s) *
+[T] epoch 11 loss 0.0260 ce 0.0260 kd - val_f1 75.04 best 76.39@10 (47s)
+[T] epoch 12 loss 0.0211 ce 0.0211 kd - val_f1 76.77 best 76.77@12 (45s) *
+[T] epoch 13 loss 0.0163 ce 0.0163 kd - val_f1 75.15 best 76.77@12 (45s)
+[T] epoch 14 loss 0.0137 ce 0.0137 kd - val_f1 76.99 best 76.99@14 (46s) *
+[T] epoch 15 loss 0.0108 ce 0.0108 kd - val_f1 75.25 best 76.99@14 (47s)
+[T] epoch 16 loss 0.0090 ce 0.0090 kd - val_f1 75.78 best 76.99@14 (49s)
+[T] epoch 17 loss 0.0072 ce 0.0072 kd - val_f1 74.57 best 76.99@14 (47s)
+[T] epoch 18 loss 0.0058 ce 0.0058 kd - val_f1 76.70 best 76.99@14 (47s)
+[T] epoch 19 loss 0.0048 ce 0.0048 kd - val_f1 76.72 best 76.99@14 (46s)
+[T] epoch 20 loss 0.0041 ce 0.0041 kd - val_f1 76.94 best 76.99@14 (44s)
+[T] epoch 21 loss 0.0039 ce 0.0039 kd - val_f1 77.72 best 77.72@21 (47s) *
+[T] epoch 22 loss 0.0036 ce 0.0036 kd - val_f1 76.24 best 77.72@21 (47s)
+[T] epoch 23 loss 0.0030 ce 0.0030 kd - val_f1 76.15 best 77.72@21 (48s)
+[T] epoch 24 loss 0.0027 ce 0.0027 kd - val_f1 76.60 best 77.72@21 (43s)
+[T] epoch 25 loss 0.0024 ce 0.0024 kd - val_f1 76.15 best 77.72@21 (46s)
+[T] epoch 26 loss 0.0023 ce 0.0023 kd - val_f1 75.83 best 77.72@21 (51s)
+[T] epoch 27 loss 0.0021 ce 0.0021 kd - val_f1 76.41 best 77.72@21 (47s)
+[T] epoch 28 loss 0.0020 ce 0.0020 kd - val_f1 75.41 best 77.72@21 (47s)
+[T] epoch 29 loss 0.0020 ce 0.0020 kd - val_f1 76.06 best 77.72@21 (48s)
+[T] epoch 30 loss 0.0019 ce 0.0019 kd - val_f1 76.10 best 77.72@21 (50s)
+[T] done best 77.72@21 elapsed 23.3 min; postrun_checks={'checkpoint_epoch': 21, 'best_epoch': 21, 'reload_selection_f1': 0.7771971496437055, 'best_selection_f1': 0.7771971496437055, 'reload_matches_best': True, 'prediction_file_selection_f1': 0.7771971496437055, 'prediction_file_matches_best': True, 'reload_predictions_identical': True}

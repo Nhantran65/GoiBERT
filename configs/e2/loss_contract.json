@@ -1,0 +1,29 @@
+{
+  "protocol": "E2-loss-contract-v1",
+  "runner_module": "goibert_e2.train",
+  "kd": {
+    "mode": "kd",
+    "temperature": 2.0,
+    "formula": "(1-alpha)*CE + alpha*T^2*KL(teacher || student)",
+    "teacher_detached": true,
+    "arithmetic": "fp32",
+    "slotwise": true
+  },
+  "noise_consistency": {
+    "mode": "nc",
+    "formula": "CE(clean) + lambda*0.5*(KL(clean || noisy) + KL(noisy || clean))",
+    "clean_ce_only": true,
+    "both_views_receive_gradient": true,
+    "temperature": 1.0,
+    "arithmetic": "fp32",
+    "slotwise": true
+  },
+  "cache": {
+    "schema": "goibert-e2-train-logits-v1",
+    "split": "train",
+    "storage": "fp32",
+    "required_alignment": ["source_ids", "source_ids_hash", "source_text_hash", "tokenizer_hashes", "max_length", "teacher_hash", "slot_schema"],
+    "forbidden_inputs": ["labels", "validation", "test"]
+  },
+  "absent_labels": "class 0 is an ordinary target; only explicit ignore_index is excluded"
+}

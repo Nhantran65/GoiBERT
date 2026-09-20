@@ -1,0 +1,168 @@
+{
+  "protocol": "SEA-LION-ModernBERT-300M-five-task-v1",
+  "model_kind": "sealion",
+  "task_id": "vsfc_sentiment",
+  "seed": 42,
+  "stage": "validation_only",
+  "learning_rate": 5e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy (absent class 0 included)",
+  "head": "first token -> dropout0.1 -> dense768 -> tanh -> dropout0.1 -> task logits",
+  "pooling": "first-token/BOS",
+  "selection": "validation task-specific selection_f1, best epoch",
+  "include_test": false,
+  "smoke": null,
+  "source_hash": "3cb7f95bd2f349a491143f5900f50881b25c23e075cd828a08dc097c45418320",
+  "model": {
+    "backbone": "aisingapore/SEA-LION-ModernBERT-300M",
+    "local_path": "models/sea-lion-modernbert-300m",
+    "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+    "encoder_class": "ModernBertModel",
+    "model_type": "modernbert",
+    "hidden_size": 768,
+    "num_hidden_layers": 22,
+    "num_attention_heads": 12,
+    "intermediate_size": 1152,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "pooling": "first-token/BOS",
+    "native_classifier_pooling": "mean",
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 312251139,
+    "trainable_parameters": 312251139,
+    "encoder_weight_file_sha256": "8197fa020536cb907299ff9fc6e1a1a436808f5606dba3dc6c56f7e4899dfdac"
+  },
+  "tokenizer": {
+    "source": "models/sea-lion-modernbert-300m",
+    "hf_repo": "aisingapore/SEA-LION-ModernBERT-300M",
+    "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+    "files": {
+      "special_tokens_map.json": "230075193082c0422c032bfc511aa304c3057f2fd87612e871d6522fd85a1651",
+      "tokenizer.json": "31de34af3072a06a88f10047733aa7a53db467bf66bfc1ef4d469a537e6e448d",
+      "tokenizer_config.json": "cda328a6066edd668bdc88cd8ab8e736198ab73cbb84001cc722620d1d2272b1"
+    },
+    "tokenizer_class": "PreTrainedTokenizerFast",
+    "vocab_size": 262144,
+    "special_tokens": {
+      "bos_token_id": 2,
+      "eos_token_id": 1,
+      "cls_token_id": 2,
+      "sep_token_id": 1,
+      "pad_token_id": 0,
+      "mask_token_id": 4
+    },
+    "first_token_head": "input_ids[:,0] = <bos> (token ID 2); ModernBERT native classifier_pooling=mean is not used",
+    "token_type_ids": "not emitted and not passed to ModernBERT"
+  },
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt": "480480c3b9a6bc8bdf53339c721e93f8cc30472ac8f0bd21d4440ce1171aefac",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt": "a9584a22c926a54c6042236380c9a65ab8c41467477f7a5d794fb2505c96a9c3"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "vsfc_sentiment",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "include_test": false,
+    "slot_label_names": []
+  },
+  "train_count": 11426,
+  "validation_count": 1583,
+  "num_aspects": 0,
+  "aspect_class_counts": [],
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "3",
+    "cublas_workspace_config": ":4096:8",
+    "hostname": "server-ai-new-02.vntt.lan"
+  },
+  "gpu_snapshot_at_start": {
+    "0": {
+      "free_mib": 41282,
+      "used_mib": 4176,
+      "util_pct": 0
+    },
+    "1": {
+      "free_mib": 13536,
+      "used_mib": 31922,
+      "util_pct": 88
+    },
+    "2": {
+      "free_mib": 43709,
+      "used_mib": 1750,
+      "util_pct": 0
+    },
+    "3": {
+      "free_mib": 43709,
+      "used_mib": 1749,
+      "util_pct": 0
+    }
+  },
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 166,
+    "p50_tokens": 14.0,
+    "p95_tokens": 37.0,
+    "p99_tokens": 55.75,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "started_at": "2026-09-17T15:03:10Z",
+  "started_at_unix": 1789657384.5107687,
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/sealion_benchmark/controller.py",
+    "--model-kind",
+    "sealion",
+    "--task",
+    "vsfc_sentiment",
+    "--learning-rate",
+    "5e-05",
+    "--device",
+    "cuda:0",
+    "--micro-batch",
+    "32"
+  ],
+  "pid": 3585529
+}

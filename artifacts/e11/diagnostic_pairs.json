@@ -1,0 +1,1416 @@
+{
+  "protocol": "E11-diagnostic-pairs-v1",
+  "status": "semantic_review_pending",
+  "created_at": "2026-09-11T15:47:47.764018+00:00",
+  "source_split": "synthetic_out_of_corpus",
+  "train_injection": false,
+  "test_loaded": false,
+  "pair_count": 26,
+  "task_label_mappings": {
+    "vsfc_sentiment": {
+      "label_names": [
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      "label_ids": {
+        "negative": 0,
+        "neutral": 1,
+        "positive": 2
+      },
+      "aspect_names": [],
+      "slot_label_names": [],
+      "slot_label_ids": [],
+      "label_policy": "fixed_source_map"
+    },
+    "vsfc_topic": {
+      "label_names": [
+        "lecturer",
+        "training_program",
+        "facility",
+        "others"
+      ],
+      "label_ids": {
+        "lecturer": 0,
+        "training_program": 1,
+        "facility": 2,
+        "others": 3
+      },
+      "aspect_names": [],
+      "slot_label_names": [],
+      "slot_label_ids": [],
+      "label_policy": "fixed_source_map"
+    },
+    "visfd": {
+      "label_names": [
+        "absent",
+        "positive",
+        "negative",
+        "neutral",
+        "others"
+      ],
+      "label_ids": {
+        "absent": 0,
+        "positive": 1,
+        "negative": 2,
+        "neutral": 3,
+        "others": 4
+      },
+      "aspect_names": [
+        "BATTERY",
+        "CAMERA",
+        "DESIGN",
+        "FEATURES",
+        "GENERAL",
+        "OTHERS",
+        "PERFORMANCE",
+        "PRICE",
+        "SCREEN",
+        "SER&ACC",
+        "STORAGE"
+      ],
+      "slot_label_names": [
+        [
+          "absent",
+          "positive",
+          "negative",
+          "neutral"
+        ],
+        [
+          "absent",
+          "positive",
+          "negative",
+          "neutral"
+        ],
+        [
+          "absent",
+          "positive",
+          "negative",
+          "neutral"
+        ],
+        [
+          "absent",
+          "positive",
+          "negative",
+          "neutral"
+        ],
+        [
+          "absent",
+          "positive",
+          "negative",
+          "neutral"
+        ],
+        [
+          "absent",
+          "others"
+        ],
+        [
+          "absent",
+          "positive",
+          "negative",
+          "neutral"
+        ],
+        [
+          "absent",
+          "positive",
+          "negative",
+          "neutral"
+        ],
+        [
+          "absent",
+          "positive",
+          "negative",
+          "neutral"
+        ],
+        [
+          "absent",
+          "positive",
+          "negative",
+          "neutral"
+        ],
+        [
+          "absent",
+          "positive",
+          "negative",
+          "neutral"
+        ]
+      ],
+      "slot_label_ids": [
+        {
+          "absent": 0,
+          "positive": 1,
+          "negative": 2,
+          "neutral": 3
+        },
+        {
+          "absent": 0,
+          "positive": 1,
+          "negative": 2,
+          "neutral": 3
+        },
+        {
+          "absent": 0,
+          "positive": 1,
+          "negative": 2,
+          "neutral": 3
+        },
+        {
+          "absent": 0,
+          "positive": 1,
+          "negative": 2,
+          "neutral": 3
+        },
+        {
+          "absent": 0,
+          "positive": 1,
+          "negative": 2,
+          "neutral": 3
+        },
+        {
+          "absent": 0,
+          "others": 1
+        },
+        {
+          "absent": 0,
+          "positive": 1,
+          "negative": 2,
+          "neutral": 3
+        },
+        {
+          "absent": 0,
+          "positive": 1,
+          "negative": 2,
+          "neutral": 3
+        },
+        {
+          "absent": 0,
+          "positive": 1,
+          "negative": 2,
+          "neutral": 3
+        },
+        {
+          "absent": 0,
+          "positive": 1,
+          "negative": 2,
+          "neutral": 3
+        },
+        {
+          "absent": 0,
+          "positive": 1,
+          "negative": 2,
+          "neutral": 3
+        }
+      ],
+      "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity"
+    },
+    "absa_restaurant": {
+      "label_names": [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      "label_ids": {
+        "absent": 0,
+        "negative": 1,
+        "neutral": 2,
+        "positive": 3
+      },
+      "aspect_names": [
+        "AMBIENCE#GENERAL",
+        "DRINKS#PRICES",
+        "DRINKS#QUALITY",
+        "DRINKS#STYLE&OPTIONS",
+        "FOOD#PRICES",
+        "FOOD#QUALITY",
+        "FOOD#STYLE&OPTIONS",
+        "LOCATION#GENERAL",
+        "RESTAURANT#GENERAL",
+        "RESTAURANT#MISCELLANEOUS",
+        "RESTAURANT#PRICES",
+        "SERVICE#GENERAL"
+      ],
+      "slot_label_names": [
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ]
+      ],
+      "slot_label_ids": [
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        }
+      ],
+      "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive"
+    },
+    "absa_hotel": {
+      "label_names": [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      "label_ids": {
+        "absent": 0,
+        "negative": 1,
+        "neutral": 2,
+        "positive": 3
+      },
+      "aspect_names": [
+        "FACILITIES#CLEANLINESS",
+        "FACILITIES#COMFORT",
+        "FACILITIES#DESIGN&FEATURES",
+        "FACILITIES#GENERAL",
+        "FACILITIES#MISCELLANEOUS",
+        "FACILITIES#PRICES",
+        "FACILITIES#QUALITY",
+        "FOOD&DRINKS#MISCELLANEOUS",
+        "FOOD&DRINKS#PRICES",
+        "FOOD&DRINKS#QUALITY",
+        "FOOD&DRINKS#STYLE&OPTIONS",
+        "HOTEL#CLEANLINESS",
+        "HOTEL#COMFORT",
+        "HOTEL#DESIGN&FEATURES",
+        "HOTEL#GENERAL",
+        "HOTEL#MISCELLANEOUS",
+        "HOTEL#PRICES",
+        "HOTEL#QUALITY",
+        "LOCATION#GENERAL",
+        "ROOMS#CLEANLINESS",
+        "ROOMS#COMFORT",
+        "ROOMS#DESIGN&FEATURES",
+        "ROOMS#GENERAL",
+        "ROOMS#MISCELLANEOUS",
+        "ROOMS#PRICES",
+        "ROOMS#QUALITY",
+        "ROOM_AMENITIES#CLEANLINESS",
+        "ROOM_AMENITIES#COMFORT",
+        "ROOM_AMENITIES#DESIGN&FEATURES",
+        "ROOM_AMENITIES#GENERAL",
+        "ROOM_AMENITIES#MISCELLANEOUS",
+        "ROOM_AMENITIES#PRICES",
+        "ROOM_AMENITIES#QUALITY",
+        "SERVICE#GENERAL"
+      ],
+      "slot_label_names": [
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        [
+          "absent",
+          "negative",
+          "neutral",
+          "positive"
+        ]
+      ],
+      "slot_label_ids": [
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        },
+        {
+          "absent": 0,
+          "negative": 1,
+          "neutral": 2,
+          "positive": 3
+        }
+      ],
+      "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive"
+    }
+  },
+  "pairs": [
+    {
+      "pair_id": "e11diag-001",
+      "task_id": "vsfc_sentiment",
+      "kind": "surface_paraphrase",
+      "base": "giảng viên rất nhiệt tình và dễ hiểu .",
+      "variant": "thầy cô rất tận tâm và giảng dễ hiểu .",
+      "base_expectations": [
+        {
+          "label_id": 2,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "label_id": 2,
+          "label_name": "positive"
+        }
+      ],
+      "expectation_scope": "whole_task_label"
+    },
+    {
+      "pair_id": "e11diag-002",
+      "task_id": "vsfc_sentiment",
+      "kind": "surface_paraphrase",
+      "base": "bài giảng rõ ràng và chi tiết .",
+      "variant": "nội dung trình bày mạch lạc và đầy đủ .",
+      "base_expectations": [
+        {
+          "label_id": 2,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "label_id": 2,
+          "label_name": "positive"
+        }
+      ],
+      "expectation_scope": "whole_task_label"
+    },
+    {
+      "pair_id": "e11diag-003",
+      "task_id": "vsfc_sentiment",
+      "kind": "surface_paraphrase",
+      "base": "giảng viên dạy khó hiểu .",
+      "variant": "cô giảng không dễ hiểu .",
+      "base_expectations": [
+        {
+          "label_id": 0,
+          "label_name": "negative"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "label_id": 0,
+          "label_name": "negative"
+        }
+      ],
+      "expectation_scope": "whole_task_label"
+    },
+    {
+      "pair_id": "e11diag-004",
+      "task_id": "vsfc_sentiment",
+      "kind": "negation_or_opposition",
+      "base": "giảng viên nhiệt tình .",
+      "variant": "giảng viên không nhiệt tình .",
+      "base_expectations": [
+        {
+          "label_id": 2,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "label_id": 0,
+          "label_name": "negative"
+        }
+      ],
+      "expectation_scope": "whole_task_label"
+    },
+    {
+      "pair_id": "e11diag-005",
+      "task_id": "vsfc_sentiment",
+      "kind": "negation_or_opposition",
+      "base": "bài giảng rõ ràng .",
+      "variant": "bài giảng không rõ ràng .",
+      "base_expectations": [
+        {
+          "label_id": 2,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "label_id": 0,
+          "label_name": "negative"
+        }
+      ],
+      "expectation_scope": "whole_task_label"
+    },
+    {
+      "pair_id": "e11diag-006",
+      "task_id": "vsfc_sentiment",
+      "kind": "negation_or_opposition",
+      "base": "môn học bình thường .",
+      "variant": "môn học không có gì nổi bật .",
+      "base_expectations": [
+        {
+          "label_id": 1,
+          "label_name": "neutral"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "label_id": 1,
+          "label_name": "neutral"
+        }
+      ],
+      "expectation_scope": "whole_task_label"
+    },
+    {
+      "pair_id": "e11diag-007",
+      "task_id": "vsfc_topic",
+      "kind": "surface_paraphrase",
+      "base": "giáo trình chưa cụ thể .",
+      "variant": "tài liệu môn học chưa rõ ràng .",
+      "base_expectations": [
+        {
+          "label_id": 1,
+          "label_name": "training_program"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "label_id": 1,
+          "label_name": "training_program"
+        }
+      ],
+      "expectation_scope": "whole_task_label"
+    },
+    {
+      "pair_id": "e11diag-008",
+      "task_id": "vsfc_topic",
+      "kind": "surface_paraphrase",
+      "base": "giảng viên rất nhiệt tình .",
+      "variant": "thầy cô dạy rất tận tâm .",
+      "base_expectations": [
+        {
+          "label_id": 0,
+          "label_name": "lecturer"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "label_id": 0,
+          "label_name": "lecturer"
+        }
+      ],
+      "expectation_scope": "whole_task_label"
+    },
+    {
+      "pair_id": "e11diag-009",
+      "task_id": "vsfc_topic",
+      "kind": "surface_paraphrase",
+      "base": "phòng học nhỏ .",
+      "variant": "cơ sở vật chất phòng học chật .",
+      "base_expectations": [
+        {
+          "label_id": 2,
+          "label_name": "facility"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "label_id": 2,
+          "label_name": "facility"
+        }
+      ],
+      "expectation_scope": "whole_task_label"
+    },
+    {
+      "pair_id": "e11diag-010",
+      "task_id": "vsfc_topic",
+      "kind": "negation_or_opposition",
+      "base": "giảng viên nhiệt tình .",
+      "variant": "giảng viên không nhiệt tình .",
+      "base_expectations": [
+        {
+          "label_id": 0,
+          "label_name": "lecturer"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "label_id": 0,
+          "label_name": "lecturer"
+        }
+      ],
+      "expectation_scope": "whole_task_label"
+    },
+    {
+      "pair_id": "e11diag-011",
+      "task_id": "vsfc_topic",
+      "kind": "negation_or_opposition",
+      "base": "giáo trình rõ ràng .",
+      "variant": "giáo trình không rõ ràng .",
+      "base_expectations": [
+        {
+          "label_id": 1,
+          "label_name": "training_program"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "label_id": 1,
+          "label_name": "training_program"
+        }
+      ],
+      "expectation_scope": "whole_task_label"
+    },
+    {
+      "pair_id": "e11diag-012",
+      "task_id": "visfd",
+      "kind": "surface_paraphrase",
+      "base": "pin dùng được hai ngày .",
+      "variant": "thời lượng pin kéo dài khoảng hai ngày .",
+      "base_expectations": [
+        {
+          "slot": "BATTERY",
+          "label_id": 1,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "BATTERY",
+          "label_id": 1,
+          "label_name": "positive"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-013",
+      "task_id": "visfd",
+      "kind": "surface_paraphrase",
+      "base": "camera chụp ảnh rất đẹp .",
+      "variant": "camera cho ảnh sắc nét .",
+      "base_expectations": [
+        {
+          "slot": "CAMERA",
+          "label_id": 1,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "CAMERA",
+          "label_id": 1,
+          "label_name": "positive"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-014",
+      "task_id": "visfd",
+      "kind": "surface_paraphrase",
+      "base": "máy chạy mượt khi chơi game .",
+      "variant": "chơi game trên máy rất mượt .",
+      "base_expectations": [
+        {
+          "slot": "PERFORMANCE",
+          "label_id": 1,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "PERFORMANCE",
+          "label_id": 1,
+          "label_name": "positive"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-015",
+      "task_id": "visfd",
+      "kind": "negation_or_opposition",
+      "base": "pin rất trâu .",
+      "variant": "pin không trâu .",
+      "base_expectations": [
+        {
+          "slot": "BATTERY",
+          "label_id": 1,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "BATTERY",
+          "label_id": 2,
+          "label_name": "negative"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-016",
+      "task_id": "visfd",
+      "kind": "negation_or_opposition",
+      "base": "camera đẹp .",
+      "variant": "camera không đẹp .",
+      "base_expectations": [
+        {
+          "slot": "CAMERA",
+          "label_id": 1,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "CAMERA",
+          "label_id": 2,
+          "label_name": "negative"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-017",
+      "task_id": "absa_restaurant",
+      "kind": "surface_paraphrase",
+      "base": "món ăn rất ngon .",
+      "variant": "đồ ăn có hương vị tuyệt vời .",
+      "base_expectations": [
+        {
+          "slot": "FOOD#QUALITY",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "FOOD#QUALITY",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-018",
+      "task_id": "absa_restaurant",
+      "kind": "surface_paraphrase",
+      "base": "nhân viên phục vụ thân thiện .",
+      "variant": "người phục vụ rất niềm nở .",
+      "base_expectations": [
+        {
+          "slot": "SERVICE#GENERAL",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "SERVICE#GENERAL",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-019",
+      "task_id": "absa_restaurant",
+      "kind": "negation_or_opposition",
+      "base": "đồ uống ngon .",
+      "variant": "đồ uống không ngon .",
+      "base_expectations": [
+        {
+          "slot": "DRINKS#QUALITY",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "DRINKS#QUALITY",
+          "label_id": 1,
+          "label_name": "negative"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-020",
+      "task_id": "absa_restaurant",
+      "kind": "negation_or_opposition",
+      "base": "món ăn ngon .",
+      "variant": "món ăn không ngon .",
+      "base_expectations": [
+        {
+          "slot": "FOOD#QUALITY",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "FOOD#QUALITY",
+          "label_id": 1,
+          "label_name": "negative"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-021",
+      "task_id": "absa_restaurant",
+      "kind": "aspect_addition",
+      "base": "món ăn ngon .",
+      "variant": "món ăn ngon và nhân viên phục vụ thân thiện .",
+      "base_expectations": [
+        {
+          "slot": "FOOD#QUALITY",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "FOOD#QUALITY",
+          "label_id": 3,
+          "label_name": "positive"
+        },
+        {
+          "slot": "SERVICE#GENERAL",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "note": "Evaluate only explicitly stated slots; added service clause may add a second aspect.",
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-022",
+      "task_id": "absa_hotel",
+      "kind": "surface_paraphrase",
+      "base": "phòng sạch sẽ .",
+      "variant": "phòng ốc được vệ sinh tươm tất .",
+      "base_expectations": [
+        {
+          "slot": "FACILITIES#CLEANLINESS",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "FACILITIES#CLEANLINESS",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-023",
+      "task_id": "absa_hotel",
+      "kind": "surface_paraphrase",
+      "base": "vị trí khách sạn thuận tiện .",
+      "variant": "khách sạn nằm ở nơi dễ đi lại .",
+      "base_expectations": [
+        {
+          "slot": "LOCATION#GENERAL",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "LOCATION#GENERAL",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-024",
+      "task_id": "absa_hotel",
+      "kind": "negation_or_opposition",
+      "base": "bữa sáng ngon .",
+      "variant": "bữa sáng không ngon .",
+      "base_expectations": [
+        {
+          "slot": "FOOD&DRINKS#QUALITY",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "FOOD&DRINKS#QUALITY",
+          "label_id": 1,
+          "label_name": "negative"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-025",
+      "task_id": "absa_hotel",
+      "kind": "negation_or_opposition",
+      "base": "nhân viên lịch sự .",
+      "variant": "nhân viên không lịch sự .",
+      "base_expectations": [
+        {
+          "slot": "SERVICE#GENERAL",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "SERVICE#GENERAL",
+          "label_id": 1,
+          "label_name": "negative"
+        }
+      ],
+      "expectation_scope": "explicit_slots_only"
+    },
+    {
+      "pair_id": "e11diag-026",
+      "task_id": "absa_hotel",
+      "kind": "aspect_addition",
+      "base": "phòng sạch sẽ .",
+      "variant": "phòng sạch sẽ và nhân viên lịch sự .",
+      "base_expectations": [
+        {
+          "slot": "FACILITIES#CLEANLINESS",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "variant_expectations": [
+        {
+          "slot": "FACILITIES#CLEANLINESS",
+          "label_id": 3,
+          "label_name": "positive"
+        },
+        {
+          "slot": "SERVICE#GENERAL",
+          "label_id": 3,
+          "label_name": "positive"
+        }
+      ],
+      "note": "Evaluate only explicitly stated slots; added service clause may add a second aspect.",
+      "expectation_scope": "explicit_slots_only"
+    }
+  ],
+  "review_notes": [
+    "Root should review semantic clarity before inference.",
+    "ABSA aspect-addition pairs intentionally score only explicitly stated slots.",
+    "These pairs are directional diagnostics and do not estimate benchmark prevalence."
+  ]
+}

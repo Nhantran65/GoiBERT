@@ -1,0 +1,54 @@
+{
+  "protocol": "E8-noise-consistency-layerwise-learning-rate-decay-v1",
+  "revision": "e8-20260910-r1",
+  "hypothesis": "Combining fixed E2 noise consistency with fixed E7 layer-wise learning-rate decay improves task adaptation while preserving lower-layer representations.",
+  "source_backbone": "models/goiturn-s-gd",
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_dependency": {
+    "runner_module": "goibert_e2.train",
+    "code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "mode": "nc",
+    "loss": "clean cross entropy + lambda * symmetric KL(clean, noisy)",
+    "temperature": 1.0,
+    "noise": "deterministic text noise keyed by seed, epoch, and stable example ID; independent dropout"
+  },
+  "e7_dependency": {
+    "module": "goibert_e7.optim",
+    "gamma": 0.8,
+    "num_layers": 10,
+    "head_and_last_block_scale": 1.0,
+    "embedding_scale": "gamma^10",
+    "block_scale": "gamma^(9-layer_index)",
+    "weight_decay": 0.01,
+    "exclude_from_weight_decay": ["bias", "LayerNorm.weight"],
+    "betas": [0.9, 0.999],
+    "epsilon": 1e-8,
+    "scheduler": "E2 linear warmup/decay with one common multiplier across groups"
+  },
+  "tasks": {
+    "vsfc_sentiment": {"learning_rate": 1e-5, "consistency_lambda": 0.1},
+    "vsfc_topic": {"learning_rate": 1e-5, "consistency_lambda": 0.5},
+    "visfd": {"learning_rate": 1e-4, "consistency_lambda": 0.5},
+    "absa_restaurant": {"learning_rate": 1e-4, "consistency_lambda": 0.1},
+    "absa_hotel": {"learning_rate": 1e-4, "consistency_lambda": 0.1}
+  },
+  "training": {
+    "seed": 42,
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32,
+    "max_length": 256,
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "include_test": false
+  },
+  "selection": {
+    "metric": "selection_f1",
+    "validation_only": true,
+    "multi_seed": false,
+    "test": false,
+    "teacher_inference": false,
+    "architecture_changes": false
+  }
+}

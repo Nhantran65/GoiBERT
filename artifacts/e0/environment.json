@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "collected_at_utc": "2026-09-07T17:34:04.328696+00:00",
+  "project_root": "/home/kiettqa/GoiBERT",
+  "python": {
+    "executable": "/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python",
+    "version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+    "implementation": "CPython",
+    "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39"
+  },
+  "packages": {
+    "torch": "2.6.0",
+    "transformers": "4.49.0",
+    "safetensors": "0.5.2",
+    "tokenizers": "0.21.0",
+    "accelerate": "1.4.0",
+    "numpy": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "pandas": "2.2.3",
+    "torch_runtime": {
+      "version": "2.6.0+cu124",
+      "cuda_available": true,
+      "cuda_version": "12.4",
+      "hip_version": null,
+      "cudnn_version": 90100,
+      "device_count": 4
+    }
+  },
+  "gpu": {
+    "nvidia_smi": {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=index,name,driver_version,memory.total,memory.used,memory.free,temperature.gpu,utilization.gpu",
+        "--format=csv,noheader,nounits"
+      ],
+      "returncode": 0,
+      "stdout": "0, NVIDIA L40S, 580.126.20, 46068, 4175, 41283, 33, 13\n1, NVIDIA L40S, 580.126.20, 46068, 24, 45434, 24, 0\n2, NVIDIA L40S, 580.126.20, 46068, 29178, 16281, 32, 0\n3, NVIDIA L40S, 580.126.20, 46068, 132, 45327, 25, 0",
+      "stderr": "",
+      "available": true
+    },
+    "compute_processes": {
+      "command": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader,nounits"
+      ],
+      "returncode": 0,
+      "stdout": "2346978, /usr/local/bin/python, 2248\n1531026, python3, 1240\n2145386, gst-launch-1.0, 510\n2789902, VLLM::EngineCore, 29148",
+      "stderr": "",
+      "available": true
+    },
+    "compute_processes_with_gpu_uuid": {
+      "command": [
+        "nvidia-smi",
+        "--query-compute-apps=gpu_uuid,gpu_name,pid,process_name,used_memory",
+        "--format=csv,noheader,nounits"
+      ],
+      "returncode": 0,
+      "stdout": "GPU-3e47988d-1803-811c-e396-e2aa7ce6e6bf, NVIDIA L40S, 2346978, /usr/local/bin/python, 2248\nGPU-3e47988d-1803-811c-e396-e2aa7ce6e6bf, NVIDIA L40S, 1531026, python3, 1240\nGPU-3e47988d-1803-811c-e396-e2aa7ce6e6bf, NVIDIA L40S, 2145386, gst-launch-1.0, 510\nGPU-e0c552e0-6e69-6d82-d61d-657dae4509aa, NVIDIA L40S, 2789902, VLLM::EngineCore, 29148",
+      "stderr": "",
+      "available": true
+    },
+    "devices": [
+      {
+        "index": "0",
+        "name": "NVIDIA L40S",
+        "driver_version": "580.126.20",
+        "memory.total": "46068",
+        "memory.used": "4175",
+        "memory.free": "41283",
+        "temperature.gpu": "33",
+        "utilization.gpu": "13"
+      },
+      {
+        "index": "1",
+        "name": "NVIDIA L40S",
+        "driver_version": "580.126.20",
+        "memory.total": "46068",
+        "memory.used": "24",
+        "memory.free": "45434",
+        "temperature.gpu": "24",
+        "utilization.gpu": "0"
+      },
+      {
+        "index": "2",
+        "name": "NVIDIA L40S",
+        "driver_version": "580.126.20",
+        "memory.total": "46068",
+        "memory.used": "29178",
+        "memory.free": "16281",
+        "temperature.gpu": "32",
+        "utilization.gpu": "0"
+      },
+      {
+        "index": "3",
+        "name": "NVIDIA L40S",
+        "driver_version": "580.126.20",
+        "memory.total": "46068",
+        "memory.used": "132",
+        "memory.free": "45327",
+        "temperature.gpu": "25",
+        "utilization.gpu": "0"
+      }
+    ],
+    "device_count": 4,
+    "four_l40s_verified": true,
+    "allocation_status": "verified_4x_l40s"
+  },
+  "resources": {
+    "disk_total_bytes": 7678097096704,
+    "disk_used_bytes": 4655120437248,
+    "disk_free_bytes": 3022976659456,
+    "cpu_count": 128
+  },
+  "models": {
+    "goiturn-s-gd": {
+      "path": "/home/kiettqa/GoiBERT/models/goiturn-s-gd",
+      "config": {
+        "architectures": [
+          "RobertaModel"
+        ],
+        "model_type": "roberta",
+        "transformers_version": "4.49.0",
+        "vocab_size": 20481,
+        "max_position_embeddings": 2050,
+        "num_hidden_layers": 10,
+        "hidden_size": 384,
+        "num_attention_heads": 6,
+        "intermediate_size": 1536,
+        "torch_dtype": "float32"
+      },
+      "parameter_count_from_safetensors": 26397696,
+      "expected_pooler_free_encoder_parameter_count": 26397696,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        "config.json": {
+          "bytes": 632,
+          "sha256": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3"
+        },
+        "distill_manifest.json": {
+          "bytes": 3751,
+          "sha256": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c"
+        },
+        "model.safetensors": {
+          "bytes": 105609040,
+          "sha256": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca"
+        },
+        "special_tokens_map.json": {
+          "bytes": 965,
+          "sha256": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738"
+        },
+        "tokenizer.json": {
+          "bytes": 1432630,
+          "sha256": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491"
+        },
+        "tokenizer_config.json": {
+          "bytes": 1210,
+          "sha256": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+        }
+      }
+    },
+    "goibert-b-dapt": {
+      "path": "/home/kiettqa/GoiBERT/models/goibert-b-dapt",
+      "config": {
+        "architectures": [
+          "RobertaForMaskedLM"
+        ],
+        "model_type": "roberta",
+        "transformers_version": "4.49.0",
+        "vocab_size": 20481,
+        "max_position_embeddings": 2050,
+        "num_hidden_layers": 12,
+        "hidden_size": 768,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "torch_dtype": "float32"
+      },
+      "parameter_count_from_safetensors": 102973185,
+      "expected_pooler_free_encoder_parameter_count": 102360576,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        "config.json": {
+          "bytes": 717,
+          "sha256": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89"
+        },
+        "model.safetensors": {
+          "bytes": 411916924,
+          "sha256": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f"
+        },
+        "pretrain_manifest.json": {
+          "bytes": 1391,
+          "sha256": "e035bf3cf53eaf7558c23129d56732472cf7a79bff66424b03609c41a6798191"
+        },
+        "special_tokens_map.json": {
+          "bytes": 965,
+          "sha256": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738"
+        },
+        "tokenizer.json": {
+          "bytes": 1432630,
+          "sha256": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491"
+        },
+        "tokenizer_config.json": {
+          "bytes": 1210,
+          "sha256": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+        }
+      }
+    }
+  },
+  "checks": {
+    "gpu_available": true,
+    "gpu_four_l40s": true,
+    "student_present": true,
+    "teacher_present": true,
+    "source_weights_modified": false
+  },
+  "notes": [
+    "GPU/process inventory is read-only; no process was terminated or reserved.",
+    "A failed nvidia-smi means GPU availability is unverified, not that four L40S exist.",
+    "Model hashes are evidence for this checkout and do not reproduce historical training."
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "protocol": "E20-cti-screening-v1",
+  "revision": "e20-20260914-r1",
+  "status": "running",
+  "created_at": "2026-09-13T17:50:36Z",
+  "source_manifest_sha256": "b75650723cdaf999fea535f4730a52b9ab19d31b1d369b7aefc9d884c0d94868",
+  "dispatch_approved": true,
+  "arms": [
+    "d1_composite",
+    "cti"
+  ],
+  "tasks": [
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "jobs": [
+    {
+      "arm": "d1_composite",
+      "task_id": "absa_restaurant",
+      "device": "cuda:1",
+      "pid": 2981272,
+      "output_dir": "/home/kiettqa/GoiBERT/artifacts/e20/d1_composite/absa_restaurant/seed_42",
+      "log": "/home/kiettqa/GoiBERT/artifacts/e20/logs/d1_composite__absa_restaurant.log",
+      "command": [
+        "/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python",
+        "/home/kiettqa/GoiBERT/scripts/run_e20.py",
+        "--worker",
+        "--arm",
+        "d1_composite",
+        "--task-id",
+        "absa_restaurant",
+        "--device",
+        "cuda:1",
+        "--output-dir",
+        "/home/kiettqa/GoiBERT/artifacts/e20/d1_composite/absa_restaurant/seed_42"
+      ],
+      "status": "completed",
+      "started_at": "2026-09-13T17:50:36Z",
+      "returncode": 0,
+      "finished_at": "2026-09-13T18:21:07Z"
+    },
+    {
+      "arm": "cti",
+      "task_id": "absa_restaurant",
+      "device": "cuda:1",
+      "pid": 3087234,
+      "output_dir": "/home/kiettqa/GoiBERT/artifacts/e20/cti/absa_restaurant/seed_42",
+      "log": "/home/kiettqa/GoiBERT/artifacts/e20/logs/cti__absa_restaurant.log",
+      "command": [
+        "/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python",
+        "/home/kiettqa/GoiBERT/scripts/run_e20.py",
+        "--worker",
+        "--arm",
+        "cti",
+        "--task-id",
+        "absa_restaurant",
+        "--device",
+        "cuda:1",
+        "--output-dir",
+        "/home/kiettqa/GoiBERT/artifacts/e20/cti/absa_restaurant/seed_42"
+      ],
+      "status": "completed",
+      "started_at": "2026-09-13T18:21:07Z",
+      "returncode": 0,
+      "finished_at": "2026-09-13T18:57:17Z"
+    },
+    {
+      "arm": "d1_composite",
+      "task_id": "absa_hotel",
+      "device": "cuda:1",
+      "pid": 3205003,
+      "output_dir": "/home/kiettqa/GoiBERT/artifacts/e20/d1_composite/absa_hotel/seed_42",
+      "log": "/home/kiettqa/GoiBERT/artifacts/e20/logs/d1_composite__absa_hotel.log",
+      "command": [
+        "/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python",
+        "/home/kiettqa/GoiBERT/scripts/run_e20.py",
+        "--worker",
+        "--arm",
+        "d1_composite",
+        "--task-id",
+        "absa_hotel",
+        "--device",
+        "cuda:1",
+        "--output-dir",
+        "/home/kiettqa/GoiBERT/artifacts/e20/d1_composite/absa_hotel/seed_42"
+      ],
+      "status": "failed",
+      "started_at": "2026-09-13T18:57:17Z",
+      "returncode": 1,
+      "finished_at": "2026-09-13T18:57:27Z"
+    }
+  ],
+  "queue_remaining": [
+    {
+      "task_id": "absa_hotel",
+      "arm": "cti"
+    }
+  ],
+  "heartbeat_at": "2026-09-13T18:57:17Z",
+  "active_pids": [
+    3205003
+  ]
+}

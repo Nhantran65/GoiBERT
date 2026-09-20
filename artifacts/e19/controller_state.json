@@ -1,0 +1,111 @@
+{
+  "protocol": "E19-dapt-nc-llrd-screening-v1",
+  "revision": "e19-20260914-r1",
+  "status": "completed",
+  "created_at": "2026-09-13T17:18:26Z",
+  "source_manifest_sha256": "36e385571f9262fbb8d8409e77e84092d40a3cde3bd6d8583b81a173426dfb62",
+  "dispatch_approved": true,
+  "tasks": [
+    "absa_hotel",
+    "visfd",
+    "vsfc_topic",
+    "vsfc_sentiment"
+  ],
+  "jobs": [
+    {
+      "task_id": "absa_hotel",
+      "device": "cuda:0",
+      "pid": 2746511,
+      "output_dir": "/home/kiettqa/GoiBERT/artifacts/e19/absa_hotel/seed_42",
+      "log": "/home/kiettqa/GoiBERT/artifacts/e19/logs/absa_hotel.log",
+      "command": [
+        "/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python",
+        "/home/kiettqa/GoiBERT/scripts/run_e19.py",
+        "--worker",
+        "--task-id",
+        "absa_hotel",
+        "--device",
+        "cuda:0",
+        "--output-dir",
+        "/home/kiettqa/GoiBERT/artifacts/e19/absa_hotel/seed_42"
+      ],
+      "status": "completed",
+      "started_at": "2026-09-13T17:18:26Z",
+      "returncode": 0,
+      "finished_at": "2026-09-13T17:50:06Z"
+    },
+    {
+      "task_id": "visfd",
+      "device": "cuda:2",
+      "pid": 2746532,
+      "output_dir": "/home/kiettqa/GoiBERT/artifacts/e19/visfd/seed_42",
+      "log": "/home/kiettqa/GoiBERT/artifacts/e19/logs/visfd.log",
+      "command": [
+        "/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python",
+        "/home/kiettqa/GoiBERT/scripts/run_e19.py",
+        "--worker",
+        "--task-id",
+        "visfd",
+        "--device",
+        "cuda:2",
+        "--output-dir",
+        "/home/kiettqa/GoiBERT/artifacts/e19/visfd/seed_42"
+      ],
+      "status": "completed",
+      "started_at": "2026-09-13T17:18:26Z",
+      "returncode": 0,
+      "finished_at": "2026-09-13T17:54:37Z"
+    },
+    {
+      "task_id": "vsfc_topic",
+      "device": "cuda:3",
+      "pid": 2746624,
+      "output_dir": "/home/kiettqa/GoiBERT/artifacts/e19/vsfc_topic/seed_42",
+      "log": "/home/kiettqa/GoiBERT/artifacts/e19/logs/vsfc_topic.log",
+      "command": [
+        "/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python",
+        "/home/kiettqa/GoiBERT/scripts/run_e19.py",
+        "--worker",
+        "--task-id",
+        "vsfc_topic",
+        "--device",
+        "cuda:3",
+        "--output-dir",
+        "/home/kiettqa/GoiBERT/artifacts/e19/vsfc_topic/seed_42"
+      ],
+      "status": "completed",
+      "started_at": "2026-09-13T17:18:26Z",
+      "returncode": 0,
+      "finished_at": "2026-09-13T17:54:37Z"
+    },
+    {
+      "task_id": "vsfc_sentiment",
+      "device": "cuda:0",
+      "pid": 2979700,
+      "output_dir": "/home/kiettqa/GoiBERT/artifacts/e19/vsfc_sentiment/seed_42",
+      "log": "/home/kiettqa/GoiBERT/artifacts/e19/logs/vsfc_sentiment.log",
+      "command": [
+        "/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python",
+        "/home/kiettqa/GoiBERT/scripts/run_e19.py",
+        "--worker",
+        "--task-id",
+        "vsfc_sentiment",
+        "--device",
+        "cuda:0",
+        "--output-dir",
+        "/home/kiettqa/GoiBERT/artifacts/e19/vsfc_sentiment/seed_42"
+      ],
+      "status": "completed",
+      "started_at": "2026-09-13T17:50:07Z",
+      "returncode": 0,
+      "finished_at": "2026-09-13T18:23:07Z"
+    }
+  ],
+  "queue_remaining": [],
+  "heartbeat_at": "2026-09-13T18:22:57Z",
+  "active_pids": [
+    2746624,
+    2979700
+  ],
+  "finished_at": "2026-09-13T18:23:07Z"
+}

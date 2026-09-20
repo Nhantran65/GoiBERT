@@ -1,0 +1,131 @@
+{
+  "protocol": "architecture-transfer-audit-e13-e15-v1",
+  "rows": [
+    {
+      "comparison": "E13_vs_E8",
+      "dimension": "backbone",
+      "architecture": "E13",
+      "value": "goiturn-s-gd",
+      "reference": "goiturn-s-gd"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "dimension": "backbone",
+      "architecture": "E15",
+      "value": "BamiBERT original",
+      "reference": "BamiBERT original"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "dimension": "head",
+      "architecture": "E13",
+      "value": "CLS dense384 tanh dropout0.1",
+      "reference": "CLS dense384 tanh dropout0.1"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "dimension": "head",
+      "architecture": "E15",
+      "value": "CLS dense768 tanh dropout0.1",
+      "reference": "CLS dense768 tanh dropout0.1"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "dimension": "dropout",
+      "architecture": "E13",
+      "value": "training recipe dropout; eval disabled",
+      "reference": "training recipe dropout; eval disabled"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "dimension": "dropout",
+      "architecture": "E15",
+      "value": "training recipe dropout; eval disabled",
+      "reference": "training recipe dropout; eval disabled"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "dimension": "optimizer",
+      "architecture": "E13",
+      "value": "AdamW + E7 LLRD gamma0.8",
+      "reference": "AdamW + E7 LLRD gamma0.8"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "dimension": "optimizer",
+      "architecture": "E15",
+      "value": "AdamW no LLRD",
+      "reference": "AdamW no LLRD"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "dimension": "rng_path",
+      "architecture": "E13",
+      "value": "seed42; E13 replacement under fork_rng",
+      "reference": "seed42 fresh E8 student"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "dimension": "rng_path",
+      "architecture": "E15",
+      "value": "seed42; E15 replacement under fork_rng",
+      "reference": "seed42 fresh E14 classifier"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "dimension": "loss",
+      "architecture": "E13",
+      "value": "CE + NC",
+      "reference": "CE + NC"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "dimension": "loss",
+      "architecture": "E15",
+      "value": "plain CE",
+      "reference": "plain CE"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "dimension": "train_batch",
+      "architecture": "E13",
+      "value": "effective32; micro32",
+      "reference": "effective32; micro32"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "dimension": "train_batch",
+      "architecture": "E15",
+      "value": "effective32; micro16/32",
+      "reference": "effective32; micro16/32"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "dimension": "precision_backend",
+      "architecture": "E13",
+      "value": "BF16/SDPA",
+      "reference": "BF16/SDPA"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "dimension": "precision_backend",
+      "architecture": "E15",
+      "value": "BF16/SDPA",
+      "reference": "BF16/SDPA"
+    },
+    {
+      "comparison": "E13_vs_E8",
+      "dimension": "measurement_scope",
+      "architecture": "E13",
+      "value": "validation; audit fixed micro16",
+      "reference": "validation training artifact"
+    },
+    {
+      "comparison": "E15_vs_E14",
+      "dimension": "measurement_scope",
+      "architecture": "E15",
+      "value": "validation; audit fixed micro16",
+      "reference": "validation training artifact"
+    }
+  ]
+}

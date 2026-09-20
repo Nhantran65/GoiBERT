@@ -1,0 +1,72 @@
+{
+  "protocol": "E20-cti-screening-v1",
+  "revision": "e20-20260914-r1",
+  "created_at": "2026-09-13T17:40:14Z",
+  "runner_sha256": "13a898949070058cd2bbb22cfdbe22069ec67b55793d02a2ef2fb2af8e3ecc28",
+  "source_hashes": {
+    "scripts/run_e20.py": "13a898949070058cd2bbb22cfdbe22069ec67b55793d02a2ef2fb2af8e3ecc28",
+    "configs/e20/protocol.json": "af475c5b26a3eae6441e730d28c9ddffcee9894629912565e0213a47766647fd",
+    "src/goibert_e2/train.py": "b3c28a9ee2c55ef6f24a1fe9ed2f342e5aea18f533b2e571ece0aae2e06f3ce2",
+    "src/goibert_e2/modeling.py": "b6049133d32f6a8b6f9aa063e47be3b5e1b79aeba1e06e917343079586ab0af4",
+    "src/goibert_e2/losses.py": "ca5ffa013350ba720a1f1a00debc3c2615cc3c25aad5b4726143293bf96491df",
+    "src/goibert_e2/noise.py": "8409775ef99ef5f96a9504f2d91eb5a738c5928ce960567ecaa3e5929a87dd29",
+    "src/goibert_e2/cache.py": "3b8db5cd1797212fe5d9b18f0ca59717594b1f69d76ea0c79bed45b2f862d2e7",
+    "src/goibert_e7/optim.py": "188ef994c5b271804be71ba618881071397e397731320624bd271b236a77d690",
+    "src/goibert/train.py": "ede96aaf63f02b808e5034f58953cfbce9a03438ed71f10f775de314a40bc578",
+    "src/goibert/modeling.py": "c8cf5b69e056cffd81f5606a813cd36779a7ef9f785c0d107faf8d8485585c49",
+    "src/goibert/data.py": "aeff87536a81c039d4240962140463693286c5241ce09630f5ad1b13699efc57"
+  },
+  "encoder": {
+    "path": "/home/kiettqa/GoiBERT/models/goibert-b-dapt",
+    "files": {
+      "config.json": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89",
+      "model.safetensors": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f",
+      "pretrain_manifest.json": "e035bf3cf53eaf7558c23129d56732472cf7a79bff66424b03609c41a6798191",
+      "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+      "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+      "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+    }
+  },
+  "frozen_e2_source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "recipe": {
+    "arms": [
+      "d1_composite",
+      "cti"
+    ],
+    "mu_by_arm": {
+      "d1_composite": 0.0,
+      "cti": 0.3
+    },
+    "tasks": [
+      "absa_restaurant",
+      "absa_hotel"
+    ],
+    "seed": 42,
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size": 16,
+    "accumulation_steps": 2,
+    "max_length": 256,
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "gamma": 0.8,
+    "num_layers": 12,
+    "weight_decay": 0.01,
+    "task_lrs": {
+      "absa_restaurant": 2e-05,
+      "absa_hotel": 5e-05
+    },
+    "nc_lambdas": {
+      "absa_restaurant": 0.1,
+      "absa_hotel": 0.1
+    },
+    "max_composite_tokens": 48,
+    "rare_pair_threshold": 5
+  }
+}

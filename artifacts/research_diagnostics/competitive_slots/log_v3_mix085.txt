@@ -1,0 +1,40 @@
+[absa_restaurant K=2 beta=0.0 union=1.0 route=0.0] parity {'max_abs_slot_vs_manualK1': 3.814697265625e-06, 'max_abs_manualK1_vs_native_bf16': 0.047088623046875, 'max_abs_fullmask_fork_vs_manualK1': 3.814697265625e-06}
+  step 0 loss 0.0886 route 0.0000 |delta| 1.424 |qb| 0.437
+  step 100 loss 0.0433 route 0.0000 |delta| 4.224 |qb| 11.242
+  step 200 loss 0.0339 route 0.0000 |delta| 6.178 |qb| 16.473
+  step 300 loss 0.0287 route 0.0000 |delta| 6.554 |qb| 18.483
+  step 400 loss 0.0222 route 0.0000 |delta| 6.940 |qb| 20.422
+  step 499 loss 0.0564 route 0.0000 |delta| 7.512 |qb| 22.516
+[absa_restaurant K=2 beta=0.0 union=1.0 route=0.0] valF1=70.622 multi_missed=18.0 usage=[4548, 4704] errors={'missed': 162, 'spurious': 163, 'wrong_polarity': 147, 'tp': 744, 'gold': 1053, 'pred': 1054} envelope={'oracle_max_pair_f1': 70.953, 'oracle_delta': -0.2999999999999998, 'f1_at_delta0': 70.622}
+  {"A_first|A_correct": 52.0, "A_first|A_present": 76.0, "A_first|B_correct": 52.5, "A_first|B_present": 70.5, "A_first|both_correct": 24.5, "B_first|A_correct": 52.0, "B_first|A_present": 75.0, "B_first|B_correct": 47.5, "B_first|B_present": 73.5, "B_first|both_correct": 24.0, "A+3B|A_correct": 44.5, "A+3B|A_present": 69.0, "A+3B|B_correct": 64.5, "A+3B|B_present": 82.5, "A+3B|both_correct": 27.5, "A_alone|A_correct": 68.0}
+  partition null
+[absa_restaurant K=2 beta=0.0 union=1.0 route=1.0] parity {'max_abs_slot_vs_manualK1': 3.814697265625e-06, 'max_abs_manualK1_vs_native_bf16': 0.047088623046875, 'max_abs_fullmask_fork_vs_manualK1': 3.814697265625e-06}
+  step 0 loss 1.7274 route 1.6387 |delta| 1.422 |qb| 0.438
+  step 100 loss 0.4262 route 0.3853 |delta| 4.590 |qb| 12.110
+  step 200 loss 0.3743 route 0.3414 |delta| 7.420 |qb| 18.961
+  step 300 loss 0.1021 route 0.0744 |delta| 8.332 |qb| 21.866
+  step 400 loss 0.0565 route 0.0294 |delta| 9.237 |qb| 24.220
+  step 499 loss 0.5495 route 0.4756 |delta| 9.426 |qb| 25.681
+[absa_restaurant K=2 beta=0.0 union=1.0 route=1.0] valF1=69.345 multi_missed=13.2 usage=[3041, 6211] errors={'missed': 120, 'spurious': 229, 'wrong_polarity': 165, 'tp': 768, 'gold': 1053, 'pred': 1162} envelope={'oracle_max_pair_f1': 70.162, 'oracle_delta': 1.5500000000000007, 'f1_at_delta0': 69.345}
+  {"A_first|A_correct": 56.5, "A_first|A_present": 82.0, "A_first|B_correct": 58.0, "A_first|B_present": 79.0, "A_first|both_correct": 29.5, "B_first|A_correct": 60.5, "B_first|A_present": 82.5, "B_first|B_correct": 53.0, "B_first|B_present": 78.5, "B_first|both_correct": 31.5, "A+3B|A_correct": 45.5, "A+3B|A_present": 73.5, "A+3B|B_correct": 65.5, "A+3B|B_present": 85.5, "A+3B|both_correct": 26.0, "A_alone|A_correct": 70.5}
+  partition null
+[absa_hotel K=2 beta=0.0 union=1.0 route=0.0] parity {'max_abs_slot_vs_manualK1': 2.86102294921875e-06, 'max_abs_manualK1_vs_native_bf16': 0.027775049209594727, 'max_abs_fullmask_fork_vs_manualK1': 2.7418136596679688e-06}
+  step 0 loss 0.0317 route 0.0000 |delta| 1.424 |qb| 0.433
+  step 100 loss 0.0362 route 0.0000 |delta| 4.355 |qb| 10.718
+  step 200 loss 0.0272 route 0.0000 |delta| 5.623 |qb| 15.774
+  step 300 loss 0.0249 route 0.0000 |delta| 5.667 |qb| 17.173
+  step 400 loss 0.0171 route 0.0000 |delta| 6.281 |qb| 19.096
+  step 499 loss 0.0373 route 0.0000 |delta| 6.492 |qb| 20.977
+[absa_hotel K=2 beta=0.0 union=1.0 route=0.0] valF1=72.649 multi_missed=25.8 usage=[12845, 14185] errors={'missed': 313, 'spurious': 236, 'wrong_polarity': 73, 'tp': 923, 'gold': 1309, 'pred': 1232} envelope={'oracle_max_pair_f1': 72.866, 'oracle_delta': 0.35000000000000053, 'f1_at_delta0': 72.649}
+  {"A_first|A_correct": 52.0, "A_first|A_present": 60.5, "A_first|B_correct": 58.5, "A_first|B_present": 65.0, "A_first|both_correct": 26.5, "B_first|A_correct": 48.5, "B_first|A_present": 54.0, "B_first|B_correct": 61.5, "B_first|B_present": 69.5, "B_first|both_correct": 25.5, "A+3B|A_correct": 44.0, "A+3B|A_present": 51.0, "A+3B|B_correct": 69.5, "A+3B|B_present": 73.0, "A+3B|both_correct": 27.5, "A_alone|A_correct": 59.0}
+  partition null
+[absa_hotel K=2 beta=0.0 union=1.0 route=1.0] parity {'max_abs_slot_vs_manualK1': 2.86102294921875e-06, 'max_abs_manualK1_vs_native_bf16': 0.027775049209594727, 'max_abs_fullmask_fork_vs_manualK1': 2.7418136596679688e-06}
+  step 0 loss 0.5211 route 0.4894 |delta| 1.418 |qb| 0.438
+  step 100 loss 0.2395 route 0.2041 |delta| 5.048 |qb| 12.355
+  step 200 loss 0.1170 route 0.0829 |delta| 7.572 |qb| 19.780
+  step 300 loss 0.1790 route 0.1446 |delta| 8.669 |qb| 22.907
+  step 400 loss 0.2656 route 0.2343 |delta| 9.200 |qb| 23.997
+  step 499 loss 0.1114 route 0.0556 |delta| 10.019 |qb| 25.573
+[absa_hotel K=2 beta=0.0 union=1.0 route=1.0] valF1=69.927 multi_missed=21.4 usage=[14817, 12213] errors={'missed': 259, 'spurious': 381, 'wrong_polarity': 92, 'tp': 958, 'gold': 1309, 'pred': 1431} envelope={'oracle_max_pair_f1': 71.005, 'oracle_delta': 0.6500000000000004, 'f1_at_delta0': 69.927}
+  {"A_first|A_correct": 54.5, "A_first|A_present": 61.0, "A_first|B_correct": 65.0, "A_first|B_present": 72.0, "A_first|both_correct": 31.0, "B_first|A_correct": 56.0, "B_first|A_present": 61.0, "B_first|B_correct": 63.0, "B_first|B_present": 71.5, "B_first|both_correct": 31.0, "A+3B|A_correct": 50.5, "A+3B|A_present": 56.0, "A+3B|B_correct": 70.0, "A+3B|B_present": 76.5, "A+3B|both_correct": 31.5, "A_alone|A_correct": 62.0}
+  partition null

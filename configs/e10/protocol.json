@@ -1,0 +1,51 @@
+{
+  "protocol": "E10-span-residual-vs-multikernel-conv-v1",
+  "revision": "e10-20260911-r1",
+  "source_backbone": "models/goiturn-s-gd",
+  "insertion": {
+    "layer_index": 1,
+    "position": "after_transformer_block_2_before_block_3",
+    "hidden_size": 384,
+    "span_widths": [1, 2, 3, 4],
+    "alignment": "raw_unicode_units_fast_tokenizer_offsets_visible_after_truncation"
+  },
+  "variants": {
+    "span": {
+      "rank": 128,
+      "routing": "content_query_position_softmax_with_learned_null",
+      "null_value": 0.0,
+      "output_projection_init": "zero_weight_and_bias"
+    },
+    "conv": {
+      "rank": 140,
+      "routing": "uniform_average_valid_kernels_covering_unit",
+      "query": false,
+      "null": false,
+      "output_projection_init": "zero_weight_and_bias"
+    }
+  },
+  "recipe": {
+    "seed": 42,
+    "epochs": 30,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32,
+    "max_length": 256,
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "gamma": 0.8,
+    "nc_lambda": {
+      "vsfc_sentiment": 0.1,
+      "vsfc_topic": 0.5,
+      "visfd": 0.5,
+      "absa_restaurant": 0.1,
+      "absa_hotel": 0.1
+    }
+  },
+  "selection": {
+    "validation_only": true,
+    "metric": "selection_f1",
+    "test": false,
+    "multi_seed": false,
+    "total_trials": 10
+  }
+}

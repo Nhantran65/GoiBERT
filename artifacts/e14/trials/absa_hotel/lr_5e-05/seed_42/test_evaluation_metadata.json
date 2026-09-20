@@ -1,0 +1,709 @@
+{
+  "protocol": "E14-test-gate-v1",
+  "task_id": "absa_hotel",
+  "split": "test",
+  "locked_selection_manifest": "artifacts/e14/locked_selection_manifest.json",
+  "checkpoint_sha256": "9943b50aaa6ae2914bb11ff7b0bced4345c448aa98e0675131ab72935a03b97f",
+  "model_source": "Qualcomm-AI-Research/BamiBERT",
+  "hf_commit": "57bc1340debbe4e348ec549047a763caebe4a977",
+  "model_spec": {
+    "backbone": "Qualcomm-AI-Research/BamiBERT",
+    "hidden_size": 768,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 136,
+    "num_aspects": 34,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 103055752,
+    "trainable_parameters": 103055752
+  },
+  "test_count": 2030,
+  "id_count": 2030,
+  "gold_count": 2030,
+  "metrics": {
+    "n": 2030,
+    "aspect_count": 34,
+    "aspect_names": [
+      "FACILITIES#CLEANLINESS",
+      "FACILITIES#COMFORT",
+      "FACILITIES#DESIGN&FEATURES",
+      "FACILITIES#GENERAL",
+      "FACILITIES#MISCELLANEOUS",
+      "FACILITIES#PRICES",
+      "FACILITIES#QUALITY",
+      "FOOD&DRINKS#MISCELLANEOUS",
+      "FOOD&DRINKS#PRICES",
+      "FOOD&DRINKS#QUALITY",
+      "FOOD&DRINKS#STYLE&OPTIONS",
+      "HOTEL#CLEANLINESS",
+      "HOTEL#COMFORT",
+      "HOTEL#DESIGN&FEATURES",
+      "HOTEL#GENERAL",
+      "HOTEL#MISCELLANEOUS",
+      "HOTEL#PRICES",
+      "HOTEL#QUALITY",
+      "LOCATION#GENERAL",
+      "ROOMS#CLEANLINESS",
+      "ROOMS#COMFORT",
+      "ROOMS#DESIGN&FEATURES",
+      "ROOMS#GENERAL",
+      "ROOMS#MISCELLANEOUS",
+      "ROOMS#PRICES",
+      "ROOMS#QUALITY",
+      "ROOM_AMENITIES#CLEANLINESS",
+      "ROOM_AMENITIES#COMFORT",
+      "ROOM_AMENITIES#DESIGN&FEATURES",
+      "ROOM_AMENITIES#GENERAL",
+      "ROOM_AMENITIES#MISCELLANEOUS",
+      "ROOM_AMENITIES#PRICES",
+      "ROOM_AMENITIES#QUALITY",
+      "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8026477832512315,
+    "detection_micro_recall": 0.7996932515337424,
+    "detection_micro_f1": 0.8011677934849416,
+    "detection_macro_precision": 0.6247736561568684,
+    "detection_macro_recall": 0.5522370331776422,
+    "detection_macro_f1": 0.5699795815647899,
+    "pair_micro_precision": 0.7407635467980296,
+    "pair_micro_recall": 0.7380368098159509,
+    "pair_micro_f1": 0.7393976644130301,
+    "pair_macro_precision": 0.5605694634198009,
+    "pair_macro_recall": 0.49485660729453895,
+    "pair_macro_f1": 0.5101049405441176,
+    "classification_pair_micro_f1": 0.7393976644130301,
+    "classification_pair_macro_f1": 0.5101049405441176,
+    "per_aspect": {
+      "FACILITIES#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9375,
+          "recall": 0.9375,
+          "f1": 0.9375
+        },
+        "pair": {
+          "precision": 0.875,
+          "recall": 0.875,
+          "f1": 0.875
+        },
+        "detection_tp": 15,
+        "gold_present": 16,
+        "predicted_present": 16
+      },
+      "FACILITIES#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 6,
+        "predicted_present": 0
+      },
+      "FACILITIES#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5833333333333334,
+          "recall": 0.4117647058823529,
+          "f1": 0.4827586206896552
+        },
+        "pair": {
+          "precision": 0.4166666666666667,
+          "recall": 0.29411764705882354,
+          "f1": 0.3448275862068966
+        },
+        "detection_tp": 7,
+        "gold_present": 17,
+        "predicted_present": 12
+      },
+      "FACILITIES#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5757575757575758,
+          "recall": 0.4222222222222222,
+          "f1": 0.48717948717948717
+        },
+        "pair": {
+          "precision": 0.5151515151515151,
+          "recall": 0.37777777777777777,
+          "f1": 0.4358974358974359
+        },
+        "detection_tp": 19,
+        "gold_present": 45,
+        "predicted_present": 33
+      },
+      "FACILITIES#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6666666666666666,
+          "recall": 0.18181818181818182,
+          "f1": 0.2857142857142857
+        },
+        "pair": {
+          "precision": 0.6666666666666666,
+          "recall": 0.18181818181818182,
+          "f1": 0.2857142857142857
+        },
+        "detection_tp": 2,
+        "gold_present": 11,
+        "predicted_present": 3
+      },
+      "FACILITIES#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        "detection_tp": 2,
+        "gold_present": 6,
+        "predicted_present": 2
+      },
+      "FACILITIES#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.625,
+          "recall": 0.6818181818181818,
+          "f1": 0.6521739130434783
+        },
+        "pair": {
+          "precision": 0.4583333333333333,
+          "recall": 0.5,
+          "f1": 0.4782608695652174
+        },
+        "detection_tp": 15,
+        "gold_present": 22,
+        "predicted_present": 24
+      },
+      "FOOD&DRINKS#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.4,
+          "recall": 0.2222222222222222,
+          "f1": 0.2857142857142857
+        },
+        "pair": {
+          "precision": 0.4,
+          "recall": 0.2222222222222222,
+          "f1": 0.2857142857142857
+        },
+        "detection_tp": 2,
+        "gold_present": 9,
+        "predicted_present": 5
+      },
+      "FOOD&DRINKS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 8,
+        "predicted_present": 0
+      },
+      "FOOD&DRINKS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8376068376068376,
+          "recall": 0.9607843137254902,
+          "f1": 0.8949771689497716
+        },
+        "pair": {
+          "precision": 0.7606837606837606,
+          "recall": 0.8725490196078431,
+          "f1": 0.8127853881278538
+        },
+        "detection_tp": 98,
+        "gold_present": 102,
+        "predicted_present": 117
+      },
+      "FOOD&DRINKS#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9078947368421053,
+          "recall": 0.9324324324324325,
+          "f1": 0.92
+        },
+        "pair": {
+          "precision": 0.7894736842105263,
+          "recall": 0.8108108108108109,
+          "f1": 0.8
+        },
+        "detection_tp": 69,
+        "gold_present": 74,
+        "predicted_present": 76
+      },
+      "HOTEL#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8888888888888888,
+          "recall": 0.6153846153846154,
+          "f1": 0.7272727272727273
+        },
+        "pair": {
+          "precision": 0.8611111111111112,
+          "recall": 0.5961538461538461,
+          "f1": 0.7045454545454546
+        },
+        "detection_tp": 32,
+        "gold_present": 52,
+        "predicted_present": 36
+      },
+      "HOTEL#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.75390625,
+          "recall": 0.7568627450980392,
+          "f1": 0.7553816046966731
+        },
+        "pair": {
+          "precision": 0.71484375,
+          "recall": 0.7176470588235294,
+          "f1": 0.7162426614481409
+        },
+        "detection_tp": 193,
+        "gold_present": 255,
+        "predicted_present": 256
+      },
+      "HOTEL#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6593406593406593,
+          "recall": 0.759493670886076,
+          "f1": 0.7058823529411765
+        },
+        "pair": {
+          "precision": 0.6153846153846154,
+          "recall": 0.7088607594936709,
+          "f1": 0.6588235294117647
+        },
+        "detection_tp": 60,
+        "gold_present": 79,
+        "predicted_present": 91
+      },
+      "HOTEL#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7550335570469798,
+          "recall": 0.6696428571428571,
+          "f1": 0.7097791798107256
+        },
+        "pair": {
+          "precision": 0.6174496644295302,
+          "recall": 0.5476190476190477,
+          "f1": 0.580441640378549
+        },
+        "detection_tp": 225,
+        "gold_present": 336,
+        "predicted_present": 298
+      },
+      "HOTEL#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.38461538461538464,
+          "recall": 0.20833333333333334,
+          "f1": 0.2702702702702703
+        },
+        "pair": {
+          "precision": 0.3076923076923077,
+          "recall": 0.16666666666666666,
+          "f1": 0.21621621621621623
+        },
+        "detection_tp": 5,
+        "gold_present": 24,
+        "predicted_present": 13
+      },
+      "HOTEL#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8473684210526315,
+          "recall": 0.9252873563218391,
+          "f1": 0.8846153846153846
+        },
+        "pair": {
+          "precision": 0.7684210526315789,
+          "recall": 0.8390804597701149,
+          "f1": 0.8021978021978022
+        },
+        "detection_tp": 161,
+        "gold_present": 174,
+        "predicted_present": 190
+      },
+      "HOTEL#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7317073170731707,
+          "recall": 0.759493670886076,
+          "f1": 0.7453416149068323
+        },
+        "pair": {
+          "precision": 0.6463414634146342,
+          "recall": 0.6708860759493671,
+          "f1": 0.6583850931677019
+        },
+        "detection_tp": 60,
+        "gold_present": 79,
+        "predicted_present": 82
+      },
+      "LOCATION#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9487179487179487,
+          "recall": 0.9736842105263158,
+          "f1": 0.961038961038961
+        },
+        "pair": {
+          "precision": 0.9267399267399268,
+          "recall": 0.9511278195488722,
+          "f1": 0.9387755102040817
+        },
+        "detection_tp": 259,
+        "gold_present": 266,
+        "predicted_present": 273
+      },
+      "ROOMS#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8757763975155279,
+          "recall": 0.962457337883959,
+          "f1": 0.9170731707317074
+        },
+        "pair": {
+          "precision": 0.84472049689441,
+          "recall": 0.9283276450511946,
+          "f1": 0.8845528455284553
+        },
+        "detection_tp": 282,
+        "gold_present": 293,
+        "predicted_present": 322
+      },
+      "ROOMS#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6568627450980392,
+          "recall": 0.6261682242990654,
+          "f1": 0.6411483253588517
+        },
+        "pair": {
+          "precision": 0.6470588235294118,
+          "recall": 0.616822429906542,
+          "f1": 0.631578947368421
+        },
+        "detection_tp": 67,
+        "gold_present": 107,
+        "predicted_present": 102
+      },
+      "ROOMS#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7086092715231788,
+          "recall": 0.7925925925925926,
+          "f1": 0.7482517482517482
+        },
+        "pair": {
+          "precision": 0.609271523178808,
+          "recall": 0.6814814814814815,
+          "f1": 0.6433566433566433
+        },
+        "detection_tp": 107,
+        "gold_present": 135,
+        "predicted_present": 151
+      },
+      "ROOMS#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6206896551724138,
+          "recall": 0.5294117647058824,
+          "f1": 0.5714285714285714
+        },
+        "pair": {
+          "precision": 0.5,
+          "recall": 0.4264705882352941,
+          "f1": 0.4603174603174603
+        },
+        "detection_tp": 36,
+        "gold_present": 68,
+        "predicted_present": 58
+      },
+      "ROOMS#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5,
+          "recall": 0.09090909090909091,
+          "f1": 0.15384615384615385
+        },
+        "pair": {
+          "precision": 0.5,
+          "recall": 0.09090909090909091,
+          "f1": 0.15384615384615385
+        },
+        "detection_tp": 1,
+        "gold_present": 11,
+        "predicted_present": 2
+      },
+      "ROOMS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7272727272727273,
+          "recall": 0.47058823529411764,
+          "f1": 0.5714285714285714
+        },
+        "pair": {
+          "precision": 0.5454545454545454,
+          "recall": 0.35294117647058826,
+          "f1": 0.42857142857142855
+        },
+        "detection_tp": 8,
+        "gold_present": 17,
+        "predicted_present": 11
+      },
+      "ROOMS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7627118644067796,
+          "recall": 0.7627118644067796,
+          "f1": 0.7627118644067796
+        },
+        "pair": {
+          "precision": 0.711864406779661,
+          "recall": 0.711864406779661,
+          "f1": 0.711864406779661
+        },
+        "detection_tp": 45,
+        "gold_present": 59,
+        "predicted_present": 59
+      },
+      "ROOM_AMENITIES#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5833333333333334,
+          "recall": 0.5,
+          "f1": 0.5384615384615384
+        },
+        "pair": {
+          "precision": 0.4166666666666667,
+          "recall": 0.35714285714285715,
+          "f1": 0.38461538461538464
+        },
+        "detection_tp": 7,
+        "gold_present": 14,
+        "predicted_present": 12
+      },
+      "ROOM_AMENITIES#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.2857142857142857,
+          "recall": 0.16666666666666666,
+          "f1": 0.21052631578947367
+        },
+        "pair": {
+          "precision": 0.14285714285714285,
+          "recall": 0.08333333333333333,
+          "f1": 0.10526315789473684
+        },
+        "detection_tp": 2,
+        "gold_present": 12,
+        "predicted_present": 7
+      },
+      "ROOM_AMENITIES#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.3333333333333333,
+          "recall": 0.26666666666666666,
+          "f1": 0.2962962962962963
+        },
+        "pair": {
+          "precision": 0.25,
+          "recall": 0.2,
+          "f1": 0.2222222222222222
+        },
+        "detection_tp": 8,
+        "gold_present": 30,
+        "predicted_present": 24
+      },
+      "ROOM_AMENITIES#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.821917808219178,
+          "recall": 0.9230769230769231,
+          "f1": 0.8695652173913043
+        },
+        "pair": {
+          "precision": 0.8036529680365296,
+          "recall": 0.9025641025641026,
+          "f1": 0.8502415458937198
+        },
+        "detection_tp": 180,
+        "gold_present": 195,
+        "predicted_present": 219
+      },
+      "ROOM_AMENITIES#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.38235294117647056,
+          "recall": 0.34210526315789475,
+          "f1": 0.3611111111111111
+        },
+        "pair": {
+          "precision": 0.38235294117647056,
+          "recall": 0.34210526315789475,
+          "f1": 0.3611111111111111
+        },
+        "detection_tp": 13,
+        "gold_present": 38,
+        "predicted_present": 34
+      },
+      "ROOM_AMENITIES#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 1,
+        "predicted_present": 0
+      },
+      "ROOM_AMENITIES#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5774647887323944,
+          "recall": 0.6721311475409836,
+          "f1": 0.6212121212121212
+        },
+        "pair": {
+          "precision": 0.5211267605633803,
+          "recall": 0.6065573770491803,
+          "f1": 0.5606060606060606
+        },
+        "detection_tp": 41,
+        "gold_present": 61,
+        "predicted_present": 71
+      },
+      "SERVICE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9029275808936826,
+          "recall": 0.9184952978056427,
+          "f1": 0.9106449106449106
+        },
+        "pair": {
+          "precision": 0.8443759630200308,
+          "recall": 0.8589341692789969,
+          "f1": 0.8515928515928516
+        },
+        "detection_tp": 586,
+        "gold_present": 638,
+        "predicted_present": 649
+      }
+    },
+    "task_id": "absa_hotel",
+    "split": "test",
+    "selection_f1": 0.7393976644130301,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "metric_recomputed_from_saved_predictions": true,
+  "accessed_at": "2026-09-12T08:11:26Z",
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+    "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+    "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+  }
+}

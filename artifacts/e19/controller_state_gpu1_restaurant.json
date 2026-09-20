@@ -1,0 +1,47 @@
+{
+  "protocol": "E19-dapt-nc-llrd-screening-v1",
+  "revision": "e19-20260914-r1",
+  "status": "running",
+  "created_at": "2026-09-13T17:11:19Z",
+  "source_manifest_sha256": "e5d8dc3d224e040fa4503ab4c2b1403611926013ea06564c1fed30509829ec46",
+  "dispatch_approved": true,
+  "tasks": [
+    "absa_restaurant",
+    "absa_hotel",
+    "visfd",
+    "vsfc_topic",
+    "vsfc_sentiment"
+  ],
+  "jobs": [
+    {
+      "task_id": "absa_restaurant",
+      "device": "cuda:1",
+      "pid": 2698961,
+      "output_dir": "/home/kiettqa/GoiBERT/artifacts/e19/absa_restaurant/seed_42",
+      "log": "/home/kiettqa/GoiBERT/artifacts/e19/logs/absa_restaurant.log",
+      "command": [
+        "/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python",
+        "/home/kiettqa/GoiBERT/scripts/run_e19.py",
+        "--worker",
+        "--task-id",
+        "absa_restaurant",
+        "--device",
+        "cuda:1",
+        "--output-dir",
+        "/home/kiettqa/GoiBERT/artifacts/e19/absa_restaurant/seed_42"
+      ],
+      "status": "running",
+      "started_at": "2026-09-13T17:11:19Z"
+    }
+  ],
+  "queue_remaining": [
+    "absa_hotel",
+    "visfd",
+    "vsfc_topic",
+    "vsfc_sentiment"
+  ],
+  "heartbeat_at": "2026-09-13T17:18:19Z",
+  "active_pids": [
+    2698961
+  ]
+}

@@ -1,0 +1,322 @@
+{
+ "protocol": "CafeBERT-BamiBERT-repdistill-pilot-v1",
+ "stage": "preflight_gates",
+ "decision": "STOP_AT_GRADIENT_GATE",
+ "created_at": "2026-09-18T16:04:12Z",
+ "source_hash": "d9b6a0300ba11fab7805ea7adc0e5565840ad669b83da6e026954ac446909895",
+ "script_hashes": {
+  "common.py": "8dc0861b308d498e4a580731b7fde9a3a12331ec1f9ac5208891d7ac2a5f29c4",
+  "cpt_train.py": "f8375b61670920600f8db9d898e906cbc85f8b1605886599b1644edfc0d7a650",
+  "data.py": "c8b503792fe409d1bdf5f4ca5194f5754e6db8bc9b0bb87757d49c500aa530cb",
+  "finetune.py": "4d4e57bbfeb3a8dc959f80fa05577a45d615ab669b74b9629848c05b7b87d2c0",
+  "objective.py": "8d90db251d90a96694bc772c5f4b8a069f2357ab078658e6866f99e7174014ab",
+  "preflight.py": "2dfa2a650a6a2633fc505586544aea5f3e0cab7d1c608ea2251971878652314e",
+  "prepare_corpus.py": "37b7751419c42b1fb0d43da87c32015f9c6f1b3b6570df7ca1a33e76ef2f524c",
+  "textproc.py": "5b39e14887edcb1c284515d3fbdbfe20a427eecc77f669b05e271ab4780911c0"
+ },
+ "data_gate": {
+  "train_tokens_ge_31M": true,
+  "train_tokens": 39289634,
+  "min_required": 31000000,
+  "one_pass": true,
+  "all_ok": true,
+  "train_tokens_incl_specials": 39289634,
+  "train_tokens_excl_specials": 38439714,
+  "steps_target": 2536,
+  "tokens_at_steps_target": 30008828,
+  "passes": 0.763855421686747
+ },
+ "alignment_gate": {
+  "passages": 600,
+  "spans_total": 46001,
+  "spans_valid_both": 45949,
+  "coverage_both": 0.9988695897915263,
+  "coverage_min_passage": 0.9545454545454546,
+  "passages_below_95": 0,
+  "spans_student_only": 33,
+  "spans_teacher_only": 10,
+  "span_index_out_of_range": 0,
+  "pass_95": true,
+  "manual_cases": "PASS — all 30 cases reviewed by the main agent: every subwor...",
+  "batch_invariance": {
+   "max_abs_diff_seq0_pooled": 0.030674129724502563,
+   "ok": true,
+   "note": "bf16 autocast with different padding lengths; differences are rounding only"
+  },
+  "hidden_finite": {
+   "student_layer6": true,
+   "student_layer12": true,
+   "teacher_layer12": true,
+   "teacher_layer24": true
+  },
+  "teacher_frozen": true,
+  "student_grad_from_rel": 0.523646144661435,
+  "pass": true
+ },
+ "objective_tests": {
+  "kl_hand": 3.141557565806041,
+  "kl_impl": 3.1415576934814453,
+  "hand_matches": true,
+  "kl_tt": 0.0,
+  "pad_invariant": true,
+  "diag_excluded": true,
+  "kl_teacher_self_real_batch": 0.0
+ },
+ "determinism": {
+  "0": {
+   "batch_repeatable": true,
+   "mask_repeatable": true
+  },
+  "1": {
+   "batch_repeatable": true,
+   "mask_repeatable": true
+  },
+  "2": {
+   "batch_repeatable": true,
+   "mask_repeatable": true
+  },
+  "3": {
+   "batch_repeatable": true,
+   "mask_repeatable": true
+  }
+ },
+ "gradient_gate": {
+  "required_range": [
+   0.05,
+   20.0
+  ],
+  "preflight_4_batches": [
+   {
+    "step": 0,
+    "mlm": 1.7417935132980347,
+    "rel": 0.07688814401626587,
+    "n_masked": 457,
+    "grad_norm_mlm": 13.592660567599971,
+    "grad_norm_rel": 0.4773587728227805,
+    "ratio": 0.03511886215717272,
+    "finite": true
+   },
+   {
+    "step": 1,
+    "mlm": 1.7646194696426392,
+    "rel": 0.07790493965148926,
+    "n_masked": 434,
+    "grad_norm_mlm": 15.540083445381068,
+    "grad_norm_rel": 0.31829727582006795,
+    "ratio": 0.020482340197129023,
+    "finite": true
+   },
+   {
+    "step": 2,
+    "mlm": 1.7288475036621094,
+    "rel": 0.07728397846221924,
+    "n_masked": 458,
+    "grad_norm_mlm": 20.036739391678395,
+    "grad_norm_rel": 0.30386022771577637,
+    "ratio": 0.015165153460147053,
+    "finite": true
+   },
+   {
+    "step": 3,
+    "mlm": 1.6698288917541504,
+    "rel": 0.07813389599323273,
+    "n_masked": 434,
+    "grad_norm_mlm": 19.14180548152159,
+    "grad_norm_rel": 0.3269837962969912,
+    "ratio": 0.017082181543044243,
+    "finite": true
+   }
+  ],
+  "preflight_min": 0.015165153460147053,
+  "preflight_max": 0.03511886215717272,
+  "diagnostic_16_batches": {
+   "min": 0.007051187722742766,
+   "mean": 0.022249783416476713,
+   "max": 0.035206479840329645,
+   "file": "artifacts/cafe_bami_repdistill_pilot/grad_ratio_diagnostic.json",
+   "by_group_means": {
+    "embeddings": 0.018028990160036593,
+    "layers_1_6": 0.02333285528018701,
+    "layers_7_12": 0.024083299659399714
+   }
+  },
+  "in_run_trajectory_100_step_profile": [
+   {
+    "step": 0,
+    "grad_norm_mlm": 12.395291255807003,
+    "grad_norm_rel": 0.2938086671526522,
+    "ratio": 0.023703248361752482
+   },
+   {
+    "step": 10,
+    "grad_norm_mlm": 10.42546686143366,
+    "grad_norm_rel": 0.34185714247786764,
+    "ratio": 0.03279058357976086
+   },
+   {
+    "step": 20,
+    "grad_norm_mlm": 6.298124921437223,
+    "grad_norm_rel": 0.35203896460416634,
+    "ratio": 0.05589583709365859
+   },
+   {
+    "step": 30,
+    "grad_norm_mlm": 5.598010327980011,
+    "grad_norm_rel": 0.3414500931953983,
+    "ratio": 0.06099490232962956
+   },
+   {
+    "step": 40,
+    "grad_norm_mlm": 5.258252739297192,
+    "grad_norm_rel": 0.32368459828335355,
+    "ratio": 0.06155744395173683
+   },
+   {
+    "step": 50,
+    "grad_norm_mlm": 6.300376838203238,
+    "grad_norm_rel": 0.3127726973931557,
+    "ratio": 0.04964349044911308
+   },
+   {
+    "step": 60,
+    "grad_norm_mlm": 5.39446075795698,
+    "grad_norm_rel": 0.30853665139146996,
+    "ratio": 0.057195086818709315
+   },
+   {
+    "step": 70,
+    "grad_norm_mlm": 5.397661897816839,
+    "grad_norm_rel": 0.31031982951775583,
+    "ratio": 0.05749152788604064
+   },
+   {
+    "step": 80,
+    "grad_norm_mlm": 6.291927828196982,
+    "grad_norm_rel": 0.3003250766126608,
+    "ratio": 0.047731805706157
+   },
+   {
+    "step": 90,
+    "grad_norm_mlm": 5.33429141303283,
+    "grad_norm_rel": 0.2767090947002418,
+    "ratio": 0.05187363667912509
+   }
+  ],
+  "pass": false,
+  "reason": "grad_norm(L_rel)/grad_norm(L_MLM) on the encoder is 0.015-0.035 at the pre-registered preflight (fixed minibatches, initial checkpoint), below the 0.05 floor; robust across 16 batches and parameter groups. During a 100-step profile the ratio rises to 0.048-0.062 only after the MLM gradient transient (12.4 -> ~5.5) decays; the pre-registered gate is the preflight measurement, so the run is stopped without tuning lambda."
+ },
+ "why_small": {
+  "anisotropy": {
+   "teacher_L12": {
+    "cos_mean": 0.700447142124176,
+    "cos_std": 0.05151442065834999,
+    "cos_p5": 0.6232151985168457,
+    "cos_p95": 0.7832335829734802,
+    "row_entropy_mean": 4.293172359466553,
+    "log_n_mean": 4.318455696105957,
+    "entropy_gap_nats": 0.025283386930823326,
+    "max_prob_mean": 0.028150953352451324
+   },
+   "teacher_L24": {
+    "cos_mean": 0.5281108617782593,
+    "cos_std": 0.1030299961566925,
+    "cos_p5": 0.36626380681991577,
+    "cos_p95": 0.6934079527854919,
+    "row_entropy_mean": 4.224129676818848,
+    "log_n_mean": 4.318455696105957,
+    "entropy_gap_nats": 0.0943259596824646,
+    "max_prob_mean": 0.04281798005104065
+   },
+   "student_L6": {
+    "cos_mean": 0.27142593264579773,
+    "cos_std": 0.09849842637777328,
+    "cos_p5": 0.15478871762752533,
+    "cos_p95": 0.442123681306839,
+    "row_entropy_mean": 4.12470817565918,
+    "log_n_mean": 4.31878662109375,
+    "entropy_gap_nats": 0.19407770037651062,
+    "max_prob_mean": 0.07906925678253174
+   },
+   "student_L12": {
+    "cos_mean": 0.31149446964263916,
+    "cos_std": 0.09835423529148102,
+    "cos_p5": 0.17752161622047424,
+    "cos_p95": 0.4762609302997589,
+    "row_entropy_mean": 4.163951396942139,
+    "log_n_mean": 4.31878662109375,
+    "entropy_gap_nats": 0.15483452379703522,
+    "max_prob_mean": 0.06402348726987839
+   }
+  },
+  "signal_batch0": {
+   "T12_S6": {
+    "kl_init": 0.0716,
+    "kl_uniform_student": 0.0242,
+    "kl_random_student": 0.045,
+    "kl_spans_shuffled": 0.1511
+   },
+   "T24_S12": {
+    "kl_init": 0.0824,
+    "kl_uniform_student": 0.0994,
+    "kl_random_student": 0.1356,
+    "kl_spans_shuffled": 0.2198
+   }
+  },
+  "interpretation": "CafeBERT span vectors are strongly anisotropic (mean cosine 0.70 +/- 0.05 at L12, 0.53 +/- 0.10 at L24); at temperature 0.2 the teacher relation rows are within 0.025 (L12) / 0.094 (L24) nats of uniform. The student's rows are sharper (0.15-0.19 nats), so KL(P_T||P_S) mostly asks the student to flatten its relations; the target carries little structure and its gradient is ~2 % of the MLM gradient at init."
+ },
+ "profiles": {
+  "M": {
+   "micro": 64,
+   "accum": 2,
+   "tokens_s": 78071.07384240141,
+   "step_s": 0.15177170515060426,
+   "peak_gb": 8.689348608,
+   "eta_hours_full": 0.10691473451720344,
+   "first_loss": 1.5056803822517395,
+   "last_loss": 1.3102266788482666
+  },
+  "G": {
+   "micro": 64,
+   "accum": 2,
+   "tokens_s": 26645.942036667908,
+   "step_s": 0.4446823453903198,
+   "peak_gb": 20.832429568,
+   "eta_hours_full": 0.31325400775273643,
+   "first_loss": 1.5750487446784973,
+   "last_loss": 1.3671066164970398
+  },
+  "note": "100-step profiles only; no checkpoint written; the full 30M runs were NOT started"
+ },
+ "runs_started": {
+  "cpt_M": false,
+  "cpt_G": false,
+  "finetunes": false,
+  "finetune_smoke_paths_verified": [
+   "absa_restaurant",
+   "visfd",
+   "vsfc_topic"
+  ]
+ },
+ "gpu_snapshot_at_decision": {
+  "0": {
+   "free_mib": 30668,
+   "used_mib": 14791,
+   "util_pct": 34
+  },
+  "1": {
+   "free_mib": 34851,
+   "used_mib": 10608,
+   "util_pct": 19
+  },
+  "2": {
+   "free_mib": 45438,
+   "used_mib": 20,
+   "util_pct": 0
+  },
+  "3": {
+   "free_mib": 45439,
+   "used_mib": 20,
+   "util_pct": 0
+  }
+ }
+}

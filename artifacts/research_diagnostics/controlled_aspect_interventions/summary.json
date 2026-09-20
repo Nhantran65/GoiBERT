@@ -1,0 +1,934 @@
+{
+  "protocol": "controlled-aspect-interventions-v1",
+  "created_at": "2026-09-13T07:30:32.383950+00:00",
+  "validation_only": true,
+  "test_access": false,
+  "training": false,
+  "manifest_sha256": "5bcca0e832a157d2264a8254bb7ce8800d1a90c9d570bde7b6831ca0a62bee46",
+  "reports": [
+    {
+      "model": "student_e8",
+      "task": "absa_hotel",
+      "inputs": 56,
+      "metrics": {
+        "standalone_target_accuracy": {
+          "correct": 7,
+          "denominator": 8,
+          "accuracy": 0.875
+        },
+        "factorial_target_accuracy": {
+          "correct": 42,
+          "denominator": 64,
+          "accuracy": 0.65625
+        },
+        "factorial_joint_accuracy": {
+          "correct": 14,
+          "denominator": 32,
+          "accuracy": 0.4375
+        },
+        "factorial_target_missed": 18,
+        "factorial_target_wrong_polarity": 4,
+        "switches": {
+          "hotel_lexical:A": {
+            "positive_correct": true,
+            "negative_correct": false,
+            "both_correct": false
+          },
+          "hotel_lexical:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "hotel_negation:A": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "hotel_negation:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          }
+        },
+        "A_B_flip_effect": {
+          "A": {
+            "total": 16,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0
+          },
+          "B": {
+            "total": 16,
+            "changed": 6,
+            "correct_after_flip": 4,
+            "both_correct": 4,
+            "sensitivity": 4,
+            "correct_to_wrong": 6,
+            "wrong_to_correct": 0
+          }
+        },
+        "A_self_flip_with_B_held_fixed": {
+          "total": 16,
+          "changed": 16,
+          "correct_after_flip": 12,
+          "both_correct": 12,
+          "sensitivity": 12,
+          "correct_to_wrong": 4,
+          "wrong_to_correct": 0
+        },
+        "A_B_flip_effect_by_A_polarity_order_connector": {
+          "A1:AB:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:AB: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:BA:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:BA: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          }
+        },
+        "order_swap_effect": {
+          "A": {
+            "total": 16,
+            "changed": 4,
+            "correct_to_wrong": 4,
+            "wrong_to_correct": 0
+          },
+          "B": {
+            "total": 16,
+            "changed": 2,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 2
+          }
+        },
+        "filler_vs_standalone": {
+          "total": 16,
+          "changed": 4,
+          "error_increase": 2
+        },
+        "conditional_factorial_on_standalone_correct": {
+          "correct": 14,
+          "denominator": 24,
+          "accuracy": 0.5833333333333334
+        }
+      }
+    },
+    {
+      "model": "student_e8",
+      "task": "absa_restaurant",
+      "inputs": 56,
+      "metrics": {
+        "standalone_target_accuracy": {
+          "correct": 8,
+          "denominator": 8,
+          "accuracy": 1.0
+        },
+        "factorial_target_accuracy": {
+          "correct": 55,
+          "denominator": 64,
+          "accuracy": 0.859375
+        },
+        "factorial_joint_accuracy": {
+          "correct": 23,
+          "denominator": 32,
+          "accuracy": 0.71875
+        },
+        "factorial_target_missed": 5,
+        "factorial_target_wrong_polarity": 4,
+        "switches": {
+          "restaurant_lexical:A": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "restaurant_lexical:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "restaurant_negation:A": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "restaurant_negation:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          }
+        },
+        "A_B_flip_effect": {
+          "A": {
+            "total": 16,
+            "changed": 2,
+            "correct_to_wrong": 2,
+            "wrong_to_correct": 0
+          },
+          "B": {
+            "total": 16,
+            "changed": 12,
+            "correct_after_flip": 9,
+            "both_correct": 9,
+            "sensitivity": 13,
+            "correct_to_wrong": 3,
+            "wrong_to_correct": 4
+          }
+        },
+        "A_self_flip_with_B_held_fixed": {
+          "total": 16,
+          "changed": 16,
+          "correct_after_flip": 14,
+          "both_correct": 14,
+          "sensitivity": 14,
+          "correct_to_wrong": 2,
+          "wrong_to_correct": 0
+        },
+        "A_B_flip_effect_by_A_polarity_order_connector": {
+          "A1:AB:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:AB: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:BA:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA:. ": {
+            "total": 2,
+            "changed": 1,
+            "correct_to_wrong": 1,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:BA: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA: và ": {
+            "total": 2,
+            "changed": 1,
+            "correct_to_wrong": 1,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          }
+        },
+        "order_swap_effect": {
+          "A": {
+            "total": 16,
+            "changed": 2,
+            "correct_to_wrong": 2,
+            "wrong_to_correct": 0
+          },
+          "B": {
+            "total": 16,
+            "changed": 3,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 3
+          }
+        },
+        "filler_vs_standalone": {
+          "total": 16,
+          "changed": 0,
+          "error_increase": 0
+        },
+        "conditional_factorial_on_standalone_correct": {
+          "correct": 23,
+          "denominator": 32,
+          "accuracy": 0.71875
+        }
+      }
+    },
+    {
+      "model": "student_e8",
+      "task": "visfd",
+      "inputs": 56,
+      "metrics": {
+        "standalone_target_accuracy": {
+          "correct": 8,
+          "denominator": 8,
+          "accuracy": 1.0
+        },
+        "factorial_target_accuracy": {
+          "correct": 59,
+          "denominator": 64,
+          "accuracy": 0.921875
+        },
+        "factorial_joint_accuracy": {
+          "correct": 27,
+          "denominator": 32,
+          "accuracy": 0.84375
+        },
+        "factorial_target_missed": 0,
+        "factorial_target_wrong_polarity": 5,
+        "switches": {
+          "visfd_lexical:A": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "visfd_lexical:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "visfd_negation:A": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "visfd_negation:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          }
+        },
+        "A_B_flip_effect": {
+          "A": {
+            "total": 16,
+            "changed": 3,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 3
+          },
+          "B": {
+            "total": 16,
+            "changed": 16,
+            "correct_after_flip": 16,
+            "both_correct": 16,
+            "sensitivity": 16,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0
+          }
+        },
+        "A_self_flip_with_B_held_fixed": {
+          "total": 16,
+          "changed": 11,
+          "correct_after_flip": 11,
+          "both_correct": 11,
+          "sensitivity": 11,
+          "correct_to_wrong": 5,
+          "wrong_to_correct": 0
+        },
+        "A_B_flip_effect_by_A_polarity_order_connector": {
+          "A1:AB:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:AB: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB: và ": {
+            "total": 2,
+            "changed": 1,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 1,
+            "correct_after_flip": 0
+          },
+          "A1:BA:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA:. ": {
+            "total": 2,
+            "changed": 1,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 1,
+            "correct_after_flip": 0
+          },
+          "A1:BA: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA: và ": {
+            "total": 2,
+            "changed": 1,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 1,
+            "correct_after_flip": 0
+          }
+        },
+        "order_swap_effect": {
+          "A": {
+            "total": 16,
+            "changed": 1,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 1
+          },
+          "B": {
+            "total": 16,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0
+          }
+        },
+        "filler_vs_standalone": {
+          "total": 16,
+          "changed": 0,
+          "error_increase": 0
+        },
+        "conditional_factorial_on_standalone_correct": {
+          "correct": 27,
+          "denominator": 32,
+          "accuracy": 0.84375
+        }
+      }
+    },
+    {
+      "model": "bami_e14",
+      "task": "absa_hotel",
+      "inputs": 56,
+      "metrics": {
+        "standalone_target_accuracy": {
+          "correct": 6,
+          "denominator": 8,
+          "accuracy": 0.75
+        },
+        "factorial_target_accuracy": {
+          "correct": 42,
+          "denominator": 64,
+          "accuracy": 0.65625
+        },
+        "factorial_joint_accuracy": {
+          "correct": 14,
+          "denominator": 32,
+          "accuracy": 0.4375
+        },
+        "factorial_target_missed": 16,
+        "factorial_target_wrong_polarity": 6,
+        "switches": {
+          "hotel_lexical:A": {
+            "positive_correct": true,
+            "negative_correct": false,
+            "both_correct": false
+          },
+          "hotel_lexical:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "hotel_negation:A": {
+            "positive_correct": true,
+            "negative_correct": false,
+            "both_correct": false
+          },
+          "hotel_negation:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          }
+        },
+        "A_B_flip_effect": {
+          "A": {
+            "total": 16,
+            "changed": 4,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 4
+          },
+          "B": {
+            "total": 16,
+            "changed": 10,
+            "correct_after_flip": 10,
+            "both_correct": 10,
+            "sensitivity": 10,
+            "correct_to_wrong": 2,
+            "wrong_to_correct": 0
+          }
+        },
+        "A_self_flip_with_B_held_fixed": {
+          "total": 16,
+          "changed": 12,
+          "correct_after_flip": 4,
+          "both_correct": 4,
+          "sensitivity": 4,
+          "correct_to_wrong": 12,
+          "wrong_to_correct": 0
+        },
+        "A_B_flip_effect_by_A_polarity_order_connector": {
+          "A1:AB:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB:. ": {
+            "total": 2,
+            "changed": 1,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 1,
+            "correct_after_flip": 0
+          },
+          "A1:AB: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB: và ": {
+            "total": 2,
+            "changed": 1,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 1,
+            "correct_after_flip": 0
+          },
+          "A1:BA:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA:. ": {
+            "total": 2,
+            "changed": 1,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 1,
+            "correct_after_flip": 0
+          },
+          "A1:BA: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA: và ": {
+            "total": 2,
+            "changed": 1,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 1,
+            "correct_after_flip": 0
+          }
+        },
+        "order_swap_effect": {
+          "A": {
+            "total": 16,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0
+          },
+          "B": {
+            "total": 16,
+            "changed": 8,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 6
+          }
+        },
+        "filler_vs_standalone": {
+          "total": 16,
+          "changed": 2,
+          "error_increase": 0
+        },
+        "conditional_factorial_on_standalone_correct": {
+          "correct": 10,
+          "denominator": 16,
+          "accuracy": 0.625
+        }
+      }
+    },
+    {
+      "model": "bami_e14",
+      "task": "absa_restaurant",
+      "inputs": 56,
+      "metrics": {
+        "standalone_target_accuracy": {
+          "correct": 8,
+          "denominator": 8,
+          "accuracy": 1.0
+        },
+        "factorial_target_accuracy": {
+          "correct": 64,
+          "denominator": 64,
+          "accuracy": 1.0
+        },
+        "factorial_joint_accuracy": {
+          "correct": 32,
+          "denominator": 32,
+          "accuracy": 1.0
+        },
+        "factorial_target_missed": 0,
+        "factorial_target_wrong_polarity": 0,
+        "switches": {
+          "restaurant_lexical:A": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "restaurant_lexical:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "restaurant_negation:A": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "restaurant_negation:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          }
+        },
+        "A_B_flip_effect": {
+          "A": {
+            "total": 16,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0
+          },
+          "B": {
+            "total": 16,
+            "changed": 16,
+            "correct_after_flip": 16,
+            "both_correct": 16,
+            "sensitivity": 16,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0
+          }
+        },
+        "A_self_flip_with_B_held_fixed": {
+          "total": 16,
+          "changed": 16,
+          "correct_after_flip": 16,
+          "both_correct": 16,
+          "sensitivity": 16,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 0
+        },
+        "A_B_flip_effect_by_A_polarity_order_connector": {
+          "A1:AB:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:AB: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:BA:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:BA: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          }
+        },
+        "order_swap_effect": {
+          "A": {
+            "total": 16,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0
+          },
+          "B": {
+            "total": 16,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0
+          }
+        },
+        "filler_vs_standalone": {
+          "total": 16,
+          "changed": 0,
+          "error_increase": 0
+        },
+        "conditional_factorial_on_standalone_correct": {
+          "correct": 32,
+          "denominator": 32,
+          "accuracy": 1.0
+        }
+      }
+    },
+    {
+      "model": "bami_e14",
+      "task": "visfd",
+      "inputs": 56,
+      "metrics": {
+        "standalone_target_accuracy": {
+          "correct": 8,
+          "denominator": 8,
+          "accuracy": 1.0
+        },
+        "factorial_target_accuracy": {
+          "correct": 62,
+          "denominator": 64,
+          "accuracy": 0.96875
+        },
+        "factorial_joint_accuracy": {
+          "correct": 30,
+          "denominator": 32,
+          "accuracy": 0.9375
+        },
+        "factorial_target_missed": 0,
+        "factorial_target_wrong_polarity": 2,
+        "switches": {
+          "visfd_lexical:A": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "visfd_lexical:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "visfd_negation:A": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          },
+          "visfd_negation:B": {
+            "positive_correct": true,
+            "negative_correct": true,
+            "both_correct": true
+          }
+        },
+        "A_B_flip_effect": {
+          "A": {
+            "total": 16,
+            "changed": 2,
+            "correct_to_wrong": 2,
+            "wrong_to_correct": 0
+          },
+          "B": {
+            "total": 16,
+            "changed": 16,
+            "correct_after_flip": 16,
+            "both_correct": 16,
+            "sensitivity": 16,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0
+          }
+        },
+        "A_self_flip_with_B_held_fixed": {
+          "total": 16,
+          "changed": 15,
+          "correct_after_flip": 14,
+          "both_correct": 14,
+          "sensitivity": 16,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 2
+        },
+        "A_B_flip_effect_by_A_polarity_order_connector": {
+          "A1:AB:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:AB: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:AB: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:BA:. ": {
+            "total": 2,
+            "changed": 1,
+            "correct_to_wrong": 1,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA:. ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A1:BA: và ": {
+            "total": 2,
+            "changed": 1,
+            "correct_to_wrong": 1,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          },
+          "A2:BA: và ": {
+            "total": 2,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0,
+            "correct_after_flip": 0
+          }
+        },
+        "order_swap_effect": {
+          "A": {
+            "total": 16,
+            "changed": 2,
+            "correct_to_wrong": 2,
+            "wrong_to_correct": 0
+          },
+          "B": {
+            "total": 16,
+            "changed": 0,
+            "correct_to_wrong": 0,
+            "wrong_to_correct": 0
+          }
+        },
+        "filler_vs_standalone": {
+          "total": 16,
+          "changed": 0,
+          "error_increase": 0
+        },
+        "conditional_factorial_on_standalone_correct": {
+          "correct": 30,
+          "denominator": 32,
+          "accuracy": 0.9375
+        }
+      }
+    }
+  ]
+}

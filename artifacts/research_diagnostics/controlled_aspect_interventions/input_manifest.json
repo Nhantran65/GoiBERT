@@ -1,0 +1,107 @@
+{
+  "manifest": {
+    "purpose": "Root-authored Vietnamese diagnostic; not a benchmark or training corpus. Only explicitly named target slots are annotated.",
+    "label_codes": {
+      "positive": 1,
+      "negative": 2
+    },
+    "connectors": [
+      ". ",
+      " và "
+    ],
+    "pairs": [
+      {
+        "id": "restaurant_negation",
+        "task": "absa_restaurant",
+        "a": {
+          "aspect": "FOOD#QUALITY",
+          "positive": "Món ăn ngon",
+          "negative": "Món ăn không ngon"
+        },
+        "b": {
+          "aspect": "SERVICE#GENERAL",
+          "positive": "Nhân viên phục vụ tận tình",
+          "negative": "Nhân viên phục vụ không tận tình"
+        },
+        "filler": "Tôi ghé quán vào buổi trưa"
+      },
+      {
+        "id": "restaurant_lexical",
+        "task": "absa_restaurant",
+        "a": {
+          "aspect": "DRINKS#QUALITY",
+          "positive": "Nước ép rất ngon",
+          "negative": "Nước ép rất dở"
+        },
+        "b": {
+          "aspect": "AMBIENCE#GENERAL",
+          "positive": "Không gian quán rất đẹp",
+          "negative": "Không gian quán rất xấu"
+        },
+        "filler": "Tôi ghé quán vào buổi trưa"
+      },
+      {
+        "id": "hotel_negation",
+        "task": "absa_hotel",
+        "a": {
+          "aspect": "ROOMS#CLEANLINESS",
+          "positive": "Phòng ngủ sạch sẽ",
+          "negative": "Phòng ngủ không sạch sẽ"
+        },
+        "b": {
+          "aspect": "SERVICE#GENERAL",
+          "positive": "Nhân viên khách sạn tận tình",
+          "negative": "Nhân viên khách sạn không tận tình"
+        },
+        "filler": "Tôi ở đây vào tháng trước"
+      },
+      {
+        "id": "hotel_lexical",
+        "task": "absa_hotel",
+        "a": {
+          "aspect": "ROOMS#COMFORT",
+          "positive": "Phòng ngủ rất thoải mái",
+          "negative": "Phòng ngủ rất bí bách"
+        },
+        "b": {
+          "aspect": "HOTEL#PRICES",
+          "positive": "Giá khách sạn hợp lý",
+          "negative": "Giá khách sạn đắt đỏ"
+        },
+        "filler": "Tôi ở đây vào tháng trước"
+      },
+      {
+        "id": "visfd_negation",
+        "task": "visfd",
+        "a": {
+          "aspect": "BATTERY",
+          "positive": "Pin dùng được rất lâu",
+          "negative": "Pin dùng không được lâu"
+        },
+        "b": {
+          "aspect": "CAMERA",
+          "positive": "Máy chụp ảnh rất đẹp",
+          "negative": "Máy chụp ảnh không đẹp"
+        },
+        "filler": "Tôi mua máy vào tháng trước"
+      },
+      {
+        "id": "visfd_lexical",
+        "task": "visfd",
+        "a": {
+          "aspect": "SCREEN",
+          "positive": "Màn hình rất sắc nét",
+          "negative": "Màn hình rất mờ nhòe"
+        },
+        "b": {
+          "aspect": "PERFORMANCE",
+          "positive": "Máy chạy rất mượt mà",
+          "negative": "Máy chạy rất giật lag"
+        },
+        "filler": "Tôi mua máy vào tháng trước"
+      }
+    ]
+  },
+  "manifest_sha256": "5bcca0e832a157d2264a8254bb7ce8800d1a90c9d570bde7b6831ca0a62bee46",
+  "protocol": "controlled-aspect-interventions-v1"
+}

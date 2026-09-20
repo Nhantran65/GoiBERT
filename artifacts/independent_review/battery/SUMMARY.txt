@@ -1,0 +1,111 @@
+==============================================================================================================
+bami_e14__absa_hotel.json | parity: {'f1_manual_rho0': 0.7321, 'f1_native_sdpa': 0.7324, 'max_abs_logit_diff': 0.0469, 'mean_abs_logit_diff': 0.0019, 'pred_rows_differ_manual_vs_native': 1, 'native_pred_rows_equal_saved_artifact': 795, 'n_rows': 795}
+  0a tau4: L8: med_m=2.30-2.80 iqr_logm=0.48-0.57 frac>=1.5=0.93-0.98 | L9: med_m=2.83-3.49 iqr_logm=0.58-0.67 frac>=1.5=0.97-0.99 | L10: med_m=3.86-4.39 iqr_logm=0.66-0.71 frac>=1.5=0.99-1.00 | L11: med_m=4.89-5.37 iqr_logm=0.65-0.71 frac>=1.5=1.00-1.00 |
+  0a tau8: L8: med_m=1.35-1.73 iqr_logm=0.44-0.50 frac>=1.5=0.39-0.64 | L9: med_m=1.61-2.00 iqr_logm=0.52-0.63 frac>=1.5=0.56-0.77 | L10: med_m=2.08-2.48 iqr_logm=0.68-0.76 frac>=1.5=0.77-0.85 | L11: med_m=2.78-3.07 iqr_logm=0.77-0.90 frac>=1.5=0.89-0.92 |
+  dup-probe L8: n_tok=1228 cos(copy1,copy2)/head=[0.27, 0.28, 0.32, 0.52, 0.28, 0.4, 0.49, 0.42, 0.51, 0.29, 0.21, 0.37] median_m(copy1)/head=[1.65, 1.82, 1.6, 1.84, 1.92, 1.47, 1.61, 1.87, 1.58, 1.56, 1.84, 1.89]
+  dup-probe L9: n_tok=1228 cos(copy1,copy2)/head=[0.41, 0.29, 0.79, 0.37, 0.32, 0.41, 0.49, 0.28, 0.83, 0.37, 0.67, 0.5] median_m(copy1)/head=[2.37, 2.33, 2.2, 1.98, 2.23, 1.85, 2.08, 2.3, 2.11, 2.38, 1.79, 2.0]
+  dup-probe L10: n_tok=1228 cos(copy1,copy2)/head=[0.56, 0.53, 0.44, 0.54, 0.76, 0.65, 0.76, 0.71, 0.45, 0.78, 0.59, 0.78] median_m(copy1)/head=[2.65, 2.57, 2.64, 2.76, 3.01, 2.78, 2.87, 2.94, 2.74, 2.57, 2.63, 2.65]
+  dup-probe L11: n_tok=1228 cos(copy1,copy2)/head=[0.77, 0.76, 0.77, 0.77, 0.76, 0.76, 0.77, 0.76, 0.76, 0.76, 0.75, 0.77] median_m(copy1)/head=[3.33, 3.27, 3.25, 3.41, 3.38, 3.62, 3.24, 3.23, 3.44, 3.37, 3.42, 3.39]
+  0b pairs=200 (eligible singles=421)
+  baseline_rho0    A_first  c0: flip= 2.5% ok=65.5% miss=29.5% oth= 2.5% | c1: flip= 5.0% ok=52.5% miss=41.0% oth= 1.5% | c2: flip= 7.0% ok=39.5% miss=52.0% oth= 1.5% | c3: flip= 7.0% ok=35.5% miss=57.0% oth= 0.5%
+  baseline_rho0    B_first  c0: flip= 2.5% ok=65.5% miss=29.5% oth= 2.5% | c1: flip= 6.5% ok=50.5% miss=42.0% oth= 1.0% | c2: flip= 6.5% ok=44.5% miss=48.0% oth= 1.0% | c3: flip= 9.0% ok=35.0% miss=55.5% oth= 0.5%
+  c1_rho0.5_tau8   A_first  c0: flip= 2.5% ok=65.0% miss=30.0% oth= 2.5% | c1: flip= 5.5% ok=52.5% miss=40.5% oth= 1.5% | c2: flip= 9.0% ok=38.5% miss=51.0% oth= 1.5% | c3: flip= 7.0% ok=31.0% miss=60.5% oth= 1.5%
+  c1_rho0.5_tau8   B_first  c0: flip= 2.5% ok=65.0% miss=30.0% oth= 2.5% | c1: flip= 6.5% ok=51.0% miss=41.5% oth= 1.0% | c2: flip= 9.0% ok=42.5% miss=48.0% oth= 0.5% | c3: flip=11.0% ok=32.5% miss=55.5% oth= 1.0%
+  c1_rho1_tau8     A_first  c0: flip= 2.5% ok=63.5% miss=32.5% oth= 1.5% | c1: flip= 5.0% ok=50.0% miss=43.0% oth= 2.0% | c2: flip= 9.0% ok=36.5% miss=53.0% oth= 1.5% | c3: flip= 8.5% ok=27.5% miss=62.5% oth= 1.5%
+  c1_rho1_tau8     B_first  c0: flip= 2.5% ok=63.5% miss=32.5% oth= 1.5% | c1: flip= 7.5% ok=50.0% miss=42.0% oth= 0.5% | c2: flip= 9.5% ok=42.0% miss=48.0% oth= 0.5% | c3: flip=12.5% ok=31.0% miss=54.5% oth= 2.0%
+  c1_rho1_tau4     A_first  c0: flip= 2.5% ok=64.5% miss=30.5% oth= 2.5% | c1: flip= 5.0% ok=50.5% miss=43.0% oth= 1.5% | c2: flip= 9.0% ok=39.0% miss=49.5% oth= 2.5% | c3: flip= 7.5% ok=32.5% miss=58.0% oth= 2.0%
+  c1_rho1_tau4     B_first  c0: flip= 2.5% ok=64.5% miss=30.5% oth= 2.5% | c1: flip= 8.0% ok=49.5% miss=42.0% oth= 0.5% | c2: flip= 9.5% ok=43.0% miss=47.0% oth= 0.5% | c3: flip=11.0% ok=34.0% miss=53.5% oth= 1.5%
+  perm_rho1_tau8   A_first  c0: flip= 2.5% ok=65.5% miss=29.5% oth= 2.5% | c1: flip= 5.5% ok=52.5% miss=40.5% oth= 1.5% | c2: flip= 8.5% ok=39.0% miss=51.5% oth= 1.0% | c3: flip= 6.5% ok=36.5% miss=56.0% oth= 1.0%
+  perm_rho1_tau8   B_first  c0: flip= 2.5% ok=65.5% miss=29.5% oth= 2.5% | c1: flip= 7.0% ok=50.5% miss=42.0% oth= 0.5% | c2: flip= 7.5% ok=44.0% miss=47.5% oth= 1.0% | c3: flip= 9.0% ok=35.5% miss=55.0% oth= 0.5%
+==============================================================================================================
+bami_e14__absa_restaurant.json | parity: {'f1_manual_rho0': 0.7474, 'f1_native_sdpa': 0.7474, 'max_abs_logit_diff': 0.0625, 'mean_abs_logit_diff': 0.0019, 'pred_rows_differ_manual_vs_native': 0, 'native_pred_rows_equal_saved_artifact': 771, 'n_rows': 771}
+  0a tau4: L8: med_m=2.13-2.69 iqr_logm=0.40-0.48 frac>=1.5=0.90-0.98 | L9: med_m=2.60-3.26 iqr_logm=0.48-0.55 frac>=1.5=0.98-1.00 | L10: med_m=3.92-4.65 iqr_logm=0.67-0.72 frac>=1.5=1.00-1.00 | L11: med_m=4.99-5.60 iqr_logm=0.70-0.74 frac>=1.5=1.00-1.00 |
+  0a tau8: L8: med_m=1.18-1.52 iqr_logm=0.26-0.50 frac>=1.5=0.18-0.51 | L9: med_m=1.39-1.87 iqr_logm=0.48-0.59 frac>=1.5=0.42-0.70 | L10: med_m=2.12-2.53 iqr_logm=0.76-0.82 frac>=1.5=0.75-0.85 | L11: med_m=2.74-3.24 iqr_logm=0.87-0.94 frac>=1.5=0.85-0.91 |
+  dup-probe L8: n_tok=1129 cos(copy1,copy2)/head=[0.37, 0.36, 0.42, 0.53, 0.34, 0.5, 0.55, 0.48, 0.6, 0.39, 0.31, 0.44] median_m(copy1)/head=[1.38, 1.53, 1.34, 1.68, 1.64, 1.27, 1.4, 1.57, 1.4, 1.3, 1.48, 1.58]
+  dup-probe L9: n_tok=1129 cos(copy1,copy2)/head=[0.47, 0.37, 0.85, 0.47, 0.39, 0.51, 0.56, 0.37, 0.88, 0.45, 0.75, 0.57] median_m(copy1)/head=[1.91, 1.94, 1.91, 1.57, 1.87, 1.5, 1.74, 1.83, 1.96, 1.97, 1.58, 1.69]
+  dup-probe L10: n_tok=1129 cos(copy1,copy2)/head=[0.66, 0.63, 0.57, 0.62, 0.84, 0.73, 0.84, 0.76, 0.55, 0.86, 0.69, 0.85] median_m(copy1)/head=[2.5, 2.35, 2.59, 2.47, 2.99, 2.52, 2.67, 2.73, 2.46, 2.62, 2.5, 2.54]
+  dup-probe L11: n_tok=1129 cos(copy1,copy2)/head=[0.84, 0.84, 0.84, 0.84, 0.84, 0.83, 0.84, 0.84, 0.82, 0.84, 0.83, 0.84] median_m(copy1)/head=[3.4, 3.03, 3.15, 3.56, 3.4, 3.63, 3.2, 3.52, 3.27, 3.24, 3.51, 3.35]
+  0b pairs=200 (eligible singles=372)
+  baseline_rho0    A_first  c0: flip= 2.0% ok=72.5% miss=14.0% oth=11.5% | c1: flip= 7.0% ok=51.5% miss=25.0% oth=16.5% | c2: flip= 8.5% ok=44.0% miss=34.5% oth=13.0% | c3: flip=11.0% ok=36.0% miss=40.5% oth=12.5%
+  baseline_rho0    B_first  c0: flip= 2.0% ok=72.5% miss=14.0% oth=11.5% | c1: flip= 6.5% ok=50.0% miss=28.0% oth=15.5% | c2: flip= 7.5% ok=44.5% miss=37.0% oth=11.0% | c3: flip= 8.5% ok=37.0% miss=42.0% oth=12.5%
+  c1_rho0.5_tau8   A_first  c0: flip= 2.0% ok=72.5% miss=14.0% oth=11.5% | c1: flip= 7.0% ok=51.0% miss=26.0% oth=16.0% | c2: flip= 8.5% ok=42.5% miss=35.0% oth=14.0% | c3: flip=11.5% ok=34.5% miss=41.5% oth=12.5%
+  c1_rho0.5_tau8   B_first  c0: flip= 2.0% ok=72.5% miss=14.0% oth=11.5% | c1: flip= 7.0% ok=49.5% miss=28.5% oth=15.0% | c2: flip= 8.5% ok=44.0% miss=35.5% oth=12.0% | c3: flip= 8.5% ok=36.0% miss=43.5% oth=12.0%
+  c1_rho1_tau8     A_first  c0: flip= 2.0% ok=72.0% miss=14.0% oth=12.0% | c1: flip= 7.0% ok=50.5% miss=26.5% oth=16.0% | c2: flip= 9.0% ok=40.0% miss=36.0% oth=15.0% | c3: flip=13.0% ok=33.0% miss=42.0% oth=12.0%
+  c1_rho1_tau8     B_first  c0: flip= 2.0% ok=72.0% miss=14.0% oth=12.0% | c1: flip= 7.0% ok=48.0% miss=29.5% oth=15.5% | c2: flip=10.0% ok=43.0% miss=36.0% oth=11.0% | c3: flip=10.5% ok=35.5% miss=42.0% oth=12.0%
+  c1_rho1_tau4     A_first  c0: flip= 2.0% ok=72.0% miss=14.0% oth=12.0% | c1: flip= 6.5% ok=50.5% miss=26.0% oth=17.0% | c2: flip= 9.0% ok=44.0% miss=32.5% oth=14.5% | c3: flip=12.0% ok=35.0% miss=40.0% oth=13.0%
+  c1_rho1_tau4     B_first  c0: flip= 2.0% ok=72.0% miss=14.0% oth=12.0% | c1: flip= 7.0% ok=48.0% miss=29.5% oth=15.5% | c2: flip= 9.0% ok=45.5% miss=34.5% oth=11.0% | c3: flip=10.5% ok=37.5% miss=40.0% oth=12.0%
+  perm_rho1_tau8   A_first  c0: flip= 1.5% ok=72.5% miss=14.0% oth=12.0% | c1: flip= 7.0% ok=51.5% miss=25.5% oth=16.0% | c2: flip= 8.0% ok=44.0% miss=34.5% oth=13.5% | c3: flip=11.0% ok=36.0% miss=41.0% oth=12.0%
+  perm_rho1_tau8   B_first  c0: flip= 2.0% ok=72.5% miss=14.0% oth=11.5% | c1: flip= 6.0% ok=50.0% miss=29.5% oth=14.5% | c2: flip= 7.5% ok=44.5% miss=36.0% oth=12.0% | c3: flip= 8.0% ok=37.0% miss=42.5% oth=12.5%
+==============================================================================================================
+bami_e14__visfd.json | parity: {'f1_manual_rho0': 0.8444, 'f1_native_sdpa': 0.8444, 'max_abs_logit_diff': 0.0625, 'mean_abs_logit_diff': 0.0028, 'pred_rows_differ_manual_vs_native': 1, 'native_pred_rows_equal_saved_artifact': None, 'n_rows': 1112}
+  0a tau4: L8: med_m=2.93-3.79 iqr_logm=0.48-0.56 frac>=1.5=1.00-1.00 | L9: med_m=3.83-4.54 iqr_logm=0.55-0.63 frac>=1.5=1.00-1.00 | L10: med_m=4.88-5.47 iqr_logm=0.63-0.70 frac>=1.5=1.00-1.00 | L11: med_m=5.19-5.68 iqr_logm=0.68-0.73 frac>=1.5=1.00-1.00 |
+  0a tau8: L8: med_m=1.31-1.83 iqr_logm=0.29-0.50 frac>=1.5=0.30-0.72 | L9: med_m=1.74-2.29 iqr_logm=0.54-0.64 frac>=1.5=0.64-0.84 | L10: med_m=2.37-2.94 iqr_logm=0.72-0.86 frac>=1.5=0.79-0.90 | L11: med_m=2.62-2.98 iqr_logm=0.82-0.90 frac>=1.5=0.82-0.88 |
+  dup-probe L8: n_tok=2296 cos(copy1,copy2)/head=[0.46, 0.47, 0.49, 0.53, 0.47, 0.57, 0.63, 0.52, 0.66, 0.48, 0.4, 0.54] median_m(copy1)/head=[1.65, 1.88, 1.58, 1.98, 2.07, 1.48, 1.72, 2.07, 1.69, 1.5, 1.79, 2.02]
+  dup-probe L9: n_tok=2296 cos(copy1,copy2)/head=[0.56, 0.51, 0.86, 0.59, 0.5, 0.61, 0.62, 0.5, 0.9, 0.51, 0.81, 0.64] median_m(copy1)/head=[2.49, 2.53, 2.51, 2.13, 2.35, 1.94, 2.23, 2.34, 2.57, 2.56, 2.18, 2.14]
+  dup-probe L10: n_tok=2296 cos(copy1,copy2)/head=[0.64, 0.7, 0.62, 0.66, 0.86, 0.8, 0.87, 0.8, 0.61, 0.88, 0.7, 0.88] median_m(copy1)/head=[2.96, 3.26, 3.31, 3.2, 3.6, 3.25, 3.65, 3.57, 3.24, 3.29, 3.24, 3.2]
+  dup-probe L11: n_tok=2296 cos(copy1,copy2)/head=[0.87, 0.87, 0.87, 0.86, 0.86, 0.86, 0.87, 0.85, 0.83, 0.87, 0.85, 0.87] median_m(copy1)/head=[3.69, 3.59, 3.61, 3.75, 3.59, 3.91, 3.44, 3.63, 3.88, 3.65, 4.1, 3.66]
+  0b pairs=200 (eligible singles=66)
+  baseline_rho0    A_first  c0: flip= 0.0% ok=88.5% miss= 9.5% oth= 2.0% | c1: flip= 7.5% ok=75.5% miss=10.0% oth= 7.0% | c2: flip= 8.0% ok=74.5% miss=12.0% oth= 5.5% | c3: flip= 8.5% ok=73.5% miss=14.0% oth= 4.0%
+  baseline_rho0    B_first  c0: flip= 0.0% ok=88.5% miss= 9.5% oth= 2.0% | c1: flip= 8.5% ok=73.5% miss=13.0% oth= 5.0% | c2: flip= 8.5% ok=72.5% miss=15.0% oth= 4.0% | c3: flip= 9.0% ok=71.5% miss=15.5% oth= 4.0%
+  c1_rho0.5_tau8   A_first  c0: flip= 0.0% ok=88.5% miss= 9.5% oth= 2.0% | c1: flip= 8.0% ok=75.5% miss=10.0% oth= 6.5% | c2: flip= 8.5% ok=74.5% miss=11.5% oth= 5.5% | c3: flip= 9.5% ok=73.0% miss=14.0% oth= 3.5%
+  c1_rho0.5_tau8   B_first  c0: flip= 0.0% ok=88.5% miss= 9.5% oth= 2.0% | c1: flip= 9.0% ok=72.5% miss=13.5% oth= 5.0% | c2: flip= 7.5% ok=72.5% miss=16.5% oth= 3.5% | c3: flip= 9.5% ok=70.0% miss=17.5% oth= 3.0%
+  c1_rho1_tau8     A_first  c0: flip= 0.0% ok=88.5% miss= 9.5% oth= 2.0% | c1: flip= 8.0% ok=75.5% miss=10.0% oth= 6.5% | c2: flip= 7.5% ok=73.0% miss=14.0% oth= 5.5% | c3: flip= 9.5% ok=71.0% miss=15.5% oth= 4.0%
+  c1_rho1_tau8     B_first  c0: flip= 0.0% ok=88.5% miss= 9.5% oth= 2.0% | c1: flip= 8.0% ok=72.5% miss=15.0% oth= 4.5% | c2: flip= 8.0% ok=69.5% miss=19.0% oth= 3.5% | c3: flip=10.0% ok=68.0% miss=18.5% oth= 3.5%
+  c1_rho1_tau4     A_first  c0: flip= 0.0% ok=88.5% miss= 9.5% oth= 2.0% | c1: flip= 8.0% ok=75.5% miss=10.5% oth= 6.0% | c2: flip= 8.0% ok=74.0% miss=12.5% oth= 5.5% | c3: flip= 9.0% ok=73.0% miss=14.0% oth= 4.0%
+  c1_rho1_tau4     B_first  c0: flip= 0.0% ok=88.5% miss= 9.5% oth= 2.0% | c1: flip= 8.0% ok=72.5% miss=13.5% oth= 6.0% | c2: flip= 7.0% ok=73.0% miss=16.0% oth= 4.0% | c3: flip= 9.5% ok=70.5% miss=16.5% oth= 3.5%
+  perm_rho1_tau8   A_first  c0: flip= 0.0% ok=88.5% miss= 9.5% oth= 2.0% | c1: flip= 8.0% ok=75.5% miss=10.5% oth= 6.0% | c2: flip= 8.5% ok=74.5% miss=12.0% oth= 5.0% | c3: flip= 8.0% ok=73.5% miss=14.5% oth= 4.0%
+  perm_rho1_tau8   B_first  c0: flip= 0.0% ok=90.0% miss= 8.0% oth= 2.0% | c1: flip= 7.5% ok=73.5% miss=13.5% oth= 5.5% | c2: flip= 8.5% ok=73.5% miss=14.0% oth= 4.0% | c3: flip= 9.5% ok=70.5% miss=17.0% oth= 3.0%
+==============================================================================================================
+student_e8__absa_hotel.json | parity: {'f1_manual_rho0': 0.7305, 'f1_native_sdpa': 0.7305, 'max_abs_logit_diff': 0.0312, 'mean_abs_logit_diff': 0.0013, 'pred_rows_differ_manual_vs_native': 0, 'native_pred_rows_equal_saved_artifact': 795, 'n_rows': 795}
+  0a tau4: L7: med_m=2.05-2.70 iqr_logm=0.41-0.47 frac>=1.5=0.87-0.98 | L8: med_m=2.26-3.17 iqr_logm=0.46-0.55 frac>=1.5=0.92-0.99 | L9: med_m=2.30-2.68 iqr_logm=0.47-0.61 frac>=1.5=0.92-0.95 |
+  0a tau8: L7: med_m=1.16-1.49 iqr_logm=0.26-0.48 frac>=1.5=0.18-0.49 | L8: med_m=1.28-1.71 iqr_logm=0.42-0.53 frac>=1.5=0.34-0.63 | L9: med_m=1.33-1.52 iqr_logm=0.44-0.56 frac>=1.5=0.38-0.51 |
+  dup-probe L7: n_tok=1228 cos(copy1,copy2)/head=[0.85, 0.46, 0.7, 0.78, 0.47, 0.8] median_m(copy1)/head=[2.06, 1.29, 1.72, 1.66, 1.57, 1.76]
+  dup-probe L8: n_tok=1228 cos(copy1,copy2)/head=[0.89, 0.85, 0.71, 0.76, 0.55, 0.68] median_m(copy1)/head=[2.42, 2.15, 1.82, 1.84, 1.53, 1.54]
+  dup-probe L9: n_tok=1228 cos(copy1,copy2)/head=[0.74, 0.7, 0.69, 0.76, 0.75, 0.77] median_m(copy1)/head=[1.85, 1.64, 1.48, 1.87, 1.87, 1.76]
+  0b pairs=200 (eligible singles=421)
+  baseline_rho0    A_first  c0: flip= 1.0% ok=59.5% miss=38.5% oth= 1.0% | c1: flip= 8.0% ok=41.5% miss=49.0% oth= 1.5% | c2: flip=12.5% ok=30.5% miss=55.5% oth= 1.5% | c3: flip=14.0% ok=22.5% miss=62.0% oth= 1.5%
+  baseline_rho0    B_first  c0: flip= 1.0% ok=59.5% miss=38.5% oth= 1.0% | c1: flip= 5.5% ok=42.0% miss=51.0% oth= 1.5% | c2: flip=10.0% ok=31.0% miss=57.0% oth= 2.0% | c3: flip=13.0% ok=22.5% miss=63.0% oth= 1.5%
+  c1_rho0.5_tau8   A_first  c0: flip= 1.0% ok=59.5% miss=38.5% oth= 1.0% | c1: flip= 9.0% ok=41.0% miss=49.0% oth= 1.0% | c2: flip=12.5% ok=29.5% miss=56.5% oth= 1.5% | c3: flip=12.5% ok=23.5% miss=62.0% oth= 2.0%
+  c1_rho0.5_tau8   B_first  c0: flip= 1.0% ok=59.5% miss=38.5% oth= 1.0% | c1: flip= 5.5% ok=42.5% miss=50.5% oth= 1.5% | c2: flip=10.0% ok=31.0% miss=56.5% oth= 2.5% | c3: flip=13.5% ok=24.5% miss=60.5% oth= 1.5%
+  c1_rho1_tau8     A_first  c0: flip= 1.0% ok=59.5% miss=38.5% oth= 1.0% | c1: flip= 9.0% ok=41.5% miss=48.5% oth= 1.0% | c2: flip=12.5% ok=29.5% miss=56.5% oth= 1.5% | c3: flip=12.0% ok=24.0% miss=62.0% oth= 2.0%
+  c1_rho1_tau8     B_first  c0: flip= 1.0% ok=59.5% miss=38.5% oth= 1.0% | c1: flip= 5.5% ok=41.5% miss=51.5% oth= 1.5% | c2: flip= 9.5% ok=29.5% miss=58.5% oth= 2.5% | c3: flip=12.5% ok=25.0% miss=60.5% oth= 2.0%
+  c1_rho1_tau4     A_first  c0: flip= 1.0% ok=60.0% miss=38.0% oth= 1.0% | c1: flip= 9.0% ok=42.5% miss=47.5% oth= 1.0% | c2: flip=12.5% ok=30.0% miss=56.0% oth= 1.5% | c3: flip=12.5% ok=23.5% miss=62.0% oth= 2.0%
+  c1_rho1_tau4     B_first  c0: flip= 1.0% ok=60.0% miss=38.0% oth= 1.0% | c1: flip= 6.0% ok=42.0% miss=50.5% oth= 1.5% | c2: flip=10.0% ok=31.0% miss=56.5% oth= 2.5% | c3: flip=15.0% ok=25.0% miss=58.5% oth= 1.5%
+  perm_rho1_tau8   A_first  c0: flip= 1.0% ok=58.5% miss=39.5% oth= 1.0% | c1: flip= 9.0% ok=41.5% miss=48.5% oth= 1.0% | c2: flip=12.5% ok=31.0% miss=55.5% oth= 1.0% | c3: flip=13.5% ok=22.5% miss=62.5% oth= 1.5%
+  perm_rho1_tau8   B_first  c0: flip= 1.0% ok=59.5% miss=38.5% oth= 1.0% | c1: flip= 5.5% ok=41.0% miss=52.0% oth= 1.5% | c2: flip= 9.5% ok=31.0% miss=57.5% oth= 2.0% | c3: flip=13.0% ok=22.5% miss=63.0% oth= 1.5%
+==============================================================================================================
+student_e8__absa_restaurant.json | parity: {'f1_manual_rho0': 0.7128, 'f1_native_sdpa': 0.7128, 'max_abs_logit_diff': 0.0312, 'mean_abs_logit_diff': 0.0017, 'pred_rows_differ_manual_vs_native': 0, 'native_pred_rows_equal_saved_artifact': 771, 'n_rows': 771}
+  0a tau4: L7: med_m=1.91-2.58 iqr_logm=0.38-0.49 frac>=1.5=0.82-0.97 | L8: med_m=2.22-3.28 iqr_logm=0.43-0.53 frac>=1.5=0.92-0.98 | L9: med_m=2.13-2.60 iqr_logm=0.38-0.52 frac>=1.5=0.91-0.96 |
+  0a tau8: L7: med_m=1.09-1.36 iqr_logm=0.13-0.48 frac>=1.5=0.08-0.40 | L8: med_m=1.21-1.70 iqr_logm=0.30-0.52 frac>=1.5=0.24-0.62 | L9: med_m=1.19-1.39 iqr_logm=0.26-0.48 frac>=1.5=0.20-0.43 |
+  dup-probe L7: n_tok=1129 cos(copy1,copy2)/head=[0.89, 0.48, 0.75, 0.82, 0.49, 0.84] median_m(copy1)/head=[1.95, 1.2, 1.76, 1.6, 1.38, 1.73]
+  dup-probe L8: n_tok=1129 cos(copy1,copy2)/head=[0.92, 0.89, 0.76, 0.82, 0.58, 0.75] median_m(copy1)/head=[2.7, 2.09, 1.75, 1.73, 1.41, 1.57]
+  dup-probe L9: n_tok=1129 cos(copy1,copy2)/head=[0.77, 0.73, 0.73, 0.84, 0.8, 0.83] median_m(copy1)/head=[1.71, 1.6, 1.46, 2.02, 1.83, 1.83]
+  0b pairs=200 (eligible singles=372)
+  baseline_rho0    A_first  c0: flip= 3.0% ok=66.0% miss=18.5% oth=12.5% | c1: flip=14.5% ok=39.0% miss=35.0% oth=11.5% | c2: flip=17.0% ok=34.0% miss=40.0% oth= 9.0% | c3: flip=16.5% ok=29.0% miss=45.5% oth= 9.0%
+  baseline_rho0    B_first  c0: flip= 3.0% ok=66.0% miss=18.5% oth=12.5% | c1: flip=12.5% ok=38.0% miss=40.5% oth= 9.0% | c2: flip=13.0% ok=34.0% miss=45.0% oth= 8.0% | c3: flip=17.5% ok=24.5% miss=49.5% oth= 8.5%
+  c1_rho0.5_tau8   A_first  c0: flip= 3.0% ok=66.0% miss=18.5% oth=12.5% | c1: flip=14.5% ok=39.5% miss=35.0% oth=11.0% | c2: flip=17.0% ok=32.5% miss=40.5% oth=10.0% | c3: flip=16.5% ok=29.0% miss=45.5% oth= 9.0%
+  c1_rho0.5_tau8   B_first  c0: flip= 3.0% ok=66.0% miss=18.5% oth=12.5% | c1: flip=12.5% ok=38.0% miss=40.5% oth= 9.0% | c2: flip=13.0% ok=34.0% miss=45.0% oth= 8.0% | c3: flip=18.0% ok=25.5% miss=47.5% oth= 9.0%
+  c1_rho1_tau8     A_first  c0: flip= 3.0% ok=66.0% miss=18.5% oth=12.5% | c1: flip=16.0% ok=39.5% miss=34.0% oth=10.5% | c2: flip=17.0% ok=33.0% miss=40.0% oth=10.0% | c3: flip=17.5% ok=28.5% miss=44.5% oth= 9.5%
+  c1_rho1_tau8     B_first  c0: flip= 3.0% ok=66.0% miss=18.5% oth=12.5% | c1: flip=13.5% ok=37.5% miss=40.5% oth= 8.5% | c2: flip=13.0% ok=33.0% miss=45.0% oth= 9.0% | c3: flip=17.5% ok=25.5% miss=47.5% oth= 9.5%
+  c1_rho1_tau4     A_first  c0: flip= 3.0% ok=66.0% miss=18.5% oth=12.5% | c1: flip=14.5% ok=39.5% miss=35.0% oth=11.0% | c2: flip=17.0% ok=32.5% miss=40.5% oth=10.0% | c3: flip=16.5% ok=29.0% miss=45.5% oth= 9.0%
+  c1_rho1_tau4     B_first  c0: flip= 3.0% ok=66.0% miss=18.5% oth=12.5% | c1: flip=12.5% ok=38.5% miss=40.0% oth= 9.0% | c2: flip=13.0% ok=34.0% miss=45.0% oth= 8.0% | c3: flip=17.0% ok=26.0% miss=47.5% oth= 9.5%
+  perm_rho1_tau8   A_first  c0: flip= 3.0% ok=67.0% miss=18.0% oth=12.0% | c1: flip=14.5% ok=39.5% miss=35.0% oth=11.0% | c2: flip=17.0% ok=33.5% miss=40.0% oth= 9.5% | c3: flip=16.5% ok=28.5% miss=46.0% oth= 9.0%
+  perm_rho1_tau8   B_first  c0: flip= 3.0% ok=66.0% miss=18.0% oth=13.0% | c1: flip=12.5% ok=38.5% miss=40.0% oth= 9.0% | c2: flip=13.0% ok=34.0% miss=45.5% oth= 7.5% | c3: flip=17.5% ok=24.5% miss=50.0% oth= 8.0%
+==============================================================================================================
+student_e8__visfd.json | parity: {'f1_manual_rho0': 0.8244, 'f1_native_sdpa': 0.8244, 'max_abs_logit_diff': 0.0312, 'mean_abs_logit_diff': 0.0021, 'pred_rows_differ_manual_vs_native': 2, 'native_pred_rows_equal_saved_artifact': None, 'n_rows': 1112}
+  0a tau4: L7: med_m=3.11-3.77 iqr_logm=0.53-0.60 frac>=1.5=1.00-1.00 | L8: med_m=3.31-4.33 iqr_logm=0.54-0.61 frac>=1.5=1.00-1.00 | L9: med_m=3.14-3.65 iqr_logm=0.48-0.59 frac>=1.5=1.00-1.00 |
+  0a tau8: L7: med_m=1.33-1.66 iqr_logm=0.30-0.50 frac>=1.5=0.32-0.62 | L8: med_m=1.43-1.79 iqr_logm=0.40-0.62 frac>=1.5=0.44-0.66 | L9: med_m=1.39-1.60 iqr_logm=0.34-0.50 frac>=1.5=0.39-0.57 |
+  dup-probe L7: n_tok=2296 cos(copy1,copy2)/head=[0.78, 0.4, 0.6, 0.71, 0.35, 0.73] median_m(copy1)/head=[2.17, 1.57, 1.88, 1.88, 2.09, 1.94]
+  dup-probe L8: n_tok=2296 cos(copy1,copy2)/head=[0.84, 0.81, 0.67, 0.72, 0.47, 0.59] median_m(copy1)/head=[2.64, 2.38, 2.14, 2.19, 1.88, 1.74]
+  dup-probe L9: n_tok=2296 cos(copy1,copy2)/head=[0.62, 0.65, 0.65, 0.7, 0.66, 0.7] median_m(copy1)/head=[1.85, 1.74, 1.62, 1.9, 1.95, 1.89]
+  0b pairs=200 (eligible singles=66)
+  baseline_rho0    A_first  c0: flip= 9.5% ok=75.0% miss=15.5% oth= 0.0% | c1: flip= 9.5% ok=75.0% miss=15.0% oth= 0.5% | c2: flip=12.0% ok=69.5% miss=17.0% oth= 1.5% | c3: flip=14.0% ok=65.0% miss=20.0% oth= 1.0%
+  baseline_rho0    B_first  c0: flip= 9.5% ok=75.0% miss=15.5% oth= 0.0% | c1: flip=11.0% ok=72.0% miss=16.5% oth= 0.5% | c2: flip=13.5% ok=64.5% miss=21.0% oth= 1.0% | c3: flip=16.5% ok=62.5% miss=20.0% oth= 1.0%
+  c1_rho0.5_tau8   A_first  c0: flip= 9.5% ok=73.0% miss=15.5% oth= 2.0% | c1: flip= 9.5% ok=75.0% miss=15.0% oth= 0.5% | c2: flip=12.0% ok=69.0% miss=18.0% oth= 1.0% | c3: flip=14.5% ok=63.0% miss=21.5% oth= 1.0%
+  c1_rho0.5_tau8   B_first  c0: flip= 9.5% ok=73.0% miss=15.5% oth= 2.0% | c1: flip=11.5% ok=70.5% miss=17.5% oth= 0.5% | c2: flip=14.5% ok=63.0% miss=22.0% oth= 0.5% | c3: flip=16.5% ok=61.0% miss=21.5% oth= 1.0%
+  c1_rho1_tau8     A_first  c0: flip=11.5% ok=73.0% miss=15.5% oth= 0.0% | c1: flip= 9.5% ok=74.0% miss=16.0% oth= 0.5% | c2: flip=12.0% ok=68.5% miss=19.0% oth= 0.5% | c3: flip=15.5% ok=62.0% miss=22.0% oth= 0.5%
+  c1_rho1_tau8     B_first  c0: flip=11.5% ok=73.0% miss=15.5% oth= 0.0% | c1: flip=11.5% ok=69.5% miss=18.5% oth= 0.5% | c2: flip=15.5% ok=62.0% miss=22.0% oth= 0.5% | c3: flip=17.0% ok=58.5% miss=23.5% oth= 1.0%
+  c1_rho1_tau4     A_first  c0: flip=11.5% ok=73.0% miss=15.5% oth= 0.0% | c1: flip= 9.5% ok=74.5% miss=15.5% oth= 0.5% | c2: flip=11.5% ok=69.0% miss=18.5% oth= 1.0% | c3: flip=14.5% ok=63.0% miss=21.5% oth= 1.0%
+  c1_rho1_tau4     B_first  c0: flip=11.5% ok=73.0% miss=15.5% oth= 0.0% | c1: flip=11.5% ok=70.5% miss=17.5% oth= 0.5% | c2: flip=14.5% ok=63.0% miss=22.0% oth= 0.5% | c3: flip=17.0% ok=60.5% miss=21.5% oth= 1.0%
+  perm_rho1_tau8   A_first  c0: flip= 9.5% ok=74.5% miss=15.5% oth= 0.5% | c1: flip= 9.5% ok=75.0% miss=15.5% oth= 0.0% | c2: flip=10.5% ok=69.5% miss=18.0% oth= 2.0% | c3: flip=14.5% ok=64.5% miss=20.0% oth= 1.0%
+  perm_rho1_tau8   B_first  c0: flip=10.0% ok=74.0% miss=15.0% oth= 1.0% | c1: flip=11.0% ok=72.0% miss=16.5% oth= 0.5% | c2: flip=14.0% ok=64.0% miss=21.0% oth= 1.0% | c3: flip=16.5% ok=61.5% miss=21.0% oth= 1.0%

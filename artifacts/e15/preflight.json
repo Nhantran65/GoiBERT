@@ -1,0 +1,943 @@
+{
+  "protocol": "E15-BamiBERT-original-pair-value-residual-v1",
+  "revision": "e15-20260912-r1",
+  "created_at": "2026-09-12T09:08:15Z",
+  "source_hash": "878fd05cf5557876f7927cd6457333e5e932bc2389f95f045d59d17cf0b72473",
+  "model_manifest": {
+    "source": "huggingface",
+    "repository": "Qualcomm-AI-Research/BamiBERT",
+    "hf_commit": "57bc1340debbe4e348ec549047a763caebe4a977",
+    "local_path": "models/bamibert-base-original",
+    "files": {
+      ".cache/huggingface/.gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+      ".cache/huggingface/download/.gitattributes.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/.gitattributes.metadata": "d2a1d8524993b3f3ad41c3ff2030bf07fdcbdd3baba8267f63bb9c10e84da3b0",
+      ".cache/huggingface/download/README.md.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/README.md.metadata": "08cb04c116039d7420532bf6edeed9d69e5545662403b8878ffefce06a7fdb99",
+      ".cache/huggingface/download/config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/config.json.metadata": "0a58347b0976ec3d43a089634cdb262fcf0b2bf9e654ea95bb45e40638a3ee23",
+      ".cache/huggingface/download/model.safetensors.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/model.safetensors.metadata": "3f7e152fa1fc3e78cfcf5d65087ae8a51a851e66c0f31fe955107e44c46e635b",
+      ".cache/huggingface/download/special_tokens_map.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/special_tokens_map.json.metadata": "69d7c4472e1520cf154ed292d5f0508b5716065704280b2dcd219f3226334656",
+      ".cache/huggingface/download/tokenizer.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/tokenizer.json.metadata": "5f1c062456c6cc860c19fd5de4b59327cbed44d256c1889e1e24fa7f73aeef10",
+      ".cache/huggingface/download/tokenizer_config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      ".cache/huggingface/download/tokenizer_config.json.metadata": "294e0df1cea0c77c2997f4289c7314053a67a6fa0dd6fde80beba74a7d7ee078",
+      ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+      "README.md": "6b23dbeffa7ed1e3b4ccf95fb5d6b9eb2f8e8041b334042f54f9c3926c128b61",
+      "config.json": "353049455318fb3fcdc42f4e275211834809143eeb67b5728d4eff556be05d5f",
+      "model.safetensors": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627",
+      "special_tokens_map.json": "7638f5bbbe86ef6d604ef28ad3647dc690d6d117c81c0d63e885416be8da1150",
+      "tokenizer.json": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+      "tokenizer_config.json": "bfbeb28d815cf0debebd2131d2f75f3507e7f0b6df627b069721b31468779f69"
+    },
+    "config": {
+      "architectures": [
+        "RobertaForMaskedLM"
+      ],
+      "attention_probs_dropout_prob": 0.1,
+      "bos_token_id": 0,
+      "classifier_dropout": null,
+      "eos_token_id": 2,
+      "hidden_act": "gelu",
+      "hidden_dropout_prob": 0.1,
+      "hidden_size": 768,
+      "initializer_range": 0.02,
+      "intermediate_size": 3072,
+      "layer_norm_eps": 1e-05,
+      "max_position_embeddings": 2050,
+      "model_type": "roberta",
+      "num_attention_heads": 12,
+      "num_hidden_layers": 12,
+      "pad_token_id": 1,
+      "position_embedding_type": "absolute",
+      "torch_dtype": "float32",
+      "transformers_version": "4.38.1",
+      "type_vocab_size": 1,
+      "use_cache": true,
+      "vocab_size": 20481
+    },
+    "architecture_check": {
+      "num_hidden_layers": 12,
+      "hidden_size": 768,
+      "num_attention_heads": 12,
+      "intermediate_size": 3072
+    },
+    "weight_file_sha256": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627",
+    "not_teacher_dapt": true
+  },
+  "gpu_snapshot": {
+    "0": {
+      "free_mib": 40350,
+      "used_mib": 5109
+    },
+    "1": {
+      "free_mib": 30748,
+      "used_mib": 14711
+    },
+    "2": {
+      "free_mib": 30816,
+      "used_mib": 14643
+    },
+    "3": {
+      "free_mib": 15485,
+      "used_mib": 29973
+    }
+  },
+  "gpu_profiles": {
+    "0": {
+      "device": "cuda:0",
+      "micro_batch_size": 32,
+      "effective_batch_size": 32,
+      "dtype": "bfloat16",
+      "finite_loss_and_gradients": true,
+      "logits_shape": [
+        32,
+        3
+      ],
+      "peak_memory_allocated_bytes": 4783162880,
+      "peak_memory_reserved_bytes": 5205131264,
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "device": "cuda:0",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null,
+        "cublas_workspace_config": ":4096:8"
+      },
+      "model_spec": {
+        "role": "bamibert_original_e15",
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 103100931,
+        "trainable_parameters": 103100931,
+        "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+        "variant": "centered",
+        "insertion_layer_index": 7,
+        "pair_rank": 64,
+        "pair_chunk_size": 64,
+        "pair_activation": "gelu_exact",
+        "added_parameter_count": 147456
+      }
+    },
+    "1": {
+      "device": "cuda:1",
+      "micro_batch_size": 32,
+      "effective_batch_size": 32,
+      "dtype": "bfloat16",
+      "finite_loss_and_gradients": true,
+      "logits_shape": [
+        32,
+        3
+      ],
+      "peak_memory_allocated_bytes": 4783162880,
+      "peak_memory_reserved_bytes": 5205131264,
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "device": "cuda:1",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null,
+        "cublas_workspace_config": ":4096:8"
+      },
+      "model_spec": {
+        "role": "bamibert_original_e15",
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 103100931,
+        "trainable_parameters": 103100931,
+        "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+        "variant": "centered",
+        "insertion_layer_index": 7,
+        "pair_rank": 64,
+        "pair_chunk_size": 64,
+        "pair_activation": "gelu_exact",
+        "added_parameter_count": 147456
+      }
+    },
+    "2": {
+      "device": "cuda:2",
+      "micro_batch_size": 32,
+      "effective_batch_size": 32,
+      "dtype": "bfloat16",
+      "finite_loss_and_gradients": true,
+      "logits_shape": [
+        32,
+        3
+      ],
+      "peak_memory_allocated_bytes": 4783162880,
+      "peak_memory_reserved_bytes": 5205131264,
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "device": "cuda:2",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null,
+        "cublas_workspace_config": ":4096:8"
+      },
+      "model_spec": {
+        "role": "bamibert_original_e15",
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 103100931,
+        "trainable_parameters": 103100931,
+        "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+        "variant": "centered",
+        "insertion_layer_index": 7,
+        "pair_rank": 64,
+        "pair_chunk_size": 64,
+        "pair_activation": "gelu_exact",
+        "added_parameter_count": 147456
+      }
+    },
+    "3": {
+      "device": "cuda:3",
+      "micro_batch_size": 16,
+      "effective_batch_size": 32,
+      "dtype": "bfloat16",
+      "finite_loss_and_gradients": true,
+      "logits_shape": [
+        16,
+        3
+      ],
+      "peak_memory_allocated_bytes": 2762851328,
+      "peak_memory_reserved_bytes": 2965372928,
+      "runtime": {
+        "python": "3.12.3",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.49.0",
+        "cuda": "12.4",
+        "device": "cuda:3",
+        "device_name": "NVIDIA L40S",
+        "precision": "bf16",
+        "cuda_visible_devices": null,
+        "cublas_workspace_config": ":4096:8"
+      },
+      "model_spec": {
+        "role": "bamibert_original_e15",
+        "backbone": "Qualcomm-AI-Research/BamiBERT",
+        "hidden_size": 768,
+        "num_hidden_layers": 12,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 103100931,
+        "trainable_parameters": 103100931,
+        "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+        "variant": "centered",
+        "insertion_layer_index": 7,
+        "pair_rank": 64,
+        "pair_chunk_size": 64,
+        "pair_activation": "gelu_exact",
+        "added_parameter_count": 147456
+      }
+    }
+  },
+  "task_contracts": {
+    "vsfc_sentiment": {
+      "train_count": 11426,
+      "validation_count": 1583,
+      "num_classes": 3,
+      "num_aspects": 0,
+      "aspect_class_counts": [],
+      "label_overlay": {
+        "vsfc_sentiment": {
+          "0": "negative",
+          "1": "neutral",
+          "2": "positive"
+        },
+        "vsfc_topic": {
+          "0": "negative",
+          "1": "neutral",
+          "2": "positive"
+        },
+        "absa_polarity": {
+          "0": "absent",
+          "1": "positive",
+          "2": "negative",
+          "3": "neutral"
+        },
+        "visfd_others": {
+          "raw_0": "absent",
+          "raw_4": "present_detection_only",
+          "model_0": "absent",
+          "model_1": "present_detection_only"
+        },
+        "numeric_gold_unchanged": true
+      }
+    },
+    "vsfc_topic": {
+      "train_count": 11426,
+      "validation_count": 1583,
+      "num_classes": 4,
+      "num_aspects": 0,
+      "aspect_class_counts": [],
+      "label_overlay": {
+        "vsfc_sentiment": {
+          "0": "negative",
+          "1": "neutral",
+          "2": "positive"
+        },
+        "vsfc_topic": {
+          "0": "lecturer",
+          "1": "training_program",
+          "2": "facility",
+          "3": "others"
+        },
+        "absa_polarity": {
+          "0": "absent",
+          "1": "positive",
+          "2": "negative",
+          "3": "neutral"
+        },
+        "visfd_others": {
+          "raw_0": "absent",
+          "raw_4": "present_detection_only",
+          "model_0": "absent",
+          "model_1": "present_detection_only"
+        },
+        "numeric_gold_unchanged": true
+      }
+    },
+    "visfd": {
+      "train_count": 7786,
+      "validation_count": 1112,
+      "num_classes": 42,
+      "num_aspects": 11,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "label_overlay": {
+        "vsfc_sentiment": {
+          "0": "negative",
+          "1": "neutral",
+          "2": "positive"
+        },
+        "vsfc_topic": {
+          "0": "absent",
+          "1": "positive",
+          "2": "negative",
+          "3": "neutral",
+          "4": "others"
+        },
+        "absa_polarity": {
+          "0": "absent",
+          "1": "positive",
+          "2": "negative",
+          "3": "neutral"
+        },
+        "visfd_others": {
+          "raw_0": "absent",
+          "raw_4": "present_detection_only",
+          "model_0": "absent",
+          "model_1": "present_detection_only"
+        },
+        "numeric_gold_unchanged": true
+      }
+    },
+    "absa_restaurant": {
+      "train_count": 7028,
+      "validation_count": 771,
+      "num_classes": 48,
+      "num_aspects": 12,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "label_overlay": {
+        "vsfc_sentiment": {
+          "0": "negative",
+          "1": "neutral",
+          "2": "positive"
+        },
+        "vsfc_topic": {
+          "0": "absent",
+          "1": "negative",
+          "2": "neutral",
+          "3": "positive"
+        },
+        "absa_polarity": {
+          "0": "absent",
+          "1": "positive",
+          "2": "negative",
+          "3": "neutral"
+        },
+        "visfd_others": {
+          "raw_0": "absent",
+          "raw_4": "present_detection_only",
+          "model_0": "absent",
+          "model_1": "present_detection_only"
+        },
+        "numeric_gold_unchanged": true
+      }
+    },
+    "absa_hotel": {
+      "train_count": 7180,
+      "validation_count": 795,
+      "num_classes": 136,
+      "num_aspects": 34,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "label_overlay": {
+        "vsfc_sentiment": {
+          "0": "negative",
+          "1": "neutral",
+          "2": "positive"
+        },
+        "vsfc_topic": {
+          "0": "absent",
+          "1": "negative",
+          "2": "neutral",
+          "3": "positive"
+        },
+        "absa_polarity": {
+          "0": "absent",
+          "1": "positive",
+          "2": "negative",
+          "3": "neutral"
+        },
+        "visfd_others": {
+          "raw_0": "absent",
+          "raw_4": "present_detection_only",
+          "model_0": "absent",
+          "model_1": "present_detection_only"
+        },
+        "numeric_gold_unchanged": true
+      }
+    }
+  },
+  "checks": {
+    "all_five_task_shapes": true,
+    "same_parameterization": true,
+    "e14_common_state_exact": true,
+    "e14_t0_logits_exact": true,
+    "e14_t0_logits_finite": true,
+    "fp32_routing_scores": true,
+    "centered_null_identity": true,
+    "linear_activation_identity": true,
+    "chunked_dense_forward_parity": true,
+    "chunked_dense_gradient_parity": true,
+    "gradient_P_step1": true,
+    "gradient_UW_step2": true,
+    "uniform_optimizer_coverage": true,
+    "official_model_dir": true,
+    "weights_sha256_pinned": true,
+    "all_tasks_loaded_without_test": true,
+    "cuda_profile_available": true,
+    "no_test_access": true
+  },
+  "architecture_details": {
+    "tasks": {
+      "vsfc_sentiment": {
+        "specs": {
+          "centered": {
+            "role": "bamibert_original_e15",
+            "backbone": "Qualcomm-AI-Research/BamiBERT",
+            "hidden_size": 768,
+            "num_hidden_layers": 12,
+            "num_attention_heads": 12,
+            "intermediate_size": 3072,
+            "head_hidden_size": 768,
+            "head_dropout": 0.1,
+            "num_labels": 3,
+            "num_aspects": 0,
+            "aspect_class_counts": [],
+            "total_parameters": 103100931,
+            "trainable_parameters": 103100931,
+            "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+            "variant": "centered",
+            "insertion_layer_index": 7,
+            "pair_rank": 64,
+            "pair_chunk_size": 64,
+            "pair_activation": "gelu_exact",
+            "added_parameter_count": 147456
+          },
+          "uncentered": {
+            "role": "bamibert_original_e15",
+            "backbone": "Qualcomm-AI-Research/BamiBERT",
+            "hidden_size": 768,
+            "num_hidden_layers": 12,
+            "num_attention_heads": 12,
+            "intermediate_size": 3072,
+            "head_hidden_size": 768,
+            "head_dropout": 0.1,
+            "num_labels": 3,
+            "num_aspects": 0,
+            "aspect_class_counts": [],
+            "total_parameters": 103100931,
+            "trainable_parameters": 103100931,
+            "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+            "variant": "uncentered",
+            "insertion_layer_index": 7,
+            "pair_rank": 64,
+            "pair_chunk_size": 64,
+            "pair_activation": "gelu_exact",
+            "added_parameter_count": 147456
+          }
+        },
+        "input_shape": [
+          2,
+          9
+        ],
+        "finite_logits": true,
+        "same_initial_state": true
+      },
+      "vsfc_topic": {
+        "specs": {
+          "centered": {
+            "role": "bamibert_original_e15",
+            "backbone": "Qualcomm-AI-Research/BamiBERT",
+            "hidden_size": 768,
+            "num_hidden_layers": 12,
+            "num_attention_heads": 12,
+            "intermediate_size": 3072,
+            "head_hidden_size": 768,
+            "head_dropout": 0.1,
+            "num_labels": 4,
+            "num_aspects": 0,
+            "aspect_class_counts": [],
+            "total_parameters": 103101700,
+            "trainable_parameters": 103101700,
+            "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+            "variant": "centered",
+            "insertion_layer_index": 7,
+            "pair_rank": 64,
+            "pair_chunk_size": 64,
+            "pair_activation": "gelu_exact",
+            "added_parameter_count": 147456
+          },
+          "uncentered": {
+            "role": "bamibert_original_e15",
+            "backbone": "Qualcomm-AI-Research/BamiBERT",
+            "hidden_size": 768,
+            "num_hidden_layers": 12,
+            "num_attention_heads": 12,
+            "intermediate_size": 3072,
+            "head_hidden_size": 768,
+            "head_dropout": 0.1,
+            "num_labels": 4,
+            "num_aspects": 0,
+            "aspect_class_counts": [],
+            "total_parameters": 103101700,
+            "trainable_parameters": 103101700,
+            "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+            "variant": "uncentered",
+            "insertion_layer_index": 7,
+            "pair_rank": 64,
+            "pair_chunk_size": 64,
+            "pair_activation": "gelu_exact",
+            "added_parameter_count": 147456
+          }
+        },
+        "input_shape": [
+          2,
+          9
+        ],
+        "finite_logits": true,
+        "same_initial_state": true
+      },
+      "visfd": {
+        "specs": {
+          "centered": {
+            "role": "bamibert_original_e15",
+            "backbone": "Qualcomm-AI-Research/BamiBERT",
+            "hidden_size": 768,
+            "num_hidden_layers": 12,
+            "num_attention_heads": 12,
+            "intermediate_size": 3072,
+            "head_hidden_size": 768,
+            "head_dropout": 0.1,
+            "num_labels": 42,
+            "num_aspects": 11,
+            "aspect_class_counts": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              2,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "total_parameters": 103130922,
+            "trainable_parameters": 103130922,
+            "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+            "variant": "centered",
+            "insertion_layer_index": 7,
+            "pair_rank": 64,
+            "pair_chunk_size": 64,
+            "pair_activation": "gelu_exact",
+            "added_parameter_count": 147456
+          },
+          "uncentered": {
+            "role": "bamibert_original_e15",
+            "backbone": "Qualcomm-AI-Research/BamiBERT",
+            "hidden_size": 768,
+            "num_hidden_layers": 12,
+            "num_attention_heads": 12,
+            "intermediate_size": 3072,
+            "head_hidden_size": 768,
+            "head_dropout": 0.1,
+            "num_labels": 42,
+            "num_aspects": 11,
+            "aspect_class_counts": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              2,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "total_parameters": 103130922,
+            "trainable_parameters": 103130922,
+            "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+            "variant": "uncentered",
+            "insertion_layer_index": 7,
+            "pair_rank": 64,
+            "pair_chunk_size": 64,
+            "pair_activation": "gelu_exact",
+            "added_parameter_count": 147456
+          }
+        },
+        "input_shape": [
+          2,
+          133
+        ],
+        "finite_logits": true,
+        "same_initial_state": true
+      },
+      "absa_restaurant": {
+        "specs": {
+          "centered": {
+            "role": "bamibert_original_e15",
+            "backbone": "Qualcomm-AI-Research/BamiBERT",
+            "hidden_size": 768,
+            "num_hidden_layers": 12,
+            "num_attention_heads": 12,
+            "intermediate_size": 3072,
+            "head_hidden_size": 768,
+            "head_dropout": 0.1,
+            "num_labels": 48,
+            "num_aspects": 12,
+            "aspect_class_counts": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "total_parameters": 103135536,
+            "trainable_parameters": 103135536,
+            "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+            "variant": "centered",
+            "insertion_layer_index": 7,
+            "pair_rank": 64,
+            "pair_chunk_size": 64,
+            "pair_activation": "gelu_exact",
+            "added_parameter_count": 147456
+          },
+          "uncentered": {
+            "role": "bamibert_original_e15",
+            "backbone": "Qualcomm-AI-Research/BamiBERT",
+            "hidden_size": 768,
+            "num_hidden_layers": 12,
+            "num_attention_heads": 12,
+            "intermediate_size": 3072,
+            "head_hidden_size": 768,
+            "head_dropout": 0.1,
+            "num_labels": 48,
+            "num_aspects": 12,
+            "aspect_class_counts": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "total_parameters": 103135536,
+            "trainable_parameters": 103135536,
+            "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+            "variant": "uncentered",
+            "insertion_layer_index": 7,
+            "pair_rank": 64,
+            "pair_chunk_size": 64,
+            "pair_activation": "gelu_exact",
+            "added_parameter_count": 147456
+          }
+        },
+        "input_shape": [
+          2,
+          20
+        ],
+        "finite_logits": true,
+        "same_initial_state": true
+      },
+      "absa_hotel": {
+        "specs": {
+          "centered": {
+            "role": "bamibert_original_e15",
+            "backbone": "Qualcomm-AI-Research/BamiBERT",
+            "hidden_size": 768,
+            "num_hidden_layers": 12,
+            "num_attention_heads": 12,
+            "intermediate_size": 3072,
+            "head_hidden_size": 768,
+            "head_dropout": 0.1,
+            "num_labels": 136,
+            "num_aspects": 34,
+            "aspect_class_counts": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "total_parameters": 103203208,
+            "trainable_parameters": 103203208,
+            "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+            "variant": "centered",
+            "insertion_layer_index": 7,
+            "pair_rank": 64,
+            "pair_chunk_size": 64,
+            "pair_activation": "gelu_exact",
+            "added_parameter_count": 147456
+          },
+          "uncentered": {
+            "role": "bamibert_original_e15",
+            "backbone": "Qualcomm-AI-Research/BamiBERT",
+            "hidden_size": 768,
+            "num_hidden_layers": 12,
+            "num_attention_heads": 12,
+            "intermediate_size": 3072,
+            "head_hidden_size": 768,
+            "head_dropout": 0.1,
+            "num_labels": 136,
+            "num_aspects": 34,
+            "aspect_class_counts": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "total_parameters": 103203208,
+            "trainable_parameters": 103203208,
+            "architecture": "original_bamibert_sdpa_plus_block7_pair_value_residual",
+            "variant": "uncentered",
+            "insertion_layer_index": 7,
+            "pair_rank": 64,
+            "pair_chunk_size": 64,
+            "pair_activation": "gelu_exact",
+            "added_parameter_count": 147456
+          }
+        },
+        "input_shape": [
+          2,
+          14
+        ],
+        "finite_logits": true,
+        "same_initial_state": true
+      }
+    },
+    "optimizer_coverage": {
+      "trainable_parameter_count": 103100931,
+      "optimizer_parameter_count": 103100931,
+      "group_count": 2,
+      "uniform_lr": true,
+      "unique_coverage": true,
+      "group_weight_decays": [
+        0.01,
+        0.0
+      ]
+    }
+  },
+  "recipe": {
+    "seed": 42,
+    "epochs": 30,
+    "task_learning_rates": {
+      "vsfc_sentiment": 2e-05,
+      "vsfc_topic": 1e-05,
+      "visfd": 5e-05,
+      "absa_restaurant": 5e-05,
+      "absa_hotel": 5e-05
+    },
+    "max_length": 256,
+    "effective_batch_size": 32,
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "pair_chunk_size": 64,
+    "added_parameter_count": 147456
+  }
+}

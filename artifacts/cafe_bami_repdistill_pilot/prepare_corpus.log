@@ -1,0 +1,57 @@
+[prep] sampled 37369 / 2319000 docs, kept 37160 after empty/short/language (9s)
+[prep] dedup: {'kept': 37136, 'near_dup': 24} (45s)
+[prep] chunked: {'chunks': 429469, 'para_skipped': 38906, 'drop_too_few_units': 723, 'drop_too_many_tokens': 2} (68s)
+[prep] decontam: {'kept': 429062, 'decontam': 407} by split {'visfd/Test': 23, 'absa_hotel/Train': 188, 'visfd/Train': 38, 'vsfc/test': 18, 'vsfc/train': 68, 'absa_restaurant/Train': 8, 'absa_hotel/Test': 35, 'absa_hotel/Dev': 13, 'absa_restaurant/Test': 4, 'visfd/Dev': 8, 'absa_restaurant/Dev': 2, 'vsfc/dev': 2} (101s)
+{
+ "documents": {
+  "kept": 37136,
+  "holdout": 371,
+  "train": 36765,
+  "holdout_doc_ids_sha256": "409ac12ca10655c0a4fb095f26534004f0d30afc3b352f355f5a4dfb92bb5a85",
+  "train_doc_ids_sha256": "389061126f475ec88d4ca66363216064caf7675cbae785db5b9be400a9ec258a"
+ },
+ "sequences": {
+  "train": 424960,
+  "holdout": 4102,
+  "train_order": "shuffled once with seed 43 (SEED+1) and locked in corpus.npz",
+  "train_s_ids_sha256": "f9bdb9005af7480eb701a877ec2cd74ea3f22fe794846fd3eab5fc101a7b1841",
+  "train_t_ids_sha256": "f6c47a475a4c6ff48e2cc0cac33d7fc9d8fff3076adbf607cc2c84b3f1ec8bb6",
+  "holdout_s_ids_sha256": "6704eabbcc8aea5c22aeb886f3d69bc3b33a16c05f88b63a61231e72adcaa9f7"
+ },
+ "tokens": {
+  "train_nonpad_bami_incl_specials": 39289634,
+  "train_nonpad_bami_excl_specials": 38439714,
+  "train_xlmr_incl_specials": 40966434,
+  "holdout_nonpad_bami_incl_specials": 377596,
+  "bami_len_mean": 92.45489928463856,
+  "bami_len_median": 96.0,
+  "bami_len_p95": 117.0,
+  "bami_len_max": 256,
+  "xlmr_len_mean": 96.40068241716868,
+  "xlmr_len_max": 255,
+  "units_mean": 78.41511907003012,
+  "units_min": 8,
+  "units_max": 96
+ },
+ "alignment_coverage": {
+  "train_spans_total": 33323289,
+  "train_spans_valid_student": 33302478,
+  "train_spans_valid_teacher": 33294963
+ },
+ "budget": {
+  "global_batch": 128,
+  "token_budget": 30000000,
+  "steps_target": 2536,
+  "tokens_at_steps_target": 30008828,
+  "sequences_used": 324608,
+  "passes": 0.763855421686747,
+  "budget_error_batches": 0.7460407317473379
+ },
+ "gate": {
+  "train_tokens_ge_31M": true,
+  "train_tokens": 39289634,
+  "min_required": 31000000,
+  "one_pass": true,
+  "all_ok": true
+ }
+}

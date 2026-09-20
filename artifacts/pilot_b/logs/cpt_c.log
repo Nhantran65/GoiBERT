@@ -1,0 +1,133 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[cpt_train:c] world=4 micro=8 accum=8 global_batch=256 steps=2289 (target 2289) warmup=137 tokens_target=300000000
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Flash Attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:102.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Flash Attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:102.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Flash Attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:102.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Flash Attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:102.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[cpt_train:c] step 20/2289 loss 1.3318 lr 7.66e-06 tok/s 88870 elapsed 29s
+[cpt_train:c] step 40/2289 loss 1.3461 lr 1.50e-05 tok/s 88786 elapsed 59s
+[cpt_train:c] step 60/2289 loss 1.1958 lr 2.23e-05 tok/s 66799 elapsed 118s
+[cpt_train:c] step 80/2289 loss 1.2005 lr 2.96e-05 tok/s 58354 elapsed 180s
+[cpt_train:c] step 100/2289 loss 1.1486 lr 3.69e-05 tok/s 54246 elapsed 242s
+[cpt_train:c] step 120/2289 loss 1.1740 lr 4.42e-05 tok/s 51791 elapsed 304s
+[cpt_train:c] step 140/2289 loss 1.2123 lr 4.99e-05 tok/s 50147 elapsed 366s
+[cpt_train:c] step 160/2289 loss 1.1157 lr 4.95e-05 tok/s 49042 elapsed 428s
+[cpt_train:c] step 180/2289 loss 1.1915 lr 4.90e-05 tok/s 49845 elapsed 473s
+[cpt_train:c] step 200/2289 loss 1.1630 lr 4.85e-05 tok/s 50648 elapsed 518s
+[cpt_train:c] step 220/2289 loss 1.0698 lr 4.81e-05 tok/s 50203 elapsed 574s
+[cpt_train:c] step 240/2289 loss 1.1166 lr 4.76e-05 tok/s 49763 elapsed 632s
+[cpt_train:c] step 260/2289 loss 1.0995 lr 4.71e-05 tok/s 49868 elapsed 683s
+[cpt_train:c] step 280/2289 loss 1.2465 lr 4.67e-05 tok/s 49968 elapsed 734s
+[cpt_train:c] step 300/2289 loss 1.1173 lr 4.62e-05 tok/s 49927 elapsed 788s
+[cpt_train:c] step 320/2289 loss 1.0014 lr 4.57e-05 tok/s 49943 elapsed 840s
+[cpt_train:c] step 340/2289 loss 1.1809 lr 4.53e-05 tok/s 49921 elapsed 893s
+[cpt_train:c] step 360/2289 loss 0.9783 lr 4.48e-05 tok/s 50054 elapsed 943s
+[cpt_train:c] step 380/2289 loss 1.1213 lr 4.44e-05 tok/s 50148 elapsed 993s
+[cpt_train:c] step 400/2289 loss 1.0580 lr 4.39e-05 tok/s 50248 elapsed 1043s
+[cpt_train:c] step 420/2289 loss 1.1395 lr 4.34e-05 tok/s 50351 elapsed 1093s
+[cpt_train:c] step 440/2289 loss 1.1039 lr 4.30e-05 tok/s 50364 elapsed 1145s
+[cpt_train:c] step 460/2289 loss 1.0863 lr 4.25e-05 tok/s 50441 elapsed 1195s
+[cpt_train:c] step 480/2289 loss 1.0631 lr 4.20e-05 tok/s 50497 elapsed 1246s
+[cpt_train:c] step 500/2289 loss 1.1988 lr 4.16e-05 tok/s 50562 elapsed 1296s
+[cpt_train:c] step 500 val_loss 1.1676
+[cpt_train:c] step 520/2289 loss 1.1283 lr 4.11e-05 tok/s 50009 elapsed 1363s
+[cpt_train:c] step 540/2289 loss 1.2612 lr 4.06e-05 tok/s 50068 elapsed 1414s
+[cpt_train:c] step 560/2289 loss 1.1715 lr 4.02e-05 tok/s 50106 elapsed 1465s
+[cpt_train:c] step 580/2289 loss 1.1967 lr 3.97e-05 tok/s 50158 elapsed 1516s
+[cpt_train:c] step 600/2289 loss 1.2103 lr 3.92e-05 tok/s 50203 elapsed 1567s
+[cpt_train:c] step 620/2289 loss 1.2246 lr 3.88e-05 tok/s 50253 elapsed 1617s
+[cpt_train:c] step 640/2289 loss 1.2142 lr 3.83e-05 tok/s 50298 elapsed 1668s
+[cpt_train:c] step 660/2289 loss 1.1575 lr 3.78e-05 tok/s 50344 elapsed 1718s
+[cpt_train:c] step 680/2289 loss 1.2633 lr 3.74e-05 tok/s 50388 elapsed 1769s
+[cpt_train:c] step 700/2289 loss 1.1307 lr 3.69e-05 tok/s 50424 elapsed 1820s
+[cpt_train:c] step 720/2289 loss 1.1932 lr 3.65e-05 tok/s 50455 elapsed 1870s
+[cpt_train:c] step 740/2289 loss 1.2319 lr 3.60e-05 tok/s 50483 elapsed 1921s
+[cpt_train:c] step 760/2289 loss 1.1100 lr 3.55e-05 tok/s 50504 elapsed 1972s
+[cpt_train:c] step 780/2289 loss 1.1394 lr 3.51e-05 tok/s 50522 elapsed 2024s
+[cpt_train:c] step 800/2289 loss 1.2054 lr 3.46e-05 tok/s 50545 elapsed 2075s
+[cpt_train:c] step 820/2289 loss 1.1149 lr 3.41e-05 tok/s 50562 elapsed 2126s
+[cpt_train:c] step 840/2289 loss 1.0829 lr 3.37e-05 tok/s 50567 elapsed 2177s
+[cpt_train:c] step 860/2289 loss 1.1361 lr 3.32e-05 tok/s 50591 elapsed 2228s
+[cpt_train:c] step 880/2289 loss 1.1876 lr 3.27e-05 tok/s 50613 elapsed 2279s
+[cpt_train:c] step 900/2289 loss 1.0918 lr 3.23e-05 tok/s 50619 elapsed 2330s
+[cpt_train:c] step 920/2289 loss 1.2043 lr 3.18e-05 tok/s 50640 elapsed 2381s
+[cpt_train:c] step 940/2289 loss 1.2552 lr 3.13e-05 tok/s 50655 elapsed 2432s
+[cpt_train:c] step 960/2289 loss 1.2149 lr 3.09e-05 tok/s 50659 elapsed 2484s
+[cpt_train:c] step 980/2289 loss 1.2061 lr 3.04e-05 tok/s 50669 elapsed 2535s
+[cpt_train:c] step 1000/2289 loss 1.2286 lr 2.99e-05 tok/s 50686 elapsed 2586s
+[cpt_train:c] step 1000 val_loss 1.1325
+[cpt_train:c] step 1020/2289 loss 1.1203 lr 2.95e-05 tok/s 50364 elapsed 2655s
+[cpt_train:c] step 1040/2289 loss 1.2211 lr 2.90e-05 tok/s 50346 elapsed 2708s
+[cpt_train:c] step 1060/2289 loss 1.1854 lr 2.86e-05 tok/s 50284 elapsed 2763s
+[cpt_train:c] step 1080/2289 loss 1.2359 lr 2.81e-05 tok/s 50233 elapsed 2818s
+[cpt_train:c] step 1100/2289 loss 1.2349 lr 2.76e-05 tok/s 50247 elapsed 2869s
+[cpt_train:c] step 1120/2289 loss 1.1692 lr 2.72e-05 tok/s 50411 elapsed 2912s
+[cpt_train:c] step 1140/2289 loss 1.1762 lr 2.67e-05 tok/s 50566 elapsed 2955s
+[cpt_train:c] step 1160/2289 loss 1.0973 lr 2.62e-05 tok/s 50729 elapsed 2997s
+[cpt_train:c] step 1180/2289 loss 1.2446 lr 2.58e-05 tok/s 50893 elapsed 3039s
+[cpt_train:c] step 1200/2289 loss 1.1151 lr 2.53e-05 tok/s 51042 elapsed 3081s
+[cpt_train:c] step 1220/2289 loss 1.0856 lr 2.48e-05 tok/s 51147 elapsed 3126s
+[cpt_train:c] step 1240/2289 loss 1.1127 lr 2.44e-05 tok/s 51152 elapsed 3177s
+[cpt_train:c] step 1260/2289 loss 1.1438 lr 2.39e-05 tok/s 51034 elapsed 3236s
+[cpt_train:c] step 1280/2289 loss 1.1209 lr 2.34e-05 tok/s 50660 elapsed 3312s
+[cpt_train:c] step 1300/2289 loss 1.1569 lr 2.30e-05 tok/s 50294 elapsed 3388s
+[cpt_train:c] step 1320/2289 loss 1.0810 lr 2.25e-05 tok/s 49948 elapsed 3464s
+[cpt_train:c] step 1340/2289 loss 1.0623 lr 2.20e-05 tok/s 49610 elapsed 3540s
+[cpt_train:c] step 1360/2289 loss 1.2470 lr 2.16e-05 tok/s 49291 elapsed 3616s
+[cpt_train:c] step 1380/2289 loss 1.0654 lr 2.11e-05 tok/s 49005 elapsed 3691s
+[cpt_train:c] step 1400/2289 loss 0.9325 lr 2.07e-05 tok/s 48739 elapsed 3765s
+[cpt_train:c] step 1420/2289 loss 1.0579 lr 2.02e-05 tok/s 48484 elapsed 3839s
+[cpt_train:c] step 1440/2289 loss 1.2055 lr 1.97e-05 tok/s 48241 elapsed 3912s
+[cpt_train:c] step 1460/2289 loss 1.1348 lr 1.93e-05 tok/s 48008 elapsed 3986s
+[cpt_train:c] step 1480/2289 loss 1.1189 lr 1.88e-05 tok/s 47793 elapsed 4059s
+[cpt_train:c] step 1500/2289 loss 1.2146 lr 1.83e-05 tok/s 47575 elapsed 4133s
+[cpt_train:c] step 1500 val_loss 1.1087
+[cpt_train:c] step 1520/2289 loss 1.1447 lr 1.79e-05 tok/s 47155 elapsed 4225s
+[cpt_train:c] step 1540/2289 loss 1.1058 lr 1.74e-05 tok/s 46966 elapsed 4298s
+[cpt_train:c] step 1560/2289 loss 1.1322 lr 1.69e-05 tok/s 46778 elapsed 4371s
+[cpt_train:c] step 1580/2289 loss 1.1180 lr 1.65e-05 tok/s 46596 elapsed 4444s
+[cpt_train:c] step 1600/2289 loss 1.0867 lr 1.60e-05 tok/s 46414 elapsed 4518s
+[cpt_train:c] step 1620/2289 loss 1.2033 lr 1.55e-05 tok/s 46239 elapsed 4592s
+[cpt_train:c] step 1640/2289 loss 1.0424 lr 1.51e-05 tok/s 46063 elapsed 4667s
+[cpt_train:c] step 1660/2289 loss 1.0939 lr 1.46e-05 tok/s 45894 elapsed 4741s
+[cpt_train:c] step 1680/2289 loss 0.9911 lr 1.41e-05 tok/s 45728 elapsed 4815s
+[cpt_train:c] step 1700/2289 loss 1.1340 lr 1.37e-05 tok/s 45567 elapsed 4890s
+[cpt_train:c] step 1720/2289 loss 1.1314 lr 1.32e-05 tok/s 45415 elapsed 4964s
+[cpt_train:c] step 1740/2289 loss 1.0206 lr 1.28e-05 tok/s 45261 elapsed 5039s
+[cpt_train:c] step 1760/2289 loss 1.0661 lr 1.23e-05 tok/s 45118 elapsed 5113s
+[cpt_train:c] step 1780/2289 loss 1.1417 lr 1.18e-05 tok/s 44972 elapsed 5188s
+[cpt_train:c] step 1800/2289 loss 1.0367 lr 1.14e-05 tok/s 44836 elapsed 5262s
+[cpt_train:c] step 1820/2289 loss 1.2059 lr 1.09e-05 tok/s 44701 elapsed 5337s
+[cpt_train:c] step 1840/2289 loss 1.1734 lr 1.04e-05 tok/s 44566 elapsed 5412s
+[cpt_train:c] step 1860/2289 loss 1.1431 lr 9.97e-06 tok/s 44435 elapsed 5486s
+[cpt_train:c] step 1880/2289 loss 1.0319 lr 9.50e-06 tok/s 44312 elapsed 5561s
+[cpt_train:c] step 1900/2289 loss 1.1990 lr 9.04e-06 tok/s 44187 elapsed 5636s
+[cpt_train:c] step 1920/2289 loss 1.1630 lr 8.57e-06 tok/s 44071 elapsed 5710s
+[cpt_train:c] step 1940/2289 loss 1.1678 lr 8.11e-06 tok/s 43962 elapsed 5784s
+[cpt_train:c] step 1960/2289 loss 1.1801 lr 7.64e-06 tok/s 43850 elapsed 5859s
+[cpt_train:c] step 1980/2289 loss 1.1312 lr 7.18e-06 tok/s 43777 elapsed 5928s
+[cpt_train:c] step 2000/2289 loss 1.0889 lr 6.71e-06 tok/s 43820 elapsed 5982s
+[cpt_train:c] step 2000 val_loss 1.0915
+[cpt_train:c] step 2020/2289 loss 1.1043 lr 6.25e-06 tok/s 43880 elapsed 6034s
+[cpt_train:c] step 2040/2289 loss 1.0733 lr 5.79e-06 tok/s 44008 elapsed 6076s
+[cpt_train:c] step 2060/2289 loss 1.2153 lr 5.32e-06 tok/s 44138 elapsed 6117s
+[cpt_train:c] step 2080/2289 loss 1.2433 lr 4.86e-06 tok/s 44262 elapsed 6159s
+[cpt_train:c] step 2100/2289 loss 1.0830 lr 4.39e-06 tok/s 44383 elapsed 6202s
+[cpt_train:c] step 2120/2289 loss 1.1306 lr 3.93e-06 tok/s 44505 elapsed 6244s
+[cpt_train:c] step 2140/2289 loss 1.1778 lr 3.46e-06 tok/s 44628 elapsed 6285s
+[cpt_train:c] step 2160/2289 loss 1.0267 lr 3.00e-06 tok/s 44747 elapsed 6327s
+[cpt_train:c] step 2180/2289 loss 1.0469 lr 2.53e-06 tok/s 44861 elapsed 6369s
+[cpt_train:c] step 2200/2289 loss 1.1049 lr 2.07e-06 tok/s 44973 elapsed 6412s
+[cpt_train:c] step 2220/2289 loss 1.1329 lr 1.60e-06 tok/s 45086 elapsed 6454s
+[cpt_train:c] step 2240/2289 loss 1.0997 lr 1.14e-06 tok/s 45197 elapsed 6496s
+[cpt_train:c] step 2260/2289 loss 1.1884 lr 6.74e-07 tok/s 45305 elapsed 6538s
+[cpt_train:c] step 2280/2289 loss 1.0574 lr 2.09e-07 tok/s 45416 elapsed 6580s
+[cpt_train:c] step 2289 val_loss 1.0878
+[cpt_train:c] saved hf/ + summary.json to /home/kiettqa/GoiBERT/artifacts/pilot_b/cpt/c

@@ -1,0 +1,131 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[dapt] source ok: {"backbone": "uitnlp/CafeBERT", "hf_commit": "af76fcf2a04096b2b54b348a3e4eb48253c93c5d", "architecture": ["XLMRobertaForMaskedLM"], "missing_keys": [], "unexpected_keys": [], "mismatched_keys": [], "mlm_head_pretrained": true, "decoder_tied_to_embeddings": true, "vocab_size": 250002, "hidden": 1024, "sparse_mlm_uses_embedding_matrix_and_lm_head_bias": true}
+[dapt] world=2 micro=16 accum=8 global=256 steps=2289/2289 warmup=137 n_train_seq=325067 holdout_seq=2000
+[dapt] step 0 holdout_loss 3.6651
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Flash Attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:102.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Flash Attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:102.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[dapt] step 20/2289 loss 3.6346 lr 7.66e-06 tok/s 55429 elapsed 47s pass 0
+[dapt] step 40/2289 loss 3.4728 lr 1.50e-05 tok/s 56887 elapsed 92s pass 0
+[dapt] step 60/2289 loss 3.2597 lr 2.23e-05 tok/s 55954 elapsed 141s pass 0
+[dapt] step 80/2289 loss 3.1607 lr 2.96e-05 tok/s 56475 elapsed 186s pass 0
+[dapt] step 100/2289 loss 3.1296 lr 3.69e-05 tok/s 56164 elapsed 233s pass 0
+[dapt] step 120/2289 loss 3.1331 lr 4.42e-05 tok/s 55207 elapsed 285s pass 0
+[dapt] step 140/2289 loss 3.1293 lr 4.99e-05 tok/s 55947 elapsed 328s pass 0
+[dapt] step 160/2289 loss 3.0152 lr 4.95e-05 tok/s 55660 elapsed 377s pass 0
+[dapt] step 180/2289 loss 3.0465 lr 4.90e-05 tok/s 55402 elapsed 426s pass 0
+[dapt] step 200/2289 loss 3.0148 lr 4.85e-05 tok/s 55415 elapsed 473s pass 0
+[dapt] step 220/2289 loss 2.9495 lr 4.81e-05 tok/s 55296 elapsed 521s pass 0
+[dapt] step 240/2289 loss 2.9831 lr 4.76e-05 tok/s 55260 elapsed 569s pass 0
+[dapt] step 260/2289 loss 2.9679 lr 4.71e-05 tok/s 54786 elapsed 622s pass 0
+[dapt] step 280/2289 loss 2.9354 lr 4.67e-05 tok/s 54218 elapsed 677s pass 0
+[dapt] step 300/2289 loss 2.9196 lr 4.62e-05 tok/s 54187 elapsed 726s pass 0
+[dapt] step 320/2289 loss 2.8148 lr 4.57e-05 tok/s 54289 elapsed 773s pass 0
+[dapt] step 340/2289 loss 2.9143 lr 4.53e-05 tok/s 54505 elapsed 818s pass 0
+[dapt] step 360/2289 loss 2.9067 lr 4.48e-05 tok/s 54628 elapsed 864s pass 0
+[dapt] step 380/2289 loss 2.8773 lr 4.44e-05 tok/s 54775 elapsed 909s pass 0
+[dapt] step 400/2289 loss 2.8295 lr 4.39e-05 tok/s 54596 elapsed 960s pass 0
+[dapt] step 420/2289 loss 2.8377 lr 4.34e-05 tok/s 54888 elapsed 1003s pass 0
+[dapt] step 440/2289 loss 2.7882 lr 4.30e-05 tok/s 54790 elapsed 1053s pass 0
+[dapt] step 460/2289 loss 2.7606 lr 4.25e-05 tok/s 54499 elapsed 1106s pass 0
+[dapt] step 480/2289 loss 2.8799 lr 4.20e-05 tok/s 54347 elapsed 1158s pass 0
+[dapt] step 500/2289 loss 2.8261 lr 4.16e-05 tok/s 54247 elapsed 1208s pass 0
+[dapt] step 500 holdout_loss 2.6701
+[dapt] step 520/2289 loss 2.7963 lr 4.11e-05 tok/s 53710 elapsed 1269s pass 0
+[dapt] step 540/2289 loss 2.7970 lr 4.06e-05 tok/s 53656 elapsed 1319s pass 0
+[dapt] step 560/2289 loss 2.8196 lr 4.02e-05 tok/s 53495 elapsed 1372s pass 0
+[dapt] step 580/2289 loss 2.7807 lr 3.97e-05 tok/s 53320 elapsed 1426s pass 0
+[dapt] step 600/2289 loss 2.7910 lr 3.92e-05 tok/s 53486 elapsed 1470s pass 0
+[dapt] step 620/2289 loss 2.7661 lr 3.88e-05 tok/s 53511 elapsed 1519s pass 0
+[dapt] step 640/2289 loss 2.6835 lr 3.83e-05 tok/s 53417 elapsed 1570s pass 0
+[dapt] step 660/2289 loss 2.7381 lr 3.78e-05 tok/s 53451 elapsed 1618s pass 0
+[dapt] step 680/2289 loss 2.8214 lr 3.74e-05 tok/s 53436 elapsed 1668s pass 0
+[dapt] step 700/2289 loss 2.7315 lr 3.69e-05 tok/s 53459 elapsed 1716s pass 0
+[dapt] step 720/2289 loss 2.7680 lr 3.65e-05 tok/s 53557 elapsed 1762s pass 0
+[dapt] step 740/2289 loss 2.6150 lr 3.60e-05 tok/s 53429 elapsed 1815s pass 0
+[dapt] step 760/2289 loss 2.6758 lr 3.55e-05 tok/s 53324 elapsed 1868s pass 0
+[dapt] step 780/2289 loss 2.7750 lr 3.51e-05 tok/s 53207 elapsed 1921s pass 0
+[dapt] step 800/2289 loss 2.6508 lr 3.46e-05 tok/s 52983 elapsed 1979s pass 0
+[dapt] step 820/2289 loss 2.7454 lr 3.41e-05 tok/s 52862 elapsed 2033s pass 0
+[dapt] step 840/2289 loss 2.7058 lr 3.37e-05 tok/s 52994 elapsed 2078s pass 0
+[dapt] step 860/2289 loss 2.7349 lr 3.32e-05 tok/s 53096 elapsed 2123s pass 0
+[dapt] step 880/2289 loss 2.6533 lr 3.27e-05 tok/s 53100 elapsed 2172s pass 0
+[dapt] step 900/2289 loss 2.7250 lr 3.23e-05 tok/s 53053 elapsed 2224s pass 0
+[dapt] step 920/2289 loss 2.7328 lr 3.18e-05 tok/s 52977 elapsed 2276s pass 0
+[dapt] step 940/2289 loss 2.6716 lr 3.13e-05 tok/s 52924 elapsed 2328s pass 0
+[dapt] step 960/2289 loss 2.6810 lr 3.09e-05 tok/s 52993 elapsed 2374s pass 0
+[dapt] step 980/2289 loss 2.6690 lr 3.04e-05 tok/s 52912 elapsed 2428s pass 0
+[dapt] step 1000/2289 loss 2.7327 lr 2.99e-05 tok/s 53004 elapsed 2473s pass 0
+[dapt] step 1000 holdout_loss 2.5401
+[dapt] step 1020/2289 loss 2.7174 lr 2.95e-05 tok/s 52895 elapsed 2528s pass 0
+[dapt] step 1040/2289 loss 2.6335 lr 2.90e-05 tok/s 52956 elapsed 2574s pass 0
+[dapt] step 1060/2289 loss 2.6790 lr 2.86e-05 tok/s 53087 elapsed 2617s pass 0
+[dapt] step 1080/2289 loss 2.6427 lr 2.81e-05 tok/s 53168 elapsed 2662s pass 0
+[dapt] step 1100/2289 loss 2.5974 lr 2.76e-05 tok/s 53222 elapsed 2709s pass 0
+[dapt] step 1120/2289 loss 2.7086 lr 2.72e-05 tok/s 53236 elapsed 2758s pass 0
+[dapt] step 1140/2289 loss 2.6354 lr 2.67e-05 tok/s 53254 elapsed 2806s pass 0
+[dapt] step 1160/2289 loss 2.7404 lr 2.62e-05 tok/s 53232 elapsed 2856s pass 0
+[dapt] step 1180/2289 loss 2.6800 lr 2.58e-05 tok/s 53207 elapsed 2907s pass 0
+[dapt] step 1200/2289 loss 2.7031 lr 2.53e-05 tok/s 53125 elapsed 2961s pass 0
+[dapt] step 1220/2289 loss 2.6373 lr 2.48e-05 tok/s 53149 elapsed 3009s pass 0
+[dapt] step 1240/2289 loss 2.6954 lr 2.44e-05 tok/s 53117 elapsed 3060s pass 0
+[dapt] step 1260/2289 loss 2.5967 lr 2.39e-05 tok/s 53205 elapsed 3104s pass 0
+[dapt] step 1280/2289 loss 2.6058 lr 2.34e-05 tok/s 53098 elapsed 3160s pass 1
+[dapt] step 1300/2289 loss 2.6951 lr 2.30e-05 tok/s 53216 elapsed 3202s pass 1
+[dapt] step 1320/2289 loss 2.5674 lr 2.25e-05 tok/s 53194 elapsed 3253s pass 1
+[dapt] step 1340/2289 loss 2.6313 lr 2.20e-05 tok/s 53263 elapsed 3298s pass 1
+[dapt] step 1360/2289 loss 2.6786 lr 2.16e-05 tok/s 53217 elapsed 3350s pass 1
+[dapt] step 1380/2289 loss 2.6001 lr 2.11e-05 tok/s 53247 elapsed 3397s pass 1
+[dapt] step 1400/2289 loss 2.6392 lr 2.07e-05 tok/s 53236 elapsed 3447s pass 1
+[dapt] step 1420/2289 loss 2.6136 lr 2.02e-05 tok/s 53193 elapsed 3499s pass 1
+[dapt] step 1440/2289 loss 2.5798 lr 1.97e-05 tok/s 53231 elapsed 3546s pass 1
+[dapt] step 1460/2289 loss 2.5882 lr 1.93e-05 tok/s 53174 elapsed 3599s pass 1
+[dapt] step 1480/2289 loss 2.6050 lr 1.88e-05 tok/s 53209 elapsed 3646s pass 1
+[dapt] step 1500/2289 loss 2.6934 lr 1.83e-05 tok/s 53263 elapsed 3691s pass 1
+[dapt] step 1500 holdout_loss 2.4698
+[dapt] step 1520/2289 loss 2.6654 lr 1.79e-05 tok/s 53092 elapsed 3753s pass 1
+[dapt] step 1540/2289 loss 2.5406 lr 1.74e-05 tok/s 53088 elapsed 3802s pass 1
+[dapt] step 1560/2289 loss 2.5525 lr 1.69e-05 tok/s 53094 elapsed 3851s pass 1
+[dapt] step 1580/2289 loss 2.5878 lr 1.65e-05 tok/s 53153 elapsed 3896s pass 1
+[dapt] step 1600/2289 loss 2.6265 lr 1.60e-05 tok/s 53165 elapsed 3945s pass 1
+[dapt] step 1620/2289 loss 2.6797 lr 1.55e-05 tok/s 53164 elapsed 3994s pass 1
+[dapt] step 1640/2289 loss 2.5539 lr 1.51e-05 tok/s 53266 elapsed 4036s pass 1
+[dapt] step 1660/2289 loss 2.5727 lr 1.46e-05 tok/s 53191 elapsed 4091s pass 1
+[dapt] step 1680/2289 loss 2.6180 lr 1.41e-05 tok/s 53210 elapsed 4138s pass 1
+[dapt] step 1700/2289 loss 2.6094 lr 1.37e-05 tok/s 53257 elapsed 4184s pass 1
+[dapt] step 1720/2289 loss 2.5743 lr 1.32e-05 tok/s 53172 elapsed 4240s pass 1
+[dapt] step 1740/2289 loss 2.6269 lr 1.28e-05 tok/s 53164 elapsed 4290s pass 1
+[dapt] step 1760/2289 loss 2.6447 lr 1.23e-05 tok/s 53148 elapsed 4340s pass 1
+[dapt] step 1780/2289 loss 2.6721 lr 1.18e-05 tok/s 53103 elapsed 4393s pass 1
+[dapt] step 1800/2289 loss 2.6151 lr 1.14e-05 tok/s 53091 elapsed 4444s pass 1
+[dapt] step 1820/2289 loss 2.6325 lr 1.09e-05 tok/s 53120 elapsed 4491s pass 1
+[dapt] step 1840/2289 loss 2.5826 lr 1.04e-05 tok/s 53158 elapsed 4537s pass 1
+[dapt] step 1860/2289 loss 2.5532 lr 9.97e-06 tok/s 53217 elapsed 4581s pass 1
+[dapt] step 1880/2289 loss 2.5980 lr 9.50e-06 tok/s 53288 elapsed 4624s pass 1
+[dapt] step 1900/2289 loss 2.6196 lr 9.04e-06 tok/s 53304 elapsed 4672s pass 1
+[dapt] step 1920/2289 loss 2.6116 lr 8.57e-06 tok/s 53270 elapsed 4724s pass 1
+[dapt] step 1940/2289 loss 2.5753 lr 8.11e-06 tok/s 53222 elapsed 4778s pass 1
+[dapt] step 1960/2289 loss 2.5449 lr 7.64e-06 tok/s 53203 elapsed 4829s pass 1
+[dapt] step 1980/2289 loss 2.5241 lr 7.18e-06 tok/s 53106 elapsed 4887s pass 1
+[dapt] step 2000/2289 loss 2.6058 lr 6.71e-06 tok/s 53153 elapsed 4932s pass 1
+[dapt] step 2000 holdout_loss 2.4350
+[dapt] step 2020/2289 loss 2.5004 lr 6.25e-06 tok/s 53084 elapsed 4988s pass 1
+[dapt] step 2040/2289 loss 2.5103 lr 5.79e-06 tok/s 53116 elapsed 5034s pass 1
+[dapt] step 2060/2289 loss 2.6212 lr 5.32e-06 tok/s 53118 elapsed 5083s pass 1
+[dapt] step 2080/2289 loss 2.5536 lr 4.86e-06 tok/s 53251 elapsed 5120s pass 1
+[dapt] step 2100/2289 loss 2.5573 lr 4.39e-06 tok/s 53383 elapsed 5156s pass 1
+[dapt] step 2120/2289 loss 2.5548 lr 3.93e-06 tok/s 53514 elapsed 5193s pass 1
+[dapt] step 2140/2289 loss 2.5629 lr 3.46e-06 tok/s 53642 elapsed 5229s pass 1
+[dapt] step 2160/2289 loss 2.5628 lr 3.00e-06 tok/s 53769 elapsed 5265s pass 1
+[dapt] step 2180/2289 loss 2.4875 lr 2.53e-06 tok/s 53894 elapsed 5302s pass 1
+[dapt] step 2200/2289 loss 2.5437 lr 2.07e-06 tok/s 54017 elapsed 5338s pass 1
+[dapt] step 2220/2289 loss 2.6057 lr 1.60e-06 tok/s 54139 elapsed 5375s pass 1
+[dapt] step 2240/2289 loss 2.5037 lr 1.14e-06 tok/s 54260 elapsed 5411s pass 1
+[dapt] step 2260/2289 loss 2.5748 lr 6.74e-07 tok/s 54378 elapsed 5447s pass 1
+[dapt] step 2280/2289 loss 2.5187 lr 2.09e-07 tok/s 54496 elapsed 5484s pass 1
+[dapt] step 2289 holdout_loss 2.4260
+[dapt] done: 300023808 tokens in 1.53 h, holdout 3.6651 -> 2.4260, saved /home/kiettqa/GoiBERT/artifacts/cdbk_dapt_pilot/dapt/hf

@@ -1,0 +1,253 @@
+{
+  "protocol": "E22-composite-extension-preflight-v1",
+  "created_at": "2026-09-14T02:51:46Z",
+  "elapsed_seconds": 6.638542890548706,
+  "device": "cuda:2",
+  "status": "passed",
+  "checks": {
+    "visfd_composites_all_pass": true,
+    "uniform_sampling_all_pass": true,
+    "nc_composite_step_all_pass": true,
+    "strict_reload_all_pass": true,
+    "natural_row_label_all_pass": true
+  },
+  "functional": {
+    "visfd_composites": {
+      "task_id": "visfd",
+      "sampling": "rare_pair_weighted",
+      "coverage": {
+        "task_id": "visfd",
+        "seed": 42,
+        "sampling": "rare_pair_weighted",
+        "n_train": 7786,
+        "n_eligible_aspects": 10,
+        "eligible_aspects": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "n_composites_target": 2595,
+        "n_composites_built": 2595,
+        "attempts": 2595,
+        "dropped_assert_failures": 0,
+        "n_valid_pairs": 36,
+        "n_rare_pairs_le5": 0,
+        "n_rare_pairs_covered": 0,
+        "distinct_pairs_used": 36,
+        "pair_use_count": {
+          "0-1": 31,
+          "0-2": 66,
+          "0-3": 42,
+          "0-4": 24,
+          "0-6": 25,
+          "0-7": 51,
+          "0-8": 100,
+          "0-9": 51,
+          "1-2": 89,
+          "1-3": 60,
+          "1-4": 31,
+          "1-6": 37,
+          "1-7": 66,
+          "1-8": 108,
+          "1-9": 93,
+          "2-3": 105,
+          "2-4": 65,
+          "2-6": 44,
+          "2-7": 117,
+          "2-8": 186,
+          "2-9": 118,
+          "3-4": 40,
+          "3-6": 25,
+          "3-7": 85,
+          "3-8": 102,
+          "3-9": 86,
+          "4-6": 12,
+          "4-7": 24,
+          "4-8": 79,
+          "4-9": 34,
+          "6-7": 43,
+          "6-8": 97,
+          "6-9": 42,
+          "7-8": 157,
+          "7-9": 72,
+          "8-9": 188
+        }
+      },
+      "n_asserted": 200,
+      "assert_failures": 0,
+      "others_never_paired": true,
+      "others_always_absent_in_label": true,
+      "checks": {
+        "assert_pass": true,
+        "composites_built_at_target": true,
+        "eligible_aspects_exclude_others": true,
+        "others_never_paired": true,
+        "others_always_absent_in_label": true
+      }
+    },
+    "uniform_sampling_absa_restaurant": {
+      "task_id": "absa_restaurant",
+      "by_sampling": {
+        "rare_pair_weighted": {
+          "n_composites_built": 2343,
+          "n_composites_target": 2343,
+          "dropped_assert_failures": 0,
+          "n_valid_pairs": 66,
+          "pair_use_min": 0,
+          "pair_use_max": 190,
+          "pair_use_mean": 35.5,
+          "pair_use_stdev": 42.297
+        },
+        "uniform": {
+          "n_composites_built": 2343,
+          "n_composites_target": 2343,
+          "dropped_assert_failures": 1,
+          "n_valid_pairs": 66,
+          "pair_use_min": 25,
+          "pair_use_max": 46,
+          "pair_use_mean": 35.5,
+          "pair_use_stdev": 5.506
+        }
+      },
+      "checks": {
+        "both_reached_target": true,
+        "both_low_drop_rate": true,
+        "same_valid_pairs_and_target": true,
+        "uniform_has_lower_stdev": true
+      }
+    },
+    "nc_composite_step_visfd": {
+      "task_id": "visfd",
+      "arm": "d1_composite",
+      "mu": 0.0,
+      "nc_lambda": 0.5,
+      "n_composite_rows_in_batch": 5,
+      "input_shape": [
+        16,
+        93
+      ],
+      "ce_loss": 1.3819247484207153,
+      "consistency_loss": 0.00396745977923274,
+      "total_loss": 1.3839085102081299,
+      "grad_norm": 1.9841673374176025,
+      "inv_loss_computed": false,
+      "noise_change_rate": 0.5,
+      "checks": {
+        "total_finite": true,
+        "grad_norm_finite": true,
+        "n_composite_rows_in_batch_gt_0": true,
+        "mu_zero_never_computes_inv": true
+      }
+    },
+    "strict_reload_visfd": {
+      "task_id": "visfd",
+      "model_spec": {
+        "role": "e20_cti_student",
+        "backbone": "goibert-b-dapt",
+        "hidden_size": 768,
+        "head_hidden_size": 768,
+        "head_dropout": 0.1,
+        "num_labels": 42,
+        "num_aspects": 11,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          2,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 102983466,
+        "trainable_parameters": 102983466,
+        "arm": "d1_composite",
+        "mu": 0.0,
+        "added_parameter_count": 0
+      },
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "max_abs_logit_diff_after_reload": 0.0,
+      "checks": {
+        "strict_reload_ok": true,
+        "added_parameter_count_zero": true,
+        "reload_parity_le_1e4": true
+      }
+    },
+    "natural_row_label_visfd": {
+      "task_id": "visfd",
+      "row_index": 2,
+      "row_id": "visfd:train:000002",
+      "num_aspects": 11,
+      "aspect_class_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "raw_label": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "loader_label": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "manual_conversion_of_raw": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "checks": {
+        "loader_label_matches_manual_conversion": true,
+        "label_vector_length_matches_aspect_class_counts": true,
+        "aspect_class_counts_others_is_binary": true,
+        "aspect_class_counts_other_slots_are_4way": true,
+        "others_slot_binary_in_loader_space": true
+      }
+    }
+  }
+}

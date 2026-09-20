@@ -1,0 +1,1534 @@
+{
+ "model": "student_e8",
+ "task": "absa_restaurant",
+ "checkpoint": "artifacts/e8/absa_restaurant/seed_42/best_checkpoint.pt",
+ "checkpoint_sha256": "01192107e5ea24caedbe4736fbc34e9124efe81c3a13fd4085bcf612f57dfc03",
+ "layers": [
+  7,
+  8,
+  9
+ ],
+ "device": "cuda:1",
+ "seed": 2026,
+ "include_test": false,
+ "parity": {
+  "f1_manual_rho0": 0.7127659574468085,
+  "f1_native_sdpa": 0.7127659574468085,
+  "max_abs_logit_diff": 0.03125,
+  "mean_abs_logit_diff": 0.0017096236115321517,
+  "pred_rows_differ_manual_vs_native": 0,
+  "native_pred_rows_equal_saved_artifact": 771,
+  "n_rows": 771
+ },
+ "step0a": {
+  "n_rows": 512,
+  "multiplicity": {
+   "tau4": {
+    "7": {
+     "0": {
+      "median_m": 2.5809324644720046,
+      "iqr_logm": 0.490212082862854,
+      "p10_m": 1.7356166236084556,
+      "p90_m": 4.479515697742374,
+      "frac_m_ge_1.5": 0.9683072566986084
+     },
+     "1": {
+      "median_m": 1.9066287458015672,
+      "iqr_logm": 0.3829224109649658,
+      "p10_m": 1.390155511099227,
+      "p90_m": 2.773573593744228,
+      "frac_m_ge_1.5": 0.8161819577217102
+     },
+     "2": {
+      "median_m": 2.397061797409768,
+      "iqr_logm": 0.48392289876937866,
+      "p10_m": 1.618077703685234,
+      "p90_m": 4.088129342636781,
+      "frac_m_ge_1.5": 0.9469612240791321
+     },
+     "3": {
+      "median_m": 2.1988540314183855,
+      "iqr_logm": 0.42882412672042847,
+      "p10_m": 1.536217316791849,
+      "p90_m": 3.5479841417368374,
+      "frac_m_ge_1.5": 0.916946291923523
+     },
+     "4": {
+      "median_m": 2.21336306197697,
+      "iqr_logm": 0.45881879329681396,
+      "p10_m": 1.5005082574811308,
+      "p90_m": 3.4936877723956155,
+      "frac_m_ge_1.5": 0.9005406498908997
+     },
+     "5": {
+      "median_m": 2.224565906924256,
+      "iqr_logm": 0.4287269711494446,
+      "p10_m": 1.5532891766523063,
+      "p90_m": 3.550354737147886,
+      "frac_m_ge_1.5": 0.923378050327301
+     }
+    },
+    "8": {
+     "0": {
+      "median_m": 3.275061073577625,
+      "iqr_logm": 0.531744122505188,
+      "p10_m": 2.0052556823033503,
+      "p90_m": 5.20112153862719,
+      "frac_m_ge_1.5": 0.9811707735061646
+     },
+     "1": {
+      "median_m": 2.5161306874212173,
+      "iqr_logm": 0.49249178171157837,
+      "p10_m": 1.698255038429228,
+      "p90_m": 4.4469098290094555,
+      "frac_m_ge_1.5": 0.9598247408866882
+     },
+     "2": {
+      "median_m": 2.3769795861350502,
+      "iqr_logm": 0.4548899531364441,
+      "p10_m": 1.6126754090881417,
+      "p90_m": 3.8865449694110943,
+      "frac_m_ge_1.5": 0.9453765749931335
+     },
+     "3": {
+      "median_m": 2.375910291769318,
+      "iqr_logm": 0.44164735078811646,
+      "p10_m": 1.6508673422454554,
+      "p90_m": 3.8456968524351356,
+      "frac_m_ge_1.5": 0.9558165669441223
+     },
+     "4": {
+      "median_m": 2.230496128848491,
+      "iqr_logm": 0.4272615313529968,
+      "p10_m": 1.568323664715399,
+      "p90_m": 3.5613508766927295,
+      "frac_m_ge_1.5": 0.9308351874351501
+     },
+     "5": {
+      "median_m": 2.224436365908055,
+      "iqr_logm": 0.43347567319869995,
+      "p10_m": 1.5539304943037462,
+      "p90_m": 3.580117538261098,
+      "frac_m_ge_1.5": 0.9248694777488708
+     }
+    },
+    "9": {
+     "0": {
+      "median_m": 2.4321542207269538,
+      "iqr_logm": 0.47872424125671387,
+      "p10_m": 1.6294968174698736,
+      "p90_m": 4.102297994663938,
+      "frac_m_ge_1.5": 0.9470544457435608
+     },
+     "1": {
+      "median_m": 2.33855649353694,
+      "iqr_logm": 0.46081113815307617,
+      "p10_m": 1.5854667588082272,
+      "p90_m": 3.830718057623923,
+      "frac_m_ge_1.5": 0.9372669458389282
+     },
+     "2": {
+      "median_m": 2.1263076152073843,
+      "iqr_logm": 0.38031065464019775,
+      "p10_m": 1.5154056369594997,
+      "p90_m": 3.1519553595002123,
+      "frac_m_ge_1.5": 0.9082773923873901
+     },
+     "3": {
+      "median_m": 2.60149809649981,
+      "iqr_logm": 0.5046433210372925,
+      "p10_m": 1.7179414249223595,
+      "p90_m": 4.44848242205122,
+      "frac_m_ge_1.5": 0.9634600877761841
+     },
+     "4": {
+      "median_m": 2.4707747783640515,
+      "iqr_logm": 0.48148131370544434,
+      "p10_m": 1.6388128744283674,
+      "p90_m": 4.068864399092765,
+      "frac_m_ge_1.5": 0.9501305222511292
+     },
+     "5": {
+      "median_m": 2.459903461976573,
+      "iqr_logm": 0.5154160261154175,
+      "p10_m": 1.6293119494178347,
+      "p90_m": 4.4152307415723415,
+      "frac_m_ge_1.5": 0.9464951753616333
+     }
+    }
+   },
+   "tau8": {
+    "7": {
+     "0": {
+      "median_m": 1.3561481774554054,
+      "iqr_logm": 0.47652700543403625,
+      "p10_m": 1.059528696447319,
+      "p90_m": 2.275701178306184,
+      "frac_m_ge_1.5": 0.3968120813369751
+     },
+     "1": {
+      "median_m": 1.0887995411709348,
+      "iqr_logm": 0.133060485124588,
+      "p10_m": 1.0199266312805726,
+      "p90_m": 1.4168220324682592,
+      "frac_m_ge_1.5": 0.08361297845840454
+     },
+     "2": {
+      "median_m": 1.3023735518918826,
+      "iqr_logm": 0.3935781717300415,
+      "p10_m": 1.0534214175878605,
+      "p90_m": 2.049329012835578,
+      "frac_m_ge_1.5": 0.3358501195907593
+     },
+     "3": {
+      "median_m": 1.202983089484688,
+      "iqr_logm": 0.3287540674209595,
+      "p10_m": 1.0358414317393174,
+      "p90_m": 1.9353618166621906,
+      "frac_m_ge_1.5": 0.25018641352653503
+     },
+     "4": {
+      "median_m": 1.213638011578656,
+      "iqr_logm": 0.29336029291152954,
+      "p10_m": 1.0373161484899938,
+      "p90_m": 1.885870390754992,
+      "frac_m_ge_1.5": 0.22576434910297394
+     },
+     "5": {
+      "median_m": 1.2202935740701757,
+      "iqr_logm": 0.3207957446575165,
+      "p10_m": 1.0414644041531764,
+      "p90_m": 1.9382336702901442,
+      "frac_m_ge_1.5": 0.2544742822647095
+     }
+    },
+    "8": {
+     "0": {
+      "median_m": 1.7041121108871593,
+      "iqr_logm": 0.5238618850708008,
+      "p10_m": 1.1213890210692044,
+      "p90_m": 2.7973274233939924,
+      "frac_m_ge_1.5": 0.621084988117218
+     },
+     "1": {
+      "median_m": 1.3645091552135509,
+      "iqr_logm": 0.4642202854156494,
+      "p10_m": 1.0629468549589953,
+      "p90_m": 2.3264147389799277,
+      "frac_m_ge_1.5": 0.4000745713710785
+     },
+     "2": {
+      "median_m": 1.3018526978321607,
+      "iqr_logm": 0.4082990884780884,
+      "p10_m": 1.052417236320309,
+      "p90_m": 2.0459533843972713,
+      "frac_m_ge_1.5": 0.35095077753067017
+     },
+     "3": {
+      "median_m": 1.274684369878729,
+      "iqr_logm": 0.3906775116920471,
+      "p10_m": 1.0545759825748742,
+      "p90_m": 2.0433617960291586,
+      "frac_m_ge_1.5": 0.3221476376056671
+     },
+     "4": {
+      "median_m": 1.215263133321636,
+      "iqr_logm": 0.29794180393218994,
+      "p10_m": 1.044846525919164,
+      "p90_m": 1.9651897127741733,
+      "frac_m_ge_1.5": 0.2362043261528015
+     },
+     "5": {
+      "median_m": 1.209313853031124,
+      "iqr_logm": 0.33055877685546875,
+      "p10_m": 1.0382799978535762,
+      "p90_m": 1.9806708864916058,
+      "frac_m_ge_1.5": 0.25288963317871094
+     }
+    },
+    "9": {
+     "0": {
+      "median_m": 1.3187616671120337,
+      "iqr_logm": 0.4380972683429718,
+      "p10_m": 1.0517881745647975,
+      "p90_m": 2.1702095402626425,
+      "frac_m_ge_1.5": 0.3639075458049774
+     },
+     "1": {
+      "median_m": 1.2660908639192763,
+      "iqr_logm": 0.3596646785736084,
+      "p10_m": 1.04824889761421,
+      "p90_m": 2.0060730245247607,
+      "frac_m_ge_1.5": 0.3007084131240845
+     },
+     "2": {
+      "median_m": 1.191694491169896,
+      "iqr_logm": 0.26472023129463196,
+      "p10_m": 1.038521587565237,
+      "p90_m": 1.7865296573259082,
+      "frac_m_ge_1.5": 0.19817300140857697
+     },
+     "3": {
+      "median_m": 1.3906617933311858,
+      "iqr_logm": 0.4825890064239502,
+      "p10_m": 1.0681725657380057,
+      "p90_m": 2.341277411875629,
+      "frac_m_ge_1.5": 0.42747950553894043
+     },
+     "4": {
+      "median_m": 1.3265894301877408,
+      "iqr_logm": 0.4359394609928131,
+      "p10_m": 1.0581191440203568,
+      "p90_m": 2.150450708622692,
+      "frac_m_ge_1.5": 0.3744407296180725
+     },
+     "5": {
+      "median_m": 1.334697047902561,
+      "iqr_logm": 0.4637170732021332,
+      "p10_m": 1.053778424602262,
+      "p90_m": 2.272283118766099,
+      "frac_m_ge_1.5": 0.3863721191883087
+     }
+    }
+   }
+  },
+  "duplicate_text_probe": {
+   "7": {
+    "n_tokens": 1129,
+    "mean_cos_copy1_copy2_per_head": [
+     0.8855335712432861,
+     0.4817550778388977,
+     0.7513040900230408,
+     0.8153041005134583,
+     0.4872283637523651,
+     0.8364502191543579
+    ],
+    "median_m_copy1_per_head_tau8": [
+     1.9520347118377686,
+     1.2023444175720215,
+     1.7643448114395142,
+     1.6006001234054565,
+     1.383631706237793,
+     1.7348823547363281
+    ]
+   },
+   "8": {
+    "n_tokens": 1129,
+    "mean_cos_copy1_copy2_per_head": [
+     0.9207034707069397,
+     0.8877795934677124,
+     0.7639957070350647,
+     0.817284882068634,
+     0.5757644772529602,
+     0.7546943426132202
+    ],
+    "median_m_copy1_per_head_tau8": [
+     2.7031421661376953,
+     2.0943660736083984,
+     1.7542192935943604,
+     1.726766586303711,
+     1.405862808227539,
+     1.5667369365692139
+    ]
+   },
+   "9": {
+    "n_tokens": 1129,
+    "mean_cos_copy1_copy2_per_head": [
+     0.7724049687385559,
+     0.7335751056671143,
+     0.7300341725349426,
+     0.8379917144775391,
+     0.8001546263694763,
+     0.8318426012992859
+    ],
+    "median_m_copy1_per_head_tau8": [
+     1.7070088386535645,
+     1.5991973876953125,
+     1.461464762687683,
+     2.018590211868286,
+     1.8317458629608154,
+     1.829477310180664
+    ]
+   }
+  }
+ },
+ "step0b_pairs": {
+  "n_single_aspect_rows_eligible": 372,
+  "n_pairs": 200,
+  "pair_ids": [
+   [
+    "absa_restaurant:validation:000514",
+    "absa_restaurant:validation:000524"
+   ],
+   [
+    "absa_restaurant:validation:000677",
+    "absa_restaurant:validation:000101"
+   ],
+   [
+    "absa_restaurant:validation:000214",
+    "absa_restaurant:validation:000621"
+   ],
+   [
+    "absa_restaurant:validation:000225",
+    "absa_restaurant:validation:000002"
+   ],
+   [
+    "absa_restaurant:validation:000108",
+    "absa_restaurant:validation:000288"
+   ],
+   [
+    "absa_restaurant:validation:000089",
+    "absa_restaurant:validation:000570"
+   ],
+   [
+    "absa_restaurant:validation:000621",
+    "absa_restaurant:validation:000500"
+   ],
+   [
+    "absa_restaurant:validation:000576",
+    "absa_restaurant:validation:000491"
+   ],
+   [
+    "absa_restaurant:validation:000524",
+    "absa_restaurant:validation:000531"
+   ],
+   [
+    "absa_restaurant:validation:000214",
+    "absa_restaurant:validation:000131"
+   ],
+   [
+    "absa_restaurant:validation:000492",
+    "absa_restaurant:validation:000217"
+   ],
+   [
+    "absa_restaurant:validation:000711",
+    "absa_restaurant:validation:000476"
+   ],
+   [
+    "absa_restaurant:validation:000254",
+    "absa_restaurant:validation:000571"
+   ],
+   [
+    "absa_restaurant:validation:000266",
+    "absa_restaurant:validation:000008"
+   ],
+   [
+    "absa_restaurant:validation:000464",
+    "absa_restaurant:validation:000533"
+   ],
+   [
+    "absa_restaurant:validation:000729",
+    "absa_restaurant:validation:000496"
+   ],
+   [
+    "absa_restaurant:validation:000506",
+    "absa_restaurant:validation:000446"
+   ],
+   [
+    "absa_restaurant:validation:000097",
+    "absa_restaurant:validation:000449"
+   ],
+   [
+    "absa_restaurant:validation:000461",
+    "absa_restaurant:validation:000180"
+   ],
+   [
+    "absa_restaurant:validation:000081",
+    "absa_restaurant:validation:000637"
+   ],
+   [
+    "absa_restaurant:validation:000119",
+    "absa_restaurant:validation:000646"
+   ],
+   [
+    "absa_restaurant:validation:000046",
+    "absa_restaurant:validation:000557"
+   ],
+   [
+    "absa_restaurant:validation:000324",
+    "absa_restaurant:validation:000702"
+   ],
+   [
+    "absa_restaurant:validation:000598",
+    "absa_restaurant:validation:000585"
+   ],
+   [
+    "absa_restaurant:validation:000479",
+    "absa_restaurant:validation:000609"
+   ],
+   [
+    "absa_restaurant:validation:000158",
+    "absa_restaurant:validation:000137"
+   ],
+   [
+    "absa_restaurant:validation:000395",
+    "absa_restaurant:validation:000014"
+   ],
+   [
+    "absa_restaurant:validation:000074",
+    "absa_restaurant:validation:000050"
+   ],
+   [
+    "absa_restaurant:validation:000362",
+    "absa_restaurant:validation:000676"
+   ],
+   [
+    "absa_restaurant:validation:000366",
+    "absa_restaurant:validation:000027"
+   ],
+   [
+    "absa_restaurant:validation:000027",
+    "absa_restaurant:validation:000522"
+   ],
+   [
+    "absa_restaurant:validation:000483",
+    "absa_restaurant:validation:000343"
+   ],
+   [
+    "absa_restaurant:validation:000460",
+    "absa_restaurant:validation:000341"
+   ],
+   [
+    "absa_restaurant:validation:000352",
+    "absa_restaurant:validation:000464"
+   ],
+   [
+    "absa_restaurant:validation:000718",
+    "absa_restaurant:validation:000747"
+   ],
+   [
+    "absa_restaurant:validation:000191",
+    "absa_restaurant:validation:000677"
+   ],
+   [
+    "absa_restaurant:validation:000048",
+    "absa_restaurant:validation:000461"
+   ],
+   [
+    "absa_restaurant:validation:000495",
+    "absa_restaurant:validation:000750"
+   ],
+   [
+    "absa_restaurant:validation:000718",
+    "absa_restaurant:validation:000022"
+   ],
+   [
+    "absa_restaurant:validation:000131",
+    "absa_restaurant:validation:000676"
+   ],
+   [
+    "absa_restaurant:validation:000360",
+    "absa_restaurant:validation:000174"
+   ],
+   [
+    "absa_restaurant:validation:000176",
+    "absa_restaurant:validation:000341"
+   ],
+   [
+    "absa_restaurant:validation:000531",
+    "absa_restaurant:validation:000492"
+   ],
+   [
+    "absa_restaurant:validation:000537",
+    "absa_restaurant:validation:000534"
+   ],
+   [
+    "absa_restaurant:validation:000366",
+    "absa_restaurant:validation:000157"
+   ],
+   [
+    "absa_restaurant:validation:000366",
+    "absa_restaurant:validation:000574"
+   ],
+   [
+    "absa_restaurant:validation:000550",
+    "absa_restaurant:validation:000205"
+   ],
+   [
+    "absa_restaurant:validation:000108",
+    "absa_restaurant:validation:000646"
+   ],
+   [
+    "absa_restaurant:validation:000567",
+    "absa_restaurant:validation:000580"
+   ],
+   [
+    "absa_restaurant:validation:000204",
+    "absa_restaurant:validation:000581"
+   ],
+   [
+    "absa_restaurant:validation:000295",
+    "absa_restaurant:validation:000576"
+   ],
+   [
+    "absa_restaurant:validation:000266",
+    "absa_restaurant:validation:000709"
+   ],
+   [
+    "absa_restaurant:validation:000723",
+    "absa_restaurant:validation:000059"
+   ],
+   [
+    "absa_restaurant:validation:000661",
+    "absa_restaurant:validation:000103"
+   ],
+   [
+    "absa_restaurant:validation:000275",
+    "absa_restaurant:validation:000609"
+   ],
+   [
+    "absa_restaurant:validation:000063",
+    "absa_restaurant:validation:000294"
+   ],
+   [
+    "absa_restaurant:validation:000056",
+    "absa_restaurant:validation:000096"
+   ],
+   [
+    "absa_restaurant:validation:000574",
+    "absa_restaurant:validation:000586"
+   ],
+   [
+    "absa_restaurant:validation:000463",
+    "absa_restaurant:validation:000633"
+   ],
+   [
+    "absa_restaurant:validation:000652",
+    "absa_restaurant:validation:000693"
+   ],
+   [
+    "absa_restaurant:validation:000205",
+    "absa_restaurant:validation:000613"
+   ],
+   [
+    "absa_restaurant:validation:000726",
+    "absa_restaurant:validation:000394"
+   ],
+   [
+    "absa_restaurant:validation:000294",
+    "absa_restaurant:validation:000371"
+   ],
+   [
+    "absa_restaurant:validation:000056",
+    "absa_restaurant:validation:000755"
+   ],
+   [
+    "absa_restaurant:validation:000447",
+    "absa_restaurant:validation:000026"
+   ],
+   [
+    "absa_restaurant:validation:000605",
+    "absa_restaurant:validation:000022"
+   ],
+   [
+    "absa_restaurant:validation:000193",
+    "absa_restaurant:validation:000574"
+   ],
+   [
+    "absa_restaurant:validation:000129",
+    "absa_restaurant:validation:000533"
+   ],
+   [
+    "absa_restaurant:validation:000367",
+    "absa_restaurant:validation:000616"
+   ],
+   [
+    "absa_restaurant:validation:000677",
+    "absa_restaurant:validation:000693"
+   ],
+   [
+    "absa_restaurant:validation:000311",
+    "absa_restaurant:validation:000030"
+   ],
+   [
+    "absa_restaurant:validation:000129",
+    "absa_restaurant:validation:000371"
+   ],
+   [
+    "absa_restaurant:validation:000211",
+    "absa_restaurant:validation:000129"
+   ],
+   [
+    "absa_restaurant:validation:000180",
+    "absa_restaurant:validation:000553"
+   ],
+   [
+    "absa_restaurant:validation:000723",
+    "absa_restaurant:validation:000567"
+   ],
+   [
+    "absa_restaurant:validation:000149",
+    "absa_restaurant:validation:000216"
+   ],
+   [
+    "absa_restaurant:validation:000023",
+    "absa_restaurant:validation:000017"
+   ],
+   [
+    "absa_restaurant:validation:000612",
+    "absa_restaurant:validation:000089"
+   ],
+   [
+    "absa_restaurant:validation:000012",
+    "absa_restaurant:validation:000657"
+   ],
+   [
+    "absa_restaurant:validation:000718",
+    "absa_restaurant:validation:000521"
+   ],
+   [
+    "absa_restaurant:validation:000744",
+    "absa_restaurant:validation:000375"
+   ],
+   [
+    "absa_restaurant:validation:000222",
+    "absa_restaurant:validation:000574"
+   ],
+   [
+    "absa_restaurant:validation:000194",
+    "absa_restaurant:validation:000394"
+   ],
+   [
+    "absa_restaurant:validation:000374",
+    "absa_restaurant:validation:000465"
+   ],
+   [
+    "absa_restaurant:validation:000671",
+    "absa_restaurant:validation:000464"
+   ],
+   [
+    "absa_restaurant:validation:000710",
+    "absa_restaurant:validation:000589"
+   ],
+   [
+    "absa_restaurant:validation:000323",
+    "absa_restaurant:validation:000187"
+   ],
+   [
+    "absa_restaurant:validation:000496",
+    "absa_restaurant:validation:000004"
+   ],
+   [
+    "absa_restaurant:validation:000737",
+    "absa_restaurant:validation:000425"
+   ],
+   [
+    "absa_restaurant:validation:000041",
+    "absa_restaurant:validation:000673"
+   ],
+   [
+    "absa_restaurant:validation:000299",
+    "absa_restaurant:validation:000387"
+   ],
+   [
+    "absa_restaurant:validation:000046",
+    "absa_restaurant:validation:000409"
+   ],
+   [
+    "absa_restaurant:validation:000698",
+    "absa_restaurant:validation:000157"
+   ],
+   [
+    "absa_restaurant:validation:000407",
+    "absa_restaurant:validation:000350"
+   ],
+   [
+    "absa_restaurant:validation:000294",
+    "absa_restaurant:validation:000296"
+   ],
+   [
+    "absa_restaurant:validation:000661",
+    "absa_restaurant:validation:000008"
+   ],
+   [
+    "absa_restaurant:validation:000633",
+    "absa_restaurant:validation:000677"
+   ],
+   [
+    "absa_restaurant:validation:000371",
+    "absa_restaurant:validation:000550"
+   ],
+   [
+    "absa_restaurant:validation:000675",
+    "absa_restaurant:validation:000002"
+   ],
+   [
+    "absa_restaurant:validation:000394",
+    "absa_restaurant:validation:000063"
+   ],
+   [
+    "absa_restaurant:validation:000382",
+    "absa_restaurant:validation:000311"
+   ],
+   [
+    "absa_restaurant:validation:000129",
+    "absa_restaurant:validation:000103"
+   ],
+   [
+    "absa_restaurant:validation:000343",
+    "absa_restaurant:validation:000496"
+   ],
+   [
+    "absa_restaurant:validation:000643",
+    "absa_restaurant:validation:000311"
+   ],
+   [
+    "absa_restaurant:validation:000244",
+    "absa_restaurant:validation:000374"
+   ],
+   [
+    "absa_restaurant:validation:000081",
+    "absa_restaurant:validation:000071"
+   ],
+   [
+    "absa_restaurant:validation:000088",
+    "absa_restaurant:validation:000505"
+   ],
+   [
+    "absa_restaurant:validation:000323",
+    "absa_restaurant:validation:000262"
+   ],
+   [
+    "absa_restaurant:validation:000698",
+    "absa_restaurant:validation:000215"
+   ],
+   [
+    "absa_restaurant:validation:000169",
+    "absa_restaurant:validation:000341"
+   ],
+   [
+    "absa_restaurant:validation:000574",
+    "absa_restaurant:validation:000346"
+   ],
+   [
+    "absa_restaurant:validation:000176",
+    "absa_restaurant:validation:000191"
+   ],
+   [
+    "absa_restaurant:validation:000471",
+    "absa_restaurant:validation:000211"
+   ],
+   [
+    "absa_restaurant:validation:000364",
+    "absa_restaurant:validation:000425"
+   ],
+   [
+    "absa_restaurant:validation:000610",
+    "absa_restaurant:validation:000398"
+   ],
+   [
+    "absa_restaurant:validation:000444",
+    "absa_restaurant:validation:000266"
+   ],
+   [
+    "absa_restaurant:validation:000345",
+    "absa_restaurant:validation:000118"
+   ],
+   [
+    "absa_restaurant:validation:000454",
+    "absa_restaurant:validation:000261"
+   ],
+   [
+    "absa_restaurant:validation:000652",
+    "absa_restaurant:validation:000266"
+   ],
+   [
+    "absa_restaurant:validation:000145",
+    "absa_restaurant:validation:000574"
+   ],
+   [
+    "absa_restaurant:validation:000128",
+    "absa_restaurant:validation:000266"
+   ],
+   [
+    "absa_restaurant:validation:000295",
+    "absa_restaurant:validation:000585"
+   ],
+   [
+    "absa_restaurant:validation:000464",
+    "absa_restaurant:validation:000668"
+   ],
+   [
+    "absa_restaurant:validation:000718",
+    "absa_restaurant:validation:000505"
+   ],
+   [
+    "absa_restaurant:validation:000012",
+    "absa_restaurant:validation:000265"
+   ],
+   [
+    "absa_restaurant:validation:000571",
+    "absa_restaurant:validation:000737"
+   ],
+   [
+    "absa_restaurant:validation:000255",
+    "absa_restaurant:validation:000131"
+   ],
+   [
+    "absa_restaurant:validation:000351",
+    "absa_restaurant:validation:000587"
+   ],
+   [
+    "absa_restaurant:validation:000428",
+    "absa_restaurant:validation:000483"
+   ],
+   [
+    "absa_restaurant:validation:000266",
+    "absa_restaurant:validation:000343"
+   ],
+   [
+    "absa_restaurant:validation:000018",
+    "absa_restaurant:validation:000201"
+   ],
+   [
+    "absa_restaurant:validation:000464",
+    "absa_restaurant:validation:000528"
+   ],
+   [
+    "absa_restaurant:validation:000661",
+    "absa_restaurant:validation:000384"
+   ],
+   [
+    "absa_restaurant:validation:000345",
+    "absa_restaurant:validation:000211"
+   ],
+   [
+    "absa_restaurant:validation:000170",
+    "absa_restaurant:validation:000741"
+   ],
+   [
+    "absa_restaurant:validation:000580",
+    "absa_restaurant:validation:000429"
+   ],
+   [
+    "absa_restaurant:validation:000719",
+    "absa_restaurant:validation:000609"
+   ],
+   [
+    "absa_restaurant:validation:000571",
+    "absa_restaurant:validation:000136"
+   ],
+   [
+    "absa_restaurant:validation:000046",
+    "absa_restaurant:validation:000181"
+   ],
+   [
+    "absa_restaurant:validation:000563",
+    "absa_restaurant:validation:000524"
+   ],
+   [
+    "absa_restaurant:validation:000633",
+    "absa_restaurant:validation:000491"
+   ],
+   [
+    "absa_restaurant:validation:000499",
+    "absa_restaurant:validation:000136"
+   ],
+   [
+    "absa_restaurant:validation:000023",
+    "absa_restaurant:validation:000492"
+   ],
+   [
+    "absa_restaurant:validation:000524",
+    "absa_restaurant:validation:000414"
+   ],
+   [
+    "absa_restaurant:validation:000426",
+    "absa_restaurant:validation:000069"
+   ],
+   [
+    "absa_restaurant:validation:000521",
+    "absa_restaurant:validation:000720"
+   ],
+   [
+    "absa_restaurant:validation:000495",
+    "absa_restaurant:validation:000643"
+   ],
+   [
+    "absa_restaurant:validation:000090",
+    "absa_restaurant:validation:000521"
+   ],
+   [
+    "absa_restaurant:validation:000533",
+    "absa_restaurant:validation:000616"
+   ],
+   [
+    "absa_restaurant:validation:000330",
+    "absa_restaurant:validation:000698"
+   ],
+   [
+    "absa_restaurant:validation:000574",
+    "absa_restaurant:validation:000174"
+   ],
+   [
+    "absa_restaurant:validation:000257",
+    "absa_restaurant:validation:000542"
+   ],
+   [
+    "absa_restaurant:validation:000532",
+    "absa_restaurant:validation:000400"
+   ],
+   [
+    "absa_restaurant:validation:000661",
+    "absa_restaurant:validation:000103"
+   ],
+   [
+    "absa_restaurant:validation:000442",
+    "absa_restaurant:validation:000521"
+   ],
+   [
+    "absa_restaurant:validation:000537",
+    "absa_restaurant:validation:000129"
+   ],
+   [
+    "absa_restaurant:validation:000341",
+    "absa_restaurant:validation:000380"
+   ],
+   [
+    "absa_restaurant:validation:000062",
+    "absa_restaurant:validation:000703"
+   ],
+   [
+    "absa_restaurant:validation:000299",
+    "absa_restaurant:validation:000177"
+   ],
+   [
+    "absa_restaurant:validation:000140",
+    "absa_restaurant:validation:000265"
+   ],
+   [
+    "absa_restaurant:validation:000464",
+    "absa_restaurant:validation:000169"
+   ],
+   [
+    "absa_restaurant:validation:000648",
+    "absa_restaurant:validation:000499"
+   ],
+   [
+    "absa_restaurant:validation:000299",
+    "absa_restaurant:validation:000213"
+   ],
+   [
+    "absa_restaurant:validation:000341",
+    "absa_restaurant:validation:000146"
+   ],
+   [
+    "absa_restaurant:validation:000752",
+    "absa_restaurant:validation:000521"
+   ],
+   [
+    "absa_restaurant:validation:000007",
+    "absa_restaurant:validation:000056"
+   ],
+   [
+    "absa_restaurant:validation:000345",
+    "absa_restaurant:validation:000030"
+   ],
+   [
+    "absa_restaurant:validation:000215",
+    "absa_restaurant:validation:000698"
+   ],
+   [
+    "absa_restaurant:validation:000505",
+    "absa_restaurant:validation:000203"
+   ],
+   [
+    "absa_restaurant:validation:000321",
+    "absa_restaurant:validation:000661"
+   ],
+   [
+    "absa_restaurant:validation:000191",
+    "absa_restaurant:validation:000117"
+   ],
+   [
+    "absa_restaurant:validation:000157",
+    "absa_restaurant:validation:000116"
+   ],
+   [
+    "absa_restaurant:validation:000674",
+    "absa_restaurant:validation:000445"
+   ],
+   [
+    "absa_restaurant:validation:000288",
+    "absa_restaurant:validation:000380"
+   ],
+   [
+    "absa_restaurant:validation:000413",
+    "absa_restaurant:validation:000008"
+   ],
+   [
+    "absa_restaurant:validation:000145",
+    "absa_restaurant:validation:000571"
+   ],
+   [
+    "absa_restaurant:validation:000213",
+    "absa_restaurant:validation:000374"
+   ],
+   [
+    "absa_restaurant:validation:000612",
+    "absa_restaurant:validation:000048"
+   ],
+   [
+    "absa_restaurant:validation:000571",
+    "absa_restaurant:validation:000343"
+   ],
+   [
+    "absa_restaurant:validation:000256",
+    "absa_restaurant:validation:000720"
+   ],
+   [
+    "absa_restaurant:validation:000071",
+    "absa_restaurant:validation:000542"
+   ],
+   [
+    "absa_restaurant:validation:000461",
+    "absa_restaurant:validation:000576"
+   ],
+   [
+    "absa_restaurant:validation:000107",
+    "absa_restaurant:validation:000403"
+   ],
+   [
+    "absa_restaurant:validation:000676",
+    "absa_restaurant:validation:000585"
+   ],
+   [
+    "absa_restaurant:validation:000624",
+    "absa_restaurant:validation:000532"
+   ],
+   [
+    "absa_restaurant:validation:000119",
+    "absa_restaurant:validation:000351"
+   ],
+   [
+    "absa_restaurant:validation:000762",
+    "absa_restaurant:validation:000153"
+   ],
+   [
+    "absa_restaurant:validation:000228",
+    "absa_restaurant:validation:000336"
+   ],
+   [
+    "absa_restaurant:validation:000499",
+    "absa_restaurant:validation:000249"
+   ],
+   [
+    "absa_restaurant:validation:000613",
+    "absa_restaurant:validation:000181"
+   ],
+   [
+    "absa_restaurant:validation:000449",
+    "absa_restaurant:validation:000187"
+   ],
+   [
+    "absa_restaurant:validation:000116",
+    "absa_restaurant:validation:000609"
+   ],
+   [
+    "absa_restaurant:validation:000483",
+    "absa_restaurant:validation:000610"
+   ],
+   [
+    "absa_restaurant:validation:000544",
+    "absa_restaurant:validation:000017"
+   ],
+   [
+    "absa_restaurant:validation:000140",
+    "absa_restaurant:validation:000295"
+   ],
+   [
+    "absa_restaurant:validation:000228",
+    "absa_restaurant:validation:000532"
+   ],
+   [
+    "absa_restaurant:validation:000027",
+    "absa_restaurant:validation:000366"
+   ],
+   [
+    "absa_restaurant:validation:000624",
+    "absa_restaurant:validation:000532"
+   ],
+   [
+    "absa_restaurant:validation:000127",
+    "absa_restaurant:validation:000576"
+   ],
+   [
+    "absa_restaurant:validation:000464",
+    "absa_restaurant:validation:000423"
+   ]
+  ]
+ },
+ "step0b": {
+  "baseline_rho0": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 132,
+    "A_flip_to_B": 6,
+    "A_other_pol": 25,
+    "A_missed": 37,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 78,
+    "A_flip_to_B": 29,
+    "A_other_pol": 23,
+    "A_missed": 70,
+    "B_present_correct": 67,
+    "B_present_wrong": 45
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 68,
+    "A_flip_to_B": 34,
+    "A_other_pol": 18,
+    "A_missed": 80,
+    "B_present_correct": 88,
+    "B_present_wrong": 39
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 58,
+    "A_flip_to_B": 33,
+    "A_other_pol": 18,
+    "A_missed": 91,
+    "B_present_correct": 98,
+    "B_present_wrong": 38
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 132,
+    "A_flip_to_B": 6,
+    "A_other_pol": 25,
+    "A_missed": 37,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 76,
+    "A_flip_to_B": 25,
+    "A_other_pol": 18,
+    "A_missed": 81,
+    "B_present_correct": 67,
+    "B_present_wrong": 46
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 68,
+    "A_flip_to_B": 26,
+    "A_other_pol": 16,
+    "A_missed": 90,
+    "B_present_correct": 102,
+    "B_present_wrong": 42
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 49,
+    "A_flip_to_B": 35,
+    "A_other_pol": 17,
+    "A_missed": 99,
+    "B_present_correct": 109,
+    "B_present_wrong": 42
+   }
+  },
+  "c1_rho0.5_tau8": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 132,
+    "A_flip_to_B": 6,
+    "A_other_pol": 25,
+    "A_missed": 37,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 79,
+    "A_flip_to_B": 29,
+    "A_other_pol": 22,
+    "A_missed": 70,
+    "B_present_correct": 68,
+    "B_present_wrong": 44
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 65,
+    "A_flip_to_B": 34,
+    "A_other_pol": 20,
+    "A_missed": 81,
+    "B_present_correct": 87,
+    "B_present_wrong": 39
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 58,
+    "A_flip_to_B": 33,
+    "A_other_pol": 18,
+    "A_missed": 91,
+    "B_present_correct": 97,
+    "B_present_wrong": 37
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 132,
+    "A_flip_to_B": 6,
+    "A_other_pol": 25,
+    "A_missed": 37,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 76,
+    "A_flip_to_B": 25,
+    "A_other_pol": 18,
+    "A_missed": 81,
+    "B_present_correct": 68,
+    "B_present_wrong": 46
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 68,
+    "A_flip_to_B": 26,
+    "A_other_pol": 16,
+    "A_missed": 90,
+    "B_present_correct": 102,
+    "B_present_wrong": 40
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 51,
+    "A_flip_to_B": 36,
+    "A_other_pol": 18,
+    "A_missed": 95,
+    "B_present_correct": 108,
+    "B_present_wrong": 42
+   }
+  },
+  "c1_rho1_tau8": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 132,
+    "A_flip_to_B": 6,
+    "A_other_pol": 25,
+    "A_missed": 37,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 79,
+    "A_flip_to_B": 32,
+    "A_other_pol": 21,
+    "A_missed": 68,
+    "B_present_correct": 68,
+    "B_present_wrong": 43
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 66,
+    "A_flip_to_B": 34,
+    "A_other_pol": 20,
+    "A_missed": 80,
+    "B_present_correct": 87,
+    "B_present_wrong": 39
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 57,
+    "A_flip_to_B": 35,
+    "A_other_pol": 19,
+    "A_missed": 89,
+    "B_present_correct": 96,
+    "B_present_wrong": 37
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 132,
+    "A_flip_to_B": 6,
+    "A_other_pol": 25,
+    "A_missed": 37,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 75,
+    "A_flip_to_B": 27,
+    "A_other_pol": 17,
+    "A_missed": 81,
+    "B_present_correct": 69,
+    "B_present_wrong": 45
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 66,
+    "A_flip_to_B": 26,
+    "A_other_pol": 18,
+    "A_missed": 90,
+    "B_present_correct": 100,
+    "B_present_wrong": 41
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 51,
+    "A_flip_to_B": 35,
+    "A_other_pol": 19,
+    "A_missed": 95,
+    "B_present_correct": 108,
+    "B_present_wrong": 42
+   }
+  },
+  "c1_rho1_tau4": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 132,
+    "A_flip_to_B": 6,
+    "A_other_pol": 25,
+    "A_missed": 37,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 79,
+    "A_flip_to_B": 29,
+    "A_other_pol": 22,
+    "A_missed": 70,
+    "B_present_correct": 68,
+    "B_present_wrong": 44
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 65,
+    "A_flip_to_B": 34,
+    "A_other_pol": 20,
+    "A_missed": 81,
+    "B_present_correct": 87,
+    "B_present_wrong": 39
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 58,
+    "A_flip_to_B": 33,
+    "A_other_pol": 18,
+    "A_missed": 91,
+    "B_present_correct": 96,
+    "B_present_wrong": 37
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 132,
+    "A_flip_to_B": 6,
+    "A_other_pol": 25,
+    "A_missed": 37,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 77,
+    "A_flip_to_B": 25,
+    "A_other_pol": 18,
+    "A_missed": 80,
+    "B_present_correct": 69,
+    "B_present_wrong": 45
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 68,
+    "A_flip_to_B": 26,
+    "A_other_pol": 16,
+    "A_missed": 90,
+    "B_present_correct": 101,
+    "B_present_wrong": 41
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 52,
+    "A_flip_to_B": 34,
+    "A_other_pol": 19,
+    "A_missed": 95,
+    "B_present_correct": 107,
+    "B_present_wrong": 43
+   }
+  },
+  "perm_rho1_tau8": {
+   "A_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 134,
+    "A_flip_to_B": 6,
+    "A_other_pol": 24,
+    "A_missed": 36,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "A_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 79,
+    "A_flip_to_B": 29,
+    "A_other_pol": 22,
+    "A_missed": 70,
+    "B_present_correct": 67,
+    "B_present_wrong": 44
+   },
+   "A_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 67,
+    "A_flip_to_B": 34,
+    "A_other_pol": 19,
+    "A_missed": 80,
+    "B_present_correct": 89,
+    "B_present_wrong": 39
+   },
+   "A_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 57,
+    "A_flip_to_B": 33,
+    "A_other_pol": 18,
+    "A_missed": 92,
+    "B_present_correct": 99,
+    "B_present_wrong": 37
+   },
+   "B_first|B_copies=0": {
+    "n": 200,
+    "A_correct": 132,
+    "A_flip_to_B": 6,
+    "A_other_pol": 26,
+    "A_missed": 36,
+    "B_present_correct": 0,
+    "B_present_wrong": 0
+   },
+   "B_first|B_copies=1": {
+    "n": 200,
+    "A_correct": 77,
+    "A_flip_to_B": 25,
+    "A_other_pol": 18,
+    "A_missed": 80,
+    "B_present_correct": 68,
+    "B_present_wrong": 47
+   },
+   "B_first|B_copies=2": {
+    "n": 200,
+    "A_correct": 68,
+    "A_flip_to_B": 26,
+    "A_other_pol": 15,
+    "A_missed": 91,
+    "B_present_correct": 100,
+    "B_present_wrong": 44
+   },
+   "B_first|B_copies=3": {
+    "n": 200,
+    "A_correct": 49,
+    "A_flip_to_B": 35,
+    "A_other_pol": 16,
+    "A_missed": 100,
+    "B_present_correct": 110,
+    "B_present_wrong": 42
+   }
+  }
+ },
+ "elapsed_s": 8.461685419082642
+}

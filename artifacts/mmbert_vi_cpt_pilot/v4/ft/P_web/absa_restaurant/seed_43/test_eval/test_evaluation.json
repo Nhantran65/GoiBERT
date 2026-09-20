@@ -1,0 +1,268 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v4-test",
+ "arm": "P_web",
+ "task_id": "absa_restaurant",
+ "seed": 43,
+ "checkpoint": "artifacts/mmbert_vi_cpt_pilot/v4/ft/P_web/absa_restaurant/seed_43/best_checkpoint.pt",
+ "checkpoint_sha256": "a0899d7bc68899d944d1992b97160fc94d20fd71d409f3b5f21633047dc1b3fc",
+ "validation_selected_epoch": 29,
+ "validation_selection_f1": 0.7450024378352024,
+ "learning_rate": 5e-05,
+ "test_metrics": {
+  "n": 1938,
+  "aspect_count": 12,
+  "aspect_names": [
+   "AMBIENCE#GENERAL",
+   "DRINKS#PRICES",
+   "DRINKS#QUALITY",
+   "DRINKS#STYLE&OPTIONS",
+   "FOOD#PRICES",
+   "FOOD#QUALITY",
+   "FOOD#STYLE&OPTIONS",
+   "LOCATION#GENERAL",
+   "RESTAURANT#GENERAL",
+   "RESTAURANT#MISCELLANEOUS",
+   "RESTAURANT#PRICES",
+   "SERVICE#GENERAL"
+  ],
+  "pair_scored_aspects": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+  "detection_micro_precision": 0.8873015873015873,
+  "detection_micro_recall": 0.8505135032331685,
+  "detection_micro_f1": 0.8685181588657992,
+  "detection_macro_precision": 0.882807881146667,
+  "detection_macro_recall": 0.8394571085363509,
+  "detection_macro_f1": 0.860155526126179,
+  "pair_micro_precision": 0.7531746031746032,
+  "pair_micro_recall": 0.7219475085583872,
+  "pair_micro_f1": 0.7372305302000388,
+  "pair_macro_precision": 0.7426703171886638,
+  "pair_macro_recall": 0.7063515944809744,
+  "pair_macro_f1": 0.7236910265953135,
+  "classification_pair_micro_f1": 0.7372305302000388,
+  "classification_pair_macro_f1": 0.7236910265953135,
+  "per_aspect": {
+   "AMBIENCE#GENERAL": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.9471153846153846,
+     "recall": 0.8678414096916299,
+     "f1": 0.9057471264367816
+    },
+    "pair": {
+     "precision": 0.8509615384615384,
+     "recall": 0.7797356828193832,
+     "f1": 0.8137931034482758
+    },
+    "detection_tp": 197,
+    "gold_present": 227,
+    "predicted_present": 208
+   },
+   "DRINKS#PRICES": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8723404255319149,
+     "recall": 0.8723404255319149,
+     "f1": 0.8723404255319149
+    },
+    "pair": {
+     "precision": 0.7021276595744681,
+     "recall": 0.7021276595744681,
+     "f1": 0.7021276595744681
+    },
+    "detection_tp": 41,
+    "gold_present": 47,
+    "predicted_present": 47
+   },
+   "DRINKS#QUALITY": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8921568627450981,
+     "recall": 0.896551724137931,
+     "f1": 0.8943488943488943
+    },
+    "pair": {
+     "precision": 0.7401960784313726,
+     "recall": 0.7438423645320197,
+     "f1": 0.742014742014742
+    },
+    "detection_tp": 182,
+    "gold_present": 203,
+    "predicted_present": 204
+   },
+   "DRINKS#STYLE&OPTIONS": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8135593220338984,
+     "recall": 0.7441860465116279,
+     "f1": 0.7773279352226721
+    },
+    "pair": {
+     "precision": 0.6610169491525424,
+     "recall": 0.6046511627906976,
+     "f1": 0.631578947368421
+    },
+    "detection_tp": 96,
+    "gold_present": 129,
+    "predicted_present": 118
+   },
+   "FOOD#PRICES": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8828828828828829,
+     "recall": 0.875,
+     "f1": 0.8789237668161435
+    },
+    "pair": {
+     "precision": 0.8018018018018018,
+     "recall": 0.7946428571428571,
+     "f1": 0.7982062780269058
+    },
+    "detection_tp": 98,
+    "gold_present": 112,
+    "predicted_present": 111
+   },
+   "FOOD#QUALITY": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8990990990990991,
+     "recall": 0.9007220216606499,
+     "f1": 0.8999098286744815
+    },
+    "pair": {
+     "precision": 0.7927927927927928,
+     "recall": 0.7942238267148014,
+     "f1": 0.7935076645626691
+    },
+    "detection_tp": 499,
+    "gold_present": 554,
+    "predicted_present": 555
+   },
+   "FOOD#STYLE&OPTIONS": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8688524590163934,
+     "recall": 0.8489702517162472,
+     "f1": 0.8587962962962963
+    },
+    "pair": {
+     "precision": 0.6861826697892272,
+     "recall": 0.6704805491990846,
+     "f1": 0.6782407407407407
+    },
+    "detection_tp": 371,
+    "gold_present": 437,
+    "predicted_present": 427
+   },
+   "LOCATION#GENERAL": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.9387755102040817,
+     "recall": 0.8846153846153846,
+     "f1": 0.9108910891089109
+    },
+    "pair": {
+     "precision": 0.7040816326530612,
+     "recall": 0.6634615384615384,
+     "f1": 0.6831683168316832
+    },
+    "detection_tp": 92,
+    "gold_present": 104,
+    "predicted_present": 98
+   },
+   "RESTAURANT#GENERAL": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8008849557522124,
+     "recall": 0.7211155378486056,
+     "f1": 0.7589098532494759
+    },
+    "pair": {
+     "precision": 0.6460176991150443,
+     "recall": 0.5816733067729084,
+     "f1": 0.6121593291404612
+    },
+    "detection_tp": 181,
+    "gold_present": 251,
+    "predicted_present": 226
+   },
+   "RESTAURANT#MISCELLANEOUS": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8203125,
+     "recall": 0.7241379310344828,
+     "f1": 0.7692307692307693
+    },
+    "pair": {
+     "precision": 0.703125,
+     "recall": 0.6206896551724138,
+     "f1": 0.6593406593406593
+    },
+    "detection_tp": 105,
+    "gold_present": 145,
+    "predicted_present": 128
+   },
+   "RESTAURANT#PRICES": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.9056603773584906,
+     "recall": 0.8205128205128205,
+     "f1": 0.8609865470852018
+    },
+    "pair": {
+     "precision": 0.7641509433962265,
+     "recall": 0.6923076923076923,
+     "f1": 0.726457399103139
+    },
+    "detection_tp": 96,
+    "gold_present": 117,
+    "predicted_present": 106
+   },
+   "SERVICE#GENERAL": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.952054794520548,
+     "recall": 0.9174917491749175,
+     "f1": 0.934453781512605
+    },
+    "pair": {
+     "precision": 0.8595890410958904,
+     "recall": 0.8283828382838284,
+     "f1": 0.8436974789915966
+    },
+    "detection_tp": 278,
+    "gold_present": 303,
+    "predicted_present": 292
+   }
+  },
+  "task_id": "absa_restaurant",
+  "split": "test",
+  "selection_f1": 0.7372305302000388,
+  "selection_metric": "end_to_end_pair_micro_f1"
+ },
+ "test_selection_f1": 0.7372305302000388,
+ "selection_f1_recomputed_from_predictions": 0.7372305302000388,
+ "test_count": 1938,
+ "predictions_rows": 1938,
+ "reload_prediction_repeatable": true,
+ "load_missing_keys": [],
+ "load_unexpected_keys": [],
+ "encoder_source": "/home/kiettqa/GoiBERT/artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_web/hf_encoder",
+ "license": "no NC data",
+ "research_only": false,
+ "elapsed_s": 5.5,
+ "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+}

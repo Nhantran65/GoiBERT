@@ -1,0 +1,62 @@
+{
+  "controller_hash": "aa367e12b3831530cc4e1332fcd06f9d34a5849ee9d1c6f5b72e9669609d0257",
+  "controller_pid": 783666,
+  "ended_at": "2026-09-08T09:35:01Z",
+  "error": "Frozen scheduler failed at stage stagea_ce_replay; see /home/kiettqa/GoiBERT/artifacts/e2/.controller/scheduler_stagea_ce_replay.log",
+  "manifest": "/home/kiettqa/GoiBERT/artifacts/e2/preflight/pilot_manifest_controller_v1.json",
+  "manifest_sha256": "c7cb4903de4e1dc5b8effb050dd743c96180e0beab43cf1d9275600257e2370e",
+  "pilot_validation": {
+    "absolute_delta": 0.0,
+    "additional_nc_count": 1,
+    "additional_nc_scores": [
+      0.8477223424949397
+    ],
+    "ce_best_selection_f1": 0.8450763457314355,
+    "e1_reference_f1": 0.8450763457314355,
+    "teacher_lrs": [
+      1e-05,
+      2e-05,
+      5e-05
+    ],
+    "validated_at": "2026-09-08T09:35:01Z"
+  },
+  "protocol": "E2-pilot-controller-v1",
+  "revision": "e2-20260908-r1",
+  "scheduler": {
+    "command": [
+      "/home/kiettqa/GoiBERT/.venv-e0-cuda/bin/python",
+      "/home/kiettqa/GoiBERT/scripts/execute_e2_validation.py",
+      "--stage",
+      "stagea_ce_replay",
+      "--repo-root",
+      "/home/kiettqa/GoiBERT",
+      "--output-root",
+      "/home/kiettqa/GoiBERT/artifacts/e2",
+      "--root-smoke-gate",
+      "/home/kiettqa/GoiBERT/artifacts/e2/preflight/smoke_gate.json",
+      "--devices",
+      "cuda:0",
+      "cuda:1",
+      "cuda:2",
+      "cuda:3",
+      "--poll-seconds",
+      "5.0",
+      "--student-memory-guard-gib",
+      "5",
+      "--teacher-memory-guard-gib",
+      "5",
+      "--nc-memory-guard-gib",
+      "5",
+      "--execute"
+    ],
+    "ended_at": "2026-09-08T09:35:01Z",
+    "label": "stagea_ce_replay",
+    "log": "/home/kiettqa/GoiBERT/artifacts/e2/.controller/scheduler_stagea_ce_replay.log",
+    "pid": 784070,
+    "returncode": 2,
+    "started_at": "2026-09-08T09:35:01Z",
+    "status": "failed"
+  },
+  "started_at": "2026-09-08T09:34:58Z",
+  "status": "blocked"
+}

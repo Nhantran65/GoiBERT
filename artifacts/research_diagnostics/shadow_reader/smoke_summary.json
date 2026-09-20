@@ -1,0 +1,54 @@
+{
+  "protocol": "shadow-reader-diagnostic-v1",
+  "created_at": "2026-09-13T07:12:40.418675+00:00",
+  "reports": [
+    {
+      "protocol": "shadow-reader-diagnostic-v1",
+      "created_at": "2026-09-13T07:12:40.175674+00:00",
+      "model": "student_e8",
+      "task": "absa_restaurant",
+      "validation_only": true,
+      "smoke_only": true,
+      "smoke": {
+        "rows": 16,
+        "full_mask_layer_max_abs": [
+          0.0077667236328125,
+          0.008922100067138672,
+          0.007453203201293945,
+          0.01918649673461914,
+          0.018634796142578125,
+          0.013174057006835938,
+          0.015431404113769531,
+          0.031178951263427734,
+          0.0321803092956543,
+          0.015193074941635132
+        ],
+        "full_mask_logit_max_abs": 0.03125,
+        "full_mask_argmax_mismatches": 0,
+        "content_cache_unchanged": true,
+        "different_masks_present": true,
+        "fp32_parity": {
+          "layer_max_abs": [
+            2.86102294921875e-06,
+            1.9073486328125e-06,
+            9.5367431640625e-07,
+            1.9073486328125e-06,
+            2.86102294921875e-06,
+            1.430511474609375e-06,
+            1.9073486328125e-06,
+            1.9073486328125e-06,
+            2.1457672119140625e-06,
+            1.1920928955078125e-06
+          ],
+          "logit_max_abs": 2.384185791015625e-06,
+          "argmax_mismatches": 0,
+          "gate_pass": true
+        },
+        "bf16_gate_pass": true,
+        "bf16_shape_sensitive_numeric_caveat": "FP32 parity is the correctness gate; BF16 shadow/full GEMM shapes may differ numerically."
+      },
+      "checkpoint": "artifacts/e8/absa_restaurant/seed_42/best_checkpoint.pt",
+      "checkpoint_sha256": "01192107e5ea24caedbe4736fbc34e9124efe81c3a13fd4085bcf612f57dfc03"
+    }
+  ]
+}

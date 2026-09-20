@@ -1,0 +1,64 @@
+{
+  "schema": "goibert-d2-figures-v1",
+  "status": "completed",
+  "test_opened": false,
+  "tasks": [
+    "vsfc_sentiment",
+    "vsfc_topic",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "source_files": {
+    "artifacts/d1/probes/vsfc_sentiment/probe_results.json": "0bf895c39e875aceb7b576fa39fabda9456edbd9b25dd93d4d4f50a840e950c6",
+    "artifacts/d2/probes/vsfc_sentiment/probe_results.json": "bae39011880aec74d876e10c614c6dea9156a1fa6bbfe6919496c7a1c840d801",
+    "artifacts/d2/cka/vsfc_sentiment/result.json": "782fdee650951989f7a1d587a462e0421e9eb30ff4443ef51045927089deb55f",
+    "artifacts/d1/probe_sensitivity/vsfc_sentiment/sensitivity_results.json": "c12746bbaef10c2eb12eab5c6bf589896a959ade2d0f31edc62db23bc4d1e884",
+    "artifacts/d1/probes/vsfc_topic/probe_results.json": "a1350d08e16ab5171f2fc22536b0ad31d4db31dbaedb0b441a9cc09b27d003cf",
+    "artifacts/d2/probes/vsfc_topic/probe_results.json": "e8c9ca56fed18c94f764d17f05fe11823ef3c722bd4e26a21bf23d130f962561",
+    "artifacts/d2/cka/vsfc_topic/result.json": "a7787ce82da8b80cc3adf8df6b695d75d9a769a9d8927b60265a9bf576d484ef",
+    "artifacts/d1/probe_sensitivity/vsfc_topic/sensitivity_results.json": "cab975dfa140256ff885b6298d87458bcfcc5668ad1949db4e0a3e2b164c05ef",
+    "artifacts/d1/probes/visfd/probe_results.json": "e28ed5eab92a8326e3f4277310b74149e999f31a50abcb04259fe7c7dfd14ec7",
+    "artifacts/d2/probes/visfd/probe_results.json": "22e849df8c69fd490e90cbeedffc8d15a487110cb436e38f265a450787aa7268",
+    "artifacts/d2/cka/visfd/result.json": "0931aa3104a3af67d7eb2906c33486c430654f45627ef88f12cb6b4d45d0cef0",
+    "artifacts/d1/probe_sensitivity/visfd/sensitivity_results.json": "ded56f175060be82dcfb7e927cff922c7a8599b9209f2cd4084b712e7750b72b",
+    "artifacts/d1/probes/absa_restaurant/probe_results.json": "170259ad5725aa078de6df18ab608109d0b73dd69afa9429a1edf15c61a91cbc",
+    "artifacts/d2/probes/absa_restaurant/probe_results.json": "199c861e4e09fd1d7cea17b7eb290c146675e9f7e6abd9e8348b9d44a8b8180d",
+    "artifacts/d2/cka/absa_restaurant/result.json": "fe8cc2aec07c502eb5185752ea2dbffb110bb0aaddcfe611d62b4a886ca36d0b",
+    "artifacts/d1/probe_sensitivity/absa_restaurant/sensitivity_results.json": "24d2b659a4ca87f8de7ab19f078778aedc4699ad3ed7d8024479a4b20f0f3414",
+    "artifacts/d1/probes/absa_hotel/probe_results.json": "d80413018454f9d02e3d1cc6a0c21d4d3989b52a0421df58e0ef01b442af2574",
+    "artifacts/d2/probes/absa_hotel/probe_results.json": "e63a0b9aa6209626fc9e14a61b08ef7bd31c125186c451df66be30f6ff209036",
+    "artifacts/d2/cka/absa_hotel/result.json": "ee174a6e083481d6acfedc9acfddce174e98eddf4e5fc82667add36e1fb34760",
+    "artifacts/d1/probe_sensitivity/absa_hotel/sensitivity_results.json": "0fe9bf63f093108e87d32358f0abd8662d44fd6a2e6f4c907d655de2360c5805",
+    "artifacts/d2/probe_sensitivity/final_layer_sensitivity.json": "3ca8042cd1bba63048005328b361d0f7ce8998c640fe452c09832c08d6561603",
+    "scripts/d2_plot_results.py": "5432521062bebb2df6ad6e9d7a4a76b502c296ee66b9409b9b366c51954e3e1b"
+  },
+  "probe_figure": {
+    "png": "artifacts/d2/figures/layerwise_probe_before_after.png",
+    "svg": "artifacts/d2/figures/layerwise_probe_before_after.svg",
+    "metric": "validation selection F1 (%)",
+    "layout": "2 rows x 5 tasks; top student, bottom teacher",
+    "line": "fixed 200-step probe",
+    "markers": "final-layer 1,000-step sensitivity when available",
+    "y_limits": [
+      0,
+      100
+    ]
+  },
+  "cka_figure": {
+    "png": "artifacts/d2/figures/same_layer_cka_before_after.png",
+    "svg": "artifacts/d2/figures/same_layer_cka_before_after.svg",
+    "metric": "train-only CLS CKA between matched before/after layers",
+    "y_limits": [
+      0,
+      1.02
+    ],
+    "undefined_layer": 0
+  },
+  "outputs": {
+    "probe_png_sha256": "defbc59393b36e1291856c2f0732c08358888994f4fc4e7432cb0dbf3e6b8b4c",
+    "probe_svg_sha256": "fbd72e4cf759976e818a0d8135aaf148d38740938748b67b37bea40a4c6d0a30",
+    "cka_png_sha256": "a4d433ba5ed35396c66c65cb69eaf24776b95865d6dd1b520d75872e49e384b7",
+    "cka_svg_sha256": "c2e35b0e76df54014bea0759e862acf1dacefddd8984ea36640aa9c9989ab112"
+  }
+}

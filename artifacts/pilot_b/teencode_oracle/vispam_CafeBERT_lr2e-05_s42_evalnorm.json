@@ -1,0 +1,87 @@
+{
+ "args": {
+  "model": "uitnlp/CafeBERT",
+  "tokenizer": "FacebookAI/xlm-roberta-large",
+  "task": "vispam",
+  "device": "cuda:0",
+  "lr": 2e-05,
+  "epochs": 10,
+  "seed": 42,
+  "micro": 8,
+  "max_len": 128,
+  "tag": "_evalnorm",
+  "out": "artifacts/pilot_b/teencode_oracle",
+  "eval_strip": true,
+  "eval_norm": true,
+  "norm_train": false
+ },
+ "best_f1": 89.342,
+ "best_epoch": 7,
+ "curves": [
+  {
+   "epoch": 1,
+   "f1": 85.924,
+   "elapsed": 183,
+   "f1_strip": 78.226,
+   "f1_norm": 86.361
+  },
+  {
+   "epoch": 2,
+   "f1": 87.262,
+   "elapsed": 369,
+   "f1_strip": 72.327,
+   "f1_norm": 87.106
+  },
+  {
+   "epoch": 3,
+   "f1": 88.562,
+   "elapsed": 555,
+   "f1_strip": 75.836,
+   "f1_norm": 88.866
+  },
+  {
+   "epoch": 4,
+   "f1": 89.008,
+   "elapsed": 740,
+   "f1_strip": 68.212,
+   "f1_norm": 89.078
+  },
+  {
+   "epoch": 5,
+   "f1": 88.22,
+   "elapsed": 925,
+   "f1_strip": 80.533,
+   "f1_norm": 88.239
+  },
+  {
+   "epoch": 6,
+   "f1": 87.991,
+   "elapsed": 1111,
+   "f1_strip": 78.897,
+   "f1_norm": 88.496
+  },
+  {
+   "epoch": 7,
+   "f1": 89.342,
+   "elapsed": 1296,
+   "f1_strip": 71.996,
+   "f1_norm": 89.342
+  },
+  {
+   "epoch": 8,
+   "f1": 87.608,
+   "elapsed": 1480,
+   "f1_strip": 79.75,
+   "f1_norm": 87.734
+  },
+  {
+   "epoch": 9,
+   "f1": 88.81,
+   "elapsed": 1665,
+   "f1_strip": 78.09,
+   "f1_norm": 89.074
+  }
+ ],
+ "strip_f1_at_best": 71.996,
+ "norm_f1_at_best": 89.342
+}

@@ -1,0 +1,246 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v4-test",
+ "arm": "O",
+ "task_id": "visfd",
+ "seed": 42,
+ "checkpoint": "artifacts/base_encoder_baseline/mmbert_base/visfd/lr_5e-05/best_checkpoint.pt",
+ "checkpoint_sha256": "9fb0b1cfadce4c0293c0f20545a85d2f6a10c891cf55a1c93a5e944c315d546d",
+ "validation_selected_epoch": 16,
+ "validation_selection_f1": 0.836390977443609,
+ "learning_rate": 5e-05,
+ "test_metrics": {
+  "n": 2224,
+  "aspect_count": 11,
+  "aspect_names": [
+   "BATTERY",
+   "CAMERA",
+   "DESIGN",
+   "FEATURES",
+   "GENERAL",
+   "OTHERS",
+   "PERFORMANCE",
+   "PRICE",
+   "SCREEN",
+   "SER&ACC",
+   "STORAGE"
+  ],
+  "pair_scored_aspects": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   false,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+  "detection_micro_precision": 0.8951952795729138,
+  "detection_micro_recall": 0.8807187284035937,
+  "detection_micro_f1": 0.887898000418031,
+  "detection_macro_precision": 0.8770846114930279,
+  "detection_macro_recall": 0.8443641626840904,
+  "detection_macro_f1": 0.8587644019853081,
+  "pair_micro_precision": 0.8440011908306043,
+  "pair_micro_recall": 0.843498958643261,
+  "pair_micro_f1": 0.84375,
+  "pair_macro_precision": 0.8191717678322326,
+  "pair_macro_recall": 0.8003561073159797,
+  "pair_macro_f1": 0.8086538254827778,
+  "classification_pair_micro_f1": 0.84375,
+  "classification_pair_macro_f1": 0.8086538254827778,
+  "per_aspect": {
+   "BATTERY": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.9578544061302682,
+     "recall": 0.9861932938856016,
+     "f1": 0.9718172983479106
+    },
+    "pair": {
+     "precision": 0.8659003831417624,
+     "recall": 0.8915187376725838,
+     "f1": 0.8785228377065112
+    },
+    "detection_tp": 1000,
+    "gold_present": 1014,
+    "predicted_present": 1044
+   },
+   "CAMERA": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.9485903814262023,
+     "recall": 0.9727891156462585,
+     "f1": 0.9605373635600336
+    },
+    "pair": {
+     "precision": 0.8706467661691543,
+     "recall": 0.8928571428571429,
+     "f1": 0.8816120906801007
+    },
+    "detection_tp": 572,
+    "gold_present": 588,
+    "predicted_present": 603
+   },
+   "DESIGN": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.9378531073446328,
+     "recall": 0.8341708542713567,
+     "f1": 0.8829787234042553
+    },
+    "pair": {
+     "precision": 0.8700564971751412,
+     "recall": 0.7738693467336684,
+     "f1": 0.8191489361702128
+    },
+    "detection_tp": 332,
+    "gold_present": 398,
+    "predicted_present": 354
+   },
+   "FEATURES": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8916666666666667,
+     "recall": 0.9029535864978903,
+     "f1": 0.8972746331236897
+    },
+    "pair": {
+     "precision": 0.8055555555555556,
+     "recall": 0.8157524613220816,
+     "f1": 0.8106219426974144
+    },
+    "detection_tp": 642,
+    "gold_present": 711,
+    "predicted_present": 720
+   },
+   "GENERAL": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8900785153461813,
+     "recall": 0.9029688631426502,
+     "f1": 0.8964773544212796
+    },
+    "pair": {
+     "precision": 0.8615274803711634,
+     "recall": 0.8740043446777698,
+     "f1": 0.8677210639827462
+    },
+    "detection_tp": 1247,
+    "gold_present": 1381,
+    "predicted_present": 1401
+   },
+   "OTHERS": {
+    "pair_scored": false,
+    "detection": {
+     "precision": 0.5825,
+     "recall": 0.45419103313840153,
+     "f1": 0.5104052573932092
+    },
+    "pair": null,
+    "detection_tp": 233,
+    "gold_present": 513,
+    "predicted_present": 400
+   },
+   "PERFORMANCE": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.9174468085106383,
+     "recall": 0.9197952218430034,
+     "f1": 0.9186195142735407
+    },
+    "pair": {
+     "precision": 0.84,
+     "recall": 0.8421501706484642,
+     "f1": 0.8410737111205795
+    },
+    "detection_tp": 1078,
+    "gold_present": 1172,
+    "predicted_present": 1175
+   },
+   "PRICE": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.9047619047619048,
+     "recall": 0.9349736379613357,
+     "f1": 0.9196197061365601
+    },
+    "pair": {
+     "precision": 0.7993197278911565,
+     "recall": 0.8260105448154658,
+     "f1": 0.8124459809853068
+    },
+    "detection_tp": 532,
+    "gold_present": 569,
+    "predicted_present": 588
+   },
+   "SCREEN": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8550185873605948,
+     "recall": 0.8550185873605948,
+     "f1": 0.8550185873605948
+    },
+    "pair": {
+     "precision": 0.7881040892193308,
+     "recall": 0.7881040892193308,
+     "f1": 0.7881040892193308
+    },
+    "detection_tp": 230,
+    "gold_present": 269,
+    "predicted_present": 269
+   },
+   "SER&ACC": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8985239852398524,
+     "recall": 0.821247892074199,
+     "f1": 0.8581497797356828
+    },
+    "pair": {
+     "precision": 0.8542435424354243,
+     "recall": 0.7807757166947723,
+     "f1": 0.8158590308370044
+    },
+    "detection_tp": 487,
+    "gold_present": 593,
+    "predicted_present": 542
+   },
+   "STORAGE": {
+    "pair_scored": true,
+    "detection": {
+     "precision": 0.8636363636363636,
+     "recall": 0.7037037037037037,
+     "f1": 0.7755102040816326
+    },
+    "pair": {
+     "precision": 0.6363636363636364,
+     "recall": 0.5185185185185185,
+     "f1": 0.5714285714285714
+    },
+    "detection_tp": 19,
+    "gold_present": 27,
+    "predicted_present": 22
+   }
+  },
+  "task_id": "visfd",
+  "split": "test",
+  "selection_f1": 0.84375,
+  "selection_metric": "end_to_end_pair_micro_f1"
+ },
+ "test_selection_f1": 0.84375,
+ "selection_f1_recomputed_from_predictions": 0.84375,
+ "test_count": 2224,
+ "predictions_rows": 2224,
+ "reload_prediction_repeatable": true,
+ "load_missing_keys": [],
+ "load_unexpected_keys": [],
+ "encoder_source": "O",
+ "license": "no NC data",
+ "research_only": false,
+ "elapsed_s": 6.1,
+ "note": "test opened by explicit user instruction after the v4 pilot gate failed; checkpoint is the validation-selected one (no test-based selection)"
+}

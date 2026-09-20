@@ -1,0 +1,37 @@
+[cafebert/vsfc_sentiment/lr=2e-05] start epochs=30 micro=32 accum=1 steps=10740 warmup=1074 device=cuda:0
+You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:683.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[cafebert/vsfc_sentiment/lr=2e-05] epoch  1 loss 0.4602 val_f1 78.16 best 78.16@1 (65s) *
+[cafebert/vsfc_sentiment/lr=2e-05] epoch  2 loss 0.1986 val_f1 84.51 best 84.51@2 (61s) *
+[cafebert/vsfc_sentiment/lr=2e-05] epoch  3 loss 0.1849 val_f1 79.87 best 84.51@2 (60s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch  4 loss 0.1593 val_f1 83.07 best 84.51@2 (61s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch  5 loss 0.1266 val_f1 82.49 best 84.51@2 (62s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch  6 loss 0.1053 val_f1 80.67 best 84.51@2 (60s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch  7 loss 0.0839 val_f1 84.32 best 84.51@2 (59s)
+/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py:823: UserWarning: Flash Attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:102.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[cafebert/vsfc_sentiment/lr=2e-05] epoch  8 loss 0.0627 val_f1 85.90 best 85.90@8 (60s) *
+[cafebert/vsfc_sentiment/lr=2e-05] epoch  9 loss 0.0563 val_f1 85.67 best 85.90@8 (60s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 10 loss 0.0415 val_f1 85.78 best 85.90@8 (60s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 11 loss 0.0410 val_f1 85.63 best 85.90@8 (59s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 12 loss 0.0349 val_f1 83.83 best 85.90@8 (59s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 13 loss 0.0272 val_f1 86.31 best 86.31@13 (60s) *
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 14 loss 0.0161 val_f1 85.99 best 86.31@13 (59s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 15 loss 0.0212 val_f1 85.75 best 86.31@13 (60s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 16 loss 0.0140 val_f1 84.65 best 86.31@13 (59s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 17 loss 0.0138 val_f1 86.19 best 86.31@13 (60s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 18 loss 0.0146 val_f1 85.27 best 86.31@13 (60s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 19 loss 0.0064 val_f1 86.79 best 86.79@19 (61s) *
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 20 loss 0.0059 val_f1 86.39 best 86.79@19 (62s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 21 loss 0.0072 val_f1 86.48 best 86.79@19 (60s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 22 loss 0.0053 val_f1 86.67 best 86.79@19 (60s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 23 loss 0.0034 val_f1 86.17 best 86.79@19 (62s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 24 loss 0.0031 val_f1 86.47 best 86.79@19 (59s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 25 loss 0.0019 val_f1 86.49 best 86.79@19 (60s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 26 loss 0.0021 val_f1 87.34 best 87.34@26 (60s) *
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 27 loss 0.0009 val_f1 87.69 best 87.69@27 (64s) *
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 28 loss 0.0003 val_f1 87.45 best 87.69@27 (67s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 29 loss 0.0005 val_f1 87.02 best 87.69@27 (86s)
+[cafebert/vsfc_sentiment/lr=2e-05] epoch 30 loss 0.0002 val_f1 87.45 best 87.69@27 (86s)
+[cafebert/vsfc_sentiment/lr=2e-05] done best 87.69@27 elapsed 31.4 min; checks={'checkpoint_epoch': 27, 'best_epoch': 27, 'reload_selection_f1': 0.8769241120832681, 'best_selection_f1': 0.8769241120832681, 'reload_matches_best': True, 'prediction_file_selection_f1': 0.8769241120832681, 'prediction_file_matches_best': True, 'reload_ids_identical': True, 'reload_predictions_identical': True}

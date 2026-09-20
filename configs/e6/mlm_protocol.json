@@ -1,0 +1,46 @@
+{
+  "protocol": "E6-student-MLM-continuation-v1",
+  "source_backbone": "models/goiturn-s-gd",
+  "export_backbone": "models/goiturn-s-gd-mlm-e6",
+  "corpus": {
+    "source_split": "train",
+    "source_tasks": ["vsfc_sentiment", "visfd", "absa_restaurant", "absa_hotel"],
+    "exclude_vsfc_topic_duplicate": true,
+    "max_length": 256,
+    "holdout_seed": 42,
+    "holdout_fraction": 0.05
+  },
+  "masking": {
+    "probability": 0.15,
+    "replacement": {"mask": 0.8, "random": 0.1, "unchanged": 0.1},
+    "protect_all_original_special_ids": true,
+    "fixed_holdout_seed": 1729
+  },
+  "stage_a": {
+    "name": "head_warmup",
+    "optimizer_steps": 500,
+    "encoder": "frozen_eval",
+    "learning_rate": 0.0005,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.1,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32
+  },
+  "stage_b": {
+    "name": "joint_mlm",
+    "optimizer_steps": 2000,
+    "encoder": "trainable",
+    "learning_rate": 0.00002,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.1,
+    "gradient_clip_norm": 1.0,
+    "effective_batch_size": 32,
+    "micro_batch_size": 32
+  },
+  "runtime": {
+    "seed": 42,
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "device_default": "cuda:0"
+  }
+}

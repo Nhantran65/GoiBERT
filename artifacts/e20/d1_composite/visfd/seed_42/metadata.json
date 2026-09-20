@@ -1,0 +1,963 @@
+{
+  "protocol": "E2-training-ablation-v1",
+  "revision": "e20-20260914-r1",
+  "stage": "stageE20_cti_screening",
+  "method": "d1_composite",
+  "coefficient": 0.0,
+  "task_id": "visfd",
+  "mode": "nc",
+  "seed": 42,
+  "learning_rate": 5e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 10381,
+    "max_tokens": 241,
+    "p50_tokens": 47.0,
+    "p95_tokens": 93.0,
+    "p99_tokens": 132.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "smoke": false,
+  "source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_config_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "visfd",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "others"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ]
+    ]
+  },
+  "model": {
+    "role": "e20_cti_student",
+    "backbone": "goibert-b-dapt",
+    "hidden_size": 768,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 42,
+    "num_aspects": 11,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 102983466,
+    "trainable_parameters": 102983466,
+    "arm": "d1_composite",
+    "mu": 0.0,
+    "added_parameter_count": 0
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "hyperparameters": {
+    "temperature": 2.0,
+    "alpha": null,
+    "consistency_lambda": 0.5,
+    "teacher_cache": null,
+    "teacher_cache_hash": null
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e20.py",
+    "--worker",
+    "--arm",
+    "d1_composite",
+    "--task-id",
+    "visfd",
+    "--device",
+    "cuda:0",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e20/d1_composite/visfd/seed_42",
+    "--seed",
+    "42"
+  ],
+  "started_at_unix": 1789354835.1597123,
+  "noise_statistics": [
+    {
+      "count": 10381,
+      "changed_count": 4715,
+      "operation_counts": {
+        "remove_accents": 2550,
+        "teencode": 2097,
+        "none": 5182,
+        "internal_char_typo": 552
+      },
+      "change_rate": 0.45419516424236583
+    },
+    {
+      "count": 10381,
+      "changed_count": 4667,
+      "operation_counts": {
+        "teencode": 2086,
+        "none": 5218,
+        "remove_accents": 2571,
+        "internal_char_typo": 506
+      },
+      "change_rate": 0.44957133224159523
+    },
+    {
+      "count": 10381,
+      "changed_count": 4740,
+      "operation_counts": {
+        "none": 5166,
+        "teencode": 2050,
+        "remove_accents": 2641,
+        "internal_char_typo": 524
+      },
+      "change_rate": 0.45660341007610056
+    },
+    {
+      "count": 10381,
+      "changed_count": 4841,
+      "operation_counts": {
+        "none": 5077,
+        "remove_accents": 2700,
+        "teencode": 2057,
+        "internal_char_typo": 547
+      },
+      "change_rate": 0.4663327232443888
+    },
+    {
+      "count": 10381,
+      "changed_count": 4613,
+      "operation_counts": {
+        "remove_accents": 2523,
+        "teencode": 2072,
+        "none": 5256,
+        "internal_char_typo": 530
+      },
+      "change_rate": 0.44436952124072826
+    },
+    {
+      "count": 10381,
+      "changed_count": 4773,
+      "operation_counts": {
+        "none": 5099,
+        "teencode": 2165,
+        "remove_accents": 2632,
+        "internal_char_typo": 485
+      },
+      "change_rate": 0.4597822945766304
+    },
+    {
+      "count": 10381,
+      "changed_count": 4656,
+      "operation_counts": {
+        "teencode": 2058,
+        "remove_accents": 2572,
+        "internal_char_typo": 473,
+        "none": 5278
+      },
+      "change_rate": 0.44851170407475194
+    },
+    {
+      "count": 10381,
+      "changed_count": 4699,
+      "operation_counts": {
+        "none": 5232,
+        "teencode": 2077,
+        "remove_accents": 2599,
+        "internal_char_typo": 473
+      },
+      "change_rate": 0.45265388690877567
+    },
+    {
+      "count": 10381,
+      "changed_count": 4634,
+      "operation_counts": {
+        "none": 5236,
+        "remove_accents": 2578,
+        "internal_char_typo": 490,
+        "teencode": 2077
+      },
+      "change_rate": 0.4463924477410654
+    },
+    {
+      "count": 10381,
+      "changed_count": 4669,
+      "operation_counts": {
+        "none": 5242,
+        "remove_accents": 2599,
+        "internal_char_typo": 514,
+        "teencode": 2026
+      },
+      "change_rate": 0.449763991908294
+    },
+    {
+      "count": 10381,
+      "changed_count": 4624,
+      "operation_counts": {
+        "teencode": 2068,
+        "none": 5272,
+        "remove_accents": 2585,
+        "internal_char_typo": 456
+      },
+      "change_rate": 0.4454291494075715
+    },
+    {
+      "count": 10381,
+      "changed_count": 4644,
+      "operation_counts": {
+        "none": 5188,
+        "teencode": 2139,
+        "internal_char_typo": 503,
+        "remove_accents": 2551
+      },
+      "change_rate": 0.4473557460745593
+    },
+    {
+      "count": 10381,
+      "changed_count": 4696,
+      "operation_counts": {
+        "teencode": 2090,
+        "remove_accents": 2560,
+        "none": 5245,
+        "internal_char_typo": 486
+      },
+      "change_rate": 0.4523648974087275
+    },
+    {
+      "count": 10381,
+      "changed_count": 4588,
+      "operation_counts": {
+        "none": 5305,
+        "remove_accents": 2537,
+        "internal_char_typo": 498,
+        "teencode": 2041
+      },
+      "change_rate": 0.44196127540699354
+    },
+    {
+      "count": 10381,
+      "changed_count": 4791,
+      "operation_counts": {
+        "none": 5123,
+        "remove_accents": 2659,
+        "teencode": 2070,
+        "internal_char_typo": 529
+      },
+      "change_rate": 0.46151623157691934
+    },
+    {
+      "count": 10381,
+      "changed_count": 4689,
+      "operation_counts": {
+        "none": 5197,
+        "remove_accents": 2623,
+        "internal_char_typo": 525,
+        "teencode": 2036
+      },
+      "change_rate": 0.45169058857528177
+    },
+    {
+      "count": 10381,
+      "changed_count": 4712,
+      "operation_counts": {
+        "none": 5178,
+        "remove_accents": 2624,
+        "teencode": 2111,
+        "internal_char_typo": 468
+      },
+      "change_rate": 0.4539061747423177
+    },
+    {
+      "count": 10381,
+      "changed_count": 4741,
+      "operation_counts": {
+        "none": 5141,
+        "remove_accents": 2606,
+        "internal_char_typo": 515,
+        "teencode": 2119
+      },
+      "change_rate": 0.45669973990944995
+    },
+    {
+      "count": 10381,
+      "changed_count": 4678,
+      "operation_counts": {
+        "teencode": 2104,
+        "none": 5212,
+        "remove_accents": 2515,
+        "internal_char_typo": 550
+      },
+      "change_rate": 0.4506309604084385
+    },
+    {
+      "count": 10381,
+      "changed_count": 4743,
+      "operation_counts": {
+        "remove_accents": 2622,
+        "none": 5161,
+        "teencode": 2081,
+        "internal_char_typo": 517
+      },
+      "change_rate": 0.45689239957614874
+    },
+    {
+      "count": 10381,
+      "changed_count": 4799,
+      "operation_counts": {
+        "none": 5121,
+        "remove_accents": 2626,
+        "teencode": 2114,
+        "internal_char_typo": 520
+      },
+      "change_rate": 0.46228687024371445
+    },
+    {
+      "count": 10381,
+      "changed_count": 4653,
+      "operation_counts": {
+        "none": 5232,
+        "remove_accents": 2532,
+        "internal_char_typo": 525,
+        "teencode": 2092
+      },
+      "change_rate": 0.4482227145747038
+    },
+    {
+      "count": 10381,
+      "changed_count": 4668,
+      "operation_counts": {
+        "remove_accents": 2560,
+        "none": 5250,
+        "teencode": 2055,
+        "internal_char_typo": 516
+      },
+      "change_rate": 0.44966766207494463
+    },
+    {
+      "count": 10381,
+      "changed_count": 4673,
+      "operation_counts": {
+        "remove_accents": 2603,
+        "none": 5216,
+        "internal_char_typo": 501,
+        "teencode": 2061
+      },
+      "change_rate": 0.45014931124169155
+    },
+    {
+      "count": 10381,
+      "changed_count": 4659,
+      "operation_counts": {
+        "none": 5243,
+        "teencode": 2065,
+        "remove_accents": 2576,
+        "internal_char_typo": 497
+      },
+      "change_rate": 0.4488006935748001
+    },
+    {
+      "count": 10381,
+      "changed_count": 4661,
+      "operation_counts": {
+        "teencode": 2032,
+        "remove_accents": 2585,
+        "none": 5272,
+        "internal_char_typo": 492
+      },
+      "change_rate": 0.4489933532414989
+    },
+    {
+      "count": 10381,
+      "changed_count": 4698,
+      "operation_counts": {
+        "teencode": 2031,
+        "none": 5192,
+        "remove_accents": 2647,
+        "internal_char_typo": 511
+      },
+      "change_rate": 0.4525575570754263
+    },
+    {
+      "count": 10381,
+      "changed_count": 4683,
+      "operation_counts": {
+        "none": 5225,
+        "teencode": 2068,
+        "internal_char_typo": 546,
+        "remove_accents": 2542
+      },
+      "change_rate": 0.45111260957518545
+    },
+    {
+      "count": 10381,
+      "changed_count": 4684,
+      "operation_counts": {
+        "remove_accents": 2567,
+        "none": 5227,
+        "teencode": 2048,
+        "internal_char_typo": 539
+      },
+      "change_rate": 0.45120893940853485
+    },
+    {
+      "count": 10381,
+      "changed_count": 4629,
+      "operation_counts": {
+        "none": 5283,
+        "remove_accents": 2545,
+        "teencode": 2075,
+        "internal_char_typo": 478
+      },
+      "change_rate": 0.4459107985743185
+    }
+  ],
+  "best_epoch": 30,
+  "best_selection_f1": 0.8490257325598691,
+  "best_validation_metrics": {
+    "n": 1112,
+    "aspect_count": 11,
+    "aspect_names": [
+      "BATTERY",
+      "CAMERA",
+      "DESIGN",
+      "FEATURES",
+      "GENERAL",
+      "OTHERS",
+      "PERFORMANCE",
+      "PRICE",
+      "SCREEN",
+      "SER&ACC",
+      "STORAGE"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8883708173340648,
+    "detection_micro_recall": 0.9080459770114943,
+    "detection_micro_f1": 0.8981006516012755,
+    "detection_macro_precision": 0.8654506833488095,
+    "detection_macro_recall": 0.8676605635711699,
+    "detection_macro_f1": 0.8652789553484316,
+    "pair_micro_precision": 0.8376871147637217,
+    "pair_micro_recall": 0.8606755126658625,
+    "pair_micro_f1": 0.8490257325598691,
+    "pair_macro_precision": 0.8075497317104505,
+    "pair_macro_recall": 0.8140161344222492,
+    "pair_macro_f1": 0.8096777154993076,
+    "classification_pair_micro_f1": 0.8490257325598691,
+    "classification_pair_macro_f1": 0.8096777154993076,
+    "per_aspect": {
+      "BATTERY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9653846153846154,
+          "recall": 0.996031746031746,
+          "f1": 0.98046875
+        },
+        "pair": {
+          "precision": 0.8788461538461538,
+          "recall": 0.9067460317460317,
+          "f1": 0.892578125
+        },
+        "detection_tp": 502,
+        "gold_present": 504,
+        "predicted_present": 520
+      },
+      "CAMERA": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9385113268608414,
+          "recall": 0.9797297297297297,
+          "f1": 0.9586776859504132
+        },
+        "pair": {
+          "precision": 0.8252427184466019,
+          "recall": 0.8614864864864865,
+          "f1": 0.8429752066115702
+        },
+        "detection_tp": 290,
+        "gold_present": 296,
+        "predicted_present": 309
+      },
+      "DESIGN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9042553191489362,
+          "recall": 0.9090909090909091,
+          "f1": 0.9066666666666666
+        },
+        "pair": {
+          "precision": 0.8404255319148937,
+          "recall": 0.8449197860962567,
+          "f1": 0.8426666666666667
+        },
+        "detection_tp": 170,
+        "gold_present": 187,
+        "predicted_present": 188
+      },
+      "FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9064935064935065,
+          "recall": 0.916010498687664,
+          "f1": 0.9112271540469974
+        },
+        "pair": {
+          "precision": 0.8311688311688312,
+          "recall": 0.8398950131233596,
+          "f1": 0.835509138381201
+        },
+        "detection_tp": 349,
+        "gold_present": 381,
+        "predicted_present": 385
+      },
+      "GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9043600562587905,
+          "recall": 0.9332365747460087,
+          "f1": 0.9185714285714286
+        },
+        "pair": {
+          "precision": 0.870604781997187,
+          "recall": 0.8984034833091437,
+          "f1": 0.8842857142857142
+        },
+        "detection_tp": 643,
+        "gold_present": 689,
+        "predicted_present": 711
+      },
+      "OTHERS": {
+        "pair_scored": false,
+        "detection": {
+          "precision": 0.5313807531380753,
+          "recall": 0.5059760956175299,
+          "f1": 0.5183673469387755
+        },
+        "pair": null,
+        "detection_tp": 127,
+        "gold_present": 251,
+        "predicted_present": 239
+      },
+      "PERFORMANCE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9046052631578947,
+          "recall": 0.9450171821305842,
+          "f1": 0.9243697478991597
+        },
+        "pair": {
+          "precision": 0.8273026315789473,
+          "recall": 0.8642611683848798,
+          "f1": 0.8453781512605042
+        },
+        "detection_tp": 550,
+        "gold_present": 582,
+        "predicted_present": 608
+      },
+      "PRICE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8996282527881041,
+          "recall": 0.9603174603174603,
+          "f1": 0.9289827255278311
+        },
+        "pair": {
+          "precision": 0.7695167286245354,
+          "recall": 0.8214285714285714,
+          "f1": 0.7946257197696737
+        },
+        "detection_tp": 242,
+        "gold_present": 252,
+        "predicted_present": 269
+      },
+      "SCREEN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8582677165354331,
+          "recall": 0.9008264462809917,
+          "f1": 0.8790322580645161
+        },
+        "pair": {
+          "precision": 0.7716535433070866,
+          "recall": 0.8099173553719008,
+          "f1": 0.7903225806451613
+        },
+        "detection_tp": 109,
+        "gold_present": 121,
+        "predicted_present": 127
+      },
+      "SER&ACC": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8888888888888888,
+          "recall": 0.8551724137931035,
+          "f1": 0.8717047451669596
+        },
+        "pair": {
+          "precision": 0.8243727598566308,
+          "recall": 0.7931034482758621,
+          "f1": 0.8084358523725835
+        },
+        "detection_tp": 248,
+        "gold_present": 290,
+        "predicted_present": 279
+      },
+      "STORAGE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8181818181818182,
+          "recall": 0.6428571428571429,
+          "f1": 0.72
+        },
+        "pair": {
+          "precision": 0.6363636363636364,
+          "recall": 0.5,
+          "f1": 0.56
+        },
+        "detection_tp": 9,
+        "gold_present": 14,
+        "predicted_present": 11
+      }
+    },
+    "task_id": "visfd",
+    "split": "validation",
+    "selection_f1": 0.8490257325598691,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "elapsed_seconds": 2136.6170411109924,
+  "peak_gpu_memory_allocated_bytes": 5197844480,
+  "peak_gpu_memory_reserved_bytes": 5605687296,
+  "status": "completed",
+  "checkpoint_sha256": "0b3d476267574f38d28cda08ddc089a4c719634b559e6b8ccfc02cb98505f889",
+  "e20_protocol": "E20-cti-screening-v1",
+  "e20_revision": "e20-20260914-r1",
+  "e20_arm": "d1_composite",
+  "e20_mu": 0.0,
+  "e20_sampling_mode": "rare_pair_weighted",
+  "e20_seed": 42,
+  "e20_encoder_dir": "/home/kiettqa/GoiBERT/models/goibert-b-dapt",
+  "e20_encoder_hashes": {
+    "config.json": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89",
+    "model.safetensors": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f",
+    "pretrain_manifest.json": "e035bf3cf53eaf7558c23129d56732472cf7a79bff66424b03609c41a6798191",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "e20_optimizer_coverage": {
+    "all_trainable": true,
+    "duplicate_parameter_count": 0,
+    "parameter_count": 201,
+    "group_count": 28,
+    "endpoint_scales": {
+      "embeddings": 0.06871947673600004,
+      "block_00": 0.08589934592000005,
+      "block_09": 0.6400000000000001,
+      "head": 1.0
+    }
+  },
+  "e20_composite_coverage": {
+    "task_id": "visfd",
+    "seed": 42,
+    "sampling": "rare_pair_weighted",
+    "n_train": 7786,
+    "n_eligible_aspects": 10,
+    "eligible_aspects": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "n_composites_target": 2595,
+    "n_composites_built": 2595,
+    "attempts": 2595,
+    "dropped_assert_failures": 0,
+    "n_valid_pairs": 36,
+    "n_rare_pairs_le5": 0,
+    "n_rare_pairs_covered": 0,
+    "distinct_pairs_used": 36,
+    "pair_use_count": {
+      "0-1": 31,
+      "0-2": 66,
+      "0-3": 42,
+      "0-4": 24,
+      "0-6": 25,
+      "0-7": 51,
+      "0-8": 100,
+      "0-9": 51,
+      "1-2": 89,
+      "1-3": 60,
+      "1-4": 31,
+      "1-6": 37,
+      "1-7": 66,
+      "1-8": 108,
+      "1-9": 93,
+      "2-3": 105,
+      "2-4": 65,
+      "2-6": 44,
+      "2-7": 117,
+      "2-8": 186,
+      "2-9": 118,
+      "3-4": 40,
+      "3-6": 25,
+      "3-7": 85,
+      "3-8": 102,
+      "3-9": 86,
+      "4-6": 12,
+      "4-7": 24,
+      "4-8": 79,
+      "4-9": 34,
+      "6-7": 43,
+      "6-8": 97,
+      "6-9": 42,
+      "7-8": 157,
+      "7-9": 72,
+      "8-9": 188
+    }
+  },
+  "e20_inv_loss_summary": {
+    "n_observations": 0,
+    "mean": null,
+    "max": null,
+    "min": null
+  },
+  "e20_source_manifest": {
+    "protocol": "E20-cti-screening-v1",
+    "revision": "e20-20260914-r1",
+    "created_at": "2026-09-14T03:00:30Z",
+    "runner_sha256": "faefc4ef5a986143033ea96fe92f8239c4aee826374aec7d0e895958f51a2012",
+    "source_hashes": {
+      "scripts/run_e20.py": "faefc4ef5a986143033ea96fe92f8239c4aee826374aec7d0e895958f51a2012",
+      "configs/e20/protocol.json": "af475c5b26a3eae6441e730d28c9ddffcee9894629912565e0213a47766647fd",
+      "src/goibert_e2/train.py": "b3c28a9ee2c55ef6f24a1fe9ed2f342e5aea18f533b2e571ece0aae2e06f3ce2",
+      "src/goibert_e2/modeling.py": "b6049133d32f6a8b6f9aa063e47be3b5e1b79aeba1e06e917343079586ab0af4",
+      "src/goibert_e2/losses.py": "ca5ffa013350ba720a1f1a00debc3c2615cc3c25aad5b4726143293bf96491df",
+      "src/goibert_e2/noise.py": "8409775ef99ef5f96a9504f2d91eb5a738c5928ce960567ecaa3e5929a87dd29",
+      "src/goibert_e2/cache.py": "3b8db5cd1797212fe5d9b18f0ca59717594b1f69d76ea0c79bed45b2f862d2e7",
+      "src/goibert_e7/optim.py": "188ef994c5b271804be71ba618881071397e397731320624bd271b236a77d690",
+      "src/goibert/train.py": "ede96aaf63f02b808e5034f58953cfbce9a03438ed71f10f775de314a40bc578",
+      "src/goibert/modeling.py": "c8cf5b69e056cffd81f5606a813cd36779a7ef9f785c0d107faf8d8485585c49",
+      "src/goibert/data.py": "aeff87536a81c039d4240962140463693286c5241ce09630f5ad1b13699efc57"
+    },
+    "encoder": {
+      "path": "/home/kiettqa/GoiBERT/models/goibert-b-dapt",
+      "files": {
+        "config.json": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89",
+        "model.safetensors": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f",
+        "pretrain_manifest.json": "e035bf3cf53eaf7558c23129d56732472cf7a79bff66424b03609c41a6798191",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      }
+    },
+    "frozen_e2_source_hashes": {
+      "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+      "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+      "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+      "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+      "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+    },
+    "recipe": {
+      "arms": [
+        "d1_composite",
+        "cti",
+        "d1_uniform"
+      ],
+      "mu_by_arm": {
+        "d1_composite": 0.0,
+        "cti": 0.3,
+        "d1_uniform": 0.0
+      },
+      "sampling_by_arm": {
+        "d1_composite": "rare_pair_weighted",
+        "cti": "rare_pair_weighted",
+        "d1_uniform": "uniform"
+      },
+      "tasks": [
+        "absa_restaurant",
+        "absa_hotel",
+        "visfd"
+      ],
+      "seed": 42,
+      "epochs": 30,
+      "effective_batch_size": 32,
+      "micro_batch_size": 16,
+      "accumulation_steps": 2,
+      "max_length": 256,
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "gamma": 0.8,
+      "num_layers": 12,
+      "weight_decay": 0.01,
+      "task_lrs": {
+        "absa_restaurant": 2e-05,
+        "absa_hotel": 5e-05,
+        "visfd": 5e-05
+      },
+      "nc_lambdas": {
+        "absa_restaurant": 0.1,
+        "absa_hotel": 0.1,
+        "visfd": 0.5
+      },
+      "max_composite_tokens": 48,
+      "rare_pair_threshold": 5
+    }
+  }
+}

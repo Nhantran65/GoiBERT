@@ -1,0 +1,507 @@
+{
+  "protocol": "SEA-LION-ModernBERT-300M-five-task-v1",
+  "model_kind": "sealion",
+  "task_id": "visfd",
+  "seed": 42,
+  "stage": "validation_only",
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 732,
+  "total_steps": 7320,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy (absent class 0 included)",
+  "head": "first token -> dropout0.1 -> dense768 -> tanh -> dropout0.1 -> task logits",
+  "pooling": "first-token/BOS",
+  "selection": "validation task-specific selection_f1, best epoch",
+  "include_test": false,
+  "smoke": null,
+  "source_hash": "ff19b2b22c7327c622988a3ccf38b05993455774277c9bdb8a3df2a8e6f676a9",
+  "model": {
+    "backbone": "aisingapore/SEA-LION-ModernBERT-300M",
+    "local_path": "models/sea-lion-modernbert-300m",
+    "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+    "encoder_class": "ModernBertModel",
+    "model_type": "modernbert",
+    "hidden_size": 768,
+    "num_hidden_layers": 22,
+    "num_attention_heads": 12,
+    "intermediate_size": 1152,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "pooling": "first-token/BOS",
+    "native_classifier_pooling": "mean",
+    "num_labels": 42,
+    "num_aspects": 11,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 312281130,
+    "trainable_parameters": 312281130,
+    "encoder_weight_file_sha256": "8197fa020536cb907299ff9fc6e1a1a436808f5606dba3dc6c56f7e4899dfdac"
+  },
+  "tokenizer": {
+    "source": "models/sea-lion-modernbert-300m",
+    "hf_repo": "aisingapore/SEA-LION-ModernBERT-300M",
+    "hf_commit": "e3d70b810769bf86ae9041d1943e0ecd10b62b31",
+    "files": {
+      "special_tokens_map.json": "230075193082c0422c032bfc511aa304c3057f2fd87612e871d6522fd85a1651",
+      "tokenizer.json": "31de34af3072a06a88f10047733aa7a53db467bf66bfc1ef4d469a537e6e448d",
+      "tokenizer_config.json": "cda328a6066edd668bdc88cd8ab8e736198ab73cbb84001cc722620d1d2272b1"
+    },
+    "tokenizer_class": "PreTrainedTokenizerFast",
+    "vocab_size": 262144,
+    "special_tokens": {
+      "bos_token_id": 2,
+      "eos_token_id": 1,
+      "cls_token_id": 2,
+      "sep_token_id": 1,
+      "pad_token_id": 0,
+      "mask_token_id": 4
+    },
+    "first_token_head": "input_ids[:,0] = <bos> (token ID 2); ModernBERT native classifier_pooling=mean is not used",
+    "token_type_ids": "not emitted and not passed to ModernBERT"
+  },
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "visfd",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+    ],
+    "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "others"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      [
+        "absent",
+        "positive",
+        "negative",
+        "neutral"
+      ]
+    ]
+  },
+  "train_count": 7786,
+  "validation_count": 1112,
+  "num_aspects": 11,
+  "aspect_class_counts": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    2,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "2",
+    "cublas_workspace_config": ":4096:8",
+    "hostname": "server-ai-new-02.vntt.lan"
+  },
+  "gpu_snapshot_at_start": {
+    "0": {
+      "free_mib": 39553,
+      "used_mib": 5906,
+      "util_pct": 0
+    },
+    "1": {
+      "free_mib": 22509,
+      "used_mib": 22950,
+      "util_pct": 46
+    },
+    "2": {
+      "free_mib": 34530,
+      "used_mib": 10929,
+      "util_pct": 59
+    },
+    "3": {
+      "free_mib": 34530,
+      "used_mib": 10929,
+      "util_pct": 58
+    }
+  },
+  "length_stats": {
+    "train_count": 7786,
+    "max_tokens": 268,
+    "p50_tokens": 40.0,
+    "p95_tokens": 106.0,
+    "p99_tokens": 152.0,
+    "truncation_rate_256": 0.00012843565373747752,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "started_at": "2026-09-17T15:09:01Z",
+  "started_at_unix": 1789657735.0247493,
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/sealion_benchmark/controller.py",
+    "--model-kind",
+    "sealion",
+    "--task",
+    "visfd",
+    "--learning-rate",
+    "2e-05",
+    "--device",
+    "cuda:0",
+    "--micro-batch",
+    "32"
+  ],
+  "pid": 3646873,
+  "best_epoch": 18,
+  "best_selection_f1": 0.742513121333745,
+  "best_validation_metrics": {
+    "n": 1112,
+    "aspect_count": 11,
+    "aspect_names": [
+      "BATTERY",
+      "CAMERA",
+      "DESIGN",
+      "FEATURES",
+      "GENERAL",
+      "OTHERS",
+      "PERFORMANCE",
+      "PRICE",
+      "SCREEN",
+      "SER&ACC",
+      "STORAGE"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.864897107068297,
+    "detection_micro_recall": 0.8130081300813008,
+    "detection_micro_f1": 0.838150289017341,
+    "detection_macro_precision": 0.8595241726525145,
+    "detection_macro_recall": 0.7165320820695326,
+    "detection_macro_f1": 0.7542740604121786,
+    "pair_micro_precision": 0.7605945604048071,
+    "pair_micro_recall": 0.7252714113389626,
+    "pair_micro_f1": 0.742513121333745,
+    "pair_macro_precision": 0.7765428009961026,
+    "pair_macro_recall": 0.6384129948218311,
+    "pair_macro_f1": 0.671651040383772,
+    "classification_pair_micro_f1": 0.742513121333745,
+    "classification_pair_macro_f1": 0.671651040383772,
+    "per_aspect": {
+      "BATTERY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9571150097465887,
+          "recall": 0.9742063492063492,
+          "f1": 0.9655850540806293
+        },
+        "pair": {
+          "precision": 0.7777777777777778,
+          "recall": 0.7916666666666666,
+          "f1": 0.7846607669616519
+        },
+        "detection_tp": 491,
+        "gold_present": 504,
+        "predicted_present": 513
+      },
+      "CAMERA": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8942307692307693,
+          "recall": 0.9425675675675675,
+          "f1": 0.9177631578947368
+        },
+        "pair": {
+          "precision": 0.7403846153846154,
+          "recall": 0.7804054054054054,
+          "f1": 0.7598684210526315
+        },
+        "detection_tp": 279,
+        "gold_present": 296,
+        "predicted_present": 312
+      },
+      "DESIGN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8832116788321168,
+          "recall": 0.6470588235294118,
+          "f1": 0.7469135802469136
+        },
+        "pair": {
+          "precision": 0.8029197080291971,
+          "recall": 0.5882352941176471,
+          "f1": 0.6790123456790124
+        },
+        "detection_tp": 121,
+        "gold_present": 187,
+        "predicted_present": 137
+      },
+      "FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8950276243093923,
+          "recall": 0.8503937007874016,
+          "f1": 0.8721399730820996
+        },
+        "pair": {
+          "precision": 0.7624309392265194,
+          "recall": 0.7244094488188977,
+          "f1": 0.7429340511440108
+        },
+        "detection_tp": 324,
+        "gold_present": 381,
+        "predicted_present": 362
+      },
+      "GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.844632768361582,
+          "recall": 0.8679245283018868,
+          "f1": 0.8561202576950608
+        },
+        "pair": {
+          "precision": 0.7923728813559322,
+          "recall": 0.8142235123367199,
+          "f1": 0.8031496062992126
+        },
+        "detection_tp": 598,
+        "gold_present": 689,
+        "predicted_present": 708
+      },
+      "OTHERS": {
+        "pair_scored": false,
+        "detection": {
+          "precision": 0.4973821989528796,
+          "recall": 0.3784860557768924,
+          "f1": 0.4298642533936652
+        },
+        "pair": null,
+        "detection_tp": 95,
+        "gold_present": 251,
+        "predicted_present": 191
+      },
+      "PERFORMANCE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8822463768115942,
+          "recall": 0.8367697594501718,
+          "f1": 0.8589065255731922
+        },
+        "pair": {
+          "precision": 0.7373188405797102,
+          "recall": 0.6993127147766323,
+          "f1": 0.7178130511463845
+        },
+        "detection_tp": 487,
+        "gold_present": 582,
+        "predicted_present": 552
+      },
+      "PRICE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8893280632411067,
+          "recall": 0.8928571428571429,
+          "f1": 0.8910891089108911
+        },
+        "pair": {
+          "precision": 0.6837944664031621,
+          "recall": 0.6865079365079365,
+          "f1": 0.6851485148514852
+        },
+        "detection_tp": 225,
+        "gold_present": 252,
+        "predicted_present": 253
+      },
+      "SCREEN": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.84375,
+          "recall": 0.6694214876033058,
+          "f1": 0.7465437788018433
+        },
+        "pair": {
+          "precision": 0.6666666666666666,
+          "recall": 0.5289256198347108,
+          "f1": 0.5898617511520737
+        },
+        "detection_tp": 81,
+        "gold_present": 121,
+        "predicted_present": 96
+      },
+      "SER&ACC": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8678414096916299,
+          "recall": 0.6793103448275862,
+          "f1": 0.7620889748549323
+        },
+        "pair": {
+          "precision": 0.801762114537445,
+          "recall": 0.6275862068965518,
+          "f1": 0.7040618955512572
+        },
+        "detection_tp": 197,
+        "gold_present": 290,
+        "predicted_present": 227
+      },
+      "STORAGE": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.14285714285714285,
+          "f1": 0.25
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.14285714285714285,
+          "f1": 0.25
+        },
+        "detection_tp": 2,
+        "gold_present": 14,
+        "predicted_present": 2
+      }
+    },
+    "task_id": "visfd",
+    "split": "validation",
+    "selection_f1": 0.742513121333745,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "elapsed_seconds": 1444.8354692459106,
+  "finished_at": "2026-09-17T15:32:59Z",
+  "peak_gpu_memory_allocated_bytes": 8869826048,
+  "peak_gpu_memory_reserved_bytes": 9995026432,
+  "checkpoint_sha256": "6f85aa4d81ef8e02e1fd87d2da98e490c303148c8417e5d759444482a9134cd3",
+  "checkpoint_format": "model state_dict only (not resumable)",
+  "postrun_checks": {
+    "checkpoint_epoch": 18,
+    "best_epoch": 18,
+    "reload_selection_f1": 0.742513121333745,
+    "best_selection_f1": 0.742513121333745,
+    "reload_matches_best": true,
+    "prediction_file_selection_f1": 0.742513121333745,
+    "prediction_file_matches_best": true,
+    "reload_ids_identical": true,
+    "reload_predictions_identical": true
+  },
+  "status": "completed"
+}

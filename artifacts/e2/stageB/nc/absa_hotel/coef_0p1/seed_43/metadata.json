@@ -1,0 +1,1416 @@
+{
+  "protocol": "E2-training-ablation-v1",
+  "revision": "e2-20260908-r1",
+  "stage": "stageb",
+  "method": "nc",
+  "coefficient": 0.1,
+  "task_id": "absa_hotel",
+  "mode": "nc",
+  "seed": 43,
+  "learning_rate": 0.0001,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 7180,
+    "max_tokens": 229,
+    "p50_tokens": 20.0,
+    "p95_tokens": 46.0,
+    "p99_tokens": 68.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "smoke": false,
+  "source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_config_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv": "38298d4d8e77a27d7b66ecb9756414ff0303724224502ac3ffdd9a7d24f0491e",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv": "21ec6bc4811dc44b977ce4510f8abef0290dd5d13fdd75feeb693ae408629ba7"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "absa_hotel",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    ]
+  },
+  "model": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 136,
+    "num_aspects": 34,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 26597896,
+    "trainable_parameters": 26597896
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:2",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "hyperparameters": {
+    "temperature": 2.0,
+    "alpha": null,
+    "consistency_lambda": 0.1,
+    "teacher_cache": null,
+    "teacher_cache_hash": null
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "argv": [
+    "/home/kiettqa/GoiBERT/src/goibert_e2/train.py",
+    "--mode",
+    "nc",
+    "--repo-root",
+    "/home/kiettqa/GoiBERT",
+    "--task-id",
+    "absa_hotel",
+    "--learning-rate",
+    "0.0001",
+    "--seed",
+    "43",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e2/stageB/nc/absa_hotel/coef_0p1/seed_43",
+    "--device",
+    "cuda:2",
+    "--precision",
+    "bf16",
+    "--attention-implementation",
+    "sdpa",
+    "--epochs",
+    "30",
+    "--effective-batch-size",
+    "32",
+    "--micro-batch-size",
+    "32",
+    "--stage",
+    "stageb",
+    "--method",
+    "nc",
+    "--protocol",
+    "E2-training-ablation-v1",
+    "--revision",
+    "e2-20260908-r1",
+    "--expected-e2-code-hash",
+    "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "--expected-e2-config-hash",
+    "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "--expected-orchestrator-hash",
+    "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+    "--include-test",
+    "false",
+    "--coefficient",
+    "0.1",
+    "--consistency-lambda",
+    "0.1"
+  ],
+  "started_at_unix": 1788886670.2103255,
+  "noise_statistics": [
+    {
+      "count": 7180,
+      "changed_count": 2890,
+      "operation_counts": {
+        "remove_accents": 1852,
+        "none": 3562,
+        "teencode": 1417,
+        "internal_char_typo": 349
+      },
+      "change_rate": 0.4025069637883008
+    },
+    {
+      "count": 7180,
+      "changed_count": 2897,
+      "operation_counts": {
+        "remove_accents": 1807,
+        "none": 3527,
+        "teencode": 1492,
+        "internal_char_typo": 354
+      },
+      "change_rate": 0.40348189415041785
+    },
+    {
+      "count": 7180,
+      "changed_count": 2828,
+      "operation_counts": {
+        "teencode": 1443,
+        "none": 3616,
+        "remove_accents": 1764,
+        "internal_char_typo": 357
+      },
+      "change_rate": 0.3938718662952646
+    },
+    {
+      "count": 7180,
+      "changed_count": 2798,
+      "operation_counts": {
+        "none": 3655,
+        "teencode": 1434,
+        "internal_char_typo": 323,
+        "remove_accents": 1768
+      },
+      "change_rate": 0.3896935933147632
+    },
+    {
+      "count": 7180,
+      "changed_count": 2854,
+      "operation_counts": {
+        "remove_accents": 1778,
+        "none": 3609,
+        "teencode": 1439,
+        "internal_char_typo": 354
+      },
+      "change_rate": 0.3974930362116992
+    },
+    {
+      "count": 7180,
+      "changed_count": 2819,
+      "operation_counts": {
+        "none": 3587,
+        "remove_accents": 1745,
+        "internal_char_typo": 390,
+        "teencode": 1458
+      },
+      "change_rate": 0.3926183844011142
+    },
+    {
+      "count": 7180,
+      "changed_count": 2785,
+      "operation_counts": {
+        "none": 3664,
+        "remove_accents": 1767,
+        "teencode": 1389,
+        "internal_char_typo": 360
+      },
+      "change_rate": 0.387883008356546
+    },
+    {
+      "count": 7180,
+      "changed_count": 2828,
+      "operation_counts": {
+        "none": 3620,
+        "remove_accents": 1776,
+        "teencode": 1448,
+        "internal_char_typo": 336
+      },
+      "change_rate": 0.3938718662952646
+    },
+    {
+      "count": 7180,
+      "changed_count": 2851,
+      "operation_counts": {
+        "teencode": 1405,
+        "remove_accents": 1769,
+        "none": 3616,
+        "internal_char_typo": 390
+      },
+      "change_rate": 0.397075208913649
+    },
+    {
+      "count": 7180,
+      "changed_count": 2870,
+      "operation_counts": {
+        "none": 3583,
+        "remove_accents": 1786,
+        "teencode": 1457,
+        "internal_char_typo": 354
+      },
+      "change_rate": 0.3997214484679666
+    },
+    {
+      "count": 7180,
+      "changed_count": 2829,
+      "operation_counts": {
+        "none": 3593,
+        "teencode": 1443,
+        "internal_char_typo": 361,
+        "remove_accents": 1783
+      },
+      "change_rate": 0.39401114206128135
+    },
+    {
+      "count": 7180,
+      "changed_count": 2838,
+      "operation_counts": {
+        "none": 3598,
+        "remove_accents": 1802,
+        "teencode": 1418,
+        "internal_char_typo": 362
+      },
+      "change_rate": 0.39526462395543177
+    },
+    {
+      "count": 7180,
+      "changed_count": 2888,
+      "operation_counts": {
+        "remove_accents": 1829,
+        "none": 3586,
+        "teencode": 1422,
+        "internal_char_typo": 343
+      },
+      "change_rate": 0.40222841225626743
+    },
+    {
+      "count": 7180,
+      "changed_count": 2846,
+      "operation_counts": {
+        "remove_accents": 1793,
+        "none": 3599,
+        "teencode": 1444,
+        "internal_char_typo": 344
+      },
+      "change_rate": 0.39637883008356545
+    },
+    {
+      "count": 7180,
+      "changed_count": 2882,
+      "operation_counts": {
+        "remove_accents": 1846,
+        "none": 3600,
+        "teencode": 1378,
+        "internal_char_typo": 356
+      },
+      "change_rate": 0.40139275766016713
+    },
+    {
+      "count": 7180,
+      "changed_count": 2887,
+      "operation_counts": {
+        "none": 3576,
+        "remove_accents": 1798,
+        "internal_char_typo": 332,
+        "teencode": 1474
+      },
+      "change_rate": 0.4020891364902507
+    },
+    {
+      "count": 7180,
+      "changed_count": 2854,
+      "operation_counts": {
+        "none": 3622,
+        "teencode": 1411,
+        "remove_accents": 1765,
+        "internal_char_typo": 382
+      },
+      "change_rate": 0.3974930362116992
+    },
+    {
+      "count": 7180,
+      "changed_count": 2907,
+      "operation_counts": {
+        "remove_accents": 1821,
+        "none": 3547,
+        "teencode": 1452,
+        "internal_char_typo": 360
+      },
+      "change_rate": 0.40487465181058496
+    },
+    {
+      "count": 7180,
+      "changed_count": 2935,
+      "operation_counts": {
+        "none": 3506,
+        "remove_accents": 1859,
+        "teencode": 1487,
+        "internal_char_typo": 328
+      },
+      "change_rate": 0.4087743732590529
+    },
+    {
+      "count": 7180,
+      "changed_count": 2804,
+      "operation_counts": {
+        "remove_accents": 1745,
+        "teencode": 1459,
+        "none": 3638,
+        "internal_char_typo": 338
+      },
+      "change_rate": 0.3905292479108635
+    },
+    {
+      "count": 7180,
+      "changed_count": 2911,
+      "operation_counts": {
+        "teencode": 1428,
+        "none": 3564,
+        "remove_accents": 1823,
+        "internal_char_typo": 365
+      },
+      "change_rate": 0.40543175487465183
+    },
+    {
+      "count": 7180,
+      "changed_count": 2802,
+      "operation_counts": {
+        "none": 3623,
+        "remove_accents": 1741,
+        "teencode": 1461,
+        "internal_char_typo": 355
+      },
+      "change_rate": 0.3902506963788301
+    },
+    {
+      "count": 7180,
+      "changed_count": 2855,
+      "operation_counts": {
+        "teencode": 1387,
+        "none": 3605,
+        "remove_accents": 1812,
+        "internal_char_typo": 376
+      },
+      "change_rate": 0.39763231197771587
+    },
+    {
+      "count": 7180,
+      "changed_count": 2894,
+      "operation_counts": {
+        "none": 3543,
+        "remove_accents": 1817,
+        "teencode": 1472,
+        "internal_char_typo": 348
+      },
+      "change_rate": 0.4030640668523677
+    },
+    {
+      "count": 7180,
+      "changed_count": 2841,
+      "operation_counts": {
+        "none": 3603,
+        "internal_char_typo": 358,
+        "teencode": 1419,
+        "remove_accents": 1800
+      },
+      "change_rate": 0.3956824512534819
+    },
+    {
+      "count": 7180,
+      "changed_count": 2931,
+      "operation_counts": {
+        "remove_accents": 1837,
+        "teencode": 1495,
+        "none": 3503,
+        "internal_char_typo": 345
+      },
+      "change_rate": 0.40821727019498605
+    },
+    {
+      "count": 7180,
+      "changed_count": 2913,
+      "operation_counts": {
+        "teencode": 1431,
+        "none": 3549,
+        "remove_accents": 1828,
+        "internal_char_typo": 372
+      },
+      "change_rate": 0.40571030640668526
+    },
+    {
+      "count": 7180,
+      "changed_count": 2858,
+      "operation_counts": {
+        "none": 3594,
+        "teencode": 1412,
+        "remove_accents": 1781,
+        "internal_char_typo": 393
+      },
+      "change_rate": 0.398050139275766
+    },
+    {
+      "count": 7180,
+      "changed_count": 2884,
+      "operation_counts": {
+        "teencode": 1468,
+        "none": 3541,
+        "remove_accents": 1830,
+        "internal_char_typo": 341
+      },
+      "change_rate": 0.40167130919220057
+    },
+    {
+      "count": 7180,
+      "changed_count": 2838,
+      "operation_counts": {
+        "remove_accents": 1793,
+        "none": 3644,
+        "teencode": 1383,
+        "internal_char_typo": 360
+      },
+      "change_rate": 0.39526462395543177
+    }
+  ],
+  "best_epoch": 26,
+  "best_selection_f1": 0.7245017584994138,
+  "best_validation_metrics": {
+    "n": 795,
+    "aspect_count": 34,
+    "aspect_names": [
+      "FACILITIES#CLEANLINESS",
+      "FACILITIES#COMFORT",
+      "FACILITIES#DESIGN&FEATURES",
+      "FACILITIES#GENERAL",
+      "FACILITIES#MISCELLANEOUS",
+      "FACILITIES#PRICES",
+      "FACILITIES#QUALITY",
+      "FOOD&DRINKS#MISCELLANEOUS",
+      "FOOD&DRINKS#PRICES",
+      "FOOD&DRINKS#QUALITY",
+      "FOOD&DRINKS#STYLE&OPTIONS",
+      "HOTEL#CLEANLINESS",
+      "HOTEL#COMFORT",
+      "HOTEL#DESIGN&FEATURES",
+      "HOTEL#GENERAL",
+      "HOTEL#MISCELLANEOUS",
+      "HOTEL#PRICES",
+      "HOTEL#QUALITY",
+      "LOCATION#GENERAL",
+      "ROOMS#CLEANLINESS",
+      "ROOMS#COMFORT",
+      "ROOMS#DESIGN&FEATURES",
+      "ROOMS#GENERAL",
+      "ROOMS#MISCELLANEOUS",
+      "ROOMS#PRICES",
+      "ROOMS#QUALITY",
+      "ROOM_AMENITIES#CLEANLINESS",
+      "ROOM_AMENITIES#COMFORT",
+      "ROOM_AMENITIES#DESIGN&FEATURES",
+      "ROOM_AMENITIES#GENERAL",
+      "ROOM_AMENITIES#MISCELLANEOUS",
+      "ROOM_AMENITIES#PRICES",
+      "ROOM_AMENITIES#QUALITY",
+      "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.808,
+    "detection_micro_recall": 0.771581359816654,
+    "detection_micro_f1": 0.7893708479874951,
+    "detection_macro_precision": 0.5849484671911731,
+    "detection_macro_recall": 0.49642467953142433,
+    "detection_macro_f1": 0.5234703534812235,
+    "pair_micro_precision": 0.7416,
+    "pair_micro_recall": 0.7081741787624141,
+    "pair_micro_f1": 0.7245017584994138,
+    "pair_macro_precision": 0.5320808422974481,
+    "pair_macro_recall": 0.4489440740590118,
+    "pair_macro_f1": 0.4736227159304426,
+    "classification_pair_micro_f1": 0.7245017584994138,
+    "classification_pair_macro_f1": 0.4736227159304426,
+    "per_aspect": {
+      "FACILITIES#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091
+        },
+        "detection_tp": 5,
+        "gold_present": 6,
+        "predicted_present": 5
+      },
+      "FACILITIES#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 3,
+        "predicted_present": 0
+      },
+      "FACILITIES#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5,
+          "recall": 0.42857142857142855,
+          "f1": 0.46153846153846156
+        },
+        "pair": {
+          "precision": 0.3333333333333333,
+          "recall": 0.2857142857142857,
+          "f1": 0.3076923076923077
+        },
+        "detection_tp": 3,
+        "gold_present": 7,
+        "predicted_present": 6
+      },
+      "FACILITIES#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6,
+          "recall": 0.5,
+          "f1": 0.5454545454545454
+        },
+        "pair": {
+          "precision": 0.5333333333333333,
+          "recall": 0.4444444444444444,
+          "f1": 0.48484848484848486
+        },
+        "detection_tp": 9,
+        "gold_present": 18,
+        "predicted_present": 15
+      },
+      "FACILITIES#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5,
+          "recall": 0.2,
+          "f1": 0.2857142857142857
+        },
+        "pair": {
+          "precision": 0.5,
+          "recall": 0.2,
+          "f1": 0.2857142857142857
+        },
+        "detection_tp": 1,
+        "gold_present": 5,
+        "predicted_present": 2
+      },
+      "FACILITIES#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 2,
+        "predicted_present": 0
+      },
+      "FACILITIES#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5,
+          "recall": 0.5555555555555556,
+          "f1": 0.5263157894736842
+        },
+        "pair": {
+          "precision": 0.4,
+          "recall": 0.4444444444444444,
+          "f1": 0.42105263157894735
+        },
+        "detection_tp": 5,
+        "gold_present": 9,
+        "predicted_present": 10
+      },
+      "FOOD&DRINKS#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 4,
+        "predicted_present": 1
+      },
+      "FOOD&DRINKS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 3,
+        "predicted_present": 0
+      },
+      "FOOD&DRINKS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8372093023255814,
+          "recall": 0.8780487804878049,
+          "f1": 0.8571428571428571
+        },
+        "pair": {
+          "precision": 0.7674418604651163,
+          "recall": 0.8048780487804879,
+          "f1": 0.7857142857142857
+        },
+        "detection_tp": 36,
+        "gold_present": 41,
+        "predicted_present": 43
+      },
+      "FOOD&DRINKS#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8571428571428571,
+          "recall": 0.8,
+          "f1": 0.8275862068965517
+        },
+        "pair": {
+          "precision": 0.8214285714285714,
+          "recall": 0.7666666666666667,
+          "f1": 0.7931034482758621
+        },
+        "detection_tp": 24,
+        "gold_present": 30,
+        "predicted_present": 28
+      },
+      "HOTEL#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6666666666666666,
+          "recall": 0.47619047619047616,
+          "f1": 0.5555555555555556
+        },
+        "pair": {
+          "precision": 0.6,
+          "recall": 0.42857142857142855,
+          "f1": 0.5
+        },
+        "detection_tp": 10,
+        "gold_present": 21,
+        "predicted_present": 15
+      },
+      "HOTEL#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7477477477477478,
+          "recall": 0.8137254901960784,
+          "f1": 0.7793427230046949
+        },
+        "pair": {
+          "precision": 0.7477477477477478,
+          "recall": 0.8137254901960784,
+          "f1": 0.7793427230046949
+        },
+        "detection_tp": 83,
+        "gold_present": 102,
+        "predicted_present": 111
+      },
+      "HOTEL#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.65625,
+          "recall": 0.65625,
+          "f1": 0.65625
+        },
+        "pair": {
+          "precision": 0.59375,
+          "recall": 0.59375,
+          "f1": 0.59375
+        },
+        "detection_tp": 21,
+        "gold_present": 32,
+        "predicted_present": 32
+      },
+      "HOTEL#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7523809523809524,
+          "recall": 0.5851851851851851,
+          "f1": 0.6583333333333333
+        },
+        "pair": {
+          "precision": 0.6095238095238096,
+          "recall": 0.4740740740740741,
+          "f1": 0.5333333333333333
+        },
+        "detection_tp": 79,
+        "gold_present": 135,
+        "predicted_present": 105
+      },
+      "HOTEL#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6666666666666666,
+          "recall": 0.2,
+          "f1": 0.3076923076923077
+        },
+        "pair": {
+          "precision": 0.6666666666666666,
+          "recall": 0.2,
+          "f1": 0.3076923076923077
+        },
+        "detection_tp": 2,
+        "gold_present": 10,
+        "predicted_present": 3
+      },
+      "HOTEL#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8333333333333334,
+          "recall": 0.9285714285714286,
+          "f1": 0.8783783783783784
+        },
+        "pair": {
+          "precision": 0.782051282051282,
+          "recall": 0.8714285714285714,
+          "f1": 0.8243243243243243
+        },
+        "detection_tp": 65,
+        "gold_present": 70,
+        "predicted_present": 78
+      },
+      "HOTEL#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8148148148148148,
+          "recall": 0.6875,
+          "f1": 0.7457627118644068
+        },
+        "pair": {
+          "precision": 0.5185185185185185,
+          "recall": 0.4375,
+          "f1": 0.4745762711864407
+        },
+        "detection_tp": 22,
+        "gold_present": 32,
+        "predicted_present": 27
+      },
+      "LOCATION#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9719626168224299,
+          "recall": 0.9811320754716981,
+          "f1": 0.9765258215962441
+        },
+        "pair": {
+          "precision": 0.9345794392523364,
+          "recall": 0.9433962264150944,
+          "f1": 0.9389671361502347
+        },
+        "detection_tp": 104,
+        "gold_present": 106,
+        "predicted_present": 107
+      },
+      "ROOMS#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8974358974358975,
+          "recall": 0.8974358974358975,
+          "f1": 0.8974358974358975
+        },
+        "pair": {
+          "precision": 0.8803418803418803,
+          "recall": 0.8803418803418803,
+          "f1": 0.8803418803418803
+        },
+        "detection_tp": 105,
+        "gold_present": 117,
+        "predicted_present": 117
+      },
+      "ROOMS#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6666666666666666,
+          "recall": 0.5116279069767442,
+          "f1": 0.5789473684210527
+        },
+        "pair": {
+          "precision": 0.6060606060606061,
+          "recall": 0.46511627906976744,
+          "f1": 0.5263157894736842
+        },
+        "detection_tp": 22,
+        "gold_present": 43,
+        "predicted_present": 33
+      },
+      "ROOMS#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8431372549019608,
+          "recall": 0.7962962962962963,
+          "f1": 0.819047619047619
+        },
+        "pair": {
+          "precision": 0.7254901960784313,
+          "recall": 0.6851851851851852,
+          "f1": 0.7047619047619048
+        },
+        "detection_tp": 43,
+        "gold_present": 54,
+        "predicted_present": 51
+      },
+      "ROOMS#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5652173913043478,
+          "recall": 0.48148148148148145,
+          "f1": 0.52
+        },
+        "pair": {
+          "precision": 0.391304347826087,
+          "recall": 0.3333333333333333,
+          "f1": 0.36
+        },
+        "detection_tp": 13,
+        "gold_present": 27,
+        "predicted_present": 23
+      },
+      "ROOMS#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        "detection_tp": 1,
+        "gold_present": 4,
+        "predicted_present": 1
+      },
+      "ROOMS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.75,
+          "recall": 0.42857142857142855,
+          "f1": 0.5454545454545454
+        },
+        "pair": {
+          "precision": 0.75,
+          "recall": 0.42857142857142855,
+          "f1": 0.5454545454545454
+        },
+        "detection_tp": 3,
+        "gold_present": 7,
+        "predicted_present": 4
+      },
+      "ROOMS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8421052631578947,
+          "recall": 0.6666666666666666,
+          "f1": 0.7441860465116279
+        },
+        "pair": {
+          "precision": 0.7894736842105263,
+          "recall": 0.625,
+          "f1": 0.6976744186046512
+        },
+        "detection_tp": 16,
+        "gold_present": 24,
+        "predicted_present": 19
+      },
+      "ROOM_AMENITIES#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "pair": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "detection_tp": 3,
+        "gold_present": 6,
+        "predicted_present": 6
+      },
+      "ROOM_AMENITIES#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 5,
+        "predicted_present": 1
+      },
+      "ROOM_AMENITIES#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.25,
+          "recall": 0.08333333333333333,
+          "f1": 0.125
+        },
+        "pair": {
+          "precision": 0.25,
+          "recall": 0.08333333333333333,
+          "f1": 0.125
+        },
+        "detection_tp": 1,
+        "gold_present": 12,
+        "predicted_present": 4
+      },
+      "ROOM_AMENITIES#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8372093023255814,
+          "recall": 0.9230769230769231,
+          "f1": 0.8780487804878049
+        },
+        "pair": {
+          "precision": 0.813953488372093,
+          "recall": 0.8974358974358975,
+          "f1": 0.8536585365853658
+        },
+        "detection_tp": 72,
+        "gold_present": 78,
+        "predicted_present": 86
+      },
+      "ROOM_AMENITIES#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.2857142857142857,
+          "recall": 0.26666666666666666,
+          "f1": 0.27586206896551724
+        },
+        "pair": {
+          "precision": 0.2857142857142857,
+          "recall": 0.26666666666666666,
+          "f1": 0.27586206896551724
+        },
+        "detection_tp": 4,
+        "gold_present": 15,
+        "predicted_present": 14
+      },
+      "ROOM_AMENITIES#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 0,
+        "predicted_present": 0
+      },
+      "ROOM_AMENITIES#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6818181818181818,
+          "recall": 0.6,
+          "f1": 0.6382978723404256
+        },
+        "pair": {
+          "precision": 0.5,
+          "recall": 0.44,
+          "f1": 0.46808510638297873
+        },
+        "detection_tp": 15,
+        "gold_present": 25,
+        "predicted_present": 22
+      },
+      "SERVICE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8647686832740213,
+          "recall": 0.94921875,
+          "f1": 0.9050279329608939
+        },
+        "pair": {
+          "precision": 0.7900355871886121,
+          "recall": 0.8671875,
+          "f1": 0.8268156424581006
+        },
+        "detection_tp": 243,
+        "gold_present": 256,
+        "predicted_present": 281
+      }
+    },
+    "task_id": "absa_hotel",
+    "split": "validation",
+    "selection_f1": 0.7245017584994138,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "elapsed_seconds": 611.8880152702332,
+  "peak_gpu_memory_allocated_bytes": 3109057536,
+  "peak_gpu_memory_reserved_bytes": 4001366016,
+  "status": "completed",
+  "checkpoint_sha256": "6132a4ebf95c71a3fe7fe56247c76f5f21269607fa8194f99533350dc6fb0660"
+}

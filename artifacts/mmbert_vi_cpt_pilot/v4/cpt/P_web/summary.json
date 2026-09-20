@@ -1,0 +1,207 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v4",
+ "arm": "P_web",
+ "arm_dir": "P_web",
+ "steps": 3815,
+ "global_batch": 128,
+ "micro": 32,
+ "accum": 4,
+ "seq_len": 512,
+ "tokens_scheduled": 250019840,
+ "token_budget": 250000000,
+ "budget_error_batches": 0.302734375,
+ "lr": 5e-05,
+ "betas": [
+  0.9,
+  0.98
+ ],
+ "eps": 1e-06,
+ "weight_decay": 0.01,
+ "clip": 1.0,
+ "schedule": "WSD: warmup 6 %, constant to 70 %, linear decay to 0 (C_inf stage 3 = decay stage)",
+ "mask": "15 % module masking, 80/10/10, no special/pad, CPU generator seeded by (step, micro)",
+ "seed": 42,
+ "attn": "sdpa",
+ "model_checks": {
+  "architecture": [
+   "ModernBertForMaskedLM"
+  ],
+  "layers": 22,
+  "hidden": 768,
+  "heads": 12,
+  "vocab": 256000,
+  "max_position_embeddings": 8192,
+  "tie_word_embeddings": true,
+  "missing_keys": [],
+  "unexpected_keys": [],
+  "mismatched_keys": [],
+  "mlm_head_pretrained": true,
+  "decoder_tied_to_embeddings": true,
+  "parameters_total": 307786240,
+  "parameters_non_embedding": 111178240,
+  "weights_sha256": "8ea64ec1ea4eb8fca0fc14b69a2ae571de6bfbc25fd214bb932dd4aba6a3a04e"
+ },
+ "arm_manifest": {
+  "tokens_hash": "2766f8b9d20af31ea54a8dcc858d727228af2ad37aed18feb44778dfb445c267",
+  "order_hash": "f4bfd6bff8556857b95d5c0a88b098d417de87b206b573c0b3cf69a46503d838",
+  "multiset_hash": null,
+  "sequence_counts_by_group": {
+   "general": 463904,
+   "wiki": 24416
+  },
+  "informal_token_share": 0.0,
+  "license": "no NC data: general v3 pool + Wikipedia v2 (CC BY-SA 4.0)",
+  "research_only": false
+ },
+ "holdouts": {
+  "a_hlpt": {
+   "shape": [
+    4000,
+    512
+   ],
+   "sha256": "1cc4ff98b8cae54f94de7a4286f3bcb75780ad315b62a20af4a5b54c3e0dd9bb"
+  },
+  "b_fineweb2": {
+   "shape": [
+    4000,
+    512
+   ],
+   "sha256": "54aff97daf7d4d34d26c044c48c2265d6eb0f44ba2c80cfe61b810b053d41329"
+  },
+  "c_visobert": {
+   "shape": [
+    73,
+    512
+   ],
+   "sha256": "acf725ddbb39780ec9fc52c5544fa7e13e2e09f39d466242c36144b97246e67e"
+  },
+  "d_v3review": {
+   "shape": [
+    392,
+    512
+   ],
+   "sha256": "9945c8a53cd8bf0c0830b8f5c30e81cc95616c383609716c0dc45f86b1b80499"
+  }
+ },
+ "license": "no NC data (general v3 pool + Wikipedia v2)",
+ "research_only": false,
+ "source_hash": "5ce6fb003ffb3d10e8efb61b5e667add2c909627ea53d72d462a2bf9295823b2",
+ "runtime": {
+  "python": "3.12.3",
+  "hostname": "server-ai-new-02.vntt.lan",
+  "cuda_visible_devices": "0",
+  "torch_threads": null,
+  "torch": "2.6.0+cu124",
+  "transformers": "4.49.0",
+  "cuda": "12.4",
+  "device_name": "NVIDIA L40S"
+ },
+ "argv": [
+  "scripts/mmbert_vi_cpt_pilot/v4/cpt_train_v4.py",
+  "--arm",
+  "P_web",
+  "--device",
+  "cuda:0",
+  "--micro",
+  "32",
+  "--resume"
+ ],
+ "started_at": "2026-09-19T16:45:43Z",
+ "finished_at": "2026-09-19T17:59:22Z",
+ "wall_time_s": 4381.2,
+ "gpu_hours": 1.217,
+ "steps_run": 3815,
+ "tokens_processed": 250019840,
+ "tokens_per_s": 57067,
+ "tokens_processed_matches_schedule": true,
+ "peak_gpu_memory_gb": 20.99,
+ "masked_fraction": 0.14983344521778752,
+ "train_loss_first_100_mean": 1.0458488744497298,
+ "train_loss_last_100_mean": 0.8503516039252281,
+ "holdout": {
+  "sets": [
+   "a_hlpt",
+   "b_fineweb2",
+   "c_visobert",
+   "d_v3review"
+  ],
+  "mask_seed": 1234,
+  "rows": [
+   {
+    "step": 0,
+    "fraction": 0.0,
+    "a_hlpt": 1.3677153170008285,
+    "b_fineweb2": 1.351495154233391,
+    "c_visobert": 4.063811623336923,
+    "d_v3review": 2.5552378789518095
+   },
+   {
+    "step": 1908,
+    "fraction": 0.5001310615989515,
+    "a_hlpt": 1.218385539459629,
+    "b_fineweb2": 1.2168502996115662,
+    "c_visobert": 3.7439703972590954,
+    "d_v3review": 2.3544594211837113
+   },
+   {
+    "step": 3815,
+    "fraction": 1.0,
+    "a_hlpt": 1.161754781351857,
+    "b_fineweb2": 1.1575585435395528,
+    "c_visobert": 3.652119424608019,
+    "d_v3review": 2.2361870358749782
+   }
+  ],
+  "initial": {
+   "step": 0,
+   "fraction": 0.0,
+   "a_hlpt": 1.3677153170008285,
+   "b_fineweb2": 1.351495154233391,
+   "c_visobert": 4.063811623336923,
+   "d_v3review": 2.5552378789518095
+  },
+  "final": {
+   "step": 3815,
+   "fraction": 1.0,
+   "a_hlpt": 1.161754781351857,
+   "b_fineweb2": 1.1575585435395528,
+   "c_visobert": 3.652119424608019,
+   "d_v3review": 2.2361870358749782
+  }
+ },
+ "batch_hashes": {
+  "0": "086a57922ceae60004c7e4f0fa1300c43418f8357bf9513dfb88dde0dbde2ca7",
+  "0_mask": "11e13643951d4a8d8ed37be216be6c5ec8c66c7311097893f8fa49acef51fd18",
+  "1": "6d6e209efa4007e07e07eb6b0860ba14f766ef8c3ce64481e714f642080796e9",
+  "1_mask": "4ffbad41b6f8a4198e507dbafce34c963096ec5a4f7a2ff41e62076e2e246b0d",
+  "2": "4f743c440eab47f3d0656e9fd6cc6c66425d6ec9ee1bae50bfd532f3260479c4",
+  "2_mask": "ad17bb0777b2580e9f814c1a7ec1613541d47310ed4c9b6d5dbd9fef3554450c",
+  "3": "191e72055b1f4961778d3fd5235fd1c79d562e9f89efcfcbe53bcead5a41e72a",
+  "3_mask": "be14d94029bf221c6b85a7df4ce0cd8b4a16995a6d2e41eb87f52157a9ec5ef0"
+ },
+ "export": {
+  "hf_mlm": "artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_web/hf_mlm",
+  "hf_mlm_sha256": "22fad1eaa65d0e2f76002db7de361e2a6f491264bf86d867fbcec1708f7a5599",
+  "hf_encoder": "artifacts/mmbert_vi_cpt_pilot/v4/cpt/P_web/hf_encoder",
+  "hf_encoder_sha256": "c45d263ee4ad6309c6e2421dbd3368dff865e438b0eeee4112c689b870b93631",
+  "reload_mlm_layer0_query_equal": true,
+  "reload_mlm_decoder_tied": true,
+  "reload_encoder_layer0_query_equal": true,
+  "reload_encoder_missing_keys": [],
+  "reload_encoder_unexpected_keys": [],
+  "encoder_parameters": 306939648,
+  "encoder_keys_contain_head_or_projection": [],
+  "encoder_non_embedding_parameters": 110331648,
+  "research_only": false,
+  "license": "no NC data",
+  "inference_smoke": {
+   "shape": [
+    1,
+    17,
+    768
+   ],
+   "finite": true
+  }
+ },
+ "status": "completed"
+}

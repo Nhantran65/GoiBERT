@@ -1,0 +1,303 @@
+{
+ "protocol": "mmbert-vi-cpt-pilot-v1",
+ "created_at": "2026-09-19T11:43:46Z",
+ "device": "cuda:0",
+ "source_hash": "cbfbc7e0204fca3ec1672e691b33adfb58f08c9b4b6da9d7c29ae2f808ba07ae",
+ "tokenizer": {
+  "vocab_size": 256000,
+  "pad_token_id": 0,
+  "eos_token_id": 1,
+  "bos_token_id": 2,
+  "unk_token_id": 3,
+  "mask_token_id": 4,
+  "sep_token_id": 1,
+  "class": "PreTrainedTokenizerFast",
+  "manifest": {
+   "repo": "jhu-clsp/mmBERT-base",
+   "commit": "c5955035435e2bf121cde7f3c8863ef52ff35d82",
+   "class": "PreTrainedTokenizerFast (Gemma 256K)",
+   "vocab_size": 256000,
+   "special_ids": {
+    "pad": 0,
+    "eos": 1,
+    "bos": 2,
+    "unk": 3,
+    "mask": 4
+   },
+   "sep_token_id": 1,
+   "files": {
+    "config.json": "47b40fd2e1df8299426dd5f4bb18c28f028cfafcb51b73645f83e596d187eb37",
+    "pytorch_model.bin": "8ea64ec1ea4eb8fca0fc14b69a2ae571de6bfbc25fd214bb932dd4aba6a3a04e",
+    "special_tokens_map.json": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+    "tokenizer.json": "197d4cc5406ee12cc50c8b5511f2393cc32d9db321545979ce041c1199178356",
+    "tokenizer_config.json": "1d2f82c1341a79748e00efe82e67690f99d00b3c2a894f2b23128fd9d3519da3"
+   }
+  }
+ },
+ "model": {
+  "requested_repo": "jhu-clsp/mmBERT-base",
+  "commit": "c5955035435e2bf121cde7f3c8863ef52ff35d82",
+  "checks": {
+   "architecture": [
+    "ModernBertForMaskedLM"
+   ],
+   "layers": 22,
+   "hidden": 768,
+   "heads": 12,
+   "vocab": 256000,
+   "max_position_embeddings": 8192,
+   "tie_word_embeddings": true,
+   "missing_keys": [],
+   "unexpected_keys": [],
+   "mismatched_keys": [],
+   "mlm_head_pretrained": true,
+   "decoder_tied_to_embeddings": true,
+   "parameters_total": 307786240,
+   "parameters_non_embedding": 111178240,
+   "weights_sha256": "8ea64ec1ea4eb8fca0fc14b69a2ae571de6bfbc25fd214bb932dd4aba6a3a04e"
+  },
+  "params_total_millions": 307.78624,
+  "params_non_embedding_millions": 111.17824,
+  "documented": "mmBERT-base 307 M total (110.3 M non-embedding)"
+ },
+ "attention": {
+  "implementation": "sdpa",
+  "flash_attn_available": false,
+  "note": "the same implementation is used for every arm"
+ },
+ "arms": {
+  "P_web": {
+   "shape": [
+    3815,
+    128,
+    512
+   ],
+   "dtype": "uint32",
+   "tokens": 250019840,
+   "tokens_match_schedule": true,
+   "pad_id_count": 0,
+   "min_token_id": 1,
+   "manifest_tokens_hash": "e05253ffe6bc3a208f98a24dcc1538ae07bec4e714901e75fad12732eac7179b",
+   "recomputed_tokens_hash_prefix": "6e281ff6dddd1289e3490a1031534bddcdf7dde1d8223c1edc21012e62455ac1",
+   "order_hash": "f4bfd6bff8556857b95d5c0a88b098d417de87b206b573c0b3cf69a46503d838",
+   "multiset_hash": null,
+   "achieved_fractions": {
+    "general": 0.95,
+    "wiki": 0.05
+   },
+   "targets": {
+    "general": 0.95,
+    "wiki": 0.05
+   }
+  },
+  "P_mix": {
+   "shape": [
+    3815,
+    128,
+    512
+   ],
+   "dtype": "uint32",
+   "tokens": 250019840,
+   "tokens_match_schedule": true,
+   "pad_id_count": 0,
+   "min_token_id": 1,
+   "manifest_tokens_hash": "5e6427fc54acadc7fd18e70c8f24d84b020715fd3184f53c8a5c607455fb5bbe",
+   "recomputed_tokens_hash_prefix": "4e841f6bcab490accfe8e6e6f07d9a84dbbe147d6b5fe0d229159575ba868d6b",
+   "order_hash": "a404b6cc24b274a943e3e3634df3c63fab7b7f8ba1e2046deb08e2b769d344ab",
+   "multiset_hash": "2724a0607797cdfd87c25b4fb04bd87d3482dc281763d52fd9cbd1aa8883b0d5",
+   "achieved_fractions": {
+    "general": 0.65,
+    "register": 0.2,
+    "bin8": 0.1,
+    "wiki": 0.05
+   },
+   "targets": {
+    "general": 0.65,
+    "register": 0.2,
+    "bin8": 0.1,
+    "wiki": 0.05
+   }
+  },
+  "C_mix": {
+   "shape": [
+    3815,
+    128,
+    512
+   ],
+   "dtype": "uint32",
+   "tokens": 250019840,
+   "tokens_match_schedule": true,
+   "pad_id_count": 0,
+   "min_token_id": 1,
+   "manifest_tokens_hash": "bd760da8c53abee9fbe4f4831085a66f5e98e25d97f401218288294570e658c0",
+   "recomputed_tokens_hash_prefix": "9e194a71063dd68a4f6f60ccbc5ab97342a568935158bc81d29ae5182f54474f",
+   "order_hash": "cbc277a122c452779523257880501d1816ded2e9e701edb81d87a01229ffd249",
+   "multiset_hash": "2724a0607797cdfd87c25b4fb04bd87d3482dc281763d52fd9cbd1aa8883b0d5",
+   "achieved_fractions": {
+    "general": 0.65,
+    "register": 0.2,
+    "bin8": 0.1,
+    "wiki": 0.05
+   },
+   "targets": {
+    "general": 0.65,
+    "register": 0.2,
+    "bin8": 0.1,
+    "wiki": 0.05
+   }
+  }
+ },
+ "arm_batch_hashes_step0_3": {
+  "P_web": [
+   "f9e43ac10ec889222854648ae2e994b70e2c6db08043b943b0935288c026ec6f",
+   "1c94af5526b924f8bb20c70c759eaa9208715a104e686c97151d475770883674",
+   "d6a75e777c93c9accdb54706194c7097f23f0e487a7b54bdedd6e9fdc6b0fbe4",
+   "be821b00408816200e462127657c708cd432cd959cf189ca269c807457cb59da"
+  ],
+  "P_mix": [
+   "254e463dfe087ad86c436bf331c33bf6f82f0898d1cbc0048f27095b6a0a915c",
+   "e237003665252dbb51201bc3e9227c29c5f04a20b5ac718a163a641d456eb09f",
+   "d1e367944906dc34a762f87cb8a683029990335d38388d1d8b99b459f22cb9a6",
+   "924edbf78b14867b1189d4d77db18c1cea63a7a367378c9c65307b6c3f5cb57e"
+  ],
+  "C_mix": [
+   "c7bde232f3f7f98ec87fd804004245c0a30ed5e0371dcba1b62ead9ba905eceb",
+   "b9f73a2de50857e3f1292c4a39cd3df14349ce73f9a27f22684c10854e0200c3",
+   "0d75e4499ad4ea6b5eedd2562379919b400c26357f795edf89944fddd9181269",
+   "578040e714d876317e45a4aa590aff4842b324acd74794dfc16c73af5af913d4"
+  ]
+ },
+ "batch_hashes_repeatable": true,
+ "masks": {
+  "per_arm": {
+   "P_web": [
+    {
+     "step": 0,
+     "mask_hash": "4d9a7b0050a56af8435885b57ff30fdbd03eda94b018ac815743f665894ec036",
+     "repeatable": true,
+     "masked_positions": 130,
+     "masked_fraction": 0.126953125
+    },
+    {
+     "step": 1,
+     "mask_hash": "d1187c8ca3418d603b41dd994db315c7477941eb72450cb5e8751e6b93cf2b99",
+     "repeatable": true,
+     "masked_positions": 140,
+     "masked_fraction": 0.13671875
+    }
+   ],
+   "P_mix": [
+    {
+     "step": 0,
+     "mask_hash": "cccd67b1def273b7b53ec8c5ef89448a3474beb59b38a540d13ac19ecbe80ff4",
+     "repeatable": true,
+     "masked_positions": 130,
+     "masked_fraction": 0.126953125
+    },
+    {
+     "step": 1,
+     "mask_hash": "38eca169e5ca59ad3ce599dc2bfca2a71f23ceeb07655e0526cf9fa6ef2fb056",
+     "repeatable": true,
+     "masked_positions": 140,
+     "masked_fraction": 0.13671875
+    }
+   ],
+   "C_mix": [
+    {
+     "step": 0,
+     "mask_hash": "cf1f14512e840b125269297c10b5cb282470933e08e81b7ac45c62e6fb16e9bb",
+     "repeatable": true,
+     "masked_positions": 129,
+     "masked_fraction": 0.1259765625
+    },
+    {
+     "step": 1,
+     "mask_hash": "48d0093bad9d7b92573f569e42bd44466c46e8ce7571d41053fc91feb4c04ab8",
+     "repeatable": true,
+     "masked_positions": 140,
+     "masked_fraction": 0.13671875
+    }
+   ]
+  },
+  "same_position_count_across_arms": true,
+  "pattern_grid_identical_across_arms": true,
+  "note": "the (step, micro)-seeded selection grid is identical for every arm; the realised masked-position count differs slightly because each arm's data has a different number of `</s>` separators, which are never masked",
+  "scheme": "CPU generator seeded by SEED*1000003 + step*1009 + micro; 15 % of non-special positions, 80/10/10"
+ },
+ "holdouts": {
+  "a_hlpt": {
+   "shape": [
+    4000,
+    512
+   ],
+   "tokens": 2048000,
+   "pad_id_count": 0,
+   "sha256": "0001b33d3b154372ccd968c5c82bc11061308b15504c707dde9c3704fad9545c"
+  },
+  "b_fineweb2": {
+   "shape": [
+    4000,
+    512
+   ],
+   "tokens": 2048000,
+   "pad_id_count": 0,
+   "sha256": "f1645efde5a5bbd318b8c5ead9ad121d80bb2e09841d79e9dc9af9b4ec15ceba"
+  },
+  "c_register": {
+   "shape": [
+    1365,
+    512
+   ],
+   "tokens": 698880,
+   "pad_id_count": 0,
+   "sha256": "b3e17bd67c07a45902ffe64e6b53e0a0c57bd4545377661be3a89d347953c762"
+  }
+ },
+ "rebuild": {
+  "P_web": {
+   "tokens_hash_equal": true,
+   "order_hash_equal": true,
+   "batch0_equal": true,
+   "batch0_3_equal": true
+  },
+  "P_mix": {
+   "tokens_hash_equal": true,
+   "order_hash_equal": true,
+   "batch0_equal": true,
+   "batch0_3_equal": true
+  },
+  "C_mix": {
+   "tokens_hash_equal": true,
+   "order_hash_equal": true,
+   "batch0_equal": true,
+   "batch0_3_equal": true
+  }
+ },
+ "smoke": {
+  "steps": 50,
+  "micro": 32,
+  "accum": 4,
+  "arm": "P_mix",
+  "tokens_seen": 3276800,
+  "tokens_s": 61793.458581169034,
+  "step_s": 1.060565333366394,
+  "eta_hours_full_budget": 1.123904651886887,
+  "peak_gpu_memory_gb": 20.982491136,
+  "loss_first": 1.2691196501255035,
+  "loss_last": 1.3277389407157898,
+  "loss_all_finite": true,
+  "grad_norm_all_finite": true,
+  "grad_norm_max": 15.338062286376953,
+  "device": "NVIDIA L40S"
+ },
+ "gate": {
+  "model_loads_clean": true,
+  "tokenizer_contract_ok": true,
+  "packing_ok": true,
+  "masks_identical_across_arms": true,
+  "smoke_finite": true,
+  "rebuild_ok": true,
+  "all_ok": true
+ },
+ "elapsed_s": 90.0
+}

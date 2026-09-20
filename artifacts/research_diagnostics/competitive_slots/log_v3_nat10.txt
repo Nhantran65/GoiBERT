@@ -1,0 +1,20 @@
+[absa_restaurant K=2 beta=0.0 union=1.0 route=0.0] parity {'max_abs_slot_vs_manualK1': 3.814697265625e-06, 'max_abs_manualK1_vs_native_bf16': 0.047088623046875, 'max_abs_fullmask_fork_vs_manualK1': 3.814697265625e-06}
+  step 0 loss 0.0089 route 0.0000 |delta| 1.421 |qb| 0.427
+  step 100 loss 0.0152 route 0.0000 |delta| 2.683 |qb| 6.999
+  step 200 loss 0.0074 route 0.0000 |delta| 3.660 |qb| 10.223
+  step 300 loss 0.0060 route 0.0000 |delta| 4.452 |qb| 13.076
+  step 400 loss 0.0071 route 0.0000 |delta| 4.981 |qb| 15.017
+  step 499 loss 0.0050 route 0.0000 |delta| 5.516 |qb| 16.788
+[absa_restaurant K=2 beta=0.0 union=1.0 route=0.0] valF1=71.736 multi_missed=18.2 usage=[4184, 5068] errors={'missed': 162, 'spurious': 147, 'wrong_polarity': 141, 'tp': 750, 'gold': 1053, 'pred': 1038} envelope={'oracle_max_pair_f1': 71.736, 'oracle_delta': 0.0, 'f1_at_delta0': 71.736}
+  {"A_first|A_correct": 39.5, "A_first|A_present": 65.0, "A_first|B_correct": 35.5, "A_first|B_present": 58.0, "A_first|both_correct": 8.0, "B_first|A_correct": 39.5, "B_first|A_present": 62.5, "B_first|B_correct": 35.5, "B_first|B_present": 58.5, "B_first|both_correct": 8.0, "A+3B|A_correct": 29.5, "A+3B|A_present": 56.5, "A+3B|B_correct": 51.0, "A+3B|B_present": 69.5, "A+3B|both_correct": 12.0, "A_alone|A_correct": 65.5}
+  partition null
+[absa_hotel K=2 beta=0.0 union=1.0 route=0.0] parity {'max_abs_slot_vs_manualK1': 2.86102294921875e-06, 'max_abs_manualK1_vs_native_bf16': 0.027775049209594727, 'max_abs_fullmask_fork_vs_manualK1': 2.7418136596679688e-06}
+  step 0 loss 0.0105 route 0.0000 |delta| 1.408 |qb| 0.427
+  step 100 loss 0.0199 route 0.0000 |delta| 2.437 |qb| 5.571
+  step 200 loss 0.0216 route 0.0000 |delta| 3.078 |qb| 8.158
+  step 300 loss 0.0174 route 0.0000 |delta| 3.808 |qb| 10.476
+  step 400 loss 0.0078 route 0.0000 |delta| 4.519 |qb| 12.534
+  step 499 loss 0.0244 route 0.0000 |delta| 5.202 |qb| 14.507
+[absa_hotel K=2 beta=0.0 union=1.0 route=0.0] valF1=72.793 multi_missed=28.1 usage=[14385, 12645] errors={'missed': 338, 'spurious': 212, 'wrong_polarity': 64, 'tp': 907, 'gold': 1309, 'pred': 1183} envelope={'oracle_max_pair_f1': 72.896, 'oracle_delta': 0.10000000000000053, 'f1_at_delta0': 72.793}
+  {"A_first|A_correct": 42.5, "A_first|A_present": 52.0, "A_first|B_correct": 48.0, "A_first|B_present": 58.5, "A_first|both_correct": 16.5, "B_first|A_correct": 44.0, "B_first|A_present": 50.0, "B_first|B_correct": 45.0, "B_first|B_present": 59.5, "B_first|both_correct": 15.5, "A+3B|A_correct": 24.0, "A+3B|A_present": 40.0, "A+3B|B_correct": 61.5, "A+3B|B_present": 66.0, "A+3B|both_correct": 11.5, "A_alone|A_correct": 58.5}
+  partition null

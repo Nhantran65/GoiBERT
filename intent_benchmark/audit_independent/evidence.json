@@ -1,0 +1,4718 @@
+{
+  "audit": {
+    "python": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+    "read_only_inputs": true,
+    "script": "intent_benchmark/audit_independent/audit.py"
+  },
+  "label_review": {
+    "assessment_counts": {
+      "context_supported": 4,
+      "context_supported_but_ambiguous": 2,
+      "rubric_supported": 8,
+      "rubric_supported_but_ambiguous": 5
+    },
+    "count": 19,
+    "rows": [
+      {
+        "confidence": 0.78,
+        "history": [],
+        "independent_assessment": "rubric_supported_but_ambiguous",
+        "independent_basis": "Invoice-company address is distinct from delivery ADDRESS under the written rubric; address token creates a plausible competing reading.",
+        "original_label": "ADDRESS",
+        "recorded_rationale": "The address token is supplied as invoice-company information; the taxonomy's ADDRESS class is for delivery-address detail/correction, so invoice handling stays OTHER.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0019:t0",
+        "text": "Xuất hoá đơn e [ADDRESS_1]",
+        "uncertain": true
+      },
+      {
+        "confidence": 0.96,
+        "history": [],
+        "independent_assessment": "rubric_supported",
+        "independent_basis": "Neutral cancellation has no dissatisfaction/service-problem language.",
+        "original_label": "COMPLAINT",
+        "recorded_rationale": "This is a neutral cancellation request with no dissatisfaction or service problem stated.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0043:t0",
+        "text": "Hủy đơn trên Shopee F dùm nhe.",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.94,
+        "history": [],
+        "independent_assessment": "rubric_supported",
+        "independent_basis": "Personal cancellation reason plus thanks is operational and not a complaint.",
+        "original_label": "COMPLAINT",
+        "recorded_rationale": "The customer gives a personal reason for cancelling a reservation and says thanks; no service dissatisfaction is stated.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0045:t0",
+        "text": "Chị có việc nên em hủy bàn giúp chị. Thanks em",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.78,
+        "history": [],
+        "independent_assessment": "rubric_supported_but_ambiguous",
+        "independent_basis": "Explicit shipping-cost dissatisfaction supports COMPLAINT, but refusal/thanks is a mixed short act.",
+        "original_label": "OTHER",
+        "recorded_rationale": "The customer objects that shipping is too expensive before declining the order; that explicit dissatisfaction meets COMPLAINT, but the short mixed act remains uncertain.",
+        "reviewed_label": "COMPLAINT",
+        "sample_id": "pb-v1-0047:t0",
+        "text": "Ship cao quá để khi khác ra ăn tại quán, cám ơn. Cho cô không mua nhe",
+        "uncertain": true
+      },
+      {
+        "confidence": 0.68,
+        "history": [],
+        "independent_assessment": "rubric_supported_but_ambiguous",
+        "independent_basis": "Restaurant directions/location is outside delivery-address semantics, though ordinary readers may call it an address request.",
+        "original_label": "ADDRESS",
+        "recorded_rationale": "This asks for directions to the restaurant, not a delivery destination or correction; the production prompt's ADDRESS definition is delivery-address-specific, so the location query remains OTHER.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0062:t0",
+        "text": "Shop ơi cho mình hỏi chỗ mình đi đường nào vô cho dễ, mình đi kiếm mà kg ra",
+        "uncertain": true
+      },
+      {
+        "confidence": 0.68,
+        "history": [],
+        "independent_assessment": "rubric_supported_but_ambiguous",
+        "independent_basis": "Restaurant address is outside the written delivery ADDRESS definition, but the word address is lexically strong.",
+        "original_label": "MENU_QUERY",
+        "recorded_rationale": "This asks for the restaurant's address, not a delivery destination or correction; the production prompt's ADDRESS definition is delivery-address-specific, so the location query remains OTHER.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0063:t0",
+        "text": "Đia chi quán",
+        "uncertain": true
+      },
+      {
+        "confidence": 0.9,
+        "history": [
+          {
+            "role": "customer",
+            "text": "cho mình 1 phở"
+          },
+          {
+            "role": "customer",
+            "text": "Phở Trộn Trứng Cuộn nha"
+          },
+          {
+            "role": "customer",
+            "text": "thêm Chả Giò"
+          }
+        ],
+        "independent_assessment": "context_supported",
+        "independent_basis": "Closure phrase after a concrete order selection is a contextual confirmation; it does not imply real-order authorization.",
+        "original_label": "OTHER",
+        "recorded_rationale": "'đủ rồi' closes the concrete ordering selection in context and is a clear confirmation.",
+        "reviewed_label": "CONFIRMATION",
+        "sample_id": "pb-v1-0181:t3",
+        "text": "đủ rồi",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.9,
+        "history": [
+          {
+            "role": "customer",
+            "text": "cho 1 gyoza nha"
+          },
+          {
+            "role": "customer",
+            "text": "phần Đông Vui"
+          },
+          {
+            "role": "customer",
+            "text": "thêm Sprite"
+          }
+        ],
+        "independent_assessment": "context_supported",
+        "independent_basis": "Closure phrase after a concrete order selection is a contextual confirmation; it does not imply real-order authorization.",
+        "original_label": "OTHER",
+        "recorded_rationale": "'xong' closes the concrete ordering selection in context and is a clear confirmation.",
+        "reviewed_label": "CONFIRMATION",
+        "sample_id": "pb-v1-0183:t3",
+        "text": "xong",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.9,
+        "history": [
+          {
+            "role": "customer",
+            "text": "thêm cho mình cà phê"
+          },
+          {
+            "role": "customer",
+            "text": "Cà Phê Sữa đá nha"
+          },
+          {
+            "role": "customer",
+            "text": "với Bánh Mì Bì - Chả"
+          }
+        ],
+        "independent_assessment": "context_supported",
+        "independent_basis": "Closure phrase after a concrete order selection is a contextual confirmation; it does not imply real-order authorization.",
+        "original_label": "OTHER",
+        "recorded_rationale": "'được rồi' closes the concrete ordering selection in context and is a clear confirmation.",
+        "reviewed_label": "CONFIRMATION",
+        "sample_id": "pb-v1-0184:t3",
+        "text": "được rồi",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.9,
+        "history": [
+          {
+            "role": "customer",
+            "text": "1 bánh mì nha em"
+          },
+          {
+            "role": "customer",
+            "text": "loại Pa Tê - Chả"
+          },
+          {
+            "role": "customer",
+            "text": "thêm Nước Ép Cam"
+          }
+        ],
+        "independent_assessment": "context_supported",
+        "independent_basis": "Closure phrase after a concrete order selection is a contextual confirmation; it does not imply real-order authorization.",
+        "original_label": "OTHER",
+        "recorded_rationale": "'vậy thôi' closes the concrete ordering selection in context and is a clear confirmation.",
+        "reviewed_label": "CONFIRMATION",
+        "sample_id": "pb-v1-0185:t3",
+        "text": "vậy thôi",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.86,
+        "history": [
+          {
+            "role": "customer",
+            "text": "Bún Huế, Gyoza Size Nhẹ và Bì Cuốn Joi mỗi món 1"
+          },
+          {
+            "role": "customer",
+            "text": "ko lấy gyoza nữa"
+          },
+          {
+            "role": "customer",
+            "text": "bún với bì cuốn còn chứ"
+          }
+        ],
+        "independent_assessment": "context_supported_but_ambiguous",
+        "independent_basis": "Closure phrase is consistent with confirmation in ordering context, but it is short and context-dependent.",
+        "original_label": "OTHER",
+        "recorded_rationale": "'vậy nha' closes the concrete ordering selection in context and is a clear confirmation.",
+        "reviewed_label": "CONFIRMATION",
+        "sample_id": "pb-v1-0189:t3",
+        "text": "vậy nha",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.96,
+        "history": [
+          {
+            "role": "customer",
+            "text": "Mì Tiềm Phù Trúc với cà phê đen đá"
+          },
+          {
+            "role": "customer",
+            "text": "giao [ADDRESS_1]"
+          },
+          {
+            "role": "customer",
+            "text": "giao ngay, COD, tổng giúp mình"
+          },
+          {
+            "role": "customer",
+            "text": "bỏ cà phê đi"
+          }
+        ],
+        "independent_assessment": "rubric_supported",
+        "independent_basis": "Summary/recap is checkout/order state, not a menu query.",
+        "original_label": "MENU_QUERY",
+        "recorded_rationale": "The latest turn asks for an order summary; this is checkout/order state, not menu information.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0215:t4",
+        "text": "tóm tắt lại nha",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.96,
+        "history": [
+          {
+            "role": "customer",
+            "text": "Phở Trộn Trứng Cuộn với Gyoza Size Nhẹ"
+          },
+          {
+            "role": "customer",
+            "text": "giao [ADDRESS_1]"
+          },
+          {
+            "role": "customer",
+            "text": "giao ngay, COD, tổng nha"
+          },
+          {
+            "role": "customer",
+            "text": "thêm Sprite nữa"
+          }
+        ],
+        "independent_assessment": "rubric_supported",
+        "independent_basis": "Summary request is operational checkout state, not a menu query.",
+        "original_label": "MENU_QUERY",
+        "recorded_rationale": "The latest turn asks for a new order summary; this is checkout/order state, not menu information.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0218:t4",
+        "text": "làm summary mới",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.96,
+        "history": [
+          {
+            "role": "customer",
+            "text": "Mì Cua Không Cua với Lavie"
+          },
+          {
+            "role": "customer",
+            "text": "giao [ADDRESS_1]"
+          },
+          {
+            "role": "customer",
+            "text": "18h30, Chuyển khoản, báo tổng"
+          },
+          {
+            "role": "customer",
+            "text": "đổi Lavie thành Nước Ép Cam"
+          }
+        ],
+        "independent_assessment": "rubric_supported",
+        "independent_basis": "Summary request after replacement is operational checkout state, not a menu query.",
+        "original_label": "MENU_QUERY",
+        "recorded_rationale": "The latest turn asks for an order summary after a replacement; this is checkout/order state, not menu information.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0220:t4",
+        "text": "summary lại nha",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.9,
+        "history": [
+          {
+            "role": "customer",
+            "text": "Cơm Tấm Original với cà phê đen đá"
+          },
+          {
+            "role": "customer",
+            "text": "giao [ADDRESS_1]"
+          }
+        ],
+        "independent_assessment": "rubric_supported",
+        "independent_basis": "Time/payment plus summary request is operational checkout state, not a clear confirmation.",
+        "original_label": "CONFIRMATION",
+        "recorded_rationale": "The request to create an order summary is an operational checkout action, not a clear yes/agreement.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0222:t2",
+        "text": "19h, COD, lên summary giúp mình",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.9,
+        "history": [
+          {
+            "role": "customer",
+            "text": "Cơm Tấm Original với cà phê đen đá"
+          },
+          {
+            "role": "customer",
+            "text": "giao [ADDRESS_1]"
+          },
+          {
+            "role": "customer",
+            "text": "19h, COD, lên summary giúp mình"
+          }
+        ],
+        "independent_assessment": "rubric_supported",
+        "independent_basis": "Time/payment plus summary request is operational checkout state, not a clear confirmation.",
+        "original_label": "CONFIRMATION",
+        "recorded_rationale": "The request to create an order summary is an operational checkout action, not a clear yes/agreement.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0222:t3",
+        "text": "19h, COD, lên summary giúp mình nha em",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.96,
+        "history": [
+          {
+            "role": "customer",
+            "text": "1 Bánh Mì Bì - Chả"
+          },
+          {
+            "role": "customer",
+            "text": "thêm cà phê đen đá"
+          },
+          {
+            "role": "customer",
+            "text": "pickup lấy tới mấy giờ em"
+          },
+          {
+            "role": "customer",
+            "text": "cà phê đổi Bạc Xỉu đá nha"
+          },
+          {
+            "role": "customer",
+            "text": "bánh mì vẫn giữ"
+          },
+          {
+            "role": "customer",
+            "text": "mình lấy tại quán lúc 19h"
+          },
+          {
+            "role": "customer",
+            "text": "COD"
+          }
+        ],
+        "independent_assessment": "rubric_supported",
+        "independent_basis": "Summary request is operational checkout state, not a menu query.",
+        "original_label": "MENU_QUERY",
+        "recorded_rationale": "The latest turn asks for an order summary; this is checkout/order state, not menu information.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0228:t7",
+        "text": "tóm tắt giúp",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.86,
+        "history": [
+          {
+            "role": "customer",
+            "text": "Mì Tiềm Phù Trúc nha"
+          },
+          {
+            "role": "customer",
+            "text": "thêm Bì Cuốn Joi"
+          },
+          {
+            "role": "customer",
+            "text": "Joi đóng cửa mấy giờ"
+          },
+          {
+            "role": "customer",
+            "text": "mì ko hành giúp mình"
+          },
+          {
+            "role": "customer",
+            "text": "cảm ơn em"
+          },
+          {
+            "role": "customer",
+            "text": "giao [ADDRESS_1]"
+          },
+          {
+            "role": "customer",
+            "text": "20h, Chuyển khoản"
+          }
+        ],
+        "independent_assessment": "rubric_supported_but_ambiguous",
+        "independent_basis": "Summary request is operational state; the source MENU_QUERY assignment is not supported by the written boundary.",
+        "original_label": "MENU_QUERY",
+        "recorded_rationale": "The latest turn requests an order summary; summary/recap requests are operational order state rather than a concrete menu or price query.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0229:t7",
+        "text": "cho summary",
+        "uncertain": false
+      },
+      {
+        "confidence": 0.84,
+        "history": [
+          {
+            "role": "customer",
+            "text": "cho mình 1 Cơm Tấm Nhẹ nha"
+          }
+        ],
+        "independent_assessment": "context_supported_but_ambiguous",
+        "independent_basis": "Accidental prior-order cancellation is operational and explicitly retains the current order; no dissatisfaction is stated.",
+        "original_label": "COMPLAINT",
+        "recorded_rationale": "The customer asks to cancel an earlier order because it was placed accidentally; no service dissatisfaction is stated, while the current order is retained.",
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0240:t1",
+        "text": "à với hủy giùm mình cái đơn đặt hồi trưa nha, mình đặt nhầm — còn đơn cơm đang đặt đây thì vẫn lấy đó",
+        "uncertain": false
+      }
+    ]
+  },
+  "models_protocol": {
+    "checkpoint_artifacts": {
+      "bamibert-lr2em5": {
+        "best_checkpoint_sha256": "55cc8ca041d0ea7c8ff0d9bd38fd027fe936bb8b14cd7482f42130ea15ae465c",
+        "best_epoch": 11,
+        "completed_marker": true,
+        "epochs_completed": 14,
+        "failed_marker": false,
+        "loading": {
+          "allowed_missing_only": true,
+          "allowed_unexpected_only": true,
+          "attention_implementation": "sdpa",
+          "backbone_class": "RobertaModel",
+          "hidden_size": 768,
+          "mismatched_keys": [],
+          "missing_keys": [],
+          "model_files": {
+            "config_sha256": "353049455318fb3fcdc42f4e275211834809143eeb67b5728d4eff556be05d5f",
+            "tokenizer_sha256": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+            "weights_sha256": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627"
+          },
+          "model_name": "bamibert",
+          "model_path": "models/bamibert-base-original",
+          "tokenizer_class": "XLMRobertaTokenizerFast",
+          "tokenizer_vocab_size": 20480,
+          "total_parameters": 102957320,
+          "trainable_parameters": 102957320,
+          "unexpected_keys": [
+            "lm_head.bias",
+            "lm_head.decoder.bias",
+            "lm_head.dense.bias",
+            "lm_head.dense.weight",
+            "lm_head.layer_norm.bias",
+            "lm_head.layer_norm.weight"
+          ]
+        },
+        "running_marker": false,
+        "summary_hash": "625de7491fd135dc15d3fa091cbc69faa351f9039c71dae597105054435bb6ec",
+        "summary_status": "completed"
+      },
+      "bamibert-lr5em5": {
+        "best_checkpoint_sha256": "b4838302fec9a493def92cbd7a50b2807b42a9a7f59de88d91d1338d4d0958aa",
+        "best_epoch": 15,
+        "completed_marker": true,
+        "epochs_completed": 15,
+        "failed_marker": false,
+        "loading": {
+          "allowed_missing_only": true,
+          "allowed_unexpected_only": true,
+          "attention_implementation": "sdpa",
+          "backbone_class": "RobertaModel",
+          "hidden_size": 768,
+          "mismatched_keys": [],
+          "missing_keys": [],
+          "model_files": {
+            "config_sha256": "353049455318fb3fcdc42f4e275211834809143eeb67b5728d4eff556be05d5f",
+            "tokenizer_sha256": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6",
+            "weights_sha256": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627"
+          },
+          "model_name": "bamibert",
+          "model_path": "models/bamibert-base-original",
+          "tokenizer_class": "XLMRobertaTokenizerFast",
+          "tokenizer_vocab_size": 20480,
+          "total_parameters": 102957320,
+          "trainable_parameters": 102957320,
+          "unexpected_keys": [
+            "lm_head.bias",
+            "lm_head.decoder.bias",
+            "lm_head.dense.bias",
+            "lm_head.dense.weight",
+            "lm_head.layer_norm.bias",
+            "lm_head.layer_norm.weight"
+          ]
+        },
+        "running_marker": false,
+        "summary_hash": "f9c0bd710fd473cac70c6706102f482a4deb2e6104c3ceaf9c3b8d68fdbd5ff8",
+        "summary_status": "completed"
+      },
+      "goi_dapt-lr2em5": {
+        "best_checkpoint_sha256": "b838c042cbd71c019aef21607567e0cad9f2a5bcc55e697d05f8489c5d54a513",
+        "best_epoch": 9,
+        "completed_marker": true,
+        "epochs_completed": 12,
+        "failed_marker": false,
+        "loading": {
+          "allowed_missing_only": true,
+          "allowed_unexpected_only": true,
+          "attention_implementation": "sdpa",
+          "backbone_class": "RobertaModel",
+          "hidden_size": 768,
+          "mismatched_keys": [],
+          "missing_keys": [],
+          "model_files": {
+            "config_sha256": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89",
+            "tokenizer_sha256": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+            "weights_sha256": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f"
+          },
+          "model_name": "goi_dapt",
+          "model_path": "models/goibert-b-dapt",
+          "tokenizer_class": "XLMRobertaTokenizerFast",
+          "tokenizer_vocab_size": 20480,
+          "total_parameters": 102957320,
+          "trainable_parameters": 102957320,
+          "unexpected_keys": [
+            "lm_head.bias",
+            "lm_head.dense.bias",
+            "lm_head.dense.weight",
+            "lm_head.layer_norm.bias",
+            "lm_head.layer_norm.weight"
+          ]
+        },
+        "running_marker": false,
+        "summary_hash": "90b147278c1a1ccc1b4190e02b774668ab2e18be2e6b26e330e7d49541ce90a1",
+        "summary_status": "completed"
+      },
+      "goi_dapt-lr5em5": {
+        "best_checkpoint_sha256": "1154f032eb3702316d37b82ca04c5653eae01d03c2eaa6f8ddc3e57626a6474f",
+        "best_epoch": 11,
+        "completed_marker": true,
+        "epochs_completed": 14,
+        "failed_marker": false,
+        "loading": {
+          "allowed_missing_only": true,
+          "allowed_unexpected_only": true,
+          "attention_implementation": "sdpa",
+          "backbone_class": "RobertaModel",
+          "hidden_size": 768,
+          "mismatched_keys": [],
+          "missing_keys": [],
+          "model_files": {
+            "config_sha256": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89",
+            "tokenizer_sha256": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+            "weights_sha256": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f"
+          },
+          "model_name": "goi_dapt",
+          "model_path": "models/goibert-b-dapt",
+          "tokenizer_class": "XLMRobertaTokenizerFast",
+          "tokenizer_vocab_size": 20480,
+          "total_parameters": 102957320,
+          "trainable_parameters": 102957320,
+          "unexpected_keys": [
+            "lm_head.bias",
+            "lm_head.dense.bias",
+            "lm_head.dense.weight",
+            "lm_head.layer_norm.bias",
+            "lm_head.layer_norm.weight"
+          ]
+        },
+        "running_marker": false,
+        "summary_hash": "5a1446dc7a44fa0916ec1ac6705045d07750dcde82f4f08a2c4ae5d994f53ef3",
+        "summary_status": "completed"
+      },
+      "goi_student-lr2em5": {
+        "best_checkpoint_sha256": "4641d4c9c3b3af46953f374db4e3c24259dd62d43927d2e316d7f4084f1050a9",
+        "best_epoch": 11,
+        "completed_marker": true,
+        "epochs_completed": 14,
+        "failed_marker": false,
+        "loading": {
+          "allowed_missing_only": true,
+          "allowed_unexpected_only": true,
+          "attention_implementation": "sdpa",
+          "backbone_class": "RobertaModel",
+          "hidden_size": 384,
+          "mismatched_keys": [],
+          "missing_keys": [],
+          "model_files": {
+            "config_sha256": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+            "tokenizer_sha256": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+            "weights_sha256": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca"
+          },
+          "model_name": "goi_student",
+          "model_path": "models/goiturn-s-gd",
+          "tokenizer_class": "XLMRobertaTokenizerFast",
+          "tokenizer_vocab_size": 20480,
+          "total_parameters": 26548616,
+          "trainable_parameters": 26548616,
+          "unexpected_keys": []
+        },
+        "running_marker": false,
+        "summary_hash": "094975c1582082acb23b8778316cdd374959e692ced538cdaab2d679456d88fa",
+        "summary_status": "completed"
+      },
+      "goi_student-lr5em5": {
+        "best_checkpoint_sha256": "b320d32a3d1e93e2361a349481b9fea22cc3351b62fa5ae6a376495a600be93c",
+        "best_epoch": 13,
+        "completed_marker": true,
+        "epochs_completed": 15,
+        "failed_marker": false,
+        "loading": {
+          "allowed_missing_only": true,
+          "allowed_unexpected_only": true,
+          "attention_implementation": "sdpa",
+          "backbone_class": "RobertaModel",
+          "hidden_size": 384,
+          "mismatched_keys": [],
+          "missing_keys": [],
+          "model_files": {
+            "config_sha256": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+            "tokenizer_sha256": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+            "weights_sha256": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca"
+          },
+          "model_name": "goi_student",
+          "model_path": "models/goiturn-s-gd",
+          "tokenizer_class": "XLMRobertaTokenizerFast",
+          "tokenizer_vocab_size": 20480,
+          "total_parameters": 26548616,
+          "trainable_parameters": 26548616,
+          "unexpected_keys": []
+        },
+        "running_marker": false,
+        "summary_hash": "a596bc35ca94404b267e58cf6b97d26aed76aec0bd17409e4252b834bde346eb",
+        "summary_status": "completed"
+      }
+    },
+    "models": {
+      "bamibert": {
+        "config": {
+          "architectures": [
+            "RobertaForMaskedLM"
+          ],
+          "bos_token_id": 0,
+          "eos_token_id": 2,
+          "hidden_size": 768,
+          "initializer_range": 0.02,
+          "intermediate_size": 3072,
+          "max_position_embeddings": 2050,
+          "model_type": "roberta",
+          "num_attention_heads": 12,
+          "num_hidden_layers": 12,
+          "pad_token_id": 1,
+          "vocab_size": 20481
+        },
+        "files": {
+          "config.json": {
+            "bytes": 638,
+            "sha256": "353049455318fb3fcdc42f4e275211834809143eeb67b5728d4eff556be05d5f"
+          },
+          "model.safetensors": {
+            "bytes": 411998936,
+            "sha256": "c8c8abe5914f2543bd6a65019b685dacf25ad39da5f01b680b082876e1947627"
+          },
+          "tokenizer.json": {
+            "bytes": 844860,
+            "sha256": "183448efae14b63980e4000b292eee87a60459e2fd8190d5969691512cdb5fe6"
+          }
+        },
+        "manifest_or_readme": "models/bamibert-base-original/README.md",
+        "manifest_sha256": "6b23dbeffa7ed1e3b4ccf95fb5d6b9eb2f8e8041b334042f54f9c3926c128b61",
+        "path": "models/bamibert-base-original"
+      },
+      "goi_dapt": {
+        "config": {
+          "architectures": [
+            "RobertaForMaskedLM"
+          ],
+          "bos_token_id": 0,
+          "eos_token_id": 2,
+          "hidden_size": 768,
+          "initializer_range": 0.02,
+          "intermediate_size": 3072,
+          "max_position_embeddings": 2050,
+          "model_type": "roberta",
+          "num_attention_heads": 12,
+          "num_hidden_layers": 12,
+          "pad_token_id": 1,
+          "vocab_size": 20481
+        },
+        "files": {
+          "config.json": {
+            "bytes": 717,
+            "sha256": "f75a7df225cc00bcb8a703a44446bb702550d9af215be371e77c86cba2d03c89"
+          },
+          "model.safetensors": {
+            "bytes": 411916924,
+            "sha256": "a639c941dca7574b416ca2ff5d9899ff4e97a247f87902a95b8d34bcb4282a5f"
+          },
+          "tokenizer.json": {
+            "bytes": 1432630,
+            "sha256": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491"
+          }
+        },
+        "manifest_or_readme": "models/goibert-b-dapt/pretrain_manifest.json",
+        "manifest_sha256": "e035bf3cf53eaf7558c23129d56732472cf7a79bff66424b03609c41a6798191",
+        "path": "models/goibert-b-dapt"
+      },
+      "goi_student": {
+        "config": {
+          "architectures": [
+            "RobertaModel"
+          ],
+          "bos_token_id": 0,
+          "eos_token_id": 2,
+          "hidden_size": 384,
+          "initializer_range": 0.02,
+          "intermediate_size": 1536,
+          "max_position_embeddings": 2050,
+          "model_type": "roberta",
+          "num_attention_heads": 6,
+          "num_hidden_layers": 10,
+          "pad_token_id": 1,
+          "vocab_size": 20481
+        },
+        "files": {
+          "config.json": {
+            "bytes": 632,
+            "sha256": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3"
+          },
+          "model.safetensors": {
+            "bytes": 105609040,
+            "sha256": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca"
+          },
+          "tokenizer.json": {
+            "bytes": 1432630,
+            "sha256": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491"
+          }
+        },
+        "manifest_or_readme": "models/goiturn-s-gd/distill_manifest.json",
+        "manifest_sha256": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+        "path": "models/goiturn-s-gd"
+      }
+    },
+    "protocol": {
+      "config": {
+        "attention": "sdpa_when_supported",
+        "batch_size": 16,
+        "early_stopping_patience": 3,
+        "gradient_clip_norm": 1.0,
+        "learning_rates": [
+          2e-05,
+          5e-05
+        ],
+        "loss": "unweighted_cross_entropy",
+        "max_epochs": 15,
+        "max_length": 512,
+        "min_delta": 0.0,
+        "precision": "bf16_autocast_fp32_master_when_supported",
+        "scheduler": "linear_warmup_then_linear_decay",
+        "seed": 42,
+        "warmup_ratio": 0.1,
+        "weight_decay": 0.01
+      },
+      "config_sha256_actual": "6fd483168dc3cff84f64a8df800121a3038f28f43bfa244ffb9a7869329fcda9",
+      "config_sha256_approved": "6fd483168dc3cff84f64a8df800121a3038f28f43bfa244ffb9a7869329fcda9",
+      "implementation_refs": {
+        "head": "intent_benchmark/training/train_intent.py:283-300",
+        "input_serialization": "intent_benchmark/training/train_intent.py:114-170",
+        "loading": "intent_benchmark/training/train_intent.py:219-280",
+        "selection": "intent_benchmark/training/select_dev_winners.py:50-78",
+        "test_guard": "intent_benchmark/training/evaluate_selected.py:48-88",
+        "train_eval": "intent_benchmark/training/train_intent.py:546-585"
+      },
+      "queues": {
+        "gpu0": [
+          "goi_student@2e-5",
+          "goi_student@5e-5",
+          "bamibert@5e-5"
+        ],
+        "gpu1": [
+          "goi_dapt@2e-5",
+          "goi_dapt@5e-5",
+          "bamibert@2e-5"
+        ]
+      },
+      "runner_sha256_actual": "845fc50b94beadb184a6ff57cb28d1b90b29e092846b4dffb2b1b3059756c3eb",
+      "runner_sha256_approved": "845fc50b94beadb184a6ff57cb28d1b90b29e092846b4dffb2b1b3059756c3eb",
+      "selection": {
+        "across_learning_rate_tie": "choose_2e-5",
+        "metric": "dev_macro_f1",
+        "strict_improvement": true,
+        "within_trial_tie": "keep_earlier_epoch"
+      }
+    },
+    "tokenizer_comparison": {
+      "classes": {
+        "bamibert": "XLMRobertaTokenizerFast",
+        "goi_dapt": "XLMRobertaTokenizerFast",
+        "goi_student": "XLMRobertaTokenizerFast"
+      },
+      "comparison": {
+        "bamibert_vs_goi_dapt": {
+          "all_507_serialized_input_ids_equal": true,
+          "vocab_equal": true
+        },
+        "bamibert_vs_goi_student": {
+          "all_507_serialized_input_ids_equal": true,
+          "vocab_equal": true
+        },
+        "goi_dapt_vs_goi_student": {
+          "all_507_serialized_input_ids_equal": true,
+          "vocab_equal": true
+        }
+      },
+      "empty_special_wrapped": {
+        "bamibert": [
+          0,
+          2
+        ],
+        "goi_dapt": [
+          0,
+          2
+        ],
+        "goi_student": [
+          0,
+          2
+        ]
+      },
+      "special_tokens": {
+        "bamibert": {
+          "bos_token_id": 0,
+          "cls_token_id": 0,
+          "eos_token_id": 2,
+          "mask_token_id": 20480,
+          "pad_token_id": 1,
+          "sep_token_id": 2
+        },
+        "goi_dapt": {
+          "bos_token_id": 0,
+          "cls_token_id": 0,
+          "eos_token_id": 2,
+          "mask_token_id": 20480,
+          "pad_token_id": 1,
+          "sep_token_id": 2
+        },
+        "goi_student": {
+          "bos_token_id": 0,
+          "cls_token_id": 0,
+          "eos_token_id": 2,
+          "mask_token_id": 20480,
+          "pad_token_id": 1,
+          "sep_token_id": 2
+        }
+      },
+      "vocab_sizes": {
+        "bamibert": 20480,
+        "goi_dapt": 20480,
+        "goi_student": 20480
+      }
+    }
+  },
+  "predictions": {
+    "bamibert_trajectories": [
+      {
+        "best_dev_macro_f1": 0.5028586940076006,
+        "best_epoch": 11,
+        "epochs_completed": 14,
+        "final_dev_accuracy": 0.7532467532467533,
+        "final_dev_macro_f1": 0.488034188034188,
+        "final_train_loss": 0.3657265949688282,
+        "history": [
+          {
+            "dev_accuracy": 0.4025974025974026,
+            "dev_macro_f1": 0.07175925925925926,
+            "epoch": 1,
+            "train_loss": 1.9435160355932652
+          },
+          {
+            "dev_accuracy": 0.4025974025974026,
+            "dev_macro_f1": 0.07175925925925926,
+            "epoch": 2,
+            "train_loss": 1.610392893340027
+          },
+          {
+            "dev_accuracy": 0.4805194805194805,
+            "dev_macro_f1": 0.13866613205025397,
+            "epoch": 3,
+            "train_loss": 1.4968877362124304
+          },
+          {
+            "dev_accuracy": 0.4675324675324675,
+            "dev_macro_f1": 0.1393939393939394,
+            "epoch": 4,
+            "train_loss": 1.377497621534904
+          },
+          {
+            "dev_accuracy": 0.4935064935064935,
+            "dev_macro_f1": 0.14690026954177898,
+            "epoch": 5,
+            "train_loss": 1.2459320556003042
+          },
+          {
+            "dev_accuracy": 0.5584415584415584,
+            "dev_macro_f1": 0.24067028985507247,
+            "epoch": 6,
+            "train_loss": 1.0912007309559721
+          },
+          {
+            "dev_accuracy": 0.5584415584415584,
+            "dev_macro_f1": 0.2785820091570159,
+            "epoch": 7,
+            "train_loss": 0.944794532344294
+          },
+          {
+            "dev_accuracy": 0.6753246753246753,
+            "dev_macro_f1": 0.45252100840336135,
+            "epoch": 8,
+            "train_loss": 0.79958222810675
+          },
+          {
+            "dev_accuracy": 0.7272727272727273,
+            "dev_macro_f1": 0.48273540933207715,
+            "epoch": 9,
+            "train_loss": 0.6831433046978527
+          },
+          {
+            "dev_accuracy": 0.6883116883116883,
+            "dev_macro_f1": 0.4445590922936339,
+            "epoch": 10,
+            "train_loss": 0.5819552319583406
+          },
+          {
+            "dev_accuracy": 0.7532467532467533,
+            "dev_macro_f1": 0.5028586940076006,
+            "epoch": 11,
+            "train_loss": 0.4957752981283847
+          },
+          {
+            "dev_accuracy": 0.7402597402597403,
+            "dev_macro_f1": 0.4805770470664088,
+            "epoch": 12,
+            "train_loss": 0.4358833552082267
+          },
+          {
+            "dev_accuracy": 0.7662337662337663,
+            "dev_macro_f1": 0.5021197552447553,
+            "epoch": 13,
+            "train_loss": 0.3912167084791167
+          },
+          {
+            "dev_accuracy": 0.7532467532467533,
+            "dev_macro_f1": 0.488034188034188,
+            "epoch": 14,
+            "train_loss": 0.3657265949688282
+          }
+        ],
+        "learning_rate": 2e-05,
+        "run": "bamibert-lr2em5"
+      },
+      {
+        "best_dev_macro_f1": 0.27508116883116884,
+        "best_epoch": 15,
+        "epochs_completed": 15,
+        "final_dev_accuracy": 0.6103896103896104,
+        "final_dev_macro_f1": 0.27508116883116884,
+        "final_train_loss": 0.8108991164999035,
+        "history": [
+          {
+            "dev_accuracy": 0.4025974025974026,
+            "dev_macro_f1": 0.07175925925925926,
+            "epoch": 1,
+            "train_loss": 1.8337735518517644
+          },
+          {
+            "dev_accuracy": 0.4025974025974026,
+            "dev_macro_f1": 0.07175925925925926,
+            "epoch": 2,
+            "train_loss": 1.5978277432006749
+          },
+          {
+            "dev_accuracy": 0.37662337662337664,
+            "dev_macro_f1": 0.11190476190476191,
+            "epoch": 3,
+            "train_loss": 1.5248292549473705
+          },
+          {
+            "dev_accuracy": 0.35064935064935066,
+            "dev_macro_f1": 0.1020788272049988,
+            "epoch": 4,
+            "train_loss": 1.4799518799646718
+          },
+          {
+            "dev_accuracy": 0.35064935064935066,
+            "dev_macro_f1": 0.10090909090909092,
+            "epoch": 5,
+            "train_loss": 1.5046143086030868
+          },
+          {
+            "dev_accuracy": 0.42857142857142855,
+            "dev_macro_f1": 0.1266025641025641,
+            "epoch": 6,
+            "train_loss": 1.433879018843005
+          },
+          {
+            "dev_accuracy": 0.45454545454545453,
+            "dev_macro_f1": 0.13461538461538464,
+            "epoch": 7,
+            "train_loss": 1.3786106965697182
+          },
+          {
+            "dev_accuracy": 0.4805194805194805,
+            "dev_macro_f1": 0.14314966492926284,
+            "epoch": 8,
+            "train_loss": 1.2597302424671293
+          },
+          {
+            "dev_accuracy": 0.5454545454545454,
+            "dev_macro_f1": 0.19940476190476192,
+            "epoch": 9,
+            "train_loss": 1.2059903560211571
+          },
+          {
+            "dev_accuracy": 0.4805194805194805,
+            "dev_macro_f1": 0.17472753655189818,
+            "epoch": 10,
+            "train_loss": 1.1160767915904015
+          },
+          {
+            "dev_accuracy": 0.5454545454545454,
+            "dev_macro_f1": 0.19521103896103897,
+            "epoch": 11,
+            "train_loss": 0.9823564592400624
+          },
+          {
+            "dev_accuracy": 0.5714285714285714,
+            "dev_macro_f1": 0.22708333333333336,
+            "epoch": 12,
+            "train_loss": 0.9173342918201479
+          },
+          {
+            "dev_accuracy": 0.5584415584415584,
+            "dev_macro_f1": 0.2253663500678426,
+            "epoch": 13,
+            "train_loss": 0.8603493870148915
+          },
+          {
+            "dev_accuracy": 0.5974025974025974,
+            "dev_macro_f1": 0.24252332174867386,
+            "epoch": 14,
+            "train_loss": 0.8312669034213588
+          },
+          {
+            "dev_accuracy": 0.6103896103896104,
+            "dev_macro_f1": 0.27508116883116884,
+            "epoch": 15,
+            "train_loss": 0.8108991164999035
+          }
+        ],
+        "learning_rate": 5e-05,
+        "run": "bamibert-lr5em5"
+      }
+    ],
+    "changed_test_details": [
+      {
+        "original_label": "ADDRESS",
+        "predictions": {
+          "bamibert": "OTHER",
+          "goi_dapt": "OTHER",
+          "goi_student": "COMPLAINT"
+        },
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0062:t0",
+        "text": "Shop ơi cho mình hỏi chỗ mình đi đường nào vô cho dễ, mình đi kiếm mà kg ra"
+      },
+      {
+        "original_label": "OTHER",
+        "predictions": {
+          "bamibert": "CONFIRMATION",
+          "goi_dapt": "CONFIRMATION",
+          "goi_student": "CONFIRMATION"
+        },
+        "reviewed_label": "CONFIRMATION",
+        "sample_id": "pb-v1-0181:t3",
+        "text": "đủ rồi"
+      },
+      {
+        "original_label": "OTHER",
+        "predictions": {
+          "bamibert": "CONFIRMATION",
+          "goi_dapt": "CONFIRMATION",
+          "goi_student": "CONFIRMATION"
+        },
+        "reviewed_label": "CONFIRMATION",
+        "sample_id": "pb-v1-0185:t3",
+        "text": "vậy thôi"
+      },
+      {
+        "original_label": "CONFIRMATION",
+        "predictions": {
+          "bamibert": "OTHER",
+          "goi_dapt": "OTHER",
+          "goi_student": "OTHER"
+        },
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0222:t2",
+        "text": "19h, COD, lên summary giúp mình"
+      },
+      {
+        "original_label": "CONFIRMATION",
+        "predictions": {
+          "bamibert": "OTHER",
+          "goi_dapt": "OTHER",
+          "goi_student": "OTHER"
+        },
+        "reviewed_label": "OTHER",
+        "sample_id": "pb-v1-0222:t3",
+        "text": "19h, COD, lên summary giúp mình nha em"
+      }
+    ],
+    "changed_test_label_sensitivity": {
+      "by_model": {
+        "bamibert": {
+          "changed_test_rows": 5,
+          "delta_reviewed_minus_original": 5,
+          "hits_under_original": 0,
+          "hits_under_reviewed": 5
+        },
+        "goi_dapt": {
+          "changed_test_rows": 5,
+          "delta_reviewed_minus_original": 5,
+          "hits_under_original": 0,
+          "hits_under_reviewed": 5
+        },
+        "goi_student": {
+          "changed_test_rows": 5,
+          "delta_reviewed_minus_original": 4,
+          "hits_under_original": 0,
+          "hits_under_reviewed": 4
+        }
+      },
+      "sample_ids": [
+        "pb-v1-0062:t0",
+        "pb-v1-0181:t3",
+        "pb-v1-0185:t3",
+        "pb-v1-0222:t2",
+        "pb-v1-0222:t3"
+      ]
+    },
+    "dev_trials": [
+      {
+        "best_epoch": 11,
+        "gold_matches_frozen_dev": true,
+        "ids_exact_dev": true,
+        "lr": 2e-05,
+        "metric_match": true,
+        "metric_recomputed": {
+          "accuracy": 0.7532467532467533,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              16,
+              0,
+              0,
+              0,
+              6
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              26
+            ]
+          ],
+          "macro_f1": 0.5028586940076006,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.8,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.7692307692307693,
+              "precision": 0.625,
+              "recall": 1.0,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.9333333333333333,
+              "precision": 0.875,
+              "recall": 1.0,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.7441860465116279,
+              "precision": 0.7619047619047619,
+              "recall": 0.7272727272727273,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.7761194029850746,
+              "precision": 0.7222222222222222,
+              "recall": 0.8387096774193549,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        },
+        "model": "bamibert",
+        "predicted_class_counts": {
+          "ADDRESS": 4,
+          "COMPLAINT": 8,
+          "CONFIRMATION": 8,
+          "MENU_QUERY": 21,
+          "OTHER": 36
+        },
+        "prediction_count": 77,
+        "prediction_rows_coherent": true,
+        "run": "bamibert-lr2em5",
+        "summary_metric": {
+          "accuracy": 0.7532467532467533,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              16,
+              0,
+              0,
+              0,
+              6
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              26
+            ]
+          ],
+          "loss": 0.9402728266530223,
+          "macro_f1": 0.5028586940076006,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.8,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.7692307692307693,
+              "precision": 0.625,
+              "recall": 1.0,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.9333333333333333,
+              "precision": 0.875,
+              "recall": 1.0,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.7441860465116279,
+              "precision": 0.7619047619047619,
+              "recall": 0.7272727272727273,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.7761194029850746,
+              "precision": 0.7222222222222222,
+              "recall": 0.8387096774193549,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        }
+      },
+      {
+        "best_epoch": 15,
+        "gold_matches_frozen_dev": true,
+        "ids_exact_dev": true,
+        "lr": 5e-05,
+        "metric_match": true,
+        "metric_recomputed": {
+          "accuracy": 0.6103896103896104,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              14,
+              0,
+              0,
+              0,
+              7
+            ],
+            [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              5,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              0,
+              4,
+              0,
+              0,
+              0,
+              26
+            ]
+          ],
+          "macro_f1": 0.27508116883116884,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.25,
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.5714285714285714,
+              "precision": 0.42857142857142855,
+              "recall": 0.8571428571428571,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.6363636363636364,
+              "precision": 0.6363636363636364,
+              "recall": 0.6363636363636364,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.7428571428571428,
+              "precision": 0.6666666666666666,
+              "recall": 0.8387096774193549,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        },
+        "model": "bamibert",
+        "predicted_class_counts": {
+          "ADDRESS": 2,
+          "CONFIRMATION": 14,
+          "MENU_QUERY": 22,
+          "OTHER": 39
+        },
+        "prediction_count": 77,
+        "prediction_rows_coherent": true,
+        "run": "bamibert-lr5em5",
+        "summary_metric": {
+          "accuracy": 0.6103896103896104,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              14,
+              0,
+              0,
+              0,
+              7
+            ],
+            [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              5,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              0,
+              4,
+              0,
+              0,
+              0,
+              26
+            ]
+          ],
+          "loss": 1.3336139623220864,
+          "macro_f1": 0.27508116883116884,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.25,
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.5714285714285714,
+              "precision": 0.42857142857142855,
+              "recall": 0.8571428571428571,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.6363636363636364,
+              "precision": 0.6363636363636364,
+              "recall": 0.6363636363636364,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.7428571428571428,
+              "precision": 0.6666666666666666,
+              "recall": 0.8387096774193549,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        }
+      },
+      {
+        "best_epoch": 9,
+        "gold_matches_frozen_dev": true,
+        "ids_exact_dev": true,
+        "lr": 2e-05,
+        "metric_match": true,
+        "metric_recomputed": {
+          "accuracy": 0.7662337662337663,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              16,
+              0,
+              0,
+              0,
+              5
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              28
+            ]
+          ],
+          "macro_f1": 0.5008576789064594,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.8,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.7692307692307693,
+              "precision": 0.625,
+              "recall": 1.0,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.8571428571428571,
+              "precision": 0.8571428571428571,
+              "recall": 0.8571428571428571,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.7804878048780488,
+              "precision": 0.8421052631578947,
+              "recall": 0.7272727272727273,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.8,
+              "precision": 0.717948717948718,
+              "recall": 0.9032258064516129,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        },
+        "model": "goi_dapt",
+        "predicted_class_counts": {
+          "ADDRESS": 4,
+          "COMPLAINT": 8,
+          "CONFIRMATION": 7,
+          "MENU_QUERY": 19,
+          "OTHER": 39
+        },
+        "prediction_count": 77,
+        "prediction_rows_coherent": true,
+        "run": "goi_dapt-lr2em5",
+        "summary_metric": {
+          "accuracy": 0.7662337662337663,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              16,
+              0,
+              0,
+              0,
+              5
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              28
+            ]
+          ],
+          "loss": 0.8785633065483787,
+          "macro_f1": 0.5008576789064594,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.8,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.7692307692307693,
+              "precision": 0.625,
+              "recall": 1.0,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.8571428571428571,
+              "precision": 0.8571428571428571,
+              "recall": 0.8571428571428571,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.7804878048780488,
+              "precision": 0.8421052631578947,
+              "recall": 0.7272727272727273,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.8,
+              "precision": 0.717948717948718,
+              "recall": 0.9032258064516129,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        }
+      },
+      {
+        "best_epoch": 11,
+        "gold_matches_frozen_dev": true,
+        "ids_exact_dev": true,
+        "lr": 5e-05,
+        "metric_match": true,
+        "metric_recomputed": {
+          "accuracy": 0.8051948051948052,
+          "confusion_matrix": [
+            [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              17,
+              1,
+              0,
+              0,
+              4
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              0,
+              3,
+              1,
+              0,
+              0,
+              26
+            ]
+          ],
+          "macro_f1": 0.7223443223443223,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.8,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.7692307692307693,
+              "precision": 0.625,
+              "recall": 1.0,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.9333333333333333,
+              "precision": 0.875,
+              "recall": 1.0,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.6666666666666666,
+              "precision": 1.0,
+              "recall": 0.5,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.8095238095238095,
+              "precision": 0.85,
+              "recall": 0.7727272727272727,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.7999999999999999,
+              "precision": 0.7647058823529411,
+              "recall": 0.8387096774193549,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        },
+        "model": "goi_dapt",
+        "predicted_class_counts": {
+          "ADDRESS": 4,
+          "COMPLAINT": 8,
+          "CONFIRMATION": 8,
+          "GRATITUDE": 1,
+          "GREETING": 2,
+          "MENU_QUERY": 20,
+          "OTHER": 34
+        },
+        "prediction_count": 77,
+        "prediction_rows_coherent": true,
+        "run": "goi_dapt-lr5em5",
+        "summary_metric": {
+          "accuracy": 0.8051948051948052,
+          "confusion_matrix": [
+            [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              17,
+              1,
+              0,
+              0,
+              4
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              0,
+              3,
+              1,
+              0,
+              0,
+              26
+            ]
+          ],
+          "loss": 0.8708985331770661,
+          "macro_f1": 0.7223443223443223,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.8,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.7692307692307693,
+              "precision": 0.625,
+              "recall": 1.0,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.9333333333333333,
+              "precision": 0.875,
+              "recall": 1.0,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.6666666666666666,
+              "precision": 1.0,
+              "recall": 0.5,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.8095238095238095,
+              "precision": 0.85,
+              "recall": 0.7727272727272727,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.7999999999999999,
+              "precision": 0.7647058823529411,
+              "recall": 0.8387096774193549,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        }
+      },
+      {
+        "best_epoch": 11,
+        "gold_matches_frozen_dev": true,
+        "ids_exact_dev": true,
+        "lr": 2e-05,
+        "metric_match": true,
+        "metric_recomputed": {
+          "accuracy": 0.7922077922077922,
+          "confusion_matrix": [
+            [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              17,
+              1,
+              0,
+              0,
+              4
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              27
+            ]
+          ],
+          "macro_f1": 0.6263940274841437,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.8,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.7272727272727272,
+              "precision": 0.6666666666666666,
+              "recall": 0.8,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.8750000000000001,
+              "precision": 0.7777777777777778,
+              "recall": 1.0,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.7906976744186046,
+              "precision": 0.8095238095238095,
+              "recall": 0.7727272727272727,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.8181818181818182,
+              "precision": 0.7714285714285715,
+              "recall": 0.8709677419354839,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        },
+        "model": "goi_student",
+        "predicted_class_counts": {
+          "ADDRESS": 4,
+          "COMPLAINT": 6,
+          "CONFIRMATION": 9,
+          "GREETING": 2,
+          "MENU_QUERY": 21,
+          "OTHER": 35
+        },
+        "prediction_count": 77,
+        "prediction_rows_coherent": true,
+        "run": "goi_student-lr2em5",
+        "summary_metric": {
+          "accuracy": 0.7922077922077922,
+          "confusion_matrix": [
+            [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              17,
+              1,
+              0,
+              0,
+              4
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              27
+            ]
+          ],
+          "loss": 0.7358172288188687,
+          "macro_f1": 0.6263940274841437,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.8,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.7272727272727272,
+              "precision": 0.6666666666666666,
+              "recall": 0.8,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.8750000000000001,
+              "precision": 0.7777777777777778,
+              "recall": 1.0,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.7906976744186046,
+              "precision": 0.8095238095238095,
+              "recall": 0.7727272727272727,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.8181818181818182,
+              "precision": 0.7714285714285715,
+              "recall": 0.8709677419354839,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        }
+      },
+      {
+        "best_epoch": 13,
+        "gold_matches_frozen_dev": true,
+        "ids_exact_dev": true,
+        "lr": 5e-05,
+        "metric_match": true,
+        "metric_recomputed": {
+          "accuracy": 0.8441558441558441,
+          "confusion_matrix": [
+            [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              20,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              3,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              2,
+              0,
+              0,
+              0,
+              28
+            ]
+          ],
+          "macro_f1": 0.7241064491064491,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.9090909090909091,
+              "precision": 1.0,
+              "recall": 0.8333333333333334,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.6666666666666665,
+              "precision": 0.75,
+              "recall": 0.6,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.7999999999999999,
+              "precision": 0.75,
+              "recall": 0.8571428571428571,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.6666666666666666,
+              "precision": 1.0,
+              "recall": 0.5,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.888888888888889,
+              "precision": 0.8695652173913043,
+              "recall": 0.9090909090909091,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.8615384615384616,
+              "precision": 0.8235294117647058,
+              "recall": 0.9032258064516129,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        },
+        "model": "goi_student",
+        "predicted_class_counts": {
+          "ADDRESS": 5,
+          "COMPLAINT": 4,
+          "CONFIRMATION": 8,
+          "GRATITUDE": 1,
+          "GREETING": 2,
+          "MENU_QUERY": 23,
+          "OTHER": 34
+        },
+        "prediction_count": 77,
+        "prediction_rows_coherent": true,
+        "run": "goi_student-lr5em5",
+        "summary_metric": {
+          "accuracy": 0.8441558441558441,
+          "confusion_matrix": [
+            [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              20,
+              0,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              3,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              2,
+              0,
+              0,
+              0,
+              28
+            ]
+          ],
+          "loss": 0.7523513037663001,
+          "macro_f1": 0.7241064491064491,
+          "per_intent": {
+            "ADDRESS": {
+              "f1": 0.9090909090909091,
+              "precision": 1.0,
+              "recall": 0.8333333333333334,
+              "support": 6
+            },
+            "COMPLAINT": {
+              "f1": 0.6666666666666665,
+              "precision": 0.75,
+              "recall": 0.6,
+              "support": 5
+            },
+            "CONFIRMATION": {
+              "f1": 0.7999999999999999,
+              "precision": 0.75,
+              "recall": 0.8571428571428571,
+              "support": 7
+            },
+            "GRATITUDE": {
+              "f1": 0.6666666666666666,
+              "precision": 1.0,
+              "recall": 0.5,
+              "support": 2
+            },
+            "GREETING": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 2
+            },
+            "MENU_QUERY": {
+              "f1": 0.888888888888889,
+              "precision": 0.8695652173913043,
+              "recall": 0.9090909090909091,
+              "support": 22
+            },
+            "OTHER": {
+              "f1": 0.8615384615384616,
+              "precision": 0.8235294117647058,
+              "recall": 0.9032258064516129,
+              "support": 31
+            },
+            "PHONE": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 2
+            }
+          },
+          "support": 77
+        }
+      }
+    ],
+    "paired_test_correctness": {
+      "bamibert_vs_goi_dapt": {
+        "both_correct": 61,
+        "left_only": 0,
+        "neither_correct": 8,
+        "right_only": 8
+      },
+      "bamibert_vs_goi_student": {
+        "both_correct": 59,
+        "left_only": 2,
+        "neither_correct": 7,
+        "right_only": 9
+      },
+      "goi_dapt_vs_goi_student": {
+        "both_correct": 67,
+        "left_only": 2,
+        "neither_correct": 7,
+        "right_only": 1
+      }
+    },
+    "per_class_macro_f1_gap": {
+      "goi_dapt": {
+        "ADDRESS": {
+          "bamibert_f1": 0.9090909090909091,
+          "delta": 0.09090909090909094,
+          "macro_delta_contribution": 0.011363636363636367,
+          "model_f1": 1.0,
+          "support": 6
+        },
+        "COMPLAINT": {
+          "bamibert_f1": 0.4000000000000001,
+          "delta": 0.17142857142857143,
+          "macro_delta_contribution": 0.02142857142857143,
+          "model_f1": 0.5714285714285715,
+          "support": 5
+        },
+        "CONFIRMATION": {
+          "bamibert_f1": 0.75,
+          "delta": 0.18333333333333335,
+          "macro_delta_contribution": 0.02291666666666667,
+          "model_f1": 0.9333333333333333,
+          "support": 7
+        },
+        "GRATITUDE": {
+          "bamibert_f1": 0.0,
+          "delta": 1.0,
+          "macro_delta_contribution": 0.125,
+          "model_f1": 1.0,
+          "support": 2
+        },
+        "GREETING": {
+          "bamibert_f1": 0.0,
+          "delta": 0.6666666666666666,
+          "macro_delta_contribution": 0.08333333333333333,
+          "model_f1": 0.6666666666666666,
+          "support": 2
+        },
+        "MENU_QUERY": {
+          "bamibert_f1": 0.8837209302325582,
+          "delta": 0.046511627906976716,
+          "macro_delta_contribution": 0.0058139534883720895,
+          "model_f1": 0.9302325581395349,
+          "support": 21
+        },
+        "OTHER": {
+          "bamibert_f1": 0.8529411764705882,
+          "delta": 0.04258121158911321,
+          "macro_delta_contribution": 0.005322651448639151,
+          "model_f1": 0.8955223880597014,
+          "support": 32
+        },
+        "PHONE": {
+          "bamibert_f1": 0.0,
+          "delta": 0.6666666666666666,
+          "macro_delta_contribution": 0.08333333333333333,
+          "model_f1": 0.6666666666666666,
+          "support": 2
+        }
+      },
+      "goi_student": {
+        "ADDRESS": {
+          "bamibert_f1": 0.9090909090909091,
+          "delta": 0.09090909090909094,
+          "macro_delta_contribution": 0.011363636363636367,
+          "model_f1": 1.0,
+          "support": 6
+        },
+        "COMPLAINT": {
+          "bamibert_f1": 0.4000000000000001,
+          "delta": 0.09999999999999992,
+          "macro_delta_contribution": 0.01249999999999999,
+          "model_f1": 0.5,
+          "support": 5
+        },
+        "CONFIRMATION": {
+          "bamibert_f1": 0.75,
+          "delta": 0.18333333333333335,
+          "macro_delta_contribution": 0.02291666666666667,
+          "model_f1": 0.9333333333333333,
+          "support": 7
+        },
+        "GRATITUDE": {
+          "bamibert_f1": 0.0,
+          "delta": 1.0,
+          "macro_delta_contribution": 0.125,
+          "model_f1": 1.0,
+          "support": 2
+        },
+        "GREETING": {
+          "bamibert_f1": 0.0,
+          "delta": 0.6666666666666666,
+          "macro_delta_contribution": 0.08333333333333333,
+          "model_f1": 0.6666666666666666,
+          "support": 2
+        },
+        "MENU_QUERY": {
+          "bamibert_f1": 0.8837209302325582,
+          "delta": 0.021040974529346612,
+          "macro_delta_contribution": 0.0026301218161683265,
+          "model_f1": 0.9047619047619048,
+          "support": 21
+        },
+        "OTHER": {
+          "bamibert_f1": 0.8529411764705882,
+          "delta": 0.04258121158911321,
+          "macro_delta_contribution": 0.005322651448639151,
+          "model_f1": 0.8955223880597014,
+          "support": 32
+        },
+        "PHONE": {
+          "bamibert_f1": 0.0,
+          "delta": 0.6666666666666666,
+          "macro_delta_contribution": 0.08333333333333333,
+          "model_f1": 0.6666666666666666,
+          "support": 2
+        }
+      }
+    },
+    "saved_test_id_sets": {
+      "bamibert": [
+        "pb-v1-0005:t0",
+        "pb-v1-0008:t0",
+        "pb-v1-0010:t0",
+        "pb-v1-0037:t0",
+        "pb-v1-0046:t0",
+        "pb-v1-0049:t0",
+        "pb-v1-0062:t0",
+        "pb-v1-0064:t0",
+        "pb-v1-0067:t0",
+        "pb-v1-0074:t0",
+        "pb-v1-0086:t0",
+        "pb-v1-0093:t0",
+        "pb-v1-0098:t0",
+        "pb-v1-0109:t0",
+        "pb-v1-0112:t0",
+        "pb-v1-0122:t0",
+        "pb-v1-0135:t0",
+        "pb-v1-0138:t0",
+        "pb-v1-0142:t0",
+        "pb-v1-0143:t0",
+        "pb-v1-0149:t0",
+        "pb-v1-0153:t0",
+        "pb-v1-0165:t0",
+        "pb-v1-0168:t0",
+        "pb-v1-0169:t0",
+        "pb-v1-0180:t0",
+        "pb-v1-0180:t1",
+        "pb-v1-0180:t2",
+        "pb-v1-0180:t3",
+        "pb-v1-0181:t0",
+        "pb-v1-0181:t1",
+        "pb-v1-0181:t2",
+        "pb-v1-0181:t3",
+        "pb-v1-0185:t0",
+        "pb-v1-0185:t1",
+        "pb-v1-0185:t2",
+        "pb-v1-0185:t3",
+        "pb-v1-0187:t0",
+        "pb-v1-0187:t1",
+        "pb-v1-0187:t2",
+        "pb-v1-0201:t0",
+        "pb-v1-0201:t1",
+        "pb-v1-0201:t2",
+        "pb-v1-0202:t0",
+        "pb-v1-0202:t1",
+        "pb-v1-0202:t2",
+        "pb-v1-0202:t3",
+        "pb-v1-0203:t0",
+        "pb-v1-0203:t1",
+        "pb-v1-0203:t2",
+        "pb-v1-0203:t3",
+        "pb-v1-0213:t0",
+        "pb-v1-0213:t1",
+        "pb-v1-0213:t2",
+        "pb-v1-0213:t3",
+        "pb-v1-0219:t0",
+        "pb-v1-0219:t1",
+        "pb-v1-0219:t2",
+        "pb-v1-0219:t3",
+        "pb-v1-0219:t4",
+        "pb-v1-0222:t0",
+        "pb-v1-0222:t1",
+        "pb-v1-0222:t2",
+        "pb-v1-0222:t3",
+        "pb-v1-0223:t0",
+        "pb-v1-0223:t1",
+        "pb-v1-0223:t2",
+        "pb-v1-0239:t0",
+        "pb-v1-0239:t1",
+        "pb-v1-0239:t2",
+        "pb-v1-0239:t3",
+        "pb-v1-0246:t0",
+        "pb-v1-0246:t1",
+        "pb-v1-0246:t2",
+        "pb-v1-0246:t3",
+        "pb-v1-0246:t4",
+        "pb-v1-0246:t5"
+      ],
+      "goi_dapt": [
+        "pb-v1-0005:t0",
+        "pb-v1-0008:t0",
+        "pb-v1-0010:t0",
+        "pb-v1-0037:t0",
+        "pb-v1-0046:t0",
+        "pb-v1-0049:t0",
+        "pb-v1-0062:t0",
+        "pb-v1-0064:t0",
+        "pb-v1-0067:t0",
+        "pb-v1-0074:t0",
+        "pb-v1-0086:t0",
+        "pb-v1-0093:t0",
+        "pb-v1-0098:t0",
+        "pb-v1-0109:t0",
+        "pb-v1-0112:t0",
+        "pb-v1-0122:t0",
+        "pb-v1-0135:t0",
+        "pb-v1-0138:t0",
+        "pb-v1-0142:t0",
+        "pb-v1-0143:t0",
+        "pb-v1-0149:t0",
+        "pb-v1-0153:t0",
+        "pb-v1-0165:t0",
+        "pb-v1-0168:t0",
+        "pb-v1-0169:t0",
+        "pb-v1-0180:t0",
+        "pb-v1-0180:t1",
+        "pb-v1-0180:t2",
+        "pb-v1-0180:t3",
+        "pb-v1-0181:t0",
+        "pb-v1-0181:t1",
+        "pb-v1-0181:t2",
+        "pb-v1-0181:t3",
+        "pb-v1-0185:t0",
+        "pb-v1-0185:t1",
+        "pb-v1-0185:t2",
+        "pb-v1-0185:t3",
+        "pb-v1-0187:t0",
+        "pb-v1-0187:t1",
+        "pb-v1-0187:t2",
+        "pb-v1-0201:t0",
+        "pb-v1-0201:t1",
+        "pb-v1-0201:t2",
+        "pb-v1-0202:t0",
+        "pb-v1-0202:t1",
+        "pb-v1-0202:t2",
+        "pb-v1-0202:t3",
+        "pb-v1-0203:t0",
+        "pb-v1-0203:t1",
+        "pb-v1-0203:t2",
+        "pb-v1-0203:t3",
+        "pb-v1-0213:t0",
+        "pb-v1-0213:t1",
+        "pb-v1-0213:t2",
+        "pb-v1-0213:t3",
+        "pb-v1-0219:t0",
+        "pb-v1-0219:t1",
+        "pb-v1-0219:t2",
+        "pb-v1-0219:t3",
+        "pb-v1-0219:t4",
+        "pb-v1-0222:t0",
+        "pb-v1-0222:t1",
+        "pb-v1-0222:t2",
+        "pb-v1-0222:t3",
+        "pb-v1-0223:t0",
+        "pb-v1-0223:t1",
+        "pb-v1-0223:t2",
+        "pb-v1-0239:t0",
+        "pb-v1-0239:t1",
+        "pb-v1-0239:t2",
+        "pb-v1-0239:t3",
+        "pb-v1-0246:t0",
+        "pb-v1-0246:t1",
+        "pb-v1-0246:t2",
+        "pb-v1-0246:t3",
+        "pb-v1-0246:t4",
+        "pb-v1-0246:t5"
+      ],
+      "goi_student": [
+        "pb-v1-0005:t0",
+        "pb-v1-0008:t0",
+        "pb-v1-0010:t0",
+        "pb-v1-0037:t0",
+        "pb-v1-0046:t0",
+        "pb-v1-0049:t0",
+        "pb-v1-0062:t0",
+        "pb-v1-0064:t0",
+        "pb-v1-0067:t0",
+        "pb-v1-0074:t0",
+        "pb-v1-0086:t0",
+        "pb-v1-0093:t0",
+        "pb-v1-0098:t0",
+        "pb-v1-0109:t0",
+        "pb-v1-0112:t0",
+        "pb-v1-0122:t0",
+        "pb-v1-0135:t0",
+        "pb-v1-0138:t0",
+        "pb-v1-0142:t0",
+        "pb-v1-0143:t0",
+        "pb-v1-0149:t0",
+        "pb-v1-0153:t0",
+        "pb-v1-0165:t0",
+        "pb-v1-0168:t0",
+        "pb-v1-0169:t0",
+        "pb-v1-0180:t0",
+        "pb-v1-0180:t1",
+        "pb-v1-0180:t2",
+        "pb-v1-0180:t3",
+        "pb-v1-0181:t0",
+        "pb-v1-0181:t1",
+        "pb-v1-0181:t2",
+        "pb-v1-0181:t3",
+        "pb-v1-0185:t0",
+        "pb-v1-0185:t1",
+        "pb-v1-0185:t2",
+        "pb-v1-0185:t3",
+        "pb-v1-0187:t0",
+        "pb-v1-0187:t1",
+        "pb-v1-0187:t2",
+        "pb-v1-0201:t0",
+        "pb-v1-0201:t1",
+        "pb-v1-0201:t2",
+        "pb-v1-0202:t0",
+        "pb-v1-0202:t1",
+        "pb-v1-0202:t2",
+        "pb-v1-0202:t3",
+        "pb-v1-0203:t0",
+        "pb-v1-0203:t1",
+        "pb-v1-0203:t2",
+        "pb-v1-0203:t3",
+        "pb-v1-0213:t0",
+        "pb-v1-0213:t1",
+        "pb-v1-0213:t2",
+        "pb-v1-0213:t3",
+        "pb-v1-0219:t0",
+        "pb-v1-0219:t1",
+        "pb-v1-0219:t2",
+        "pb-v1-0219:t3",
+        "pb-v1-0219:t4",
+        "pb-v1-0222:t0",
+        "pb-v1-0222:t1",
+        "pb-v1-0222:t2",
+        "pb-v1-0222:t3",
+        "pb-v1-0223:t0",
+        "pb-v1-0223:t1",
+        "pb-v1-0223:t2",
+        "pb-v1-0239:t0",
+        "pb-v1-0239:t1",
+        "pb-v1-0239:t2",
+        "pb-v1-0239:t3",
+        "pb-v1-0246:t0",
+        "pb-v1-0246:t1",
+        "pb-v1-0246:t2",
+        "pb-v1-0246:t3",
+        "pb-v1-0246:t4",
+        "pb-v1-0246:t5"
+      ]
+    },
+    "selected_dev_prediction_counts": {
+      "bamibert": {
+        "ADDRESS": 4,
+        "COMPLAINT": 8,
+        "CONFIRMATION": 8,
+        "MENU_QUERY": 21,
+        "OTHER": 36
+      },
+      "goi_dapt": {
+        "ADDRESS": 4,
+        "COMPLAINT": 8,
+        "CONFIRMATION": 8,
+        "GRATITUDE": 1,
+        "GREETING": 2,
+        "MENU_QUERY": 20,
+        "OTHER": 34
+      },
+      "goi_student": {
+        "ADDRESS": 5,
+        "COMPLAINT": 4,
+        "CONFIRMATION": 8,
+        "GRATITUDE": 1,
+        "GREETING": 2,
+        "MENU_QUERY": 23,
+        "OTHER": 34
+      }
+    },
+    "test_metrics_recomputed": {
+      "bamibert": {
+        "accuracy": 0.7922077922077922,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            19,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            29
+          ]
+        ],
+        "gold_matches_frozen_test": true,
+        "macro_f1": 0.4744691269742569,
+        "per_intent": {
+          "ADDRESS": {
+            "f1": 0.9090909090909091,
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "support": 6
+          },
+          "COMPLAINT": {
+            "f1": 0.4000000000000001,
+            "precision": 0.4,
+            "recall": 0.4,
+            "support": 5
+          },
+          "CONFIRMATION": {
+            "f1": 0.75,
+            "precision": 0.6666666666666666,
+            "recall": 0.8571428571428571,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2
+          },
+          "GREETING": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "f1": 0.8837209302325582,
+            "precision": 0.8636363636363636,
+            "recall": 0.9047619047619048,
+            "support": 21
+          },
+          "OTHER": {
+            "f1": 0.8529411764705882,
+            "precision": 0.8055555555555556,
+            "recall": 0.90625,
+            "support": 32
+          },
+          "PHONE": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2
+          }
+        },
+        "prediction_count": 77,
+        "prediction_rows_coherent": true,
+        "support": 77
+      },
+      "goi_dapt": {
+        "accuracy": 0.8961038961038961,
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            20,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            30
+          ]
+        ],
+        "gold_matches_frozen_test": true,
+        "macro_f1": 0.8329812730368094,
+        "per_intent": {
+          "ADDRESS": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6
+          },
+          "COMPLAINT": {
+            "f1": 0.5714285714285715,
+            "precision": 1.0,
+            "recall": 0.4,
+            "support": 5
+          },
+          "CONFIRMATION": {
+            "f1": 0.9333333333333333,
+            "precision": 0.875,
+            "recall": 1.0,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "GREETING": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "f1": 0.9302325581395349,
+            "precision": 0.9090909090909091,
+            "recall": 0.9523809523809523,
+            "support": 21
+          },
+          "OTHER": {
+            "f1": 0.8955223880597014,
+            "precision": 0.8571428571428571,
+            "recall": 0.9375,
+            "support": 32
+          },
+          "PHONE": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          }
+        },
+        "prediction_count": 77,
+        "prediction_rows_coherent": true,
+        "support": 77
+      },
+      "goi_student": {
+        "accuracy": 0.8831168831168831,
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            19,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            30
+          ]
+        ],
+        "gold_matches_frozen_test": true,
+        "macro_f1": 0.8208688699360341,
+        "per_intent": {
+          "ADDRESS": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 6
+          },
+          "COMPLAINT": {
+            "f1": 0.5,
+            "precision": 0.6666666666666666,
+            "recall": 0.4,
+            "support": 5
+          },
+          "CONFIRMATION": {
+            "f1": 0.9333333333333333,
+            "precision": 0.875,
+            "recall": 1.0,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "GREETING": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "f1": 0.9047619047619048,
+            "precision": 0.9047619047619048,
+            "recall": 0.9047619047619048,
+            "support": 21
+          },
+          "OTHER": {
+            "f1": 0.8955223880597014,
+            "precision": 0.8571428571428571,
+            "recall": 0.9375,
+            "support": 32
+          },
+          "PHONE": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          }
+        },
+        "prediction_count": 77,
+        "prediction_rows_coherent": true,
+        "support": 77
+      }
+    },
+    "test_metrics_under_raw_source_labels": {
+      "bamibert": {
+        "accuracy": 0.7272727272727273,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            19,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0,
+            2
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            2,
+            1,
+            0,
+            0,
+            26
+          ]
+        ],
+        "macro_f1": 0.42414670831887075,
+        "per_intent": {
+          "ADDRESS": {
+            "f1": 0.8333333333333333,
+            "precision": 1.0,
+            "recall": 0.7142857142857143,
+            "support": 7
+          },
+          "COMPLAINT": {
+            "f1": 0.4000000000000001,
+            "precision": 0.4,
+            "recall": 0.4,
+            "support": 5
+          },
+          "CONFIRMATION": {
+            "f1": 0.5,
+            "precision": 0.4444444444444444,
+            "recall": 0.5714285714285714,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2
+          },
+          "GREETING": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "f1": 0.8837209302325582,
+            "precision": 0.8636363636363636,
+            "recall": 0.9047619047619048,
+            "support": 21
+          },
+          "OTHER": {
+            "f1": 0.7761194029850746,
+            "precision": 0.7222222222222222,
+            "recall": 0.8387096774193549,
+            "support": 31
+          },
+          "PHONE": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2
+          }
+        },
+        "support": 77
+      },
+      "goi_dapt": {
+        "accuracy": 0.8311688311688312,
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            20,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            2,
+            0,
+            0,
+            0,
+            27
+          ]
+        ],
+        "macro_f1": 0.780364983853356,
+        "per_intent": {
+          "ADDRESS": {
+            "f1": 0.923076923076923,
+            "precision": 1.0,
+            "recall": 0.8571428571428571,
+            "support": 7
+          },
+          "COMPLAINT": {
+            "f1": 0.5714285714285715,
+            "precision": 1.0,
+            "recall": 0.4,
+            "support": 5
+          },
+          "CONFIRMATION": {
+            "f1": 0.6666666666666666,
+            "precision": 0.625,
+            "recall": 0.7142857142857143,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "GREETING": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "f1": 0.9302325581395349,
+            "precision": 0.9090909090909091,
+            "recall": 0.9523809523809523,
+            "support": 21
+          },
+          "OTHER": {
+            "f1": 0.8181818181818182,
+            "precision": 0.7714285714285715,
+            "recall": 0.8709677419354839,
+            "support": 31
+          },
+          "PHONE": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          }
+        },
+        "support": 77
+      },
+      "goi_student": {
+        "accuracy": 0.8311688311688312,
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            19,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            28
+          ]
+        ],
+        "macro_f1": 0.7720404595404595,
+        "per_intent": {
+          "ADDRESS": {
+            "f1": 0.923076923076923,
+            "precision": 1.0,
+            "recall": 0.8571428571428571,
+            "support": 7
+          },
+          "COMPLAINT": {
+            "f1": 0.5,
+            "precision": 0.6666666666666666,
+            "recall": 0.4,
+            "support": 5
+          },
+          "CONFIRMATION": {
+            "f1": 0.6666666666666666,
+            "precision": 0.625,
+            "recall": 0.7142857142857143,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 2
+          },
+          "GREETING": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "f1": 0.9047619047619048,
+            "precision": 0.9047619047619048,
+            "recall": 0.9047619047619048,
+            "support": 21
+          },
+          "OTHER": {
+            "f1": 0.8484848484848486,
+            "precision": 0.8,
+            "recall": 0.9032258064516129,
+            "support": 31
+          },
+          "PHONE": {
+            "f1": 0.6666666666666666,
+            "precision": 1.0,
+            "recall": 0.5,
+            "support": 2
+          }
+        },
+        "support": 77
+      }
+    }
+  },
+  "source_input": {
+    "change_by_split": {
+      "dev": 2,
+      "test": 5,
+      "train": 12
+    },
+    "change_matrix": {
+      "ADDRESS->OTHER": 2,
+      "COMPLAINT->OTHER": 3,
+      "CONFIRMATION->OTHER": 2,
+      "MENU_QUERY->OTHER": 6,
+      "OTHER->COMPLAINT": 1,
+      "OTHER->CONFIRMATION": 5
+    },
+    "changed_rows": 19,
+    "corrected_rows": 507,
+    "history_lengths_excluding_current": {
+      "0": 250,
+      "1": 81,
+      "2": 74,
+      "3": 59,
+      "4": 19,
+      "5": 9,
+      "6": 6,
+      "7": 6,
+      "8": 2,
+      "9": 1
+    },
+    "input_violations": [],
+    "missing_targets": [
+      {
+        "sample_id": "pb-v1-0001:t1",
+        "text": "Gần tới chưa em"
+      },
+      {
+        "sample_id": "pb-v1-0004:t1",
+        "text": "Nãy c trả 170k"
+      },
+      {
+        "sample_id": "pb-v1-0059:t1",
+        "text": "Ok thanks b"
+      },
+      {
+        "sample_id": "pb-v1-0059:t2",
+        "text": "Tới chưa b?"
+      },
+      {
+        "sample_id": "pb-v1-0061:t1",
+        "text": "Gần tới chưa em"
+      }
+    ],
+    "original_label_counts": {
+      "ADDRESS": 40,
+      "COMPLAINT": 37,
+      "CONFIRMATION": 41,
+      "GRATITUDE": 11,
+      "GREETING": 12,
+      "MENU_QUERY": 150,
+      "OTHER": 204,
+      "PHONE": 12
+    },
+    "raw_origins": {
+      "sanitized_customer": 512
+    },
+    "raw_roles": {
+      "customer": 512
+    },
+    "review_ledger_rows": 507,
+    "reviewed_label_counts": {
+      "ADDRESS": 38,
+      "COMPLAINT": 35,
+      "CONFIRMATION": 44,
+      "GRATITUDE": 11,
+      "GREETING": 12,
+      "MENU_QUERY": 144,
+      "OTHER": 211,
+      "PHONE": 12
+    },
+    "rows_with_labeled_future_turns_not_in_input": 257,
+    "source_counts": {
+      "all_target_turns": 512,
+      "cases": 250,
+      "labeled": 507,
+      "missing": 5
+    },
+    "source_ref_duplicates": [],
+    "source_ref_unique": 250,
+    "source_sha256_actual": "bd29e71cc49a7ccf92f9287d0d8c74d6d1240cd157cc42027a62e9f5c7cdcc19",
+    "uncertain_rows": 82
+  },
+  "split_duplicates": {
+    "case_cross_split": {},
+    "confirmed_family_split_checks": [
+      {
+        "family_id": "template-pho-ngon-hu-hon",
+        "group_ids": [
+          "pb-v1-0176:t0"
+        ],
+        "one_split": true,
+        "splits": [
+          "train"
+        ]
+      },
+      {
+        "family_id": "template-banh-mi-hoi-an",
+        "group_ids": [
+          "pb-v1-0179:t0"
+        ],
+        "one_split": true,
+        "splits": [
+          "train"
+        ]
+      },
+      {
+        "family_id": "template-com-tam-joi-original",
+        "group_ids": [
+          "pb-v1-0195:t0"
+        ],
+        "one_split": true,
+        "splits": [
+          "train"
+        ]
+      },
+      {
+        "family_id": "template-com-tam-nhe",
+        "group_ids": [
+          "pb-v1-0191:t0"
+        ],
+        "one_split": true,
+        "splits": [
+          "train"
+        ]
+      },
+      {
+        "family_id": "template-mi-tiem-coffee",
+        "group_ids": [
+          "pb-v1-0199:t0"
+        ],
+        "one_split": true,
+        "splits": [
+          "dev"
+        ]
+      },
+      {
+        "family_id": "template-rice-tea",
+        "group_ids": [
+          "pb-v1-0201:t0"
+        ],
+        "one_split": true,
+        "splits": [
+          "test"
+        ]
+      },
+      {
+        "family_id": "template-english-special-dish",
+        "group_ids": [
+          "pb-v1-0023:t0"
+        ],
+        "one_split": true,
+        "splits": [
+          "train"
+        ]
+      },
+      {
+        "family_id": "template-reservation-tonight-2",
+        "group_ids": [
+          "pb-v1-0155:t0"
+        ],
+        "one_split": true,
+        "splits": [
+          "train"
+        ]
+      },
+      {
+        "family_id": "template-reservation-2-guests",
+        "group_ids": [
+          "pb-v1-0119:t0"
+        ],
+        "one_split": true,
+        "splits": [
+          "dev"
+        ]
+      }
+    ],
+    "current_cross_split_examples": {
+      "19h, cod": [
+        "pb-v1-0225:t6",
+        "pb-v1-0230:t8"
+      ],
+      "giao [address_1]": [
+        "pb-v1-0210:t1",
+        "pb-v1-0211:t1",
+        "pb-v1-0212:t1",
+        "pb-v1-0213:t1",
+        "pb-v1-0214:t1",
+        "pb-v1-0215:t1",
+        "pb-v1-0216:t1",
+        "pb-v1-0217:t1",
+        "pb-v1-0218:t1",
+        "pb-v1-0219:t1",
+        "pb-v1-0220:t1",
+        "pb-v1-0221:t1",
+        "pb-v1-0222:t1",
+        "pb-v1-0224:t1",
+        "pb-v1-0225:t5",
+        "pb-v1-0226:t4",
+        "pb-v1-0227:t5",
+        "pb-v1-0229:t5",
+        "pb-v1-0230:t7",
+        "pb-v1-0238:t1",
+        "pb-v1-0245:t1",
+        "pb-v1-0246:t1",
+        "pb-v1-0247:t1",
+        "pb-v1-0248:t2",
+        "pb-v1-0249:t1",
+        "pb-v1-0250:t1"
+      ],
+      "giao ngay": [
+        "pb-v1-0208:t2",
+        "pb-v1-0213:t2"
+      ],
+      "giao ngay, cod, chốt giúp mình": [
+        "pb-v1-0203:t3",
+        "pb-v1-0245:t2"
+      ],
+      "ok": [
+        "pb-v1-0186:t3",
+        "pb-v1-0192:t3",
+        "pb-v1-0199:t3"
+      ],
+      "ok chốt": [
+        "pb-v1-0209:t3",
+        "pb-v1-0246:t5"
+      ],
+      "thêm nước ép cam": [
+        "pb-v1-0173:t1",
+        "pb-v1-0185:t2",
+        "pb-v1-0230:t3"
+      ],
+      "tổng mới bao nhiêu": [
+        "pb-v1-0214:t4",
+        "pb-v1-0219:t4"
+      ],
+      "tổng mới nha": [
+        "pb-v1-0216:t4",
+        "pb-v1-0221:t4"
+      ],
+      "đúng rồi": [
+        "pb-v1-0174:t3",
+        "pb-v1-0178:t3"
+      ]
+    },
+    "current_cross_split_family_count": 10,
+    "current_family_count": 22,
+    "current_family_sizes": {
+      "2": 18,
+      "3": 3,
+      "26": 1
+    },
+    "existing_duplicate_report_summary": {
+      "candidate_count": 52,
+      "confirmed_substantive_near_duplicate_families": [
+        {
+          "case_ids": [
+            "pb-v1-0176",
+            "pb-v1-0192",
+            "pb-v1-0226"
+          ],
+          "confirmed_by": "root",
+          "family_id": "template-pho-ngon-hu-hon",
+          "group_whole_cases": true,
+          "rationale": "Same Phở Ngon Hú Hồn ordering template with quantity/politeness variants; root reviewed all candidate evidence.",
+          "sample_ids": [
+            "pb-v1-0176:t0",
+            "pb-v1-0176:t1",
+            "pb-v1-0176:t2",
+            "pb-v1-0176:t3",
+            "pb-v1-0192:t0",
+            "pb-v1-0192:t1",
+            "pb-v1-0192:t2",
+            "pb-v1-0192:t3",
+            "pb-v1-0226:t0",
+            "pb-v1-0226:t1",
+            "pb-v1-0226:t2",
+            "pb-v1-0226:t3",
+            "pb-v1-0226:t4",
+            "pb-v1-0226:t5",
+            "pb-v1-0226:t6",
+            "pb-v1-0226:t7"
+          ]
+        },
+        {
+          "case_ids": [
+            "pb-v1-0179",
+            "pb-v1-0247"
+          ],
+          "confirmed_by": "root",
+          "family_id": "template-banh-mi-hoi-an",
+          "group_whole_cases": true,
+          "rationale": "Same Bánh Mì Hội An ordering template with quantity variation; root reviewed all candidate evidence.",
+          "sample_ids": [
+            "pb-v1-0179:t0",
+            "pb-v1-0179:t1",
+            "pb-v1-0179:t2",
+            "pb-v1-0179:t3",
+            "pb-v1-0247:t0",
+            "pb-v1-0247:t1",
+            "pb-v1-0247:t2",
+            "pb-v1-0247:t3",
+            "pb-v1-0247:t4",
+            "pb-v1-0247:t5"
+          ]
+        },
+        {
+          "case_ids": [
+            "pb-v1-0174",
+            "pb-v1-0195",
+            "pb-v1-0208"
+          ],
+          "confirmed_by": "root",
+          "family_id": "template-com-tam-joi-original",
+          "group_whole_cases": true,
+          "rationale": "Same Cơm Tấm Joi Original ordering template with quantity/politeness variation; root reviewed all candidate evidence.",
+          "sample_ids": [
+            "pb-v1-0174:t0",
+            "pb-v1-0174:t1",
+            "pb-v1-0174:t2",
+            "pb-v1-0174:t3",
+            "pb-v1-0195:t0",
+            "pb-v1-0195:t1",
+            "pb-v1-0195:t2",
+            "pb-v1-0195:t3",
+            "pb-v1-0208:t0",
+            "pb-v1-0208:t1",
+            "pb-v1-0208:t2",
+            "pb-v1-0208:t3"
+          ]
+        },
+        {
+          "case_ids": [
+            "pb-v1-0191",
+            "pb-v1-0240"
+          ],
+          "confirmed_by": "root",
+          "family_id": "template-com-tam-nhe",
+          "group_whole_cases": true,
+          "rationale": "Same Cơm Tấm Nhẹ selection/cancellation template with polite wording variation; root reviewed all candidate evidence.",
+          "sample_ids": [
+            "pb-v1-0191:t0",
+            "pb-v1-0191:t1",
+            "pb-v1-0191:t2",
+            "pb-v1-0240:t0",
+            "pb-v1-0240:t1",
+            "pb-v1-0240:t2"
+          ]
+        },
+        {
+          "case_ids": [
+            "pb-v1-0199",
+            "pb-v1-0215",
+            "pb-v1-0250"
+          ],
+          "confirmed_by": "root",
+          "family_id": "template-mi-tiem-coffee",
+          "group_whole_cases": true,
+          "rationale": "Same Mì Tiềm plus coffee ordering template with coffee/checkout variants; root reviewed all candidate evidence.",
+          "sample_ids": [
+            "pb-v1-0199:t0",
+            "pb-v1-0199:t1",
+            "pb-v1-0199:t2",
+            "pb-v1-0199:t3",
+            "pb-v1-0215:t0",
+            "pb-v1-0215:t1",
+            "pb-v1-0215:t2",
+            "pb-v1-0215:t3",
+            "pb-v1-0215:t4",
+            "pb-v1-0250:t0",
+            "pb-v1-0250:t1",
+            "pb-v1-0250:t2",
+            "pb-v1-0250:t3"
+          ]
+        },
+        {
+          "case_ids": [
+            "pb-v1-0201",
+            "pb-v1-0213",
+            "pb-v1-0219"
+          ],
+          "confirmed_by": "root",
+          "family_id": "template-rice-tea",
+          "group_whole_cases": true,
+          "rationale": "Same rice plus Trà Lài Xiêm Xanh ordering template with rice/quantity variants; root reviewed all candidate evidence.",
+          "sample_ids": [
+            "pb-v1-0201:t0",
+            "pb-v1-0201:t1",
+            "pb-v1-0201:t2",
+            "pb-v1-0213:t0",
+            "pb-v1-0213:t1",
+            "pb-v1-0213:t2",
+            "pb-v1-0213:t3",
+            "pb-v1-0219:t0",
+            "pb-v1-0219:t1",
+            "pb-v1-0219:t2",
+            "pb-v1-0219:t3",
+            "pb-v1-0219:t4"
+          ]
+        },
+        {
+          "case_ids": [
+            "pb-v1-0023",
+            "pb-v1-0024"
+          ],
+          "confirmed_by": "root",
+          "family_id": "template-english-special-dish",
+          "group_whole_cases": true,
+          "rationale": "Same English special-dish inquiry with today/week wording variation; root reviewed all candidate evidence.",
+          "sample_ids": [
+            "pb-v1-0023:t0",
+            "pb-v1-0024:t0"
+          ]
+        },
+        {
+          "case_ids": [
+            "pb-v1-0155",
+            "pb-v1-0166"
+          ],
+          "confirmed_by": "root",
+          "family_id": "template-reservation-tonight-2",
+          "group_whole_cases": true,
+          "rationale": "Same two-guest tonight reservation template with time/greeting variation; root reviewed all candidate evidence.",
+          "sample_ids": [
+            "pb-v1-0155:t0",
+            "pb-v1-0166:t0"
+          ]
+        },
+        {
+          "case_ids": [
+            "pb-v1-0119",
+            "pb-v1-0164"
+          ],
+          "confirmed_by": "root",
+          "family_id": "template-reservation-2-guests",
+          "group_whole_cases": true,
+          "rationale": "Same two-guest evening reservation template with time variation; root reviewed all candidate evidence.",
+          "sample_ids": [
+            "pb-v1-0119:t0",
+            "pb-v1-0164:t0"
+          ]
+        }
+      ]
+    },
+    "full_input_cross_split_count": 0,
+    "full_input_family_count": 4,
+    "fuzzy_candidate_count": 52,
+    "group_manifest_all_single_split": true,
+    "group_manifest_count": 235,
+    "source_cross_split": {},
+    "split_stats": {
+      "dev": {
+        "case_count": 37,
+        "class_counts": {
+          "ADDRESS": 6,
+          "COMPLAINT": 5,
+          "CONFIRMATION": 7,
+          "GRATITUDE": 2,
+          "GREETING": 2,
+          "MENU_QUERY": 22,
+          "OTHER": 31,
+          "PHONE": 2
+        },
+        "rows": 77,
+        "source_count": 37
+      },
+      "test": {
+        "case_count": 38,
+        "class_counts": {
+          "ADDRESS": 6,
+          "COMPLAINT": 5,
+          "CONFIRMATION": 7,
+          "GRATITUDE": 2,
+          "GREETING": 2,
+          "MENU_QUERY": 21,
+          "OTHER": 32,
+          "PHONE": 2
+        },
+        "rows": 77,
+        "source_count": 38
+      },
+      "train": {
+        "case_count": 175,
+        "class_counts": {
+          "ADDRESS": 26,
+          "COMPLAINT": 25,
+          "CONFIRMATION": 30,
+          "GRATITUDE": 7,
+          "GREETING": 8,
+          "MENU_QUERY": 101,
+          "OTHER": 148,
+          "PHONE": 8
+        },
+        "rows": 353,
+        "source_count": 175
+      }
+    }
+  },
+  "timing": {
+    "model_checks": [
+      {
+        "batch_size_is_1": true,
+        "checkpoint_hash_matches_selection": true,
+        "forward_count_matches_77x2": true,
+        "model": "bamibert",
+        "passes_is_2": true,
+        "test_hash_matches": true,
+        "timing_scope": "model-forward-only; tokenizer, padding, and host-to-device transfer excluded",
+        "warmup_is_10": true
+      },
+      {
+        "batch_size_is_1": true,
+        "checkpoint_hash_matches_selection": true,
+        "forward_count_matches_77x2": true,
+        "model": "goi_dapt",
+        "passes_is_2": true,
+        "test_hash_matches": true,
+        "timing_scope": "model-forward-only; tokenizer, padding, and host-to-device transfer excluded",
+        "warmup_is_10": true
+      },
+      {
+        "batch_size_is_1": true,
+        "checkpoint_hash_matches_selection": true,
+        "forward_count_matches_77x2": true,
+        "model": "goi_student",
+        "passes_is_2": true,
+        "test_hash_matches": true,
+        "timing_scope": "model-forward-only; tokenizer, padding, and host-to-device transfer excluded",
+        "warmup_is_10": true
+      }
+    ],
+    "selection_hash_matches": true
+  }
+}

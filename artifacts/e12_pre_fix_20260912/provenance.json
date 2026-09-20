@@ -1,0 +1,54 @@
+{
+  "architecture_inference": "descriptive surface audit only; no causal or model-gain claim",
+  "domains": [
+    "vsfc",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "include_test": false,
+  "input_files": {
+    "/home/kiettqa/GoiBERT/artifacts/e8/absa_hotel/seed_42/best_validation_metrics.json": "a20d50fe0fb6ea2b4ea51e0054aa497128b0401c49fa6f16330095c050643a6e",
+    "/home/kiettqa/GoiBERT/artifacts/e8/absa_hotel/seed_42/validation_predictions.json": "2712d92c17f357d6d822d5cfae67e21cff767cea1208132f6e0258c6c7ab2420",
+    "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_42/best_validation_metrics.json": "50c19df03315e2b4574b4d237ee6766cea10e871651a6f61ce8f019a84c8a8d4",
+    "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_42/validation_predictions.json": "b631d0a05c1a5331aebf5e90fd950cafebf0ec59696c79ba2ecee6b2f058db9c",
+    "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_42/best_validation_metrics.json": "b15ecc2ee69868e4286df45268677c6bcb9c982b4c30bf8767b739ced2cd8bd9",
+    "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_42/validation_predictions.json": "db9e1819fa26e6b4c04f83ea581955143e53870fd81774a1c579041860d3db97",
+    "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_sentiment/seed_42/best_validation_metrics.json": "fb036d300cdf8127f574cb9d3bab22655d8fdf79d155bca627bc9a2941aeb477",
+    "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_sentiment/seed_42/validation_predictions.json": "18e4006550489f39d63fb020ceeab4b4416bf49f2b2c38f0bba328e05a3803b4",
+    "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_topic/seed_42/best_validation_metrics.json": "cad261e6967d6ddc36d9b73e49c14e9c5667593c50b9f010c4bfb5fd7db10384",
+    "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_topic/seed_42/validation_predictions.json": "152a221c7ca5f9a2ce70069a62f656f9f8fe16a2818c08be40ed451de8882ae7",
+    "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv": "21ec6bc4811dc44b977ce4510f8abef0290dd5d13fdd75feeb693ae408629ba7",
+    "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv": "38298d4d8e77a27d7b66ecb9756414ff0303724224502ac3ffdd9a7d24f0491e",
+    "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202",
+    "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+    "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51",
+    "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+    "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt": "a9584a22c926a54c6042236380c9a65ab8c41467477f7a5d794fb2505c96a9c3",
+    "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+    "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt": "7483805b24f5362aa5a2f708509876e0b69bf35753e90199059c2409caad7d96",
+    "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt": "480480c3b9a6bc8bdf53339c721e93f8cc30472ac8f0bd21d4440ce1171aefac",
+    "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+    "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt": "09cbb8147f419f225b171cadf82410c442d6c24997ab97f48dfa779f4e68a1b9"
+  },
+  "max_length": 256,
+  "plan": "/home/kiettqa/GoiBERT/docs/E12_DIAGNOSTIC_PLAN.md",
+  "plan_sha256": "18de67b9f9525b0b4094bf4234a65ecccacfb244712f0421a5cf2711c2fb7a5a",
+  "script": "/home/kiettqa/GoiBERT/scripts/analyze_e12_surface_errors.py",
+  "script_sha256": "835f0c9218e30accff5ca3013dd02105107c3fabb892eb8ff965e66522e0890f",
+  "seed": 12042,
+  "tasks": [
+    "vsfc_sentiment",
+    "vsfc_topic",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "test_access": "not requested; loader calls are include_test=False",
+  "tokenizer_dir": "/home/kiettqa/GoiBERT/models/goiturn-s-gd",
+  "tokenizer_files": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  }
+}

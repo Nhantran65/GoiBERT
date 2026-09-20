@@ -1,0 +1,548 @@
+{
+  "protocol": "E8-test-gate-v1",
+  "manifest_id": "E8-test-selection-20260910-seed42-v1",
+  "created_at_utc": "2026-09-10T09:36:17.897761+00:00",
+  "locked": true,
+  "checkpoint_count": 5,
+  "tasks": [
+    "vsfc_sentiment",
+    "vsfc_topic",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "seed": 42,
+  "selection_recipe": "NC+LLRD for all tasks; one validation-locked checkpoint per task",
+  "test_access_policy": "each locked checkpoint evaluated once; no test-based selection, tuning, or retraining",
+  "evaluation_contract": {
+    "mode": "inference_only",
+    "precision": "bf16",
+    "attention_implementation": "sdpa",
+    "max_length": 256,
+    "micro_batch_size": 32,
+    "student_backbone": "models/goiturn-s-gd",
+    "classifier": "original src/goibert/modeling.py CLS head; strict checkpoint['model'] load",
+    "teacher_inference": false,
+    "noise_inference": false,
+    "dropout": "disabled via model.eval()"
+  },
+  "selections": [
+    {
+      "task_id": "vsfc_sentiment",
+      "task": "VSFC Sentiment",
+      "seed": 42,
+      "method": "nc_plus_llrd",
+      "mode": "nc",
+      "coefficient": 0.1,
+      "best_epoch": 21,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_sentiment/seed_42",
+      "checkpoint_path": "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_sentiment/seed_42/best_checkpoint.pt",
+      "metadata_path": "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_sentiment/seed_42/metadata.json",
+      "resolved_config_path": "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_sentiment/seed_42/resolved_config.json",
+      "checkpoint_sha256": "d751789e9b770acd431e31d37fbf6585d821249c8d456ac7f7ea5d297ca155a4",
+      "metadata_sha256": "c564bdf90de7011d0ee7aff6736f8d03a4d43adc5576bafbaa874b7c1dd59e4a",
+      "resolved_config_sha256": "5a413729544752a77797d3904eee18836f71a8cb77c018ab432dd4055df51743",
+      "backbone_hashes": {
+        "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+        "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+        "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "tokenizer_hashes": {
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "source_hashes": {
+        "src/goibert/data.py": "aeff87536a81c039d4240962140463693286c5241ce09630f5ad1b13699efc57",
+        "src/goibert/metrics.py": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+        "src/goibert/modeling.py": "c8cf5b69e056cffd81f5606a813cd36779a7ef9f785c0d107faf8d8485585c49",
+        "src/goibert/train.py": "ede96aaf63f02b808e5034f58953cfbce9a03438ed71f10f775de314a40bc578",
+        "scripts/run_e8_nc_llrd.py": "8c5f6e0aea46412eee5b1d92a0cc76f1a3a1aa1593b364d4f2c95656882b785a",
+        "scripts/evaluate_e8_test.py": "bf97cd79bd0aa62953e57d74bfbb58b729e429d8edd614ae27510c527b767ea8"
+      },
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "data_provenance": {
+        "source_files": [
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/sents.txt",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/sentiments.txt"
+        ],
+        "label_policy": "fixed_source_map",
+        "source_file_hashes": {
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt": "480480c3b9a6bc8bdf53339c721e93f8cc30472ac8f0bd21d4440ce1171aefac",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt": "a9584a22c926a54c6042236380c9a65ab8c41467477f7a5d794fb2505c96a9c3",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/sents.txt": "75100e0559ecc0d7052870e2e7991391bfa7442bbaee91a6e271157c6fea343b",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/sentiments.txt": "0f04ebe3ada9655aff0a4c6eec27e5e7b8f552e26d3a6f06a35831e07e102f18"
+        },
+        "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+      },
+      "split_snapshots": {
+        "train": {
+          "count": 11426,
+          "ids_sha256": "df66f28d83aa0a246f4c60b27e9bf985bfda17d26f98caf12a5ec999c0e4ddb2",
+          "labels_sha256": "38d4007161e10aa19332192d331aeb87e5f5509f0bc6ba4a502df33161d7556a",
+          "rows_sha256": "6349583cd003e8988fea34a742f89f4cc4c8fc8fa8f237e0e73172ed69144031"
+        },
+        "validation": {
+          "count": 1583,
+          "ids_sha256": "9e9e50fdab6fc2967b086cdf9111596d0a460851dec3942d9172a73a3f31861d",
+          "labels_sha256": "2f6ed3cf8206836379d6d79ef40b57f835a9e5b36e12c39b88635e24604f694c",
+          "rows_sha256": "5e8959c1271dcce5df6c9a99bf5ecc9a0a7767c2c8bf1028652aa3bc54b9181f"
+        },
+        "test": {
+          "count": 3166,
+          "ids_sha256": "059fa3aa212d042da166ebae530c440e2c05585248015e7378dd9d657ad9abd3",
+          "labels_sha256": "6e32178e378c2f01c9d354e1646f56979d4b820fb5a8807d331ec62c0e9fcbda",
+          "rows_sha256": "7c87b93c8d58caa04ba4498fa84d83b8ad585ab9c665269011a7b5728d291fe7"
+        }
+      },
+      "test_row_count": 3166,
+      "model": {
+        "backbone": "goiturn-s-gd",
+        "hidden_size": 384,
+        "head_hidden_size": 384,
+        "head_dropout": 0.1,
+        "num_labels": 3,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 26546691,
+        "trainable_parameters": 26546691
+      },
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "max_length": 256,
+      "micro_batch_size": 32,
+      "selection_basis": "locked E8 NC+LLRD validation winner; seed 42; no test reselection"
+    },
+    {
+      "task_id": "vsfc_topic",
+      "task": "VSFC Topic",
+      "seed": 42,
+      "method": "nc_plus_llrd",
+      "mode": "nc",
+      "coefficient": 0.5,
+      "best_epoch": 25,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_topic/seed_42",
+      "checkpoint_path": "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_topic/seed_42/best_checkpoint.pt",
+      "metadata_path": "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_topic/seed_42/metadata.json",
+      "resolved_config_path": "/home/kiettqa/GoiBERT/artifacts/e8/vsfc_topic/seed_42/resolved_config.json",
+      "checkpoint_sha256": "69e71976fec06e442d7db4e12be773f633983da8f703db0ea9575113f18173e1",
+      "metadata_sha256": "5cd2da9c3ca772e5cdbdf992a2ec6d93c0193841329be8d6d7e8ce942606b962",
+      "resolved_config_sha256": "a6321a320c9111c5c8ed794e7409b6265b45aae89f04f959dcdcd0b55cf69eee",
+      "backbone_hashes": {
+        "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+        "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+        "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "tokenizer_hashes": {
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "source_hashes": {
+        "src/goibert/data.py": "aeff87536a81c039d4240962140463693286c5241ce09630f5ad1b13699efc57",
+        "src/goibert/metrics.py": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+        "src/goibert/modeling.py": "c8cf5b69e056cffd81f5606a813cd36779a7ef9f785c0d107faf8d8485585c49",
+        "src/goibert/train.py": "ede96aaf63f02b808e5034f58953cfbce9a03438ed71f10f775de314a40bc578",
+        "scripts/run_e8_nc_llrd.py": "8c5f6e0aea46412eee5b1d92a0cc76f1a3a1aa1593b364d4f2c95656882b785a",
+        "scripts/evaluate_e8_test.py": "bf97cd79bd0aa62953e57d74bfbb58b729e429d8edd614ae27510c527b767ea8"
+      },
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "data_provenance": {
+        "source_files": [
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/sents.txt",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/topics.txt"
+        ],
+        "label_policy": "fixed_source_map",
+        "source_file_hashes": {
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt": "09cbb8147f419f225b171cadf82410c442d6c24997ab97f48dfa779f4e68a1b9",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt": "7483805b24f5362aa5a2f708509876e0b69bf35753e90199059c2409caad7d96",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/sents.txt": "75100e0559ecc0d7052870e2e7991391bfa7442bbaee91a6e271157c6fea343b",
+          "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/test/topics.txt": "ba04f1bd4014be3c1f1940236a8ceae71a455aa0837295bdbe2cdbcc44bd0745"
+        },
+        "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+      },
+      "split_snapshots": {
+        "train": {
+          "count": 11426,
+          "ids_sha256": "936915fcfb3775fcaee77e03bd8cc03a0fe057fafced16eb1fd5073563f7223c",
+          "labels_sha256": "5f8b7898f0b28986b53eca3b49c84008bd48bd8f58b9d8a5d73128c24475b63d",
+          "rows_sha256": "28ca17aeabcbe16f55dc2b243f8209f834ece45069a923c2eba08a3174d007d1"
+        },
+        "validation": {
+          "count": 1583,
+          "ids_sha256": "d8de92d214b9f263d33d57f1b608c7b38af1befa17aa87693c15be8d34f46cac",
+          "labels_sha256": "bca412c4bfed8e1c902cf37ece4ffcbba26c2b496a2fd833f0ce42c541110ea8",
+          "rows_sha256": "8fd843be93da56a6c817be4ee78a560e85c14f87f11ce899af175e556638cbfc"
+        },
+        "test": {
+          "count": 3166,
+          "ids_sha256": "39a88ff26052ad7b6fcf42308347dfb201fbbc8e85eb4ce1dc28b5319ddd1120",
+          "labels_sha256": "d3f030670eceabf2039cbcfa694f5dd477677b32f55b1a7519c1a1f1a2a77d0c",
+          "rows_sha256": "70a9ec7e43070996a0562189bc4a73df7c53279bff0a74e9d3b1d2f4e8efdb09"
+        }
+      },
+      "test_row_count": 3166,
+      "model": {
+        "backbone": "goiturn-s-gd",
+        "hidden_size": 384,
+        "head_hidden_size": 384,
+        "head_dropout": 0.1,
+        "num_labels": 4,
+        "num_aspects": 0,
+        "aspect_class_counts": [],
+        "total_parameters": 26547076,
+        "trainable_parameters": 26547076
+      },
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "max_length": 256,
+      "micro_batch_size": 32,
+      "selection_basis": "locked E8 NC+LLRD validation winner; seed 42; no test reselection"
+    },
+    {
+      "task_id": "visfd",
+      "task": "ViSFD",
+      "seed": 42,
+      "method": "nc_plus_llrd",
+      "mode": "nc",
+      "coefficient": 0.5,
+      "best_epoch": 28,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_42",
+      "checkpoint_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_42/best_checkpoint.pt",
+      "metadata_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_42/metadata.json",
+      "resolved_config_path": "/home/kiettqa/GoiBERT/artifacts/e8/visfd/seed_42/resolved_config.json",
+      "checkpoint_sha256": "ed5b02ab212bca1cd6c9d52367ddb0ea75d01e7109ef76b05cfb9d91860cfe81",
+      "metadata_sha256": "2cd1970d4291872810f46378930abcf536c998d86341d227fa640032fb9a345f",
+      "resolved_config_sha256": "b7b128f96b148b6ad84447f7c29a1383f8b07c3bd56606f6f62e99e0bcb37892",
+      "backbone_hashes": {
+        "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+        "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+        "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "tokenizer_hashes": {
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "source_hashes": {
+        "src/goibert/data.py": "aeff87536a81c039d4240962140463693286c5241ce09630f5ad1b13699efc57",
+        "src/goibert/metrics.py": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+        "src/goibert/modeling.py": "c8cf5b69e056cffd81f5606a813cd36779a7ef9f785c0d107faf8d8485585c49",
+        "src/goibert/train.py": "ede96aaf63f02b808e5034f58953cfbce9a03438ed71f10f775de314a40bc578",
+        "scripts/run_e8_nc_llrd.py": "8c5f6e0aea46412eee5b1d92a0cc76f1a3a1aa1593b364d4f2c95656882b785a",
+        "scripts/evaluate_e8_test.py": "bf97cd79bd0aa62953e57d74bfbb58b729e429d8edd614ae27510c527b767ea8"
+      },
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "data_provenance": {
+        "source_files": [
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv",
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Test.csv"
+        ],
+        "label_policy": "ViSFD OTHERS=code4; include in detection, exclude from polarity pair classification because source has no polarity",
+        "source_file_hashes": {
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv": "cd4426cfffdf574e2a46513692ddb0d343334fb4409b7850318dba479878eb7b",
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv": "ab29bf9e7a2002013e8670c110685a1ea14eda3f87a575f01e9ccb4dd4d9da51",
+          "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Test.csv": "a30901f08b907f2a9df094626dbe96dcdfb01845fa7d152408aff20bc9785bd9"
+        },
+        "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+      },
+      "split_snapshots": {
+        "train": {
+          "count": 7786,
+          "ids_sha256": "537af759c9ef3fcb06e1e4d2239b70e5c6b8e03c2985111e12ced0f2b7efdc11",
+          "labels_sha256": "bc6ecafb70c00fd6162d0132813143afa20e3072a8e5c33e0254a05695bf522d",
+          "rows_sha256": "504bdab73d6ff5822e8e9da058e83c5ff88bf892dd5c5a4d1ab37834da7ff85a"
+        },
+        "validation": {
+          "count": 1112,
+          "ids_sha256": "5ef3b93292d1953dc60e93634606a0b17ba68aa3c42dc3ca73302ab046958321",
+          "labels_sha256": "164a6bc3871c4be166f798ff45d6e296b7aa0f8985fe7c2983d4c8638ad9dde2",
+          "rows_sha256": "097b7d6dc8017703179881f466cf92f2070ec8cc42cf4ba24ee43b5f1db26438"
+        },
+        "test": {
+          "count": 2224,
+          "ids_sha256": "cf52119d843a60effa98a4e1e619b9b0ecb79d8d2ce43a6206ad32b51b2384be",
+          "labels_sha256": "c4e8a7fdd13846cfd525b6ff869440e9aa9a2c9717262282931cc6cba13438e0",
+          "rows_sha256": "7068320850ebb193c49a6aa4829cb98aa1869f8fff6fd176011bdd9e35c28a9b"
+        }
+      },
+      "test_row_count": 2224,
+      "model": {
+        "backbone": "goiturn-s-gd",
+        "hidden_size": 384,
+        "head_hidden_size": 384,
+        "head_dropout": 0.1,
+        "num_labels": 42,
+        "num_aspects": 11,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          2,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 26561706,
+        "trainable_parameters": 26561706
+      },
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "max_length": 256,
+      "micro_batch_size": 32,
+      "selection_basis": "locked E8 NC+LLRD validation winner; seed 42; no test reselection"
+    },
+    {
+      "task_id": "absa_restaurant",
+      "task": "UIT-ABSA Restaurant",
+      "seed": 42,
+      "method": "nc_plus_llrd",
+      "mode": "nc",
+      "coefficient": 0.1,
+      "best_epoch": 25,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_42",
+      "checkpoint_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_42/best_checkpoint.pt",
+      "metadata_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_42/metadata.json",
+      "resolved_config_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_restaurant/seed_42/resolved_config.json",
+      "checkpoint_sha256": "01192107e5ea24caedbe4736fbc34e9124efe81c3a13fd4085bcf612f57dfc03",
+      "metadata_sha256": "43f7753235b6790b0ebe65bdb58abea267e8f233c1813986c76d562adc9dd5c7",
+      "resolved_config_sha256": "b4cdf0daec47a498a189bcc40eb298f187b5a0ce12834ffe11e5c68ee14a9fc1",
+      "backbone_hashes": {
+        "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+        "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+        "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "tokenizer_hashes": {
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "source_hashes": {
+        "src/goibert/data.py": "aeff87536a81c039d4240962140463693286c5241ce09630f5ad1b13699efc57",
+        "src/goibert/metrics.py": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+        "src/goibert/modeling.py": "c8cf5b69e056cffd81f5606a813cd36779a7ef9f785c0d107faf8d8485585c49",
+        "src/goibert/train.py": "ede96aaf63f02b808e5034f58953cfbce9a03438ed71f10f775de314a40bc578",
+        "scripts/run_e8_nc_llrd.py": "8c5f6e0aea46412eee5b1d92a0cc76f1a3a1aa1593b364d4f2c95656882b785a",
+        "scripts/evaluate_e8_test.py": "bf97cd79bd0aa62953e57d74bfbb58b729e429d8edd614ae27510c527b767ea8"
+      },
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "data_provenance": {
+        "source_files": [
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Test.csv"
+        ],
+        "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+        "source_file_hashes": {
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Test.csv": "e79761dce8f7bef6912c6d4f3ba3df4baf39096870d7dfdc5bab5697a0f6f055"
+        },
+        "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+      },
+      "split_snapshots": {
+        "train": {
+          "count": 7028,
+          "ids_sha256": "bc306ca9d74dcebcbfe1a5b07493bb780f115a03177fcec13aaae1b2835a8196",
+          "labels_sha256": "7f0953297d08c287b7351beeffeb360bcea011aa510b1608694c34a198cdc6ca",
+          "rows_sha256": "0191cd7e8c04040686fb527b0c3ccb09f38d25b71670978aeeae9ab09b6a895a"
+        },
+        "validation": {
+          "count": 771,
+          "ids_sha256": "7d6e57ba057aae0cabae54599cc4c5d9afebfc0420a81463b75eedf9379e955b",
+          "labels_sha256": "245245d49b20068ebe71348772ee525803de45e719370ac9acef447d437946dc",
+          "rows_sha256": "be6a2986e3a60b0ba0ec9ab574373b19a79d77e809251ac8cacf44e49f37e52e"
+        },
+        "test": {
+          "count": 1938,
+          "ids_sha256": "5beb91d654dcbdc6ac1ca3a125027398a3bb506d5e48393a3405ffceeed40389",
+          "labels_sha256": "303e39f32e19407e1852c47ec0595afb44a2d90d483a5de661e90f8ba05c7438",
+          "rows_sha256": "2ef006b3087094d3ee0f421502f187d70c740224385845e518fd5ec8ebe43590"
+        }
+      },
+      "test_row_count": 1938,
+      "model": {
+        "backbone": "goiturn-s-gd",
+        "hidden_size": 384,
+        "head_hidden_size": 384,
+        "head_dropout": 0.1,
+        "num_labels": 48,
+        "num_aspects": 12,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 26564016,
+        "trainable_parameters": 26564016
+      },
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "max_length": 256,
+      "micro_batch_size": 32,
+      "selection_basis": "locked E8 NC+LLRD validation winner; seed 42; no test reselection"
+    },
+    {
+      "task_id": "absa_hotel",
+      "task": "UIT-ABSA Hotel",
+      "seed": 42,
+      "method": "nc_plus_llrd",
+      "mode": "nc",
+      "coefficient": 0.1,
+      "best_epoch": 26,
+      "artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e8/absa_hotel/seed_42",
+      "checkpoint_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_hotel/seed_42/best_checkpoint.pt",
+      "metadata_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_hotel/seed_42/metadata.json",
+      "resolved_config_path": "/home/kiettqa/GoiBERT/artifacts/e8/absa_hotel/seed_42/resolved_config.json",
+      "checkpoint_sha256": "e47dfbeb4273de6f2d502ca82c7981f2c05826ce71ee1731ae27bd1c15d57a3b",
+      "metadata_sha256": "abf73cb3029085dcec18377a67eacd045502bd9a57e19e5d996d3aee0e1f1adc",
+      "resolved_config_sha256": "37631624f5c748ca42c78bd9fec9fe24e0e6307d8a9287700848dcf16b755972",
+      "backbone_hashes": {
+        "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+        "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+        "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "tokenizer_hashes": {
+        "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+        "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+        "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+      },
+      "source_hashes": {
+        "src/goibert/data.py": "aeff87536a81c039d4240962140463693286c5241ce09630f5ad1b13699efc57",
+        "src/goibert/metrics.py": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+        "src/goibert/modeling.py": "c8cf5b69e056cffd81f5606a813cd36779a7ef9f785c0d107faf8d8485585c49",
+        "src/goibert/train.py": "ede96aaf63f02b808e5034f58953cfbce9a03438ed71f10f775de314a40bc578",
+        "scripts/run_e8_nc_llrd.py": "8c5f6e0aea46412eee5b1d92a0cc76f1a3a1aa1593b364d4f2c95656882b785a",
+        "scripts/evaluate_e8_test.py": "bf97cd79bd0aa62953e57d74bfbb58b729e429d8edd614ae27510c527b767ea8"
+      },
+      "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff",
+      "data_provenance": {
+        "source_files": [
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Test.csv"
+        ],
+        "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+        "source_file_hashes": {
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv": "38298d4d8e77a27d7b66ecb9756414ff0303724224502ac3ffdd9a7d24f0491e",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv": "21ec6bc4811dc44b977ce4510f8abef0290dd5d13fdd75feeb693ae408629ba7",
+          "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Test.csv": "095963affd0833e44aab92b6a4b6704e104e886bf40f2f72ef0a97c978b83632"
+        },
+        "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+      },
+      "split_snapshots": {
+        "train": {
+          "count": 7180,
+          "ids_sha256": "fd091182fb70ef9402954d8d1ecabd51884d7e0c09924a2ff06e989e56cc3b2f",
+          "labels_sha256": "18168c711f0ff1de2cadc97cc0c369b203049cbd6a7ff05195453fee232921ad",
+          "rows_sha256": "ae87da696ff39c71e2909baac01b547ae59df73b4c0f2a23e5d1389edab315a0"
+        },
+        "validation": {
+          "count": 795,
+          "ids_sha256": "911a9d38afedef59edc37c69d0485c166f8c567bbd3edc7d019373a1a19b5ba2",
+          "labels_sha256": "9a3ba2b86ec45203fca717ddf2910b54df08c5a42e816557a3220ef14a0fa1d2",
+          "rows_sha256": "12ac673a82e5bda77a9632789d29fb07b0cc8e5893b06e0d6d84202d45d422a0"
+        },
+        "test": {
+          "count": 2030,
+          "ids_sha256": "4eb80809297c6ffc557c70609c9f55c49c599c6a14bcf5aa08ae75aa791ee08a",
+          "labels_sha256": "c39fd632a50cf8aec6b81d2950b61ca7963c5517048ca0eca9be20c1b66d2868",
+          "rows_sha256": "dcdf362e1cc75e5edc6b86b359b2f400147021465c8f65e22d6184040247b284"
+        }
+      },
+      "test_row_count": 2030,
+      "model": {
+        "backbone": "goiturn-s-gd",
+        "hidden_size": 384,
+        "head_hidden_size": 384,
+        "head_dropout": 0.1,
+        "num_labels": 136,
+        "num_aspects": 34,
+        "aspect_class_counts": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "total_parameters": 26597896,
+        "trainable_parameters": 26597896
+      },
+      "precision": "bf16",
+      "attention_implementation": "sdpa",
+      "max_length": 256,
+      "micro_batch_size": 32,
+      "selection_basis": "locked E8 NC+LLRD validation winner; seed 42; no test reselection"
+    }
+  ]
+}

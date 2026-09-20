@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 564, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 550, in main
+    report = build_report(kind, task, model, tokenizer, bundle, counts, checkpoint, model_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kiettqa/GoiBERT/scripts/research_checks/reader_operating_point.py", line 505, in build_report
+    torch.save({"logits": logits.half(), "probabilities": probs.half(), "row_offsets": row_offsets,
+                                                                                       ^^^^^^^^^^^
+NameError: name 'row_offsets' is not defined

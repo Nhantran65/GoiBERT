@@ -1,0 +1,45 @@
+{
+ "stage": "prepare_holdouts",
+ "created_at": "2026-09-19T11:36:23Z",
+ "max_sequences": 4000,
+ "masking": "fixed mask seed 1234 (common.VAL_SEED), 15 % masked, 80/10/10",
+ "source_hash": "e0c04960bfb21e003ad230fbf4297cb156c22ce2f1c2cb463d45971dbd2aa711",
+ "a_hlpt": {
+  "documents": 4990,
+  "doc_tokens": 9433444,
+  "sequences": 4000,
+  "tokens": 2048000,
+  "sha256": "0001b33d3b154372ccd968c5c82bc11061308b15504c707dde9c3704fad9545c"
+ },
+ "c_register": {
+  "documents": 466,
+  "doc_tokens": 698820,
+  "sequences": 1365,
+  "tokens": 698880,
+  "sha256": "b3e17bd67c07a45902ffe64e6b53e0a0c57bd4545377661be3a89d347953c762"
+ },
+ "b_fineweb2": {
+  "documents": 5000,
+  "doc_tokens": 5232143,
+  "sequences": 4000,
+  "tokens": 2048000,
+  "sha256": "f1645efde5a5bbd318b8c5ead9ad121d80bb2e09841d79e9dc9af9b4ec15ceba",
+  "counters": {
+   "docs_in": 83206,
+   "candidates": 5109,
+   "kept": 5000,
+   "drop_language": 24,
+   "drop_length": 7,
+   "drop_duplicate_or_decontam": 78
+  },
+  "source": {
+   "repo": "HuggingFaceFW/fineweb-2",
+   "commit": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+   "file": "data/vie_Latn/train/000_00000.parquet",
+   "sha256": "337df3c387a7d5bc854059605acb9382e3887dc7ab0da958ecfe3f73d6219acf",
+   "license": "ODC-By 1.0 (dataset card); page-level rights of the crawled sites are not resolved by this pilot; raw web text is not redistributed",
+   "sampling": "document id hash % 16 == 0, first 5000 kept"
+  }
+ },
+ "elapsed_s": 81.1
+}

@@ -1,0 +1,66 @@
+{
+  "objective": "cross_entropy_probe",
+  "training_objective_context": "E13 checkpoints trained with CE+NC; E15 with CE",
+  "device": "cpu",
+  "precision": "fp32",
+  "batch_size": 16,
+  "no_optimizer_step": true,
+  "loss": 0.00466893007978797,
+  "elapsed_seconds": 13.102133750915527,
+  "groups": {
+    "U": {
+      "parameter_names": [
+        "encoder.encoder.layer.6.attention.self.U.weight"
+      ],
+      "weight_norm": 3.1864448745774188,
+      "raw_grad_norm": 0.0005204126830849263,
+      "grad_over_weight": 0.0001633207865094301,
+      "finite": true,
+      "zero_gradient": false
+    },
+    "W": {
+      "parameter_names": [
+        "encoder.encoder.layer.6.attention.self.W.weight"
+      ],
+      "weight_norm": 3.187818025169674,
+      "raw_grad_norm": 0.0003957290579845241,
+      "grad_over_weight": 0.00012413790713899396,
+      "finite": true,
+      "zero_gradient": false
+    },
+    "P": {
+      "parameter_names": [
+        "encoder.encoder.layer.6.attention.self.P.weight"
+      ],
+      "weight_norm": 0.3663189537965081,
+      "raw_grad_norm": 0.0016910628300978155,
+      "grad_over_weight": 0.004616367273851761,
+      "finite": true,
+      "zero_gradient": false
+    },
+    "Wo": {
+      "parameter_names": [
+        "encoder.encoder.layer.6.attention.output.dense.weight",
+        "encoder.encoder.layer.6.attention.output.dense.bias"
+      ],
+      "weight_norm": 10.322496200912237,
+      "raw_grad_norm": 0.010972229104135249,
+      "grad_over_weight": 0.0010629433899104358,
+      "finite": true,
+      "zero_gradient": false
+    },
+    "FFN": {
+      "parameter_names": [
+        "encoder.encoder.layer.6.intermediate.dense.weight",
+        "encoder.encoder.layer.6.intermediate.dense.bias",
+        "encoder.encoder.layer.6.output.dense.weight",
+        "encoder.encoder.layer.6.output.dense.bias"
+      ],
+      "weight_norm": 30.441579879705117,
+      "raw_grad_norm": 0.01861280487335742,
+      "grad_over_weight": 0.0006114270332521823,
+      "finite": true,
+      "zero_gradient": false
+    }
+  }
+}

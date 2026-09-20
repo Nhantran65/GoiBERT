@@ -1,0 +1,2475 @@
+{
+  "protocol": "E13-centered-pair-value-residual-v1",
+  "revision": "e13-20260912-r1",
+  "stage": "stageE13_pair_value_residual",
+  "method": "uncentered_pair_value_residual_nc_llrd",
+  "coefficient": 0.1,
+  "task_id": "absa_hotel",
+  "mode": "nc",
+  "seed": 42,
+  "learning_rate": 0.0001,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 7180,
+    "max_tokens": 229,
+    "p50_tokens": 20.0,
+    "p95_tokens": 46.0,
+    "p99_tokens": 68.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "smoke": false,
+  "source_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_source": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "e2_source_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_config_hash": "1a9d9b1d22f038f8231e5194a947515df1361c1b5603ed262e55f69e9e851ca6",
+  "e2_code_hash": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+  "e2_config_hash": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+  "orchestrator_hash": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv": "38298d4d8e77a27d7b66ecb9756414ff0303724224502ac3ffdd9a7d24f0491e",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv": "21ec6bc4811dc44b977ce4510f8abef0290dd5d13fdd75feeb693ae408629ba7"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "absa_hotel",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    ]
+  },
+  "model": {
+    "role": "student",
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 136,
+    "num_aspects": 34,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 26671624,
+    "trainable_parameters": 26671624,
+    "architecture": "original_sdpa_plus_block6_pair_value_residual",
+    "variant": "uncentered",
+    "insertion_layer_index": 6,
+    "pair_rank": 64,
+    "pair_chunk_size": 64,
+    "pair_activation": "gelu_exact",
+    "added_parameter_count": 73728
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "d91f026411bc997204b90b4471f8af24829d79f7131a9740bc1e383c7f3d26c3",
+    "distill_manifest.json": "10524748bef85100bb0c182b2a5d600e3b12707cfd73c21ce703912aea6d7b5c",
+    "model.safetensors": "d5473da3c7ad54835b48e8887043502659f8925096e58f26c97521352068ccca",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "hyperparameters": {
+    "temperature": 2.0,
+    "alpha": null,
+    "consistency_lambda": 0.1,
+    "teacher_cache": null,
+    "teacher_cache_hash": null
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e13.py",
+    "--worker",
+    "--variant",
+    "uncentered",
+    "--task-id",
+    "absa_hotel",
+    "--device",
+    "cuda:0",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e13/uncentered/absa_hotel/seed_42"
+  ],
+  "started_at_unix": 1789152514.2662554,
+  "noise_statistics": [
+    {
+      "count": 7180,
+      "changed_count": 2817,
+      "operation_counts": {
+        "none": 3634,
+        "teencode": 1424,
+        "remove_accents": 1752,
+        "internal_char_typo": 370
+      },
+      "change_rate": 0.3923398328690808
+    },
+    {
+      "count": 7180,
+      "changed_count": 2864,
+      "operation_counts": {
+        "none": 3600,
+        "teencode": 1404,
+        "remove_accents": 1832,
+        "internal_char_typo": 344
+      },
+      "change_rate": 0.3988857938718663
+    },
+    {
+      "count": 7180,
+      "changed_count": 2837,
+      "operation_counts": {
+        "none": 3641,
+        "remove_accents": 1732,
+        "teencode": 1426,
+        "internal_char_typo": 381
+      },
+      "change_rate": 0.395125348189415
+    },
+    {
+      "count": 7180,
+      "changed_count": 2868,
+      "operation_counts": {
+        "none": 3603,
+        "remove_accents": 1823,
+        "teencode": 1382,
+        "internal_char_typo": 372
+      },
+      "change_rate": 0.39944289693593316
+    },
+    {
+      "count": 7180,
+      "changed_count": 2876,
+      "operation_counts": {
+        "none": 3603,
+        "remove_accents": 1830,
+        "internal_char_typo": 357,
+        "teencode": 1390
+      },
+      "change_rate": 0.40055710306406683
+    },
+    {
+      "count": 7180,
+      "changed_count": 2836,
+      "operation_counts": {
+        "teencode": 1465,
+        "remove_accents": 1758,
+        "none": 3615,
+        "internal_char_typo": 342
+      },
+      "change_rate": 0.39498607242339834
+    },
+    {
+      "count": 7180,
+      "changed_count": 2806,
+      "operation_counts": {
+        "none": 3635,
+        "remove_accents": 1755,
+        "teencode": 1441,
+        "internal_char_typo": 349
+      },
+      "change_rate": 0.39080779944289695
+    },
+    {
+      "count": 7180,
+      "changed_count": 2894,
+      "operation_counts": {
+        "teencode": 1501,
+        "none": 3556,
+        "remove_accents": 1729,
+        "internal_char_typo": 394
+      },
+      "change_rate": 0.4030640668523677
+    },
+    {
+      "count": 7180,
+      "changed_count": 2818,
+      "operation_counts": {
+        "none": 3640,
+        "teencode": 1414,
+        "remove_accents": 1765,
+        "internal_char_typo": 361
+      },
+      "change_rate": 0.3924791086350975
+    },
+    {
+      "count": 7180,
+      "changed_count": 2844,
+      "operation_counts": {
+        "remove_accents": 1831,
+        "none": 3643,
+        "teencode": 1361,
+        "internal_char_typo": 345
+      },
+      "change_rate": 0.396100278551532
+    },
+    {
+      "count": 7180,
+      "changed_count": 2845,
+      "operation_counts": {
+        "none": 3624,
+        "remove_accents": 1759,
+        "teencode": 1429,
+        "internal_char_typo": 368
+      },
+      "change_rate": 0.39623955431754876
+    },
+    {
+      "count": 7180,
+      "changed_count": 2959,
+      "operation_counts": {
+        "teencode": 1439,
+        "remove_accents": 1835,
+        "none": 3505,
+        "internal_char_typo": 401
+      },
+      "change_rate": 0.41211699164345406
+    },
+    {
+      "count": 7180,
+      "changed_count": 2915,
+      "operation_counts": {
+        "remove_accents": 1825,
+        "teencode": 1464,
+        "none": 3531,
+        "internal_char_typo": 360
+      },
+      "change_rate": 0.40598885793871864
+    },
+    {
+      "count": 7180,
+      "changed_count": 2803,
+      "operation_counts": {
+        "teencode": 1416,
+        "none": 3654,
+        "remove_accents": 1767,
+        "internal_char_typo": 343
+      },
+      "change_rate": 0.3903899721448468
+    },
+    {
+      "count": 7180,
+      "changed_count": 2846,
+      "operation_counts": {
+        "remove_accents": 1799,
+        "none": 3573,
+        "internal_char_typo": 360,
+        "teencode": 1448
+      },
+      "change_rate": 0.39637883008356545
+    },
+    {
+      "count": 7180,
+      "changed_count": 2927,
+      "operation_counts": {
+        "none": 3563,
+        "teencode": 1401,
+        "remove_accents": 1845,
+        "internal_char_typo": 371
+      },
+      "change_rate": 0.40766016713091924
+    },
+    {
+      "count": 7180,
+      "changed_count": 2848,
+      "operation_counts": {
+        "remove_accents": 1798,
+        "none": 3618,
+        "teencode": 1415,
+        "internal_char_typo": 349
+      },
+      "change_rate": 0.3966573816155989
+    },
+    {
+      "count": 7180,
+      "changed_count": 2820,
+      "operation_counts": {
+        "teencode": 1413,
+        "none": 3653,
+        "internal_char_typo": 358,
+        "remove_accents": 1756
+      },
+      "change_rate": 0.39275766016713093
+    },
+    {
+      "count": 7180,
+      "changed_count": 2868,
+      "operation_counts": {
+        "teencode": 1382,
+        "remove_accents": 1823,
+        "none": 3626,
+        "internal_char_typo": 349
+      },
+      "change_rate": 0.39944289693593316
+    },
+    {
+      "count": 7180,
+      "changed_count": 2821,
+      "operation_counts": {
+        "none": 3633,
+        "remove_accents": 1762,
+        "teencode": 1430,
+        "internal_char_typo": 355
+      },
+      "change_rate": 0.3928969359331476
+    },
+    {
+      "count": 7180,
+      "changed_count": 2902,
+      "operation_counts": {
+        "none": 3562,
+        "teencode": 1431,
+        "remove_accents": 1834,
+        "internal_char_typo": 353
+      },
+      "change_rate": 0.4041782729805014
+    },
+    {
+      "count": 7180,
+      "changed_count": 2914,
+      "operation_counts": {
+        "none": 3555,
+        "internal_char_typo": 390,
+        "teencode": 1432,
+        "remove_accents": 1803
+      },
+      "change_rate": 0.40584958217270195
+    },
+    {
+      "count": 7180,
+      "changed_count": 2841,
+      "operation_counts": {
+        "none": 3660,
+        "teencode": 1382,
+        "remove_accents": 1761,
+        "internal_char_typo": 377
+      },
+      "change_rate": 0.3956824512534819
+    },
+    {
+      "count": 7180,
+      "changed_count": 2961,
+      "operation_counts": {
+        "none": 3493,
+        "remove_accents": 1883,
+        "teencode": 1440,
+        "internal_char_typo": 364
+      },
+      "change_rate": 0.4123955431754875
+    },
+    {
+      "count": 7180,
+      "changed_count": 2873,
+      "operation_counts": {
+        "none": 3539,
+        "remove_accents": 1787,
+        "teencode": 1483,
+        "internal_char_typo": 371
+      },
+      "change_rate": 0.4001392757660167
+    },
+    {
+      "count": 7180,
+      "changed_count": 2885,
+      "operation_counts": {
+        "none": 3547,
+        "remove_accents": 1784,
+        "internal_char_typo": 374,
+        "teencode": 1475
+      },
+      "change_rate": 0.40181058495821725
+    },
+    {
+      "count": 7180,
+      "changed_count": 2861,
+      "operation_counts": {
+        "remove_accents": 1767,
+        "teencode": 1456,
+        "none": 3577,
+        "internal_char_typo": 380
+      },
+      "change_rate": 0.39846796657381617
+    },
+    {
+      "count": 7180,
+      "changed_count": 2787,
+      "operation_counts": {
+        "remove_accents": 1774,
+        "teencode": 1405,
+        "none": 3673,
+        "internal_char_typo": 328
+      },
+      "change_rate": 0.38816155988857937
+    },
+    {
+      "count": 7180,
+      "changed_count": 2895,
+      "operation_counts": {
+        "none": 3563,
+        "remove_accents": 1855,
+        "internal_char_typo": 330,
+        "teencode": 1432
+      },
+      "change_rate": 0.4032033426183844
+    },
+    {
+      "count": 7180,
+      "changed_count": 2903,
+      "operation_counts": {
+        "none": 3554,
+        "internal_char_typo": 377,
+        "remove_accents": 1847,
+        "teencode": 1402
+      },
+      "change_rate": 0.4043175487465181
+    }
+  ],
+  "best_epoch": 26,
+  "best_selection_f1": 0.727710843373494,
+  "best_validation_metrics": {
+    "n": 795,
+    "aspect_count": 34,
+    "aspect_names": [
+      "FACILITIES#CLEANLINESS",
+      "FACILITIES#COMFORT",
+      "FACILITIES#DESIGN&FEATURES",
+      "FACILITIES#GENERAL",
+      "FACILITIES#MISCELLANEOUS",
+      "FACILITIES#PRICES",
+      "FACILITIES#QUALITY",
+      "FOOD&DRINKS#MISCELLANEOUS",
+      "FOOD&DRINKS#PRICES",
+      "FOOD&DRINKS#QUALITY",
+      "FOOD&DRINKS#STYLE&OPTIONS",
+      "HOTEL#CLEANLINESS",
+      "HOTEL#COMFORT",
+      "HOTEL#DESIGN&FEATURES",
+      "HOTEL#GENERAL",
+      "HOTEL#MISCELLANEOUS",
+      "HOTEL#PRICES",
+      "HOTEL#QUALITY",
+      "LOCATION#GENERAL",
+      "ROOMS#CLEANLINESS",
+      "ROOMS#COMFORT",
+      "ROOMS#DESIGN&FEATURES",
+      "ROOMS#GENERAL",
+      "ROOMS#MISCELLANEOUS",
+      "ROOMS#PRICES",
+      "ROOMS#QUALITY",
+      "ROOM_AMENITIES#CLEANLINESS",
+      "ROOM_AMENITIES#COMFORT",
+      "ROOM_AMENITIES#DESIGN&FEATURES",
+      "ROOM_AMENITIES#GENERAL",
+      "ROOM_AMENITIES#MISCELLANEOUS",
+      "ROOM_AMENITIES#PRICES",
+      "ROOM_AMENITIES#QUALITY",
+      "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.821337849280271,
+    "detection_micro_recall": 0.7410236822001528,
+    "detection_micro_f1": 0.7791164658634538,
+    "detection_macro_precision": 0.5939508267634331,
+    "detection_macro_recall": 0.4495438189673805,
+    "detection_macro_f1": 0.48888972190718183,
+    "pair_micro_precision": 0.7671464860287892,
+    "pair_micro_recall": 0.692131398013751,
+    "pair_micro_f1": 0.727710843373494,
+    "pair_macro_precision": 0.5609756455375546,
+    "pair_macro_recall": 0.42138677631953764,
+    "pair_macro_f1": 0.45874420675641225,
+    "classification_pair_micro_f1": 0.727710843373494,
+    "classification_pair_macro_f1": 0.45874420675641225,
+    "per_aspect": {
+      "FACILITIES#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091
+        },
+        "detection_tp": 5,
+        "gold_present": 6,
+        "predicted_present": 5
+      },
+      "FACILITIES#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 3,
+        "predicted_present": 0
+      },
+      "FACILITIES#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.2857142857142857,
+          "f1": 0.4444444444444444
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.2857142857142857,
+          "f1": 0.4444444444444444
+        },
+        "detection_tp": 2,
+        "gold_present": 7,
+        "predicted_present": 2
+      },
+      "FACILITIES#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6363636363636364,
+          "recall": 0.3888888888888889,
+          "f1": 0.4827586206896552
+        },
+        "pair": {
+          "precision": 0.6363636363636364,
+          "recall": 0.3888888888888889,
+          "f1": 0.4827586206896552
+        },
+        "detection_tp": 7,
+        "gold_present": 18,
+        "predicted_present": 11
+      },
+      "FACILITIES#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 5,
+        "predicted_present": 0
+      },
+      "FACILITIES#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 2,
+        "predicted_present": 0
+      },
+      "FACILITIES#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6666666666666666,
+          "recall": 0.4444444444444444,
+          "f1": 0.5333333333333333
+        },
+        "pair": {
+          "precision": 0.6666666666666666,
+          "recall": 0.4444444444444444,
+          "f1": 0.5333333333333333
+        },
+        "detection_tp": 4,
+        "gold_present": 9,
+        "predicted_present": 6
+      },
+      "FOOD&DRINKS#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 4,
+        "predicted_present": 0
+      },
+      "FOOD&DRINKS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 3,
+        "predicted_present": 0
+      },
+      "FOOD&DRINKS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8372093023255814,
+          "recall": 0.8780487804878049,
+          "f1": 0.8571428571428571
+        },
+        "pair": {
+          "precision": 0.7674418604651163,
+          "recall": 0.8048780487804879,
+          "f1": 0.7857142857142857
+        },
+        "detection_tp": 36,
+        "gold_present": 41,
+        "predicted_present": 43
+      },
+      "FOOD&DRINKS#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7931034482758621,
+          "recall": 0.7666666666666667,
+          "f1": 0.7796610169491526
+        },
+        "pair": {
+          "precision": 0.7586206896551724,
+          "recall": 0.7333333333333333,
+          "f1": 0.7457627118644068
+        },
+        "detection_tp": 23,
+        "gold_present": 30,
+        "predicted_present": 29
+      },
+      "HOTEL#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7333333333333333,
+          "recall": 0.5238095238095238,
+          "f1": 0.6111111111111112
+        },
+        "pair": {
+          "precision": 0.6666666666666666,
+          "recall": 0.47619047619047616,
+          "f1": 0.5555555555555556
+        },
+        "detection_tp": 11,
+        "gold_present": 21,
+        "predicted_present": 15
+      },
+      "HOTEL#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7692307692307693,
+          "recall": 0.7843137254901961,
+          "f1": 0.7766990291262136
+        },
+        "pair": {
+          "precision": 0.7596153846153846,
+          "recall": 0.7745098039215687,
+          "f1": 0.7669902912621359
+        },
+        "detection_tp": 80,
+        "gold_present": 102,
+        "predicted_present": 104
+      },
+      "HOTEL#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7407407407407407,
+          "recall": 0.625,
+          "f1": 0.6779661016949152
+        },
+        "pair": {
+          "precision": 0.7037037037037037,
+          "recall": 0.59375,
+          "f1": 0.6440677966101694
+        },
+        "detection_tp": 20,
+        "gold_present": 32,
+        "predicted_present": 27
+      },
+      "HOTEL#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7849462365591398,
+          "recall": 0.5407407407407407,
+          "f1": 0.6403508771929824
+        },
+        "pair": {
+          "precision": 0.6774193548387096,
+          "recall": 0.4666666666666667,
+          "f1": 0.5526315789473685
+        },
+        "detection_tp": 73,
+        "gold_present": 135,
+        "predicted_present": 93
+      },
+      "HOTEL#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.1,
+          "f1": 0.18181818181818182
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.1,
+          "f1": 0.18181818181818182
+        },
+        "detection_tp": 1,
+        "gold_present": 10,
+        "predicted_present": 1
+      },
+      "HOTEL#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8918918918918919,
+          "recall": 0.9428571428571428,
+          "f1": 0.9166666666666666
+        },
+        "pair": {
+          "precision": 0.8108108108108109,
+          "recall": 0.8571428571428571,
+          "f1": 0.8333333333333334
+        },
+        "detection_tp": 66,
+        "gold_present": 70,
+        "predicted_present": 74
+      },
+      "HOTEL#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8181818181818182,
+          "recall": 0.5625,
+          "f1": 0.6666666666666666
+        },
+        "pair": {
+          "precision": 0.6818181818181818,
+          "recall": 0.46875,
+          "f1": 0.5555555555555556
+        },
+        "detection_tp": 18,
+        "gold_present": 32,
+        "predicted_present": 22
+      },
+      "LOCATION#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9626168224299065,
+          "recall": 0.9716981132075472,
+          "f1": 0.9671361502347418
+        },
+        "pair": {
+          "precision": 0.9345794392523364,
+          "recall": 0.9433962264150944,
+          "f1": 0.9389671361502347
+        },
+        "detection_tp": 103,
+        "gold_present": 106,
+        "predicted_present": 107
+      },
+      "ROOMS#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8688524590163934,
+          "recall": 0.905982905982906,
+          "f1": 0.8870292887029289
+        },
+        "pair": {
+          "precision": 0.8360655737704918,
+          "recall": 0.8717948717948718,
+          "f1": 0.8535564853556485
+        },
+        "detection_tp": 106,
+        "gold_present": 117,
+        "predicted_present": 122
+      },
+      "ROOMS#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.65625,
+          "recall": 0.4883720930232558,
+          "f1": 0.56
+        },
+        "pair": {
+          "precision": 0.59375,
+          "recall": 0.4418604651162791,
+          "f1": 0.5066666666666667
+        },
+        "detection_tp": 21,
+        "gold_present": 43,
+        "predicted_present": 32
+      },
+      "ROOMS#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7777777777777778,
+          "recall": 0.7777777777777778,
+          "f1": 0.7777777777777778
+        },
+        "pair": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "detection_tp": 42,
+        "gold_present": 54,
+        "predicted_present": 54
+      },
+      "ROOMS#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6,
+          "recall": 0.4444444444444444,
+          "f1": 0.5106382978723404
+        },
+        "pair": {
+          "precision": 0.55,
+          "recall": 0.4074074074074074,
+          "f1": 0.46808510638297873
+        },
+        "detection_tp": 12,
+        "gold_present": 27,
+        "predicted_present": 20
+      },
+      "ROOMS#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 4,
+        "predicted_present": 0
+      },
+      "ROOMS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.2857142857142857,
+          "f1": 0.4444444444444444
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.2857142857142857,
+          "f1": 0.4444444444444444
+        },
+        "detection_tp": 2,
+        "gold_present": 7,
+        "predicted_present": 2
+      },
+      "ROOMS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7777777777777778,
+          "recall": 0.5833333333333334,
+          "f1": 0.6666666666666666
+        },
+        "pair": {
+          "precision": 0.6666666666666666,
+          "recall": 0.5,
+          "f1": 0.5714285714285714
+        },
+        "detection_tp": 14,
+        "gold_present": 24,
+        "predicted_present": 18
+      },
+      "ROOM_AMENITIES#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.75,
+          "recall": 0.5,
+          "f1": 0.6
+        },
+        "pair": {
+          "precision": 0.75,
+          "recall": 0.5,
+          "f1": 0.6
+        },
+        "detection_tp": 3,
+        "gold_present": 6,
+        "predicted_present": 4
+      },
+      "ROOM_AMENITIES#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 5,
+        "predicted_present": 1
+      },
+      "ROOM_AMENITIES#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5,
+          "recall": 0.08333333333333333,
+          "f1": 0.14285714285714285
+        },
+        "pair": {
+          "precision": 0.5,
+          "recall": 0.08333333333333333,
+          "f1": 0.14285714285714285
+        },
+        "detection_tp": 1,
+        "gold_present": 12,
+        "predicted_present": 2
+      },
+      "ROOM_AMENITIES#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7976190476190477,
+          "recall": 0.8589743589743589,
+          "f1": 0.8271604938271605
+        },
+        "pair": {
+          "precision": 0.7738095238095238,
+          "recall": 0.8333333333333334,
+          "f1": 0.8024691358024691
+        },
+        "detection_tp": 67,
+        "gold_present": 78,
+        "predicted_present": 84
+      },
+      "ROOM_AMENITIES#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.3076923076923077,
+          "recall": 0.26666666666666666,
+          "f1": 0.2857142857142857
+        },
+        "pair": {
+          "precision": 0.3076923076923077,
+          "recall": 0.26666666666666666,
+          "f1": 0.2857142857142857
+        },
+        "detection_tp": 4,
+        "gold_present": 15,
+        "predicted_present": 13
+      },
+      "ROOM_AMENITIES#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 0,
+        "predicted_present": 0
+      },
+      "ROOM_AMENITIES#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.65,
+          "recall": 0.52,
+          "f1": 0.5777777777777777
+        },
+        "pair": {
+          "precision": 0.55,
+          "recall": 0.44,
+          "f1": 0.4888888888888889
+        },
+        "detection_tp": 13,
+        "gold_present": 25,
+        "predicted_present": 20
+      },
+      "SERVICE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8740740740740741,
+          "recall": 0.921875,
+          "f1": 0.8973384030418251
+        },
+        "pair": {
+          "precision": 0.8148148148148148,
+          "recall": 0.859375,
+          "f1": 0.8365019011406845
+        },
+        "detection_tp": 236,
+        "gold_present": 256,
+        "predicted_present": 270
+      }
+    },
+    "task_id": "absa_hotel",
+    "split": "validation",
+    "selection_f1": 0.727710843373494,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "elapsed_seconds": 924.5706996917725,
+  "peak_gpu_memory_allocated_bytes": 4295179776,
+  "peak_gpu_memory_reserved_bytes": 5196742656,
+  "status": "completed",
+  "checkpoint_sha256": "2864f5f5c67393ccdca7efef618089addf0028eb6381fd05c1ae51da674cf185",
+  "e13_variant": "uncentered",
+  "device": "cuda:0",
+  "e13_source_hash": "42143f183085e54b69839b7f596ee46e973f2eb24c1945398d946cc86b9db4ba",
+  "e13_insertion_layer_index": 6,
+  "e13_pair_rank": 64,
+  "e13_pair_chunk_size": 64,
+  "e13_pair_activation": "gelu_exact",
+  "e13_added_parameter_count": 73728,
+  "optimizer_group_contract": [
+    {
+      "index": 0,
+      "name": "embeddings_decay",
+      "region": "embeddings",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 1.0737418240000007e-05,
+      "lr_scale": 0.10737418240000006,
+      "exponent": 10,
+      "weight_decay": 0.01,
+      "parameter_count": 3,
+      "parameter_names": [
+        "encoder.embeddings.word_embeddings.weight",
+        "encoder.embeddings.position_embeddings.weight",
+        "encoder.embeddings.token_type_embeddings.weight"
+      ]
+    },
+    {
+      "index": 1,
+      "name": "embeddings_no_decay",
+      "region": "embeddings",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 1.0737418240000007e-05,
+      "lr_scale": 0.10737418240000006,
+      "exponent": 10,
+      "weight_decay": 0.0,
+      "parameter_count": 2,
+      "parameter_names": [
+        "encoder.embeddings.LayerNorm.weight",
+        "encoder.embeddings.LayerNorm.bias"
+      ]
+    },
+    {
+      "index": 2,
+      "name": "block_00_decay",
+      "region": "block_00",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 1.3421772800000007e-05,
+      "lr_scale": 0.13421772800000006,
+      "exponent": 9,
+      "weight_decay": 0.01,
+      "parameter_count": 6,
+      "parameter_names": [
+        "encoder.encoder.layer.0.attention.self.query.weight",
+        "encoder.encoder.layer.0.attention.self.key.weight",
+        "encoder.encoder.layer.0.attention.self.value.weight",
+        "encoder.encoder.layer.0.attention.output.dense.weight",
+        "encoder.encoder.layer.0.intermediate.dense.weight",
+        "encoder.encoder.layer.0.output.dense.weight"
+      ]
+    },
+    {
+      "index": 3,
+      "name": "block_00_no_decay",
+      "region": "block_00",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 1.3421772800000007e-05,
+      "lr_scale": 0.13421772800000006,
+      "exponent": 9,
+      "weight_decay": 0.0,
+      "parameter_count": 10,
+      "parameter_names": [
+        "encoder.encoder.layer.0.attention.self.query.bias",
+        "encoder.encoder.layer.0.attention.self.key.bias",
+        "encoder.encoder.layer.0.attention.self.value.bias",
+        "encoder.encoder.layer.0.attention.output.dense.bias",
+        "encoder.encoder.layer.0.attention.output.LayerNorm.weight",
+        "encoder.encoder.layer.0.attention.output.LayerNorm.bias",
+        "encoder.encoder.layer.0.intermediate.dense.bias",
+        "encoder.encoder.layer.0.output.dense.bias",
+        "encoder.encoder.layer.0.output.LayerNorm.weight",
+        "encoder.encoder.layer.0.output.LayerNorm.bias"
+      ]
+    },
+    {
+      "index": 4,
+      "name": "block_01_decay",
+      "region": "block_01",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 1.677721600000001e-05,
+      "lr_scale": 0.1677721600000001,
+      "exponent": 8,
+      "weight_decay": 0.01,
+      "parameter_count": 6,
+      "parameter_names": [
+        "encoder.encoder.layer.1.attention.self.query.weight",
+        "encoder.encoder.layer.1.attention.self.key.weight",
+        "encoder.encoder.layer.1.attention.self.value.weight",
+        "encoder.encoder.layer.1.attention.output.dense.weight",
+        "encoder.encoder.layer.1.intermediate.dense.weight",
+        "encoder.encoder.layer.1.output.dense.weight"
+      ]
+    },
+    {
+      "index": 5,
+      "name": "block_01_no_decay",
+      "region": "block_01",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 1.677721600000001e-05,
+      "lr_scale": 0.1677721600000001,
+      "exponent": 8,
+      "weight_decay": 0.0,
+      "parameter_count": 10,
+      "parameter_names": [
+        "encoder.encoder.layer.1.attention.self.query.bias",
+        "encoder.encoder.layer.1.attention.self.key.bias",
+        "encoder.encoder.layer.1.attention.self.value.bias",
+        "encoder.encoder.layer.1.attention.output.dense.bias",
+        "encoder.encoder.layer.1.attention.output.LayerNorm.weight",
+        "encoder.encoder.layer.1.attention.output.LayerNorm.bias",
+        "encoder.encoder.layer.1.intermediate.dense.bias",
+        "encoder.encoder.layer.1.output.dense.bias",
+        "encoder.encoder.layer.1.output.LayerNorm.weight",
+        "encoder.encoder.layer.1.output.LayerNorm.bias"
+      ]
+    },
+    {
+      "index": 6,
+      "name": "block_02_decay",
+      "region": "block_02",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 2.097152000000001e-05,
+      "lr_scale": 0.20971520000000007,
+      "exponent": 7,
+      "weight_decay": 0.01,
+      "parameter_count": 6,
+      "parameter_names": [
+        "encoder.encoder.layer.2.attention.self.query.weight",
+        "encoder.encoder.layer.2.attention.self.key.weight",
+        "encoder.encoder.layer.2.attention.self.value.weight",
+        "encoder.encoder.layer.2.attention.output.dense.weight",
+        "encoder.encoder.layer.2.intermediate.dense.weight",
+        "encoder.encoder.layer.2.output.dense.weight"
+      ]
+    },
+    {
+      "index": 7,
+      "name": "block_02_no_decay",
+      "region": "block_02",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 2.097152000000001e-05,
+      "lr_scale": 0.20971520000000007,
+      "exponent": 7,
+      "weight_decay": 0.0,
+      "parameter_count": 10,
+      "parameter_names": [
+        "encoder.encoder.layer.2.attention.self.query.bias",
+        "encoder.encoder.layer.2.attention.self.key.bias",
+        "encoder.encoder.layer.2.attention.self.value.bias",
+        "encoder.encoder.layer.2.attention.output.dense.bias",
+        "encoder.encoder.layer.2.attention.output.LayerNorm.weight",
+        "encoder.encoder.layer.2.attention.output.LayerNorm.bias",
+        "encoder.encoder.layer.2.intermediate.dense.bias",
+        "encoder.encoder.layer.2.output.dense.bias",
+        "encoder.encoder.layer.2.output.LayerNorm.weight",
+        "encoder.encoder.layer.2.output.LayerNorm.bias"
+      ]
+    },
+    {
+      "index": 8,
+      "name": "block_03_decay",
+      "region": "block_03",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 2.621440000000001e-05,
+      "lr_scale": 0.2621440000000001,
+      "exponent": 6,
+      "weight_decay": 0.01,
+      "parameter_count": 6,
+      "parameter_names": [
+        "encoder.encoder.layer.3.attention.self.query.weight",
+        "encoder.encoder.layer.3.attention.self.key.weight",
+        "encoder.encoder.layer.3.attention.self.value.weight",
+        "encoder.encoder.layer.3.attention.output.dense.weight",
+        "encoder.encoder.layer.3.intermediate.dense.weight",
+        "encoder.encoder.layer.3.output.dense.weight"
+      ]
+    },
+    {
+      "index": 9,
+      "name": "block_03_no_decay",
+      "region": "block_03",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 2.621440000000001e-05,
+      "lr_scale": 0.2621440000000001,
+      "exponent": 6,
+      "weight_decay": 0.0,
+      "parameter_count": 10,
+      "parameter_names": [
+        "encoder.encoder.layer.3.attention.self.query.bias",
+        "encoder.encoder.layer.3.attention.self.key.bias",
+        "encoder.encoder.layer.3.attention.self.value.bias",
+        "encoder.encoder.layer.3.attention.output.dense.bias",
+        "encoder.encoder.layer.3.attention.output.LayerNorm.weight",
+        "encoder.encoder.layer.3.attention.output.LayerNorm.bias",
+        "encoder.encoder.layer.3.intermediate.dense.bias",
+        "encoder.encoder.layer.3.output.dense.bias",
+        "encoder.encoder.layer.3.output.LayerNorm.weight",
+        "encoder.encoder.layer.3.output.LayerNorm.bias"
+      ]
+    },
+    {
+      "index": 10,
+      "name": "block_04_decay",
+      "region": "block_04",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 3.276800000000001e-05,
+      "lr_scale": 0.3276800000000001,
+      "exponent": 5,
+      "weight_decay": 0.01,
+      "parameter_count": 6,
+      "parameter_names": [
+        "encoder.encoder.layer.4.attention.self.query.weight",
+        "encoder.encoder.layer.4.attention.self.key.weight",
+        "encoder.encoder.layer.4.attention.self.value.weight",
+        "encoder.encoder.layer.4.attention.output.dense.weight",
+        "encoder.encoder.layer.4.intermediate.dense.weight",
+        "encoder.encoder.layer.4.output.dense.weight"
+      ]
+    },
+    {
+      "index": 11,
+      "name": "block_04_no_decay",
+      "region": "block_04",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 3.276800000000001e-05,
+      "lr_scale": 0.3276800000000001,
+      "exponent": 5,
+      "weight_decay": 0.0,
+      "parameter_count": 10,
+      "parameter_names": [
+        "encoder.encoder.layer.4.attention.self.query.bias",
+        "encoder.encoder.layer.4.attention.self.key.bias",
+        "encoder.encoder.layer.4.attention.self.value.bias",
+        "encoder.encoder.layer.4.attention.output.dense.bias",
+        "encoder.encoder.layer.4.attention.output.LayerNorm.weight",
+        "encoder.encoder.layer.4.attention.output.LayerNorm.bias",
+        "encoder.encoder.layer.4.intermediate.dense.bias",
+        "encoder.encoder.layer.4.output.dense.bias",
+        "encoder.encoder.layer.4.output.LayerNorm.weight",
+        "encoder.encoder.layer.4.output.LayerNorm.bias"
+      ]
+    },
+    {
+      "index": 12,
+      "name": "block_05_decay",
+      "region": "block_05",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 4.096000000000001e-05,
+      "lr_scale": 0.4096000000000001,
+      "exponent": 4,
+      "weight_decay": 0.01,
+      "parameter_count": 6,
+      "parameter_names": [
+        "encoder.encoder.layer.5.attention.self.query.weight",
+        "encoder.encoder.layer.5.attention.self.key.weight",
+        "encoder.encoder.layer.5.attention.self.value.weight",
+        "encoder.encoder.layer.5.attention.output.dense.weight",
+        "encoder.encoder.layer.5.intermediate.dense.weight",
+        "encoder.encoder.layer.5.output.dense.weight"
+      ]
+    },
+    {
+      "index": 13,
+      "name": "block_05_no_decay",
+      "region": "block_05",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 4.096000000000001e-05,
+      "lr_scale": 0.4096000000000001,
+      "exponent": 4,
+      "weight_decay": 0.0,
+      "parameter_count": 10,
+      "parameter_names": [
+        "encoder.encoder.layer.5.attention.self.query.bias",
+        "encoder.encoder.layer.5.attention.self.key.bias",
+        "encoder.encoder.layer.5.attention.self.value.bias",
+        "encoder.encoder.layer.5.attention.output.dense.bias",
+        "encoder.encoder.layer.5.attention.output.LayerNorm.weight",
+        "encoder.encoder.layer.5.attention.output.LayerNorm.bias",
+        "encoder.encoder.layer.5.intermediate.dense.bias",
+        "encoder.encoder.layer.5.output.dense.bias",
+        "encoder.encoder.layer.5.output.LayerNorm.weight",
+        "encoder.encoder.layer.5.output.LayerNorm.bias"
+      ]
+    },
+    {
+      "index": 14,
+      "name": "block_06_decay",
+      "region": "block_06",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 5.120000000000001e-05,
+      "lr_scale": 0.5120000000000001,
+      "exponent": 3,
+      "weight_decay": 0.01,
+      "parameter_count": 9,
+      "parameter_names": [
+        "encoder.encoder.layer.6.attention.self.query.weight",
+        "encoder.encoder.layer.6.attention.self.key.weight",
+        "encoder.encoder.layer.6.attention.self.value.weight",
+        "encoder.encoder.layer.6.attention.self.U.weight",
+        "encoder.encoder.layer.6.attention.self.W.weight",
+        "encoder.encoder.layer.6.attention.self.P.weight",
+        "encoder.encoder.layer.6.attention.output.dense.weight",
+        "encoder.encoder.layer.6.intermediate.dense.weight",
+        "encoder.encoder.layer.6.output.dense.weight"
+      ]
+    },
+    {
+      "index": 15,
+      "name": "block_06_no_decay",
+      "region": "block_06",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 5.120000000000001e-05,
+      "lr_scale": 0.5120000000000001,
+      "exponent": 3,
+      "weight_decay": 0.0,
+      "parameter_count": 10,
+      "parameter_names": [
+        "encoder.encoder.layer.6.attention.self.query.bias",
+        "encoder.encoder.layer.6.attention.self.key.bias",
+        "encoder.encoder.layer.6.attention.self.value.bias",
+        "encoder.encoder.layer.6.attention.output.dense.bias",
+        "encoder.encoder.layer.6.attention.output.LayerNorm.weight",
+        "encoder.encoder.layer.6.attention.output.LayerNorm.bias",
+        "encoder.encoder.layer.6.intermediate.dense.bias",
+        "encoder.encoder.layer.6.output.dense.bias",
+        "encoder.encoder.layer.6.output.LayerNorm.weight",
+        "encoder.encoder.layer.6.output.LayerNorm.bias"
+      ]
+    },
+    {
+      "index": 16,
+      "name": "block_07_decay",
+      "region": "block_07",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 6.400000000000001e-05,
+      "lr_scale": 0.6400000000000001,
+      "exponent": 2,
+      "weight_decay": 0.01,
+      "parameter_count": 6,
+      "parameter_names": [
+        "encoder.encoder.layer.7.attention.self.query.weight",
+        "encoder.encoder.layer.7.attention.self.key.weight",
+        "encoder.encoder.layer.7.attention.self.value.weight",
+        "encoder.encoder.layer.7.attention.output.dense.weight",
+        "encoder.encoder.layer.7.intermediate.dense.weight",
+        "encoder.encoder.layer.7.output.dense.weight"
+      ]
+    },
+    {
+      "index": 17,
+      "name": "block_07_no_decay",
+      "region": "block_07",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 6.400000000000001e-05,
+      "lr_scale": 0.6400000000000001,
+      "exponent": 2,
+      "weight_decay": 0.0,
+      "parameter_count": 10,
+      "parameter_names": [
+        "encoder.encoder.layer.7.attention.self.query.bias",
+        "encoder.encoder.layer.7.attention.self.key.bias",
+        "encoder.encoder.layer.7.attention.self.value.bias",
+        "encoder.encoder.layer.7.attention.output.dense.bias",
+        "encoder.encoder.layer.7.attention.output.LayerNorm.weight",
+        "encoder.encoder.layer.7.attention.output.LayerNorm.bias",
+        "encoder.encoder.layer.7.intermediate.dense.bias",
+        "encoder.encoder.layer.7.output.dense.bias",
+        "encoder.encoder.layer.7.output.LayerNorm.weight",
+        "encoder.encoder.layer.7.output.LayerNorm.bias"
+      ]
+    },
+    {
+      "index": 18,
+      "name": "block_08_decay",
+      "region": "block_08",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 8e-05,
+      "lr_scale": 0.8,
+      "exponent": 1,
+      "weight_decay": 0.01,
+      "parameter_count": 6,
+      "parameter_names": [
+        "encoder.encoder.layer.8.attention.self.query.weight",
+        "encoder.encoder.layer.8.attention.self.key.weight",
+        "encoder.encoder.layer.8.attention.self.value.weight",
+        "encoder.encoder.layer.8.attention.output.dense.weight",
+        "encoder.encoder.layer.8.intermediate.dense.weight",
+        "encoder.encoder.layer.8.output.dense.weight"
+      ]
+    },
+    {
+      "index": 19,
+      "name": "block_08_no_decay",
+      "region": "block_08",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 8e-05,
+      "lr_scale": 0.8,
+      "exponent": 1,
+      "weight_decay": 0.0,
+      "parameter_count": 10,
+      "parameter_names": [
+        "encoder.encoder.layer.8.attention.self.query.bias",
+        "encoder.encoder.layer.8.attention.self.key.bias",
+        "encoder.encoder.layer.8.attention.self.value.bias",
+        "encoder.encoder.layer.8.attention.output.dense.bias",
+        "encoder.encoder.layer.8.attention.output.LayerNorm.weight",
+        "encoder.encoder.layer.8.attention.output.LayerNorm.bias",
+        "encoder.encoder.layer.8.intermediate.dense.bias",
+        "encoder.encoder.layer.8.output.dense.bias",
+        "encoder.encoder.layer.8.output.LayerNorm.weight",
+        "encoder.encoder.layer.8.output.LayerNorm.bias"
+      ]
+    },
+    {
+      "index": 20,
+      "name": "block_09_decay",
+      "region": "block_09",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 0.0001,
+      "lr_scale": 1.0,
+      "exponent": 0,
+      "weight_decay": 0.01,
+      "parameter_count": 6,
+      "parameter_names": [
+        "encoder.encoder.layer.9.attention.self.query.weight",
+        "encoder.encoder.layer.9.attention.self.key.weight",
+        "encoder.encoder.layer.9.attention.self.value.weight",
+        "encoder.encoder.layer.9.attention.output.dense.weight",
+        "encoder.encoder.layer.9.intermediate.dense.weight",
+        "encoder.encoder.layer.9.output.dense.weight"
+      ]
+    },
+    {
+      "index": 21,
+      "name": "block_09_no_decay",
+      "region": "block_09",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 0.0001,
+      "lr_scale": 1.0,
+      "exponent": 0,
+      "weight_decay": 0.0,
+      "parameter_count": 10,
+      "parameter_names": [
+        "encoder.encoder.layer.9.attention.self.query.bias",
+        "encoder.encoder.layer.9.attention.self.key.bias",
+        "encoder.encoder.layer.9.attention.self.value.bias",
+        "encoder.encoder.layer.9.attention.output.dense.bias",
+        "encoder.encoder.layer.9.attention.output.LayerNorm.weight",
+        "encoder.encoder.layer.9.attention.output.LayerNorm.bias",
+        "encoder.encoder.layer.9.intermediate.dense.bias",
+        "encoder.encoder.layer.9.output.dense.bias",
+        "encoder.encoder.layer.9.output.LayerNorm.weight",
+        "encoder.encoder.layer.9.output.LayerNorm.bias"
+      ]
+    },
+    {
+      "index": 22,
+      "name": "head_decay",
+      "region": "head",
+      "decay": true,
+      "lr": 0.0,
+      "initial_lr": 0.0001,
+      "lr_scale": 1.0,
+      "exponent": 0,
+      "weight_decay": 0.01,
+      "parameter_count": 2,
+      "parameter_names": [
+        "head.dense.weight",
+        "head.output.weight"
+      ]
+    },
+    {
+      "index": 23,
+      "name": "head_no_decay",
+      "region": "head",
+      "decay": false,
+      "lr": 0.0,
+      "initial_lr": 0.0001,
+      "lr_scale": 1.0,
+      "exponent": 0,
+      "weight_decay": 0.0,
+      "parameter_count": 2,
+      "parameter_names": [
+        "head.dense.bias",
+        "head.output.bias"
+      ]
+    }
+  ],
+  "optimizer_coverage": {
+    "all_trainable": true,
+    "parameter_count": 172,
+    "group_count": 24,
+    "duplicate_parameter_count": 0,
+    "group_names": [
+      "embeddings_decay",
+      "embeddings_no_decay",
+      "block_00_decay",
+      "block_00_no_decay",
+      "block_01_decay",
+      "block_01_no_decay",
+      "block_02_decay",
+      "block_02_no_decay",
+      "block_03_decay",
+      "block_03_no_decay",
+      "block_04_decay",
+      "block_04_no_decay",
+      "block_05_decay",
+      "block_05_no_decay",
+      "block_06_decay",
+      "block_06_no_decay",
+      "block_07_decay",
+      "block_07_no_decay",
+      "block_08_decay",
+      "block_08_no_decay",
+      "block_09_decay",
+      "block_09_no_decay",
+      "head_decay",
+      "head_no_decay"
+    ],
+    "endpoint_scales": {
+      "embeddings": 0.10737418240000006,
+      "block_00": 0.13421772800000006,
+      "block_09": 1.0,
+      "head": 1.0
+    },
+    "groups": [
+      {
+        "index": 0,
+        "name": "embeddings_decay",
+        "region": "embeddings",
+        "decay": true,
+        "lr": 1.0737418240000007e-05,
+        "initial_lr": 1.0737418240000007e-05,
+        "lr_scale": 0.10737418240000006,
+        "exponent": 10,
+        "weight_decay": 0.01,
+        "parameter_count": 3,
+        "parameter_names": [
+          "encoder.embeddings.word_embeddings.weight",
+          "encoder.embeddings.position_embeddings.weight",
+          "encoder.embeddings.token_type_embeddings.weight"
+        ]
+      },
+      {
+        "index": 1,
+        "name": "embeddings_no_decay",
+        "region": "embeddings",
+        "decay": false,
+        "lr": 1.0737418240000007e-05,
+        "initial_lr": 1.0737418240000007e-05,
+        "lr_scale": 0.10737418240000006,
+        "exponent": 10,
+        "weight_decay": 0.0,
+        "parameter_count": 2,
+        "parameter_names": [
+          "encoder.embeddings.LayerNorm.weight",
+          "encoder.embeddings.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 2,
+        "name": "block_00_decay",
+        "region": "block_00",
+        "decay": true,
+        "lr": 1.3421772800000007e-05,
+        "initial_lr": 1.3421772800000007e-05,
+        "lr_scale": 0.13421772800000006,
+        "exponent": 9,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.0.attention.self.query.weight",
+          "encoder.encoder.layer.0.attention.self.key.weight",
+          "encoder.encoder.layer.0.attention.self.value.weight",
+          "encoder.encoder.layer.0.attention.output.dense.weight",
+          "encoder.encoder.layer.0.intermediate.dense.weight",
+          "encoder.encoder.layer.0.output.dense.weight"
+        ]
+      },
+      {
+        "index": 3,
+        "name": "block_00_no_decay",
+        "region": "block_00",
+        "decay": false,
+        "lr": 1.3421772800000007e-05,
+        "initial_lr": 1.3421772800000007e-05,
+        "lr_scale": 0.13421772800000006,
+        "exponent": 9,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.0.attention.self.query.bias",
+          "encoder.encoder.layer.0.attention.self.key.bias",
+          "encoder.encoder.layer.0.attention.self.value.bias",
+          "encoder.encoder.layer.0.attention.output.dense.bias",
+          "encoder.encoder.layer.0.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.0.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.0.intermediate.dense.bias",
+          "encoder.encoder.layer.0.output.dense.bias",
+          "encoder.encoder.layer.0.output.LayerNorm.weight",
+          "encoder.encoder.layer.0.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 4,
+        "name": "block_01_decay",
+        "region": "block_01",
+        "decay": true,
+        "lr": 1.677721600000001e-05,
+        "initial_lr": 1.677721600000001e-05,
+        "lr_scale": 0.1677721600000001,
+        "exponent": 8,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.1.attention.self.query.weight",
+          "encoder.encoder.layer.1.attention.self.key.weight",
+          "encoder.encoder.layer.1.attention.self.value.weight",
+          "encoder.encoder.layer.1.attention.output.dense.weight",
+          "encoder.encoder.layer.1.intermediate.dense.weight",
+          "encoder.encoder.layer.1.output.dense.weight"
+        ]
+      },
+      {
+        "index": 5,
+        "name": "block_01_no_decay",
+        "region": "block_01",
+        "decay": false,
+        "lr": 1.677721600000001e-05,
+        "initial_lr": 1.677721600000001e-05,
+        "lr_scale": 0.1677721600000001,
+        "exponent": 8,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.1.attention.self.query.bias",
+          "encoder.encoder.layer.1.attention.self.key.bias",
+          "encoder.encoder.layer.1.attention.self.value.bias",
+          "encoder.encoder.layer.1.attention.output.dense.bias",
+          "encoder.encoder.layer.1.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.1.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.1.intermediate.dense.bias",
+          "encoder.encoder.layer.1.output.dense.bias",
+          "encoder.encoder.layer.1.output.LayerNorm.weight",
+          "encoder.encoder.layer.1.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 6,
+        "name": "block_02_decay",
+        "region": "block_02",
+        "decay": true,
+        "lr": 2.097152000000001e-05,
+        "initial_lr": 2.097152000000001e-05,
+        "lr_scale": 0.20971520000000007,
+        "exponent": 7,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.2.attention.self.query.weight",
+          "encoder.encoder.layer.2.attention.self.key.weight",
+          "encoder.encoder.layer.2.attention.self.value.weight",
+          "encoder.encoder.layer.2.attention.output.dense.weight",
+          "encoder.encoder.layer.2.intermediate.dense.weight",
+          "encoder.encoder.layer.2.output.dense.weight"
+        ]
+      },
+      {
+        "index": 7,
+        "name": "block_02_no_decay",
+        "region": "block_02",
+        "decay": false,
+        "lr": 2.097152000000001e-05,
+        "initial_lr": 2.097152000000001e-05,
+        "lr_scale": 0.20971520000000007,
+        "exponent": 7,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.2.attention.self.query.bias",
+          "encoder.encoder.layer.2.attention.self.key.bias",
+          "encoder.encoder.layer.2.attention.self.value.bias",
+          "encoder.encoder.layer.2.attention.output.dense.bias",
+          "encoder.encoder.layer.2.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.2.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.2.intermediate.dense.bias",
+          "encoder.encoder.layer.2.output.dense.bias",
+          "encoder.encoder.layer.2.output.LayerNorm.weight",
+          "encoder.encoder.layer.2.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 8,
+        "name": "block_03_decay",
+        "region": "block_03",
+        "decay": true,
+        "lr": 2.621440000000001e-05,
+        "initial_lr": 2.621440000000001e-05,
+        "lr_scale": 0.2621440000000001,
+        "exponent": 6,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.3.attention.self.query.weight",
+          "encoder.encoder.layer.3.attention.self.key.weight",
+          "encoder.encoder.layer.3.attention.self.value.weight",
+          "encoder.encoder.layer.3.attention.output.dense.weight",
+          "encoder.encoder.layer.3.intermediate.dense.weight",
+          "encoder.encoder.layer.3.output.dense.weight"
+        ]
+      },
+      {
+        "index": 9,
+        "name": "block_03_no_decay",
+        "region": "block_03",
+        "decay": false,
+        "lr": 2.621440000000001e-05,
+        "initial_lr": 2.621440000000001e-05,
+        "lr_scale": 0.2621440000000001,
+        "exponent": 6,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.3.attention.self.query.bias",
+          "encoder.encoder.layer.3.attention.self.key.bias",
+          "encoder.encoder.layer.3.attention.self.value.bias",
+          "encoder.encoder.layer.3.attention.output.dense.bias",
+          "encoder.encoder.layer.3.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.3.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.3.intermediate.dense.bias",
+          "encoder.encoder.layer.3.output.dense.bias",
+          "encoder.encoder.layer.3.output.LayerNorm.weight",
+          "encoder.encoder.layer.3.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 10,
+        "name": "block_04_decay",
+        "region": "block_04",
+        "decay": true,
+        "lr": 3.276800000000001e-05,
+        "initial_lr": 3.276800000000001e-05,
+        "lr_scale": 0.3276800000000001,
+        "exponent": 5,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.4.attention.self.query.weight",
+          "encoder.encoder.layer.4.attention.self.key.weight",
+          "encoder.encoder.layer.4.attention.self.value.weight",
+          "encoder.encoder.layer.4.attention.output.dense.weight",
+          "encoder.encoder.layer.4.intermediate.dense.weight",
+          "encoder.encoder.layer.4.output.dense.weight"
+        ]
+      },
+      {
+        "index": 11,
+        "name": "block_04_no_decay",
+        "region": "block_04",
+        "decay": false,
+        "lr": 3.276800000000001e-05,
+        "initial_lr": 3.276800000000001e-05,
+        "lr_scale": 0.3276800000000001,
+        "exponent": 5,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.4.attention.self.query.bias",
+          "encoder.encoder.layer.4.attention.self.key.bias",
+          "encoder.encoder.layer.4.attention.self.value.bias",
+          "encoder.encoder.layer.4.attention.output.dense.bias",
+          "encoder.encoder.layer.4.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.4.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.4.intermediate.dense.bias",
+          "encoder.encoder.layer.4.output.dense.bias",
+          "encoder.encoder.layer.4.output.LayerNorm.weight",
+          "encoder.encoder.layer.4.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 12,
+        "name": "block_05_decay",
+        "region": "block_05",
+        "decay": true,
+        "lr": 4.096000000000001e-05,
+        "initial_lr": 4.096000000000001e-05,
+        "lr_scale": 0.4096000000000001,
+        "exponent": 4,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.5.attention.self.query.weight",
+          "encoder.encoder.layer.5.attention.self.key.weight",
+          "encoder.encoder.layer.5.attention.self.value.weight",
+          "encoder.encoder.layer.5.attention.output.dense.weight",
+          "encoder.encoder.layer.5.intermediate.dense.weight",
+          "encoder.encoder.layer.5.output.dense.weight"
+        ]
+      },
+      {
+        "index": 13,
+        "name": "block_05_no_decay",
+        "region": "block_05",
+        "decay": false,
+        "lr": 4.096000000000001e-05,
+        "initial_lr": 4.096000000000001e-05,
+        "lr_scale": 0.4096000000000001,
+        "exponent": 4,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.5.attention.self.query.bias",
+          "encoder.encoder.layer.5.attention.self.key.bias",
+          "encoder.encoder.layer.5.attention.self.value.bias",
+          "encoder.encoder.layer.5.attention.output.dense.bias",
+          "encoder.encoder.layer.5.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.5.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.5.intermediate.dense.bias",
+          "encoder.encoder.layer.5.output.dense.bias",
+          "encoder.encoder.layer.5.output.LayerNorm.weight",
+          "encoder.encoder.layer.5.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 14,
+        "name": "block_06_decay",
+        "region": "block_06",
+        "decay": true,
+        "lr": 5.120000000000001e-05,
+        "initial_lr": 5.120000000000001e-05,
+        "lr_scale": 0.5120000000000001,
+        "exponent": 3,
+        "weight_decay": 0.01,
+        "parameter_count": 9,
+        "parameter_names": [
+          "encoder.encoder.layer.6.attention.self.query.weight",
+          "encoder.encoder.layer.6.attention.self.key.weight",
+          "encoder.encoder.layer.6.attention.self.value.weight",
+          "encoder.encoder.layer.6.attention.self.U.weight",
+          "encoder.encoder.layer.6.attention.self.W.weight",
+          "encoder.encoder.layer.6.attention.self.P.weight",
+          "encoder.encoder.layer.6.attention.output.dense.weight",
+          "encoder.encoder.layer.6.intermediate.dense.weight",
+          "encoder.encoder.layer.6.output.dense.weight"
+        ]
+      },
+      {
+        "index": 15,
+        "name": "block_06_no_decay",
+        "region": "block_06",
+        "decay": false,
+        "lr": 5.120000000000001e-05,
+        "initial_lr": 5.120000000000001e-05,
+        "lr_scale": 0.5120000000000001,
+        "exponent": 3,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.6.attention.self.query.bias",
+          "encoder.encoder.layer.6.attention.self.key.bias",
+          "encoder.encoder.layer.6.attention.self.value.bias",
+          "encoder.encoder.layer.6.attention.output.dense.bias",
+          "encoder.encoder.layer.6.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.6.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.6.intermediate.dense.bias",
+          "encoder.encoder.layer.6.output.dense.bias",
+          "encoder.encoder.layer.6.output.LayerNorm.weight",
+          "encoder.encoder.layer.6.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 16,
+        "name": "block_07_decay",
+        "region": "block_07",
+        "decay": true,
+        "lr": 6.400000000000001e-05,
+        "initial_lr": 6.400000000000001e-05,
+        "lr_scale": 0.6400000000000001,
+        "exponent": 2,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.7.attention.self.query.weight",
+          "encoder.encoder.layer.7.attention.self.key.weight",
+          "encoder.encoder.layer.7.attention.self.value.weight",
+          "encoder.encoder.layer.7.attention.output.dense.weight",
+          "encoder.encoder.layer.7.intermediate.dense.weight",
+          "encoder.encoder.layer.7.output.dense.weight"
+        ]
+      },
+      {
+        "index": 17,
+        "name": "block_07_no_decay",
+        "region": "block_07",
+        "decay": false,
+        "lr": 6.400000000000001e-05,
+        "initial_lr": 6.400000000000001e-05,
+        "lr_scale": 0.6400000000000001,
+        "exponent": 2,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.7.attention.self.query.bias",
+          "encoder.encoder.layer.7.attention.self.key.bias",
+          "encoder.encoder.layer.7.attention.self.value.bias",
+          "encoder.encoder.layer.7.attention.output.dense.bias",
+          "encoder.encoder.layer.7.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.7.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.7.intermediate.dense.bias",
+          "encoder.encoder.layer.7.output.dense.bias",
+          "encoder.encoder.layer.7.output.LayerNorm.weight",
+          "encoder.encoder.layer.7.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 18,
+        "name": "block_08_decay",
+        "region": "block_08",
+        "decay": true,
+        "lr": 8e-05,
+        "initial_lr": 8e-05,
+        "lr_scale": 0.8,
+        "exponent": 1,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.8.attention.self.query.weight",
+          "encoder.encoder.layer.8.attention.self.key.weight",
+          "encoder.encoder.layer.8.attention.self.value.weight",
+          "encoder.encoder.layer.8.attention.output.dense.weight",
+          "encoder.encoder.layer.8.intermediate.dense.weight",
+          "encoder.encoder.layer.8.output.dense.weight"
+        ]
+      },
+      {
+        "index": 19,
+        "name": "block_08_no_decay",
+        "region": "block_08",
+        "decay": false,
+        "lr": 8e-05,
+        "initial_lr": 8e-05,
+        "lr_scale": 0.8,
+        "exponent": 1,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.8.attention.self.query.bias",
+          "encoder.encoder.layer.8.attention.self.key.bias",
+          "encoder.encoder.layer.8.attention.self.value.bias",
+          "encoder.encoder.layer.8.attention.output.dense.bias",
+          "encoder.encoder.layer.8.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.8.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.8.intermediate.dense.bias",
+          "encoder.encoder.layer.8.output.dense.bias",
+          "encoder.encoder.layer.8.output.LayerNorm.weight",
+          "encoder.encoder.layer.8.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 20,
+        "name": "block_09_decay",
+        "region": "block_09",
+        "decay": true,
+        "lr": 0.0001,
+        "initial_lr": 0.0001,
+        "lr_scale": 1.0,
+        "exponent": 0,
+        "weight_decay": 0.01,
+        "parameter_count": 6,
+        "parameter_names": [
+          "encoder.encoder.layer.9.attention.self.query.weight",
+          "encoder.encoder.layer.9.attention.self.key.weight",
+          "encoder.encoder.layer.9.attention.self.value.weight",
+          "encoder.encoder.layer.9.attention.output.dense.weight",
+          "encoder.encoder.layer.9.intermediate.dense.weight",
+          "encoder.encoder.layer.9.output.dense.weight"
+        ]
+      },
+      {
+        "index": 21,
+        "name": "block_09_no_decay",
+        "region": "block_09",
+        "decay": false,
+        "lr": 0.0001,
+        "initial_lr": 0.0001,
+        "lr_scale": 1.0,
+        "exponent": 0,
+        "weight_decay": 0.0,
+        "parameter_count": 10,
+        "parameter_names": [
+          "encoder.encoder.layer.9.attention.self.query.bias",
+          "encoder.encoder.layer.9.attention.self.key.bias",
+          "encoder.encoder.layer.9.attention.self.value.bias",
+          "encoder.encoder.layer.9.attention.output.dense.bias",
+          "encoder.encoder.layer.9.attention.output.LayerNorm.weight",
+          "encoder.encoder.layer.9.attention.output.LayerNorm.bias",
+          "encoder.encoder.layer.9.intermediate.dense.bias",
+          "encoder.encoder.layer.9.output.dense.bias",
+          "encoder.encoder.layer.9.output.LayerNorm.weight",
+          "encoder.encoder.layer.9.output.LayerNorm.bias"
+        ]
+      },
+      {
+        "index": 22,
+        "name": "head_decay",
+        "region": "head",
+        "decay": true,
+        "lr": 0.0001,
+        "initial_lr": 0.0001,
+        "lr_scale": 1.0,
+        "exponent": 0,
+        "weight_decay": 0.01,
+        "parameter_count": 2,
+        "parameter_names": [
+          "head.dense.weight",
+          "head.output.weight"
+        ]
+      },
+      {
+        "index": 23,
+        "name": "head_no_decay",
+        "region": "head",
+        "decay": false,
+        "lr": 0.0001,
+        "initial_lr": 0.0001,
+        "lr_scale": 1.0,
+        "exponent": 0,
+        "weight_decay": 0.0,
+        "parameter_count": 2,
+        "parameter_names": [
+          "head.dense.bias",
+          "head.output.bias"
+        ]
+      }
+    ]
+  },
+  "metadata_polarity_overlay": {
+    "vsfc_sentiment": [
+      "negative",
+      "neutral",
+      "positive"
+    ],
+    "vsfc_topic": [
+      "lecturer",
+      "training_program",
+      "facility",
+      "others"
+    ],
+    "absa_polarity": {
+      "0": "absent",
+      "1": "positive",
+      "2": "negative",
+      "3": "neutral"
+    },
+    "visfd_others_raw4": "model_binary_pair_masked"
+  }
+}

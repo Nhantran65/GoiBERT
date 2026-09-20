@@ -1,0 +1,1069 @@
+{
+  "task_id": "absa_hotel",
+  "stage": "screening",
+  "seed": 42,
+  "learning_rate": 0.0001,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 675,
+  "gradient_clip_norm": 1.0,
+  "head": "CLS -> dropout0.1 -> dense384 -> tanh -> dropout0.1 -> logits",
+  "loss": "cross_entropy",
+  "max_length": 256,
+  "length_stats": {
+    "train_count": 7180,
+    "max_tokens": 229,
+    "p50_tokens": 20.0,
+    "p95_tokens": 46.0,
+    "p99_tokens": 68.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "include_test": false,
+  "source_hash": "029ba1dd3f4f817dca37ea7f73caf3da6f5b535e8ec3604010b691a8404b43bf",
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv": "38298d4d8e77a27d7b66ecb9756414ff0303724224502ac3ffdd9a7d24f0491e",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv": "21ec6bc4811dc44b977ce4510f8abef0290dd5d13fdd75feeb693ae408629ba7"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "absa_hotel",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    ]
+  },
+  "model": {
+    "backbone": "goiturn-s-gd-mlm-e6",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 136,
+    "num_aspects": 34,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 26597896,
+    "trainable_parameters": 26597896
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:1",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": null
+  },
+  "attention_implementation": "sdpa",
+  "backbone_hashes": {
+    "config.json": "c0203f56a3d1276b5acbc45832a8724fde02f2dc595b673281ae977aa75009c9",
+    "model.safetensors": "96163c803854bdfe67f76a58158a450df45a14742312e0b529aa96b230f7406b",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "tokenizer_hashes": {
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738"
+  },
+  "resumable": false,
+  "resume_support": "fresh_rerun_only; no resume CLI",
+  "git_commit": null,
+  "argv": [
+    "/home/kiettqa/GoiBERT/scripts/run_e6_finetune.py",
+    "--task-id",
+    "absa_hotel",
+    "--device",
+    "cuda:1",
+    "--output-dir",
+    "/home/kiettqa/GoiBERT/artifacts/e6/finetune/absa_hotel/seed_42"
+  ],
+  "best_epoch": 14,
+  "best_validation_metrics": {
+    "n": 795,
+    "aspect_count": 34,
+    "aspect_names": [
+      "FACILITIES#CLEANLINESS",
+      "FACILITIES#COMFORT",
+      "FACILITIES#DESIGN&FEATURES",
+      "FACILITIES#GENERAL",
+      "FACILITIES#MISCELLANEOUS",
+      "FACILITIES#PRICES",
+      "FACILITIES#QUALITY",
+      "FOOD&DRINKS#MISCELLANEOUS",
+      "FOOD&DRINKS#PRICES",
+      "FOOD&DRINKS#QUALITY",
+      "FOOD&DRINKS#STYLE&OPTIONS",
+      "HOTEL#CLEANLINESS",
+      "HOTEL#COMFORT",
+      "HOTEL#DESIGN&FEATURES",
+      "HOTEL#GENERAL",
+      "HOTEL#MISCELLANEOUS",
+      "HOTEL#PRICES",
+      "HOTEL#QUALITY",
+      "LOCATION#GENERAL",
+      "ROOMS#CLEANLINESS",
+      "ROOMS#COMFORT",
+      "ROOMS#DESIGN&FEATURES",
+      "ROOMS#GENERAL",
+      "ROOMS#MISCELLANEOUS",
+      "ROOMS#PRICES",
+      "ROOMS#QUALITY",
+      "ROOM_AMENITIES#CLEANLINESS",
+      "ROOM_AMENITIES#COMFORT",
+      "ROOM_AMENITIES#DESIGN&FEATURES",
+      "ROOM_AMENITIES#GENERAL",
+      "ROOM_AMENITIES#MISCELLANEOUS",
+      "ROOM_AMENITIES#PRICES",
+      "ROOM_AMENITIES#QUALITY",
+      "SERVICE#GENERAL"
+    ],
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "metric_scope": "detection=all positive aspect slots; pair=end-to-end exact aspect-polarity slots over pair_scored_aspects; no flattened multiclass macro",
+    "detection_micro_precision": 0.8192668371696504,
+    "detection_micro_recall": 0.73414820473644,
+    "detection_micro_f1": 0.774375503626108,
+    "detection_macro_precision": 0.5352302613387436,
+    "detection_macro_recall": 0.42265611694851435,
+    "detection_macro_f1": 0.45527992451140853,
+    "pair_micro_precision": 0.7527706734867861,
+    "pair_micro_recall": 0.6745607333842628,
+    "pair_micro_f1": 0.7115229653505237,
+    "pair_macro_precision": 0.4884169683132697,
+    "pair_macro_recall": 0.383833300226343,
+    "pair_macro_f1": 0.4133034930824703,
+    "classification_pair_micro_f1": 0.7115229653505237,
+    "classification_pair_macro_f1": 0.4133034930824703,
+    "per_aspect": {
+      "FACILITIES#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        "detection_tp": 4,
+        "gold_present": 6,
+        "predicted_present": 4
+      },
+      "FACILITIES#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 3,
+        "predicted_present": 0
+      },
+      "FACILITIES#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.2857142857142857,
+          "f1": 0.4444444444444444
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.2857142857142857,
+          "f1": 0.4444444444444444
+        },
+        "detection_tp": 2,
+        "gold_present": 7,
+        "predicted_present": 2
+      },
+      "FACILITIES#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5833333333333334,
+          "recall": 0.3888888888888889,
+          "f1": 0.4666666666666667
+        },
+        "pair": {
+          "precision": 0.5833333333333334,
+          "recall": 0.3888888888888889,
+          "f1": 0.4666666666666667
+        },
+        "detection_tp": 7,
+        "gold_present": 18,
+        "predicted_present": 12
+      },
+      "FACILITIES#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 5,
+        "predicted_present": 0
+      },
+      "FACILITIES#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 2,
+        "predicted_present": 0
+      },
+      "FACILITIES#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8,
+          "recall": 0.4444444444444444,
+          "f1": 0.5714285714285714
+        },
+        "pair": {
+          "precision": 0.8,
+          "recall": 0.4444444444444444,
+          "f1": 0.5714285714285714
+        },
+        "detection_tp": 4,
+        "gold_present": 9,
+        "predicted_present": 5
+      },
+      "FOOD&DRINKS#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 4,
+        "predicted_present": 0
+      },
+      "FOOD&DRINKS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 3,
+        "predicted_present": 0
+      },
+      "FOOD&DRINKS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.85,
+          "recall": 0.8292682926829268,
+          "f1": 0.8395061728395061
+        },
+        "pair": {
+          "precision": 0.775,
+          "recall": 0.7560975609756098,
+          "f1": 0.7654320987654321
+        },
+        "detection_tp": 34,
+        "gold_present": 41,
+        "predicted_present": 40
+      },
+      "FOOD&DRINKS#STYLE&OPTIONS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8620689655172413,
+          "recall": 0.8333333333333334,
+          "f1": 0.847457627118644
+        },
+        "pair": {
+          "precision": 0.8275862068965517,
+          "recall": 0.8,
+          "f1": 0.8135593220338984
+        },
+        "detection_tp": 25,
+        "gold_present": 30,
+        "predicted_present": 29
+      },
+      "HOTEL#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6428571428571429,
+          "recall": 0.42857142857142855,
+          "f1": 0.5142857142857142
+        },
+        "pair": {
+          "precision": 0.6428571428571429,
+          "recall": 0.42857142857142855,
+          "f1": 0.5142857142857142
+        },
+        "detection_tp": 9,
+        "gold_present": 21,
+        "predicted_present": 14
+      },
+      "HOTEL#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7327586206896551,
+          "recall": 0.8333333333333334,
+          "f1": 0.7798165137614679
+        },
+        "pair": {
+          "precision": 0.7068965517241379,
+          "recall": 0.803921568627451,
+          "f1": 0.7522935779816514
+        },
+        "detection_tp": 85,
+        "gold_present": 102,
+        "predicted_present": 116
+      },
+      "HOTEL#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8275862068965517,
+          "recall": 0.75,
+          "f1": 0.7868852459016393
+        },
+        "pair": {
+          "precision": 0.7586206896551724,
+          "recall": 0.6875,
+          "f1": 0.7213114754098361
+        },
+        "detection_tp": 24,
+        "gold_present": 32,
+        "predicted_present": 29
+      },
+      "HOTEL#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7840909090909091,
+          "recall": 0.5111111111111111,
+          "f1": 0.6188340807174888
+        },
+        "pair": {
+          "precision": 0.6704545454545454,
+          "recall": 0.43703703703703706,
+          "f1": 0.5291479820627802
+        },
+        "detection_tp": 69,
+        "gold_present": 135,
+        "predicted_present": 88
+      },
+      "HOTEL#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 10,
+        "predicted_present": 1
+      },
+      "HOTEL#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8591549295774648,
+          "recall": 0.8714285714285714,
+          "f1": 0.8652482269503546
+        },
+        "pair": {
+          "precision": 0.8028169014084507,
+          "recall": 0.8142857142857143,
+          "f1": 0.8085106382978723
+        },
+        "detection_tp": 61,
+        "gold_present": 70,
+        "predicted_present": 71
+      },
+      "HOTEL#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7857142857142857,
+          "recall": 0.6875,
+          "f1": 0.7333333333333333
+        },
+        "pair": {
+          "precision": 0.4642857142857143,
+          "recall": 0.40625,
+          "f1": 0.43333333333333335
+        },
+        "detection_tp": 22,
+        "gold_present": 32,
+        "predicted_present": 28
+      },
+      "LOCATION#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.9716981132075472,
+          "recall": 0.9716981132075472,
+          "f1": 0.9716981132075472
+        },
+        "pair": {
+          "precision": 0.9339622641509434,
+          "recall": 0.9339622641509434,
+          "f1": 0.9339622641509434
+        },
+        "detection_tp": 103,
+        "gold_present": 106,
+        "predicted_present": 106
+      },
+      "ROOMS#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.875,
+          "recall": 0.8974358974358975,
+          "f1": 0.8860759493670886
+        },
+        "pair": {
+          "precision": 0.85,
+          "recall": 0.8717948717948718,
+          "f1": 0.8607594936708861
+        },
+        "detection_tp": 105,
+        "gold_present": 117,
+        "predicted_present": 120
+      },
+      "ROOMS#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6363636363636364,
+          "recall": 0.32558139534883723,
+          "f1": 0.4307692307692308
+        },
+        "pair": {
+          "precision": 0.5454545454545454,
+          "recall": 0.27906976744186046,
+          "f1": 0.36923076923076925
+        },
+        "detection_tp": 14,
+        "gold_present": 43,
+        "predicted_present": 22
+      },
+      "ROOMS#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8181818181818182,
+          "recall": 0.8333333333333334,
+          "f1": 0.8256880733944955
+        },
+        "pair": {
+          "precision": 0.7272727272727273,
+          "recall": 0.7407407407407407,
+          "f1": 0.7339449541284404
+        },
+        "detection_tp": 45,
+        "gold_present": 54,
+        "predicted_present": 55
+      },
+      "ROOMS#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.5909090909090909,
+          "recall": 0.48148148148148145,
+          "f1": 0.5306122448979592
+        },
+        "pair": {
+          "precision": 0.45454545454545453,
+          "recall": 0.37037037037037035,
+          "f1": 0.40816326530612246
+        },
+        "detection_tp": 13,
+        "gold_present": 27,
+        "predicted_present": 22
+      },
+      "ROOMS#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 4,
+        "predicted_present": 0
+      },
+      "ROOMS#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 1.0,
+          "recall": 0.14285714285714285,
+          "f1": 0.25
+        },
+        "pair": {
+          "precision": 1.0,
+          "recall": 0.14285714285714285,
+          "f1": 0.25
+        },
+        "detection_tp": 1,
+        "gold_present": 7,
+        "predicted_present": 1
+      },
+      "ROOMS#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8333333333333334,
+          "recall": 0.625,
+          "f1": 0.7142857142857143
+        },
+        "pair": {
+          "precision": 0.7222222222222222,
+          "recall": 0.5416666666666666,
+          "f1": 0.6190476190476191
+        },
+        "detection_tp": 15,
+        "gold_present": 24,
+        "predicted_present": 18
+      },
+      "ROOM_AMENITIES#CLEANLINESS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 6,
+        "predicted_present": 0
+      },
+      "ROOM_AMENITIES#COMFORT": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 5,
+        "predicted_present": 0
+      },
+      "ROOM_AMENITIES#DESIGN&FEATURES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 12,
+        "predicted_present": 1
+      },
+      "ROOM_AMENITIES#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.7578947368421053,
+          "recall": 0.9230769230769231,
+          "f1": 0.8323699421965318
+        },
+        "pair": {
+          "precision": 0.7157894736842105,
+          "recall": 0.8717948717948718,
+          "f1": 0.7861271676300579
+        },
+        "detection_tp": 72,
+        "gold_present": 78,
+        "predicted_present": 95
+      },
+      "ROOM_AMENITIES#MISCELLANEOUS": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.45454545454545453,
+          "recall": 0.3333333333333333,
+          "f1": 0.38461538461538464
+        },
+        "pair": {
+          "precision": 0.36363636363636365,
+          "recall": 0.26666666666666666,
+          "f1": 0.3076923076923077
+        },
+        "detection_tp": 5,
+        "gold_present": 15,
+        "predicted_present": 11
+      },
+      "ROOM_AMENITIES#PRICES": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "pair": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "detection_tp": 0,
+        "gold_present": 0,
+        "predicted_present": 0
+      },
+      "ROOM_AMENITIES#QUALITY": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.6666666666666666,
+          "recall": 0.4,
+          "f1": 0.5
+        },
+        "pair": {
+          "precision": 0.4666666666666667,
+          "recall": 0.28,
+          "f1": 0.35
+        },
+        "detection_tp": 10,
+        "gold_present": 25,
+        "predicted_present": 15
+      },
+      "SERVICE#GENERAL": {
+        "pair_scored": true,
+        "detection": {
+          "precision": 0.8656716417910447,
+          "recall": 0.90625,
+          "f1": 0.8854961832061069
+        },
+        "pair": {
+          "precision": 0.7947761194029851,
+          "recall": 0.83203125,
+          "f1": 0.8129770992366412
+        },
+        "detection_tp": 232,
+        "gold_present": 256,
+        "predicted_present": 268
+      }
+    },
+    "task_id": "absa_hotel",
+    "split": "validation",
+    "selection_f1": 0.7115229653505237,
+    "selection_metric": "end_to_end_pair_micro_f1"
+  },
+  "best_selection_f1": 0.7115229653505237,
+  "elapsed_seconds": 397.4589238166809,
+  "peak_gpu_memory_allocated_bytes": 1752553472,
+  "peak_gpu_memory_reserved_bytes": 2067791872,
+  "status": "completed",
+  "protocol": "E6-mlm-backbone-supervised-screening-v1",
+  "architecture_variant": "goiturn-s-gd-mlm-e6",
+  "backbone_name": "goiturn-s-gd-mlm-e6",
+  "backbone_path": "/home/kiettqa/GoiBERT/models/goiturn-s-gd-mlm-e6",
+  "mlm_backbone_path": "/home/kiettqa/GoiBERT/models/goiturn-s-gd-mlm-e6",
+  "mlm_backbone_hashes": {
+    "config.json": "c0203f56a3d1276b5acbc45832a8724fde02f2dc595b673281ae977aa75009c9",
+    "model.safetensors": "96163c803854bdfe67f76a58158a450df45a14742312e0b529aa96b230f7406b",
+    "special_tokens_map.json": "38d989b0fdad0fec0c67c14b1f3c8b68184022cf6d4adc5444526ced8653f738",
+    "tokenizer.json": "746cc4a588fb974f8a2d5316ec25940791d9ef1521f72b5294bc18474ea71491",
+    "tokenizer_config.json": "fda1e41e04b873e5d44fbfa0e6feea5716dae2da59d8161b58cdd8efa5e91f74"
+  },
+  "mlm_backbone_directory_sha256": "1b6a7b6dfa363e3002e48397d69037d83a8be9220ab4ea1bdbd8c7da42956cb2",
+  "mlm_export_manifest_path": "/home/kiettqa/GoiBERT/artifacts/e6/mlm/mlm_metadata.json",
+  "mlm_export_manifest_sha256": "77f33c2d4622b39408306be6e2b6e821acbeb7417e46ee4cfc0e7d6ddb8e46b4",
+  "mlm_ready_marker_path": "/home/kiettqa/GoiBERT/artifacts/e6/mlm/READY_FOR_FINETUNE.json",
+  "mlm_ready_marker_sha256": "b67f1f4ce8306abaa1120457c330dd6a8365db2d440a6f59b291437f6cda5984",
+  "mlm_source_hash": "256cba9a9e48cb0ecd91b7276d381aa1995f1de68267c65f9fbdfba57eeb61e8",
+  "e6_source_hash": "029ba1dd3f4f817dca37ea7f73caf3da6f5b535e8ec3604010b691a8404b43bf",
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "backbone_provenance": {
+    "source": "student GoiTurn-S-GD after E6 supervised-independent MLM continuation",
+    "encoder_only_export": true,
+    "architecture_compatibility": {
+      "hidden_size": true,
+      "num_hidden_layers": true,
+      "num_attention_heads": true,
+      "intermediate_size": true,
+      "vocab_size": true,
+      "max_position_embeddings": true
+    },
+    "tokenizer_compatibility": {
+      "tokenizer.json": true,
+      "tokenizer_config.json": true,
+      "special_tokens_map.json": true
+    },
+    "tokenizer_hash_match": {
+      "tokenizer.json": true,
+      "tokenizer_config.json": true,
+      "special_tokens_map.json": true
+    }
+  }
+}

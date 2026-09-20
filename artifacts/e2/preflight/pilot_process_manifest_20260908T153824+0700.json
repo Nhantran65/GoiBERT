@@ -1,0 +1,91 @@
+{
+  "schema": "goibert-e2-pilot-process-manifest-v1",
+  "observed_at": "2026-09-08T15:38:24+07:00",
+  "test_access": false,
+  "release_hashes": {
+    "e1_dependency": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+    "e2_code": "efb81ac232de2f0ae4287688ad0125a1d84fb1e689e2b1566ef26d8d6e2b60b5",
+    "e2_config": "45e6c36196fe95ae0eb9193e9197224bdf2980515c15ddf01998267b668b61b8",
+    "orchestrator": "f626112d163a4c9ed476d9811bb74447b337d23bd6e87d9e105ab8e0a66807b8"
+  },
+  "processes": [
+    {
+      "role": "teacher_pilot",
+      "pid": 387894,
+      "session_id": 47163,
+      "device": "cuda:1",
+      "task_id": "vsfc_sentiment",
+      "learning_rate": 0.00002,
+      "seed": 42,
+      "micro_batch_size": 8,
+      "gradient_accumulation_steps": 4,
+      "effective_batch_size": 32,
+      "artifact_dir": "artifacts/e2/stage0_teacher/vsfc_sentiment/2e-05/seed_42",
+      "log_path": "artifacts/e2/stage0_teacher/vsfc_sentiment/2e-05/teacher_pilot.stdout.log",
+      "status_at_manifest": "running"
+    },
+    {
+      "role": "ce_replay",
+      "pid": 387430,
+      "session_id": 60875,
+      "device": "cuda:2",
+      "task_id": "vsfc_sentiment",
+      "learning_rate": 0.00001,
+      "seed": 42,
+      "micro_batch_size": 32,
+      "gradient_accumulation_steps": 1,
+      "effective_batch_size": 32,
+      "artifact_dir": "artifacts/e2/stageA/ce_replay/vsfc_sentiment/seed_42",
+      "log_path": "artifacts/e2/stageA/ce_replay/vsfc_sentiment/seed_42/ce_replay.stdout.log",
+      "log_note": "tee target directory was missing at launch; canonical metadata/epoch artifacts are authoritative",
+      "status_at_manifest": "running"
+    },
+    {
+      "role": "teacher_grid_lr1e-5",
+      "pid": 436790,
+      "session_id": 53350,
+      "device": "cuda:0",
+      "task_id": "vsfc_sentiment",
+      "learning_rate": 0.00001,
+      "seed": 42,
+      "micro_batch_size": 8,
+      "gradient_accumulation_steps": 4,
+      "effective_batch_size": 32,
+      "artifact_dir": "artifacts/e2/stage0_teacher/vsfc_sentiment/1e-05/seed_42",
+      "log_path": "artifacts/e2/stage0_teacher/vsfc_sentiment/1e-05/teacher_lr1e-05.stdout.log",
+      "status_at_manifest": "running"
+    },
+    {
+      "role": "teacher_grid_lr5e-5",
+      "pid": 436972,
+      "session_id": 30903,
+      "device": "cuda:3",
+      "task_id": "vsfc_sentiment",
+      "learning_rate": 0.00005,
+      "seed": 42,
+      "micro_batch_size": 8,
+      "gradient_accumulation_steps": 4,
+      "effective_batch_size": 32,
+      "artifact_dir": "artifacts/e2/stage0_teacher/vsfc_sentiment/5e-05/seed_42",
+      "log_path": "artifacts/e2/stage0_teacher/vsfc_sentiment/5e-05/teacher_lr5e-05.stdout.log",
+      "status_at_manifest": "running"
+    }
+  ],
+  "additional_manual_screening": {
+    "role": "nc_screening_lambda0p1",
+    "pid": 488258,
+    "session_id": 12742,
+    "device": "cuda:2",
+    "task_id": "vsfc_sentiment",
+    "learning_rate": 0.00001,
+    "coefficient": 0.1,
+    "seed": 42,
+    "micro_batch_size": 32,
+    "gradient_accumulation_steps": 1,
+    "effective_batch_size": 32,
+    "artifact_dir": "artifacts/e2/stageA/nc/vsfc_sentiment/coef_0p1/seed_42",
+    "log_path": "artifacts/e2/stageA/nc/vsfc_sentiment/coef_0p1/seed_42/nc_vsfc_lambda01.stdout.log",
+    "status_at_manifest": "running"
+  },
+  "controller_handoff": "Root-owned continue_e2_after_pilots.py should wait for these four pilots plus the additional NC screening artifact, validate canonical artifacts and the CE replay delta gate, then adopt them without duplicate launches."
+}

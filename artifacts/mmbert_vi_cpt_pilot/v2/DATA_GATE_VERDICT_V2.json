@@ -1,0 +1,142 @@
+{
+ "created_at": "2026-09-19T14:25:02Z",
+ "verdict": "FAIL",
+ "checks": {
+  "general_bin9_vietnamese_ge_90": true,
+  "general_bin9_boilerplate_le_10": true,
+  "general_bin9_spun_le_5": true,
+  "general_bin9_spam_le_3": true,
+  "general_bin8_vietnamese_ge_90": true,
+  "general_bin8_boilerplate_le_10": true,
+  "general_bin8_spun_le_5": true,
+  "general_bin8_spam_le_3": true,
+  "general_bin7_vietnamese_ge_90": true,
+  "general_bin7_boilerplate_le_10": true,
+  "general_bin7_spun_le_5": true,
+  "general_bin7_spam_le_3": true,
+  "register_forum_qa_opinion_ge_70": false,
+  "register_forum_qa_spun_le_5": true,
+  "register_review_commerce_opinion_ge_70": false,
+  "register_review_commerce_spun_le_5": true,
+  "discussion_opinion_ge_70": true,
+  "wikipedia_real_content_ge_70": true,
+  "side_effect_le_15": false,
+  "general_tokens_ge_1_0B": true,
+  "register_tokens_ge_50M": false,
+  "register_tokens_ge_240M": false,
+  "wikipedia_kept_or_dropped_per_plan": true
+ },
+ "cells": {
+  "discussion": {
+   "n": 100,
+   "real_vietnamese": 1.0,
+   "boilerplate": 0.18,
+   "spun": 0.0,
+   "spam": 0.0,
+   "opinion_voice": 0.82,
+   "real_content": 1.0
+  },
+  "general_bin7": {
+   "n": 100,
+   "real_vietnamese": 1.0,
+   "boilerplate": 0.04,
+   "spun": 0.0,
+   "spam": 0.0,
+   "opinion_voice": null,
+   "real_content": 1.0
+  },
+  "general_bin8": {
+   "n": 100,
+   "real_vietnamese": 1.0,
+   "boilerplate": 0.04,
+   "spun": 0.01,
+   "spam": 0.01,
+   "opinion_voice": null,
+   "real_content": 1.0
+  },
+  "general_bin9": {
+   "n": 100,
+   "real_vietnamese": 1.0,
+   "boilerplate": 0.06,
+   "spun": 0.02,
+   "spam": 0.0,
+   "opinion_voice": null,
+   "real_content": 1.0
+  },
+  "register_forum_qa": {
+   "n": 100,
+   "real_vietnamese": 1.0,
+   "boilerplate": 0.09,
+   "spun": 0.0,
+   "spam": 0.0,
+   "opinion_voice": 0.2,
+   "real_content": 1.0
+  },
+  "register_loose": {
+   "n": 100,
+   "real_vietnamese": 1.0,
+   "boilerplate": 0.34,
+   "spun": 0.0,
+   "spam": 0.0,
+   "opinion_voice": 0.26,
+   "real_content": 1.0
+  },
+  "register_review_commerce": {
+   "n": 100,
+   "real_vietnamese": 1.0,
+   "boilerplate": 0.24,
+   "spun": 0.0,
+   "spam": 0.0,
+   "opinion_voice": 0.12,
+   "real_content": 1.0
+  },
+  "ugc_side_effect": {
+   "n": 100,
+   "real_vietnamese": 1.0,
+   "boilerplate": 0.0,
+   "spun": 0.0,
+   "spam": 0.0,
+   "opinion_voice": 0.13,
+   "real_content": 1.0,
+   "genuine_opinion_rows": 13,
+   "genuine_dropped_by_va1": 5,
+   "genuine_drop_rate": 0.38461538461538464,
+   "genuine_drop_rate_p2_s1": 0.38461538461538464,
+   "note_p2": "the plan's remedy (S1 at the 2nd percentile) does not change the side-effect rate: the genuine documents are removed by the S2 term"
+  },
+  "wikipedia": {
+   "n": 100,
+   "real_vietnamese": 1.0,
+   "boilerplate": 0.0,
+   "spun": 0.0,
+   "spam": 0.0,
+   "opinion_voice": null,
+   "real_content": 1.0
+  }
+ },
+ "thresholds": {
+  "general_vietnamese": 0.9,
+  "general_boilerplate_max": 0.1,
+  "general_spun_max": 0.05,
+  "general_spam_max": 0.03,
+  "register_opinion": 0.7,
+  "register_spun_max": 0.05,
+  "discussion_opinion": 0.7,
+  "wiki_real_content": 0.7,
+  "side_effect_max": 0.15,
+  "general_min_tokens": 1000000000,
+  "register_min_tokens": 50000000
+ },
+ "volumes": {
+  "general_tokens": 1134178900,
+  "register_tokens": 37495943,
+  "register_tokens_by_group": {
+   "forum_qa": 23377801,
+   "review_commerce": 6234302,
+   "discussion": 7883840
+  },
+  "wiki_tokens": 68924677
+ },
+ "note": "register_tokens_ge_240M is reported but not required for the 250M pilot (plan: >= 50M, report 240M)",
+ "reader": "single reader (root agent), 1 200-character excerpts / single paragraphs"
+}

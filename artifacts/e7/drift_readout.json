@@ -1,0 +1,312 @@
+{
+  "protocol": "E7-cpu-parameter-drift-readout-v1",
+  "status": "completed",
+  "source_backbone": "models/goiturn-s-gd",
+  "e1_dependency_source_hash": "456e3020bd405ec39c7b4cbab3255d0bb3cb2a8a4bda3e37cc0620d51b559873",
+  "definition": "aggregate relative encoder drift = sqrt(sum ||after-before||^2 / sum ||before||^2)",
+  "regions": {
+    "embeddings": "encoder.embeddings.*",
+    "early_blocks_0_2": "encoder.encoder.layer.0-2.*",
+    "mid_blocks_3_6": "encoder.encoder.layer.3-6.*",
+    "late_blocks_7_9": "encoder.encoder.layer.7-9.*"
+  },
+  "test_accessed": false,
+  "encoder_forward_performed": false,
+  "rows": [
+    {
+      "task_id": "vsfc_sentiment",
+      "e1_artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_sentiment__screening__1e-05__seed42__attempt_20260907T180659",
+      "e7_artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e7/vsfc_sentiment/seed_42",
+      "e1_best_epoch": 5,
+      "e7_best_epoch": 13,
+      "e1_drift_from_original_gd": {
+        "embeddings": {
+          "relative_l2_drift": 0.006065049933935674,
+          "parameter_tensor_count": 5,
+          "before_squared_l2": 5015.0304052523325,
+          "delta_squared_l2": 0.1844770444182421
+        },
+        "early_blocks_0_2": {
+          "relative_l2_drift": 0.011104286727171554,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 8093.749971016529,
+          "delta_squared_l2": 0.998001327153773
+        },
+        "mid_blocks_3_6": {
+          "relative_l2_drift": 0.012220795751929667,
+          "parameter_tensor_count": 64,
+          "before_squared_l2": 9674.119508031476,
+          "delta_squared_l2": 1.4448089376590538
+        },
+        "late_blocks_7_9": {
+          "relative_l2_drift": 0.01373746895308611,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 6665.142800151974,
+          "delta_squared_l2": 1.2578327737913193
+        }
+      },
+      "e7_drift_from_original_gd": {
+        "embeddings": {
+          "relative_l2_drift": 0.0015983242642704043,
+          "parameter_tensor_count": 5,
+          "before_squared_l2": 5015.0304052523325,
+          "delta_squared_l2": 0.012811599550071596
+        },
+        "early_blocks_0_2": {
+          "relative_l2_drift": 0.005002805369787392,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 8093.749971016529,
+          "delta_squared_l2": 0.20257087259038592
+        },
+        "mid_blocks_3_6": {
+          "relative_l2_drift": 0.011276767960701494,
+          "parameter_tensor_count": 64,
+          "before_squared_l2": 9674.119508031476,
+          "delta_squared_l2": 1.2302142021146145
+        },
+        "late_blocks_7_9": {
+          "relative_l2_drift": 0.023486302395545295,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 6665.142800151974,
+          "delta_squared_l2": 3.6765354269107338
+        }
+      }
+    },
+    {
+      "task_id": "vsfc_topic",
+      "e1_artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/vsfc_topic__screening__1e-05__seed42__attempt_20260907T181729",
+      "e7_artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e7/vsfc_topic/seed_42",
+      "e1_best_epoch": 7,
+      "e7_best_epoch": 30,
+      "e1_drift_from_original_gd": {
+        "embeddings": {
+          "relative_l2_drift": 0.009219103118169146,
+          "parameter_tensor_count": 5,
+          "before_squared_l2": 5015.0304052523325,
+          "delta_squared_l2": 0.4262367736507514
+        },
+        "early_blocks_0_2": {
+          "relative_l2_drift": 0.014194920477998864,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 8093.749971016529,
+          "delta_squared_l2": 1.6308563613652118
+        },
+        "mid_blocks_3_6": {
+          "relative_l2_drift": 0.015160580171582354,
+          "parameter_tensor_count": 64,
+          "before_squared_l2": 9674.119508031476,
+          "delta_squared_l2": 2.223530499185775
+        },
+        "late_blocks_7_9": {
+          "relative_l2_drift": 0.017032769381517668,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 6665.142800151974,
+          "delta_squared_l2": 1.9336594551377666
+        }
+      },
+      "e7_drift_from_original_gd": {
+        "embeddings": {
+          "relative_l2_drift": 0.0024827526929834614,
+          "parameter_tensor_count": 5,
+          "before_squared_l2": 5015.0304052523325,
+          "delta_squared_l2": 0.030912953006429007
+        },
+        "early_blocks_0_2": {
+          "relative_l2_drift": 0.006241159910549581,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 8093.749971016529,
+          "delta_squared_l2": 0.3152683723249171
+        },
+        "mid_blocks_3_6": {
+          "relative_l2_drift": 0.01400284825273895,
+          "parameter_tensor_count": 64,
+          "before_squared_l2": 9674.119508031476,
+          "delta_squared_l2": 1.896899023502685
+        },
+        "late_blocks_7_9": {
+          "relative_l2_drift": 0.03067447246573379,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 6665.142800151974,
+          "delta_squared_l2": 6.271387898889992
+        }
+      }
+    },
+    {
+      "task_id": "visfd",
+      "e1_artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/visfd__screening__1e-04__seed42__attempt_20260907T183530",
+      "e7_artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e7/visfd/seed_42",
+      "e1_best_epoch": 14,
+      "e7_best_epoch": 26,
+      "e1_drift_from_original_gd": {
+        "embeddings": {
+          "relative_l2_drift": 0.14167513730322379,
+          "parameter_tensor_count": 5,
+          "before_squared_l2": 5015.0304052523325,
+          "delta_squared_l2": 100.66091060688257
+        },
+        "early_blocks_0_2": {
+          "relative_l2_drift": 0.11371504150937502,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 8093.749971016529,
+          "delta_squared_l2": 104.66117657393126
+        },
+        "mid_blocks_3_6": {
+          "relative_l2_drift": 0.10702307896767667,
+          "parameter_tensor_count": 64,
+          "before_squared_l2": 9674.119508031476,
+          "delta_squared_l2": 110.80677890022845
+        },
+        "late_blocks_7_9": {
+          "relative_l2_drift": 0.116822047333017,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 6665.142800151974,
+          "delta_squared_l2": 90.9618081520848
+        }
+      },
+      "e7_drift_from_original_gd": {
+        "embeddings": {
+          "relative_l2_drift": 0.026711905556375485,
+          "parameter_tensor_count": 5,
+          "before_squared_l2": 5015.0304052523325,
+          "delta_squared_l2": 3.578354075675396
+        },
+        "early_blocks_0_2": {
+          "relative_l2_drift": 0.03272808690239068,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 8093.749971016529,
+          "delta_squared_l2": 8.669439566555722
+        },
+        "mid_blocks_3_6": {
+          "relative_l2_drift": 0.07112382910543501,
+          "parameter_tensor_count": 64,
+          "before_squared_l2": 9674.119508031476,
+          "delta_squared_l2": 48.93749191368987
+        },
+        "late_blocks_7_9": {
+          "relative_l2_drift": 0.14912918467330138,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 6665.142800151974,
+          "delta_squared_l2": 148.22953475856121
+        }
+      }
+    },
+    {
+      "task_id": "absa_restaurant",
+      "e1_artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_restaurant__screening__1e-04__seed42__attempt_20260907T184301",
+      "e7_artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e7/absa_restaurant/seed_42",
+      "e1_best_epoch": 22,
+      "e7_best_epoch": 28,
+      "e1_drift_from_original_gd": {
+        "embeddings": {
+          "relative_l2_drift": 0.11572407286073054,
+          "parameter_tensor_count": 5,
+          "before_squared_l2": 5015.0304052523325,
+          "delta_squared_l2": 67.16159330196565
+        },
+        "early_blocks_0_2": {
+          "relative_l2_drift": 0.11556255558481072,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 8093.749971016529,
+          "delta_squared_l2": 108.08963716302024
+        },
+        "mid_blocks_3_6": {
+          "relative_l2_drift": 0.11022710450349799,
+          "parameter_tensor_count": 64,
+          "before_squared_l2": 9674.119508031476,
+          "delta_squared_l2": 117.54069294765861
+        },
+        "late_blocks_7_9": {
+          "relative_l2_drift": 0.1241808881831202,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 6665.142800151974,
+          "delta_squared_l2": 102.78245388386998
+        }
+      },
+      "e7_drift_from_original_gd": {
+        "embeddings": {
+          "relative_l2_drift": 0.020012621085966308,
+          "parameter_tensor_count": 5,
+          "before_squared_l2": 5015.0304052523325,
+          "delta_squared_l2": 2.0085447661489417
+        },
+        "early_blocks_0_2": {
+          "relative_l2_drift": 0.029796482227440572,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 8093.749971016529,
+          "delta_squared_l2": 7.185876894915004
+        },
+        "mid_blocks_3_6": {
+          "relative_l2_drift": 0.06496068324031137,
+          "parameter_tensor_count": 64,
+          "before_squared_l2": 9674.119508031476,
+          "delta_squared_l2": 40.823723721613845
+        },
+        "late_blocks_7_9": {
+          "relative_l2_drift": 0.14109614163511866,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 6665.142800151974,
+          "delta_squared_l2": 132.69047057620656
+        }
+      }
+    },
+    {
+      "task_id": "absa_hotel",
+      "e1_artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e1/.orchestrator/attempts/absa_hotel__screening__1e-04__seed42__attempt_20260907T185002",
+      "e7_artifact_dir": "/home/kiettqa/GoiBERT/artifacts/e7/absa_hotel/seed_42",
+      "e1_best_epoch": 27,
+      "e7_best_epoch": 26,
+      "e1_drift_from_original_gd": {
+        "embeddings": {
+          "relative_l2_drift": 0.10925181448018177,
+          "parameter_tensor_count": 5,
+          "before_squared_l2": 5015.0304052523325,
+          "delta_squared_l2": 59.85919713641269
+        },
+        "early_blocks_0_2": {
+          "relative_l2_drift": 0.13118196960989573,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 8093.749971016529,
+          "delta_squared_l2": 139.28298918996583
+        },
+        "mid_blocks_3_6": {
+          "relative_l2_drift": 0.12132021658033547,
+          "parameter_tensor_count": 64,
+          "before_squared_l2": 9674.119508031476,
+          "delta_squared_l2": 142.3894465472453
+        },
+        "late_blocks_7_9": {
+          "relative_l2_drift": 0.13830320383672556,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 6665.142800151974,
+          "delta_squared_l2": 127.48935976571364
+        }
+      },
+      "e7_drift_from_original_gd": {
+        "embeddings": {
+          "relative_l2_drift": 0.017915740213626456,
+          "parameter_tensor_count": 5,
+          "before_squared_l2": 5015.0304052523325,
+          "delta_squared_l2": 1.6096931025095746
+        },
+        "early_blocks_0_2": {
+          "relative_l2_drift": 0.031808056724261964,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 8093.749971016529,
+          "delta_squared_l2": 8.188871545570635
+        },
+        "mid_blocks_3_6": {
+          "relative_l2_drift": 0.0678118690150224,
+          "parameter_tensor_count": 64,
+          "before_squared_l2": 9674.119508031476,
+          "delta_squared_l2": 44.48595078190737
+        },
+        "late_blocks_7_9": {
+          "relative_l2_drift": 0.14521750589754057,
+          "parameter_tensor_count": 48,
+          "before_squared_l2": 6665.142800151974,
+          "delta_squared_l2": 140.55535797463114
+        }
+      }
+    }
+  ]
+}

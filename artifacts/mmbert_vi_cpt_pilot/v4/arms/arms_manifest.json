@@ -1,0 +1,153 @@
+{
+ "created_at": "2026-09-19T16:34:25Z",
+ "arms": {
+  "P_web": {
+   "arm": "P_web",
+   "dir": "artifacts/mmbert_vi_cpt_pilot/v4/arms/P_web",
+   "created_at": "2026-09-19T16:34:20Z",
+   "steps": 3815,
+   "global_batch": 128,
+   "seq_len": 512,
+   "tokens_non_pad": 250019840,
+   "budget_error_vs_250M": 19840,
+   "targets": {
+    "general": 0.95,
+    "wiki": 0.05
+   },
+   "sequence_counts_by_group": {
+    "general": 463904,
+    "wiki": 24416
+   },
+   "informal_tokens": 0,
+   "informal_token_share": 0.0,
+   "sources": {
+    "general": "v3 general pool (bins 7-9, v3 filter, cap host 2%)",
+    "wiki": "v2 wiki_filtered (36 551 articles)",
+    "visobert": "phucdev/ViSoBERT@74dbc64e92c627c70670dd91344b776c8500a104 (research-only, CC BY-NC 4.0)"
+   },
+   "order": "uniform shuffle seed 42",
+   "tokens_hash": "2766f8b9d20af31ea54a8dcc858d727228af2ad37aed18feb44778dfb445c267",
+   "order_hash": "f4bfd6bff8556857b95d5c0a88b098d417de87b206b573c0b3cf69a46503d838",
+   "batch_hashes_step0_3": [
+    "8b27fef77e02f59ff68cee8846ba987cf1b9b0b703317b5a0a58b1465438aa4c",
+    "40b65cd93326dd045c5675d4d7dd28dfb53f0bca499dcbfaed5047fd1dfeba37",
+    "a5654becb73e0ccdffc5b046685e982dd0b4dc2b0cb5a48cca3399544cb5ce53",
+    "f25157071e5ef850569a0fec6f89486a8c09345a0a50172ec0a7fa9920850234"
+   ],
+   "multiset_hash": null,
+   "license": "no NC data: general v3 pool + Wikipedia v2 (CC BY-SA 4.0)",
+   "research_only": false,
+   "source_hash": "5ce6fb003ffb3d10e8efb61b5e667add2c909627ea53d72d462a2bf9295823b2"
+  },
+  "P_inf": {
+   "arm": "P_inf",
+   "dir": "artifacts/mmbert_vi_cpt_pilot/v4/arms/P_inf_NC_research_only",
+   "created_at": "2026-09-19T16:34:22Z",
+   "steps": 3815,
+   "global_batch": 128,
+   "seq_len": 512,
+   "tokens_non_pad": 250019840,
+   "budget_error_vs_250M": 19840,
+   "targets": {
+    "visobert": 0.3,
+    "general": 0.65,
+    "wiki": 0.05
+   },
+   "sequence_counts_by_group": {
+    "visobert": 146496,
+    "general": 317408,
+    "wiki": 24416
+   },
+   "informal_tokens": 75005952,
+   "informal_token_share": 0.3,
+   "sources": {
+    "general": "v3 general pool (bins 7-9, v3 filter, cap host 2%)",
+    "wiki": "v2 wiki_filtered (36 551 articles)",
+    "visobert": "phucdev/ViSoBERT@74dbc64e92c627c70670dd91344b776c8500a104 (research-only, CC BY-NC 4.0)"
+   },
+   "order": "uniform shuffle seed 42",
+   "tokens_hash": "d97e99582c4ec8a547c2c60c7114fee4905a1082add7d91b650fd53903c42cb6",
+   "order_hash": "5b739979397605b357f06a2c291a09c13f311cc283f804034ea15d22fbd6fe06",
+   "batch_hashes_step0_3": [
+    "196ffb2814e5cc6ad659deb7858c1070fc0e25b0a35707946b71dd719ef97fab",
+    "230d88c59dd61a94d83eb25672ff871f9482d0f2f46c702fd45383103473d3e7",
+    "35052bbaa85e6e68edd0358a07297aa90947cc77f0651ead5f7f919977b7c5dd",
+    "ee22949699b09a8eddff050c811d2579cff9b6f4c1ab77729739f3efd7da6278"
+   ],
+   "multiset_hash": "026067ff76c921ec5dd3d851cbca1aa9e179eccd5a13c7870af41c87f6541300",
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "research_only": true,
+   "source_hash": "5ce6fb003ffb3d10e8efb61b5e667add2c909627ea53d72d462a2bf9295823b2"
+  },
+  "C_inf": {
+   "arm": "C_inf",
+   "dir": "artifacts/mmbert_vi_cpt_pilot/v4/arms/C_inf_NC_research_only",
+   "created_at": "2026-09-19T16:34:24Z",
+   "steps": 3815,
+   "global_batch": 128,
+   "seq_len": 512,
+   "tokens_non_pad": 250019840,
+   "budget_error_vs_250M": 19840,
+   "targets": {
+    "visobert": 0.3,
+    "general": 0.65,
+    "wiki": 0.05
+   },
+   "sequence_counts_by_group": {
+    "visobert": 146496,
+    "general": 317408,
+    "wiki": 24416
+   },
+   "informal_tokens": 75005952,
+   "informal_token_share": 0.3,
+   "sources": {
+    "general": "v3 general pool (bins 7-9, v3 filter, cap host 2%)",
+    "wiki": "v2 wiki_filtered (36 551 articles)",
+    "visobert": "phucdev/ViSoBERT@74dbc64e92c627c70670dd91344b776c8500a104 (research-only, CC BY-NC 4.0)"
+   },
+   "order": {
+    "stage1": {
+     "batches": 1526,
+     "target_informal_fraction": 0.1,
+     "sequences": {
+      "visobert": 19533,
+      "general": 163238,
+      "wiki": 12557
+     }
+    },
+    "stage2": {
+     "batches": 1144,
+     "target_informal_fraction": 0.2,
+     "sequences": {
+      "visobert": 29286,
+      "general": 108779,
+      "wiki": 8367
+     }
+    },
+    "stage3": {
+     "batches": 1145,
+     "target_informal_fraction": 0.667,
+     "sequences": {
+      "visobert": 97677,
+      "general": 45391,
+      "wiki": 3492
+     }
+    }
+   },
+   "tokens_hash": "b395ae6ba04c3390d6c13bcbb36b8e42fbe2ac4f326d1eb32431b1be94046c8c",
+   "order_hash": "9feebc4398617fcfb738eb218e1c3941adce3dbee61e0fd8f7c0d337ba5f7ea6",
+   "batch_hashes_step0_3": [
+    "5bbfa72480e650b81d2b6e936cdb90f37b8b4bb7b617c1bee76b502228b2f51f",
+    "deaac25dd8a2a8bc0268e9e76dfe51b881f6c365ce7225cbd9421da23d415ea2",
+    "7ad6807a2f95ae4b1c2e1144b01ab8435f376c7042233fb254190bcb048b3563",
+    "6317cea567f9e060adce201272ca0a5e00b7c4b27a1aab6d6cc7400afe4c5a9c"
+   ],
+   "multiset_hash": "026067ff76c921ec5dd3d851cbca1aa9e179eccd5a13c7870af41c87f6541300",
+   "license": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+   "research_only": true,
+   "source_hash": "5ce6fb003ffb3d10e8efb61b5e667add2c909627ea53d72d462a2bf9295823b2"
+  }
+ },
+ "license_note": "ViSoBERT corpus is research-only / CC BY-NC 4.0. Checkpoints derived from it (P_inf, C_inf) are research-only, must not be released or used commercially, and their directories carry the suffix `_NC_research_only`. P_web and O contain no NC data.",
+ "elapsed_s": 110.8
+}
