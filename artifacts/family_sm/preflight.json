@@ -1,0 +1,79 @@
+{
+  "backbones": {
+    "s_prime": {
+      "parameters": 26397696,
+      "architecture": {
+        "num_hidden_layers": 10,
+        "hidden_size": 384,
+        "num_attention_heads": 6,
+        "intermediate_size": 1536,
+        "max_position_embeddings": 2050
+      }
+    },
+    "m6": {
+      "parameters": 59833344,
+      "architecture": {
+        "num_hidden_layers": 6,
+        "hidden_size": 768,
+        "num_attention_heads": 12,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2050
+      }
+    },
+    "m12": {
+      "parameters": 49366016,
+      "architecture": {
+        "num_hidden_layers": 12,
+        "hidden_size": 512,
+        "num_attention_heads": 8,
+        "intermediate_size": 2048,
+        "max_position_embeddings": 2050
+      }
+    }
+  },
+  "m6_copy_max_abs_diff": 0.0,
+  "m6_step0_loss": {
+    "teacher_layers": 0.15144897997379303,
+    "random": 1.2760676145553589
+  },
+  "smoke": {
+    "s_prime": {
+      "steps": 200,
+      "loss_first": 0.6217276453971863,
+      "loss_last": 0.28254708647727966,
+      "seconds_per_step": 0.11273136033676565,
+      "peak_vram_bytes": 6131448320,
+      "resume_max_abs_diff_101_110": 0.0
+    },
+    "m6": {
+      "steps": 200,
+      "loss_first": 0.18113215267658234,
+      "loss_last": 0.10052920132875443,
+      "seconds_per_step": 0.18241985930129886,
+      "peak_vram_bytes": 7200126976,
+      "resume_max_abs_diff_101_110": 0.0
+    },
+    "m12": {
+      "steps": 200,
+      "loss_first": 0.6344801187515259,
+      "loss_last": 0.27735045552253723,
+      "seconds_per_step": 0.2072945856489241,
+      "peak_vram_bytes": 8512166400,
+      "resume_max_abs_diff_101_110": 0.0
+    }
+  },
+  "parity": {
+    "task": "absa_hotel",
+    "seed": 42,
+    "epoch_1_5_abs_f1_point_diffs": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "best_abs_f1_point_diff": 0.0,
+    "passed": true
+  },
+  "forecast_gpu_hours_after_smoke": 35.74819350956629
+}

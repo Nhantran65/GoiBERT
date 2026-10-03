@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "error": "ValueError(\"E7 found no trainable parameters for regions: ['block_06', 'block_07', 'block_08', 'block_09']\")",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/kiettqa/GoiBERT/scripts/family_sm/bench_student.py\", line 97, in run\n    optimizer=T.make_optimizer(model,lr) if a.kind=='teacher' else build_layerwise_optimizer(model,lr,gamma=.8)\n                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/kiettqa/GoiBERT/src/goibert_e7/optim.py\", line 124, in build_layerwise_optimizer\n    raise ValueError(f\"E7 found no trainable parameters for regions: {missing_regions}\")\nValueError: E7 found no trainable parameters for regions: ['block_06', 'block_07', 'block_08', 'block_09']\n",
+  "elapsed_seconds": 0.6757540702819824,
+  "pid": 4050303,
+  "gpu": "3"
+}

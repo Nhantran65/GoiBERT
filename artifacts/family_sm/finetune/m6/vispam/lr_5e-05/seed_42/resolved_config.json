@@ -1,0 +1,50 @@
+{
+  "task": "vispam",
+  "kind": "student",
+  "fold": null,
+  "seed": 42,
+  "learning_rate": 5e-05,
+  "epochs": 30,
+  "batch_size": 32,
+  "max_length": 256,
+  "warmup_steps": 1344,
+  "total_steps": 13440,
+  "precision": "bf16",
+  "include_test": false,
+  "backbone": "/home/kiettqa/GoiBERT/artifacts/family_sm/backbones/m6/final",
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 768,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 60130180,
+    "trainable_parameters": 60130180
+  },
+  "length_stats": {
+    "train": {
+      "examples": 14306,
+      "truncated_examples": 42,
+      "truncation_rate": 0.0029358311198098698,
+      "words": 0,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 1590,
+      "truncated_examples": 8,
+      "truncation_rate": 0.005031446540880503,
+      "words": 0,
+      "truncated_words": 0
+    }
+  },
+  "alpha": 0.5,
+  "temperature": 2,
+  "labels": [
+    "0",
+    "1",
+    "2",
+    "3"
+  ]
+}

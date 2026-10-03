@@ -1,0 +1,28 @@
+{
+  "task": "vsfc_topic",
+  "arm": "kd",
+  "seed": 43,
+  "learning_rate": 1e-05,
+  "llrd_gamma": 0.8,
+  "epochs": 30,
+  "micro_batch": 32,
+  "max_length": 256,
+  "precision": "bf16",
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "backbone": "/home/kiettqa/GoiBERT/artifacts/family_sm/backbones/m12/final",
+  "kd_alpha": 0.5,
+  "kd_temperature": 2.0,
+  "include_test": false,
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 512,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 49564548,
+    "trainable_parameters": 49564548
+  }
+}
