@@ -1,0 +1,42 @@
+{
+  "task": "absa_restaurant",
+  "arm": "ce",
+  "seed": 42,
+  "learning_rate": 0.0001,
+  "llrd_gamma": 0.8,
+  "epochs": 30,
+  "micro_batch": 32,
+  "max_length": 256,
+  "precision": "bf16",
+  "warmup_steps": 660,
+  "total_steps": 6600,
+  "backbone": "/home/kiettqa/GoiBERT/artifacts/family_sm/backbones/s_prime/final",
+  "kd_alpha": null,
+  "kd_temperature": null,
+  "include_test": false,
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 48,
+    "num_aspects": 12,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 26564016,
+    "trainable_parameters": 26564016
+  },
+  "kd": false
+}

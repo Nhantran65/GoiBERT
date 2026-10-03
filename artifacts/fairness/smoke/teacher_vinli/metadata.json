@@ -1,0 +1,49 @@
+{
+  "task": "vinli",
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "epochs": 1,
+  "batch_size": 32,
+  "max_length": 256,
+  "precision": "bf16",
+  "optimizer": "E14 AdamW",
+  "include_test": false,
+  "model_spec": {
+    "total_parameters": 559894532,
+    "loading_info": {
+      "missing": [],
+      "unexpected": [
+        "lm_head.bias",
+        "lm_head.dense.bias",
+        "lm_head.dense.weight",
+        "lm_head.layer_norm.bias",
+        "lm_head.layer_norm.weight"
+      ]
+    }
+  },
+  "length_stats": {
+    "train": {
+      "examples": 64,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 3009,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    }
+  },
+  "status": "completed",
+  "best_epoch": 1,
+  "best_selection_f1": 0.19195567244871625,
+  "postrun_checks": {
+    "reload_matches_best": true,
+    "reload_predictions_identical": true,
+    "finite_train_loss": true
+  },
+  "elapsed_seconds": 12.519395351409912
+}

@@ -1,0 +1,52 @@
+{
+  "task": "vinli",
+  "kind": "student",
+  "fold": null,
+  "seed": 44,
+  "learning_rate": 0.0001,
+  "epochs": 30,
+  "batch_size": 32,
+  "max_length": 256,
+  "warmup_steps": 2286,
+  "total_steps": 22860,
+  "precision": "bf16",
+  "include_test": false,
+  "backbone": "/home/kiettqa/GoiBERT/artifacts/family_sm/backbones/s_prime/final",
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26547076,
+    "trainable_parameters": 26547076
+  },
+  "length_stats": {
+    "train": {
+      "examples": 24376,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 3009,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    }
+  },
+  "alpha": 0.5,
+  "temperature": 2,
+  "labels": [
+    "entailment",
+    "neutral",
+    "contradiction",
+    "other"
+  ],
+  "soft_labels": "/home/kiettqa/GoiBERT/artifacts/fairness/soft_insample/vinli.npz",
+  "kd": true
+}

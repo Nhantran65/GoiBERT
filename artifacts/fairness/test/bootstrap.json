@@ -1,0 +1,796 @@
+{
+  "replicates": 10000,
+  "seed": 20260930,
+  "resampling_unit": "test sentence",
+  "seed_aggregation": "mean of three run scores within each resample",
+  "p_value_method": "two-sided sign-tail bootstrap with +1 correction",
+  "pairs": {
+    "m_kd - bami_e14": {
+      "positive_ci_excludes_zero": 8,
+      "total_metrics": 15,
+      "fraction": 0.5333333333333333
+    },
+    "m_kd - bami_e7_kd": {
+      "positive_ci_excludes_zero": 2,
+      "total_metrics": 15,
+      "fraction": 0.13333333333333333
+    },
+    "s_prime_kd - bami_e14": {
+      "positive_ci_excludes_zero": 1,
+      "total_metrics": 15,
+      "fraction": 0.06666666666666667
+    },
+    "m_kd - m_ce": {
+      "positive_ci_excludes_zero": 10,
+      "total_metrics": 15,
+      "fraction": 0.6666666666666666
+    },
+    "s_prime_kd - s_prime_ce": {
+      "positive_ci_excludes_zero": 9,
+      "total_metrics": 15,
+      "fraction": 0.6
+    }
+  },
+  "metric_results": {
+    "m_kd - bami_e14": {
+      "vsfc_sentiment/accuracy": {
+        "delta": 0.052642661612935626,
+        "ci_95": [
+          -0.4106127605811736,
+          0.505369551484506
+        ],
+        "p_value_two_sided": 0.8459154084591541,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_sentiment/macro_f1": {
+        "delta": -0.32720880379842754,
+        "ci_95": [
+          -1.8743366864713678,
+          1.1788318987545927
+        ],
+        "p_value_two_sided": 0.6681331866813318,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_topic/accuracy": {
+        "delta": 0.915982312065708,
+        "ci_95": [
+          0.32638450200042257,
+          1.4950515898083978
+        ],
+        "p_value_two_sided": 0.001999800019998,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 3166
+      },
+      "vsfc_topic/macro_f1": {
+        "delta": 1.541471064405485,
+        "ci_95": [
+          0.1541566461175947,
+          2.938211202602116
+        ],
+        "p_value_two_sided": 0.029397060293970604,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 3166
+      },
+      "visfd/detection_micro_f1": {
+        "delta": 0.5500619968090632,
+        "ci_95": [
+          0.2589164938503735,
+          0.8553497183956933
+        ],
+        "p_value_two_sided": 0.0005999400059994001,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2224
+      },
+      "visfd/pair_micro_f1": {
+        "delta": 0.3691835166893185,
+        "ci_95": [
+          -0.06711281963511233,
+          0.7905354445113989
+        ],
+        "p_value_two_sided": 0.0943905609439056,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2224
+      },
+      "absa_restaurant/detection_micro_f1": {
+        "delta": 1.1069750459700174,
+        "ci_95": [
+          0.48957797859688945,
+          1.7489809663172906
+        ],
+        "p_value_two_sided": 0.0007999200079992001,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 1938
+      },
+      "absa_restaurant/pair_micro_f1": {
+        "delta": 2.4723254957869756,
+        "ci_95": [
+          1.4903919858307646,
+          3.446744500370673
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 1938
+      },
+      "absa_hotel/detection_micro_f1": {
+        "delta": 0.8055602337676362,
+        "ci_95": [
+          0.194786258045162,
+          1.414185910230579
+        ],
+        "p_value_two_sided": 0.012398760123987601,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2030
+      },
+      "absa_hotel/pair_micro_f1": {
+        "delta": 1.7316132605977117,
+        "ci_95": [
+          0.985611476852866,
+          2.449803764841286
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2030
+      },
+      "vispam/accuracy": {
+        "delta": 0.5619862439188097,
+        "ci_95": [
+          0.008387854386853633,
+          1.0822429122630473
+        ],
+        "p_value_two_sided": 0.0463953604639536,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 3974
+      },
+      "vispam/macro_f1": {
+        "delta": 0.5830545146052657,
+        "ci_95": [
+          -1.3578021828657845,
+          2.444037027735777
+        ],
+        "p_value_two_sided": 0.5401459854014599,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3974
+      },
+      "vinli/accuracy": {
+        "delta": -1.6828262565474148,
+        "ci_95": [
+          -2.741558007355408,
+          -0.6240945057394356
+        ],
+        "p_value_two_sided": 0.0025997400259974,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2991
+      },
+      "vinli/macro_f1": {
+        "delta": -1.6660578838958457,
+        "ci_95": [
+          -2.7225105985797393,
+          -0.6082231945454806
+        ],
+        "p_value_two_sided": 0.001999800019998,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2991
+      },
+      "phoner/f1": {
+        "delta": -0.851259653543778,
+        "ci_95": [
+          -1.1104490129184037,
+          -0.5929899180244256
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3000
+      }
+    },
+    "m_kd - bami_e7_kd": {
+      "vsfc_sentiment/accuracy": {
+        "delta": 0.031585596967758534,
+        "ci_95": [
+          -0.40008422825859213,
+          0.4632554221941234
+        ],
+        "p_value_two_sided": 0.9131086891310869,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_sentiment/macro_f1": {
+        "delta": -0.936614694260598,
+        "ci_95": [
+          -2.389255036768455,
+          0.4929991410464034
+        ],
+        "p_value_two_sided": 0.20137986201379862,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_topic/accuracy": {
+        "delta": 0.6422404716782495,
+        "ci_95": [
+          0.1263423878711336,
+          1.168667087807961
+        ],
+        "p_value_two_sided": 0.015798420157984203,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 3166
+      },
+      "vsfc_topic/macro_f1": {
+        "delta": 1.4438376213808652,
+        "ci_95": [
+          0.2803054172783032,
+          2.6292748127086396
+        ],
+        "p_value_two_sided": 0.014798520147985201,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 3166
+      },
+      "visfd/detection_micro_f1": {
+        "delta": -0.32002489075833296,
+        "ci_95": [
+          -0.5878077434986697,
+          -0.057199748557089376
+        ],
+        "p_value_two_sided": 0.016998300169983,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2224
+      },
+      "visfd/pair_micro_f1": {
+        "delta": -0.7837460320751006,
+        "ci_95": [
+          -1.169052015744364,
+          -0.4043966707347451
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2224
+      },
+      "absa_restaurant/detection_micro_f1": {
+        "delta": -0.37260365448119614,
+        "ci_95": [
+          -0.8679544157375446,
+          0.14092612106909436
+        ],
+        "p_value_two_sided": 0.1463853614638536,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 1938
+      },
+      "absa_restaurant/pair_micro_f1": {
+        "delta": -1.17958354543579,
+        "ci_95": [
+          -1.9736397158313648,
+          -0.37717166762716187
+        ],
+        "p_value_two_sided": 0.0025997400259974,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 1938
+      },
+      "absa_hotel/detection_micro_f1": {
+        "delta": 0.09918140736699854,
+        "ci_95": [
+          -0.33655019391925906,
+          0.5298787195969957
+        ],
+        "p_value_two_sided": 0.6635336466353364,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2030
+      },
+      "absa_hotel/pair_micro_f1": {
+        "delta": 0.4759171884618638,
+        "ci_95": [
+          -0.05719465049110928,
+          0.9996195172597133
+        ],
+        "p_value_two_sided": 0.07599240075992401,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2030
+      },
+      "vispam/accuracy": {
+        "delta": 0.20130850528434507,
+        "ci_95": [
+          -0.22647206844489176,
+          0.6290890790135961
+        ],
+        "p_value_two_sided": 0.36996300369963003,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3974
+      },
+      "vispam/macro_f1": {
+        "delta": -0.3254386770524036,
+        "ci_95": [
+          -1.6569415403723995,
+          0.9316956087690758
+        ],
+        "p_value_two_sided": 0.6223377662233777,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3974
+      },
+      "vinli/accuracy": {
+        "delta": -3.031316170734428,
+        "ci_95": [
+          -4.090047921542393,
+          -1.9725844199264486
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2991
+      },
+      "vinli/macro_f1": {
+        "delta": -3.0410774597437893,
+        "ci_95": [
+          -4.072949304663173,
+          -2.029738090696389
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2991
+      },
+      "phoner/f1": {
+        "delta": -0.8224129162643976,
+        "ci_95": [
+          -1.0841520083211669,
+          -0.5735205399446701
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3000
+      }
+    },
+    "s_prime_kd - bami_e14": {
+      "vsfc_sentiment/accuracy": {
+        "delta": -0.8001684565171843,
+        "ci_95": [
+          -1.3792377342598456,
+          -0.24215624341965736
+        ],
+        "p_value_two_sided": 0.0051994800519948,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_sentiment/macro_f1": {
+        "delta": -0.8552107433854701,
+        "ci_95": [
+          -2.553392863579803,
+          0.7752149862769103
+        ],
+        "p_value_two_sided": 0.31716828317168283,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_topic/accuracy": {
+        "delta": 0.5369551484523072,
+        "ci_95": [
+          -0.13687092019372926,
+          1.200252684775748
+        ],
+        "p_value_two_sided": 0.1277872212778722,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_topic/macro_f1": {
+        "delta": 1.2888221854754818,
+        "ci_95": [
+          -0.20567454403959107,
+          2.7786419745411375
+        ],
+        "p_value_two_sided": 0.0887911208879112,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "visfd/detection_micro_f1": {
+        "delta": 0.04218168667748046,
+        "ci_95": [
+          -0.26899190060760425,
+          0.3576671533904675
+        ],
+        "p_value_two_sided": 0.7835216478352165,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2224
+      },
+      "visfd/pair_micro_f1": {
+        "delta": -0.4774799124761131,
+        "ci_95": [
+          -0.9473859268908036,
+          -0.007948024845158405
+        ],
+        "p_value_two_sided": 0.0461953804619538,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2224
+      },
+      "absa_restaurant/detection_micro_f1": {
+        "delta": -0.11851394287940309,
+        "ci_95": [
+          -0.7751987072890412,
+          0.5306408619895001
+        ],
+        "p_value_two_sided": 0.7251274872512748,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 1938
+      },
+      "absa_restaurant/pair_micro_f1": {
+        "delta": 0.6236204081091756,
+        "ci_95": [
+          -0.39662842412016347,
+          1.6609602132762473
+        ],
+        "p_value_two_sided": 0.23377662233776622,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 1938
+      },
+      "absa_hotel/detection_micro_f1": {
+        "delta": 0.5060655082380663,
+        "ci_95": [
+          -0.1315087234920991,
+          1.1420882504720342
+        ],
+        "p_value_two_sided": 0.11478852114788521,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2030
+      },
+      "absa_hotel/pair_micro_f1": {
+        "delta": 1.070506351261983,
+        "ci_95": [
+          0.31426462486634643,
+          1.8457943669481542
+        ],
+        "p_value_two_sided": 0.006399360063993601,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2030
+      },
+      "vispam/accuracy": {
+        "delta": -0.3019627579265176,
+        "ci_95": [
+          -0.8555611474584737,
+          0.2432477772185706
+        ],
+        "p_value_two_sided": 0.286971302869713,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3974
+      },
+      "vispam/macro_f1": {
+        "delta": -1.0315740291633233,
+        "ci_95": [
+          -2.9538933352437797,
+          0.8169372041227345
+        ],
+        "p_value_two_sided": 0.285971402859714,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3974
+      },
+      "vinli/accuracy": {
+        "delta": -4.324083361194695,
+        "ci_95": [
+          -5.460826925220118,
+          -3.1984843419146354
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2991
+      },
+      "vinli/macro_f1": {
+        "delta": -4.324729644719227,
+        "ci_95": [
+          -5.468787415005735,
+          -3.200456203901372
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 2991
+      },
+      "phoner/f1": {
+        "delta": -1.3563689190991397,
+        "ci_95": [
+          -1.6411098145859397,
+          -1.0720192052596198
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3000
+      }
+    },
+    "m_kd - m_ce": {
+      "vsfc_sentiment/accuracy": {
+        "delta": 0.26321330806484866,
+        "ci_95": [
+          -0.05264266161296405,
+          0.5685407454201084
+        ],
+        "p_value_two_sided": 0.10618938106189381,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_sentiment/macro_f1": {
+        "delta": -0.007747399513647224,
+        "ci_95": [
+          -1.2330194064461761,
+          1.169131751709553
+        ],
+        "p_value_two_sided": 0.9967003299670033,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_topic/accuracy": {
+        "delta": 0.5369551484523072,
+        "ci_95": [
+          0.0631711939355597,
+          1.0317961676142318
+        ],
+        "p_value_two_sided": 0.0301969803019698,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 3166
+      },
+      "vsfc_topic/macro_f1": {
+        "delta": 0.5204597291363342,
+        "ci_95": [
+          -0.5106850902597415,
+          1.5244923686383456
+        ],
+        "p_value_two_sided": 0.31396860313968605,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "visfd/detection_micro_f1": {
+        "delta": 1.0188576139082244,
+        "ci_95": [
+          0.7415873076649977,
+          1.3046946097539918
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2224
+      },
+      "visfd/pair_micro_f1": {
+        "delta": 1.696725622683715,
+        "ci_95": [
+          1.3097427703270106,
+          2.0947800580329097
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2224
+      },
+      "absa_restaurant/detection_micro_f1": {
+        "delta": 0.8962167149501568,
+        "ci_95": [
+          0.337452374290735,
+          1.4325782574019932
+        ],
+        "p_value_two_sided": 0.0021997800219978004,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 1938
+      },
+      "absa_restaurant/pair_micro_f1": {
+        "delta": 1.5051431516702394,
+        "ci_95": [
+          0.6537654555550066,
+          2.3619434783296436
+        ],
+        "p_value_two_sided": 0.0007999200079992001,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 1938
+      },
+      "absa_hotel/detection_micro_f1": {
+        "delta": 1.2444450991451816,
+        "ci_95": [
+          0.6694398072199081,
+          1.8114157207580053
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2030
+      },
+      "absa_hotel/pair_micro_f1": {
+        "delta": 1.7265897586860603,
+        "ci_95": [
+          1.0104743719015215,
+          2.446211650797283
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2030
+      },
+      "vispam/accuracy": {
+        "delta": 0.6290890790135961,
+        "ci_95": [
+          0.15098137896326555,
+          1.0988089246770727
+        ],
+        "p_value_two_sided": 0.0105989401059894,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 3974
+      },
+      "vispam/macro_f1": {
+        "delta": 0.6952661266672777,
+        "ci_95": [
+          -0.8304955414098397,
+          2.101013685520349
+        ],
+        "p_value_two_sided": 0.3447655234476552,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3974
+      },
+      "vinli/accuracy": {
+        "delta": 2.3069207622868646,
+        "ci_95": [
+          1.4153571826590792,
+          3.1873397971692867
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2991
+      },
+      "vinli/macro_f1": {
+        "delta": 2.3130356118249296,
+        "ci_95": [
+          1.4198179624447387,
+          3.1842763499615616
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2991
+      },
+      "phoner/f1": {
+        "delta": 0.17874974621311424,
+        "ci_95": [
+          -0.05580527315414514,
+          0.4095039330668822
+        ],
+        "p_value_two_sided": 0.13338666133386662,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3000
+      }
+    },
+    "s_prime_kd - s_prime_ce": {
+      "vsfc_sentiment/accuracy": {
+        "delta": -0.2947989050326356,
+        "ci_95": [
+          -0.6843546009686179,
+          0.08422825858076521
+        ],
+        "p_value_two_sided": 0.13758624137586242,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_sentiment/macro_f1": {
+        "delta": -0.7066959186793156,
+        "ci_95": [
+          -1.8285963881860148,
+          0.3692122225295172
+        ],
+        "p_value_two_sided": 0.20357964203579643,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_topic/accuracy": {
+        "delta": 0.34744156664559966,
+        "ci_95": [
+          -0.09475679090334702,
+          0.8001684565171558
+        ],
+        "p_value_two_sided": 0.13858614138586142,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "vsfc_topic/macro_f1": {
+        "delta": 0.5515425311277937,
+        "ci_95": [
+          -0.3469215880980226,
+          1.4683354327287632
+        ],
+        "p_value_two_sided": 0.2323767623237676,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3166
+      },
+      "visfd/detection_micro_f1": {
+        "delta": 1.3555885564705648,
+        "ci_95": [
+          1.0649177420209395,
+          1.6440734190767343
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2224
+      },
+      "visfd/pair_micro_f1": {
+        "delta": 2.2671684063761717,
+        "ci_95": [
+          1.876666863524149,
+          2.665507313221952
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2224
+      },
+      "absa_restaurant/detection_micro_f1": {
+        "delta": 1.1416251280876821,
+        "ci_95": [
+          0.5878141147575857,
+          1.698983950594228
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 1938
+      },
+      "absa_restaurant/pair_micro_f1": {
+        "delta": 2.282863455197244,
+        "ci_95": [
+          1.4455049851493595,
+          3.118539118677946
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 1938
+      },
+      "absa_hotel/detection_micro_f1": {
+        "delta": 2.055189231535067,
+        "ci_95": [
+          1.4925964323678276,
+          2.6165944415077536
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2030
+      },
+      "absa_hotel/pair_micro_f1": {
+        "delta": 2.428330471046479,
+        "ci_95": [
+          1.694215336868733,
+          3.1626051500696217
+        ],
+        "p_value_two_sided": 0.00019998000199980003,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2030
+      },
+      "vispam/accuracy": {
+        "delta": -0.3187384667002249,
+        "ci_95": [
+          -0.8052340211373945,
+          0.16775708773695897
+        ],
+        "p_value_two_sided": 0.21357864213578642,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3974
+      },
+      "vispam/macro_f1": {
+        "delta": -1.1822336499227077,
+        "ci_95": [
+          -3.0896283258655335,
+          0.634956742638683
+        ],
+        "p_value_two_sided": 0.208979102089791,
+        "positive_ci_excludes_zero": false,
+        "n_test_sentences": 3974
+      },
+      "vinli/accuracy": {
+        "delta": 1.5825253538393014,
+        "ci_95": [
+          0.724395408447549,
+          2.396077120249643
+        ],
+        "p_value_two_sided": 0.00039996000399960006,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2991
+      },
+      "vinli/macro_f1": {
+        "delta": 1.5371646625402917,
+        "ci_95": [
+          0.6968698331025857,
+          2.3823542846106887
+        ],
+        "p_value_two_sided": 0.00039996000399960006,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 2991
+      },
+      "phoner/f1": {
+        "delta": 0.3284559994075522,
+        "ci_95": [
+          0.09474255750306212,
+          0.5650024003043451
+        ],
+        "p_value_two_sided": 0.006199380061993801,
+        "positive_ci_excludes_zero": true,
+        "n_test_sentences": 3000
+      }
+    }
+  }
+}

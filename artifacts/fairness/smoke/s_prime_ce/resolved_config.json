@@ -1,0 +1,29 @@
+{
+  "task": "vsfc_sentiment",
+  "arm": "ce",
+  "seed": 42,
+  "learning_rate": 1e-05,
+  "llrd_gamma": 0.8,
+  "epochs": 1,
+  "micro_batch": 32,
+  "max_length": 256,
+  "precision": "bf16",
+  "warmup_steps": 36,
+  "total_steps": 358,
+  "backbone": "/home/kiettqa/GoiBERT/artifacts/family_sm/backbones/s_prime/final",
+  "kd_alpha": null,
+  "kd_temperature": null,
+  "include_test": false,
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26546691,
+    "trainable_parameters": 26546691
+  },
+  "kd": false
+}

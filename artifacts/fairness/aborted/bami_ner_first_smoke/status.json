@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "error": "AttributeError(\"'Namespace' object has no attribute 'fold'\")",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/kiettqa/GoiBERT/scripts/fairness/bami_new.py\", line 107, in run\n    cfg={'task':a.task,'kind':a.kind,'arm':a.arm,'kd':soft is not None,'fold':a.fold,'seed':seed,'learning_rate':lr,'epochs':epochs,'batch_size':32,'max_length':maxlen,'warmup_steps':warmup,'total_steps':steps,'precision':precision,'include_test':False,'backbone':str(C.ROOT/'models/bamibert-base-original'),'optimizer':'E7 LLRD gamma 0.8','optimizer_check':optimizer_check,'model_spec':spec,'length_stats':{'train':ts,'validation':vs,**({'oof':hs} if held is not None else {})},'alpha':.5 if soft else None,'temperature':2 if soft else None,'labels':list(labels)}\n                                                                              ^^^^^^\nAttributeError: 'Namespace' object has no attribute 'fold'\n",
+  "elapsed_seconds": 1.2870230674743652,
+  "pid": 1326105,
+  "gpu": "3"
+}

@@ -1,0 +1,61 @@
+{
+  "task": "phoner",
+  "kind": "student",
+  "arm": "ce",
+  "kd": false,
+  "fold": null,
+  "seed": 43,
+  "learning_rate": 0.0001,
+  "epochs": 30,
+  "batch_size": 32,
+  "max_length": 512,
+  "warmup_steps": 474,
+  "total_steps": 4740,
+  "precision": "bf16",
+  "include_test": false,
+  "backbone": "/home/kiettqa/GoiBERT/artifacts/family_sm/backbones/m12/final",
+  "model_spec": {
+    "total_parameters": 49376789
+  },
+  "length_stats": {
+    "train": {
+      "examples": 5027,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 167541,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 2000,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 71325,
+      "truncated_words": 0
+    }
+  },
+  "alpha": null,
+  "temperature": null,
+  "labels": [
+    "O",
+    "B-AGE",
+    "B-DATE",
+    "B-GENDER",
+    "B-JOB",
+    "B-LOCATION",
+    "B-NAME",
+    "B-ORGANIZATION",
+    "B-PATIENT_ID",
+    "B-SYMPTOM_AND_DISEASE",
+    "B-TRANSPORTATION",
+    "I-AGE",
+    "I-DATE",
+    "I-GENDER",
+    "I-JOB",
+    "I-LOCATION",
+    "I-NAME",
+    "I-ORGANIZATION",
+    "I-PATIENT_ID",
+    "I-SYMPTOM_AND_DISEASE",
+    "I-TRANSPORTATION"
+  ]
+}

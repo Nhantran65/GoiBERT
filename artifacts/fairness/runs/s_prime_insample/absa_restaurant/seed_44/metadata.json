@@ -1,0 +1,53 @@
+{
+  "task": "absa_restaurant",
+  "arm": "kd",
+  "seed": 44,
+  "learning_rate": 0.0001,
+  "llrd_gamma": 0.8,
+  "epochs": 30,
+  "micro_batch": 32,
+  "max_length": 256,
+  "precision": "bf16",
+  "warmup_steps": 660,
+  "total_steps": 6600,
+  "backbone": "/home/kiettqa/GoiBERT/artifacts/family_sm/backbones/s_prime/final",
+  "kd_alpha": 0.5,
+  "kd_temperature": 2.0,
+  "include_test": false,
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 48,
+    "num_aspects": 12,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 26564016,
+    "trainable_parameters": 26564016
+  },
+  "status": "completed",
+  "best_epoch": 27,
+  "best_selection_f1": 0.7153144503120499,
+  "postrun_checks": {
+    "reload_matches_best": true,
+    "prediction_file_matches_best": true,
+    "reload_predictions_identical": true,
+    "ids_stable_and_complete": true
+  },
+  "elapsed_seconds": 232.0500032901764,
+  "soft_labels": "/home/kiettqa/GoiBERT/artifacts/fairness/soft_insample/absa_restaurant.npz",
+  "kd": true
+}
