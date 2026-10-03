@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-21",
+  "method": "Transformers 4.49 config-only models on torch meta device; no weights loaded, no GPU, no forward; encoder without pooler",
+  "head": "E14 dense H->H plus output H->136, including biases; 136 outputs cover Hotel in the current protocol",
+  "models": [
+    {"name": "bami_original", "config_source": "models/bamibert-base-original/config.json", "changes": {}, "encoder": 102360576, "with_head": 103055752},
+    {"name": "bami_ffn2880", "config_source": "models/bamibert-base-original/config.json", "changes": {"intermediate_size": 2880}, "encoder": 98819328, "with_head": 99514504},
+    {"name": "xlmr12_v35k_ff2304", "config_source": "models/trimmed/xlmr_base_vi/config.json", "changes": {"vocab_size": 35000, "intermediate_size": 2304}, "encoder": 98166528, "with_head": 98861704},
+    {"name": "xlmr10_v35k", "config_source": "models/trimmed/xlmr_base_vi/config.json", "changes": {"vocab_size": 35000, "num_hidden_layers": 10}, "encoder": 98155776, "with_head": 98850952},
+    {"name": "xlmr12_v19k", "config_source": "models/trimmed/xlmr_base_vi/config.json", "changes": {"vocab_size": 19000}, "encoder": 100043520, "with_head": 100738696},
+    {"name": "rembert", "config_source": "https://huggingface.co/google/rembert/blob/main/config.json", "shape_config": {"vocab_size": 250300, "hidden_size": 1152, "num_hidden_layers": 32, "num_attention_heads": 18, "intermediate_size": 4608, "input_embedding_size": 256, "output_embedding_size": 1664, "max_position_embeddings": 512, "type_vocab_size": 2}, "encoder": 574592128, "token_embedding": 64076800, "encoder_minus_token_embedding": 510515328}
+  ],
+  "limitations": ["Shape counts are not a pruned checkpoint or quality evaluation.", "mmBERT-small post-trimming size is an estimate from the official model card, not a local checkpoint count."]
+}
