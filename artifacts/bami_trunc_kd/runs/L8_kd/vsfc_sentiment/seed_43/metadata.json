@@ -1,0 +1,125 @@
+{
+  "task": "vsfc_sentiment",
+  "layers": 8,
+  "arm": "kd",
+  "seed": 43,
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "micro_batch_size": 32,
+  "effective_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_train_batches": null,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "kd_alpha": 0.5,
+  "kd_temperature": 2.0,
+  "include_test": false,
+  "model_spec": {
+    "backbone": "Qualcomm-AI-Research/BamiBERT",
+    "hidden_size": 768,
+    "num_hidden_layers": 8,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 74601987,
+    "trainable_parameters": 74601987
+  },
+  "parameter_counts": {
+    "encoder": 74009088,
+    "head": 592899,
+    "total": 74601987
+  },
+  "teacher_coverage": {
+    "path": "artifacts/cafe_oof_kd/soft/vsfc_sentiment.npz",
+    "train_ids": 11426,
+    "covered_train_ids": 11426,
+    "widths": [
+      3
+    ],
+    "logit_width": 3
+  },
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 164,
+    "p50_tokens": 14.0,
+    "p95_tokens": 37.0,
+    "p99_tokens": 56.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "started_at_unix": 1790416861.7501729,
+  "gpu": "0",
+  "status": "completed",
+  "best_epoch": 4,
+  "best_selection_f1": 0.8517036432485862,
+  "best_validation_metrics": {
+    "n": 1583,
+    "labels": [
+      0,
+      1,
+      2
+    ],
+    "accuracy": 0.9399873657612129,
+    "macro_precision": 0.8573374673374673,
+    "macro_recall": 0.8464405345730349,
+    "macro_f1": 0.8517036432485862,
+    "per_class": {
+      "0": {
+        "support": 705,
+        "predicted": 700,
+        "tp": 669,
+        "fp": 31,
+        "fn": 36,
+        "precision": 0.9557142857142857,
+        "recall": 0.948936170212766,
+        "f1": 0.9523131672597864
+      },
+      "1": {
+        "support": 73,
+        "predicted": 69,
+        "tp": 46,
+        "fp": 23,
+        "fn": 27,
+        "precision": 0.6666666666666666,
+        "recall": 0.6301369863013698,
+        "f1": 0.647887323943662
+      },
+      "2": {
+        "support": 805,
+        "predicted": 814,
+        "tp": 773,
+        "fp": 41,
+        "fn": 32,
+        "precision": 0.9496314496314496,
+        "recall": 0.9602484472049689,
+        "f1": 0.9549104385423101
+      }
+    },
+    "task_id": "vsfc_sentiment",
+    "split": "validation",
+    "selection_f1": 0.8517036432485862,
+    "selection_metric": "fixed_label_macro_f1"
+  },
+  "postrun_checks": {
+    "reload_matches_best": true,
+    "prediction_file_matches_best": true,
+    "reload_predictions_identical": true,
+    "ids_stable_and_complete": true,
+    "finite_train_loss": true,
+    "teacher_train_coverage": true
+  },
+  "elapsed_seconds": 552.1973826885223,
+  "checkpoint_sha256": "e4c6df0c5729c3e6e14ac36f0e3e3d70b2d0a9c559e796626109ce665470056c",
+  "peak_gpu_memory_allocated_bytes": 2615857664
+}

@@ -1,0 +1,63 @@
+{
+  "task": "vsfc_sentiment",
+  "layers": 8,
+  "arm": "kd",
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "micro_batch_size": 32,
+  "effective_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_train_batches": null,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "kd_alpha": 0.5,
+  "kd_temperature": 2.0,
+  "include_test": false,
+  "model_spec": {
+    "backbone": "Qualcomm-AI-Research/BamiBERT",
+    "hidden_size": 768,
+    "num_hidden_layers": 8,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 74601987,
+    "trainable_parameters": 74601987
+  },
+  "parameter_counts": {
+    "encoder": 74009088,
+    "head": 592899,
+    "total": 74601987
+  },
+  "teacher_coverage": {
+    "path": "artifacts/cafe_oof_kd/soft/vsfc_sentiment.npz",
+    "train_ids": 11426,
+    "covered_train_ids": 11426,
+    "widths": [
+      3
+    ],
+    "logit_width": 3
+  },
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 164,
+    "p50_tokens": 14.0,
+    "p95_tokens": 37.0,
+    "p99_tokens": 56.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "started_at_unix": 1790416781.758618,
+  "gpu": "1"
+}
