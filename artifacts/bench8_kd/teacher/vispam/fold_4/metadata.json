@@ -1,0 +1,68 @@
+{
+  "task": "vispam",
+  "kind": "teacher",
+  "fold": 4,
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "batch_size": 32,
+  "max_length": 256,
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "precision": "bf16",
+  "include_test": false,
+  "model_spec": {
+    "total_parameters": 559894532,
+    "loading_info": {
+      "missing": [],
+      "unexpected": [
+        "lm_head.bias",
+        "lm_head.dense.bias",
+        "lm_head.dense.weight",
+        "lm_head.layer_norm.bias",
+        "lm_head.layer_norm.weight"
+      ]
+    }
+  },
+  "length_stats": {
+    "train": {
+      "examples": 11445,
+      "truncated_examples": 1,
+      "truncation_rate": 8.737439930100481e-05,
+      "words": 0,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 1590,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    },
+    "oof": {
+      "examples": 2861,
+      "truncated_examples": 1,
+      "truncation_rate": 0.0003495281370150297,
+      "words": 0,
+      "truncated_words": 0
+    }
+  },
+  "alpha": null,
+  "temperature": null,
+  "labels": [
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "status": "completed",
+  "best_epoch": 7,
+  "best_selection_f1": 0.7544206808967168,
+  "postrun_checks": {
+    "reload_matches_best": true,
+    "prediction_file_matches_best": true,
+    "reload_predictions_identical": true,
+    "ids_stable_and_complete": true
+  },
+  "elapsed_seconds": 2156.7976443767548
+}

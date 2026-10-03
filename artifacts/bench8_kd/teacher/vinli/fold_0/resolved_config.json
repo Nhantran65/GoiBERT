@@ -1,0 +1,58 @@
+{
+  "task": "vinli",
+  "kind": "teacher",
+  "fold": 0,
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "batch_size": 32,
+  "max_length": 256,
+  "warmup_steps": 1830,
+  "total_steps": 18300,
+  "precision": "bf16",
+  "include_test": false,
+  "model_spec": {
+    "total_parameters": 559894532,
+    "loading_info": {
+      "missing": [],
+      "unexpected": [
+        "lm_head.bias",
+        "lm_head.dense.bias",
+        "lm_head.dense.weight",
+        "lm_head.layer_norm.bias",
+        "lm_head.layer_norm.weight"
+      ]
+    }
+  },
+  "length_stats": {
+    "train": {
+      "examples": 19500,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 3009,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    },
+    "oof": {
+      "examples": 4876,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    }
+  },
+  "alpha": null,
+  "temperature": null,
+  "labels": [
+    "entailment",
+    "neutral",
+    "contradiction",
+    "other"
+  ]
+}

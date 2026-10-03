@@ -1,0 +1,75 @@
+{
+  "task": "phoner",
+  "kind": "teacher",
+  "fold": 0,
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "batch_size": 32,
+  "max_length": 512,
+  "warmup_steps": 378,
+  "total_steps": 3780,
+  "precision": "bf16",
+  "include_test": false,
+  "model_spec": {
+    "total_parameters": 558862357,
+    "loading_info": {
+      "missing": [],
+      "unexpected": [
+        "lm_head.bias",
+        "lm_head.dense.bias",
+        "lm_head.dense.weight",
+        "lm_head.layer_norm.bias",
+        "lm_head.layer_norm.weight"
+      ]
+    }
+  },
+  "length_stats": {
+    "train": {
+      "examples": 4021,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 133565,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 2000,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 71325,
+      "truncated_words": 0
+    },
+    "oof": {
+      "examples": 1006,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 33976,
+      "truncated_words": 0
+    }
+  },
+  "alpha": null,
+  "temperature": null,
+  "labels": [
+    "O",
+    "B-AGE",
+    "B-DATE",
+    "B-GENDER",
+    "B-JOB",
+    "B-LOCATION",
+    "B-NAME",
+    "B-ORGANIZATION",
+    "B-PATIENT_ID",
+    "B-SYMPTOM_AND_DISEASE",
+    "B-TRANSPORTATION",
+    "I-AGE",
+    "I-DATE",
+    "I-GENDER",
+    "I-JOB",
+    "I-LOCATION",
+    "I-NAME",
+    "I-ORGANIZATION",
+    "I-PATIENT_ID",
+    "I-SYMPTOM_AND_DISEASE",
+    "I-TRANSPORTATION"
+  ]
+}
