@@ -4,6 +4,10 @@
 
 Theo yêu cầu ngày 2026-09-17: agent chính tự thực hiện công việc, kể cả kiểm tra, triển khai và chạy phép đo/thí nghiệm trong phạm vi được giao. **Không tạo subagent trừ khi người dùng yêu cầu rõ.** Các quy định bên dưới về giao việc cho subagent không tự tạo quyền delegation. Khi người dùng có yêu cầu delegation, giữ cấu hình model/reasoning đã quy định, trừ khi người dùng chỉ định khác.
 
+## Lệnh chạy lâu và công việc chạy nền
+
+Khi công cụ tự chuyển một lệnh chạy lâu sang nền **và xác nhận sẽ tự gửi kết quả khi hoàn tất**, không dùng `sleep`, `ps`, `pgrep`, `top` hoặc vòng lặp để liên tục dò tiến trình. Tiếp tục công việc độc lập; nếu không còn việc hữu ích, kết thúc lượt trả lời để nhận thông báo kết quả từ công cụ. Nếu công cụ chỉ trả về mã phiên và yêu cầu gọi `wait`/`write_stdin` để nhận kết quả, dùng đúng cơ chế đó khi cần, thay vì dò tiến trình bằng lệnh shell. Không giả định mọi công cụ đều có khả năng tự đánh thức phiên.
+
 ## Model mặc định cho subagents thực thi
 
 Theo yêu cầu trực tiếp của người dùng, mọi subagent được giao triển khai code, chạy thí nghiệm hoặc thực thi công việc trong project này phải dùng:
