@@ -1,0 +1,140 @@
+{
+ "protocol": "xlmr-large-baseline-v1-preflight",
+ "created_at": "2026-09-21T04:20:37Z",
+ "checks": [
+  {
+   "name": "weights_sha256_recorded",
+   "ok": true,
+   "detail": "2dfa19f172412917cab174da04b46e2134811b723666965fd0aabd97caa6e23b"
+  },
+  {
+   "name": "loading_info_clean",
+   "ok": true,
+   "detail": {
+    "dropped_keys_on_load": [
+     "lm_head.bias",
+     "lm_head.dense.bias",
+     "lm_head.dense.weight",
+     "lm_head.layer_norm.bias",
+     "lm_head.layer_norm.weight",
+     "roberta.pooler.dense.bias",
+     "roberta.pooler.dense.weight"
+    ],
+    "unexpected_beyond_lm_head_and_pooler": []
+   }
+  },
+  {
+   "name": "architecture_24L_hidden1024",
+   "ok": true,
+   "detail": {
+    "num_hidden_layers": 24,
+    "hidden_size": 1024
+   }
+  },
+  {
+   "name": "parameters_recorded",
+   "ok": true,
+   "detail": {
+    "encoder": 558840832,
+    "non_embedding": 302838784,
+    "embedding": 256002048,
+    "total_with_head": 559939632,
+    "vocab": 250002
+   }
+  },
+  {
+   "name": "shared_e14_head_4_layers_fresh",
+   "ok": true,
+   "detail": {
+    "head_parameters": 1098800
+   }
+  },
+  {
+   "name": "smoke_1_epoch_completed",
+   "ok": true,
+   "detail": {
+    "returncode": 0,
+    "status": "completed",
+    "log": "/home/kiettqa/GoiBERT/artifacts/xlmr_large_baseline/logs/preflight_smoke.log",
+    "best_selection_f1": 0.0,
+    "peak_gpu_memory_allocated_bytes": 11313658880,
+    "reload_matches_best": true
+   }
+  }
+ ],
+ "manifest": {
+  "key": "xlmr_large",
+  "repo": "FacebookAI/xlm-roberta-large",
+  "commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+  "family": "xlm-roberta",
+  "snapshot": "/home/kiettqa/.cache/huggingface/hub/models--FacebookAI--xlm-roberta-large/snapshots/c23d21b0620b635a76227c604d44e43a9f0ee389",
+  "files": {
+   "config.json": "ec7c3a99c58a38ebb702a2297f1c4586944e841b5eb29d201ff87e0f9c9abe0e",
+   "model.safetensors": "2dfa19f172412917cab174da04b46e2134811b723666965fd0aabd97caa6e23b",
+   "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+   "tokenizer.json": "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c",
+   "tokenizer_config.json": "994f46754c5bf4014f1aa92d34b1374319c3a6b3f702105cd5b742beaecd18ce"
+  },
+  "weights_sha256": "2dfa19f172412917cab174da04b46e2134811b723666965fd0aabd97caa6e23b"
+ },
+ "environment": {
+  "python": "3.12.3",
+  "torch": "2.6.0+cu124",
+  "transformers": "4.49.0",
+  "device": "NVIDIA L40S",
+  "venv": "/home/kiettqa/GoiBERT/.venv-e0-cuda"
+ },
+ "model_spec": {
+  "backbone": "FacebookAI/xlm-roberta-large",
+  "hidden_size": 1024,
+  "num_hidden_layers": 24,
+  "num_attention_heads": 16,
+  "intermediate_size": 4096,
+  "head_hidden_size": 1024,
+  "head_dropout": 0.1,
+  "num_labels": 48,
+  "num_aspects": 12,
+  "aspect_class_counts": [
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4
+  ],
+  "total_parameters": 559939632,
+  "trainable_parameters": 559939632,
+  "hf_commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+  "encoder_class": "XLMRobertaModel",
+  "encoder_parameters": 558840832,
+  "embedding_parameters": 256002048,
+  "encoder_non_embedding_parameters": 302838784,
+  "total_parameters_with_head": 559939632,
+  "dropped_keys_on_load": [
+   "lm_head.bias",
+   "lm_head.dense.bias",
+   "lm_head.dense.weight",
+   "lm_head.layer_norm.bias",
+   "lm_head.layer_norm.weight",
+   "roberta.pooler.dense.bias",
+   "roberta.pooler.dense.weight"
+  ],
+  "vocab_size": 250002
+ },
+ "smoke": {
+  "returncode": 0,
+  "status": "completed",
+  "log": "/home/kiettqa/GoiBERT/artifacts/xlmr_large_baseline/logs/preflight_smoke.log",
+  "best_selection_f1": 0.0,
+  "peak_gpu_memory_allocated_bytes": 11313658880,
+  "reload_matches_best": true
+ },
+ "elapsed_seconds": 25.876608848571777,
+ "passed": true
+}

@@ -1,0 +1,155 @@
+{
+ "protocol": "vocab-trim-v1",
+ "created_at": "2026-09-21T08:03:06Z",
+ "keep_set": {
+  "size": 45000,
+  "source": "/home/kiettqa/GoiBERT/artifacts/vocab_trim_student/keep_set.json"
+ },
+ "special_ids": {
+  "<s>": 0,
+  "<pad>": 1,
+  "</s>": 2,
+  "<unk>": 3,
+  "<mask>": 250001
+ },
+ "trimmed_tokenizer": {
+  "fast_tokenizer_size": 45000,
+  "mask_id": 44999,
+  "unk_id": 3,
+  "dir": "artifacts/vocab_trim_student/tokenizer_vi",
+  "fast_only": true,
+  "note": "sentencepiece.bpe.model is not shipped: the trimmed fast tokenizer is authoritative; using the slow tokenizer would fall back to the original 250k vocab"
+ },
+ "unk": {
+  "A_validation_5task": {
+   "tokens": 133581,
+   "unk_tokens": 6,
+   "unk_token_rate": 4.491656747591349e-05,
+   "sentences": 5844,
+   "sentences_with_unk": 6,
+   "sentence_affected_rate": 0.001026694045174538
+  },
+  "B_validation_5task": {
+   "tokens": 133581,
+   "unk_tokens": 6,
+   "unk_token_rate": 4.491656747591349e-05,
+   "sentences": 5844,
+   "sentences_with_unk": 6,
+   "sentence_affected_rate": 0.001026694045174538
+  },
+  "A_test_text_5task": {
+   "tokens": 291576,
+   "unk_tokens": 33,
+   "unk_token_rate": 0.00011317803934480204,
+   "sentences": 12524,
+   "sentences_with_unk": 32,
+   "sentence_affected_rate": 0.0025550942190993293
+  },
+  "B_test_text_5task": {
+   "tokens": 291585,
+   "unk_tokens": 19,
+   "unk_token_rate": 6.516110225148756e-05,
+   "sentences": 12524,
+   "sentences_with_unk": 18,
+   "sentence_affected_rate": 0.0014372404982433728
+  },
+  "A_test_text_social": {
+   "tokens": 308846,
+   "unk_tokens": 339,
+   "unk_token_rate": 0.001097634419743173,
+   "sentences": 13347,
+   "sentences_with_unk": 160,
+   "sentence_affected_rate": 0.011987712594590545
+  },
+  "B_test_text_social": {
+   "tokens": 308982,
+   "unk_tokens": 207,
+   "unk_token_rate": 0.0006699419383653417,
+   "sentences": 13347,
+   "sentences_with_unk": 98,
+   "sentence_affected_rate": 0.007342473964186708
+  }
+ },
+ "tokenisation_agreement": {
+  "validation_sequences": 5844,
+  "identical": 5844,
+  "identical_rate": 1.0,
+  "examples": []
+ },
+ "exports": {
+  "xlmr_large_vi": {
+   "source": "FacebookAI/xlm-roberta-large@c23d21b0620b635a76227c604d44e43a9f0ee389",
+   "encoder_class": "XLMRobertaModel",
+   "parameters_before": 558840832,
+   "parameters_after": 348918784,
+   "embedding_parameters_before": 256002048,
+   "embedding_parameters_after": 46080000,
+   "hidden_size": 1024,
+   "num_hidden_layers": 24,
+   "vocab_size_after": 45000,
+   "config_class": "XLMRobertaConfig",
+   "dir": "models/trimmed/xlmr_large_vi"
+  },
+  "xlmr_base_vi": {
+   "source": "FacebookAI/xlm-roberta-base@e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+   "encoder_class": "XLMRobertaModel",
+   "parameters_before": 277453056,
+   "parameters_after": 120011520,
+   "embedding_parameters_before": 192001536,
+   "embedding_parameters_after": 34560000,
+   "hidden_size": 768,
+   "num_hidden_layers": 12,
+   "vocab_size_after": 45000,
+   "config_class": "XLMRobertaConfig",
+   "dir": "models/trimmed/xlmr_base_vi"
+  },
+  "mminilmv2_l12_vi": {
+   "source": "nreimers/mMiniLMv2-L12-H384-distilled-from-XLMR-Large@d828558d1a570cbbb5e62a8dbf85c8f18bf7982a",
+   "encoder_class": "XLMRobertaModel",
+   "parameters_before": 117492864,
+   "parameters_after": 38772096,
+   "embedding_parameters_before": 96000768,
+   "embedding_parameters_after": 17280000,
+   "hidden_size": 384,
+   "num_hidden_layers": 12,
+   "vocab_size_after": 45000,
+   "config_class": "XLMRobertaConfig",
+   "dir": "models/trimmed/mminilmv2_l12_vi"
+  },
+  "mminilmv2_l6_vi": {
+   "source": "nreimers/mMiniLMv2-L6-H384-distilled-from-XLMR-Large@160deb78aca30f63754e512a93337ce8013a32ca",
+   "encoder_class": "XLMRobertaModel",
+   "parameters_before": 106846080,
+   "parameters_after": 28125312,
+   "embedding_parameters_before": 96000768,
+   "embedding_parameters_after": 17280000,
+   "hidden_size": 384,
+   "num_hidden_layers": 6,
+   "vocab_size_after": 45000,
+   "config_class": "XLMRobertaConfig",
+   "dir": "models/trimmed/mminilmv2_l6_vi"
+  }
+ },
+ "elapsed_seconds": 15.196442127227783,
+ "equivalence": {
+  "checkpoint": "artifacts/xlmr_large_baseline/xlmr_large/absa_restaurant/lr_2e-05/seed_42/best_checkpoint.pt",
+  "checkpoint_val_f1": 0.7781472684085511,
+  "untrimmed_f1": 0.7781472684085511,
+  "A_f1": 0.7781472684085511,
+  "B_f1": 0.7781472684085511,
+  "A_minus_untrimmed": 0.0,
+  "B_minus_untrimmed": 0.0,
+  "max_abs_logits_delta_A_vs_untrimmed": 0.0,
+  "A_identical": true,
+  "B_within_0.1": true,
+  "export_check": {
+   "encoder_class": "XLMRobertaModel",
+   "vocab_size": 45000,
+   "embedding_rows": 45000,
+   "matches_keep_size": true
+  },
+  "validation_rows": 771,
+  "device": "cuda:0",
+  "elapsed_seconds": 9.895779848098755
+ }
+}

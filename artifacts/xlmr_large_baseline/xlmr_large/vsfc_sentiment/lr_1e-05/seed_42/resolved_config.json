@@ -1,0 +1,145 @@
+{
+  "protocol": "xlmr-large-baseline-v1",
+  "model": "xlmr_large",
+  "model_manifest": {
+    "key": "xlmr_large",
+    "repo": "FacebookAI/xlm-roberta-large",
+    "commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+    "family": "xlm-roberta",
+    "snapshot": "/home/kiettqa/.cache/huggingface/hub/models--FacebookAI--xlm-roberta-large/snapshots/c23d21b0620b635a76227c604d44e43a9f0ee389",
+    "files": {
+      "config.json": "ec7c3a99c58a38ebb702a2297f1c4586944e841b5eb29d201ff87e0f9c9abe0e",
+      "model.safetensors": "2dfa19f172412917cab174da04b46e2134811b723666965fd0aabd97caa6e23b",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+      "tokenizer.json": "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c",
+      "tokenizer_config.json": "994f46754c5bf4014f1aa92d34b1374319c3a6b3f702105cd5b742beaecd18ce"
+    },
+    "weights_sha256": "2dfa19f172412917cab174da04b46e2134811b723666965fd0aabd97caa6e23b"
+  },
+  "task_id": "vsfc_sentiment",
+  "seed": 42,
+  "learning_rate": 1e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy",
+  "head": "CLS -> dropout0.1 -> dense1024 -> tanh -> dropout0.1 -> logits (E14)",
+  "include_test": false,
+  "smoke": null,
+  "model_spec": {
+    "backbone": "FacebookAI/xlm-roberta-large",
+    "hidden_size": 1024,
+    "num_hidden_layers": 24,
+    "num_attention_heads": 16,
+    "intermediate_size": 4096,
+    "head_hidden_size": 1024,
+    "head_dropout": 0.1,
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 559893507,
+    "trainable_parameters": 559893507,
+    "hf_commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+    "encoder_class": "XLMRobertaModel",
+    "encoder_parameters": 558840832,
+    "embedding_parameters": 256002048,
+    "encoder_non_embedding_parameters": 302838784,
+    "total_parameters_with_head": 559893507,
+    "dropped_keys_on_load": [
+      "lm_head.bias",
+      "lm_head.dense.bias",
+      "lm_head.dense.weight",
+      "lm_head.layer_norm.bias",
+      "lm_head.layer_norm.weight",
+      "roberta.pooler.dense.bias",
+      "roberta.pooler.dense.weight"
+    ],
+    "vocab_size": 250002
+  },
+  "head_init_sha256": "41618c0780fd25321a778a1a4049a82a94c0535bfde9810669041c890bb62535",
+  "tokenizer_class": "XLMRobertaTokenizerFast",
+  "vocab_size": 250002,
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt": "480480c3b9a6bc8bdf53339c721e93f8cc30472ac8f0bd21d4440ce1171aefac",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt": "a9584a22c926a54c6042236380c9a65ab8c41467477f7a5d794fb2505c96a9c3"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "vsfc_sentiment",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "include_test": false,
+    "slot_label_names": []
+  },
+  "train_count": 11426,
+  "validation_count": 1583,
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 179,
+    "p50_tokens": 15.0,
+    "p95_tokens": 39.0,
+    "p99_tokens": 59.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "2"
+  },
+  "started_at": "2026-09-21T15:30:45Z",
+  "argv": [
+    "scripts/xlmr_large_baseline/finetune.py",
+    "--model",
+    "xlmr_large",
+    "--task",
+    "vsfc_sentiment",
+    "--lr",
+    "1e-05",
+    "--seed",
+    "42",
+    "--device",
+    "cuda:0",
+    "--micro-batch",
+    "32"
+  ],
+  "pid": 2297814
+}

@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "model": "xlmr_large",
+  "task_id": "vsfc_sentiment",
+  "learning_rate": 5e-05,
+  "seed": 42,
+  "pid": 2661580,
+  "finished_at": "2026-09-21T16:29:54Z",
+  "error": "RuntimeError('CUDA error: an illegal memory access was encountered\\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\\n')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/kiettqa/GoiBERT/scripts/xlmr_large_baseline/finetune.py\", line 151, in main\n    run(args); return 0\n    ^^^^^^^^^\n  File \"/home/kiettqa/GoiBERT/scripts/xlmr_large_baseline/finetune.py\", line 88, in run\n    moved = e1_train._move_batch(batch, device)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/kiettqa/GoiBERT/src/goibert/train.py\", line 497, in _move_batch\n    key: value.to(device) if isinstance(value, Tensor) else value\n         ^^^^^^^^^^^^^^^^\nRuntimeError: CUDA error: an illegal memory access was encountered\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n"
+}

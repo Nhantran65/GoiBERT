@@ -1,0 +1,116 @@
+{
+  "protocol": "xlmr-large-five-task-extension-v1",
+  "validation_only": true,
+  "seed": 42,
+  "new_grid": {
+    "vsfc_sentiment": {
+      "1e-05": {
+        "f1": 0.8668740258606715,
+        "epoch": 27,
+        "minutes": 31.00080713033676,
+        "path": "artifacts/xlmr_large_baseline/xlmr_large/vsfc_sentiment/lr_1e-05/seed_42",
+        "checks_ok": true
+      },
+      "2e-05": {
+        "f1": 0.867303143533559,
+        "epoch": 10,
+        "minutes": 32.20728373130162,
+        "path": "artifacts/xlmr_large_baseline/xlmr_large/vsfc_sentiment/lr_2e-05/seed_42",
+        "checks_ok": true
+      },
+      "5e-05": {
+        "f1": 0.8234592149715927,
+        "epoch": 3,
+        "minutes": 33.6059057076772,
+        "path": "artifacts/xlmr_large_baseline/recovery/vsfc_sentiment/lr_5e-05/seed_42",
+        "checks_ok": true
+      }
+    },
+    "absa_hotel": {
+      "1e-05": {
+        "f1": 0.7286392405063291,
+        "epoch": 23,
+        "minutes": 24.335907435417177,
+        "path": "artifacts/xlmr_large_baseline/xlmr_large/absa_hotel/lr_1e-05/seed_42",
+        "checks_ok": true
+      },
+      "2e-05": {
+        "f1": 0.7357227254824734,
+        "epoch": 12,
+        "minutes": 23.91694688796997,
+        "path": "artifacts/xlmr_large_baseline/recovery/absa_hotel/lr_2e-05/seed_42",
+        "checks_ok": true
+      },
+      "5e-05": {
+        "f1": 0.7366382649109218,
+        "epoch": 17,
+        "minutes": 22.16876755555471,
+        "path": "artifacts/xlmr_large_baseline/xlmr_large/absa_hotel/lr_5e-05/seed_42",
+        "checks_ok": true
+      }
+    }
+  },
+  "five_task_table": {
+    "vsfc_sentiment": {
+      "xlmr": {
+        "f1": 0.867303143533559,
+        "lr": 2e-05,
+        "epoch": 10
+      },
+      "bami": 0.8632522837351507,
+      "cafe": 0.8769241120832681
+    },
+    "vsfc_topic": {
+      "xlmr": {
+        "f1": 0.806123331161886,
+        "lr": 2e-05,
+        "epoch": 19
+      },
+      "bami": 0.7953280821882547,
+      "cafe": 0.8174458365092476
+    },
+    "visfd": {
+      "xlmr": {
+        "f1": 0.8548459133541759,
+        "lr": 2e-05,
+        "epoch": 28
+      },
+      "bami": 0.8438339802926247,
+      "cafe": 0.8546650717703349
+    },
+    "absa_restaurant": {
+      "xlmr": {
+        "f1": 0.7781472684085511,
+        "lr": 2e-05,
+        "epoch": 19
+      },
+      "bami": 0.7474178403755869,
+      "cafe": 0.7771971496437055
+    },
+    "absa_hotel": {
+      "xlmr": {
+        "f1": 0.7366382649109218,
+        "lr": 5e-05,
+        "epoch": 17
+      },
+      "bami": 0.7323619631901841,
+      "cafe": 0.7334384858044164
+    }
+  },
+  "restaurant_two_seed_means": {
+    "xlmr": 0.7701,
+    "cafe": 0.7706
+  },
+  "source_original_summary": "artifacts/xlmr_large_baseline/summary.json",
+  "runtime_recovery": {
+    "failed_attempts": [
+      "artifacts/xlmr_large_baseline/xlmr_large/absa_hotel/lr_2e-05/seed_42",
+      "artifacts/xlmr_large_baseline/xlmr_large/vsfc_sentiment/lr_5e-05/seed_42"
+    ],
+    "complete_reruns": [
+      "artifacts/xlmr_large_baseline/recovery/absa_hotel/lr_2e-05/seed_42",
+      "artifacts/xlmr_large_baseline/recovery/vsfc_sentiment/lr_5e-05/seed_42"
+    ],
+    "observation": "CUDA illegal instruction / illegal memory access occurred while GPU workloads overlapped; root cause not established. Both cells were rerun from the start on GPU 1/2 with the same seed and recipe."
+  }
+}

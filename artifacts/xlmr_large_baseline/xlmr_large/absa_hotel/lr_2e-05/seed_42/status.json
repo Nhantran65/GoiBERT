@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "model": "xlmr_large",
+  "task_id": "absa_hotel",
+  "learning_rate": 2e-05,
+  "seed": 42,
+  "pid": 2661577,
+  "finished_at": "2026-09-21T16:30:12Z",
+  "error": "RuntimeError('CUDA error: an illegal instruction was encountered\\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\\n')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/kiettqa/GoiBERT/scripts/xlmr_large_baseline/finetune.py\", line 151, in main\n    run(args); return 0\n    ^^^^^^^^^\n  File \"/home/kiettqa/GoiBERT/scripts/xlmr_large_baseline/finetune.py\", line 97, in run\n    scaled.backward()\n  File \"/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/_tensor.py\", line 626, in backward\n    torch.autograd.backward(\n  File \"/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/__init__.py\", line 347, in backward\n    _engine_run_backward(\n  File \"/home/kiettqa/GoiBERT/.venv-e0-cuda/lib/python3.12/site-packages/torch/autograd/graph.py\", line 823, in _engine_run_backward\n    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: CUDA error: an illegal instruction was encountered\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n"
+}

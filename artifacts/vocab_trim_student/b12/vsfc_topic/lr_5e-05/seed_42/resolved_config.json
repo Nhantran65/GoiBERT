@@ -1,0 +1,140 @@
+{
+  "protocol": "vocab-trim-student-v1",
+  "model": "b12",
+  "model_manifest": {
+    "key": "b12",
+    "source_repo": "FacebookAI/xlm-roberta-base",
+    "source_commit": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+    "trimmed_dir": "/home/kiettqa/GoiBERT/models/trimmed/xlmr_base_vi",
+    "files": {
+      "config.json": "01ba1881e76864e73a0d3126f5ef3d27c1e8b0661cb058feb655e249ac4143d8",
+      "model.safetensors": "0318b730c5c260404cb0fdcb3aeb472e65e07a96a8a892851c7eebd686b1d220",
+      "tokenizer.json": "a056ef98e638bf9aeaea3c59ddb60eefc280284e09028e7809a669b04b27102c",
+      "tokenizer_config.json": "994f46754c5bf4014f1aa92d34b1374319c3a6b3f702105cd5b742beaecd18ce"
+    },
+    "weights_sha256": "0318b730c5c260404cb0fdcb3aeb472e65e07a96a8a892851c7eebd686b1d220"
+  },
+  "task_id": "vsfc_topic",
+  "seed": 42,
+  "learning_rate": 5e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy",
+  "head": "CLS -> dropout0.1 -> dense768 -> tanh -> dropout0.1 -> logits (E14)",
+  "include_test": false,
+  "smoke": null,
+  "model_spec": {
+    "backbone": "b12",
+    "hidden_size": 768,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 120605188,
+    "trainable_parameters": 120605188,
+    "source_repo": "FacebookAI/xlm-roberta-base",
+    "source_commit": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+    "trimmed_dir": "models/trimmed/xlmr_base_vi",
+    "encoder_class": "XLMRobertaModel",
+    "layers_kept": 12,
+    "encoder_parameters": 120011520,
+    "embedding_parameters": 34560000,
+    "encoder_non_embedding_parameters": 85451520,
+    "total_parameters_with_head": 120605188,
+    "dropped_keys_on_load": [],
+    "vocab_size": 45000
+  },
+  "head_init_sha256": "6940bcae08cb19e1571665909791ec859988502ce4319c4b0d0668abf585ea8c",
+  "tokenizer_class": "XLMRobertaTokenizerFast",
+  "vocab_size": 45000,
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt": "09cbb8147f419f225b171cadf82410c442d6c24997ab97f48dfa779f4e68a1b9",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt": "7483805b24f5362aa5a2f708509876e0b69bf35753e90199059c2409caad7d96"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "vsfc_topic",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "include_test": false,
+    "slot_label_names": []
+  },
+  "train_count": 11426,
+  "validation_count": 1583,
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 179,
+    "p50_tokens": 15.0,
+    "p95_tokens": 39.0,
+    "p99_tokens": 59.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "2"
+  },
+  "started_at": "2026-09-21T09:11:41Z",
+  "argv": [
+    "scripts/vocab_trim_student/finetune.py",
+    "--model",
+    "b12",
+    "--task",
+    "vsfc_topic",
+    "--lr",
+    "5e-05",
+    "--seed",
+    "42",
+    "--keep-layers",
+    "0",
+    "--device",
+    "cuda:0",
+    "--micro-batch",
+    "32"
+  ],
+  "pid": 2307450
+}

@@ -1,0 +1,217 @@
+{
+  "protocol": "vocab-trim-student-v1",
+  "model": "m12",
+  "model_manifest": {
+    "key": "m12",
+    "source_repo": "nreimers/mMiniLMv2-L12-H384-distilled-from-XLMR-Large",
+    "source_commit": "d828558d1a570cbbb5e62a8dbf85c8f18bf7982a",
+    "trimmed_dir": "/home/kiettqa/GoiBERT/models/trimmed/mminilmv2_l12_vi",
+    "files": {
+      "config.json": "709cbdfcae4c8c93898129451893c0b228cf8271e7b5a7f096fd205a266cdc2f",
+      "model.safetensors": "aec2cf3020812fccd88607451b8f935e326e242ed2d4209863a0df7a5d48c1be",
+      "tokenizer.json": "a056ef98e638bf9aeaea3c59ddb60eefc280284e09028e7809a669b04b27102c",
+      "tokenizer_config.json": "994f46754c5bf4014f1aa92d34b1374319c3a6b3f702105cd5b742beaecd18ce"
+    },
+    "weights_sha256": "aec2cf3020812fccd88607451b8f935e326e242ed2d4209863a0df7a5d48c1be"
+  },
+  "task_id": "vsfc_topic",
+  "seed": 42,
+  "learning_rate": 0.0001,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy",
+  "head": "CLS -> dropout0.1 -> dense384 -> tanh -> dropout0.1 -> logits (E14)",
+  "include_test": false,
+  "smoke": null,
+  "model_spec": {
+    "backbone": "m12",
+    "hidden_size": 384,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "intermediate_size": 1536,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 38921476,
+    "trainable_parameters": 38921476,
+    "source_repo": "nreimers/mMiniLMv2-L12-H384-distilled-from-XLMR-Large",
+    "source_commit": "d828558d1a570cbbb5e62a8dbf85c8f18bf7982a",
+    "trimmed_dir": "models/trimmed/mminilmv2_l12_vi",
+    "encoder_class": "XLMRobertaModel",
+    "layers_kept": 12,
+    "encoder_parameters": 38772096,
+    "embedding_parameters": 17280000,
+    "encoder_non_embedding_parameters": 21492096,
+    "total_parameters_with_head": 38921476,
+    "dropped_keys_on_load": [],
+    "vocab_size": 45000
+  },
+  "head_init_sha256": "bb9d4b81d6edfcb1ddd78d6960b86ac12a511f7dacba34ad3328ab8288835444",
+  "tokenizer_class": "XLMRobertaTokenizerFast",
+  "vocab_size": 45000,
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt": "5481dc1fa51f2fe72f22afd89b8aeb7f8945a126af7e66ac622e2ab0291130cb",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt": "09cbb8147f419f225b171cadf82410c442d6c24997ab97f48dfa779f4e68a1b9",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt": "fb7c3cc3173e1383edc03779883d91bb4d6110c8dd881612572a256878aa23b4",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt": "7483805b24f5362aa5a2f708509876e0b69bf35753e90199059c2409caad7d96"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "vsfc_topic",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+      "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+    ],
+    "label_policy": "fixed_source_map",
+    "include_test": false,
+    "slot_label_names": []
+  },
+  "train_count": 11426,
+  "validation_count": 1583,
+  "length_stats": {
+    "train_count": 11426,
+    "max_tokens": 179,
+    "p50_tokens": 15.0,
+    "p95_tokens": 39.0,
+    "p99_tokens": 59.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "hip": null,
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "2"
+  },
+  "started_at": "2026-09-21T08:44:32Z",
+  "argv": [
+    "scripts/vocab_trim_student/finetune.py",
+    "--model",
+    "m12",
+    "--task",
+    "vsfc_topic",
+    "--lr",
+    "1e-04",
+    "--seed",
+    "42",
+    "--keep-layers",
+    "0",
+    "--device",
+    "cuda:0",
+    "--micro-batch",
+    "32"
+  ],
+  "pid": 1989100,
+  "best_epoch": 19,
+  "best_selection_f1": 0.7968127685119216,
+  "best_validation_metrics": {
+    "n": 1583,
+    "labels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "accuracy": 0.8843967150979154,
+    "macro_precision": 0.7945775469670784,
+    "macro_recall": 0.7992433359876423,
+    "macro_f1": 0.7968127685119216,
+    "per_class": {
+      "0": {
+        "support": 1151,
+        "predicted": 1140,
+        "tp": 1073,
+        "fp": 67,
+        "fn": 78,
+        "precision": 0.9412280701754386,
+        "recall": 0.9322328410078193,
+        "f1": 0.9367088607594937
+      },
+      "1": {
+        "support": 267,
+        "predicted": 277,
+        "tp": 208,
+        "fp": 69,
+        "fn": 59,
+        "precision": 0.7509025270758123,
+        "recall": 0.7790262172284644,
+        "f1": 0.7647058823529411
+      },
+      "2": {
+        "support": 70,
+        "predicted": 69,
+        "tp": 62,
+        "fp": 7,
+        "fn": 8,
+        "precision": 0.8985507246376812,
+        "recall": 0.8857142857142857,
+        "f1": 0.8920863309352518
+      },
+      "3": {
+        "support": 95,
+        "predicted": 97,
+        "tp": 57,
+        "fp": 40,
+        "fn": 38,
+        "precision": 0.5876288659793815,
+        "recall": 0.6,
+        "f1": 0.59375
+      }
+    },
+    "task_id": "vsfc_topic",
+    "split": "validation",
+    "selection_f1": 0.7968127685119216,
+    "selection_metric": "fixed_label_macro_f1"
+  },
+  "elapsed_seconds": 623.9229762554169,
+  "finished_at": "2026-09-21T08:54:54Z",
+  "checkpoint_sha256": "6467ca4595b9845e17dae84480e749138297b5180636d3e643c93cdaa52bbd3e",
+  "peak_gpu_memory_allocated_bytes": 1784645120,
+  "postrun_checks": {
+    "checkpoint_epoch": 19,
+    "reload_selection_f1": 0.7968127685119216,
+    "reload_matches_best": true,
+    "prediction_file_selection_f1": 0.7968127685119216,
+    "prediction_file_matches_best": true,
+    "reload_predictions_identical": true,
+    "ids_stable_and_complete": true,
+    "strict_load_missing": [],
+    "strict_load_unexpected": []
+  },
+  "status": "completed"
+}

@@ -1,0 +1,719 @@
+{
+ "protocol": "xlmr-large-baseline-v1",
+ "created_at": "2026-09-21T06:11:56Z",
+ "model": "xlmr_large",
+ "manifest": {
+  "key": "xlmr_large",
+  "repo": "FacebookAI/xlm-roberta-large",
+  "commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+  "family": "xlm-roberta",
+  "snapshot": "/home/kiettqa/.cache/huggingface/hub/models--FacebookAI--xlm-roberta-large/snapshots/c23d21b0620b635a76227c604d44e43a9f0ee389",
+  "files": {
+   "config.json": "ec7c3a99c58a38ebb702a2297f1c4586944e841b5eb29d201ff87e0f9c9abe0e",
+   "model.safetensors": "2dfa19f172412917cab174da04b46e2134811b723666965fd0aabd97caa6e23b",
+   "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+   "tokenizer.json": "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c",
+   "tokenizer_config.json": "994f46754c5bf4014f1aa92d34b1374319c3a6b3f702105cd5b742beaecd18ce"
+  },
+  "weights_sha256": "2dfa19f172412917cab174da04b46e2134811b723666965fd0aabd97caa6e23b"
+ },
+ "model_spec": {
+  "backbone": "FacebookAI/xlm-roberta-large",
+  "hidden_size": 1024,
+  "num_hidden_layers": 24,
+  "num_attention_heads": 16,
+  "intermediate_size": 4096,
+  "head_hidden_size": 1024,
+  "head_dropout": 0.1,
+  "num_labels": 48,
+  "num_aspects": 12,
+  "aspect_class_counts": [
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4
+  ],
+  "total_parameters": 559939632,
+  "trainable_parameters": 559939632,
+  "hf_commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+  "encoder_class": "XLMRobertaModel",
+  "encoder_parameters": 558840832,
+  "embedding_parameters": 256002048,
+  "encoder_non_embedding_parameters": 302838784,
+  "total_parameters_with_head": 559939632,
+  "dropped_keys_on_load": [
+   "lm_head.bias",
+   "lm_head.dense.bias",
+   "lm_head.dense.weight",
+   "lm_head.layer_norm.bias",
+   "lm_head.layer_norm.weight",
+   "roberta.pooler.dense.bias",
+   "roberta.pooler.dense.weight"
+  ],
+  "vocab_size": 250002
+ },
+ "best_restaurant_lr_seed42": 2e-05,
+ "grid": {
+  "absa_restaurant": {
+   "1e-05": {
+    "42": {
+     "f1": 0.763445978105664,
+     "epoch": 14,
+     "status": "completed",
+     "minutes": 22.530083990097047,
+     "micro_batch": 32,
+     "train_count": 7028,
+     "validation_count": 771,
+     "epoch_seconds": [
+      44.030213832855225,
+      48.62843728065491,
+      42.432093381881714,
+      45.65354251861572,
+      43.71268343925476,
+      45.18505597114563,
+      42.36998534202576,
+      49.596736907958984,
+      42.847678661346436,
+      41.078715801239014,
+      44.58975052833557,
+      44.68924593925476,
+      40.59108066558838,
+      44.190743923187256,
+      40.679372787475586,
+      43.00855803489685,
+      45.461936235427856,
+      46.7186005115509,
+      45.77098226547241,
+      43.293312311172485,
+      48.70663356781006,
+      42.704317808151245,
+      44.44501280784607,
+      45.38724160194397,
+      40.70453071594238,
+      45.38849377632141,
+      44.84370255470276,
+      43.02366352081299,
+      41.3808069229126,
+      42.884257078170776
+     ],
+     "diverged": false,
+     "checks_ok": true,
+     "dir": "artifacts/xlmr_large_baseline/xlmr_large/absa_restaurant/lr_1e-05/seed_42",
+     "model_spec": {
+      "backbone": "FacebookAI/xlm-roberta-large",
+      "hidden_size": 1024,
+      "num_hidden_layers": 24,
+      "num_attention_heads": 16,
+      "intermediate_size": 4096,
+      "head_hidden_size": 1024,
+      "head_dropout": 0.1,
+      "num_labels": 48,
+      "num_aspects": 12,
+      "aspect_class_counts": [
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4
+      ],
+      "total_parameters": 559939632,
+      "trainable_parameters": 559939632,
+      "hf_commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+      "encoder_class": "XLMRobertaModel",
+      "encoder_parameters": 558840832,
+      "embedding_parameters": 256002048,
+      "encoder_non_embedding_parameters": 302838784,
+      "total_parameters_with_head": 559939632,
+      "dropped_keys_on_load": [
+       "lm_head.bias",
+       "lm_head.dense.bias",
+       "lm_head.dense.weight",
+       "lm_head.layer_norm.bias",
+       "lm_head.layer_norm.weight",
+       "roberta.pooler.dense.bias",
+       "roberta.pooler.dense.weight"
+      ],
+      "vocab_size": 250002
+     }
+    },
+    "43": null
+   },
+   "2e-05": {
+    "42": {
+     "f1": 0.7781472684085511,
+     "epoch": 19,
+     "status": "completed",
+     "minutes": 22.698094991842904,
+     "micro_batch": 32,
+     "train_count": 7028,
+     "validation_count": 771,
+     "epoch_seconds": [
+      40.60601472854614,
+      44.02283334732056,
+      47.40356373786926,
+      45.33184814453125,
+      42.97979736328125,
+      47.38125276565552,
+      43.74148941040039,
+      47.072023153305054,
+      41.64684772491455,
+      43.849767446517944,
+      42.89832901954651,
+      45.987157583236694,
+      44.99425196647644,
+      45.14430236816406,
+      45.53532361984253,
+      43.049729347229004,
+      42.072378635406494,
+      40.774479150772095,
+      45.287400245666504,
+      45.25566267967224,
+      44.974350452423096,
+      45.46602129936218,
+      47.29365634918213,
+      44.6602942943573,
+      40.55653214454651,
+      48.47808241844177,
+      43.89619255065918,
+      45.79857277870178,
+      41.9314398765564,
+      42.9007465839386
+     ],
+     "diverged": false,
+     "checks_ok": true,
+     "dir": "artifacts/xlmr_large_baseline/xlmr_large/absa_restaurant/lr_2e-05/seed_42",
+     "model_spec": {
+      "backbone": "FacebookAI/xlm-roberta-large",
+      "hidden_size": 1024,
+      "num_hidden_layers": 24,
+      "num_attention_heads": 16,
+      "intermediate_size": 4096,
+      "head_hidden_size": 1024,
+      "head_dropout": 0.1,
+      "num_labels": 48,
+      "num_aspects": 12,
+      "aspect_class_counts": [
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4
+      ],
+      "total_parameters": 559939632,
+      "trainable_parameters": 559939632,
+      "hf_commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+      "encoder_class": "XLMRobertaModel",
+      "encoder_parameters": 558840832,
+      "embedding_parameters": 256002048,
+      "encoder_non_embedding_parameters": 302838784,
+      "total_parameters_with_head": 559939632,
+      "dropped_keys_on_load": [
+       "lm_head.bias",
+       "lm_head.dense.bias",
+       "lm_head.dense.weight",
+       "lm_head.layer_norm.bias",
+       "lm_head.layer_norm.weight",
+       "roberta.pooler.dense.bias",
+       "roberta.pooler.dense.weight"
+      ],
+      "vocab_size": 250002
+     }
+    },
+    "43": {
+     "f1": 0.7619952494061758,
+     "epoch": 28,
+     "status": "completed",
+     "minutes": 22.942608352502187,
+     "micro_batch": 32,
+     "train_count": 7028,
+     "validation_count": 771,
+     "epoch_seconds": [
+      45.98131465911865,
+      45.260194063186646,
+      44.883806467056274,
+      45.26313543319702,
+      44.774163246154785,
+      44.799317598342896,
+      44.5817186832428,
+      44.64009475708008,
+      45.260826110839844,
+      45.255168199539185,
+      44.63195848464966,
+      44.78457760810852,
+      44.67120838165283,
+      45.038984537124634,
+      44.78072643280029,
+      44.93754053115845,
+      44.95710897445679,
+      44.72379541397095,
+      44.71294927597046,
+      44.93183374404907,
+      44.93555688858032,
+      44.817835569381714,
+      44.608683347702026,
+      45.146488189697266,
+      44.633172035217285,
+      45.25056576728821,
+      44.76142597198486,
+      44.57391405105591,
+      45.58659029006958,
+      45.123713970184326
+     ],
+     "diverged": false,
+     "checks_ok": true,
+     "dir": "artifacts/xlmr_large_baseline/xlmr_large/absa_restaurant/lr_2e-05/seed_43",
+     "model_spec": {
+      "backbone": "FacebookAI/xlm-roberta-large",
+      "hidden_size": 1024,
+      "num_hidden_layers": 24,
+      "num_attention_heads": 16,
+      "intermediate_size": 4096,
+      "head_hidden_size": 1024,
+      "head_dropout": 0.1,
+      "num_labels": 48,
+      "num_aspects": 12,
+      "aspect_class_counts": [
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4
+      ],
+      "total_parameters": 559939632,
+      "trainable_parameters": 559939632,
+      "hf_commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+      "encoder_class": "XLMRobertaModel",
+      "encoder_parameters": 558840832,
+      "embedding_parameters": 256002048,
+      "encoder_non_embedding_parameters": 302838784,
+      "total_parameters_with_head": 559939632,
+      "dropped_keys_on_load": [
+       "lm_head.bias",
+       "lm_head.dense.bias",
+       "lm_head.dense.weight",
+       "lm_head.layer_norm.bias",
+       "lm_head.layer_norm.weight",
+       "roberta.pooler.dense.bias",
+       "roberta.pooler.dense.weight"
+      ],
+      "vocab_size": 250002
+     }
+    }
+   },
+   "5e-05": {
+    "42": {
+     "f1": 0.761633428300095,
+     "epoch": 27,
+     "status": "completed",
+     "minutes": 23.084314207235973,
+     "micro_batch": 32,
+     "train_count": 7028,
+     "validation_count": 771,
+     "epoch_seconds": [
+      45.58166432380676,
+      45.026960134506226,
+      45.08454418182373,
+      44.725895166397095,
+      45.001431941986084,
+      45.26690220832825,
+      44.93453550338745,
+      44.8469934463501,
+      45.54911398887634,
+      44.885571241378784,
+      45.17417883872986,
+      44.9927453994751,
+      45.061413049697876,
+      45.466525077819824,
+      45.16719913482666,
+      45.12285137176514,
+      45.298508644104004,
+      45.093844175338745,
+      45.65571403503418,
+      45.66484546661377,
+      44.82913112640381,
+      44.96906661987305,
+      45.444066524505615,
+      45.28564214706421,
+      45.17720675468445,
+      45.184669971466064,
+      44.960448026657104,
+      45.179142475128174,
+      45.95611882209778,
+      45.019386291503906
+     ],
+     "diverged": false,
+     "checks_ok": true,
+     "dir": "artifacts/xlmr_large_baseline/xlmr_large/absa_restaurant/lr_5e-05/seed_42",
+     "model_spec": {
+      "backbone": "FacebookAI/xlm-roberta-large",
+      "hidden_size": 1024,
+      "num_hidden_layers": 24,
+      "num_attention_heads": 16,
+      "intermediate_size": 4096,
+      "head_hidden_size": 1024,
+      "head_dropout": 0.1,
+      "num_labels": 48,
+      "num_aspects": 12,
+      "aspect_class_counts": [
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4,
+       4
+      ],
+      "total_parameters": 559939632,
+      "trainable_parameters": 559939632,
+      "hf_commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+      "encoder_class": "XLMRobertaModel",
+      "encoder_parameters": 558840832,
+      "embedding_parameters": 256002048,
+      "encoder_non_embedding_parameters": 302838784,
+      "total_parameters_with_head": 559939632,
+      "dropped_keys_on_load": [
+       "lm_head.bias",
+       "lm_head.dense.bias",
+       "lm_head.dense.weight",
+       "lm_head.layer_norm.bias",
+       "lm_head.layer_norm.weight",
+       "roberta.pooler.dense.bias",
+       "roberta.pooler.dense.weight"
+      ],
+      "vocab_size": 250002
+     }
+    },
+    "43": null
+   }
+  },
+  "vsfc_topic": {
+   "1e-05": {
+    "42": null,
+    "43": null
+   },
+   "2e-05": {
+    "42": {
+     "f1": 0.806123331161886,
+     "epoch": 19,
+     "status": "completed",
+     "minutes": 36.28130915562312,
+     "micro_batch": 32,
+     "train_count": 11426,
+     "validation_count": 1583,
+     "epoch_seconds": [
+      78.02317833900452,
+      70.72136116027832,
+      71.43616914749146,
+      67.73993468284607,
+      69.45366859436035,
+      73.24028706550598,
+      74.3342034816742,
+      69.73942303657532,
+      74.8814013004303,
+      69.31906700134277,
+      72.60753417015076,
+      70.91096758842468,
+      74.23964428901672,
+      72.61430835723877,
+      76.8925883769989,
+      74.64594531059265,
+      73.5486249923706,
+      70.30800795555115,
+      73.77149868011475,
+      70.49137544631958,
+      73.32871508598328,
+      73.84226775169373,
+      72.67673921585083,
+      70.8525230884552,
+      72.87657022476196,
+      71.75577306747437,
+      70.72089195251465,
+      70.28474378585815,
+      69.30176734924316,
+      68.82510280609131
+     ],
+     "diverged": false,
+     "checks_ok": true,
+     "dir": "artifacts/xlmr_large_baseline/xlmr_large/vsfc_topic/lr_2e-05/seed_42",
+     "model_spec": {
+      "backbone": "FacebookAI/xlm-roberta-large",
+      "hidden_size": 1024,
+      "num_hidden_layers": 24,
+      "num_attention_heads": 16,
+      "intermediate_size": 4096,
+      "head_hidden_size": 1024,
+      "head_dropout": 0.1,
+      "num_labels": 4,
+      "num_aspects": 0,
+      "aspect_class_counts": [],
+      "total_parameters": 559894532,
+      "trainable_parameters": 559894532,
+      "hf_commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+      "encoder_class": "XLMRobertaModel",
+      "encoder_parameters": 558840832,
+      "embedding_parameters": 256002048,
+      "encoder_non_embedding_parameters": 302838784,
+      "total_parameters_with_head": 559894532,
+      "dropped_keys_on_load": [
+       "lm_head.bias",
+       "lm_head.dense.bias",
+       "lm_head.dense.weight",
+       "lm_head.layer_norm.bias",
+       "lm_head.layer_norm.weight",
+       "roberta.pooler.dense.bias",
+       "roberta.pooler.dense.weight"
+      ],
+      "vocab_size": 250002
+     }
+    },
+    "43": null
+   },
+   "5e-05": {
+    "42": null,
+    "43": null
+   }
+  },
+  "visfd": {
+   "1e-05": {
+    "42": null,
+    "43": null
+   },
+   "2e-05": {
+    "42": {
+     "f1": 0.8548459133541759,
+     "epoch": 28,
+     "status": "completed",
+     "minutes": 28.55157790184021,
+     "micro_batch": 32,
+     "train_count": 7786,
+     "validation_count": 1112,
+     "epoch_seconds": [
+      56.27426743507385,
+      55.65127658843994,
+      55.846585750579834,
+      55.53561210632324,
+      55.780734062194824,
+      55.832881450653076,
+      56.26089406013489,
+      55.61909079551697,
+      55.90898513793945,
+      55.837016344070435,
+      55.70379948616028,
+      56.2204475402832,
+      56.06200289726257,
+      55.8388466835022,
+      55.85035586357117,
+      56.15138268470764,
+      56.20109748840332,
+      56.06284308433533,
+      56.0487003326416,
+      56.00757575035095,
+      56.33848762512207,
+      56.4279146194458,
+      55.9327347278595,
+      56.29825973510742,
+      56.482725381851196,
+      56.02936315536499,
+      56.0985746383667,
+      56.107765913009644,
+      56.16021132469177,
+      55.90759825706482
+     ],
+     "diverged": false,
+     "checks_ok": true,
+     "dir": "artifacts/xlmr_large_baseline/xlmr_large/visfd/lr_2e-05/seed_42",
+     "model_spec": {
+      "backbone": "FacebookAI/xlm-roberta-large",
+      "hidden_size": 1024,
+      "num_hidden_layers": 24,
+      "num_attention_heads": 16,
+      "intermediate_size": 4096,
+      "head_hidden_size": 1024,
+      "head_dropout": 0.1,
+      "num_labels": 42,
+      "num_aspects": 11,
+      "aspect_class_counts": [
+       4,
+       4,
+       4,
+       4,
+       4,
+       2,
+       4,
+       4,
+       4,
+       4,
+       4
+      ],
+      "total_parameters": 559933482,
+      "trainable_parameters": 559933482,
+      "hf_commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+      "encoder_class": "XLMRobertaModel",
+      "encoder_parameters": 558840832,
+      "embedding_parameters": 256002048,
+      "encoder_non_embedding_parameters": 302838784,
+      "total_parameters_with_head": 559933482,
+      "dropped_keys_on_load": [
+       "lm_head.bias",
+       "lm_head.dense.bias",
+       "lm_head.dense.weight",
+       "lm_head.layer_norm.bias",
+       "lm_head.layer_norm.weight",
+       "roberta.pooler.dense.bias",
+       "roberta.pooler.dense.weight"
+      ],
+      "vocab_size": 250002
+     }
+    },
+    "43": null
+   },
+   "5e-05": {
+    "42": null,
+    "43": null
+   }
+  }
+ },
+ "references": {
+  "cafe": {
+   "absa_restaurant": {
+    "seed42": 0.7771971496437055,
+    "seed43": 0.7639605818864383,
+    "mean": 0.7705788657650718
+   },
+   "visfd": {
+    "seed42": 0.8546650717703349
+   },
+   "vsfc_topic": {
+    "seed42": 0.8174458365092476
+   }
+  },
+  "bami": {
+   "absa_restaurant": {
+    "f1": 0.7474178403755869,
+    "lr": 5e-05
+   },
+   "vsfc_topic": {
+    "f1": 0.7953280821882547,
+    "lr": 1e-05
+   },
+   "visfd": {
+    "f1": 0.8438339802926247,
+    "lr": 5e-05
+   }
+  },
+  "mmbert_base": {
+   "absa_restaurant": 0.75626204238921,
+   "vsfc_topic": 0.811808487044734,
+   "visfd": 0.836390977443609
+  },
+  "xlmr_base_restaurant": 0.7360912981455064,
+  "b2_1e-05": {
+   "absa_restaurant": 0.7571976967370442,
+   "vsfc_topic": 0.8073548845647585,
+   "visfd": 0.8485393258426966
+  },
+  "p_vi_1e-05": {
+   "absa_restaurant": 0.7614900822447992,
+   "vsfc_topic": 0.8069444272956812,
+   "visfd": 0.8543689320388349
+  },
+  "files": {
+   "cafe_restaurant_seed42": "artifacts/cdbk_pilot/runs/T_absa_restaurant_seed42/metadata.json",
+   "cafe_restaurant_seed43": "artifacts/cafebert_aspect_pair_confirmation/seed43/T_absa_restaurant_seed43/metadata.json",
+   "cafe_visfd_seed42": "artifacts/sealion_benchmark/cafe_runs/visfd/lr_2e-05/seed_42/metadata.json",
+   "cafe_topic_seed42": "artifacts/sealion_benchmark/cafe_runs/vsfc_topic/lr_2e-05/seed_42/metadata.json",
+   "bami_e14": "artifacts/e14/validation_grid.json",
+   "mmbert_base": "artifacts/base_encoder_baseline/summary.json",
+   "xlmr_base": "artifacts/base_encoder_baseline/summary.json",
+   "b2_bidirlm": "artifacts/qwen3_encoder_probe/summary.json",
+   "p_vi": "artifacts/bidirlm_vi_mntp/summary.json"
+  }
+ },
+ "deltas": {
+  "cafe_reference": {
+   "absa_restaurant": {
+    "seed42": 0.7771971496437055,
+    "seed43": 0.7639605818864383,
+    "mean": 0.7705788657650718
+   },
+   "visfd": {
+    "seed42": 0.8546650717703349
+   },
+   "vsfc_topic": {
+    "seed42": 0.8174458365092476
+   }
+  },
+  "primary": "matched LR 2e-5",
+  "notes": "CafeBERT was run at 2e-5 only; Restaurant Cafe mean of seeds 42/43",
+  "restaurant_best_of_grid": {
+   "best_lr": 2e-05,
+   "xlmr_mean": 0.7700712589073635,
+   "cafe_mean": 0.7705788657650718,
+   "delta_cafe_minus_xlmr": 0.0005076068577083426,
+   "seeds": {
+    "42": 0.7781472684085511,
+    "43": 0.7619952494061758
+   }
+  },
+  "restaurant_matched_2e-5": {
+   "xlmr_mean": 0.7700712589073635,
+   "cafe_mean": 0.7705788657650718,
+   "delta_cafe_minus_xlmr": 0.0005076068577083426,
+   "seeds": {
+    "42": 0.7781472684085511,
+    "43": 0.7619952494061758
+   }
+  },
+  "visfd": {
+   "2e-05": {
+    "xlmr": 0.8548459133541759,
+    "cafe": 0.8546650717703349,
+    "delta_cafe_minus_xlmr": -0.00018084158384101823
+   }
+  },
+  "vsfc_topic": {
+   "2e-05": {
+    "xlmr": 0.806123331161886,
+    "cafe": 0.8174458365092476,
+    "delta_cafe_minus_xlmr": 0.011322505347361678
+   }
+  }
+ },
+ "primary_comparison": "matched LR 2e-5",
+ "conclusion": "Cafe ≈ XLM-R-large (Δ ≤ 1,0) → lợi thế của CafeBERT gắn với **kích thước/kiến trúc encoder gốc**; không chi CPT liều lớn (1B/5B) trên cơ sở này.",
+ "gpu_hours_recorded": 2.6014664766523574
+}
