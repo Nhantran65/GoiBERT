@@ -1,0 +1,356 @@
+{
+ "protocol": "bidirlm-1b-probe-preflight-v1",
+ "started_at": "2026-09-23T03:14:43Z",
+ "gpu_original_id": "1",
+ "gpu_name": "NVIDIA L40S",
+ "free_bytes_at_launch": 47192932352,
+ "total_bytes": 47665709056,
+ "phase1_gate_sha256": "3ee1aa3d3e89b4e3875801819ee9b19237e48c9c5dcfd3ef3ce14b378c781ce6",
+ "checks": [
+  {
+   "name": "strict_model_load",
+   "pass": true,
+   "detail": {
+    "missing": [],
+    "unexpected": [],
+    "mismatched": []
+   }
+  },
+  {
+   "name": "encoder_at_most_1b",
+   "pass": true,
+   "detail": {
+    "encoder_parameters": 999885952,
+    "embedding_parameters": 301989888,
+    "encoder_non_embedding_parameters": 697896064,
+    "total_parameters_with_head": 1001269552
+   }
+  },
+  {
+   "name": "head_hash",
+   "pass": true,
+   "detail": "3223af0a7ed69a5be2b23ba83d7b187a0ff8916c5556fa7bd9a9c445eab0be67"
+  },
+  {
+   "name": "tokenizer_bos_eos",
+   "pass": true,
+   "detail": {
+    "class": "GemmaTokenizerFast",
+    "length": 262146,
+    "bos_id": 2,
+    "eos_id": 1,
+    "pad_id": 0,
+    "with_special": [
+     172915,
+     35909,
+     78280,
+     36505,
+     33154,
+     11774,
+     236761
+    ],
+    "without_special": [
+     172915,
+     35909,
+     78280,
+     36505,
+     33154,
+     11774,
+     236761
+    ],
+    "model_prepends_bos_id": 2
+   }
+  },
+  {
+   "name": "padded_batch",
+   "pass": true,
+   "detail": [
+    24,
+    5
+   ]
+  },
+  {
+   "name": "bidirectional_backward",
+   "pass": true,
+   "detail": 5.601597785949707
+  },
+  {
+   "name": "bidirectional_forward",
+   "pass": true,
+   "detail": 10.665313720703125
+  },
+  {
+   "name": "padding_invariance_fp32",
+   "pass": true,
+   "detail": 0.0
+  },
+  {
+   "name": "attention_dropout_train_eval",
+   "pass": true,
+   "detail": {
+    "modules": 26,
+    "configured": 0.1,
+    "train_max_abs": 17.71588897705078,
+    "eval_max_abs": 0.0
+   }
+  },
+  {
+   "name": "train_truncation_rates",
+   "pass": true,
+   "detail": {
+    "absa_restaurant": 0.0,
+    "visfd": 0.00012843565373747752,
+    "vsfc_topic": 0.0
+   }
+  },
+  {
+   "name": "micro_batch_capacity",
+   "pass": true,
+   "detail": [
+    {
+     "micro_batch": 32,
+     "error": "CUDA OOM",
+     "detail": "CUDA out of memory. Tried to allocate 110.00 MiB. GPU 0 has a total capacity of 44.39 GiB of which 38.69 MiB is free. Including non-PyTorch memory, this process has 44.33 GiB memory in use. Of the allocated memory 43.42 GiB is allocated by PyTorch, and 396.74 MiB is reserved by PyTorch but unallocat"
+    },
+    {
+     "micro_batch": 16,
+     "peak_allocated_bytes": 31196530176,
+     "finite": true,
+     "under_40gb": true
+    }
+   ]
+  },
+  {
+   "name": "restaurant_one_epoch_smoke",
+   "pass": true,
+   "detail": {
+    "command": [
+     "/home/kiettqa/GoiBERT/.venv-qwen-probe/bin/python",
+     "/home/kiettqa/GoiBERT/scripts/bidirlm_1b_probe/finetune.py",
+     "--arm",
+     "B1B",
+     "--task",
+     "absa_restaurant",
+     "--lr",
+     "1e-5",
+     "--seed",
+     "42",
+     "--device",
+     "cuda:0",
+     "--micro-batch",
+     "16",
+     "--out-dir",
+     "/home/kiettqa/GoiBERT/artifacts/bidirlm_1b_probe/phase2/preflight_smoke",
+     "--smoke-epoch"
+    ],
+    "exit_code": 0,
+    "log": "/home/kiettqa/GoiBERT/artifacts/bidirlm_1b_probe/phase2/logs/preflight_smoke.log",
+    "status": "completed",
+    "epochs": 1,
+    "train_loss": 0.3160147245593823,
+    "postrun_checks": {
+     "checkpoint_epoch": 1,
+     "reload_selection_f1": 0.6610169491525424,
+     "reload_matches_best": true,
+     "prediction_file_selection_f1": 0.6610169491525424,
+     "prediction_file_matches_best": true,
+     "reload_predictions_identical": true,
+     "ids_stable_and_complete": true,
+     "strict_load_missing": [],
+     "strict_load_unexpected": []
+    }
+   }
+  }
+ ],
+ "model_manifest": {
+  "key": "bidirlm_1b",
+  "repo": "BidirLM/BidirLM-1B-Base",
+  "branch": "transformers-v4",
+  "commit": "f98e971f0f0bfcf88a7a8e0b74914497930f51f3",
+  "family": "bidirlm",
+  "license": "apache-2.0; Gemma foundation under Gemma Terms of Use",
+  "trust_remote_code": true,
+  "snapshot": "/home/kiettqa/.cache/huggingface/hub/models--BidirLM--BidirLM-1B-Base/snapshots/f98e971f0f0bfcf88a7a8e0b74914497930f51f3",
+  "files": {
+   ".gitattributes": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930",
+   "README.md": "5ecfb3db9962c19c4facb01101790c75da36a9a88b609453490351a4bfac2e08",
+   "config.json": "7ea929358ecbe02b423725714ecb38cf489022f37d342d9402c74f8d6f2bfb3b",
+   "configuration_bidirlm.py": "eaa559cf7bc7d12599975fed278d3850d945ac11d83a47921f027a6d0cb726cd",
+   "model.safetensors": "d0e6be7183b604eff83ce294b00f05108ff7ad33c904dc6624e5f6f65ddc78ec",
+   "modeling_bidirlm.py": "8b7e12fdab172f26423d4b1933b3658497cb61d59546bcf01924b94d7cf1b3af",
+   "tokenizer.json": "7d4046bf0505a327dd5a0abbb427ecd4fc82f99c2ceaa170bc61ecde12809b0c",
+   "tokenizer.model": "1299c11d7cf632ef3b4e11937501358ada021bbdf7c47638d13c0ee982f2e79c",
+   "tokenizer_config.json": "7e7a36a42110dbbd5ab2b99969882fafac81f30563d1d9b82a2dfb3b39a318ae"
+  },
+  "weights_sha256": "d0e6be7183b604eff83ce294b00f05108ff7ad33c904dc6624e5f6f65ddc78ec"
+ },
+ "model_spec": {
+  "protocol": "bidirlm-1b-probe-ft-v1",
+  "arm": "B1B",
+  "arm_role": "BidirLM-1B-Base, Gemma3-1B foundation",
+  "arm_attention": "bidirectional",
+  "arm_mask_mode": "native",
+  "pooling": "mean",
+  "attention_dropout": 0.1,
+  "attention_dropout_modules": 26,
+  "backbone": "bidirlm_1b",
+  "backbone_repo": "BidirLM/BidirLM-1B-Base",
+  "hf_commit": "f98e971f0f0bfcf88a7a8e0b74914497930f51f3",
+  "encoder_class": "BidirLMModel",
+  "hidden_size": 1152,
+  "num_hidden_layers": 26,
+  "num_attention_heads": 4,
+  "num_key_value_heads": 1,
+  "vocab_size": 262144,
+  "encoder_parameters": 999885952,
+  "embedding_parameters": 301989888,
+  "encoder_non_embedding_parameters": 697896064,
+  "total_parameters_with_head": 1001269552,
+  "num_labels": 48,
+  "num_aspects": 12,
+  "aspect_class_counts": [
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4
+  ],
+  "dropped_keys_on_load": [],
+  "attention_implementation": "eager",
+  "dtype": "float32 master weights + bf16 autocast"
+ },
+ "head_init_sha256": "3223af0a7ed69a5be2b23ba83d7b187a0ff8916c5556fa7bd9a9c445eab0be67",
+ "tokenizer": {
+  "class": "GemmaTokenizerFast",
+  "length": 262146,
+  "bos_id": 2,
+  "eos_id": 1,
+  "pad_id": 0,
+  "with_special": [
+   172915,
+   35909,
+   78280,
+   36505,
+   33154,
+   11774,
+   236761
+  ],
+  "without_special": [
+   172915,
+   35909,
+   78280,
+   36505,
+   33154,
+   11774,
+   236761
+  ],
+  "model_prepends_bos_id": 2
+ },
+ "direction": {
+  "last_to_first": 5.601597785949707,
+  "first_to_last": 10.665313720703125,
+  "pad_to_real": 0.0
+ },
+ "attention_dropout": {
+  "modules": 26,
+  "configured": 0.1,
+  "train_max_abs": 17.71588897705078,
+  "eval_max_abs": 0.0
+ },
+ "train_token_lengths": {
+  "absa_restaurant": {
+   "train_count": 7028,
+   "max_tokens": 116,
+   "p50_tokens": 19.0,
+   "p95_tokens": 44.0,
+   "p99_tokens": 60.72999999999956,
+   "truncation_rate_256": 0.0,
+   "truncation_rate_512": 0.0,
+   "max_length": 256,
+   "warning_over_512": false
+  },
+  "visfd": {
+   "train_count": 7786,
+   "max_tokens": 267,
+   "p50_tokens": 39.0,
+   "p95_tokens": 105.0,
+   "p99_tokens": 151.0,
+   "truncation_rate_256": 0.00012843565373747752,
+   "truncation_rate_512": 0.0,
+   "max_length": 256,
+   "warning_over_512": false
+  },
+  "vsfc_topic": {
+   "train_count": 11426,
+   "max_tokens": 165,
+   "p50_tokens": 13.0,
+   "p95_tokens": 36.0,
+   "p99_tokens": 54.75,
+   "truncation_rate_256": 0.0,
+   "truncation_rate_512": 0.0,
+   "max_length": 256,
+   "warning_over_512": false
+  }
+ },
+ "capacity_profiles": [
+  {
+   "micro_batch": 32,
+   "error": "CUDA OOM",
+   "detail": "CUDA out of memory. Tried to allocate 110.00 MiB. GPU 0 has a total capacity of 44.39 GiB of which 38.69 MiB is free. Including non-PyTorch memory, this process has 44.33 GiB memory in use. Of the allocated memory 43.42 GiB is allocated by PyTorch, and 396.74 MiB is reserved by PyTorch but unallocat"
+  },
+  {
+   "micro_batch": 16,
+   "peak_allocated_bytes": 31196530176,
+   "finite": true,
+   "under_40gb": true
+  }
+ ],
+ "selected_micro_batch": 16,
+ "smoke": {
+  "command": [
+   "/home/kiettqa/GoiBERT/.venv-qwen-probe/bin/python",
+   "/home/kiettqa/GoiBERT/scripts/bidirlm_1b_probe/finetune.py",
+   "--arm",
+   "B1B",
+   "--task",
+   "absa_restaurant",
+   "--lr",
+   "1e-5",
+   "--seed",
+   "42",
+   "--device",
+   "cuda:0",
+   "--micro-batch",
+   "16",
+   "--out-dir",
+   "/home/kiettqa/GoiBERT/artifacts/bidirlm_1b_probe/phase2/preflight_smoke",
+   "--smoke-epoch"
+  ],
+  "exit_code": 0,
+  "log": "/home/kiettqa/GoiBERT/artifacts/bidirlm_1b_probe/phase2/logs/preflight_smoke.log",
+  "status": "completed",
+  "epochs": 1,
+  "train_loss": 0.3160147245593823,
+  "postrun_checks": {
+   "checkpoint_epoch": 1,
+   "reload_selection_f1": 0.6610169491525424,
+   "reload_matches_best": true,
+   "prediction_file_selection_f1": 0.6610169491525424,
+   "prediction_file_matches_best": true,
+   "reload_predictions_identical": true,
+   "ids_stable_and_complete": true,
+   "strict_load_missing": [],
+   "strict_load_unexpected": []
+  }
+ },
+ "passed": true,
+ "elapsed_seconds": 188.4356496334076,
+ "finished_at": "2026-09-23T03:17:51Z"
+}
