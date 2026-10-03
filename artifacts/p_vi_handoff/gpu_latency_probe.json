@@ -1,0 +1,53 @@
+{
+  "protocol": "p-vi-base-handoff-gpu-latency-probe-v1",
+  "device": "NVIDIA L40S",
+  "scope": "model forward only; warm; shared GPU; no tokenization or API",
+  "variants": {
+    "bf16": {
+      "load_seconds": 0.8982477318495512,
+      "loaded_gpu_mib": 1136.88916015625,
+      "peak_gpu_mib": 1149.20849609375,
+      "batches": {
+        "1": {
+          "shape": [
+            1,
+            17
+          ],
+          "median_ms": 120.79296726733446,
+          "min_ms": 114.01234939694405
+        },
+        "8": {
+          "shape": [
+            8,
+            17
+          ],
+          "median_ms": 56.76531046628952,
+          "min_ms": 22.18317613005638
+        }
+      }
+    },
+    "gpu_int8": {
+      "load_seconds": 2.395775521174073,
+      "loaded_gpu_mib": 755.20166015625,
+      "peak_gpu_mib": 774.44775390625,
+      "batches": {
+        "1": {
+          "shape": [
+            1,
+            17
+          ],
+          "median_ms": 104.92596309632063,
+          "min_ms": 83.86236615478992
+        },
+        "8": {
+          "shape": [
+            8,
+            17
+          ],
+          "median_ms": 99.19666405767202,
+          "min_ms": 82.97000639140606
+        }
+      }
+    }
+  }
+}

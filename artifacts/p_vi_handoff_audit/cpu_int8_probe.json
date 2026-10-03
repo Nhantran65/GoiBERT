@@ -1,0 +1,16 @@
+{
+  "protocol": "p-vi-base-cpu-int8-exploratory-v1",
+  "backend": "torch.ao.quantization.quantize_dynamic, PyTorch 2.6.0, x86",
+  "model": "P_vi base AutoModel FP32",
+  "quantized_modules": 196,
+  "default_per_tensor_two_sentences": {
+    "pooled_cosine_vs_fp32_min": 0.9557807445526123,
+    "finite": true
+  },
+  "per_channel_six_sentences": {
+    "pooled_cosine_vs_fp32_min": 0.9480416774749756,
+    "pooled_cosine_vs_fp32_mean": 0.9584991335868835,
+    "hidden_max_abs": 27.237266540527344
+  },
+  "decision": "Do not include this CPU INT8 recipe in the handoff package without downstream quality validation. FP32 CPU loading passed."
+}
