@@ -1,0 +1,151 @@
+{
+  "model": "goiturn_s_gd",
+  "student": "goiturn_s",
+  "completed_steps": 30000,
+  "teacher_checkpoint": "/home/kiettqa/GoiBERT/models/goibert-b-dapt",
+  "teacher_fallback_used": false,
+  "corpus": "/home/kiettqa/GoiBERT/data/corpus_v1/mlm_mix.txt",
+  "corpus_stats_sha256": "1fa34627adddf9206f850e4595ecb0f88fdb47477eebb5beadb191ad20b26c80",
+  "loss_curve_tail": [
+    {
+      "total": 0.08191785961389542,
+      "hidden": 0.08182874321937561,
+      "attention": 8.91165473149158e-05
+    },
+    {
+      "total": 0.08243699371814728,
+      "hidden": 0.08234907686710358,
+      "attention": 8.791442814981565e-05
+    },
+    {
+      "total": 0.0828566625714302,
+      "hidden": 0.08276710659265518,
+      "attention": 8.955957309808582e-05
+    },
+    {
+      "total": 0.08191477507352829,
+      "hidden": 0.08182650059461594,
+      "attention": 8.827242709230632e-05
+    },
+    {
+      "total": 0.08294753730297089,
+      "hidden": 0.08285971730947495,
+      "attention": 8.781815267866477e-05
+    },
+    {
+      "total": 0.08252482116222382,
+      "hidden": 0.08243655413389206,
+      "attention": 8.827017154544592e-05
+    },
+    {
+      "total": 0.08143647760152817,
+      "hidden": 0.08134760707616806,
+      "attention": 8.886846626410261e-05
+    },
+    {
+      "total": 0.08190624415874481,
+      "hidden": 0.0818190947175026,
+      "attention": 8.71505617396906e-05
+    },
+    {
+      "total": 0.08094289153814316,
+      "hidden": 0.08085459470748901,
+      "attention": 8.829582657199353e-05
+    },
+    {
+      "total": 0.08168282359838486,
+      "hidden": 0.08159368485212326,
+      "attention": 8.914191130315885e-05
+    },
+    {
+      "total": 0.08260773122310638,
+      "hidden": 0.0825156420469284,
+      "attention": 9.209062409354374e-05
+    },
+    {
+      "total": 0.08168905228376389,
+      "hidden": 0.08160126209259033,
+      "attention": 8.77899510669522e-05
+    },
+    {
+      "total": 0.08248578011989594,
+      "hidden": 0.08239725977182388,
+      "attention": 8.852242171997204e-05
+    },
+    {
+      "total": 0.08243943750858307,
+      "hidden": 0.08235034346580505,
+      "attention": 8.90969458851032e-05
+    },
+    {
+      "total": 0.08222873508930206,
+      "hidden": 0.08214009553194046,
+      "attention": 8.86370035004802e-05
+    },
+    {
+      "total": 0.08115524053573608,
+      "hidden": 0.08106815814971924,
+      "attention": 8.708563836989924e-05
+    },
+    {
+      "total": 0.08112245053052902,
+      "hidden": 0.0810355618596077,
+      "attention": 8.689061360200867e-05
+    },
+    {
+      "total": 0.08201785385608673,
+      "hidden": 0.08192970603704453,
+      "attention": 8.814742614049464e-05
+    },
+    {
+      "total": 0.08117193728685379,
+      "hidden": 0.08108464628458023,
+      "attention": 8.728735701879486e-05
+    },
+    {
+      "total": 0.08215554058551788,
+      "hidden": 0.08206784725189209,
+      "attention": 8.769279520493001e-05
+    }
+  ],
+  "seed": 42,
+  "architecture": {
+    "num_hidden_layers": 10,
+    "hidden_size": 384,
+    "num_attention_heads": 6,
+    "intermediate_size": 1536,
+    "max_position_embeddings": 2050
+  },
+  "max_length": 256,
+  "batch_size": 32,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "warmup_steps": 1000,
+  "grad_clip": 1.0,
+  "checkpoint_every": 2000,
+  "loss": "mapped hidden-state MSE + head-mean attention MSE; no labels or logits",
+  "layer_mapping": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    11,
+    12
+  ],
+  "pca_initialization": "selected teacher word embeddings",
+  "torch_version": "2.6.0+cu124",
+  "transformers_version": "4.49.0",
+  "device_name": "NVIDIA L40S",
+  "attention_implementation": "eager",
+  "amp_fp16": false,
+  "smoke": false,
+  "corpus_sha256": "fb0b4dd4f2a8bc6912bf13bb6a6d4f2af9d3271a6cfe49941eed0650f178c63f",
+  "precision": "bf16 autocast; fp32 loss; no GradScaler",
+  "elapsed_seconds": 4207.486724510789,
+  "gpu": "1"
+}

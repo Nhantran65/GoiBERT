@@ -1,0 +1,68 @@
+{
+  "task": "phoner",
+  "kind": "student",
+  "fold": null,
+  "seed": 44,
+  "learning_rate": 0.0001,
+  "epochs": 30,
+  "batch_size": 32,
+  "max_length": 512,
+  "warmup_steps": 474,
+  "total_steps": 4740,
+  "precision": "bf16",
+  "include_test": false,
+  "model_spec": {
+    "total_parameters": 26405781
+  },
+  "length_stats": {
+    "train": {
+      "examples": 5027,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 167541,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 2000,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 71325,
+      "truncated_words": 0
+    }
+  },
+  "alpha": 0.5,
+  "temperature": 2,
+  "labels": [
+    "O",
+    "B-AGE",
+    "B-DATE",
+    "B-GENDER",
+    "B-JOB",
+    "B-LOCATION",
+    "B-NAME",
+    "B-ORGANIZATION",
+    "B-PATIENT_ID",
+    "B-SYMPTOM_AND_DISEASE",
+    "B-TRANSPORTATION",
+    "I-AGE",
+    "I-DATE",
+    "I-GENDER",
+    "I-JOB",
+    "I-LOCATION",
+    "I-NAME",
+    "I-ORGANIZATION",
+    "I-PATIENT_ID",
+    "I-SYMPTOM_AND_DISEASE",
+    "I-TRANSPORTATION"
+  ],
+  "status": "completed",
+  "best_epoch": 25,
+  "best_selection_f1": 0.932227016262861,
+  "postrun_checks": {
+    "reload_matches_best": true,
+    "prediction_file_matches_best": true,
+    "reload_predictions_identical": true,
+    "ids_stable_and_complete": true
+  },
+  "elapsed_seconds": 1369.0163924694061
+}

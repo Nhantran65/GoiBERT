@@ -1,0 +1,38 @@
+{
+  "task": "vsfc_sentiment",
+  "arm": "kd",
+  "seed": 42,
+  "learning_rate": 1e-05,
+  "llrd_gamma": 0.8,
+  "epochs": 30,
+  "micro_batch": 32,
+  "max_length": 256,
+  "precision": "bf16",
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "backbone": "/home/kiettqa/GoiBERT/artifacts/gd_ablation/backbones/A5/final",
+  "kd_alpha": 0.5,
+  "kd_temperature": 2.0,
+  "include_test": false,
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 3,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26546691,
+    "trainable_parameters": 26546691
+  },
+  "status": "completed",
+  "best_epoch": 19,
+  "best_selection_f1": 0.8337456820511129,
+  "postrun_checks": {
+    "reload_matches_best": true,
+    "prediction_file_matches_best": true,
+    "reload_predictions_identical": true,
+    "ids_stable_and_complete": true
+  },
+  "elapsed_seconds": 362.0385615825653
+}
