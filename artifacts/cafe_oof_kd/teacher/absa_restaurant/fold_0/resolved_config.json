@@ -1,0 +1,263 @@
+{
+  "protocol": "SEA-LION-ModernBERT-300M-five-task-v1",
+  "model_kind": "cafebert",
+  "task_id": "absa_restaurant",
+  "seed": 42,
+  "stage": "validation_only",
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "effective_batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_epsilon": 1e-08,
+  "warmup_fraction": 0.1,
+  "warmup_steps": 528,
+  "total_steps": 5280,
+  "gradient_clip_norm": 1.0,
+  "loss": "plain_cross_entropy (absent class 0 included)",
+  "head": "first token -> dropout0.1 -> dense1024 -> tanh -> dropout0.1 -> task logits",
+  "pooling": "first token",
+  "selection": "validation task-specific selection_f1, best epoch",
+  "include_test": false,
+  "smoke": null,
+  "source_hash": "6979f3966bea74a8d8f4a465561245bab4d35859f2adbe21a402c65a6ad2c4a5",
+  "model": {
+    "backbone": "uitnlp/CafeBERT",
+    "hidden_size": 1024,
+    "num_hidden_layers": 24,
+    "num_attention_heads": 16,
+    "intermediate_size": 4096,
+    "head_hidden_size": 1024,
+    "head_dropout": 0.1,
+    "num_labels": 48,
+    "num_aspects": 12,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 559939632,
+    "trainable_parameters": 559939632,
+    "hf_commit": "af76fcf2a04096b2b54b348a3e4eb48253c93c5d",
+    "encoder_class": "XLMRobertaModel",
+    "weight_file_sha256": "a7306a5665746ca3c617264d5055fc8c399612e1042511549016178fc550bb81",
+    "config_name_or_path": "uitnlp/CafeBERT",
+    "note": "head class reused from goibert_e14.modeling with hidden 1024; pooler dropped; MLM head dropped",
+    "benchmark_adapter": "scripts/cdbk_pilot/common.py via sealion_benchmark"
+  },
+  "tokenizer": {
+    "source": "FacebookAI/xlm-roberta-large",
+    "hf_commit": "c23d21b0620b635a76227c604d44e43a9f0ee389",
+    "files": {
+      "config.json": "ec7c3a99c58a38ebb702a2297f1c4586944e841b5eb29d201ff87e0f9c9abe0e",
+      "model.safetensors": "2dfa19f172412917cab174da04b46e2134811b723666965fd0aabd97caa6e23b",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+      "tokenizer.json": "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c",
+      "tokenizer_config.json": "994f46754c5bf4014f1aa92d34b1374319c3a6b3f702105cd5b742beaecd18ce"
+    },
+    "cafebert_sentencepiece_sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+    "sentencepiece_identical_to_cafebert": true,
+    "reason": "uitnlp/CafeBERT ships only sentencepiece.bpe.model (identical to XLM-R-large); the XLM-R-large fast tokenizer is used, as in the CafeBERT probe",
+    "tokenizer_class": "XLMRobertaTokenizerFast",
+    "vocab_size": 250002,
+    "benchmark_adapter": "scripts/cdbk_pilot/common.py via sealion_benchmark"
+  },
+  "data_provenance": {
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "source_file_hashes": {
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv": "d335cd9c95b91a3defd73b1fd3031160a9586d5707707d1ba4b8769e3e579d8d",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv": "704fdc3bee63dfa2c720ba4f171175c97f791adaf5a7f6f205582aeca3a50202"
+    },
+    "evaluator_code_hash": "6248547c17f375bc6abd2936632c26106f687a6b8ea867e168624b20f0c9bcff"
+  },
+  "task_metadata": {
+    "task_id": "absa_restaurant",
+    "source_files": [
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+      "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+    ],
+    "label_policy": "UIT-ABSA source map: 0=absent, 1=negative, 2=neutral, 3=positive",
+    "include_test": false,
+    "pair_scored_aspects": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "slot_label_names": [
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      [
+        "absent",
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    ]
+  },
+  "train_count": 5622,
+  "validation_count": 771,
+  "num_aspects": 12,
+  "aspect_class_counts": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.49.0",
+    "cuda": "12.4",
+    "device": "cuda:0",
+    "device_name": "NVIDIA L40S",
+    "precision": "bf16",
+    "cuda_visible_devices": "0",
+    "cublas_workspace_config": ":4096:8",
+    "hostname": "server-ai-new-02.vntt.lan"
+  },
+  "gpu_snapshot_at_start": {
+    "0": {
+      "free_mib": 37464,
+      "used_mib": 7995,
+      "util_pct": 40
+    },
+    "1": {
+      "free_mib": 45410,
+      "used_mib": 49,
+      "util_pct": 0
+    },
+    "2": {
+      "free_mib": 45434,
+      "used_mib": 24,
+      "util_pct": 0
+    },
+    "3": {
+      "free_mib": 10539,
+      "used_mib": 34920,
+      "util_pct": 31
+    }
+  },
+  "length_stats": {
+    "train_count": 5622,
+    "max_tokens": 94,
+    "p50_tokens": 21.0,
+    "p95_tokens": 45.0,
+    "p99_tokens": 61.0,
+    "truncation_rate_256": 0.0,
+    "truncation_rate_512": 0.0,
+    "max_length": 256,
+    "warning_over_512": false
+  },
+  "started_at": "2026-09-25T16:08:21Z",
+  "started_at_unix": 1790352495.380017,
+  "argv": [
+    "scripts/cafe_oof_kd/teacher_fold.py",
+    "--task",
+    "absa_restaurant",
+    "--fold",
+    "0"
+  ],
+  "pid": 3032016
+}

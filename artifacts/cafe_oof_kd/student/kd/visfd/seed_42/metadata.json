@@ -1,0 +1,50 @@
+{
+  "task": "visfd",
+  "arm": "kd",
+  "seed": 42,
+  "learning_rate": 0.0001,
+  "llrd_gamma": 0.8,
+  "epochs": 30,
+  "micro_batch": 32,
+  "max_length": 256,
+  "precision": "bf16",
+  "warmup_steps": 732,
+  "total_steps": 7320,
+  "backbone": "models/goiturn-s-gd",
+  "kd_alpha": 0.5,
+  "kd_temperature": 2.0,
+  "include_test": false,
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 42,
+    "num_aspects": 11,
+    "aspect_class_counts": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "total_parameters": 26561706,
+    "trainable_parameters": 26561706
+  },
+  "status": "completed",
+  "best_epoch": 27,
+  "best_selection_f1": 0.8332088995072421,
+  "postrun_checks": {
+    "reload_matches_best": true,
+    "prediction_file_matches_best": true,
+    "reload_predictions_identical": true,
+    "ids_stable_and_complete": true
+  },
+  "elapsed_seconds": 382.4977431297302
+}
