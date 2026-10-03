@@ -1,0 +1,84 @@
+{
+  "stage": "CPU complete; GPU complete",
+  "include_test": false,
+  "tasks": [
+    "vsfc_sentiment",
+    "vsfc_topic",
+    "visfd",
+    "absa_restaurant",
+    "absa_hotel"
+  ],
+  "pool_sizes": {
+    "vsfc_sentiment": 5,
+    "vsfc_topic": 6,
+    "visfd": 6,
+    "absa_restaurant": 6,
+    "absa_hotel": 5
+  },
+  "packet": {
+    "items": 200,
+    "per_task": 40,
+    "seed": 42
+  },
+  "new_gpu_runs": [
+    {
+      "task": "vsfc_sentiment",
+      "seed": 43,
+      "elapsed_seconds": 1932.421241760254,
+      "gpu": "1"
+    },
+    {
+      "task": "vsfc_sentiment",
+      "seed": 44,
+      "elapsed_seconds": 2265.502807378769,
+      "gpu": "1"
+    },
+    {
+      "task": "vsfc_topic",
+      "seed": 43,
+      "elapsed_seconds": 1943.0202524662018,
+      "gpu": "2"
+    },
+    {
+      "task": "vsfc_topic",
+      "seed": 44,
+      "elapsed_seconds": 2276.9651861190796,
+      "gpu": "2"
+    },
+    {
+      "task": "visfd",
+      "seed": 43,
+      "elapsed_seconds": 1614.1871328353882,
+      "gpu": "1"
+    },
+    {
+      "task": "visfd",
+      "seed": 44,
+      "elapsed_seconds": 1413.4198100566864,
+      "gpu": "1"
+    },
+    {
+      "task": "absa_restaurant",
+      "seed": 44,
+      "elapsed_seconds": 1219.4711990356445,
+      "gpu": "2"
+    },
+    {
+      "task": "absa_hotel",
+      "seed": 43,
+      "elapsed_seconds": 1464.4853875637054,
+      "gpu": "2"
+    },
+    {
+      "task": "absa_hotel",
+      "seed": 44,
+      "elapsed_seconds": 1246.7547628879547,
+      "gpu": "1"
+    }
+  ],
+  "gpu_hours_used": 4.271174383362134,
+  "gpus_used": [
+    "1",
+    "2"
+  ]
+}

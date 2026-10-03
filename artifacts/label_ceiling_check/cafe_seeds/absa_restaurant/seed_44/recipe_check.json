@@ -1,0 +1,178 @@
+{
+  "differences": [
+    {
+      "field": "argv",
+      "old": [
+        "scripts/cdbk_pilot/finetune.py",
+        "--arm",
+        "T",
+        "--device",
+        "cuda:2",
+        "--micro-batch",
+        "32"
+      ],
+      "new": [
+        "/home/kiettqa/GoiBERT/scripts/label_ceiling_check/seed_train.py",
+        "--task",
+        "absa_restaurant",
+        "--seed",
+        "44"
+      ]
+    },
+    {
+      "field": "arm",
+      "old": "T",
+      "new": null
+    },
+    {
+      "field": "gpu_snapshot_at_start.0.free_mib",
+      "old": 41282,
+      "new": 14664
+    },
+    {
+      "field": "gpu_snapshot_at_start.0.used_mib",
+      "old": 4176,
+      "new": 30794
+    },
+    {
+      "field": "gpu_snapshot_at_start.0.util_pct",
+      "old": 8,
+      "new": 0
+    },
+    {
+      "field": "gpu_snapshot_at_start.1.free_mib",
+      "old": 19685,
+      "new": 45438
+    },
+    {
+      "field": "gpu_snapshot_at_start.1.used_mib",
+      "old": 25773,
+      "new": 20
+    },
+    {
+      "field": "gpu_snapshot_at_start.1.util_pct",
+      "old": 19,
+      "new": 0
+    },
+    {
+      "field": "gpu_snapshot_at_start.2.free_mib",
+      "old": 24114,
+      "new": 42791
+    },
+    {
+      "field": "gpu_snapshot_at_start.2.used_mib",
+      "old": 21345,
+      "new": 2668
+    },
+    {
+      "field": "gpu_snapshot_at_start.2.util_pct",
+      "old": 17,
+      "new": 0
+    },
+    {
+      "field": "gpu_snapshot_at_start.3.free_mib",
+      "old": 31619,
+      "new": 4279
+    },
+    {
+      "field": "gpu_snapshot_at_start.3.used_mib",
+      "old": 13839,
+      "new": 41180
+    },
+    {
+      "field": "gpu_snapshot_at_start.3.util_pct",
+      "old": 56,
+      "new": 49
+    },
+    {
+      "field": "head",
+      "old": "CLS -> dropout0.1 -> dense1024 -> tanh -> dropout0.1 -> 48 logits (12 slots x 4)",
+      "new": "first token -> dropout0.1 -> dense1024 -> tanh -> dropout0.1 -> task logits"
+    },
+    {
+      "field": "init",
+      "old": "cafebert",
+      "new": null
+    },
+    {
+      "field": "kd",
+      "old": {
+        "enabled": false
+      },
+      "new": null
+    },
+    {
+      "field": "model.benchmark_adapter",
+      "old": null,
+      "new": "scripts/cdbk_pilot/common.py via sealion_benchmark"
+    },
+    {
+      "field": "model_kind",
+      "old": null,
+      "new": "cafebert"
+    },
+    {
+      "field": "pid",
+      "old": 3632388,
+      "new": 2156130
+    },
+    {
+      "field": "pooling",
+      "old": null,
+      "new": "first token"
+    },
+    {
+      "field": "protocol",
+      "old": "CDBK-pilot-M1-restaurant-v1",
+      "new": "SEA-LION-ModernBERT-300M-five-task-v1"
+    },
+    {
+      "field": "runtime.cuda_visible_devices",
+      "old": null,
+      "new": "2"
+    },
+    {
+      "field": "runtime.device",
+      "old": "cuda:2",
+      "new": "cuda:0"
+    },
+    {
+      "field": "seed",
+      "old": 42,
+      "new": 44
+    },
+    {
+      "field": "selection",
+      "old": "validation pair_micro_f1 (selection_f1), best epoch",
+      "new": "validation task-specific selection_f1, best epoch"
+    },
+    {
+      "field": "source_hash",
+      "old": "fb1678ed9357ab3cd07bc8f7d0c43a649c57ba7a951e56da508ad9cac9e2050c",
+      "new": "6979f3966bea74a8d8f4a465561245bab4d35859f2adbe21a402c65a6ad2c4a5"
+    },
+    {
+      "field": "started_at",
+      "old": "2026-09-17T07:57:07Z",
+      "new": "2026-09-23T18:41:39Z"
+    },
+    {
+      "field": "started_at_unix",
+      "old": 1789631822.84136,
+      "new": 1790188890.0443704
+    },
+    {
+      "field": "tokenizer.benchmark_adapter",
+      "old": null,
+      "new": "scripts/cdbk_pilot/common.py via sealion_benchmark"
+    },
+    {
+      "field": "tokenizer.files.model.safetensors",
+      "old": null,
+      "new": "2dfa19f172412917cab174da04b46e2134811b723666965fd0aabd97caa6e23b"
+    }
+  ],
+  "blocked": [],
+  "pass": true,
+  "rechecked_after_filter_fix": true
+}
