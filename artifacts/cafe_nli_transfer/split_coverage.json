@@ -1,0 +1,62 @@
+{
+  "audit_groups_with_entailment_and_contradiction": 178,
+  "audit_premise_groups": 338,
+  "gate_pass": true,
+  "gate_result": {
+    "audit_mixed_premise_groups": true,
+    "audit_rows": true,
+    "each_class": true,
+    "fit_rows": true,
+    "select_rows": true
+  },
+  "gate_thresholds": {
+    "audit_premise_groups_with_entailment_and_contradiction_minimum": 50,
+    "audit_rows_minimum": 400,
+    "each_class_minimum": 80,
+    "fit_rows_minimum": 4000,
+    "select_rows_minimum": 400
+  },
+  "method": {
+    "bucket": "int(SHA256(component_id)[:8], 16) % 10",
+    "bucket_mapping": {
+      "0..7": "fit",
+      "8": "select",
+      "9": "audit"
+    },
+    "decontamination": "remove the entire component before counts",
+    "label_or_model_output_used_for_split": false,
+    "source": "official ViANLI train only"
+  },
+  "removed_components": 0,
+  "removed_rows": 0,
+  "rows": 8012,
+  "split_counts": {
+    "audit": {
+      "components": 338,
+      "labels": {
+        "contradiction": 239,
+        "entailment": 265,
+        "neutral": 303
+      },
+      "rows": 807
+    },
+    "fit": {
+      "components": 2661,
+      "labels": {
+        "contradiction": 1991,
+        "entailment": 2102,
+        "neutral": 2360
+      },
+      "rows": 6453
+    },
+    "select": {
+      "components": 312,
+      "labels": {
+        "contradiction": 243,
+        "entailment": 248,
+        "neutral": 261
+      },
+      "rows": 752
+    }
+  }
+}

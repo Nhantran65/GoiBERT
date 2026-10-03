@@ -1,0 +1,118 @@
+{
+  "artifacts": {
+    "audit_sample": "/home/kiettqa/GoiBERT/artifacts/cafe_nli_transfer/audit_sample.jsonl",
+    "audit_sample_compact": "/home/kiettqa/GoiBERT/artifacts/cafe_nli_transfer/audit_sample.txt",
+    "decontamination": "/home/kiettqa/GoiBERT/artifacts/cafe_nli_transfer/decontam_report.json",
+    "grouping": "/home/kiettqa/GoiBERT/artifacts/cafe_nli_transfer/grouping_report.json",
+    "schema": "/home/kiettqa/GoiBERT/artifacts/cafe_nli_transfer/schema_audit.json",
+    "split_coverage": "/home/kiettqa/GoiBERT/artifacts/cafe_nli_transfer/split_coverage.json"
+  },
+  "benchmark": {
+    "rows": 50690,
+    "source_files": {
+      "absa_hotel": [
+        "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Train.csv",
+        "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Hotel/Dev.csv"
+      ],
+      "absa_restaurant": [
+        "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Train.csv",
+        "/home/kiettqa/GoiBERT/data/raw/uit-absa-public-candidate/dataset/UIT-ABSA-Restaurant/Dev.csv"
+      ],
+      "visfd": [
+        "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Train.csv",
+        "/home/kiettqa/GoiBERT/data/raw/uit-visfd/Dev.csv"
+      ],
+      "vsfc_sentiment": [
+        "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+        "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sentiments.txt",
+        "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+        "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sentiments.txt"
+      ],
+      "vsfc_topic": [
+        "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/sents.txt",
+        "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/train/topics.txt",
+        "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/sents.txt",
+        "/home/kiettqa/GoiBERT/data/raw/uit-vsfc/dev/topics.txt"
+      ]
+    },
+    "task_counts": {
+      "absa_hotel": {
+        "train": 7180,
+        "validation": 795
+      },
+      "absa_restaurant": {
+        "train": 7028,
+        "validation": 771
+      },
+      "visfd": {
+        "train": 7786,
+        "validation": 1112
+      },
+      "vsfc_sentiment": {
+        "train": 11426,
+        "validation": 1583
+      },
+      "vsfc_topic": {
+        "train": 11426,
+        "validation": 1583
+      }
+    }
+  },
+  "benchmark_scope": "train and validation only for five tasks; loader invoked with include_test=False",
+  "counts": {
+    "dev": 1000,
+    "train": 8012
+  },
+  "created_utc": "2026-09-22",
+  "dataset": {
+    "api_file_listing": [
+      ".gitattributes",
+      "README.md",
+      "vianli_dev.jsonl",
+      "vianli_test.jsonl",
+      "vianli_train.jsonl"
+    ],
+    "api_response_sha256": "e22311f255ef9e9d6467d757ebb5d1c893ff7f6e7e472f715415b3b9793adb05",
+    "license_card": "README frontmatter says MIT; body says CC BY-NC-SA 4.0; preserve this inconsistency for root decision",
+    "paper": "https://arxiv.org/abs/2406.17716",
+    "raw_files_downloaded": [
+      "README.md",
+      "vianli_train.jsonl",
+      "vianli_dev.jsonl"
+    ],
+    "raw_sha256": {
+      "README.md": "adf638c0f08ff5acf5f8379c8b2a03a4ef98d4d3c1c93d97755a6c049d68dfcb",
+      "dataset_api.json": "e22311f255ef9e9d6467d757ebb5d1c893ff7f6e7e472f715415b3b9793adb05",
+      "vianli_dev.jsonl": "c71afc444f5e8868004c81beb8f2f0c9ccc0d3092df6b3f100e18bd0b1110e10",
+      "vianli_train.jsonl": "666ef81df02f373e969be9902d5e0a57e21af4334d0613cc2c69a735dfa8e470"
+    },
+    "repo": "uitnlp/ViANLI",
+    "revision": "0fec8d6ecb043a61c609f9b51f80401fdf1e84d3",
+    "revision_source": "Hugging Face dataset API response saved before raw file downloads",
+    "test_downloaded": false,
+    "test_opened": false
+  },
+  "download": {
+    "api_endpoint": "https://huggingface.co/api/datasets/uitnlp/ViANLI",
+    "api_revision_read_before_raw_download": "0fec8d6ecb043a61c609f9b51f80401fdf1e84d3",
+    "downloaded_paths": [
+      "data/cafe_nli_transfer/raw/README.md",
+      "data/cafe_nli_transfer/raw/vianli_train.jsonl",
+      "data/cafe_nli_transfer/raw/vianli_dev.jsonl"
+    ],
+    "requested_raw_urls": [
+      "https://huggingface.co/datasets/uitnlp/ViANLI/resolve/0fec8d6ecb043a61c609f9b51f80401fdf1e84d3/README.md",
+      "https://huggingface.co/datasets/uitnlp/ViANLI/resolve/0fec8d6ecb043a61c609f9b51f80401fdf1e84d3/vianli_train.jsonl",
+      "https://huggingface.co/datasets/uitnlp/ViANLI/resolve/0fec8d6ecb043a61c609f9b51f80401fdf1e84d3/vianli_dev.jsonl"
+    ],
+    "requested_test_url": null,
+    "test_file_present_under_data_root": false
+  },
+  "label_map": {
+    "contradiction": 2,
+    "entailment": 0,
+    "neutral": 1
+  },
+  "protocol": "cafebert-nli-transfer-pilot-v1",
+  "stage": "D-data-gate-preparation"
+}

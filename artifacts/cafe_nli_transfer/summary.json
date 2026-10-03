@@ -1,0 +1,164 @@
+{
+  "protocol": "cafebert-nli-transfer-pilot-v1",
+  "stage": "D-data-gate",
+  "status": "gate_D_failed",
+  "decision": {
+    "gate": "D",
+    "passed": false,
+    "reason": "The fixed 300-row semantic screen has 97 questionable+unclear rows, exceeding the predeclared threshold of 30; questionable alone is 56, also exceeding 30.",
+    "thresholds_changed": false,
+    "next_stages_run": false,
+    "interpretation": "This stops this pilot configuration for data quality. It does not test or disprove the NLI-transfer hypothesis."
+  },
+  "source": {
+    "repo": "uitnlp/ViANLI",
+    "revision": "0fec8d6ecb043a61c609f9b51f80401fdf1e84d3",
+    "train_rows": 8012,
+    "dev_rows": 1000,
+    "label_map": {
+      "entailment": 0,
+      "neutral": 1,
+      "contradiction": 2
+    },
+    "raw_sha256": {
+      "README.md": "adf638c0f08ff5acf5f8379c8b2a03a4ef98d4d3c1c93d97755a6c049d68dfcb",
+      "vianli_train.jsonl": "666ef81df02f373e969be9902d5e0a57e21af4334d0613cc2c69a735dfa8e470",
+      "vianli_dev.jsonl": "c71afc444f5e8868004c81beb8f2f0c9ccc0d3092df6b3f100e18bd0b1110e10"
+    },
+    "test_downloaded": false,
+    "test_opened": false,
+    "license_note": "The source README frontmatter says MIT while its body says CC BY-NC-SA 4.0; the inconsistency is preserved for review."
+  },
+  "mechanical_review": {
+    "artifact": "artifacts/cafe_nli_transfer/root_mechanical_review.json",
+    "passed": true,
+    "schema_exact": true,
+    "nulls": 0,
+    "invalid_labels": 0,
+    "duplicate_uids": 0,
+    "duplicate_pairs": 0,
+    "conflicting_gold_pairs": 0,
+    "dev_unique_normalized_premises": 888,
+    "dev_unique_premises_also_in_train": 866,
+    "cross_split_exact_pair_overlap": 0,
+    "grouping": {
+      "train_rows": 8012,
+      "components": 3311,
+      "near_duplicate_premise_union_operations": 6538,
+      "exact_hypothesis_union_operations": 5
+    },
+    "decontamination": {
+      "benchmark_train_dev_rows": 50690,
+      "direct_text_matches": 0,
+      "matched_components": 0,
+      "removed_rows": 0,
+      "benchmark_test_opened": false
+    },
+    "split_coverage": {
+      "fit_rows": 6453,
+      "select_rows": 752,
+      "audit_rows": 807,
+      "audit_groups_with_entailment_and_contradiction": 178,
+      "coverage_gate_passed": true
+    },
+    "sample_matches_seed42": true,
+    "sample_rows_match_raw": true,
+    "split_ids_disjoint": true,
+    "all_train_ids_accounted": true
+  },
+  "semantic_audit": {
+    "artifact": "artifacts/cafe_nli_transfer/root_semantic_audit.json",
+    "reviewer": "single root LLM reader",
+    "prediction_blind": true,
+    "gold_blind": false,
+    "human_adjudication": false,
+    "reviewed_rows": 300,
+    "counts": {
+      "supported": 203,
+      "questionable": 56,
+      "unclear": 41,
+      "questionable_plus_unclear": 97
+    },
+    "per_label": {
+      "entailment": {
+        "supported": 64,
+        "questionable": 25,
+        "unclear": 11
+      },
+      "neutral": {
+        "supported": 85,
+        "questionable": 5,
+        "unclear": 10
+      },
+      "contradiction": {
+        "supported": 54,
+        "questionable": 26,
+        "unclear": 20
+      }
+    },
+    "questionable_plus_unclear_threshold": 30,
+    "questionable_threshold": 30,
+    "gate_passed": false,
+    "scope_note": "This is one LLM screening pass for pilot suitability, not a population label-error estimate or a replacement for human adjudication. No gold labels were edited."
+  },
+  "representative_reviewed_examples": [
+    {
+      "sample_index": 15,
+      "uid": "uit_Adver_1849_3_11_10",
+      "source_label": "entailment",
+      "premise": "Khi đó, Ronaldo sẽ phải chơi bóng ở Europa League, nếu anh vẫn ở lại.",
+      "hypothesis": "Ronaldo vẫn không ở lại.",
+      "review": "questionable",
+      "reason": "The conditional premise does not establish that Ronaldo will not stay."
+    },
+    {
+      "sample_index": 161,
+      "uid": "uit_Adver_787_2_31_04",
+      "source_label": "neutral",
+      "premise": "Người đẹp chiến thắng trong cuộc thi được ghi hình từ hôm 21/4, phát sóng tối 24/4.",
+      "hypothesis": "Cuộc thi được ghi hình từ hôm 21/4, phát sóng tối 24/4.",
+      "review": "questionable",
+      "reason": "The hypothesis repeats an explicitly supported clause while the source label is neutral."
+    },
+    {
+      "sample_index": 216,
+      "uid": "uit_Adver_308_1_21_02",
+      "source_label": "contradiction",
+      "premise": "Tại Lễ hội Du lịch và Văn hóa ẩm thực Hà Nội 2021, các hãng bay và đường sắt Việt Nam mở bán vé với mức giảm tới 80%.",
+      "hypothesis": "Tại Lễ hội Du lịch Hà Nội và Văn hóa ẩm thực 2021 có sự giảm giá của các hãng máy bay.",
+      "review": "questionable",
+      "reason": "The premise supports airline discounts, so the hypothesis is supported rather than contradictory."
+    },
+    {
+      "sample_index": 286,
+      "uid": "uit_Adver_1_4_21_01",
+      "source_label": "contradiction",
+      "premise": "Xiaomi sẽ là công ty có tiềm năng nhất trong việc hợp tác với hãng máy ảnh Đức.",
+      "hypothesis": "Đức là quốc gia độc lập có chủ quyền ở khu vực Trung Âu.",
+      "review": "questionable",
+      "reason": "Mentioning a German camera company does not contradict the unrelated fact about Germany."
+    }
+  ],
+  "execution": {
+    "gpu_hours": 0.0,
+    "gpu_jobs_launched_by_pilot": 0,
+    "labels_modified": false,
+    "nli_hypothesis_tested": false,
+    "nli_hypothesis_disproved": false,
+    "test_data_accessed": false
+  },
+  "artifacts": {
+    "plan": "docs/CAFEBERT_NLI_TRANSFER_PILOT_PLAN.md",
+    "result_report": "docs/CAFEBERT_NLI_TRANSFER_PILOT_RESULT.md",
+    "provenance": "artifacts/cafe_nli_transfer/provenance_manifest.json",
+    "download": "artifacts/cafe_nli_transfer/download_manifest.json",
+    "schema": "artifacts/cafe_nli_transfer/schema_audit.json",
+    "grouping": "artifacts/cafe_nli_transfer/grouping_report.json",
+    "decontamination": "artifacts/cafe_nli_transfer/decontam_report.json",
+    "split_coverage": "artifacts/cafe_nli_transfer/split_coverage.json",
+    "audit_sample": "artifacts/cafe_nli_transfer/audit_sample.jsonl",
+    "audit_sample_compact": "artifacts/cafe_nli_transfer/audit_sample.txt",
+    "mechanical_review": "artifacts/cafe_nli_transfer/root_mechanical_review.json",
+    "semantic_review": "artifacts/cafe_nli_transfer/root_semantic_audit.json"
+  }
+}
