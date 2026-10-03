@@ -121,9 +121,12 @@ def main() -> int:
 
     by_arm_task_lr = {}
     for row in rows:
+        if row["seed"] != 42:  # seed 43 is the noise-floor cell, kept separately
+            continue
         by_arm_task_lr.setdefault(row["arm"], {}).setdefault(row["task"], {})[f"{row['lr']:g}"] = {
             k: row.get(k) for k in ("seed", "status", "val_f1", "best_epoch", "minutes", "peak_gpu_gb", "checks_ok", "micro_batch")
         }
+    seed43_rows = [r for r in rows if r["seed"] == 43]
     # deltas on Restaurant, each arm at its own best Restaurant LR (plan §8 diagnostics)
     deltas: dict[str, Any] = {}
     restaurant = {arm: (pick(rows, arm, "absa_restaurant", lrs[arm]) if lrs.get(arm) else None) for arm in ("C", "B0", "B1", "B2")}
@@ -151,7 +154,7 @@ def main() -> int:
     summary = {"protocol": common.PROTOCOL, "created_at": common.now(), "rows": rows,
                "by_arm_task_lr": by_arm_task_lr, "best_restaurant_lr_per_arm": lrs,
                "best_arm_restaurant": {a: (r.get("val_f1") if r else None) for a, r in restaurant.items()},
-               "deltas": deltas, "reference": reference_table, "runs": len(rows),
+               "seed43_rows": seed43_rows, "deltas": deltas, "reference": reference_table, "runs": len(rows),
                "gpu_hours_recorded": gpu_hours}
     common.ART.mkdir(parents=True, exist_ok=True)
     (common.ART / "summary.json").write_text(json.dumps(summary, indent=1, default=str))
@@ -164,13 +167,16 @@ def main() -> int:
         for task in common.TASKS:
             cells = by_arm_task_lr.get(arm, {}).get(task, {})
             values = []
-            for lr in (5e-5, 2e-5, 1e-5):
+            for lr in common.LR_GRID:
                 record = cells.get(f"{lr:g}")
                 values.append(f"{100*record['val_f1']:>7.2f}" if record and record.get("val_f1") is not None else f"{'--':>7}")
             best = max((r["val_f1"] for r in cells.values() if r.get("val_f1") is not None), default=None)
             print(f"{arm:>4} {TASK_LABELS[task]:<16} " + " ".join(values) + (f"   {100*best:>6.2f}" if best is not None else "      --"))
     for key, value in deltas.items():
         print(f"delta {key}: {100*value:+.2f}")
+    for row in seed43_rows:
+        print(f"seed43 {row['arm']}/{TASK_LABELS[row['task']]}/lr{row['lr']:g}: "
+              + (f"{100*row['val_f1']:.2f} (best epoch {row['best_epoch']}, {row['minutes']:.1f} min)" if row.get("val_f1") is not None else f"status={row['status']}"))
     return 0
 
 
