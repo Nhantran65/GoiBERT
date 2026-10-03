@@ -47,3 +47,27 @@ artifacts/**/*.jsonl
 # ---- intent_benchmark: keep manifests/results, drop run dumps
 intent_benchmark/runs/
 intent_benchmark/handoff/
+
+# ---- derived text corpora and third-party dataset text (research-only licences; rebuild with scripts/)
+data/corpus_v1/
+data/corpus_v2/
+data/cafe_nli_transfer/
+data/nli_source_search/
+
+# ---- release bundles, archives and tool zips (hundreds of MB to GB; published via Hugging Face)
+releases/
+*.zip
+*.parquet
+
+# ---- test-set predictions carry gold labels of benchmark test splits (some are no-redistribution)
+artifacts/**/predictions/
+
+# ---- run logs
+*.log
+artifacts/**/logs/
+
+# ---- blind adjudication packet quotes dataset text (research-only licences)
+artifacts/label_ceiling_check/adjudication_packet/
+
+# ---- intent benchmark prediction dumps
+intent_benchmark/**/*_predictions.jsonl
