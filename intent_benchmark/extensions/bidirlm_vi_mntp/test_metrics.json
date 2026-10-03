@@ -1,0 +1,287 @@
+{
+  "model": "bidirlm_vi_mntp",
+  "selected_run": "intent_benchmark/extensions/bidirlm_vi_mntp/lr_5e-5",
+  "selection": {
+    "criterion": "dev_macro_f1; tie -> 2e-5",
+    "winner": "5e-5",
+    "best_dev_macro_f1": 0.8837606837606837,
+    "best_epoch": 6,
+    "trials": {
+      "2e-5": 0.8718919968919969,
+      "5e-5": 0.8837606837606837
+    },
+    "checkpoint_sha256": "236554955af0e0df9a0a20f99461057c6ed104ab773ee6bb3a4648f3dbce5141"
+  },
+  "metrics": {
+    "accuracy": 0.8961038961038961,
+    "macro_f1": 0.8949136008918618,
+    "per_intent": {
+      "GREETING": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 2
+      },
+      "CONFIRMATION": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 7
+      },
+      "GRATITUDE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      },
+      "MENU_QUERY": {
+        "precision": 0.8,
+        "recall": 0.9523809523809523,
+        "f1": 0.8695652173913043,
+        "support": 21
+      },
+      "COMPLAINT": {
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1": 0.8000000000000002,
+        "support": 5
+      },
+      "ADDRESS": {
+        "precision": 0.8571428571428571,
+        "recall": 1.0,
+        "f1": 0.923076923076923,
+        "support": 6
+      },
+      "PHONE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      },
+      "OTHER": {
+        "precision": 0.9642857142857143,
+        "recall": 0.84375,
+        "f1": 0.8999999999999999,
+        "support": 32
+      }
+    },
+    "confusion_matrix": [
+      [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        20,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        4,
+        0,
+        1,
+        0,
+        27
+      ]
+    ],
+    "support": 77,
+    "loss": 0.3976050739164476
+  },
+  "n_test": 77,
+  "loading": {
+    "model_name": "bidirlm_vi_mntp",
+    "model_path": "artifacts/bidirlm_vi_mntp/mntp/hf_bidirlm",
+    "model_files": {
+      "config.json": "3c9792c77b38124e562bd140b95edaeabfbf77add61cea2712224233536e7ad7",
+      "model.safetensors": "d2cc7fe0106b17a1564ae2b9e4edd5cc30c23d259a3245603b3d9fe4fa48a2bf",
+      "tokenizer.json": "d0fd37c475ed0c3c4512afdcfa3c9c8d53b723fcbfcad7d4e8b7057f11d4cad8"
+    },
+    "tokenizer_class": "Qwen2TokenizerFast",
+    "tokenizer_vocab_size": 151669,
+    "hidden_size": 1024,
+    "backbone_class": "BidirLMModel",
+    "attention_implementation": "sdpa",
+    "pooling": "late",
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "allowed_missing_only": true,
+    "allowed_unexpected_only": true,
+    "trainable_parameters": 597107720,
+    "total_parameters": 597107720
+  },
+  "provenance": {
+    "corrected_dataset": {
+      "path": "intent_benchmark/corrected_dataset.jsonl",
+      "sha256": "950d4d47b1b9bb51957840390b969674ad1906f310f2d347211b83f8c3581f02"
+    },
+    "train": {
+      "path": "intent_benchmark/train.jsonl",
+      "sha256": "775475397d9bb28d006a842a6201efe532b0da65d3562b97cad425b34cf9331c"
+    },
+    "dev": {
+      "path": "intent_benchmark/dev.jsonl",
+      "sha256": "184c0efb674aefae99854b2090bd693990f62a188739131a60378ff0df13b7ae"
+    },
+    "test": {
+      "path": "intent_benchmark/test.jsonl",
+      "sha256": "33eb33cc8292650c320b167d52eb5c979e6591acd36a5b27a3336d6b6b54f4a5"
+    },
+    "label_map": {
+      "path": "intent_benchmark/label_map.json",
+      "sha256": "23063af163dd52c2d9afddd3d0f527b732a00380f6592c8c74d0568a96dc86a2"
+    },
+    "training_config": {
+      "path": "intent_benchmark/training/training_config.json",
+      "sha256": "6fd483168dc3cff84f64a8df800121a3038f28f43bfa244ffb9a7869329fcda9"
+    },
+    "benchmark_provenance": {
+      "path": "intent_benchmark/provenance.json",
+      "sha256": "c4029a7d8a38f00008f5ddbbe343f0b33e227d72385232a08890237cd6887015"
+    },
+    "source_bundle": {
+      "source_version": "prompt-bench-v1 bundle snapshot; cases schema prompt-bench-case.v1",
+      "bundle_version": "2.0.5-g6.8",
+      "source_path": "tmp/prompt-bench-v1-250-standalone/scripts/ai-verify/packs/prompt-bench-v1/cases.jsonl",
+      "source_sha256": "bd29e71cc49a7ccf92f9287d0d8c74d6d1240cd157cc42027a62e9f5c7cdcc19",
+      "manifest_path": "tmp/prompt-bench-v1-250-standalone/scripts/ai-verify/packs/prompt-bench-v1/manifest.json",
+      "manifest_sha256": "72546694708dafa19d1214156396fe62dff8c54fb306c48fe8d92e657363d1ed",
+      "taxonomy_path": "tmp/prompt-bench-v1-250-standalone/src/modules/ai/ai.schema.ts",
+      "taxonomy_sha256": "afc98cfba00ef2c635157b78378061e7202597770464ff0802ae684acb0f7b10",
+      "classifier_prompt_path": "tmp/prompt-bench-v1-250-standalone/src/modules/ai/docs/technicals/prompts_doc/production/INTENT_CLASSIFIER_PROMPT.md",
+      "classifier_prompt_sha256": "2cfc8f7ed52cc02f0df450fa2e7d855e2e05ce56b9e4975b2687439a60ca09f7",
+      "classifier_config_path": "tmp/prompt-bench-v1-250-standalone/src/modules/ai/ai.config.ts",
+      "classifier_config_sha256": "fe65f6c7e6ed3e948188e5665b3b6f9b83d4fb867a78a378526a18078ab06a6e",
+      "review_policy_path": "intent_benchmark/ROOT_LABEL_REVIEW_DECISIONS.md",
+      "review_policy_sha256": "4de93ed33f98dcbdd24e8c2ce8098ded5e074cb5b0b4cd71e4b9e629fb1b3647",
+      "label_map_path": "intent_benchmark/label_map.json",
+      "label_map_sha256": "23063af163dd52c2d9afddd3d0f527b732a00380f6592c8c74d0568a96dc86a2",
+      "preparation_script": "intent_benchmark/prepare_intent_benchmark.py",
+      "preparation_script_sha256": "d2e53c151fd7dd307532149c458a721c485f87570660efd7d09d38290c7c5a0d",
+      "counts": {
+        "cases": 250,
+        "all_target_turns": 512,
+        "labeled_targets": 507,
+        "missing_targets": 5
+      },
+      "labels": {
+        "original": {
+          "ADDRESS": 40,
+          "COMPLAINT": 37,
+          "CONFIRMATION": 41,
+          "GRATITUDE": 11,
+          "GREETING": 12,
+          "MENU_QUERY": 150,
+          "OTHER": 204,
+          "PHONE": 12
+        },
+        "reviewed": {
+          "ADDRESS": 38,
+          "COMPLAINT": 35,
+          "CONFIRMATION": 44,
+          "GRATITUDE": 11,
+          "GREETING": 12,
+          "MENU_QUERY": 144,
+          "OTHER": 211,
+          "PHONE": 12
+        },
+        "changed_rows": 19,
+        "uncertain_rows": 82
+      },
+      "model_input_contract": {
+        "current_turn_only_target": true,
+        "history_roles_preserved": [
+          "customer"
+        ],
+        "assistant_messages_invented": false,
+        "forbidden_fields": [
+          "expectedIntent",
+          "assertions",
+          "fixtures",
+          "primaryIntent",
+          "source_ref"
+        ]
+      }
+    },
+    "torch_version": "2.6.0+cu124",
+    "transformers_version": "4.57.6",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+    "training_implementation": {
+      "path": "intent_benchmark/training/train_intent.py",
+      "sha256": "845fc50b94beadb184a6ff57cb28d1b90b29e092846b4dffb2b1b3059756c3eb"
+    },
+    "extension": {
+      "model": "bidirlm_vi_mntp",
+      "pooling": "late",
+      "tokenizer_fix_mistral_regex": true,
+      "source_training_config_sha256": "6fd483168dc3cff84f64a8df800121a3038f28f43bfa244ffb9a7869329fcda9",
+      "benchmark_script_sha256": "ec48d5a13953f4b1d8bb827a4857624e5e81ca95d6025853e01447ed505a290d",
+      "test_status": "previously_seen_by_team_not_fresh_holdout",
+      "source_model_path": "artifacts/bidirlm_vi_mntp/mntp/hf_bidirlm",
+      "source_model_sha256": "d2cc7fe0106b17a1564ae2b9e4edd5cc30c23d259a3245603b3d9fe4fa48a2bf"
+    }
+  }
+}

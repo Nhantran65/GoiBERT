@@ -1,0 +1,81 @@
+{
+ "protocol": "bidirlm-vi-mntp-stage1-v1",
+ "created_at": "2026-09-20T15:31:11Z",
+ "source": {
+  "pool": "general pool v3 (bins 7-9, v3 S1+S2 filter, host cap 2 %, informal bucket excluded)",
+  "builder": "scripts/mmbert_vi_cpt_pilot/v3/audit_v3.build_general_v3 (read-only)",
+  "license": "CC0",
+  "nc": false,
+  "wikipedia": false,
+  "benchmark_text": false,
+  "pool_documents": 1226854,
+  "pool_tokens_reported": 1132387854,
+  "tokens_by_bin": {
+   "9": 628371177,
+   "8": 262451063,
+   "7": 241565614
+  },
+  "pool_counters": {
+   "drop_bin10": 4911,
+   "drop_v3_filter": 1659767,
+   "drop_informal_bucket": 6136
+  }
+ },
+ "tokenizer": {
+  "repo": "BidirLM/BidirLM-0.6B-Base",
+  "commit": "29794508bbb4e378b4789eebff42ae4c2d47d524",
+  "tokenizer_length": 151669,
+  "pad_token_id": 151643,
+  "mask_token_id": 151663,
+  "eos_token_id": 151643,
+  "mask_token": "<|mask|>",
+  "padding_side": "right",
+  "eos_appended": true,
+  "bos_in_data": false,
+  "padding": false
+ },
+ "dataset": {
+  "documents_tokenized": 1226854,
+  "words": 903461082,
+  "tokens": 1182830405,
+  "tokens_per_word": 1.3092212033987758,
+  "tokens_used_by_sequences": 1182830080,
+  "sequences": 2310215,
+  "seq_len": 512,
+  "shuffle_seed": 42,
+  "train_sequences": 488281,
+  "train_tokens": 249999872,
+  "heldout_sequences": 2000,
+  "heldout_indices_sha256": "946d187cb904f6d7ae43b7a069c253c0e1acabcaf6a6c64e58d25386cc200a44",
+  "heldout_rule": "order[n_train : n_train + 2000] (reserved before training; never trained on)",
+  "parts": 288,
+  "docs_limit": null
+ },
+ "files": {
+  "tokens.npy": {
+   "path": "/home/kiettqa/GoiBERT/data/bidirlm_vi_mntp/tokens.npy",
+   "shape": [
+    2310215,
+    512
+   ],
+   "dtype": "uint32",
+   "sha256": "08be4eead09e204bb910912acba6e58d7a24933b850f9b62c03d48e0b1121174"
+  },
+  "order.npy": {
+   "path": "/home/kiettqa/GoiBERT/data/bidirlm_vi_mntp/order.npy",
+   "shape": [
+    2310215
+   ],
+   "dtype": "int64",
+   "sha256": "3d4283a5f2bdc37eb2e164b9ba623287cec163234c97df86cd59a535af384e26"
+  },
+  "heldout_indices.npy": {
+   "path": "/home/kiettqa/GoiBERT/data/bidirlm_vi_mntp/heldout_indices.npy",
+   "shape": [
+    2000
+   ],
+   "sha256": "946d187cb904f6d7ae43b7a069c253c0e1acabcaf6a6c64e58d25386cc200a44"
+  }
+ },
+ "elapsed_seconds": 2501.45431804657
+}

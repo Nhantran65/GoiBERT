@@ -1,0 +1,120 @@
+{
+ "protocol": "bidirlm-vi-mntp-stage1-preflight-v1",
+ "created_at": "2026-09-20T15:39:10Z",
+ "device": "NVIDIA L40S",
+ "checks": [
+  {
+   "name": "strict_weight_load",
+   "ok": true,
+   "detail": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "is_causal_modules_set_false": 28,
+    "parameters": 596049920,
+    "tied_lm_head_is_input_embedding": true,
+    "config": {
+     "vocab_size": 151936,
+     "hidden_size": 1024,
+     "num_hidden_layers": 28,
+     "head_dim": 128,
+     "rope_theta": 1000000.0,
+     "max_position_embeddings": 40960
+    }
+   }
+  },
+  {
+   "name": "parameters_596_049_920",
+   "ok": true,
+   "detail": 596049920
+  },
+  {
+   "name": "lm_head_tied_to_input_embedding",
+   "ok": true,
+   "detail": true
+  },
+  {
+   "name": "is_causal_false_on_every_attention_module",
+   "ok": true,
+   "detail": 28
+  },
+  {
+   "name": "batch_is_unpadded",
+   "ok": true,
+   "detail": {
+    "shape": [
+     4,
+     512
+    ]
+   }
+  },
+  {
+   "name": "fast_path_bidirectional_with_all_ones_mask",
+   "ok": true,
+   "detail": 1.6040401458740234
+  },
+  {
+   "name": "recorded_trap_attention_mask_none_stays_one_directional",
+   "ok": true,
+   "detail": 0.0
+  },
+  {
+   "name": "equivalence_logits_le_1e-2",
+   "ok": true,
+   "detail": 0.0002574920654296875
+  },
+  {
+   "name": "equivalence_loss_le_1e-3",
+   "ok": true,
+   "detail": {
+    "fast": 1.6725118160247803,
+    "custom": 1.6725114583969116
+   }
+  }
+ ],
+ "fast_path": {
+  "missing_keys": [],
+  "unexpected_keys": [],
+  "is_causal_modules_set_false": 28,
+  "parameters": 596049920,
+  "tied_lm_head_is_input_embedding": true,
+  "config": {
+   "vocab_size": 151936,
+   "hidden_size": 1024,
+   "num_hidden_layers": 28,
+   "head_dim": 128,
+   "rope_theta": 1000000.0,
+   "max_position_embeddings": 40960
+  }
+ },
+ "direction": {
+  "mask_2d_all_ones": {
+   "last_token_to_first_token_max_abs_delta": 1.6040401458740234,
+   "is_bidirectional": true
+  },
+  "attention_mask_none_trap": {
+   "last_token_to_first_token_max_abs_delta": 0.0,
+   "is_bidirectional": false,
+   "note": "attention_mask=None with position_ids set makes transformers 4.57.6 treat the batch as packed sequences and materialise a *causal* mask (allow_is_causal_skip=False), so the read stays one-directional even with is_causal=False on every attention module; the all-ones 2D mask is the correct unpadded bidirectional input"
+  }
+ },
+ "equivalence": {
+  "selected_positions": 420,
+  "logits_shape": [
+   4,
+   512,
+   151936
+  ],
+  "logits_max_abs_delta": 0.0002574920654296875,
+  "logit_tolerance": 0.01,
+  "fast_loss": 1.6725118160247803,
+  "custom_loss": 1.6725114583969116,
+  "loss_abs_delta": 3.5762786865234375e-07,
+  "loss_tolerance": 0.001,
+  "precision": "float32",
+  "dm_head": "lm_head (tied) applied after gather"
+ },
+ "custom_code_note": "BidirLMModel requires an explicit attention_mask (it packs with cu_seqlens and would raise with None), so the equivalence batch passes an all-ones 2D mask, which the custom path packs into per-sequence varlen attention.",
+ "elapsed_seconds": 10.839927434921265,
+ "fast_path_usable_for_mntp": true,
+ "passed": true
+}

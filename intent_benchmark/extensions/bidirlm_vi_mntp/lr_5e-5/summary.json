@@ -1,0 +1,1690 @@
+{
+  "status": "completed",
+  "model_name": "bidirlm_vi_mntp",
+  "learning_rate": 5e-05,
+  "seed": 42,
+  "gpu": 1,
+  "device": "cuda:1",
+  "epochs_completed": 9,
+  "best_epoch": 6,
+  "best_dev_macro_f1": 0.8837606837606837,
+  "best_dev_metrics": {
+    "accuracy": 0.8701298701298701,
+    "macro_f1": 0.8837606837606837,
+    "per_intent": {
+      "GREETING": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      },
+      "CONFIRMATION": {
+        "precision": 1.0,
+        "recall": 0.8571428571428571,
+        "f1": 0.923076923076923,
+        "support": 7
+      },
+      "GRATITUDE": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 2
+      },
+      "MENU_QUERY": {
+        "precision": 0.8260869565217391,
+        "recall": 0.8636363636363636,
+        "f1": 0.8444444444444444,
+        "support": 22
+      },
+      "COMPLAINT": {
+        "precision": 0.625,
+        "recall": 1.0,
+        "f1": 0.7692307692307693,
+        "support": 5
+      },
+      "ADDRESS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      },
+      "PHONE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      },
+      "OTHER": {
+        "precision": 0.896551724137931,
+        "recall": 0.8387096774193549,
+        "f1": 0.8666666666666666,
+        "support": 31
+      }
+    },
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        19,
+        1,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        4,
+        1,
+        0,
+        0,
+        26
+      ]
+    ],
+    "support": 77,
+    "loss": 0.7074999956341533
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.5482629757089588,
+      "dev": {
+        "accuracy": 0.4935064935064935,
+        "macro_f1": 0.20075461878740566,
+        "per_intent": {
+          "GREETING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "CONFIRMATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "precision": 0.46153846153846156,
+            "recall": 0.8181818181818182,
+            "f1": 0.5901639344262295,
+            "support": 22
+          },
+          "COMPLAINT": {
+            "precision": 0.3076923076923077,
+            "recall": 0.8,
+            "f1": 0.4444444444444444,
+            "support": 5
+          },
+          "ADDRESS": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 6
+          },
+          "PHONE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "OTHER": {
+            "precision": 0.64,
+            "recall": 0.5161290322580645,
+            "f1": 0.5714285714285714,
+            "support": 31
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            6,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            18,
+            1,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            9,
+            6,
+            0,
+            0,
+            16
+          ]
+        ],
+        "support": 77,
+        "loss": 1.3338976943647707
+      },
+      "learning_rate": 3.382352941176471e-05
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.8511461571212489,
+      "dev": {
+        "accuracy": 0.6493506493506493,
+        "macro_f1": 0.4655422145988184,
+        "per_intent": {
+          "GREETING": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 2
+          },
+          "CONFIRMATION": {
+            "precision": 0.5,
+            "recall": 0.14285714285714285,
+            "f1": 0.22222222222222224,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "precision": 0.6060606060606061,
+            "recall": 0.9090909090909091,
+            "f1": 0.7272727272727273,
+            "support": 22
+          },
+          "COMPLAINT": {
+            "precision": 0.5714285714285714,
+            "recall": 0.8,
+            "f1": 0.6666666666666666,
+            "support": 5
+          },
+          "ADDRESS": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8,
+            "support": 6
+          },
+          "PHONE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 2
+          },
+          "OTHER": {
+            "precision": 0.7727272727272727,
+            "recall": 0.5483870967741935,
+            "f1": 0.6415094339622641,
+            "support": 31
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            3,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            20,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            0,
+            8,
+            1,
+            3,
+            0,
+            17
+          ]
+        ],
+        "support": 77,
+        "loss": 0.9731668907326537
+      },
+      "learning_rate": 4.8070739549839234e-05
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.36401480284358556,
+      "dev": {
+        "accuracy": 0.7272727272727273,
+        "macro_f1": 0.662175685693106,
+        "per_intent": {
+          "GREETING": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 2
+          },
+          "CONFIRMATION": {
+            "precision": 1.0,
+            "recall": 0.7142857142857143,
+            "f1": 0.8333333333333333,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "precision": 0.25,
+            "recall": 0.5,
+            "f1": 0.3333333333333333,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "precision": 0.875,
+            "recall": 0.6363636363636364,
+            "f1": 0.7368421052631579,
+            "support": 22
+          },
+          "COMPLAINT": {
+            "precision": 0.6666666666666666,
+            "recall": 0.4,
+            "f1": 0.5,
+            "support": 5
+          },
+          "ADDRESS": {
+            "precision": 1.0,
+            "recall": 0.6666666666666666,
+            "f1": 0.8,
+            "support": 6
+          },
+          "PHONE": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "support": 2
+          },
+          "OTHER": {
+            "precision": 0.675,
+            "recall": 0.8709677419354839,
+            "f1": 0.7605633802816901,
+            "support": 31
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            14,
+            0,
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            2,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            4,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            2,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            27
+          ]
+        ],
+        "support": 77,
+        "loss": 1.0491308159642405
+      },
+      "learning_rate": 4.437299035369775e-05
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.2779765185034668,
+      "dev": {
+        "accuracy": 0.7922077922077922,
+        "macro_f1": 0.7408103712208189,
+        "per_intent": {
+          "GREETING": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "support": 2
+          },
+          "CONFIRMATION": {
+            "precision": 0.875,
+            "recall": 1.0,
+            "f1": 0.9333333333333333,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "precision": 0.9411764705882353,
+            "recall": 0.7272727272727273,
+            "f1": 0.8205128205128205,
+            "support": 22
+          },
+          "COMPLAINT": {
+            "precision": 0.2,
+            "recall": 0.2,
+            "f1": 0.20000000000000004,
+            "support": 5
+          },
+          "ADDRESS": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          },
+          "PHONE": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "OTHER": {
+            "precision": 0.75,
+            "recall": 0.8709677419354839,
+            "f1": 0.8059701492537312,
+            "support": 31
+          }
+        },
+        "confusion_matrix": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            16,
+            1,
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            2,
+            0,
+            0,
+            27
+          ]
+        ],
+        "support": 77,
+        "loss": 1.063716656975932
+      },
+      "learning_rate": 4.067524115755627e-05
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.19311989544298522,
+      "dev": {
+        "accuracy": 0.8051948051948052,
+        "macro_f1": 0.8237077328159645,
+        "per_intent": {
+          "GREETING": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "CONFIRMATION": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "precision": 0.7894736842105263,
+            "recall": 0.6818181818181818,
+            "f1": 0.7317073170731707,
+            "support": 22
+          },
+          "COMPLAINT": {
+            "precision": 0.5,
+            "recall": 0.6,
+            "f1": 0.5454545454545454,
+            "support": 5
+          },
+          "ADDRESS": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          },
+          "PHONE": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "OTHER": {
+            "precision": 0.7878787878787878,
+            "recall": 0.8387096774193549,
+            "f1": 0.8125,
+            "support": 31
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            15,
+            1,
+            0,
+            0,
+            6
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            3,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4,
+            1,
+            0,
+            0,
+            26
+          ]
+        ],
+        "support": 77,
+        "loss": 1.1110891328229533
+      },
+      "learning_rate": 3.69774919614148e-05
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.18098378486973538,
+      "dev": {
+        "accuracy": 0.8701298701298701,
+        "macro_f1": 0.8837606837606837,
+        "per_intent": {
+          "GREETING": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "CONFIRMATION": {
+            "precision": 1.0,
+            "recall": 0.8571428571428571,
+            "f1": 0.923076923076923,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "precision": 0.8260869565217391,
+            "recall": 0.8636363636363636,
+            "f1": 0.8444444444444444,
+            "support": 22
+          },
+          "COMPLAINT": {
+            "precision": 0.625,
+            "recall": 1.0,
+            "f1": 0.7692307692307693,
+            "support": 5
+          },
+          "ADDRESS": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          },
+          "PHONE": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "OTHER": {
+            "precision": 0.896551724137931,
+            "recall": 0.8387096774193549,
+            "f1": 0.8666666666666666,
+            "support": 31
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            19,
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            5,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4,
+            1,
+            0,
+            0,
+            26
+          ]
+        ],
+        "support": 77,
+        "loss": 0.7074999956341533
+      },
+      "learning_rate": 3.3279742765273316e-05
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.029833671083576877,
+      "dev": {
+        "accuracy": 0.8311688311688312,
+        "macro_f1": 0.8650005908070424,
+        "per_intent": {
+          "GREETING": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "CONFIRMATION": {
+            "precision": 1.0,
+            "recall": 0.8571428571428571,
+            "f1": 0.923076923076923,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "precision": 0.85,
+            "recall": 0.7727272727272727,
+            "f1": 0.8095238095238095,
+            "support": 22
+          },
+          "COMPLAINT": {
+            "precision": 0.5555555555555556,
+            "recall": 1.0,
+            "f1": 0.7142857142857143,
+            "support": 5
+          },
+          "ADDRESS": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          },
+          "PHONE": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "OTHER": {
+            "precision": 0.8064516129032258,
+            "recall": 0.8064516129032258,
+            "f1": 0.8064516129032258,
+            "support": 31
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            17,
+            0,
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            5,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            3,
+            3,
+            0,
+            0,
+            25
+          ]
+        ],
+        "support": 77,
+        "loss": 1.0337624758869022
+      },
+      "learning_rate": 2.9581993569131832e-05
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.008547184317571932,
+      "dev": {
+        "accuracy": 0.8701298701298701,
+        "macro_f1": 0.8735691391941391,
+        "per_intent": {
+          "GREETING": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "CONFIRMATION": {
+            "precision": 1.0,
+            "recall": 0.8571428571428571,
+            "f1": 0.923076923076923,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "precision": 0.9,
+            "recall": 0.8181818181818182,
+            "f1": 0.8571428571428572,
+            "support": 22
+          },
+          "COMPLAINT": {
+            "precision": 0.5714285714285714,
+            "recall": 0.8,
+            "f1": 0.6666666666666666,
+            "support": 5
+          },
+          "ADDRESS": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          },
+          "PHONE": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "OTHER": {
+            "precision": 0.8484848484848485,
+            "recall": 0.9032258064516129,
+            "f1": 0.875,
+            "support": 31
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            18,
+            1,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            28
+          ]
+        ],
+        "support": 77,
+        "loss": 1.143574432893233
+      },
+      "learning_rate": 2.5884244372990358e-05
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.018588739362292692,
+      "dev": {
+        "accuracy": 0.8441558441558441,
+        "macro_f1": 0.8516189095457388,
+        "per_intent": {
+          "GREETING": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "CONFIRMATION": {
+            "precision": 1.0,
+            "recall": 0.8571428571428571,
+            "f1": 0.923076923076923,
+            "support": 7
+          },
+          "GRATITUDE": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "support": 2
+          },
+          "MENU_QUERY": {
+            "precision": 0.8947368421052632,
+            "recall": 0.7727272727272727,
+            "f1": 0.8292682926829269,
+            "support": 22
+          },
+          "COMPLAINT": {
+            "precision": 0.5,
+            "recall": 0.6,
+            "f1": 0.5454545454545454,
+            "support": 5
+          },
+          "ADDRESS": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          },
+          "PHONE": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "OTHER": {
+            "precision": 0.8,
+            "recall": 0.9032258064516129,
+            "f1": 0.8484848484848486,
+            "support": 31
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            17,
+            1,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            28
+          ]
+        ],
+        "support": 77,
+        "loss": 1.2385026944148076
+      },
+      "learning_rate": 2.2186495176848876e-05
+    }
+  ],
+  "peak_memory_allocated_bytes": 12310586368,
+  "peak_memory_reserved_bytes": 13436452864,
+  "trainable_parameters": 597107720,
+  "total_parameters": 597107720,
+  "loading": {
+    "model_name": "bidirlm_vi_mntp",
+    "model_path": "artifacts/bidirlm_vi_mntp/mntp/hf_bidirlm",
+    "model_files": {
+      "config.json": "3c9792c77b38124e562bd140b95edaeabfbf77add61cea2712224233536e7ad7",
+      "model.safetensors": "d2cc7fe0106b17a1564ae2b9e4edd5cc30c23d259a3245603b3d9fe4fa48a2bf",
+      "tokenizer.json": "d0fd37c475ed0c3c4512afdcfa3c9c8d53b723fcbfcad7d4e8b7057f11d4cad8"
+    },
+    "tokenizer_class": "Qwen2TokenizerFast",
+    "tokenizer_vocab_size": 151669,
+    "hidden_size": 1024,
+    "backbone_class": "BidirLMModel",
+    "attention_implementation": "sdpa",
+    "pooling": "late",
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "allowed_missing_only": true,
+    "allowed_unexpected_only": true,
+    "trainable_parameters": 597107720,
+    "total_parameters": 597107720
+  },
+  "truncation": {
+    "train_examples": 353,
+    "dev_examples": 77,
+    "train_examples_with_history_drop": 0,
+    "dev_examples_with_history_drop": 0,
+    "train_current_truncated": 0,
+    "dev_current_truncated": 0,
+    "max_length": 512
+  },
+  "precision": "bf16",
+  "config": {
+    "labels": [
+      "GREETING",
+      "CONFIRMATION",
+      "GRATITUDE",
+      "MENU_QUERY",
+      "COMPLAINT",
+      "ADDRESS",
+      "PHONE",
+      "OTHER"
+    ],
+    "models": {
+      "goi_dapt": {
+        "path": "models/goibert-b-dapt",
+        "description": "GoiBERT base with domain-adaptive pretraining"
+      },
+      "goi_student": {
+        "path": "models/goiturn-s-gd",
+        "description": "GoiTurn student encoder"
+      },
+      "bamibert": {
+        "path": "models/bamibert-base-original",
+        "description": "BamiBERT base original"
+      },
+      "bidirlm_vi_mntp": {
+        "path": "artifacts/bidirlm_vi_mntp/mntp/hf_bidirlm",
+        "description": "BidirLM Vietnamese MNTP encoder, model-native late pooling"
+      }
+    },
+    "learning_rates": [
+      2e-05,
+      5e-05
+    ],
+    "seed": 42,
+    "batch_size": 16,
+    "max_length": 512,
+    "head_dropout": 0.1,
+    "max_epochs": 15,
+    "early_stopping_patience": 3,
+    "min_delta": 0.0,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_eps": 1e-08,
+    "gradient_clip_norm": 1.0,
+    "precision": "bf16_autocast_fp32_master_when_supported",
+    "attention": "sdpa_when_supported",
+    "loss": "unweighted_cross_entropy",
+    "scheduler": "linear_warmup_then_linear_decay",
+    "selection": {
+      "metric": "dev_macro_f1",
+      "within_trial_tie": "keep_earlier_epoch",
+      "across_learning_rate_tie": "choose_2e-5",
+      "strict_improvement": true
+    },
+    "queues": {
+      "gpu0": [
+        "goi_student@2e-5",
+        "goi_student@5e-5",
+        "bamibert@5e-5"
+      ],
+      "gpu1": [
+        "goi_dapt@2e-5",
+        "goi_dapt@5e-5",
+        "bamibert@2e-5"
+      ]
+    },
+    "input_serialization": {
+      "history_prefix": "[HISTORY] customer: ",
+      "current_prefix": "[CURRENT] customer: ",
+      "history_join": "\n",
+      "truncation": "drop_oldest_history_tokens_first_then_truncate_current_if_needed",
+      "padding": "dynamic_per_batch",
+      "target_source": "label",
+      "uncertainty_policy": "all_507_rows_unweighted"
+    },
+    "backbone_loading": {
+      "allowed_missing_patterns": [
+        "pooler.dense.bias",
+        "pooler.dense.weight",
+        "roberta.pooler.dense.bias",
+        "roberta.pooler.dense.weight"
+      ],
+      "allowed_unexpected_patterns": [
+        "lm_head.*",
+        "cls.predictions.*",
+        "pooler.*",
+        "roberta.pooler.*"
+      ],
+      "fail_on_other_missing_or_unexpected": true
+    },
+    "extension": {
+      "model": "bidirlm_vi_mntp",
+      "pooling": "late",
+      "tokenizer_fix_mistral_regex": true,
+      "source_training_config_sha256": "6fd483168dc3cff84f64a8df800121a3038f28f43bfa244ffb9a7869329fcda9",
+      "benchmark_script_sha256": "ec48d5a13953f4b1d8bb827a4857624e5e81ca95d6025853e01447ed505a290d",
+      "test_status": "previously_seen_by_team_not_fresh_holdout",
+      "source_model_path": "artifacts/bidirlm_vi_mntp/mntp/hf_bidirlm",
+      "source_model_sha256": "d2cc7fe0106b17a1564ae2b9e4edd5cc30c23d259a3245603b3d9fe4fa48a2bf"
+    }
+  },
+  "provenance": {
+    "corrected_dataset": {
+      "path": "intent_benchmark/corrected_dataset.jsonl",
+      "sha256": "950d4d47b1b9bb51957840390b969674ad1906f310f2d347211b83f8c3581f02"
+    },
+    "train": {
+      "path": "intent_benchmark/train.jsonl",
+      "sha256": "775475397d9bb28d006a842a6201efe532b0da65d3562b97cad425b34cf9331c"
+    },
+    "dev": {
+      "path": "intent_benchmark/dev.jsonl",
+      "sha256": "184c0efb674aefae99854b2090bd693990f62a188739131a60378ff0df13b7ae"
+    },
+    "test": {
+      "path": "intent_benchmark/test.jsonl",
+      "sha256": "33eb33cc8292650c320b167d52eb5c979e6591acd36a5b27a3336d6b6b54f4a5"
+    },
+    "label_map": {
+      "path": "intent_benchmark/label_map.json",
+      "sha256": "23063af163dd52c2d9afddd3d0f527b732a00380f6592c8c74d0568a96dc86a2"
+    },
+    "training_config": {
+      "path": "intent_benchmark/training/training_config.json",
+      "sha256": "6fd483168dc3cff84f64a8df800121a3038f28f43bfa244ffb9a7869329fcda9"
+    },
+    "benchmark_provenance": {
+      "path": "intent_benchmark/provenance.json",
+      "sha256": "c4029a7d8a38f00008f5ddbbe343f0b33e227d72385232a08890237cd6887015"
+    },
+    "source_bundle": {
+      "source_version": "prompt-bench-v1 bundle snapshot; cases schema prompt-bench-case.v1",
+      "bundle_version": "2.0.5-g6.8",
+      "source_path": "tmp/prompt-bench-v1-250-standalone/scripts/ai-verify/packs/prompt-bench-v1/cases.jsonl",
+      "source_sha256": "bd29e71cc49a7ccf92f9287d0d8c74d6d1240cd157cc42027a62e9f5c7cdcc19",
+      "manifest_path": "tmp/prompt-bench-v1-250-standalone/scripts/ai-verify/packs/prompt-bench-v1/manifest.json",
+      "manifest_sha256": "72546694708dafa19d1214156396fe62dff8c54fb306c48fe8d92e657363d1ed",
+      "taxonomy_path": "tmp/prompt-bench-v1-250-standalone/src/modules/ai/ai.schema.ts",
+      "taxonomy_sha256": "afc98cfba00ef2c635157b78378061e7202597770464ff0802ae684acb0f7b10",
+      "classifier_prompt_path": "tmp/prompt-bench-v1-250-standalone/src/modules/ai/docs/technicals/prompts_doc/production/INTENT_CLASSIFIER_PROMPT.md",
+      "classifier_prompt_sha256": "2cfc8f7ed52cc02f0df450fa2e7d855e2e05ce56b9e4975b2687439a60ca09f7",
+      "classifier_config_path": "tmp/prompt-bench-v1-250-standalone/src/modules/ai/ai.config.ts",
+      "classifier_config_sha256": "fe65f6c7e6ed3e948188e5665b3b6f9b83d4fb867a78a378526a18078ab06a6e",
+      "review_policy_path": "intent_benchmark/ROOT_LABEL_REVIEW_DECISIONS.md",
+      "review_policy_sha256": "4de93ed33f98dcbdd24e8c2ce8098ded5e074cb5b0b4cd71e4b9e629fb1b3647",
+      "label_map_path": "intent_benchmark/label_map.json",
+      "label_map_sha256": "23063af163dd52c2d9afddd3d0f527b732a00380f6592c8c74d0568a96dc86a2",
+      "preparation_script": "intent_benchmark/prepare_intent_benchmark.py",
+      "preparation_script_sha256": "d2e53c151fd7dd307532149c458a721c485f87570660efd7d09d38290c7c5a0d",
+      "counts": {
+        "cases": 250,
+        "all_target_turns": 512,
+        "labeled_targets": 507,
+        "missing_targets": 5
+      },
+      "labels": {
+        "original": {
+          "ADDRESS": 40,
+          "COMPLAINT": 37,
+          "CONFIRMATION": 41,
+          "GRATITUDE": 11,
+          "GREETING": 12,
+          "MENU_QUERY": 150,
+          "OTHER": 204,
+          "PHONE": 12
+        },
+        "reviewed": {
+          "ADDRESS": 38,
+          "COMPLAINT": 35,
+          "CONFIRMATION": 44,
+          "GRATITUDE": 11,
+          "GREETING": 12,
+          "MENU_QUERY": 144,
+          "OTHER": 211,
+          "PHONE": 12
+        },
+        "changed_rows": 19,
+        "uncertain_rows": 82
+      },
+      "model_input_contract": {
+        "current_turn_only_target": true,
+        "history_roles_preserved": [
+          "customer"
+        ],
+        "assistant_messages_invented": false,
+        "forbidden_fields": [
+          "expectedIntent",
+          "assertions",
+          "fixtures",
+          "primaryIntent",
+          "source_ref"
+        ]
+      }
+    },
+    "torch_version": "2.6.0+cu124",
+    "transformers_version": "4.57.6",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+    "training_implementation": {
+      "path": "intent_benchmark/training/train_intent.py",
+      "sha256": "845fc50b94beadb184a6ff57cb28d1b90b29e092846b4dffb2b1b3059756c3eb"
+    },
+    "extension": {
+      "model": "bidirlm_vi_mntp",
+      "pooling": "late",
+      "tokenizer_fix_mistral_regex": true,
+      "source_training_config_sha256": "6fd483168dc3cff84f64a8df800121a3038f28f43bfa244ffb9a7869329fcda9",
+      "benchmark_script_sha256": "ec48d5a13953f4b1d8bb827a4857624e5e81ca95d6025853e01447ed505a290d",
+      "test_status": "previously_seen_by_team_not_fresh_holdout",
+      "source_model_path": "artifacts/bidirlm_vi_mntp/mntp/hf_bidirlm",
+      "source_model_sha256": "d2cc7fe0106b17a1564ae2b9e4edd5cc30c23d259a3245603b3d9fe4fa48a2bf"
+    }
+  }
+}

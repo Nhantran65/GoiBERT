@@ -1,0 +1,111 @@
+{
+  "model_name": "bidirlm_vi_mntp",
+  "learning_rate": 5e-05,
+  "seed": 42,
+  "gpu": 1,
+  "locked_config": {
+    "labels": [
+      "GREETING",
+      "CONFIRMATION",
+      "GRATITUDE",
+      "MENU_QUERY",
+      "COMPLAINT",
+      "ADDRESS",
+      "PHONE",
+      "OTHER"
+    ],
+    "models": {
+      "goi_dapt": {
+        "path": "models/goibert-b-dapt",
+        "description": "GoiBERT base with domain-adaptive pretraining"
+      },
+      "goi_student": {
+        "path": "models/goiturn-s-gd",
+        "description": "GoiTurn student encoder"
+      },
+      "bamibert": {
+        "path": "models/bamibert-base-original",
+        "description": "BamiBERT base original"
+      },
+      "bidirlm_vi_mntp": {
+        "path": "artifacts/bidirlm_vi_mntp/mntp/hf_bidirlm",
+        "description": "BidirLM Vietnamese MNTP encoder, model-native late pooling"
+      }
+    },
+    "learning_rates": [
+      2e-05,
+      5e-05
+    ],
+    "seed": 42,
+    "batch_size": 16,
+    "max_length": 512,
+    "head_dropout": 0.1,
+    "max_epochs": 15,
+    "early_stopping_patience": 3,
+    "min_delta": 0.0,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_eps": 1e-08,
+    "gradient_clip_norm": 1.0,
+    "precision": "bf16_autocast_fp32_master_when_supported",
+    "attention": "sdpa_when_supported",
+    "loss": "unweighted_cross_entropy",
+    "scheduler": "linear_warmup_then_linear_decay",
+    "selection": {
+      "metric": "dev_macro_f1",
+      "within_trial_tie": "keep_earlier_epoch",
+      "across_learning_rate_tie": "choose_2e-5",
+      "strict_improvement": true
+    },
+    "queues": {
+      "gpu0": [
+        "goi_student@2e-5",
+        "goi_student@5e-5",
+        "bamibert@5e-5"
+      ],
+      "gpu1": [
+        "goi_dapt@2e-5",
+        "goi_dapt@5e-5",
+        "bamibert@2e-5"
+      ]
+    },
+    "input_serialization": {
+      "history_prefix": "[HISTORY] customer: ",
+      "current_prefix": "[CURRENT] customer: ",
+      "history_join": "\n",
+      "truncation": "drop_oldest_history_tokens_first_then_truncate_current_if_needed",
+      "padding": "dynamic_per_batch",
+      "target_source": "label",
+      "uncertainty_policy": "all_507_rows_unweighted"
+    },
+    "backbone_loading": {
+      "allowed_missing_patterns": [
+        "pooler.dense.bias",
+        "pooler.dense.weight",
+        "roberta.pooler.dense.bias",
+        "roberta.pooler.dense.weight"
+      ],
+      "allowed_unexpected_patterns": [
+        "lm_head.*",
+        "cls.predictions.*",
+        "pooler.*",
+        "roberta.pooler.*"
+      ],
+      "fail_on_other_missing_or_unexpected": true
+    },
+    "extension": {
+      "model": "bidirlm_vi_mntp",
+      "pooling": "late",
+      "tokenizer_fix_mistral_regex": true,
+      "source_training_config_sha256": "6fd483168dc3cff84f64a8df800121a3038f28f43bfa244ffb9a7869329fcda9",
+      "benchmark_script_sha256": "ec48d5a13953f4b1d8bb827a4857624e5e81ca95d6025853e01447ed505a290d",
+      "test_status": "previously_seen_by_team_not_fresh_holdout",
+      "source_model_path": "artifacts/bidirlm_vi_mntp/mntp/hf_bidirlm",
+      "source_model_sha256": "d2cc7fe0106b17a1564ae2b9e4edd5cc30c23d259a3245603b3d9fe4fa48a2bf"
+    }
+  }
+}

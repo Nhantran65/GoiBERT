@@ -1,0 +1,129 @@
+{
+ "protocol": "bidirlm-vi-mntp-stage1-mntp-v1",
+ "created_at": "2026-09-20T20:14:33Z",
+ "objective": "MNTP: 20 % positions, 80 % <|mask|> 151663 / 10 % random / 10 % keep; loss = CE(hidden j-1 -> token j); attention bidirectional (is_causal=False, unpadded batch, attention_mask=None); lm_head tied",
+ "data": {
+  "tokens_file": "/home/kiettqa/GoiBERT/data/bidirlm_vi_mntp/tokens.npy",
+  "order_file": "/home/kiettqa/GoiBERT/data/bidirlm_vi_mntp/order.npy",
+  "heldout_file": "/home/kiettqa/GoiBERT/data/bidirlm_vi_mntp/heldout_indices.npy",
+  "train_sequences": 488256,
+  "train_tokens": 249987072,
+  "seq_len": 512,
+  "heldout_sequences": 2000
+ },
+ "hyperparameters": {
+  "optimizer": "AdamW",
+  "peak_lr": 2e-05,
+  "betas": [
+   0.9,
+   0.98
+  ],
+  "eps": 1e-08,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "global_batch": 64,
+  "micro_batch": 16,
+  "gradient_accumulation_steps": 4,
+  "steps": 7629,
+  "epochs": 1,
+  "schedule": "WSD warmup 5% linear -> constant -> linear decay to 0 over 70%-100 %",
+  "precision": "bf16 autocast + float32 master weights",
+  "seed": 42,
+  "mask_rng": "numpy default_rng([seed, step, micro]) per (step, micro-batch)"
+ },
+ "model": {
+  "backbone": "BidirLM/BidirLM-0.6B-Base",
+  "commit": "29794508bbb4e378b4789eebff42ae4c2d47d524",
+  "fast_path": "transformers Qwen3ForCausalLM (stock) with BidirLM weights, strict=True",
+  "missing_keys": [],
+  "unexpected_keys": [],
+  "is_causal_modules_set_false": 28,
+  "parameters": 596049920,
+  "tied_lm_head_is_input_embedding": true,
+  "config": {
+   "vocab_size": 151936,
+   "hidden_size": 1024,
+   "num_hidden_layers": 28,
+   "head_dim": 128,
+   "rope_theta": 1000000.0,
+   "max_position_embeddings": 40960
+  }
+ },
+ "profile": {
+  "steps": 100,
+  "loss_first": 1.739232641253968,
+  "loss_last": 1.2845294381239807,
+  "seconds": 212.9526858329773,
+  "seconds_per_step": 2.129526858329773,
+  "tokens_per_second": 15387.45560866067,
+  "peak_gpu_memory_allocated_bytes": 32900888576,
+  "step_seconds": [
+   2.488842487335205,
+   2.0561370849609375,
+   2.1251380443573,
+   2.113044261932373,
+   2.1247599124908447
+  ]
+ },
+ "training": {
+  "seconds": 16233.367676734924,
+  "gpu_hours": 4.509268799093035,
+  "history": [
+   {
+    "first_step": 0,
+    "last_step": 2000,
+    "steps": 2000,
+    "loss_first": 1.739232641253968,
+    "loss_last": 0.9959381435896871
+   },
+   {
+    "first_step": 2000,
+    "last_step": 4000,
+    "steps": 2000,
+    "loss_first": 1.0543587121806866,
+    "loss_last": 0.92333132638685
+   },
+   {
+    "first_step": 4000,
+    "last_step": 6000,
+    "steps": 2000,
+    "loss_first": 0.865790734144603,
+    "loss_last": 0.8546937243687028
+   },
+   {
+    "first_step": 6000,
+    "last_step": 7629,
+    "steps": 1629,
+    "loss_first": 0.8117015124805705,
+    "loss_last": 0.8240029438369543
+   }
+  ]
+ },
+ "heldout": {
+  "mask_seed": 1234,
+  "records": [
+   {
+    "step": 0,
+    "fraction": 0.0,
+    "masked_loss": 1.7385680570207436,
+    "masked_accuracy": 0.653034048907057,
+    "masked_tokens": 204265
+   },
+   {
+    "step": 3814,
+    "fraction": 0.4999344606108271,
+    "masked_loss": 0.924390487236349,
+    "masked_accuracy": 0.7863608547719874,
+    "masked_tokens": 204265
+   },
+   {
+    "step": 7629,
+    "fraction": 1.0,
+    "masked_loss": 0.8246431076645988,
+    "masked_accuracy": 0.8052970406090127,
+    "masked_tokens": 204265
+   }
+  ]
+ },
+ "elapsed_seconds": 16503.675567626953
+}
