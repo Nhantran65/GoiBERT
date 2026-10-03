@@ -1,0 +1,56 @@
+{
+  "task": "vinli",
+  "model": "student",
+  "seed": 43,
+  "learning_rate": 0.0001,
+  "epochs": 30,
+  "batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "warmup_steps": 2286,
+  "total_steps": 22860,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "optimizer": "E7 LLRD gamma 0.8",
+  "include_test": false,
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26547076,
+    "trainable_parameters": 26547076
+  },
+  "length_stats": {
+    "train": {
+      "examples": 24376,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 3009,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    }
+  },
+  "pid": 1873977,
+  "gpu": "0",
+  "status": "completed",
+  "best_epoch": 30,
+  "best_selection_f1": 0.6928582825869581,
+  "postrun_checks": {
+    "reload_matches_best": true,
+    "prediction_file_matches_best": true,
+    "reload_predictions_identical": true,
+    "ids_stable_and_complete": true
+  },
+  "elapsed_seconds": 1303.522620677948
+}

@@ -1,0 +1,31 @@
+{
+  "task": "vsfc_topic",
+  "model": "student",
+  "seed": 42,
+  "learning_rate": 1e-05,
+  "epochs": 30,
+  "batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "warmup_steps": 1074,
+  "total_steps": 10740,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "optimizer": "E7 LLRD gamma 0.8",
+  "include_test": false,
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26547076,
+    "trainable_parameters": 26547076
+  },
+  "length_stats": {},
+  "pid": 655959,
+  "gpu": "2"
+}

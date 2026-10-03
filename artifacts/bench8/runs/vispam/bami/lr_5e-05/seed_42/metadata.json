@@ -1,0 +1,59 @@
+{
+  "task": "vispam",
+  "model": "bami",
+  "seed": 42,
+  "learning_rate": 5e-05,
+  "epochs": 30,
+  "batch_size": 32,
+  "micro_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "warmup_steps": 1344,
+  "total_steps": 13440,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "optimizer": "E14 AdamW",
+  "include_test": false,
+  "model_spec": {
+    "backbone": "Qualcomm-AI-Research/BamiBERT",
+    "hidden_size": 768,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 102954244,
+    "trainable_parameters": 102954244
+  },
+  "length_stats": {
+    "train": {
+      "examples": 14306,
+      "truncated_examples": 42,
+      "truncation_rate": 0.0029358311198098698,
+      "words": 0,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 1590,
+      "truncated_examples": 8,
+      "truncation_rate": 0.005031446540880503,
+      "words": 0,
+      "truncated_words": 0
+    }
+  },
+  "pid": 841108,
+  "gpu": "2",
+  "status": "completed",
+  "best_epoch": 23,
+  "best_selection_f1": 0.7556295723420443,
+  "postrun_checks": {
+    "reload_matches_best": true,
+    "prediction_file_matches_best": true,
+    "reload_predictions_identical": true,
+    "ids_stable_and_complete": true
+  },
+  "elapsed_seconds": 1781.932384967804
+}

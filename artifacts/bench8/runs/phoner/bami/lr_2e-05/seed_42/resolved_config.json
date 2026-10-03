@@ -1,0 +1,39 @@
+{
+  "task": "phoner",
+  "model": "bami",
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "batch_size": 32,
+  "micro_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "warmup_steps": 474,
+  "total_steps": 4740,
+  "max_length": 512,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "optimizer": "E14 AdamW",
+  "include_test": false,
+  "model_spec": {
+    "total_parameters": 102376725,
+    "head": "dropout0.1 -> linear"
+  },
+  "length_stats": {
+    "train": {
+      "examples": 5027,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 167541,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 2000,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 71325,
+      "truncated_words": 0
+    }
+  },
+  "pid": 1824943,
+  "gpu": "1"
+}

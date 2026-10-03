@@ -1,0 +1,39 @@
+{
+  "task": "phoner",
+  "model": "student",
+  "seed": 42,
+  "learning_rate": 1e-05,
+  "epochs": 30,
+  "batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "warmup_steps": 474,
+  "total_steps": 4740,
+  "max_length": 512,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "optimizer": "E7 LLRD gamma 0.8",
+  "include_test": false,
+  "model_spec": {
+    "total_parameters": 26405781,
+    "head": "dropout0.1 -> linear"
+  },
+  "length_stats": {
+    "train": {
+      "examples": 5027,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 167541,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 2000,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 71325,
+      "truncated_words": 0
+    }
+  },
+  "pid": 2026179,
+  "gpu": "2"
+}

@@ -1,0 +1,49 @@
+{
+  "task": "vinli",
+  "model": "bami",
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "epochs": 30,
+  "batch_size": 32,
+  "micro_batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "warmup_steps": 2286,
+  "total_steps": 22860,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "optimizer": "E14 AdamW",
+  "include_test": false,
+  "model_spec": {
+    "backbone": "Qualcomm-AI-Research/BamiBERT",
+    "hidden_size": 768,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 12,
+    "intermediate_size": 3072,
+    "head_hidden_size": 768,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 102954244,
+    "trainable_parameters": 102954244
+  },
+  "length_stats": {
+    "train": {
+      "examples": 24376,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 3009,
+      "truncated_examples": 0,
+      "truncation_rate": 0.0,
+      "words": 0,
+      "truncated_words": 0
+    }
+  },
+  "pid": 1083937,
+  "gpu": "3"
+}

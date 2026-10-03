@@ -1,0 +1,46 @@
+{
+  "task": "vispam",
+  "model": "student",
+  "seed": 42,
+  "learning_rate": 1e-05,
+  "epochs": 30,
+  "batch_size": 32,
+  "micro_batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "warmup_steps": 1344,
+  "total_steps": 13440,
+  "max_length": 256,
+  "precision": "bf16",
+  "attention_implementation": "sdpa",
+  "optimizer": "E7 LLRD gamma 0.8",
+  "include_test": false,
+  "model_spec": {
+    "backbone": "goiturn-s-gd",
+    "hidden_size": 384,
+    "head_hidden_size": 384,
+    "head_dropout": 0.1,
+    "num_labels": 4,
+    "num_aspects": 0,
+    "aspect_class_counts": [],
+    "total_parameters": 26547076,
+    "trainable_parameters": 26547076
+  },
+  "length_stats": {
+    "train": {
+      "examples": 14306,
+      "truncated_examples": 42,
+      "truncation_rate": 0.0029358311198098698,
+      "words": 0,
+      "truncated_words": 0
+    },
+    "validation": {
+      "examples": 1590,
+      "truncated_examples": 8,
+      "truncation_rate": 0.005031446540880503,
+      "words": 0,
+      "truncated_words": 0
+    }
+  },
+  "pid": 841109,
+  "gpu": "3"
+}
