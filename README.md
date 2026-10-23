@@ -2,9 +2,11 @@
 
 # GoiBERT: Compact Vietnamese Language Models via Two-Stage Knowledge Distillation
 
-**Quang Anh Kiet Tran**<sup>1\*</sup> · **Nam Anh Tran**<sup>2\*</sup> · **Manh Hung Trinh**<sup>3</sup> · **Thanh Danh Le**<sup>2</sup> · **Khang Nhat Hoang Vo**<sup>4</sup> · **Huynh Dai Nhan Tran**<sup>5</sup>
+**Quang Anh Kiet Tran**<sup>1,3\*</sup> &nbsp; **Nam Anh Tran**<sup>2,3\*</sup> &nbsp; **Manh Hung Trinh**<sup>4</sup><br>
+**Thanh Danh Le**<sup>2,3</sup> &nbsp; **Khang Nhat Hoang Vo**<sup>5</sup> &nbsp; **Huynh Dai Nhan Tran**<sup>6</sup>
 
-<sup>1</sup>UIT, VNU-HCM &nbsp; <sup>2</sup>IU, VNU-HCM &nbsp; <sup>3</sup>University of Eastern Finland &nbsp; <sup>4</sup>MBZUAI &nbsp; <sup>5</sup>University of Jyväskylä
+<sup>1</sup>UIT, VNU-HCM &nbsp; <sup>2</sup>IU, VNU-HCM &nbsp; <sup>3</sup>TwoHearts Technologies Co., Ltd., Ho Chi Minh City, Vietnam<br>
+<sup>4</sup>University of Eastern Finland &nbsp; <sup>5</sup>MBZUAI &nbsp; <sup>6</sup>University of Jyväskylä
 
 <sup>\*</sup>Equal contribution
 
