@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Two paper figures for GoiBERT-M, as separate draw.io files.
+"""Two paper figures for the GoiBERT family (Base and Large), as separate draw.io files.
 Fig. 1: dual-teacher training pipeline (text width, ~16 cm).  Fig. 2: encoder architecture (one column, ~7.5 cm).
 Canvas sizes are chosen so that 11 px text prints at about 8 pt at those widths."""
 import html, sys
@@ -91,8 +91,8 @@ def fig1(path):
     p1 = d.panel("① General distillation", "Teacher 1 · shares the tokenizer · token-level", 10, 10, 206, 270)
     corpus = d.box("Unlabeled Vietnamese text<br>329M tokens", 22, 60, 182, 34, "io", p1)
     teacher = d.box("<b>BamiBERT</b><br>12 × 768<br>frozen", 22, 110, 84, 56, "emb", p1)
-    student = d.box("<b>GoiBERT-M</b><br>12 × 512<br>trained", 114, 110, 90, 56, "stud", p1)
-    loss1 = d.box("<i>L</i><sub>hid</sub> + <i>L</i><sub>attn</sub><br>layer <i>i</i> ↔ layer <i>i</i>", 22, 186, 182, 40, "norm", p1)
+    student = d.box("<b>GoiBERT</b><br>Base 10 × 384<br>Large 12 × 512", 114, 110, 90, 56, "stud", p1)
+    loss1 = d.box("<i>L</i><sub>hid</sub> + <i>L</i><sub>attn</sub><br>hidden-state + attention<br>distillation", 22, 178, 182, 54, "norm", p1)
     backbone = d.box("<b>Distilled backbone</b>", 22, 240, 182, 28, "stud", p1)
     d.edge(corpus, teacher, (0.2308, 1), (0.5, 0)); d.edge(corpus, student, (0.7527, 1), (0.5, 0))
     d.edge(teacher, loss1, (0.5, 1), (0.2308, 0)); d.edge(student, loss1, (0.5, 1), (0.7527, 0))
@@ -109,7 +109,7 @@ def fig1(path):
     note = d.node("Layer-wise lr decay γ = 0.8<br>30 epochs · batch 32 · 3 seeds", 444, 60, 194, 44,
                   "rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#B5B5B5;dashed=1;fontSize=10;fontColor=#555555;" + FONT, p3)
     loss2 = d.box("<b>Loss</b><br>0.5 · CE(<i>y</i>, <i>p</i><sup>S</sup>)<br>+ 0.5 · <i>T</i><sup>2</sup> · KL(<i>p</i><sup>Cafe</sup> ‖ <i>p</i><sup>S</sup>)", 444, 128, 194, 56, "norm", p3)
-    final = d.box("<b>GoiBERT-M</b> + task head<br>fine-tuned per task", 444, 232, 194, 44, "stud", p3)
+    final = d.box("<b>GoiBERT</b> + task head<br>fine-tuned per task", 444, 232, 194, 44, "stud", p3)
     d.edge(final, loss2, (0.5, 0), (0.5, 1), label="<i>p</i><sup>S</sup>")
     d.edge(soft, loss2, (1, 0.5), (0, 0.5), points=[(418, 216), (418, 156)])
     d.edge(backbone, final, (1, 0.5), (0, 0.5))
@@ -118,32 +118,33 @@ def fig1(path):
 
 # =========================================================== Fig. 2: encoder architecture
 def fig2(path):
-    d = Doc(300, 492, "fig2-architecture")
+    d = Doc(300, 556, "fig2-architecture")
     X, W = 50, 200
     head = d.box("<b>Task head</b><br>classification · ABSA · NER", X, 8, W, 34, "head")
     cont = d.node("Encoder layer", 30, 72, 240, 196,
                   "rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#F4F6F9;strokeColor=#3B4B63;strokeWidth=1.4;"
                   "verticalAlign=top;align=left;spacingLeft=8;spacingTop=3;fontSize=11;fontStyle=1;fontColor=#1A1A1A;" + FONT)
-    d.text("× 12 · 37.8M", 176, 73, 90, 20, cont, size=11, align="right", color="#1A1A1A", extra="fontStyle=1;")
+    d.text("× <i>L</i>", 176, 73, 90, 20, cont, size=11, align="right", color="#1A1A1A", extra="fontStyle=1;")
     bx, bw = 60, 180
     an2 = d.box("Add &amp; LayerNorm", bx, 100, bw, 24, "norm", cont)
-    ffn = d.box("Feed-forward (GELU)<br>512 → 2,048 → 512", bx, 136, bw, 34, "stud", cont)
+    ffn = d.box("Feed-forward (GELU)<br><i>H</i> → FFN → <i>H</i>", bx, 136, bw, 34, "stud", cont)
     an1 = d.box("Add &amp; LayerNorm", bx, 182, bw, 24, "norm", cont)
-    mha = d.box("Multi-head self-attention<br>8 heads, <i>d</i><sub>k</sub> = 64", bx, 218, bw, 34, "cafe", cont)
+    mha = d.box("Multi-head self-attention<br><i>A</i> heads, <i>d</i><sub>k</sub> = 64", bx, 218, bw, 34, "cafe", cont)
     dot_style = "ellipse;html=1;fillColor=#333333;strokeColor=none;"
     dot1 = d.node("", 147, 257, 6, 6, dot_style, cont, check=False)
     dot2 = d.node("", 147, 173, 6, 6, dot_style, cont, check=False)
     # embedding block
-    emb = d.node("Embedding · 11.5M", 30, 286, 240, 138,
+    emb = d.node("Embedding", 30, 286, 240, 138,
                  "rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#EEF3F9;strokeColor=#5B7FA6;strokeWidth=1.2;"
                  "verticalAlign=top;align=left;spacingLeft=8;spacingTop=3;fontSize=11;fontStyle=1;fontColor=#1A1A1A;" + FONT)
     lndp = d.box("LayerNorm · Dropout", 60, 314, 180, 22, "norm", emb)
     sm = d.node("+", 141, 348, 18, 18,
                 "ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#444444;strokeWidth=1.2;fontSize=12;fontStyle=1;" + FONT, emb, check=False)
     lk = []
-    for i, (nm, sh) in enumerate([("Word", "20,481×512"), ("Position", "2,050×512"), ("Token-type", "1×512")]):
+    for i, (nm, sh) in enumerate([("Word", "20,481×<i>H</i>"), ("Position", "2,050×<i>H</i>"), ("Token-type", "1×<i>H</i>")]):
         lk.append(d.box(f"{nm}<br>{sh}", 48 + i * 70, 380, 64, 34, "emb", emb, "fontSize=9;"))
     tok = d.box("Vietnamese text → BamiBERT<br>tokenizer → token ids (≤ 256)", X, 440, W, 38, "io")
+    cfg = d.box("<b>Base</b>: <i>L</i>=10, <i>H</i>=384, <i>A</i>=6, FFN=1,536 · 26.4M<br><b>Large</b>: <i>L</i>=12, <i>H</i>=512, <i>A</i>=8, FFN=2,048 · 49.4M", 10, 498, 280, 46, "io", "1", "fontSize=10;")
     # data flow (upwards)
     for i, l in enumerate(lk):
         d.edge(tok, l, ((78 + 70 * i - X) / W if False else (0.15, 0.5, 0.85)[i], 0), (0.5, 1))
@@ -152,7 +153,7 @@ def fig2(path):
     d.edge(lndp, mha, (0.5, 0), (0.5, 1))
     d.edge(mha, an1, (0.5, 0), (0.5, 1)); d.edge(an1, ffn, (0.5, 0), (0.5, 1)); d.edge(ffn, an2, (0.5, 0), (0.5, 1))
     d.edge(an2, head, (0.5, 0), (0.5, 1))
-    d.text("<i>H</i> ∈ ℝ<sup><i>n</i>×512</sup>", 156, 46, 100, 20, size=10, align="left", color="#333333")
+    d.text("<i>X</i> ∈ ℝ<sup><i>n</i>×<i>H</i></sup>", 156, 46, 100, 20, size=10, align="left", color="#333333")
     # residual connections
     d.edge(dot1, an1, (1, 0.5), (1, 0.5), points=[(256, 260), (256, 194)], width=1.1)
     d.edge(dot2, an2, (1, 0.5), (1, 0.5), points=[(256, 176), (256, 112)], width=1.1)

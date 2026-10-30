@@ -12,7 +12,7 @@
 
 Correspondence: [huynh.d.n.tran@jyu.fi](mailto:huynh.d.n.tran@jyu.fi)
 
-[🤗 GoiBERT-base](https://huggingface.co/2HeartsVN/GoiBERT-S) · [🤗 GoiBERT-large](https://huggingface.co/2HeartsVN/GoiBERT-M) · [Corpus card](release/goi-corpus-v2/README.md)
+[🤗 GoiBERT-base](https://huggingface.co/TwoheartsTechnologies/GoiBERT-S) · [🤗 GoiBERT-large](https://huggingface.co/TwoheartsTechnologies/GoiBERT-M) · [📄 Paper](https://arxiv.org/abs/2610.30067) · [Corpus card](release/goi-corpus-v2/README.md)
 
 </div>
 
@@ -41,8 +41,8 @@ Across eight benchmarks covering text classification, aspect-based sentiment ana
 
 | Model (paper name) | Hub ID | Layers | Hidden | Heads | FFN | Params | Embedding share |
 |---|---|---:|---:|---:|---:|---:|---:|
-| GoiBERT-base | [`2HeartsVN/GoiBERT-S`](https://huggingface.co/2HeartsVN/GoiBERT-S) | 10 | 384 | 6 | 1,536 | 26.4M | 33% |
-| GoiBERT-large | [`2HeartsVN/GoiBERT-M`](https://huggingface.co/2HeartsVN/GoiBERT-M) | 12 | 512 | 8 | 2,048 | 49.4M | 23% |
+| GoiBERT-base | [`TwoheartsTechnologies/GoiBERT-S`](https://huggingface.co/TwoheartsTechnologies/GoiBERT-S) | 10 | 384 | 6 | 1,536 | 26.4M | 33% |
+| GoiBERT-large | [`TwoheartsTechnologies/GoiBERT-M`](https://huggingface.co/TwoheartsTechnologies/GoiBERT-M) | 12 | 512 | 8 | 2,048 | 49.4M | 23% |
 
 Both models follow the RoBERTa encoder architecture. They use BamiBERT's 20,481-token tokenizer and 64-dimensional attention heads. The released checkpoints are the backbone encoders after general distillation (Stage 1) and have no task head. Distillation used sequences of at most 256 tokens, so we recommend `max_length=256`.
 
@@ -51,8 +51,8 @@ Both models follow the RoBERTa encoder architecture. They use BamiBERT's 20,481-
 ```python
 from transformers import AutoTokenizer, AutoModel
 
-tokenizer = AutoTokenizer.from_pretrained("2HeartsVN/GoiBERT-M")
-model = AutoModel.from_pretrained("2HeartsVN/GoiBERT-M")
+tokenizer = AutoTokenizer.from_pretrained("TwoheartsTechnologies/GoiBERT-M")
+model = AutoModel.from_pretrained("TwoheartsTechnologies/GoiBERT-M")
 
 inputs = tokenizer("Sản phẩm dùng tốt, giao hàng nhanh.", return_tensors="pt",
                    truncation=True, max_length=256)
@@ -265,6 +265,69 @@ Values are means, with [min, max] across seeds 42, 43 and 44. The ranges describ
 
 </details>
 
+## Reproducing the results
+
+### Repository layout
+
+```
+├── src/goibert/          Python package
+│   ├── data/             loaders for the eight benchmarks
+│   ├── distill.py        Stage 1: general distillation from BamiBERT
+│   ├── finetune.py       Stage 2: CafeBERT out-of-fold teachers, student and baseline fine-tuning
+│   ├── modeling.py       task heads; optim.py LLRD; metrics.py, ner_metrics.py
+│   └── corpus.py         decontamination, deduplication and mixing of the distillation corpus
+├── scripts/              command-line entry points (one per step below)
+├── configs/paper.json    learning rates, seeds and other settings used in the paper
+├── data/                 dataset layout, checksums and corpus source IDs (no dataset text)
+├── results/              per-run test metrics, test-access record, efficiency measurements
+├── release/              model cards, licenses and figures
+└── tests/                unit tests
+```
+
+### Setup
+
+```bash
+pip install -e .            # Python ≥ 3.10; requirements.txt pins the versions used in the paper
+```
+
+Place the benchmark files under `data/raw` as described in [data/README.md](data/README.md).
+
+### Steps
+
+```bash
+# 1. Distillation corpus (optional; see data/corpus_sources/README.md)
+python scripts/build_corpus.py --hplt-docs hplt_docs.jsonl --wikipedia wiki_vi.parquet --out data/corpus
+
+# 2. Stage 1: general distillation (≈6 h on one L40S for GoiBERT-large)
+python scripts/distill.py --variant large --corpus data/corpus/mlm_mix.txt --out runs/distill/large
+
+# 3. Stage 2a: out-of-fold CafeBERT soft labels for each task (5 folds)
+python scripts/train_teacher.py --task absa_restaurant --out runs/teacher/absa_restaurant
+
+# 4. Stage 2b: fine-tune the student with KD and LLRD (repeat for seeds 42, 43, 44)
+python scripts/finetune.py --task absa_restaurant --backbone TwoheartsTechnologies/GoiBERT-M \
+    --lr 1e-4 --seed 42 --soft-labels runs/teacher/absa_restaurant/soft_labels.npz \
+    --out runs/finetune/large/absa_restaurant/seed_42
+
+# 5. Evaluate the selected checkpoint on the test split
+python scripts/evaluate.py runs/finetune/large/absa_restaurant/seed_42
+
+# Efficiency
+python scripts/benchmark_efficiency.py TwoheartsTechnologies/GoiBERT-M Qualcomm-AI-Research/BamiBERT
+```
+
+Steps 3–5 can start from the released backbones instead of step 2. Per-task
+learning rates are in [configs/paper.json](configs/paper.json); the BamiBERT
+baseline and the ablations use the same scripts (see `scripts/finetune.py --help`).
+
+The per-run test metrics behind every table are in [results/](results/).
+The released code was checked against the original experiment code. It
+reproduces the stored test metrics of all 72 main runs from their saved
+predictions and from the original checkpoints, and gives identical losses and
+weights on short distillation, student, teacher and baseline runs. One
+exception: CafeBERT teachers on sentence pairs (ViNLI) are not bit-for-bit
+deterministic on GPU, in either version of the code.
+
 ## Which variant should I use?
 
 - **GoiBERT-large** is the better default when accuracy matters and a GPU is available. It is the strongest non-teacher model on average and roughly matches CafeBERT on classification and ABSA, at half of BamiBERT's serving cost.
@@ -279,16 +342,25 @@ Values are means, with [min, max] across seeds 42, 43 and 44. The ranges describ
 - **Scope.** We distill on sequences of at most 256 tokens, and no benchmark probes unseen domains or dialectal variation. The efficiency numbers leave out tokenization, task heads and the one-time cost of training five out-of-fold CafeBERT teachers per task.
 - **Bias.** The models are trained on public web text and benchmarks and may inherit social biases from these sources and from their teachers. We have not audited them for bias.
 
+## License
+
+- **Model weights** ([GoiBERT-S](https://huggingface.co/TwoheartsTechnologies/GoiBERT-S), [GoiBERT-M](https://huggingface.co/TwoheartsTechnologies/GoiBERT-M)): GoiBERT Community Model License v1.0, together with BamiBERT's BSD-3-Clause-Clear license and Qualcomm Responsible AI License. See the model cards and [release/](release/).
+- **Benchmark datasets and the distillation corpus** are not distributed here; each dataset keeps its own terms (see [data/README.md](data/README.md)).
+
 ## Citation
 
 If you use GoiBERT, please cite:
 
 ```bibtex
 @misc{tran2026goibert,
-  title  = {{GoiBERT}: Compact Vietnamese Language Models via Two-Stage Knowledge Distillation},
-  author = {Tran, Quang Anh Kiet and Tran, Nam Anh and Trinh, Manh Hung and
-            Le, Thanh Danh and Vo, Khang Nhat Hoang and Tran, Huynh Dai Nhan},
-  year   = {2026}
+  title         = {{GoiBERT}: Compact Vietnamese Language Models via Two-Stage Knowledge Distillation},
+  author        = {Tran, Quang Anh Kiet and Tran, Nam Anh and Trinh, Manh Hung and
+                   Le, Thanh Danh and Vo, Khang Nhat Hoang and Tran, Huynh Dai Nhan},
+  year          = {2026},
+  eprint        = {2610.30067},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2610.30067}
 }
 ```
 

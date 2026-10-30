@@ -1,0 +1,66 @@
+{
+  "_description": "Settings used for the results reported in arXiv:2610.30067.",
+  "seeds": [42, 43, 44],
+  "tasks": ["vsfc_sentiment", "vsfc_topic", "visfd", "absa_restaurant", "absa_hotel", "vispam", "vinli", "phoner"],
+  "general_distillation": {
+    "teacher": "Qualcomm-AI-Research/BamiBERT",
+    "teacher_revision": "57bc1340debbe4e348ec549047a763caebe4a977",
+    "steps": 120000,
+    "batch_size": 32,
+    "max_length": 256,
+    "learning_rate": 1e-4,
+    "weight_decay": 0.01,
+    "warmup_steps": 1000,
+    "seed": 42,
+    "corpus_sha256": "3ba6537ced296669373f6d3e652a8d5a75e152e97865ff7333f75c43896295c1"
+  },
+  "task_teacher": {
+    "model": "uitnlp/CafeBERT",
+    "revision": "af76fcf2a04096b2b54b348a3e4eb48253c93c5d",
+    "folds": 5,
+    "learning_rate": 2e-5,
+    "optimizer": "adamw",
+    "seed": 42,
+    "epochs": 30,
+    "batch_size": 32
+  },
+  "student": {
+    "optimizer": "llrd",
+    "llrd_gamma": 0.8,
+    "kd_alpha": 0.5,
+    "kd_temperature": 2.0,
+    "epochs": 30,
+    "batch_size": 32,
+    "learning_rate": {
+      "vsfc_sentiment": 1e-5,
+      "vsfc_topic": 1e-5,
+      "visfd": 1e-4,
+      "absa_restaurant": 1e-4,
+      "absa_hotel": 1e-4,
+      "vispam": 5e-5,
+      "vinli": 1e-4,
+      "phoner": 1e-4
+    }
+  },
+  "bamibert_baseline": {
+    "optimizer": "adamw",
+    "epochs": 30,
+    "batch_size": 32,
+    "micro_batch_size": 16,
+    "learning_rate": {
+      "vsfc_sentiment": 2e-5,
+      "vsfc_topic": 1e-5,
+      "visfd": 5e-5,
+      "absa_restaurant": 5e-5,
+      "absa_hotel": 5e-5,
+      "vispam": 2e-5,
+      "vinli": 1e-5,
+      "phoner": 5e-5
+    }
+  },
+  "corpus": {
+    "total_tokens": 328633809,
+    "benchmark_text_tokens": 20934020,
+    "wikipedia_share": 0.15
+  }
+}

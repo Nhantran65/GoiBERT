@@ -5,7 +5,9 @@ language:
 
 # Goi Corpus v2: a clean Vietnamese corpus for encoder distillation
 
-Goi Corpus v2 is a **328.6M-token** Vietnamese text corpus (counted with the BamiBERT tokenizer). It was built to distill small Vietnamese encoders, and it is the corpus used to train [GoiBERT-S](https://huggingface.co/2HeartsVN/GoiBERT-S) and [GoiBERT-M](https://huggingface.co/2HeartsVN/GoiBERT-M).
+Goi Corpus v2 is a **328.6M-token** Vietnamese text corpus (counted with the BamiBERT tokenizer). It was built to distill small Vietnamese encoders, and it is the corpus used to train [GoiBERT-S](https://huggingface.co/TwoheartsTechnologies/GoiBERT-S) and [GoiBERT-M](https://huggingface.co/TwoheartsTechnologies/GoiBERT-M).
+
+> **Availability.** The corpus text is not distributed: its sources keep their own terms. The selected document IDs are in [`data/corpus_sources`](../../data/corpus_sources), and [`scripts/build_corpus.py`](../../scripts/build_corpus.py) assembles the corpus from them.
 
 Key properties:
 
@@ -34,14 +36,7 @@ Key properties:
 - **A blank line separates documents.**
 - Documents are in random order (seed 42), and paragraphs within a document keep their original order.
 
-This layout works with sequence packing: read the file in order and concatenate lines with `</s>`, and each packed sequence contains consecutive paragraphs of the same document.
-
-```python
-from datasets import load_dataset
-
-ds = load_dataset("2HeartsVN/goi-corpus-v2", data_files="mlm_mix.txt", split="train")
-# one row per line; empty rows mark document boundaries
-```
+This layout works with sequence packing: read the file in order and concatenate lines with `</s>`, and each packed sequence contains consecutive paragraphs of the same document (see `goibert.distill.iter_packed_sequences`).
 
 ## How it was built
 
